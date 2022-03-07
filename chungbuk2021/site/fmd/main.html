@@ -1,15 +1,984 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>GitHub Main 페이지</title>
-    <link rel="stylesheet" href="./css/test.css">
-    <script src="./js/js-1.12.4.HS-20200709.min.js"></script>
-    <script src="./js/test.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="사이트 제목">
+    <meta name="keywords" content="키워드 입력">
+    <meta name="description" content="사이트 상세설명">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="og:site_name" content="사이트명 표시">
+    <meta property="og:url" content="url 표기">
+    <meta property="og:image" content="대표 이미지 경로">
+    <meta property="og:title" content="페이지 제목 표시">
+    <meta property="og:description" content="페이지 설명 표시">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" type="image/x-icon" href="/common/images/favicon.ico" />
+    <link rel="stylesheet" href="/common/common2021/css/font.css" />
+    <!--[if lt IE 9]><link rel="stylesheet" href="/common/common2021/css/font_ie8.css" /><![endif]-->
+    <link rel="stylesheet" href="/site/fmd/css/jalnan.css" />
+    <link rel="stylesheet" href="/site/fmd/css/main.css" />
+    <!--[if lt IE 9]><script src="/common/js/html5.js"></script><![endif]-->
+    <script src="/common/js/jquery-1.12.4.HS-20200709.min.js"></script>
+    <script src="/common/js/jquery.easing.1.3.js"></script>
+    <script src="/common/js/jquery.responsive.min.js"></script>
+    <script src="/common/js/jquery.menu.min.js"></script>
+    <script src="/common/js/slick.min.custom.1.6.0.10.js"></script>
+    <script src="/common/js/slick.extensions.min.js"></script>
+    <script src="/common/js/program.min.js"></script>
+    <script src="/common/common2021/js/common.js"></script>
+    <!--//<script src="/common/common2021/js/main.js"></script>--><!--//메인페이지 푸터 배너슬릭 필요할 시 첨부-->
+    <script src="/site/fmd/js/main.js"></script>
+    <title>충청북도 구제역</title>
 </head>
-<body>
-    <div class="main">
-        메인페이지testtesttest
-    </div>
+<body id="main" class="">
+<div class="accessibility">
+    <a href="#container">본문 바로가기</a>
+</div>
+<div id="wrapper" class="page@@{key}">
+    <header id="header">
+        <div class="header_top">
+            <div class="wrap clearfix">
+                <div class="site_link">
+                    <ul class="clearfix">
+                        <li><a href="" target="_blank" title="새창">어린이 도청</a></li>
+                        <li><a href="" target="_blank" title="새창">청년포털</a></li>
+                        <li><a href="" target="_blank" title="새창">일자리포털</a></li>
+                        <li><a href="" target="_blank" title="새창">문화관광</a></li>
+                        <li><a href="" target="_blank" title="새창">여성·복지</a></li>
+                        <li><a href="" target="_blank" title="새창">일자리상황판</a></li>
+                    </ul>
+                </div>  <!--//site_link-->
+                <div class="gnb clearfix">
+                    <div class="weatherbox clearfix weather1 dust2">
+                        <!-- weather1:맑음, weather2:구름조금, weather3:구름많음, weather4:흐림, weather5:비, weather6:비/눈, weather7:눈/비, weather8:눈 / dust1:좋음, dust2:보통, dust3:나쁨, dust4:매우나쁨 -->
+                        <a href="" target="_blank" title="새창" rel="noopener noreferrer" class="weatherlink clearfix">
+                            <span class="weather">
+                                <span class="icon" title="맑음">맑음</span>
+                                <span class="textbox">
+                                    <span class="text">맑음</span>    <!--//text-->
+                                    <span class="temperature">
+                                        <em>23℃</em>
+                                    </span> <!--//temperature-->
+                                </span> <!--//textbox-->
+                            </span> <!--//weather-->
+                            <span class="dust">
+                                <span class="text">미세먼지</span>
+                                <em>보통</em>
+                            </span> <!--//weatherlink-->
+                        </a>    <!--//weatherlink-->
+                    </div>  <!--//weatherbox-->
+                    <div class="www_btn_box">
+                        <a href="" target="_blank" title="새창" rel="noopener noreferrer">대표 바로가기</a>
+                    </div>  <!--//www_btn-->
+                </div>  <!--//gnb-->
+            </div>  <!--//wrap-->
+        </div>  <!--//header_top-->
+        <div class="header_box">
+            <div class="wrap">
+                <h1 class="logo">
+                    <a href="">
+                        <span class="logo_image">생명과 태양의 땅 충북</span>
+                        <span class="logo_text">아프리카돼지열병 &middot; <br>구제역 &middot; 조류인플루엔자</span>
+                    </a>
+                </h1>   <!--//logo-->
+            </div>  <!--//wrap-->
+            <div class="menuopenbox" data-menu-open="menu">
+                <button type="button" class="lnb_open" data-menu-button>메뉴 열기</button>
+            </div> <!--//menuopenbox-->
+        </div>  <!--//header_box-->
+        <div class="lnb_curtain"></div> <!--//lnb_curtain-->
+        <div id="lnb">
+            <div class="lnb_topbox clearfix">    <!--//1000px 부터 모바일 디자인-->
+                <div class="www_box">
+                    <a href="/www/index.do" target="_blank" title="새창" class="www_btn">충청북도청 바로가기</a>
+                </div>  <!--//www_box-->
+                <div class="lnb_gnb">
+                    <ul class="clearfix">
+                        <li class="login">
+                            <a href="" target="_blank" title="새창" class="login_btn">로그인</a>
+                        </li>
+                        <li class="search">
+                            <a href="" target="_blank" title="새창" class="search_btn">검색</a>
+                        </li>
+                    </ul>
+                </div>  <!--//lnb_gnb-->
+            </div>  <!--//lnb_topbox-->
+            <nav class="nav" data-menu-type="2" data-menu-top-background="full" data-menu-bottom-background="full">
+                <h2 class="skip">메뉴</h2>
+                <div class="depth1 clearfix" data-menu-depth="1">
+                    <ul class="depth1_list clearfix" data-menu-list="1">
+                        <li class="depth1_item">
+                            <a href="" class="depth1_text" data-menu-text="1"><span>아프리카돼지열병(ASF)</span></a>
+                            <div class="depth2" data-menu-depth="2">
+                                <ul class="depth2_list clearfix" data-menu-list="2">
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>일반현황</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" target="_blank" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>농업</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" target="_blank" data-menu-text="2"><span>건설/교통</span></a>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>복지/보건/환경</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>금융/통신</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>교육/문화/관광</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>재해 및 사고</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>시군현황</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="depth1_item">
+                            <a href="" class="depth1_text" data-menu-text="1"><span>구제역(FMD)</span></a>
+                            <div class="depth2" data-menu-depth="2">
+                                <ul class="depth2_list clearfix" data-menu-list="2">
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" target="_blank" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" target="_blank" data-menu-text="2"><span>2차메뉴명두줄 <br>새창아이콘</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>감사정보</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>법/제도정보</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="depth1_item">
+                            <a href="" class="depth1_text" data-menu-text="1"><span>조류인플루엔자(AI)</span></a>
+                            <div class="depth2" data-menu-depth="2">
+                                <ul class="depth2_list clearfix" data-menu-list="2">
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" target="_blank" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" target="_blank" data-menu-text="2"><span>2차메뉴명두줄 <br>새창아이콘</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>감사정보</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>법/제도정보</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="depth1_item">
+                            <a href="" class="depth1_text" data-menu-text="1"><span>보도자료</span></a>
+                            <div class="depth2" data-menu-depth="2">
+                                <ul class="depth2_list clearfix" data-menu-list="2">
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" target="_blank" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" target="_blank" data-menu-text="2"><span>2차메뉴명두줄 <br>새창아이콘</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>2차메뉴명</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>감사정보</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="depth2_item">
+                                        <a href="" class="depth2_text" data-menu-text="2"><span>법/제도정보</span></a>
+                                        <div class="depth3" data-menu-depth="3">
+                                            <ul class="depth3_list" data-menu-list="3">
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개제도</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>비공개대상정보세부기준</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>주요공개정보</span></a></li>
+                                                <li class="depth3_item"><a href="" class="depth3_text" data-menu-text="3"><span>정보공개 모니터단</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="add_box clearfix">
+                        <a href="" target="_blank" title="새창" class="btn login">로그인</a>
+                        <a href="" target="_blank" title="새창" class="btn search">검색</a>
+                        <a href="" class="btn sitemap">사이트맵</a>
+                    </div>  <!--//add_box-->
+                </div>  <!--//depth1-->
+            </nav>  <!--//nav-->
+            <div class="menuclosebox" data-menu-close="menu">
+                <button type="button" class="lnb_close" data-menu-button>메뉴 닫기</button>
+            </div>  <!--//menuclosebox-->
+        </div>  <!--//lnb-->
+    </header>   <!--//#header-->
+    <div id="container">
+        <main>
+            <div class="rowgroup1">
+                <div class="wrap clearfix">
+                    <div class="colgroup1">
+                        <section class="fmd_report">
+                            <h2 class="skip">아프리카돼지열병 신고전화 설명 및 전화번호</h2>
+                            <div class="report_box">
+                                <div class="report_bg_box">
+                                    <i class="icon"></i>
+                                    <span class="report_title">
+                                        <span>
+                                            <em class="bold">아프리카돼지열병, 구제역,<br> 조류인플루엔자 의심축 발견 시</em> <br>가축방역기관에 <em class="bold">지체 없이</em> <em class="red">신고</em>하여<br> 주시기 바랍니다
+                                        </span>
+                                    </span> <!--//report_title-->
+                                    <div class="report_call">
+                                        <div class="text_wrap">
+                                            <span class="call_desc">전국 어디서나 국번 없이</span> <!--//call_desc-->
+                                            <span class="call_number">
+                                                1588 - 9060 <br>1588 - 4060
+                                            </span> <!--//call_number-->
+                                        </div>  <!--//text_wrap-->
+                                    </div>  <!--//report_call-->
+                                </div>  <!--//report_bg_box-->
+                            </div>  <!--//report_box-->
+                        </section>  <!--//fmd_report-->
+                    </div>   <!--//colgroup1-->
+                    <div class="colgroup2">
+                        <section class="fmd_crisis">
+                            <h2 class="skip">가축질병 위기단계 표시</h2>
+                            <div class="crisis_box">
+                                <div class="title_box">
+                                    <span class="crisis_title">가축질병 위기단계</span> <!--//crisis_title-->
+                                </div>  <!--//title_box-->
+                                <div class="stage_box">
+                                    <ul class="stage_list">
+                                        <li class="stage_item clearfix cow">    <!--//구제역은 단계가 4단계입니다-->
+                                            <span class="icon_box">
+                                                <span class="icon_wrap">
+                                                    <span class="icon_text">구제역</span> <!--//icon_text-->
+                                                </span> <!--//icon_wrap-->
+                                            </span> <!--//icon_box-->
+                                            <div class="detail_box">
+                                                <ul class="detail_list"> <!--// detail_item 단게별로 클래스 부여해주세요. 관심 : interest, 주의 : care, 경계 : guard, 심각 : serious, -->
+                                                    <li class="detail_item interest">
+                                                        <span class="item_bg">
+                                                            <i></i>
+                                                        </span> <!--//item_bg-->
+                                                        <span class="circle">관심</span> <!--//circle-->
+                                                    </li>   <!--//detail_item-->
+                                                    <li class="detail_item ">
+                                                        <span class="item_bg">
+                                                            <i></i>
+                                                        </span> <!--//item_bg-->
+                                                        <span class="circle">주의</span> <!--//circle-->
+                                                    </li>   <!--//detail_item-->
+                                                    <li class="detail_item guard">
+                                                        <span class="item_bg">
+                                                            <i></i>
+                                                        </span> <!--//item_bg-->
+                                                        <span class="circle">경계</span> <!--//circle-->
+                                                    </li>   <!--//detail_item-->
+                                                    <li class="detail_item ">
+                                                        <span class="item_bg">
+                                                            <i></i>
+                                                        </span> <!--//item_bg-->
+                                                        <span class="circle">심각</span> <!--//circle-->
+                                                    </li>   <!--//detail_item-->
+                                                </ul>   <!--//detail_list-->
+                                            </div>  <!--//detail_box-->
+                                        </li>    <!--//stage_item-->
+                                        <li class="stage_item clearfix chicken">    <!--//조류인플루엔자는 단계가 3단계입니다-->
+                                            <span class="icon_box">
+                                                <span class="icon_wrap">
+                                                    <span class="icon_text">조류 <br>인플루엔자</span> <!--//icon_text-->
+                                                </span> <!--//icon_wrap-->
+                                            </span> <!--//icon_box-->
+                                            <div class="detail_box">
+                                                <ul class="detail_list">
+                                                    <li class="detail_item">
+                                                        <span class="item_bg">
+                                                            <i></i>
+                                                        </span> <!--//item_bg-->
+                                                        <span class="circle">관심</span> <!--//circle-->
+                                                    </li>   <!--//detail_item-->
+                                                    <li class="detail_item care">
+                                                        <span class="item_bg">
+                                                            <i></i>
+                                                        </span> <!--//item_bg-->
+                                                        <span class="circle">주의</span> <!--//circle-->
+                                                    </li>   <!--//detail_item-->
+                                                    <li class="detail_item">
+                                                        <span class="item_bg">
+                                                            <i></i>
+                                                        </span> <!--//item_bg-->
+                                                        <span class="circle">심각</span> <!--//circle-->
+                                                    </li>   <!--//detail_item-->
+                                                </ul>   <!--//detail_list-->
+                                            </div>  <!--//detail_box-->
+                                        </li>    <!--//stage_item-->
+                                        <li class="stage_item clearfix pig">    <!--//아프리카돼지열병은 단계가 3단계입니다-->
+                                            <span class="icon_box">
+                                                <span class="icon_wrap">
+                                                    <span class="icon_text">아프리카 <br>돼지열병</span> <!--//icon_text-->
+                                                </span> <!--//icon_wrap-->
+                                            </span> <!--//icon_box-->
+                                            <div class="detail_box">
+                                                <ul class="detail_list">
+                                                    <li class="detail_item">
+                                                        <span class="item_bg">
+                                                            <i></i>
+                                                        </span> <!--//item_bg-->
+                                                        <span class="circle">관심</span> <!--//circle-->
+                                                    </li>   <!--//detail_item-->
+                                                    <li class="detail_item">
+                                                        <span class="item_bg">
+                                                            <i></i>
+                                                        </span> <!--//item_bg-->
+                                                        <span class="circle">주의</span> <!--//circle-->
+                                                    </li>   <!--//detail_item-->
+                                                    <li class="detail_item serious">
+                                                        <span class="item_bg">
+                                                            <i></i>
+                                                        </span> <!--//item_bg-->
+                                                        <span class="circle">심각</span> <!--//circle-->
+                                                    </li>   <!--//detail_item-->
+                                                </ul>   <!--//detail_list-->
+                                            </div>  <!--//detail_box-->
+                                        </li>    <!--//stage_item-->
+                                    </ul>   <!--//stage_list-->
+                                </div>  <!--//stage_box-->
+                                <div class="warning_box">
+                                    <div class="warning_box_wrap">
+                                        <span class="desc">충청북도는 ASF, FMD, AI 등<br> 가축질병 확산방지를 위해 최선을 다하겠습니다</span>
+                                    </div>  <!--//warning_box_wrap-->
+                                </div>  <!--//warning_box-->
+                            </div>  <!--//crisis_box-->
+                        </section>  <!--//fmd_crisis-->
+                    </div>   <!--//colgroup2-->
+                </div>  <!--//wrap-->
+            </div>  <!--//rowgroup1-->
+            <div class="rowgroup2">
+                <section class="fmd_view">
+                    <h2 class="skip">ASF, FMD, AI</h2>
+                    <div class="wrap fmd_wrap type800">
+                        <div class="fmd_btn_box">
+                            <div class="btn_item active mouse_on">
+                                <button type="button" title="선택됨" class="btn_mask asf">
+                                    <span class="mask_wrap">
+                                        <span class="number">01</span>
+                                        <span class="title">ASF</span>
+                                    </span> <!--//mask_wrap-->
+                                </button>    <!--//btn_mask-->
+                            </div>    <!--//btn_item-->
+                            <div class="btn_item">
+                                <button type="button" class="btn_mask fmd">
+                                    <span class="mask_wrap">
+                                        <span class="number">02</span>
+                                        <span class="title">FMD</span>
+                                    </span> <!--//mask_wrap-->
+                                </button>    <!--//btn_mask-->
+                            </div>    <!--//btn_item-->
+                            <div class="btn_item">
+                                <button type="button" class="btn_mask ai">
+                                    <span class="mask_wrap">
+                                        <span class="number">03</span>
+                                        <span class="title">AI</span>
+                                    </span> <!--//mask_wrap-->
+                                </button> <!--//btn_mask-->
+                            </div>    <!--//btn_item-->
+                        </div> <!--//fmd_btn_box-->
+                    </div>   <!--//wrap fmd_wrap-->
+                    <div class="fmd_view_box">
+                        <div class="total_photo_item clearfix asf active">
+                            <div class="fmd_photo_box">
+                                <div class="photo_wrap">
+                                    <span class="big_title">
+                                        <span class="title_number">01</span>
+                                        <span class="desc_title">
+                                            <span class="name">ASF</span>
+                                            <span class="desc">
+                                                <span class="white_desc">충청북도 아프리카돼지열병 <br>종합대책</span> <br>
+                                                <span class="color_desc">ASF 차단방역을 위해 충청북도가 노력하겠습니다.</span>
+                                            </span> <!--//desc-->
+                                        </span> <!--//desc_title-->
+                                    </span> <!--//big_title-->
+                                    <div class="deco_total">
+                                        <div class="plus_box">
+                                            <a href="" class="plus_link">
+                                                <span class="text">ASF <br>알아보기</span>
+                                            </a>
+                                        </div>  <!--//plus_box-->
+                                        <div class="list_box">
+                                            <ul class="desc_list">
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">ASF 차단방역 행동수칙</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">가축 전염병 예방안내</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">국내외 ASF 발생 및 추진형황</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">ASF 긴급행동지침</span>
+                                                    </a>
+                                                </li>
+                                            </ul>   <!--//desc_list-->
+                                        </div>  <!--//list_box-->
+                                    </div>  <!--//deco_total-->
+                                </div>  <!--//photo_wrap-->
+                            </div>  <!--//fmd_photo_box-->
+                        </div> <!--//total_photo_item-->
+                        <div class="total_photo_item clearfix fmd">
+                            <div class="fmd_photo_box">
+                                <div class="photo_wrap">
+                                    <span class="big_title">
+                                        <span class="title_number">02</span>
+                                        <span class="desc_title">
+                                            <span class="name">FMD</span>
+                                            <span class="desc">
+                                                <span class="white_desc">충청북도 구제역 종합대책</span> <br>
+                                                <span class="color_desc">FMD 재발 방지를 위해 충청북도가 노력하겠습니다</span>
+                                            </span> <!--//desc-->
+                                        </span> <!--//desc_title-->
+                                    </span> <!--//big_title-->
+                                    <div class="deco_total">
+                                        <div class="plus_box">
+                                            <a href="" class="plus_link">
+                                                <span class="text">FMD <br>알아보기</span>
+                                            </a>
+                                        </div>  <!--//plus_box-->
+                                        <div class="list_box">
+                                            <ul class="desc_list">
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">구제역 백신취급 및 접종요령</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">가축 전염병 예방안내</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">구제역 발생 및 추진현황</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">구제역 긴급행동지침</span>
+                                                    </a>
+                                                </li>
+                                            </ul>   <!--//desc_list-->
+                                        </div>  <!--//list_box-->
+                                    </div>  <!--//deco_total-->
+                                </div>  <!--//photo_wrap-->
+                            </div>  <!--//fmd_photo_box-->
+                        </div> <!--//total_photo_item-->
+                        <div class="total_photo_item clearfix ai">
+                            <div class="fmd_photo_box">
+                                <div class="photo_wrap">
+                                    <span class="big_title">
+                                        <span class="title_number">03</span>
+                                        <span class="desc_title">
+                                            <span class="name">AI</span>
+                                            <span class="desc">
+                                                <span class="white_desc">충청북도 조류인플루엔자 종합대책</span> <br>
+                                                <span class="color_desc">AI 재발 방지를 위해 충청북도가 노력하겠습니다.</span>
+                                            </span> <!--//desc-->
+                                        </span> <!--//desc_title-->
+                                    </span> <!--//big_title-->
+                                    <div class="deco_total">
+                                        <div class="plus_box">
+                                            <a href="" class="plus_link">
+                                                <span class="text">AI <br>알아보기</span>
+                                            </a>
+                                        </div>  <!--//plus_box-->
+                                        <div class="list_box">
+                                            <ul class="desc_list">
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">AI 예방 확산방지 행동수칙</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">AI 확산방지 메뉴얼</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">AI 대책 Q&amp;A</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">AI 발생 및 추진현황</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">야생철새 농가방역실시 요령</span>
+                                                    </a>
+                                                </li>
+                                                <li class="desc_item">
+                                                    <a href="" class="desc_link">
+                                                        <span class="desc_text">AI 긴급행동지침</span>
+                                                    </a>
+                                                </li>
+                                            </ul>   <!--//desc_list-->
+                                        </div>  <!--//list_box-->
+                                    </div>  <!--//deco_total-->
+                                </div>  <!--//photo_wrap-->
+                            </div>  <!--//fmd_photo_box-->
+                        </div> <!--//total_photo_item-->
+                    </div>  <!--//fmd_view_box-->
+                    <div class="wrap fmd_wrap">
+                        <div class="fmd_small_btn_box">
+                            <div class="small_btn_item active">
+                                <button type="button" title="선택됨" class="small_btn_mask">01 ASF</button>
+                            </div>  <!--//small_btn_item-->
+                            <div class="small_btn_item">
+                                <button type="button" class="small_btn_mask">02 FMD</button>
+                            </div>  <!--//small_btn_item-->
+                            <div class="small_btn_item">
+                                <button type="button" class="small_btn_mask">03 AI</button>
+                            </div>  <!--//small_btn_item-->
+                        </div>  <!--//fmd_small_btn_box-->
+                    </div>  <!--//warp fmd_wrap-->
+                </section>  <!--//fmd_view-->
+            </div>  <!--//rowgroup2-->
+        </main>
+    </div>   <!--//#container-->
+    <footer id="footer">
+        <div class="top_go">
+            <button type="button" class="up_button">
+                <span>맨위로</span>
+            </button>    <!--//up_button-->
+        </div>  <!--//top_go-->
+
+        <!--//배너모음 슬릭(상단 스크립트 주석 참조), 서브페이지 표출 안한, 메인페이지는 표출하는 사이트아이디만 표출-->
+        <!--//
+        <div class="footer_banner">
+            <div class="wrap">
+                <div class="banner">
+                    <h2 class="skip">배너모음</h2>
+                    <div class="controlbox">
+                        <div class="banner_control">
+                            <button type="button" class="arrow prev">이전</button>
+                            <button type="button" class="auto"></button>
+                            <button type="button" class="arrow next">다음</button>
+                            <a href="" class="more">배너 더보기</a>
+                        </div>
+                    </div>
+                    <div class="banner_list">
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">충청북도청</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">충청북도기업진흥원</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">충북여성인력개발센터</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">충북중장년일자리희망센터</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">충북지역인적자원개발위원회</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">충북중장년일자리희망센터</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">보건복지부</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">청주시청</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">베너텍스트</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">베너텍스트</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">베너텍스트</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">베너텍스트</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">베너텍스트</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">베너텍스트</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">베너텍스트</a></div>
+                        <div class="banner_item"><a href="" target="_blank" title="배너 새창열림">베너텍스트</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>-->  <!--//footer_banner-->
+        <div class="footer_box">
+            <div class="wrap">
+                <div class="footer_nav">
+                    <ul class="clearfix">
+                        <li><a href="">개인정보 처리방침</a></li>
+                        <li><a href="">회원이용약관</a></li>
+                        <li><a href="">이메일무단수집거부</a></li>
+                    </ul>
+                </div>  <!--//footer_nav-->
+                <div class="footer_content">
+                    <address>
+                        <span class="address">28515 충청북도 청주시 상당구 상당로 82(문화동)</span>   <!--//address-->
+                        <span class="telbox">
+                            <span class="tel">대표전화 : 043)220-2754</span>
+                            <span class="info">개인정보책임담당관 : 043)220-2692~4</span>
+                        </span>     <!--//telbox-->
+                    </address>
+                    <p class="copyright">Copyright ⓒ 2021 CHUNGCHEONGBUK-DO. All Rights Reserved.</p>
+                </div>  <!--//footer_content-->
+                <!--//패밀리사이트 필요한 사이트에만 첨부-->
+                <div class="family_box">
+                    <button type="button" title="패밀리사이트 목록 열기" class="family_btn">패밀리사이트</button>
+                    <div class="family_list">
+                        <ul>
+                            <li><a href="" target="_blank" title="새창" class="family_link"><span>패밀리사이트1</span></a></li>
+                            <li><a href="" target="_blank" title="새창" class="family_link"><span>패밀리사이트2</span></a></li>
+                            <li><a href="" target="_blank" title="새창" class="family_link"><span>패밀리사이트3</span></a></li>
+                            <li><a href="" target="_blank" title="새창" class="family_link"><span>패밀리사이트4</span></a></li>
+                            <li><a href="" target="_blank" title="새창" class="family_link"><span>패밀리사이트5</span></a></li>
+                        </ul>
+                    </div>  <!--//family_list-->
+                </div>  <!--//family_box-->
+            </div>  <!--//wrap-->
+        </div>  <!--//footer_box-->
+    </footer>   <!--//#footer-->
+</div>  <!--#wrapper-->
 </body>
 </html>
