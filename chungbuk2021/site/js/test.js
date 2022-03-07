@@ -13,7 +13,6 @@
         //여기서부터 코드 작성해주세요
         $('.main').on('click', function(){
            var $this = $(this);
-
            console.log('GitHub main page test console error');
         });
 
