@@ -50,7 +50,7 @@ try {
                 //메인비주얼 슬라이드 시작
                 var $MainVisualSlide = $('.rowgroup1 .main_visual_total .visual_total_wrap .visual_list');
                 $MainVisualSlide.slick({
-                    autoplay : false,
+                    autoplay : true,
                     dots : true,
                     appendDots: $('.rowgroup1 .main_visual_total .visual_total_wrap .visual_nav_box'),
                     dotsClass:'slick-dots clearfix',
