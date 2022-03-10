@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="철원군청 지도기반일정안내서비스">
+    <meta name="keywords" content="철원군청 지도기반일정안내서비스">
+    <meta name="description" content="철원군청 지도기반일정안내서비스">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="og:site_name" content="철원군청 지도기반일정안내서비스">
+    <meta property="og:url" content="url 표기">
+    <meta property="og:title" content="철원군청 지도기반일정안내서비스">
+    <meta property="og:description" content="철원군청 지도기반일정안내서비스">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" type="text/css" href="./css/font.css">
+    <!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="./css/font_ie8.css"><![endif]-->
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <!--[if lt IE 9]><script src="./js/html5.js"></script><![endif]-->
+    <script src="./js/jquery-1.12.4.HS-20200709.min.js"></script>
+    <script src="./js/jquery.responsive.min.js"></script>
+    <script src="./js/slick.min.custom.1.8.0.8.js"></script>
+    <script src="./js/slick.extensions.min.js"></script>
+    <script src="./js/jquery.scrollbar.min.js"></script>
+    <script src="./js/map.js"></script>
+    <title>철원 이모저모 지도기반일정안내서비스</title>
+</head>
+<body id="sub" class="sub">
+    <div class="accessibility">
+        <a href="#container">본문 바로가기</a>
+    </div>
+
+    <div id="wrapper">
+        <header id="header">
+            <div class="wrap">
+                <div class="header_title">
+                    <h1 class="skip">철원군 Cheorwon 철원 이모저모</h1>
+                    <span class="sub_desc skip">철원군에서 개최되는 다양한 행사 소식을 한눈에!</span>
+                </div>  <!--//header_title-->
+                <div class="header_bottom">
+                    <div class="inner_box clearfix">
+                        <div class="type_box">
+                            <button type="button" title="선택됨" class="btn_type map active">지도</button>
+                            <button type="button" class="btn_type calendar">달력</button>
+                        </div>  <!--//type_box-->
+                        <div class="year_box">
+                            <a href="" class="year_prev">
+                                <span class="skip">이전 년도</span>
+                            </a>    <!--//year_prev-->
+                            <span class="year_title">2020년</span>   <!--//이전년도, 다음년도 클릭하면 년도가 바뀌는 구조-->
+                            <a href="" class="year_next">
+                                <span class="skip">다음 년도</span>
+                            </a>    <!--//year_next-->
+                        </div>  <!--//year_box-->
+                        <div class="month_box">
+                            <div class="month_list clearfix">
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">1월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">2월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">3월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">4월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">5월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">6월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">7월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">8월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">9월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">10월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" title="선택됨" class="month_link active">  <!--//기본값은 현재 월(active), title 필수-->
+                                        <span class="month_text">11월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                                <div class="month_item">
+                                    <a href="" class="month_link">
+                                        <span class="month_text">12월</span>
+                                    </a>    <!--//month_link-->
+                                </div>  <!--//month_item-->
+                            </div>  <!--//month_list-->
+                        </div>  <!--//month_box-->
+
+                    </div>  <!--//inner_box-->
+                </div>  <!--//header_bottom-->
+            </div>  <!--//wrap-->
+        </header>   <!--//#header-->
+        <div id="container">
+            <main>
+                <div class="section map active clearfix">
+                    <div class="daily_box">
+                        <div class="daily_shadow">
+                            <div class="title_box">
+                                <h2 class="daily_title">
+                                    10월 일정
+                                </h2>   <!--//daily_title-->
+                                <span class="total_title">
+                                    총 <em class="point">15</em>건
+                                </span> <!--//total_title-->
+                            </div>  <!--//title_box-->
+                            <div class="data">  <!--//지도에 뿌려줄 데이터 하단에 daily_list랑 똑같이 맞춰줄 것-->
+                                <div class="daily_item" data-index="0" data-category="0" data-latitude="38.1477246830305" data-longtitude="127.308345869003" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type">행사</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">2020 그곳이 알고싶다 철원사랑 걷기 대회 행사</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="1" data-category="1" data-latitude="38.144793502779" data-longtitude="127.31186046164" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type2">교육</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">철원사랑 걷기 대회 행사</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="2" data-category="2" data-latitude="38.1469274944527" data-longtitude="127.301501092427" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type3">모집</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">test 테스트 내용입니다 테스트용 임시 좌표입니다 data-index 값은 0부터 순서대로 들어갑니다</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="3" data-category="3" data-latitude="38.1532985514667" data-longtitude="127.300180935561" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type4">공연</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">행사명</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="4" data-category="4" data-latitude="38.1584116660407" data-longtitude="127.314318746175" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type5">전시</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">행사명</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="5" data-category="5" data-latitude="38.1442478838664" data-longtitude="127.306705872136" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">행사명</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="6" data-category="6" data-latitude="38.1415324912322" data-longtitude="127.311456111066" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type7">기타</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">행사명</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="7" data-category="5" data-latitude="38.162229011481" data-longtitude="127.317583804562" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">행사명</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="8" data-category="5" data-latitude="38.1366673643424" data-longtitude="127.303354401297" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">내용추가 임시좌표 내용추가 임시좌표 내용추가 임시좌표</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="9" data-category="5" data-latitude="38.1709456763177" data-longtitude="127.293554791796" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">내용추가 임시좌표 내용추가 임시좌표 내용추가 임시좌표</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="10" data-category="5" data-latitude="38.1411970170441" data-longtitude="127.326023017893" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">내용추가 임시좌표 내용추가 임시좌표 내용추가 임시좌표</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                            </div>  <!--//data-->
+                            <div class="daily_list">  <!--//좌측에 뿌려줄 데이터 상단에 data랑 똑같이 맞춰줄 것-->
+                                <div class="daily_item" data-index="0" data-category="0" data-latitude="38.1477246830305" data-longtitude="127.308345869003" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type">행사</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">2020 그곳이 알고싶다 철원사랑 걷기 대회 행사</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="1" data-category="1" data-latitude="38.144793502779" data-longtitude="127.31186046164" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type2">교육</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">철원사랑 걷기 대회 행사</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="2" data-category="2" data-latitude="38.1469274944527" data-longtitude="127.301501092427" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type3">모집</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">테스트 내용입니다 테스트용 임시 좌표입니다 data-index 값은 0부터 순서대로 들어갑니다</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="3" data-category="3" data-latitude="38.1532985514667" data-longtitude="127.300180935561" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type4">공연</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">행사명</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="4" data-category="4" data-latitude="38.1584116660407" data-longtitude="127.314318746175" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type5">전시</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">행사명</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="5" data-category="5" data-latitude="38.1442478838664" data-longtitude="127.306705872136" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">행사명</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="6" data-category="6" data-latitude="38.1415324912322" data-longtitude="127.311456111066" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type7">기타</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">행사명</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="7" data-category="5" data-latitude="38.162229011481" data-longtitude="127.317583804562" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">행사명</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="8" data-category="5" data-latitude="38.1366673643424" data-longtitude="127.303354401297" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">내용추가 임시좌표 내용추가 임시좌표 내용추가 임시좌표</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="9" data-category="5" data-latitude="38.1709456763177" data-longtitude="127.293554791796" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">내용추가 임시좌표 내용추가 임시좌표 내용추가 임시좌표</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                                <div class="daily_item" data-index="10" data-category="5" data-latitude="38.1411970170441" data-longtitude="127.326023017893" data-period="2020-10-01~2020-10-02" data-time="09:00" data-space="왕징면 일원" data-url="http://www.naver.com">
+                                    <button type="button" class="daily_link clearfix">
+                                        <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                        <span class="daily_desc">내용추가 임시좌표 내용추가 임시좌표 내용추가 임시좌표</span>
+                                    </button>    <!--//daily_link-->
+                                </div>  <!--//daily_item-->
+                            </div>  <!--//daily_list-->
+
+                            <div class="daily_control"></div>
+                        </div>    <!--//daily_shadow-->
+                    </div>  <!--//daily_box-->
+                    <div class="map_box">
+                        <div id="map"></div>
+                    </div>  <!--//map_box-->
+                </div>  <!--//section map-->
+
+                <div class="section calendar">
+                    <div class="wrap">
+                        <div class="inner_box clearfix">
+                            <div class="table_box">
+                                <table class="schedule">
+                                    <caption>해당일정 달력 - 일, 월, 화, 수, 목, 금, 토</caption>
+                                    <colgroup>  <!--//css로 조절-->
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">일</th>
+                                        <th scope="col">월</th>
+                                        <th scope="col">화</th>
+                                        <th scope="col">수</th>
+                                        <th scope="col">목</th>
+                                        <th scope="col">금</th>
+                                        <th scope="col">토</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">1</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">2</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">3</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">4</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">5</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">6</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">7</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">8</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">9</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">10</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" title="선택됨" class="schedule_btn active">
+                                                <span class="date">11</span>
+                                                <span class="count">3건</span>  <!--//일정이 있을 때-->
+                                            </button>
+                                        </td>
+                                        <td class="today">
+                                            <span class="skip">오늘날짜</span>
+                                            <button type="button" class="schedule_btn">      <!--//일정이 없으면서 오늘날짜 일 때 button이 아닌 div에 클래스 동일-->
+                                                <span class="date">12</span>
+                                                <span class="count">4건</span>  <!--//일정이 있을 때-->
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="schedule_btn">
+                                                <span class="date">13</span>
+                                                <span class="count">5건</span>  <!--//일정이 있을 때-->
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="schedule_btn">
+                                                <span class="date">14</span>
+                                                <span class="count">12건</span>  <!--//일정이 있을 때-->
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">15</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">16</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date holiday">17</span>  <!--//공휴일 일 경우-->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">18</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">19</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">20</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">21</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">22</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">23</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">24</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">25</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">26</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">27</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">28</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">29</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">28</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">30</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="schedule_btn">
+                                                <span class="date">31</span>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>    <!--//schedule-->
+                            </div>  <!--//table_box-->
+                            <div class="daily_box">
+                                <div class="title_box clearfix">
+                                    <h2 class="daily_title">
+                                        <span class="point">10월 16일</span> 일정
+                                    </h2>   <!--//daily_title-->
+                                    <span class="total_title">
+                                    총 <em class="point">15</em>건
+                                </span> <!--//total_title-->
+                                </div>  <!--//title_box-->
+                                <div class="daily_list scrollbar-inner">
+                                    <div class="daily_item">
+                                        <div class="daily_link clearfix">
+                                            <span class="skip">선택됨</span>
+                                            <span class="daily_type">행사</span>  <!--//기본 색깔 초록-->
+                                            <span class="daily_desc">양성평등주간 기념 유공자 시상식</span>
+                                            <div class="desc_box">
+                                                <ul class="desc_list">
+                                                    <li class="desc_item clearfix">
+                                                        <span class="point">기간</span>
+                                                        <span class="desc">2020-10-01~2020-10-02</span>
+                                                    </li>
+                                                    <li class="desc_item clearfix">
+                                                        <span class="point">시간</span>
+                                                        <span class="desc">09:00</span>
+                                                    </li>
+                                                    <li class="desc_item clearfix">
+                                                        <span class="point">장소</span>
+                                                        <span class="desc">왕징면 일원</span>
+                                                    </li>
+                                                </ul>   <!--//bu-->
+                                                <a href="" class="desc_detail"><span>상세보기</span></a>
+                                            </div>  <!--//desc_box-->
+                                        </div>    <!--//daily_link-->
+                                    </div>  <!--//daily_item-->
+                                    <div class="daily_item">
+                                        <div class="daily_link clearfix">
+                                            <span class="skip">선택됨</span>
+                                            <span class="daily_type type2">교육</span>  <!--//기본 색깔 초록-->
+                                            <span class="daily_desc">양성평등주간 기념 유공자 시상식</span>
+                                            <div class="desc_box">
+                                                <ul class="desc_list">
+                                                    <li class="desc_item clearfix">
+                                                        <span class="point">기간</span>
+                                                        <span class="desc">2020-10-01~2020-10-02</span>
+                                                    </li>
+                                                    <li class="desc_item clearfix">
+                                                        <span class="point">시간</span>
+                                                        <span class="desc">09:00</span>
+                                                    </li>
+                                                    <li class="desc_item clearfix">
+                                                        <span class="point">장소</span>
+                                                        <span class="desc">왕징면 일원</span>
+                                                    </li>
+                                                </ul>   <!--//bu-->
+                                                <a href="" class="desc_detail"><span>상세보기</span></a>
+                                            </div>  <!--//desc_box-->
+                                        </div>    <!--//daily_link-->
+                                    </div>  <!--//daily_item-->
+                                    <div class="daily_item">
+                                        <div class="daily_link clearfix">
+                                            <span class="skip">선택됨</span>
+                                            <span class="daily_type type6">축제</span>  <!--//기본 색깔 초록-->
+                                            <span class="daily_desc">양성평등주간 기념 유공자 시상식</span>
+                                            <div class="desc_box">
+                                                <ul class="desc_list">
+                                                    <li class="desc_item clearfix">
+                                                        <span class="point">기간</span>
+                                                        <span class="desc">2020-10-01~2020-10-02</span>
+                                                    </li>
+                                                    <li class="desc_item clearfix">
+                                                        <span class="point">시간</span>
+                                                        <span class="desc">09:00</span>
+                                                    </li>
+                                                    <li class="desc_item clearfix">
+                                                        <span class="point">장소</span>
+                                                        <span class="desc">왕징면 일원</span>
+                                                    </li>
+                                                </ul>   <!--//bu-->
+                                                <a href="" class="desc_detail"><span>상세보기</span></a>
+                                            </div>  <!--//desc_box-->
+                                        </div>    <!--//daily_link-->
+                                    </div>  <!--//daily_item-->
+                                </div>  <!--//daily_list-->
+                                <div class="daily_control"></div>
+                            </div>  <!--//daily_box-->
+                        </div>  <!--//inner_box-->
+                    </div>  <!--//wrap-->
+                </div>  <!--//section calendar-->
+            </main>
+        </div>  <!--//#container-->
+        <footer id="footer">
+            <div class="footer_nav_box">
+                <div class="wrap">
+                    <div class="footer_nav">
+                        <ul class="clearfix">
+                            <li><a href="" class="privacy">개인정보처리방침</a></li>
+                            <li><a href="">저작권정책</a></li>
+                            <li><a href="">홈페이지 개선의견</a></li>
+                            <li><a href="">전화번호 안내</a></li>
+                            <li><a href="">찾아오시는 길</a></li>
+                        </ul>
+                    </div>  <!--//footer_nav-->
+                    <div class="footer_info">
+                        <div class="add">
+                            <address>[24040] 강원도 철원군 갈말읍 삼부연로 51</address>
+                            <span class="call">대표전화 : 033)450-5114</span>
+                            <span class="fax">대표팩스 : 033)450-5160</span>
+                        </div>  <!--//add-->
+
+                        <p class="copy">COPYRIGHTⓒ CHEORWON-GUN. ALL RIGHTS RESERVED.</p>
+
+                        <p class="footer_warning">본 홈페이지에 게시된 이메일 주소가 자동 수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해 처벌됨을 유념하시기 바랍니다.</p>
+                    </div>  <!--//footer_info-->
+                </div>  <!--//wrap-->
+            </div>  <!--//footer_nav_box-->
+        </footer>   <!--//#footer-->
+    </div>  <!--//#wrapper-->
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e6e5ca5088cb9d90eb968072bbd14479&libraries=services"></script>
+    <script>
+        var ManualCateLength = 7,//1차카테고리 개수 카운트
+            ManualSpriteWidth = 30*ManualCateLength,
+            BigSpriteWidth = 36*ManualCateLength;
+
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+            mapOption = {
+                center: new kakao.maps.LatLng(38.1467563653253, 127.313461266797), // 지도의 중심좌표
+                level: 6 // 지도의 확대 레벨
+            };
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커가 표시될 위치입니다
+        var markerPosition  = new kakao.maps.LatLng(38.1467563653253, 127.313461266797);
+
+        // 마커 이미지의 이미지 주소입니다
+        var imageSrc = '/map/images/common/marker.png';
+
+        // 마커 이미지의 이미지 크기 입니다
+        var imageSize = new kakao.maps.Size(30, 39);
+        function createMarkerImage(src, size, options) {
+            var markerImage = new kakao.maps.MarkerImage(src, size, options);
+            return markerImage;
+        }
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition,
+            title:'연천 구석구석이야기'
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+
+        // 버튼 클릭에 따라 지도 이동 기능을 막거나 풀고 싶은 경우에는 map.setDraggable 함수를 사용합니다
+        function setDraggable(draggable) {
+            // 마우스 드래그로 지도 이동 가능여부를 설정합니다
+            map.setDraggable(draggable);
+        }
+
+        // 버튼 클릭에 따라 지도 확대, 축소 기능을 막거나 풀고 싶은 경우에는 map.setZoomable 함수를 사용합니다
+        function setZoomable(zoomable) {
+            // 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
+            map.setZoomable(zoomable);
+        }
+        setDraggable(true); //버튼 클릭에 따라 지도 이동 사용여부
+        setZoomable(true); //버튼 클익에 따라 지도 확대 사용여부
+
+        // 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+        function zoomIn() {
+            map.setLevel(map.getLevel() - 1);
+        }
+
+        // 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+        function zoomOut() {
+            map.setLevel(map.getLevel() + 1);
+        }
+
+        var markers = [];
+        var kakaomarkers = [];
+        var Bigmarkers = [];
+        var Bigkakaomarkers = [];
+        var customOverlays;
+
+        function createMarker(position, title, DataColor) {
+            var spritepoint = 30*DataColor;
+            var imageOptions = {
+                spriteOrigin: new kakao.maps.Point(spritepoint, 0),
+                spriteSize: new kakao.maps.Size(ManualSpriteWidth, 39)
+            };
+            var markerImage = createMarkerImage(imageSrc, imageSize, imageOptions);
+            var marker = new kakao.maps.Marker({
+                position: position,
+                title: title,
+                image : markerImage
+            });
+            return marker;
+        }
+
+        //대형마커
+        var BigimageSrc = '/map/images/common/big_marker.png';
+        var BigimageSize = new kakao.maps.Size(36, 48);
+        function createBigMarkerImage(src, size, options) {
+            var BigmarkerImage = new kakao.maps.MarkerImage(src, size, options);
+            return BigmarkerImage;
+        }
+        var Bigmarker;
+        function createBigMarker(position, title, DataColor) {
+            var spritepoint = 36*DataColor;
+            var BigimageOptions = {
+                spriteOrigin: new kakao.maps.Point(spritepoint, 0),
+                spriteSize: new kakao.maps.Size(BigSpriteWidth, 48)
+            };
+            var markerImage = createMarkerImage(BigimageSrc, BigimageSize, BigimageOptions);
+            var Bigmarker = new kakao.maps.Marker({
+                position: position,
+                title: title,
+                image : markerImage
+            });
+            return Bigmarker;
+        }
+
+        function changeBigMarker(index, DataColor, latlng, latitude, longitude, thisTitle) {
+            if(Bigmarker) {
+                Bigmarker.setMap(null);
+            }
+            if(customOverlay) {
+                customOverlay.setMap(null);
+            }
+            Bigmarker = createBigMarker(latlng, thisTitle, DataColor);
+            kakao.maps.event.addListener(Bigmarker, 'click', function() {
+
+            });
+
+
+            Bigmarker.setMap(map);
+        }
+
+
+        function changeMarkers() {
+            if(marker) {
+                marker.setMap(null);
+            }
+            if(Bigmarker) {
+                Bigmarker.setMap(null);
+            }
+            if(customOverlay) {
+                customOverlay.setMap(null);
+            }
+            clearMarkers();
+            kakaomarkers = [];
+            markers.forEach(function(element, index, array){
+                marker = createMarker(markers[index].latlng, markers[index].title, markers[index].itemcolor);
+                kakaomarkers.push({
+                    marker : marker
+                });
+                kakao.maps.event.addListener(marker, 'click', function() {
+                    clearMarkers();
+                    setMarkers(map);
+                    kakaomarkers[index].marker.setMap(null);
+                    changeBigMarker(
+                        index,
+                        markers[index].itemcolor,
+                        markers[index].latlng,
+                        markers[index].latitude,
+                        markers[index].longitude,
+                        markers[index].title
+                    );
+
+                    ListenerOverlay(index,
+                        markers[index].latitude,
+                        markers[index].longtitude,
+                        markers[index].itemcolor,
+                        markers[index].period,
+                        markers[index].time,
+                        markers[index].space,
+                        markers[index].type,
+                        markers[index].title,
+                        markers[index].url
+                    );
+                });
+            });
+            setMarkers(map);
+        }
+        function setMarkers(map) {
+            for (var i = 0; i < kakaomarkers.length; i++) {
+                kakaomarkers[i].marker.setMap(map);
+            }
+        }
+        function clearMarkers() {
+            for (var i = 0; i < kakaomarkers.length; i++) {
+                kakaomarkers[i].marker.setMap(null);
+            }
+        }
+
+        function ListenerOverlay(index, Latitude, Longtitude, Itemcolor, Period, Time, Space, Type, Title, Url) {
+            var iwcontent2 = '<div class="customoverlay type'+Itemcolor+'"><div class="overlaybox">'+
+                '<div class="titlebox clearfix"><div class="icon">'+Type+'</div><div class="title">'+Title+'</div></div>'+
+                '<div class="conbox"><ul>'+
+                '<li class="clearfix"><em>기간</em><span>'+Period+'</span></li>'+
+                '<li class="clearfix"><em>시간</em><span>'+Time+'</span></li>'+
+                '<li class="clearfix"><em>장소</em><span>'+Space+'</span></li>'+
+                '</ul>'+
+                '<div class="detail_btn"><a href="'+Url+'" class="detail"><span>상세보기</span></a></div>'+
+                '</div>'+
+                '</div>'+
+                '<button type="button" onclick="closeOverlay();" class="close_overlay">닫기</button>'+
+                '</div>';
+
+            // 커스텀 오버레이가 있을 때
+            if(customOverlay) {
+                customOverlay.setMap(null);
+            }
+
+            // 커스텀 오버레이를 생성합니다
+            customOverlay = new kakao.maps.CustomOverlay({
+                map: map,
+                position: new kakao.maps.LatLng(Latitude, Longtitude),
+                content: iwcontent2,
+                yAnchor: 1
+            });
+
+            var $DailyList = $('.daily_list'),
+                $MyItem = $DailyList.find('.daily_item[data-index="'+index+'"]'),
+                $MyBtn = $MyItem.find('.daily_link'),
+                $OtherItems = $DailyList.find('.daily_item'),
+                $OtherBtns = $OtherItems.find('.daily_link'),
+                $MySlideItem = $MyItem.parents('.slick-slide'),
+                MySlideItemIsCurrent = $MySlideItem.is('.slick-current'),
+                MySlideItemIndex = $MySlideItem.attr('data-slick-index'),
+                $Daily = $('.map .daily_box .daily_list');
+
+            $OtherItems.removeClass('active');
+            $OtherBtns.removeAttr('title');
+            $MyBtn.attr('title', '선택됨');
+            $MyItem.addClass('active');
+
+            if(!MySlideItemIsCurrent){
+                $Daily.slick('slickGoTo', MySlideItemIndex);
+            }
+
+        }
+
+        function panTo(latitude, longitude) {
+            // 이동할 위도 경도 위치를 생성합니다
+            var moveLatLon = new kakao.maps.LatLng(latitude, longitude);
+            // 지도 중심을 부드럽게 이동시킵니다
+            // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+            map.panTo(moveLatLon);
+        }
+
+        var customOverlay;
+        function CreateOverlay(index, Latitude, Longtitude, Itemcolor, Period, Time, Space, Type, Title, Url) {
+            var OverlayLatLon = new kakao.maps.LatLng(Latitude, Longtitude);
+            var iwcontent = '<div class="customoverlay type'+Itemcolor+'"><div class="overlaybox">'+
+                '<div class="titlebox clearfix"><div class="icon">'+Type+'</div><div class="title">'+Title+'</div></div>'+
+                '<div class="conbox"><ul>'+
+                '<li class="clearfix"><em>기간</em><span>'+Period+'</span></li>'+
+                '<li class="clearfix"><em>시간</em><span>'+Time+'</span></li>'+
+                '<li class="clearfix"><em>장소</em><span>'+Space+'</span></li>'+
+                '</ul>'+
+                '<div class="detail_btn"><a href="'+Url+'" class="detail"><span>상세보기</span></a></div>'+
+                '</div>'+
+                '</div>'+
+                '<button type="button" onclick="closeOverlay();" class="close_overlay">닫기</button>'+
+                '</div>';
+            // 커스텀 오버레이가 있을 때
+            if(customOverlay) {
+                customOverlay.setMap(null);
+            }
+            // 커스텀 오버레이를 생성합니다
+            customOverlay = new kakao.maps.CustomOverlay({
+                map: map,
+                position: new kakao.maps.LatLng(Latitude, Longtitude),
+                content: iwcontent,
+                yAnchor: 1
+            });
+        }
+        function closeOverlay() {
+            if(Bigmarker) {
+                Bigmarker.setMap(null);
+            }
+            clearMarkers();
+            setMarkers(map);
+            customOverlay.setMap(null);
+        }
+        function relayout() {
+            setTimeout(function(){
+                map.relayout();
+            }, 300);
+        }
+
+        $(function() {
+            var $window = $(window),
+                $document = $(document),
+                $html = $('html'),
+                $body = $('body'),
+                $container = $('#container'),
+                $data = $('.data'),
+                Data = $data.html();
+
+            $data.find('.daily_item').each(function(){
+                var $this = $(this),
+                    Index = $this.attr('data-index'),
+                    Latitude = $this.attr('data-latitude'),
+                    Longtitude = $this.attr('data-longtitude'),
+                    Period = $this.attr('data-period'),
+                    Time = $this.attr('data-time'),
+                    Space = $this.attr('data-space'),
+                    Color = $this.attr('data-category'),
+                    Type = $this.find('.daily_type').text(),
+                    Title = $this.find('.daily_desc').text(),
+                    Url = $this.attr('data-url');
+
+                markers.push({
+                    title:Title,
+                    latlng:new kakao.maps.LatLng(Latitude, Longtitude),
+                    latitude:Latitude,
+                    longtitude:Longtitude,
+                    itemcolor:Color,
+                    period:Period,
+                    time:Time,
+                    space:Space,
+                    type:Type,
+                    url:Url
+                });
+            });
+            changeMarkers();
+            var $FirstItem = $data.find('.daily_item').first(),
+                FirstLatitude = $FirstItem.attr('data-latitude'),
+                FirstLongitude = $FirstItem.attr('data-longtitude');
+            panTo(FirstLatitude, FirstLongitude);
+            $(document).on('click', '.section.map .daily_box .daily_list .daily_item .daily_link', function() {
+                var $this = $(this),
+                    $Parent = $this.parents('.daily_item'),
+                    $DailyList = $('.daily_list'),
+                    $OtherParents = $DailyList.find('.daily_item'),
+                    $OtherBtns = $OtherParents.find('.daily_link'),
+                    IsActive = $Parent.is('.active'),
+                    Index = $Parent.attr('data-index'),
+                    Latitude = $Parent.attr('data-latitude'),
+                    Longtitude = $Parent.attr('data-longtitude'),
+                    LatLng = new kakao.maps.LatLng(Latitude, Longtitude),
+                    Period = $Parent.attr('data-period'),
+                    Time = $Parent.attr('data-time'),
+                    Space = $Parent.attr('data-space'),
+                    Color = $Parent.attr('data-category'),
+                    Type = $Parent.find('.daily_type').text(),
+                    Title = $Parent.find('.daily_desc').text(),
+                    Url = $Parent.attr('data-url');
+
+                if(!IsActive){
+                    clearMarkers();
+                    setMarkers(map);
+                    kakaomarkers[Index].marker.setMap(null);
+                    changeBigMarker(
+                        Index,
+                        Color,
+                        LatLng,
+                        Latitude,
+                        Longtitude,
+                        Title
+                    );
+
+                    CreateOverlay(Index, Latitude, Longtitude, Color, Period, Time, Space, Type, Title, Url);
+                    $OtherParents.removeClass('active');
+                    $OtherBtns.removeAttr('title');
+                    $Parent.addClass('active');
+                    $this.attr('title', '선택됨');
+                    panTo(Latitude, Longtitude);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

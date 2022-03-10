@@ -1,0 +1,354 @@
+@charset "UTF-8";
+/* (주)한신정보기술 - 2020.11 */
+
+/* 기본 */
+html {-webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none;}
+body{position:relative; line-height:25px; color:#151515; font-size:16px; font-family:'NotoKr','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif; letter-spacing:-0.04em;}
+a:link{color:#555555;text-decoration:none;}
+a:visited{color:#555555;text-decoration:none;}
+a:hover{color:#555555;text-decoration:underline;}
+a:active{color:#555555;text-decoration:underline;}
+a span{cursor:pointer;}
+button{cursor:pointer; font-family:'NotoKr','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+input{font-family:'NotoKr','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+input[type="submit"]{cursor:pointer;}
+
+/* wrap 영역 정의 */
+.wrap{width:1250px;margin:0 auto;}
+@media all and (max-width:1250px){
+    .wrap{width:1000px;margin:0 auto;}
+}
+@media all and (max-width:1000px){
+    .wrap{width:94%;margin:0 3%;}
+}
+
+/* header */
+#header{background:url(../images/common/header_bg.jpg) no-repeat center center;background-size:cover;}
+#header .wrap{display:block;position:relative;padding-top:30px;padding-bottom:85px;text-align:center;}
+#header .header_title{display:inline-block;width:376px;height:89px;background:url(../images/common/header_title.png) no-repeat left top;vertical-align:top;}
+#header .header_bottom{display:block;position:absolute;z-index:3;top:159px;left:8.4%;width:83.2%;min-height:70px;margin:0 auto;background-color:#fff;border-radius:11px;box-shadow:0 2px 10px rgba(0, 0, 0, 0.15);}
+#header .header_bottom .inner_box{display:block;width:100%;padding-right:154px;}
+#header .header_bottom .inner_box .year_box{display:block;float:left;width:150px;margin-right:28px;padding-top:16px;padding-bottom:14px;border-right:1px solid #e2e4ea;text-align:center;font-size:0;line-height:0;}
+#header .header_bottom .inner_box .year_box .year_prev,
+#header .header_bottom .inner_box .year_box .year_next{display:inline-block;width:18px;height:40px;vertical-align:top;background:url(../images/common/year_btn.png) no-repeat center center;transform:rotate(90deg);}
+#header .header_bottom .inner_box .year_box .year_next{transform:rotate(270deg);}
+#header .header_bottom .inner_box .year_box .year_title{display:inline-block;margin:0 16px;font-size:17px;color:#2c2c2c;line-height:40px;letter-spacing:-0.04em;font-weight:600;vertical-align:top;}
+#header .header_bottom .inner_box .month_box{display:block;float:left;width:calc(100% - 178px);}
+#header .header_bottom .inner_box .month_box .month_list{display:block;width:100%;height:70px;font-size:0;line-height:0;overflow:hidden;}
+#header .header_bottom .inner_box .month_box .month_list .month_item{display:block;float:left;width:60px;margin-right:11px;box-sizing:border-box;}
+#header .header_bottom .inner_box .month_box .month_list .month_item:last-child{margin-right:0;}
+#header .header_bottom .inner_box .month_box .month_list .month_item .month_link{display:block;position:relative;width:100%;height:100%;padding-top:16px;padding-bottom:14px;text-align:center;box-sizing:border-box;}
+#header .header_bottom .inner_box .month_box .month_list .month_item .month_link:before{display:block;position:absolute;top:36px;left:24%;width:53%;height:14px;background-color:transparent;border-radius:6px;content:'';transition:all 0.2s linear;}
+#header .header_bottom .inner_box .month_box .month_list .month_item .month_link.active:before{display:block;position:absolute;top:36px;left:24%;width:53%;height:14px;background-color:rgba(30, 150, 142, 0.12);border-radius:6px;content:'';transition:all 0.2s linear;}
+#header .header_bottom .inner_box .month_box .month_list .month_item .month_link:hover:before{background-color:rgba(30, 150, 142, 0.12);}
+#header .header_bottom .inner_box .month_box .month_list .month_item .month_link .month_text{display:inline-block;position:relative;font-size:17px;color:#3d3d3d;line-height:40px;letter-spacing:-0.03em;font-weight:600;transition:all 0.2s linear;}
+#header .header_bottom .inner_box .month_box .month_list .month_item .month_link:hover .month_text{color:#00636f;}
+#header .header_bottom .inner_box .month_box .month_list .month_item .month_link.active .month_text{color:#00636f;}
+#header .header_bottom .inner_box .type_box{display:block;position:absolute;top:0;right:40px;width:90px;height:70px;padding-top:16px;padding-bottom:14px;font-size:0;line-height:0;text-align:left;}
+#header .header_bottom .inner_box .type_box .btn_type{display:inline-block;position:relative;width:40px;height:40px;background-color:#e3e6f1;border:none;border-radius:100%;font-size:0;color:transparent;line-height:0;text-decoration:none;transition:all 0.2s linear;}
+#header .header_bottom .inner_box .type_box .btn_type:hover{background-color:#225d6b;box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);}
+#header .header_bottom .inner_box .type_box .btn_type.active{background-color:#225d6b;box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);}
+#header .header_bottom .inner_box .type_box .btn_type.map.active:before{background-position:left top;}
+#header .header_bottom .inner_box .type_box .btn_type.calendar.active:before{background-position:-40px top;}
+#header .header_bottom .inner_box .type_box .btn_type + .btn_type{margin-left:10px;}
+#header .header_bottom .inner_box .type_box .btn_type:before{display:inline-block;position:absolute;top:0;left:0;width:40px;height:40px;background:url(../images/common/header_tab_sprite.png) no-repeat;content:'';}
+#header .header_bottom .inner_box .type_box .btn_type.map:before{background-position:left -40px;}
+#header .header_bottom .inner_box .type_box .btn_type.map:hover:before{background-position:left top;}
+#header .header_bottom .inner_box .type_box .btn_type.calendar:before{background-position:-40px -40px;}
+#header .header_bottom .inner_box .type_box .btn_type.calendar:hover:before{background-position:-40px top;}
+@media all and (max-width:1250px){
+    #header .wrap{padding-top:3%;}
+    #header .type_box{top:auto;bottom:30px;}
+    #header .type_box .btn_type{line-height:32px;}
+    #header .header_bottom .wrap{width:94%;margin:0 3%;}
+    #header .header_bottom .inner_box{padding-right:11%;}
+    #header .header_bottom .inner_box .year_box{width:18%;margin-right:0;}
+    #header .header_bottom .inner_box .year_box .year_title{margin:0 5%;}
+    #header .header_bottom .inner_box .month_box{width:82%;}
+    #header .header_bottom .inner_box .month_box .month_list .month_item{width:8.33%;margin-right:0;}
+    #header .header_bottom .inner_box .type_box{right:0;}
+    #header .header_bottom .inner_box .type_box .btn_type + .btn_type{margin-left:4%;}
+}
+@media all and (max-width:1000px){
+    #header .wrap{padding-top:2%;}
+    #header .type_box{position:static;padding-bottom:10px;}
+    #header .header_bottom{width:94%;left:3%;}
+    #header .header_bottom .wrap{width:100%;margin:0;}
+    #header .header_bottom .inner_box{padding-right:0;}
+    #header .header_bottom .inner_box .year_box{float:none;width:100%;padding:2% 0 0;border-right:none;}
+    #header .header_bottom .inner_box .month_box{float:none;width:100%;}
+    #header .header_bottom .inner_box .month_box .month_list{height:auto;}
+    #header .header_bottom .inner_box .month_box .month_list .month_item .month_link{padding:1% 0;}
+    #header .header_bottom .inner_box .month_box .month_list .month_item .month_link:before{top:70%;}
+    #header .header_bottom .inner_box .month_box .month_list .month_item .month_link.active:before{top:50%;}
+    #header .header_bottom .inner_box .month_box .month_list .month_item .month_link:hover:before{top:50%;}
+    #header .header_bottom .inner_box .type_box{top:-25px;right:calc(50% - 45px);height:40px;padding:0;}
+}
+@media all and (max-width:640px){
+    #header .wrap{padding-top:20px;padding-bottom:50px;}
+    #header .type_box{padding-bottom:3%;}
+    #header .header_title{display:block;width:74%;height:8vh;margin:0 auto;background-position:center center;background-size:contain;}
+    #header .type_box .btn_type{font-size:14px;line-height:26px;}
+    #header .header_bottom{top:140px;}
+    #header .header_bottom .inner_box .year_box .year_title{font-size:17px;}
+    #header .header_bottom .inner_box .month_box .month_list .month_item .month_link .month_text{font-size:13px;}
+}
+@media all and (max-width:480px){
+    #header .header_title{width:78%;}
+}
+
+/* container */
+.section{display:none;}
+.section.active{display:block;}
+@media all and (max-width:800px){
+    #container{margin-bottom:3%;}
+}
+
+/* 지도형 리스트 영역 시작 */
+.section.map{width:100%;}
+.section.map .daily_box{display:block;position:relative;z-index:2;float:left;width:400px;border-right:5px solid #225d6b;font-size:0;line-height:0;}
+.section.map .daily_box:before{display:block;position:absolute;top:0;right:0;width:100px;height:99%;box-shadow:5px 0 20px rgba(0, 0, 0, 0.1);content:'';}
+.section.map .daily_box .daily_shadow{display:block;position:relative;min-height:856px;background-color:#fff;z-index:2;}
+.section.map .daily_box .title_box{display:block;position:relative;width:100%;padding:37px 25px 27px 30px;background-color:#f7f7f8;}
+.section.map .daily_box .title_box .daily_title{display:inline-block;margin-right:170px;font-size:22px;color:#010101;line-height:36px;letter-spacing:-0.01em;font-weight:600;vertical-align:top;}
+.section.map .daily_box .title_box .total_title{display:inline-block;position:relative;padding-left:25px;font-size:16px;color:#292929;line-height:36px;letter-spacing:-0.03em;font-weight:400;vertical-align:top;}
+.section.map .daily_box .title_box .total_title:before{display:inline-block;position:absolute;top:10px;left:0;width:18px;height:18px;background:url(../images/common/total_title.png) no-repeat left top;content:'';}
+.section.map .daily_box .title_box .total_title .point{color:#d00d0d;font-weight:600;}
+.section.map .daily_box .daily_list{display:block;position:relative;width:100%;padding:25px 25px 0 30px;}
+.section.map .daily_box .daily_list .daily_item{display:block;width:100%;}
+.section.map .daily_box .daily_list .daily_item .daily_link{display:block;position:relative;width:100%;padding:12px 0 11px 0;background-color:#fff;transition:all 0.2s linear;font-size:0;line-height:0;}
+.section.map .daily_box .daily_list .daily_item .daily_link:before{display:block;position:absolute;bottom:0;left:0;width:100%;height:1px;background-color:#ddd;content:'';}
+.section.map .daily_box .daily_list .daily_item .daily_link .daily_type{display:block;float:left;width:58px;margin-right:20px;background-color:#1e925d;border-radius:5px;font-size:15px;color:#fff;line-height:35px;letter-spacing:-0.04em;font-weight:400;text-align:center;}
+.section.map .daily_box .daily_list .daily_item .daily_link .daily_type.type2{background-color:#234cb5;}
+.section.map .daily_box .daily_list .daily_item .daily_link .daily_type.type3{background-color:#118e9d;}
+.section.map .daily_box .daily_list .daily_item .daily_link .daily_type.type4{background-color:#553894;}
+.section.map .daily_box .daily_list .daily_item .daily_link .daily_type.type5{background-color:#e35a00;}
+.section.map .daily_box .daily_list .daily_item .daily_link .daily_type.type6{background-color:#bd2880;}
+.section.map .daily_box .daily_list .daily_item .daily_link .daily_type.type7{background-color:#413129;}
+.section.map .daily_box .daily_list .daily_item .daily_link .daily_desc{display:block;position:relative;width:calc(100% - 78px);padding-right:40px;font-size:15px;color:#111;line-height:35px;letter-spacing:-0.05em;text-align:left;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.section.map .daily_box .daily_list .daily_item .daily_link .daily_desc:before{display:block;position:absolute;top:1px;right:8px;width:31px;height:31px;border:1px solid #e2e2e2;border-radius:5px;content:'';}
+.section.map .daily_box .daily_list .daily_item .daily_link .daily_desc:after{display:block;position:absolute;top:13px;right:19px;width:10px;height:9px;background:url(../images/common/daily_desc.png) no-repeat left top;content:'';transition:all 0.25s linear;}
+.section.map .daily_box .daily_list .daily_item .daily_link:hover .daily_desc:before{background-color:#ebebeb;border-color:#ebebeb;}
+.section.map .daily_box .daily_list .daily_item .daily_link:hover .daily_desc:after{background-position:-10px top;transform:rotate(180deg);}
+.section.map .daily_box .daily_list .daily_item.active .daily_link .daily_desc:before{background-color:#ebebeb;border-color:#ebebeb;}
+.section.map .daily_box .daily_list .daily_item.active .daily_link .daily_desc:after{background-position:-10px top;transform:rotate(180deg);}
+.section.map .daily_box .daily_control{padding-top:31px;padding-bottom:89px;}
+.section.map .daily_box .daily_control .slick-dots{display:block;width:100%;text-align:center;}
+.section.map .daily_box .daily_control .slick-dots li{display:inline-block;vertical-align:top;}
+.section.map .daily_box .daily_control .slick-dots li button{display:inline-block;width:11px;height:11px;margin:0 5px;vertical-align:top;border:2px solid #313131;border-radius:100%;box-sizing:border-box;transition:all 0.2s linear;}
+.section.map .daily_box .daily_control .slick-dots li button span{display:inline-block;width:100%;height:100%;background-color:#fff;border-radius:5px;vertical-align:top;}
+.section.map .daily_box .daily_control .slick-dots li.slick-active button{width:22px;border:none;}
+.section.map .daily_box .daily_control .slick-dots li.slick-active button span{background-color:#313131;border-radius:4px;}
+/* 지도형 리스트 영역 끝 */
+
+/* 지도형 지도영역 시작 */
+.section.map .data{display:none;}
+.section.map .map_box{display:block;float:left;width:calc(100% - 400px);}
+.section.map .map_box #map{width:100%;height:856px;}
+.section.map .map_box #map .customoverlay{display:block;position:absolute;bottom:74px;right:calc(50% - 190px);width:376px;height:auto;background-color:#fff;border:none;border-radius:9px;box-shadow:2px 3px 0 rgba(0, 0, 0, 0.3);}
+.section.map .map_box #map .customoverlay:before{display:block;position:absolute;top:100%;right:calc(50% - 17px);width:35px;height:23px;background:url(../images/common/overlay_icon.png) no-repeat left top;content:'';}
+.section.map .map_box #map .customoverlay .overlaybox{display:block;width:100%;height:100%;padding:28px 27px 23px;}
+.section.map .map_box #map .customoverlay .overlaybox .titlebox{display:block;position:relative;width:100%;padding-bottom:16px;}
+.section.map .map_box #map .customoverlay .overlaybox .titlebox:before{display:block;position:absolute;bottom:0;left:0;width:100%;height:1px;background:url(../images/common/overlay_titlebox.png) left top;content:'';}
+.section.map .map_box #map .customoverlay .overlaybox .titlebox .icon{display:block;float:left;width:57px;margin-right:18px;background-color:#1e925d;border-radius:5px;font-size:15px;color:#fff;line-height:35px;letter-spacing:-0.04em;font-weight:400;text-align:center;}
+.section.map .map_box #map .customoverlay.type1 .overlaybox .titlebox .icon{background-color:#234cb5;}
+.section.map .map_box #map .customoverlay.type2 .overlaybox .titlebox .icon{background-color:#118e9d;}
+.section.map .map_box #map .customoverlay.type3 .overlaybox .titlebox .icon{background-color:#553894;}
+.section.map .map_box #map .customoverlay.type4 .overlaybox .titlebox .icon{background-color:#e35a00;}
+.section.map .map_box #map .customoverlay.type5 .overlaybox .titlebox .icon{background-color:#bd2880;}
+.section.map .map_box #map .customoverlay.type6 .overlaybox .titlebox .icon{background-color:#413129;}
+.section.map .map_box #map .customoverlay .overlaybox .titlebox .title{display:block;float:left;width:calc(100% - 75px);font-size:20px;color:#000;line-height:25px;letter-spacing:-0.08em;font-weight:600;text-align:left;white-space:normal;word-break:keep-all;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox{display:block;position:relative;width:100%;margin-top:16px;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox ul{display:block;width:100%;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox ul li{display:block;width:100%;position:relative;margin-bottom:3px;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox ul li:last-child{margin-bottom:0;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox ul li em{display:block;float:left;position:relative;width:17.7%;margin-right:22px;padding-left:19px;font-size:16px;color:#262626;line-height:22px;letter-spacing:-0.05em;font-weight:600;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox ul li em:before{display:block;position:absolute;top:7px;left:5px;width:7px;height:7px;background-color:#b3b3b3;border-radius:100%;content:'';}
+.section.map .map_box #map .customoverlay .overlaybox .conbox ul li span{display:block;float:left;width:calc(82.3% - 22px);font-size:16px;color:#555;line-height:22px;letter-spacing:-0.05em;font-weight:400;white-space:normal;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox .detail_btn{display:block;margin-top:23px;text-align:center;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox .detail_btn a{display:inline-block;position:relative;width:auto;padding-right:23px;padding-left:11px;background-color:#fff;transition:all 0.5s linear;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox .detail_btn a:before{display:inline-block;position:absolute;z-index:3;top:7px;right:6px;width:7px;height:9px;background:url(../images/common/desc_detail.png) no-repeat left top;content:'';}
+.section.map .map_box #map .customoverlay .overlaybox .conbox .detail_btn a:after{display:inline-block;position:absolute;bottom:0;left:0;width:100%;height:9px;background-color:#ebebeb;content:'';transition:all 0.35s linear;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox .detail_btn a:hover{text-decoration:none;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox .detail_btn a:hover:after{background-color:#dfeceb;}
+.section.map .map_box #map .customoverlay .overlaybox .conbox .detail_btn a span{display:block;position:relative;z-index:3;width:auto;font-size:15px;color:#2b2b2b;line-height:22px;letter-spacing:-0.05em;font-weight:400;}
+.section.map .map_box #map .customoverlay .close_overlay{display:block;position:absolute;top:5px;right:5px;width:20px;height:20px;border:none;background:url(../images/common/overlay_close.png) no-repeat center center;font-size:0;line-height:0;color:transparent;}
+/* 지도형 지도영역 끝 */
+
+@media all and (max-width:1000px){
+    .section.map .daily_box:before{display:none;}
+    .section.map .daily_box .title_box{padding:22% 3% 3%;}
+    .section.map .daily_box .title_box .daily_title{margin-right:3%;}
+    .section.map .daily_box .daily_list{padding:3%;}
+    .section.map .daily_box .daily_control{padding-bottom:56px;}
+}
+@media all and (max-width:800px){
+    .section.map{width:94%;margin:0 auto;padding-left:0;}
+    .section.map .daily_box{float:none;width:100%;border-right:none;border-bottom:3px solid #225d6b;}
+    .section.map .daily_box .title_box{padding-top:70px;padding-bottom:2%;border-radius:0 0 50px 50px;text-align:center;}
+    .section.map .daily_box .title_box:before{width:100%;}
+    .section.map .daily_box .title_box .daily_title{margin-right:20px;font-size:20px;}
+    .section.map .daily_box .daily_list{padding:2% 0;}
+    .section.map .daily_box .daily_list:before{width:100%;}
+    .section.map .daily_box .daily_list .daily_item .daily_link{padding:4% 0;}
+    .section.map .daily_box .daily_control{padding:2% 0;}
+    .section.map .map_box{float:none;width:100%;}
+    .section.map .map_box #map{height:420px;border:1px solid #e5e5e5;}
+    .section.map .map_box #map .customoverlay .overlaybox{padding:4% 5%;}
+    .section.map .map_box #map .customoverlay .overlaybox .titlebox{padding-bottom:4%;}
+    .section.map .map_box #map .customoverlay .overlaybox .titlebox .icon{line-height:25px;}
+    .section.map .map_box #map .customoverlay .overlaybox .titlebox .title{font-size:17px;}
+    .section.map .map_box #map .customoverlay .overlaybox .conbox{margin-top:4%;}
+    .section.map .map_box #map .customoverlay .overlaybox .conbox ul li em{width:20%;margin-right:1%;}
+    .section.map .map_box #map .customoverlay .overlaybox .conbox ul li span{width:79%;}
+    .section.map .map_box #map .customoverlay .overlaybox .conbox .detail_btn{margin-top:2%;}
+}
+@media all and (max-width:640px){
+    .section.map .daily_box .title_box{padding-top:86px;}
+    .section.map .map_box #map .customoverlay{width:300px;right:calc(50% - 150px);}
+}
+
+/* 달력형 달력영역 시작 */
+.section.calendar{width:100%;padding-top:99px;padding-bottom:184px;}
+.section.calendar .inner_box{display:block;width:100%;}
+.section.calendar .table_box{float:left;width:717px;margin-right:51px;}
+.section.calendar .table_box .schedule{width:100%;}
+.section.calendar .table_box .schedule caption{width:0;height:0;}
+.section.calendar .table_box .schedule colgroup col{width:14.28%;}
+.section.calendar .table_box .schedule thead tr th{margin:0;padding:20px 3% 21px;background-color:#225d6b;border-top:1px solid #225d6b;border-bottom:1px solid #225d6b;border-right:1px solid #396e7a;border-left:1px solid #396e7a;font-size:18px;color:#fff;line-height:20px;letter-spacing:0;font-weight:400;text-align:center;}
+.section.calendar .table_box .schedule thead tr th:first-child{border-left:1px solid #225d6b;}
+.section.calendar .table_box .schedule thead tr th:last-child{border-right:1px solid #225d6b;}
+.section.calendar .table_box .schedule tbody tr td{height:102px;border:1px solid #e2e2e2;font-size:0;line-height:0;vertical-align:top;}
+.section.calendar .table_box .schedule tbody tr td.today{background-color:#f5fafa;}
+.section.calendar .table_box .schedule tbody tr td .schedule_btn{display:block;position:relative;width:100%;height:100%;padding:9px 10px 10px;text-align:left;}
+.section.calendar .table_box .schedule tbody tr td .schedule_btn:before{display:block;position:absolute;top:-1px;left:-1px;width:100%;height:100%;border:1px solid transparent;content:'';transition:all 0.25s linear;}
+.section.calendar .table_box .schedule tbody tr td .schedule_btn:hover:before{border-color:#008b90;}
+.section.calendar .table_box .schedule tbody tr td .schedule_btn.active:before{border-color:#008b90;}
+.section.calendar .table_box .schedule tbody tr td .date{display:inline-block;position:absolute;top:9px;left:10px;font-size:14px;color:#5d5d5d;line-height:12px;letter-spacing:0;font-weight:400;}
+.section.calendar .table_box .schedule tbody tr td:first-child .date{color:#d74849;}
+.section.calendar .table_box .schedule tbody tr td:last-child .date{color:#4769b4;}
+.section.calendar .table_box .schedule tbody tr td.today .date{font-weight:600;color:#000;}
+.section.calendar .table_box .schedule tbody tr td .date.holiday{color:#d74849;}
+.section.calendar .table_box .schedule tbody tr td .count{display:block;position:absolute;right:16px;bottom:27px;width:auto;padding-right:17px;padding-left:34px;background-color:#0092b9;border-radius:15px;font-size:14px;color:#fff;line-height:31px;letter-spacing:-0.03em;font-weight:400;transition:all 0.25s linear;}
+.section.calendar .table_box .schedule tbody tr td .count:before{display:block;position:absolute;top:8px;left:14px;width:14px;height:15px;background:url(../images/common/count_icon.png) no-repeat left top;content:'';}
+.section.calendar .table_box .schedule tbody tr td .schedule_btn.active .count{background-color:#008494;}
+/* 달력형 달력영역 끝 */
+
+/* 달력형 리스트 영역 시작 */
+.section.calendar .daily_box{display:block;float:left;width:calc(100% - 768px);}
+.section.calendar .daily_box .title_box{display:block;position:relative;width:100%;padding-bottom:16px;}
+.section.calendar .daily_box .title_box .daily_title{display:inline-block;font-size:22px;color:#010101;line-height:24px;letter-spacing:-0.01em;font-weight:600;vertical-align:top;}
+.section.calendar .daily_box .title_box .daily_title .point{color:#008494;}
+.section.calendar .daily_box .title_box .total_title{display:block;position:relative;float:right;padding-left:25px;font-size:16px;color:#292929;line-height:24px;letter-spacing:-0.03em;font-weight:400;vertical-align:top;}
+.section.calendar .daily_box .title_box .total_title:before{display:inline-block;position:absolute;top:3px;left:0;width:18px;height:18px;background:url(../images/common/total_title.png) no-repeat left top;content:'';}
+.section.calendar .daily_box .title_box .total_title .point{color:#d00d0d;font-weight:600;}
+.section.calendar .daily_box .daily_list{display:block;position:relative;width:100%;max-height:549px;border:1px solid #d9d9d9;border-bottom:none;}
+.section.calendar .daily_box .daily_list .daily_item{display:block;width:100%;border-bottom:1px solid #d9d9d9;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link{display:block;width:100%;padding:20px 37px 20px 31px;background-color:#fff;transition:all 0.2s linear;font-size:0;line-height:0;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link:hover{background-color:#f7f7f8;text-decoration:none;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .daily_type{display:block;float:left;width:57px;margin-right:16px;background-color:#1e925d;border-radius:5px;font-size:15px;color:#fff;line-height:35px;letter-spacing:-0.04em;font-weight:400;text-align:center;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .daily_type.type2{background-color:#234cb5;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .daily_type.type3{background-color:#118e9d;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .daily_type.type4{background-color:#553894;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .daily_type.type5{background-color:#e35a00;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .daily_type.type6{background-color:#bd2880;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .daily_type.type7{background-color:#413129;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .daily_desc{display:block;width:calc(100% - 73px);font-size:20px;color:#000;line-height:35px;letter-spacing:-0.05em;font-weight:600;text-align:left;white-space:normal;overflow:hidden;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box{display:block;position:relative;width:100%;margin-top:13px;padding-top:16px;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box:before{display:block;position:absolute;top:0;left:0;width:100%;height:1px;background:url(../images/common/calendar_desc.png) left top;content:'';}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_list{display:block;width:100%;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_list .desc_item{display:block;width:100%;margin-bottom:3px;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_list .desc_item:last-child{margin-bottom:0;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_list .desc_item .point{display:block;float:left;position:relative;width:17.3%;padding-left:15px;font-size:16px;color:#262626;line-height:22px;letter-spacing:-0.05em;font-weight:600;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_list .desc_item .point:before{display:block;position:absolute;top:8px;left:1px;width:7px;height:7px;background-color:#b3b3b3;border-radius:100%;content:'';}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_list .desc_item .desc{display:block;float:left;width:82.7%;font-size:16px;color:#555;line-height:22px;letter-spacing:-0.05em;font-weight:400;overflow:hidden;white-space:normal;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail{display:block;position:absolute;right:0;bottom:0;width:auto;padding-right:23px;padding-left:11px;background-color:transparent;transition:all 0.5s linear;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail:before{display:inline-block;position:absolute;z-index:3;top:7px;right:6px;width:7px;height:9px;background:url(../images/common/desc_detail.png) no-repeat left top;content:'';}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail:after{display:inline-block;position:absolute;bottom:0;left:0;width:100%;height:9px;background-color:#ebebeb;content:'';transition:all 0.35s linear;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail:hover{text-decoration:none;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail:hover:after{background-color:#dfeceb;}
+.section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail span{display:block;position:relative;z-index:3;width:auto;font-size:15px;color:#2b2b2b;line-height:22px;letter-spacing:-0.05em;font-weight:400;}
+.section.calendar .daily_box .daily_list.scrollbar-inner > .scroll-element .scroll-element_outer{border-radius:0;}
+.section.calendar .daily_box .daily_list.scrollbar-inner > .scroll-element .scroll-element_track{background-color:#f5f5f5;border-right:1px solid #e3e3e3;border-left:1px solid #e3e3e3;border-radius:0;box-sizing:border-box;opacity:1;}
+.section.calendar .daily_box .daily_list.scrollbar-inner > .scroll-element.scroll-y{right:-1px;width:10px;}
+.section.calendar .daily_box .daily_list.scrollbar-inner > .scroll-element .scroll-bar{background-color:#929292;border-radius:0;opacity:1;}
+
+/* 달력형 리스트 영역 끝 */
+@media all and (max-width:1250px){
+    .section.calendar{margin-bottom:3%;padding-top:70px;padding-bottom:3%;}
+    .section.calendar .table_box{width:500px;margin-right:20px;}
+    .section.calendar .table_box .schedule thead tr th{padding:2%;font-size:16px;}
+    .section.calendar .table_box .schedule tbody tr td{height:79px;}
+    .section.calendar .table_box .schedule tbody tr td .count{right:2px;bottom:2px;padding:15px 10% 2px;line-height:24px;}
+    .section.calendar .table_box .schedule tbody tr td .count:before{top:3px;left:calc(50% - 7px);}
+    .section.calendar .daily_box{width:calc(100% - 520px);}
+    .section.calendar .daily_box .title_box{padding-bottom:18px;}
+    .section.calendar .daily_box .daily_list{max-height:394px;padding:0;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link{padding:3% 5%;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .daily_desc{font-size:18px;white-space:normal;overflow:hidden;text-overflow:unset;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail{position:relative;width:100px;margin:2% auto 0;}
+
+}
+@media all and (max-width:1000px){
+    .section.calendar .table_box{width:50%;margin-right:2%;padding-top:4%;}
+    .section.calendar .table_box .schedule thead tr th{padding:3% 0;font-size:13px;}
+    .section.calendar .table_box .schedule tbody tr td{height:70px;}
+    .section.calendar .table_box .schedule tbody tr td .schedule_btn{padding:0;}
+    .section.calendar .table_box .schedule tbody tr td .count{font-size:10px;}
+    .section.calendar .daily_box{width:48%;padding-top:4%;}
+    .section.calendar .daily_box .daily_list{max-height:399px;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_list .desc_item{padding:0 2%;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_list .desc_item .point{width:50px;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_list .desc_item .desc{width:calc(100% - 50px);}
+}
+@media all and (max-width:800px){
+    .section.calendar{padding-bottom:0;}
+    .section.calendar .table_box{float:none;width:100%;margin-right:0;}
+    .section.calendar .table_box .schedule thead tr th{padding:1% 0;}
+    .section.calendar .table_box .schedule tbody tr td{height:60px;}
+    .section.calendar .daily_box{float:none;width:100%;}
+    .section.calendar .daily_box .daily_list{max-height:1000px;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail{width:16%;padding-right:0;padding-left:2%;}
+}
+@media all and (max-width:640px){
+    .section.calendar .table_box .schedule thead tr th{font-size:12px;}
+    .section.calendar .table_box .schedule tbody tr td .date{top:5px;left:3px;font-size:12px;}
+    .section.calendar .table_box .schedule tbody tr td .count{font-size:12px;line-height:18px;}
+    .section.calendar .daily_box .title_box .daily_title{font-size:20px;line-height:24px;}
+    .section.calendar .daily_box .title_box .total_title{line-height:24px;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .daily_type{font-size:16px;line-height:26px;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .daily_desc{font-size:16px;line-height:26px;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box{margin-top:2%;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail{padding-left:0;width:40%;margin:2% auto 0;font-size:14px;line-height:24px;text-align:center;}
+    .section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail:before{display:none;}
+}
+
+/* footer */
+#footer{position:relative;border-top:1px solid #225d6b;}
+#footer .footer_nav_box .wrap{position:relative;padding-top:30px;padding-bottom:50px;}
+#footer .footer_nav ul{display:block;position:relative;width:630px;margin:0 auto;padding-bottom:22px;font-size:0;line-height:0;text-align:center;}
+#footer .footer_nav ul:before{display:block;position:absolute;bottom:0;left:0;width:100%;height:1px;background-color:#e1e8ee;content:'';}
+#footer .footer_nav ul li{display:inline-block;}
+#footer .footer_nav ul li a{position:relative;display:block;padding:0 17px;font-size:15px;color:#3b434f;line-height:24px;letter-spacing:-0.03em;font-weight:400;}
+#footer .footer_nav ul li .privacy{color:#008f95;font-weight:600;}
+#footer .footer_info{display:block;width:100%;margin-top:33px;text-align:center;}
+#footer .footer_info .add{display:block;width:100%;font-size:0;line-height:0;}
+#footer .footer_info .add address{display:inline-block;font-size:15px;color:#555;line-height:20px;letter-spacing:-0.01em;vertical-align:top;}
+#footer .footer_info .add .call{display:inline-block;padding-right:25px;padding-left:30px;font-size:15px;color:#555;line-height:20px;letter-spacing:-0.01em;vertical-align:top;}
+#footer .footer_info .add .fax{display:inline-block;font-size:15px;color:#555;line-height:20px;letter-spacing:-0.01em;vertical-align:top;}
+#footer .footer_info .copy{display:block;margin-bottom:14px;font-size:15px;color:#555;line-height:26px;letter-spacing:-0.01em;vertical-align:top;}
+#footer .footer_info .footer_warning{display:block;font-size:14px;color:#888;line-height:20px;letter-spacing:-0.03em;font-weight:400;}
+#scrollbar{display:none;}
+
+@media all and (max-width:800px){
+    #footer .footer_nav_box .wrap{padding-top:0;padding-bottom:5%;}
+    #footer .footer_nav{display:none;}
+    #footer .footer_info{margin-top:5%;}
+}
+@media all and (max-width:480px){
+    #footer .footer_info .add address{font-size:13px;}
+    #footer .footer_info .add .call{font-size:13px;}
+    #footer .footer_info .add .fax{font-size:13px;}
+    #footer .footer_info .copy{font-size:12px;}
+}
+
