@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="달력" />
+    <link rel="stylesheet" href="/common/css/font.css" />
+    <link rel="stylesheet" href="/common/css/default.css" />
+    <link rel="stylesheet" href="/common/css/calendar.css" />
+    <!--[if lt IE 9]> <script src="/common/js/html5.js"></script><![endif]-->
+    <title>달력-일자선택</title>
+</head>
+<body onload="local_page_init();">
+<div id="cal"></div>
+<script src="/common/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    var today = new Date();
+    function returnDate(day) {
+        parent.setDate(day, "Widget");
+    }
+
+    function numberOfDays(year, month) {
+        var days;
+        if ((month == 1) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10) || (month == 12)) days = 31;
+        else if ((month == 4) || (month == 6) || (month == 9) || (month == 11)) days = 30;
+        else if (month == 2) {
+            if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) days = 29;
+            else days = 28;
+        }
+        return days;
+    }
+
+    function closeCal() {
+        parent.setDate("", "Widget");
+    }
+
+    function showCalendar(year, month, id) {
+        var str = "";
+        var cal = new Date(year, month-1, 1);
+        var fdate = cal.getDay();
+        var year_now = today.getFullYear();
+        var month_now = today.getMonth() + 1;
+        var date_now = today.getDate();
+
+        var prevCal = new Date(year, month-1, 0),
+            prevLastDay = prevCal.getDate(),
+            prevStart = prevLastDay - (fdate - 1);
+
+        str+="<div class='cal_wrap'>";
+        str+="<div class='year clearfix'>";
+        str+="<div class='year_wrap'>";
+        str+="<span>"+ year +"년";
+        str+="<button type='button' id='year_prev'  onclick='changeCal(0,-1); return false;'>이전년도 이동</a>";
+        str+="<button type='button' id='year_next' onclick='changeCal(0,1); return false;'>다음년도 이동</a>";
+        str+="</span></div>";
+
+        str+="<div class='month_wrap'>";
+        str+="<span>"+ changeFormat(month) +"월";
+        str+="<button type='button' id='month_prev'  onclick='changeCal(1,-1,this.id); return false;'>이전달 이동</button>";
+        str+="<button type='button' id='month_next' onclick='changeCal(1,1,this.id); return false;'>다음달 이동</button>";
+        str+="</span></div>";
+
+        str+="</div>";
+        str+="<div class='cal_area'>";
+        str+="  <table>";
+        str+="  <caption>일자 선택용 달력</caption>";
+        str+="  <thead>";
+        str+="  <tr>";
+        str+="      <th scope='col'>일</th>";
+        str+="      <th scope='col'>월</th>";
+        str+="      <th scope='col'>화</th>";
+        str+="      <th scope='col'>수</th>";
+        str+="      <th scope='col'>목</th>";
+        str+="      <th scope='col'>금</th>";
+        str+="      <th scope='col'>토</th>";
+        str+="  </tr>";
+        str+="  </thead>";
+        col = 0;
+        ed = numberOfDays(year, month);
+        str+="  <tbody>";
+        str+="  <tr>";
+
+        //지난 월
+
+        if(fdate > 0) {
+            if(month === 1){
+                prevYear = year - 1;
+                prevMonth = 12;
+            } else{
+                prevYear = year;
+                prevMonth = month - 1;
+            }
+            for (i = 0; i < fdate; i++) {
+                prevDay = prevStart + i;
+                str += "<td><span><a href='#Chk' class='prevmonth_day' onclick=returnDate('" + prevYear + "-" + changeFormat(prevMonth) + "-" + changeFormat(prevDay) + "'); return false;>" + prevDay + "</a></span></td>";
+                col++;
+            }
+        }
+
+        //현재 월
+        var style = "s day";
+        var click_style = "day";
+        for (i=1; i<=ed; i++) {
+            if (col == 0) {
+                style = "s sun";
+                click_style = "sun";
+            } else if (col == 6) {
+                style = "s sat";
+                click_style = "sat";
+            }
+
+            if ( (year==year_now) && (month==month_now) && (i==date_now) ) {
+                str+="<td class='today'>";
+            } else {
+                str+="<td>";
+            }
+            str+="<span><a href='#Chk' class="+ click_style +" onclick=returnDate('"+ year +"-"+ changeFormat(month) +"-"+ changeFormat(i) +"'); return false;>"+ i +"</a></span>";
+            str+="</td>";
+            col++;
+
+            if (col == 7) {
+                str+="</tr><tr>";
+                col = 0;
+            }
+            style = "s day";
+            click_style = "day";
+        }
+
+        //다음 월
+        if(col > 0){
+            if(month === 12){
+                nextYear = year + 1;
+                nextMonth = 1;
+            } else{
+                nextYear = year;
+                nextMonth = month + 1;
+            }
+            var nextDay = 1;
+            for (i=col; i<7; i++) {
+                str+="<td><span><a href='#Chk' class='nextmonth_day' onclick=returnDate('"+ nextYear + "-"+ changeFormat(nextMonth) + "-"+ changeFormat(nextDay) + "'); return false;>" + nextDay +"</a></span></td>";
+                col++;
+                nextDay++;
+            }
+        }
+
+        str+="  </tbody>";
+        str+="  </table>";
+        str+="  </div>";
+        str+="  <div class='close' >";
+        str+="      <button type='button' onclick='closeCal()' id='tbl'>닫기</button>";
+        str+="  </div>";
+        str+="</div>";
+
+
+        document.getElementById("cal").innerHTML = str;
+        if(id){
+            document.getElementById(id).focus();
+        }
+        fixWidthHeight();
+    }
+
+    function tabFocusProc(e) {
+        var keyCode = ('which' in event) ? event.which : event.keyCode;
+        if( keyCode == 9 || keyCode == 13 ) {	// Tab, Enter
+            closeCal();
+        }
+    }
+    function showToday() {
+        Y = today.getFullYear();
+        M = today.getMonth() + 1;
+        showCalendar(Y, M);
+    }
+    function changeCal(a,b,id){
+        if (a==0) {
+            Y = eval(parseInt(Y)+b);
+        } else {
+            M = eval(M+b);
+            if (M>12) { Y++;M=1;}
+            if (M<1) {Y--;M=12; }
+        }
+        showCalendar(Y, M, id);
+    }
+
+    function changeFormat(args) {
+        if (args < 10) {
+            return "0" + args;
+        } else {
+            return args;
+        }
+    }
+    var Y;
+    var M;
+
+    function local_page_init() {
+        Y = today.getFullYear();
+        M = today.getMonth() + 1;
+        M = Number(M);
+        showCalendar(Y, M);
+
+        // 웹접근성 포커스 지정
+        document.getElementById('year_prev').focus();
+    }
+
+    function fixWidthHeight() {
+        var ct = document.getElementById("tbl");
+        //var pw = parent.document.getElementById("wWidget");
+        var pw = parent.document.getElementById("wWidget");
+        if(pw != undefined) {
+            pw.width = ct.offsetWidth;
+            pw.height = ct.offsetHeight;
+        }
+    }
+    //]]>
+</script>
+</body>
+</html>
