@@ -19,7 +19,7 @@ try {
     if(jQuery) {
         //$ 중복방지
         (function($) {
-            //태그객체
+            // 태그객체
             var $window = $(window);
             $(function() {
                 $window.on('responsive', function(event) {
