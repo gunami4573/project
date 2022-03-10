@@ -192,7 +192,7 @@
                 $OtherBtn.removeClass('active').removeAttr('title');
                 $this.addClass('active').attr('title', '선택됨');
                 $.ajax({
-                    url : '/map/data/list_data.html',
+                    url : '../data/list_data.html',
                     success : function (data) {
                         $DailyList.empty().append(data);
                     }
