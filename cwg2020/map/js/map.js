@@ -192,7 +192,7 @@
                 $OtherBtn.removeClass('active').removeAttr('title');
                 $this.addClass('active').attr('title', '선택됨');
                 $.ajax({
-                    url : '../data/list_data.html',
+                    url : '/project/cwg2020/map/data/list_data.html',
                     success : function (data) {
                         $DailyList.empty().append(data);
                     }
