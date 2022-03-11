@@ -430,7 +430,7 @@ $(document).ready(function(){
 				IsLoaded = $familybtn.is('.loaded');
 			if(!IsLoaded){
 				$.ajax({
-					url : '/common/family.html',
+					url : '/project/guri2022/common/family.html',
 					success : function (data) {
 						$header.after(data);
 						var $family_layer = $('.family_layer'),
