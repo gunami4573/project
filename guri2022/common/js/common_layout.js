@@ -422,7 +422,7 @@ $(document).ready(function(){
 			$search_btn.focus();
 		});
 
-		//family
+		//familysite
 		$('.lnb .lnb_topbox .lnb_gnb').append('<div class="familybtnbox"><button type="button" class="familybtn_m">주요서비스</button></div>');
 		$(document).on('click', '.lnb_gnb .familybtn_m, .familybtn', function() {
 			var $this = $(this),
