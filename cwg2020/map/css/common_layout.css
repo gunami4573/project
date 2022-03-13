@@ -108,7 +108,10 @@ input[type="submit"]{cursor:pointer;}
 .section.map{width:100%;}
 .section.map .daily_box{display:block;position:relative;z-index:2;float:left;width:400px;border-right:5px solid #225d6b;font-size:0;line-height:0;}
 .section.map .daily_box:before{display:block;position:absolute;top:0;right:0;width:100px;height:99%;box-shadow:5px 0 20px rgba(0, 0, 0, 0.1);content:'';}
-.section.map .daily_box .daily_shadow{display:block;position:relative;min-height:856px;background-color:#fff;z-index:2;}
+.section.map .daily_box .daily_shadow{display:block;position:relative;background-color:#fff;z-index:2;}
+@media all and (min-width:1001px){
+    .section.map .daily_box .daily_shadow{min-height:856px;}
+}
 .section.map .daily_box .title_box{display:block;position:relative;width:100%;padding:37px 25px 27px 30px;background-color:#f7f7f8;}
 .section.map .daily_box .title_box .daily_title{display:inline-block;margin-right:170px;font-size:22px;color:#010101;line-height:36px;letter-spacing:-0.01em;font-weight:600;vertical-align:top;}
 .section.map .daily_box .title_box .total_title{display:inline-block;position:relative;padding-left:25px;font-size:16px;color:#292929;line-height:36px;letter-spacing:-0.03em;font-weight:400;vertical-align:top;}
@@ -204,7 +207,7 @@ input[type="submit"]{cursor:pointer;}
     .section.map .map_box #map .customoverlay .overlaybox .conbox .detail_btn{margin-top:2%;}
 }
 @media all and (max-width:640px){
-    .section.map .daily_box .title_box{padding-top:86px;}
+    .section.map .daily_box .title_box{padding-top:150px;}
     .section.map .map_box #map .customoverlay{width:300px;right:calc(50% - 150px);}
 }
 
@@ -302,7 +305,7 @@ input[type="submit"]{cursor:pointer;}
     .section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_list .desc_item .desc{width:calc(100% - 50px);}
 }
 @media all and (max-width:800px){
-    .section.calendar{padding-bottom:0;}
+    .section.calendar{padding-top:100px;padding-bottom:0;}
     .section.calendar .table_box{float:none;width:100%;margin-right:0;}
     .section.calendar .table_box .schedule thead tr th{padding:1% 0;}
     .section.calendar .table_box .schedule tbody tr td{height:60px;}
@@ -311,6 +314,7 @@ input[type="submit"]{cursor:pointer;}
     .section.calendar .daily_box .daily_list .daily_item .daily_link .desc_box .desc_detail{width:16%;padding-right:0;padding-left:2%;}
 }
 @media all and (max-width:640px){
+    .section.calendar{padding-top:150px;}
     .section.calendar .table_box .schedule thead tr th{font-size:12px;}
     .section.calendar .table_box .schedule tbody tr td .date{top:5px;left:3px;font-size:12px;}
     .section.calendar .table_box .schedule tbody tr td .count{font-size:12px;line-height:18px;}
@@ -351,4 +355,3 @@ input[type="submit"]{cursor:pointer;}
     #footer .footer_info .add .fax{font-size:13px;}
     #footer .footer_info .copy{font-size:12px;}
 }
-
