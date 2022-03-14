@@ -36,4 +36,4 @@ SI Total Project 2020 ~ ing
 
 
 // 2022suwon (2022 수원시청 계약정보공개시스템 신규)
-- https://gunami4573.github.io/project/2022suwon/web/contract/main.html
+- https://gunami4573.github.io/project/2022suwon/resources/web/contract/main.html
