@@ -14,3 +14,6 @@ SI Total Project 2020 ~ ing
 // 2021ddc (2021 동두천시청 평생학습관 개편)
 - https://gunami4573.github.io/project/2021ddc/site/ddcedu/main.html (평생학습관)
 - https://gunami4573.github.io/project/2021ddc/site/ddcedu/template.html (평생학습관 템플릿)
+
+// 2021gn (2021 강릉시청 외국어 개편)
+- https://gunami4573.github.io/project/2021gn/site/eng/main.html (영문)
