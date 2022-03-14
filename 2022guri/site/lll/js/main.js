@@ -219,7 +219,7 @@
             SelectedMap = AreaIndex;
             TabIndex = SelectedMap - 1;
             $('.mapImg').attr('alt', '구리시 지도 '+AreaAlt+' 선택됨');
-            $('.mapImg').attr('src', '/project/guri2022/site/lll/images/main/real_map_img'+AreaIndex+'.png');
+            $('.mapImg').attr('src', '/project/2022guri/site/lll/images/main/real_map_img'+AreaIndex+'.png');
             $MapContents.attr('href', MapContentsUrl + '&active=' + AreaIndex);
             $('.map_select_box .select_inner .select_btn').empty().text(AreaAlt);
             $('.map_select_box .select_inner').removeClass('active');
@@ -269,7 +269,7 @@
                MapArea = $Map.find('area').eq(Index).attr('alt');
 
            $MapImg.attr('alt', '구리시 지도 '+MapArea+' 선택됨');
-           $MapImg.attr('src', '/project/guri2022/site/lll/images/main/real_map_img'+MapIndex+'.png');
+           $MapImg.attr('src', '/project/2022guri/site/lll/images/main/real_map_img'+MapIndex+'.png');
            if(IsActive){
                $this.attr('title', '선택됨');
                $OtherBtn.removeAttr('title');

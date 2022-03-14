@@ -96,10 +96,10 @@
             var AreaIndex = $(this).index(),
                 ImgIndex = AreaIndex + 1,
                 AreaAlt = $('.map_area_wrap .map_img_box #Map area').eq(AreaIndex).attr('alt');
-            $('.mapImg').attr('src', '/project/guri2022/common/donglayout/images/main/dong_map_img'+ImgIndex+'.png');
+            $('.mapImg').attr('src', '/project/2022guri/common/donglayout/images/main/dong_map_img'+ImgIndex+'.png');
             $('.mapImg').attr('alt', '구리시 지도 '+AreaAlt+' 선택됨');
         }, function(){
-            $('.mapImg').attr('src', '/project/guri2022/common/donglayout/images/main/dong_map_img'+ActiveAreaIndex+'.png');
+            $('.mapImg').attr('src', '/project/2022guri/common/donglayout/images/main/dong_map_img'+ActiveAreaIndex+'.png');
             $('.mapImg').attr('alt', '구리시 지도 '+ActiveAreaAlt+' 선택됨');
         });
         //메인비주얼 지도 링크 영역 끝
