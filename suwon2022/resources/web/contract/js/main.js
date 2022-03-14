@@ -56,7 +56,7 @@
         $ConBoardSlide.each(function(){
             var $ConBoardSlideList = $(this).find('.board_slide_list');
             $ConBoardSlideList.slick({
-                autoplay : false,
+                autoplay : true,
                 arrows : false,
                 dots : false,
                 slidesToShow : 4,
