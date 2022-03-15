@@ -1,5 +1,3 @@
-SI Total Project 2020 ~ ing
-
 ![header](https://capsule-render.vercel.app/api?type=wave&color=333333&height=200&section=header&text=SI%20Total%20Project%202020~ing&fontSize=30&fontColor=ffffff)
 
 
