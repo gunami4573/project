@@ -38,3 +38,6 @@
 
 // 2022suwon (2022 수원시청 계약정보공개시스템 신규)
 - https://gunami4573.github.io/project/2022suwon/resources/web/contract/main.html
+
+
+// 2022ujb (2022 의정부시청 미래혁신교육협력센터 신규) (작업중)
