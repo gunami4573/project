@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=wave&color=333333&height=200&section=header&text=SI%20Total%20Project%202020~ing&fontSize=30&fontColor=ffffff)
+![header](https://capsule-render.vercel.app/api?type=wave&color=333333&height=200&section=header&text=SI%20Total%20Project%20Layout%202020~ing&fontSize=30&fontColor=ffffff)
 
 
 // 2020cwg (2020 철원군청 지도기반일정서비스 신규)
@@ -41,4 +41,4 @@
 
 
 // 2022ujb (2022 의정부시청 미래혁신교육협력센터 신규)
-- https://gunami4573.github.io/project/2022ujb/site/miracleolle/sub.html) (작업중)
+- https://gunami4573.github.io/project/2022ujb/site/miracleolle/sub.html) (서브 레이아웃 작업중)
