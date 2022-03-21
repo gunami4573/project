@@ -67,7 +67,7 @@ input[type="submit"]{cursor:pointer;}
 /* 드롭 다운 */
 .menu.dropdown .depth2 {position:absolute;top:100%;left:0;width:100%;transform-origin:center top;transform:scaleY(0);}
 
-#wrapper{position:relative;min-width:1400px;overflow-x:hidden;}
+#wrapper{position:relative;min-width:1400px;overflow:hidden;}
 .wrap{position:relative;width:1400px;margin:0 auto;}
 .skip{overflow:hidden;}
 #screen{display:none;}
@@ -80,9 +80,7 @@ input[type="submit"]{cursor:pointer;}
     .wrap{width:94%;}
 }
 
-
 /* 의정부 미래혁신교육협력센터 헤더 */
-
 /* header_top 영역 */
 #header{display:block;position:relative;z-index:50;width:100%;box-sizing:border-box;}
 .header_top{display:block;position:relative;z-index:50;width:100%;background-color:#383d47;box-sizing:border-box;}
@@ -101,7 +99,6 @@ input[type="submit"]{cursor:pointer;}
 .header_top .gnb ul li.sitemap a:hover span:before{background-position:-18px -18px;}
 .header_top .gnb ul li.home a span:before{top:3px;left:1px;width:13px;height:12px;background-position:-36px top;}
 .header_top .gnb ul li.home a:hover span:before{background-position:-36px -18px;}
-
 /* header_box 영역 */
 @media all and (min-width:1001px){
     .header_box .menu_show{display:none;}
@@ -111,7 +108,6 @@ input[type="submit"]{cursor:pointer;}
 .header_box .logo a{display:inline-block;position:relative;width:145px;height:68px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
 .header_box .logo a:before{display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:url(../images/sub/logo.png) no-repeat center center;content:'';box-sizing:border-box;}
 .header_box .logo a span{display:inline-block;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
-
 /* lnb 영역 */
 @media all and (min-width:1001px){
     .lnb .lnb_topbox{display:none;}
@@ -129,7 +125,6 @@ input[type="submit"]{cursor:pointer;}
 .lnb .menu .depth1 .depth1_list .depth1_item .depth1_text:hover{text-decoration:none;}
 .lnb .menu .depth1 .depth1_list .depth1_item .depth1_text:hover:before{opacity:1;}
 .lnb .menu .depth1 .depth1_list .depth1_item .depth1_text span{display:table-cell;height:105px;font-size:19px;color:#000;line-height:28px;letter-spacing:-0.04em;font-weight:400;vertical-align:middle;box-sizing:border-box;}
-
 .lnb .menu .depth2{top:105px;bottom:auto;background-color:#fff;transition-property:visibility, opacity;transition-duration:200ms;transition-timing-function:ease-in-out;}
 .lnb .menu .depth1_item.active .depth2{visibility:visible;opacity:1;}
 .lnb .menu .depth2 .depth2_list{display:block;width:1400px;margin:auto;padding-top:39px;padding-bottom:22px;font-size:0;line-height:0;box-sizing:border-box;}
@@ -142,10 +137,49 @@ input[type="submit"]{cursor:pointer;}
 .lnb .menu .depth2 .depth2_list .depth2_item .depth2_text[target="_blank"]:before{right:20px;width:16px;height:15px;background-position:-18px top;}
 .lnb .menu .depth2 .depth2_list .depth2_item .depth2_text[target="_blank"]:hover:before{background-position:-18px -18px;}
 .lnb .menu .depth2 .depth2_list .depth2_item .depth2_text span{display:table-cell;width:100%;height:48px;font-size:17px;color:#000;line-height:20px;letter-spacing:-0.03em;font-weight:400;word-break:keep-all;vertical-align:middle;box-sizing:border-box;}
-
 .lnb_curtain{display:block;position:fixed;z-index:0;top:0;left:0;width:100%;height:100vh;background-color:transparent;font-size:0;line-height:0;box-sizing:border-box;visibility:hidden;opacity:0;transition-property:visibility, opacity, background-color;transition-duration:300ms;transition-timing-function:ease-in-out;}
 .lnb_open .lnb_curtain{z-index:21;background-color:rgba(0, 0, 0, 0.6);opacity:1;visibility:visible;}
 .lnb_curtain button{display:block;position:absolute;top:0;left:0;width:0;height:0;border:none;font-size:0;line-height:0;box-sizing:border-box;}
+@media all and (min-width:1001px) and (max-width:1400px){
+    .lnb .menu .depth1{width:1000px;padding-left:150px;}
+    .lnb .menu .depth1 .depth1_list .depth1_item{margin-left:20px;}
+
+    .lnb .menu .depth2 .depth2_list{width:1000px;}
+    .lnb .menu .depth2 .depth2_list .depth2_item{width:calc((100% - 75px) / 4);}
+    .lnb .menu .depth2 .depth2_list .depth2_item:nth-child(5n){margin-right:25px;}
+    .lnb .menu .depth2 .depth2_list .depth2_item:nth-child(4n){margin-right:0;}
+}
+
 
 
 /* 의정부 미래혁신교육협력센터 푸터 */
+#footer{display:block;position:relative;z-index:50;width:100%;box-sizing:border-box;}
+.footer_banner{display:block;width:100%;padding:20px 0;border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;box-sizing:border-box;}
+.footer_banner .banner_slide_wrap{display:block;position:relative;width:100%;padding-left:112px;box-sizing:border-box;}
+.footer_banner .banner_slide_wrap .banner_control{display:block;position:absolute;top:0;left:0;font-size:0;line-height:0;box-sizing:border-box;text-align:left;}
+.footer_banner .banner_slide_wrap .banner_control .banner_btn{display:inline-block;position:relative;width:25px;height:25px;margin-left:4px;border:1px solid #d9d9d9;border-radius:100%;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.footer_banner .banner_slide_wrap .banner_control .banner_btn:first-child{margin-left:0;}
+.footer_banner .banner_slide_wrap .banner_control .banner_btn:before{display:block;position:absolute;background-image:url(../images/common/footer_banner_icon.png);background-repeat:no-repeat;content:'';}
+.footer_banner .banner_slide_wrap .banner_control .banner_btn.prev:before{top:calc(50% - 5px);left:calc(50% - 3px);width:5px;height:9px;background-position:left top;}
+.footer_banner .banner_slide_wrap .banner_control .banner_btn.next:before{top:calc(50% - 5px);left:calc(50% - 2px);width:5px;height:9px;background-position:-20px top;}
+.footer_banner .banner_slide_wrap .banner_control .banner_btn.auto.slick-play:before{top:calc(50% - 4px);left:calc(50% - 2px);width:6px;height:7px;background-position:-40px top;}
+.footer_banner .banner_slide_wrap .banner_control .banner_btn.auto.slick-pause:before{top:calc(50% - 4px);left:calc(50% - 2px);width:5px;height:8px;background-position:-10px top;}
+.footer_banner .banner_slide_wrap .banner_control .banner_btn.more:before{top:calc(50% - 5px);left:calc(50% - 4px);width:9px;height:9px;background-position:-30px top;}
+.footer_banner .banner_slide_wrap .banner_list{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.footer_banner .banner_slide_wrap .banner_list .slick-list{margin-left:50px;}
+.footer_banner .banner_slide_wrap .banner_list .slick-slide{width:auto;margin-left:50px;}
+.footer_banner .banner_slide_wrap .banner_list .banner_item{display:inline-block;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.footer_banner .banner_slide_wrap .banner_list .banner_item .banner_link{display:inline-block;font-size:16px;color:#000;line-height:25px;letter-spacing:0;font-weight:200;vertical-align:top;box-sizing:border-box;}
+.footer_box{display:block;width:100%;padding-top:34px;padding-bottom:34px;box-sizing:border-box;}
+.footer_box .footer_nav{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.footer_box .footer_nav ul{display:inline-block;width:auto;vertical-align:top;box-sizing:border-box;}
+.footer_box .footer_nav ul li{display:inline-block;position:relative;width:auto;margin-left:40px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.footer_box .footer_nav ul li:first-child{margin-left:0;}
+.footer_box .footer_nav ul li.privacy{padding-left:27px;}
+.footer_box .footer_nav ul li.privacy:before{display:block;position:absolute;top:calc(50% - 9px);left:1px;width:19px;height:19px;background:url(../images/common/privacy_logo.png) no-repeat center center;content:'';box-sizing:border-box;}
+.footer_box .footer_nav ul li a{display:inline-block;font-size:17px;color:#000;line-height:25px;letter-spacing:0;font-weight:200;vertical-align:top;box-sizing:border-box;}
+.footer_box .addressbox{display:block;width:100%;margin-top:24px;font-size:0;line-height:0;box-sizing:border-box;}
+.footer_box .addressbox address{display:inline-block;width:auto;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.footer_box .addressbox address span{display:inline-block;margin-left:38px;font-size:15px;color:#000;line-height:25px;letter-spacing:0;font-weight:200;vertical-align:top;box-sizing:border-box;}
+.footer_box .addressbox address span:first-child{margin-left:0;}
+.footer_box .copyright{display:block;width:100%;font-size:15px;color:#000;line-height:23px;letter-spacing:0;font-weight:200;font-family:'Lato';box-sizing:border-box;}
