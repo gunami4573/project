@@ -328,6 +328,35 @@ $(document).ready(function(){
         });
         //접근성 고려 lnb 1차 포커스 초점 끝
 
+        //footer 배너 슬라이드 시작
+        var $BannerList = $('.footer_banner .banner_slide_wrap .banner_list');
+        $BannerList.slick({
+            //기본
+            autoplay : true,
+            dots : false,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
+            slidesToShow : 8,
+            slidesToScroll : 1,
+            variableWidth : true,
+            infinite: true,
+            prevArrow : $('.footer_banner .banner_slide_wrap .banner_control .prev'),
+            nextArrow : $('.footer_banner .banner_slide_wrap .banner_control .next'),
+
+            //추가 기능
+            autoArrow : $('.footer_banner .banner_slide_wrap .banner_control .auto'),
+            isRunOnLowIE : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            pauseText : '정지',
+            playText : '재생',
+            responsive : [{}]
+        });
+        //footer 배너 슬라이드 끝
+
     });
 
     $document.on('ready', function(event) {
