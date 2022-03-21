@@ -283,7 +283,7 @@ $(document).ready(function(){
             }
         });
 
-        $lnbMenu.on('click', function(event) {
+        $lnbMenu.on('mouseleave', function(event) {
             if(mode === 'pc') {
                 $lnbMenu.height('');
                 $html.removeClass('lnb_open');
