@@ -333,7 +333,7 @@ $(document).ready(function(){
         var $BannerList = $('.footer_banner .banner_slide_wrap .banner_list');
         $BannerList.slick({
             //기본
-            autoplay : false,
+            autoplay : true,
             dots : false,
             swipe : true,
             swipeToSlide : true,
