@@ -267,6 +267,7 @@ $(document).ready(function(){
 
                     if($this.children('.depth').length) {
                         $this.toggleClass('active').siblings('.depth_item').removeClass('active');
+                        //2022.03.22. 변경해도 되는지 물어볼 부분 //$this.toggleClass('active').find('.depth_item').removeClass('active');
                         event.preventDefault();
                     }
                 }
@@ -332,7 +333,7 @@ $(document).ready(function(){
         var $BannerList = $('.footer_banner .banner_slide_wrap .banner_list');
         $BannerList.slick({
             //기본
-            autoplay : true,
+            autoplay : false,
             dots : false,
             swipe : true,
             swipeToSlide : true,
@@ -353,7 +354,22 @@ $(document).ready(function(){
             pauseOnDotsClick : true,
             pauseText : '정지',
             playText : '재생',
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 1401,
+                settings : {
+                    slidesToShow : 5
+                }
+            },{
+                breakpoint : 881,
+                settings : {
+                    slidesToShow : 4
+                }
+            },{
+                breakpoint : 721,
+                settings : {
+                    slidesToShow : 3
+                }
+            }]
         });
         //footer 배너 슬라이드 끝
 
