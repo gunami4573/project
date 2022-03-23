@@ -369,6 +369,11 @@ $(document).ready(function(){
                 settings : {
                     slidesToShow : 3
                 }
+            },{
+                breakpoint : 482,
+                settings : {
+                    slidesToShow : 2
+                }
             }]
         });
         //footer 배너 슬라이드 끝
