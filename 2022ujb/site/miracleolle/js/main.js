@@ -65,6 +65,49 @@
         });
         //체험프로그램 슬라이드 끝
 
+        //체험프로그램 슬라이드 시작
+        var $PopupSlideList = $('.popup_slide_wrap .popup_slide_list'),
+            PopUpTotal = $('.popup_slide_wrap .popup_control .total'),
+            PopUpCurrent = $('.popup_slide_wrap .popup_control .current');
+        $PopupSlideList.slick({
+            autoplay : true,
+            arrows : true,
+            dots : false,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            infinite : true,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
+            variableWidth : false,
+            prevArrow : $('.popup_slide_wrap .popup_control .prev'),
+            nextArrow : $('.popup_slide_wrap .popup_control .next'),
+            autoArrow : $('.popup_slide_wrap .popup_control .auto'),
+            pauseText : '정지',
+            playText : '재생',
+            total : PopUpTotal,
+            current : PopUpCurrent,
+            customState : function(state) {
+                //현재 슬라이드 위치가 10보다 작을 때
+                if(state.current < 10) {
+                    state.current = state.current;
+                }
+                //슬라이드 갯수가 10보다 작을 때
+                if(state.total < 10) {
+                    state.total = state.total;
+                }
+                return state;
+            },
+            //추가 기능
+            isRunOnLowIE : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            responsive: [{}]
+        });
+        //체험프로그램 슬라이드 끝
+
         $window.on('screen:tablet screen:phone', function(event) {
 
         });
