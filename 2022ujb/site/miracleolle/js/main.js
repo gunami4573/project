@@ -108,6 +108,25 @@
         });
         //체험프로그램 슬라이드 끝
 
+        //포토갤러리 슬라이드 시작
+        var $PhotoSlideList = $('.photo_slide_wrap .photo_slide_list');
+        $PhotoSlideList.slick({
+            autoplay : false,
+            arrows : true,
+            dots : false,
+            slidesToShow : 4,
+            slidesToScroll : 1,
+            infinite : true,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
+            variableWidth : false,
+            prevArrow : $('.photo_slide_wrap .photo_slide_control .prev'),
+            nextArrow : $('.photo_slide_wrap .photo_slide_control .next'),
+            responsive: [{}]
+        });
+        //포로갤러리 슬라이드 끝
+
         $window.on('screen:tablet screen:phone', function(event) {
 
         });
