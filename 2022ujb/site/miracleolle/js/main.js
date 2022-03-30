@@ -18,7 +18,7 @@
             LinkSlideLength = $LinkSlideList.find('.link_slide_item').length;
         $('.miracle_visual .miracle_visual_wrap .link_slide_wrap .link_slide_control .count_box span.total').text(LinkSlideLength);
         $LinkSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             arrows : true,
             slidesToShow : 2,
             slidesToScroll : 1,
@@ -45,6 +45,7 @@
             swipeToSlide : false,
             draggable : true,
             rows : 1,
+            fade : false,
             //추가 기능
             isRunOnLowIE : false,
             pauseOnArrowClick : true,
@@ -54,7 +55,8 @@
             responsive: [{
                 breakpoint : 641,
                 settings : {
-                    slidesToShow : 1
+                    slidesToShow : 1,
+                    fade : true
                 }
             }]
         });
@@ -63,7 +65,7 @@
         //체험프로그램 슬라이드 시작
         var $ExperienceSlideList = $('.experience_slide_wrap .experience_slide_list');
         $ExperienceSlideList.slick({
-            autoplay : true,
+            autoplay : false,
             arrows : true,
             prevArrow : $('.experience_slide_wrap .experience_slide_control .prev'),
             nextArrow : $('.experience_slide_wrap .experience_slide_control .next'),
@@ -80,7 +82,22 @@
             responsive: [{
                 breakpoint : 641,
                 settings : {
+                    slidesToShow : 2,
+                    infinite : true,
                     swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    rows : 1,
+                    slidesPerRow : 1,
+                    variableWidth : true
+                }
+            },{
+                breakpoint : 490,
+                settings : {
+                    slidesToShow : 1,
+                    infinite : true,
+                    swipe : true,
+                    swipeToSlide : true,
                     draggable : true,
                     rows : 1,
                     slidesPerRow : 1,
@@ -123,13 +140,19 @@
                 }
                 return state;
             },
+            fade : false,
             //추가 기능
             isRunOnLowIE : false,
             pauseOnArrowClick : true,
             pauseOnDirectionKeyPush : true,
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
-            responsive: [{}]
+            responsive: [{
+                breakpoint : 641,
+                settings : {
+                    fade : true
+                }
+            }]
         });
         //팝업존 슬라이드 끝
 
@@ -148,6 +171,7 @@
             variableWidth : false,
             prevArrow : $('.photo_slide_wrap .photo_slide_control .prev'),
             nextArrow : $('.photo_slide_wrap .photo_slide_control .next'),
+            fade : false,
             responsive: [{
                 breakpoint : 1401,
                 settings : {
@@ -166,6 +190,14 @@
                     swipeToSlide : true,
                     variableWidth : true,
                     slidesToShow : 1,
+                }
+            },{
+                breakpoint : 908,
+                settings : {
+                    swipeToSlide : true,
+                    variableWidth : false,
+                    slidesToShow : 1,
+                    fade : true
                 }
             }]
         });
