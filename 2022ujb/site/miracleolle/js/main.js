@@ -13,19 +13,21 @@
         //여기서부터 코드 작성해주세요
 
         //메인비주얼 버튼 슬라이드 시작
-        var $LinkSldieList = $('.miracle_visual .miracle_visual_wrap .link_slide_wrap .link_slide_list'),
-            LinkSldieTotal = $('.miracle_visual .miracle_visual_wrap .link_slide_control .total'),
-            LinkSldieCurrent = $('.miracle_visual .miracle_visual_wrap .link_slide_control .current');
-        $LinkSldieList.slick({
+        var $LinkSlideList = $('.miracle_visual .miracle_visual_wrap .link_slide_wrap .link_slide_list'),
+            LinkSlideCurrent = $('.miracle_visual .miracle_visual_wrap .link_slide_control .current'),
+            LinkSlideLength = $LinkSlideList.find('.link_slide_item').length;
+        $('.miracle_visual .miracle_visual_wrap .link_slide_wrap .link_slide_control .count_box span.total').text(LinkSlideLength);
+        $LinkSlideList.slick({
             autoplay : false,
             arrows : true,
+            slidesToShow : 2,
+            slidesToScroll : 1,
             prevArrow : $('.miracle_visual .miracle_visual_wrap .link_slide_control .prev'),
             nextArrow : $('.miracle_visual .miracle_visual_wrap .link_slide_control .next'),
             autoArrow : $('.miracle_visual .miracle_visual_wrap .link_slide_control .auto'),
             pauseText : '정지',
             playText : '재생',
-            total : LinkSldieTotal,
-            current : LinkSldieCurrent,
+            current : LinkSlideCurrent,
             customState : function(state) {
                 //현재 슬라이드 위치가 10보다 작을 때
                 if(state.current < 10) {
@@ -38,13 +40,17 @@
                 return state;
             },
             dots : false,
-            slidesToShow : 2,
-            slidesToScroll : 1,
             infinite : true,
             swipe : true,
-            swipeToSlide : true,
+            swipeToSlide : false,
             draggable : true,
             rows : 1,
+            //추가 기능
+            isRunOnLowIE : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
             responsive: [{
                 breakpoint : 641,
                 settings : {
@@ -75,7 +81,6 @@
                 breakpoint : 641,
                 settings : {
                     swipe : true,
-                    swipeToSlide : true,
                     draggable : true,
                     rows : 1,
                     slidesPerRow : 1,
@@ -85,7 +90,7 @@
         });
         //체험프로그램 슬라이드 끝
 
-        //체험프로그램 슬라이드 시작
+        //팝업존 슬라이드 시작
         var $PopupSlideList = $('.popup_slide_wrap .popup_slide_list'),
             PopUpTotal = $('.popup_slide_wrap .popup_control .total'),
             PopUpCurrent = $('.popup_slide_wrap .popup_control .current');
@@ -97,7 +102,7 @@
             slidesToScroll : 1,
             infinite : true,
             swipe : true,
-            swipeToSlide : true,
+            swipeToSlide : false,
             draggable : true,
             variableWidth : false,
             prevArrow : $('.popup_slide_wrap .popup_control .prev'),
@@ -126,7 +131,7 @@
             pauseOnDotsClick : true,
             responsive: [{}]
         });
-        //체험프로그램 슬라이드 끝
+        //팝업존 슬라이드 끝
 
         //포토갤러리 슬라이드 시작
         var $PhotoSlideList = $('.photo_slide_wrap .photo_slide_list');
@@ -138,7 +143,7 @@
             slidesToScroll : 1,
             infinite : true,
             swipe : true,
-            swipeToSlide : true,
+            swipeToSlide : false,
             draggable : true,
             variableWidth : false,
             prevArrow : $('.photo_slide_wrap .photo_slide_control .prev'),
@@ -148,11 +153,27 @@
                 settings : {
                     slidesToShow : 3
                 }
+            },{
+                breakpoint : 1001,
+                settings : {
+                    swipeToSlide : true,
+                    variableWidth : true,
+                    slidesToShow : 2,
+                }
+            },{
+                breakpoint : 908,
+                settings : {
+                    swipeToSlide : true,
+                    variableWidth : true,
+                    slidesToShow : 1,
+                }
             }]
         });
         //포로갤러리 슬라이드 끝
 
         $window.on('screen:tablet screen:phone', function(event) {
+
+            $LinkSlideList.slick('setPosition');
 
         });
     });
