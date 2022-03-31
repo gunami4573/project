@@ -205,8 +205,6 @@
 
         $window.on('screen:tablet screen:phone', function(event) {
 
-            $LinkSlideList.slick('setPosition');
-
         });
     });
 })(jQuery);
