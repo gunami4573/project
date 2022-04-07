@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+/* (주)한신정보기술 박남규 - 2022.04 */
+
+#wrapper{position:relative;min-width:1400px;overflow-x:hidden;}
+.wrap{position:relative;width:1400px;margin:0 auto;}
+.skip{overflow:hidden;}
+#screen{display:none;}
+@media screen and (max-width:1400px){
+    #wrapper{min-width:1000px;}
+    .wrap{width:1000px;}
+}
+@media screen and (max-width:1000px){
+    #wrapper{min-width:0;}
+    .wrap{width:94%;}
+}
+
+/* container 영역 */
+#container{display:block;width:100%;box-sizing:border-box;overflow-y:hidden;}
+main{display:block;width:100%;box-sizing:border-box;}
+
+/* 애니메이션 모음 */
+@keyframes text-opacity {
+    from{opacity:0;visibility:hidden;}
+    to{opacity:1;visibility:visible;}
+}
+@keyframes text-card-icon {
+    from{height:100%;opacity:0;visibility:hidden;}
+    to{height:154px;opacity:1;visibility:visible;}
+}
+@keyframes video-card-bg {
+    from{opacity:0.3;transform:scale(2);}
+    to{opacity:0.05;transform:scale(1);}
+}
+@keyframes video-title-before {
+    from{transform-origin:left top;transform:rotate(-180deg) scale(0);opacity:0;}
+    to{transform-origin:left top;transform:rotate(0deg) scale(1);opacity:1;}
+}
+@keyframes video-title-after {
+    from{width:0px;opacity:0;}
+    to{width:100%;opacity:1;}
+}
+@keyframes video-box {
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* 카드 공통 영역 */
+.send{display:block;width:100%;box-sizing:border-box;}
+.send .send_wrap{display:block;position:relative;width:100%;min-height:950px;padding:85px calc((100% - 1400px) / 2) 70px;box-sizing:border-box;}
+.send .send_wrap:before{display:block;position:absolute;top:240px;left:0;width:100%;height:calc(100% - 240px);background-color:#ebf3f9;content:'';box-sizing:border-box;}
+.send_list_box{display:block;width:100%;box-sizing:border-box;}
+.send_list_box .send_list{display:block;position:relative;width:100%;max-width:1190px;margin:0 auto;font-size:0;line-height:0;box-sizing:border-box;text-align:center;}
+.send_list_box .send_list .send_item{display:inline-block;position:relative;width:calc((100% - 60px) / 2);min-height:795px;margin-left:60px;vertical-align:top;box-sizing:border-box;box-shadow:20px 22px 30px rgba(15, 32, 106, 0.15);}
+.send_list_box .send_list .send_item:first-child{margin-left:0;}
+.send_list_box .send_list .send_item .send_inner{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+
+/* 임용장영역 */
+.send_list_box .send_list .send_item.text_card{background-color:#fff;border:2px solid rgba(70, 77, 116, 0.7);}
+.send_list_box .send_list .send_item.text_card .send_inner{padding:184px 75px 208px;}
+.send_list_box .send_list .send_item.text_card .send_inner:before{display:block;position:absolute;top:-1px;left:calc(50% - 34px);width:68px;height:154px;background-image:url(../images/suwonsend/text_card_icon.png);background-repeat:no-repeat;background-position:center bottom;background-color:#014099;content:'';box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner:before{animation-name:text-card-icon;animation-duration:1000ms;animation-delay:0s;animation-timing-function:ease-in-out;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_title{display:inline-block;width:auto;margin-bottom:31px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_title em{display:inline-block;margin:0 22px;font-size:40px;color:#333;line-height:50px;letter-spacing:0;font-weight:600;vertical-align:top;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_title em{animation-name:text-opacity;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_name{display:block;width:100%;margin-bottom:6px;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_name .floor{display:table;width:100%;font-size:0;line-height:0;box-sizing:border-box;text-align:right;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_name .floor .cell_inner{display:table-cell;width:100%;font-size:0;line-height:0;box-sizing:border-box;vertical-align:middle;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_name .floor .cell_inner span{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_name .floor.top .cell_inner{height:66px;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_name .floor.top .cell_inner .category{font-size:15px;color:#333;line-height:22px;letter-spacing:0;font-weight:500;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_name .floor.top .cell_inner .category{animation-name:text-opacity;animation-duration:800ms;animation-delay:1400ms;animation-timing-function:linear;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_name .floor.bottom .cell_inner{height:34px;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_name .floor.bottom .cell_inner .name{font-size:26px;color:#333;line-height:34px;letter-spacing:0;font-weight:600;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_name .floor.bottom .cell_inner .name{animation-name:text-opacity;animation-duration:800ms;animation-delay:1400ms;animation-timing-function:linear;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_desc{display:table;width:100%;margin-bottom:10px;font-size:0;line-height:0;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_desc .desc_text{display:table-cell;width:100%;height:180px;font-size:20px;color:#333;line-height:30px;letter-spacing:-0.02em;font-weight:700;vertical-align:middle;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_desc .desc_text{animation-name:text-opacity;animation-duration:800ms;animation-delay:1800ms;animation-timing-function:linear;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_date{display:table;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_date .date{display:table-cell;width:100%;height:22px;font-size:0;line-height:0;vertical-align:middle;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_date .date em{display:inline-block;width:auto;margin-left:15px;font-size:17px;color:#333;line-height:22px;letter-spacing:0;font-weight:500;vertical-align:top;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_date .date em{animation-name:text-opacity;animation-duration:800ms;animation-delay:2200ms;animation-timing-function:linear;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_date .date em:first-child{margin-left:0;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_stamp{display:inline-block;position:absolute;bottom:70px;left:50%;transform:translateX(-50%);width:auto;padding-right:42px;font-size:0;line-height:0;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_stamp{animation-name:text-opacity;animation-duration:800ms;animation-delay:2600ms;animation-timing-function:linear;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_stamp .stamp_title{display:inline-block;position:relative;z-index:1;width:auto;font-size:30px;color:#333;line-height:58px;letter-spacing:-0.02em;font-weight:600;vertical-align:top;box-sizing:border-box;}
+.send_list_box .send_list .send_item.text_card .send_inner .card_stamp img{display:inline-block;position:absolute;top:0;right:0;width:58px;height:58px;vertical-align:top;box-sizing:border-box;}
+
+
+/* 영상영역 */
+.send_list_box .send_list .send_item.video_card{background-color:#004098;overflow:hidden;}
+.send_list_box .send_list .send_item.video_card:before{display:block;position:absolute;top:-279px;left:calc(50% - 283px);width:567px;height:1180px;background-image:url(../images/suwonsend/video_card_bg.png);background-repeat:no-repeat;background-position:center center;content:'';box-sizing:border-box;opacity:0.05;}
+.send_list_box .send_list .send_item.video_card:before{animation-name:video-card-bg;animation-duration:1000ms;animation-delay:0s;animation-timing-function:ease-in-out;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.video_card .send_inner{padding:81px 77px 149px;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_title{display:block;position:relative;width:100%;padding:51px 0 35px 72px;font-size:0;line-height:0;box-sizing:border-box;text-align:left;overflow:hidden;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_title:before{display:block;position:absolute;top:0;left:0;width:54px;height:76px;background-image:url(../images/suwonsend/video_card_icon.png);background-repeat:no-repeat;background-position:center center;content:'';box-sizing:border-box;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_title:before{animation-name:video-title-before;animation-duration:1000ms;animation-delay:1000ms;animation-timing-function:ease-in-out;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_title:after{display:block;position:absolute;bottom:0;left:0;width:100%;height:1px;background-color:#fff;content:'';box-sizing:border-box;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_title:after{animation-name:video-title-after;animation-duration:1000ms;animation-delay:1000ms;animation-timing-function:ease-in-out;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_title em{display:inline-block;font-size:22px;color:#fff;line-height:30px;letter-spacing:-0.02em;font-weight:400;vertical-align:top;box-sizing:border-box;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_title em{animation-name:text-opacity;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
+
+.send_list_box .send_list .send_item.video_card .send_inner .video_box{display:block;position:relative;width:100%;height:250px;margin:49px 0 20px;background-color:#000;box-sizing:border-box;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_box .video_btn{display:block;position:absolute;z-index:1;top:0;left:0;width:100%;height:100%;border:none;font-size:0;line-height:0;box-sizing:border-box;visibility:hidden;opacity:0;transform-origin:center center;transition-property:visibility, opacity;transition-duration:250ms;transition-timing-function:ease-in-out;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_box:hover .video_btn{visibility:visible;opacity:1;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_box .video_btn:before{display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;content:'';opacity:0.6;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_box .video_btn:after{display:block;position:absolute;top:50%;left:50%;z-index:1;transform:translateX(-50%) translateY(-50%);width:53px;height:53px;background-image:url(../images/suwonsend/video_btn_icon.png);background-repeat:no-repeat;background-position:left top;content:'';}
+.send_list_box .send_list .send_item.video_card .send_inner .video_box.active .video_btn:after{background-position:-53px top;}
+
+
+.send_list_box .send_list .send_item.video_card .send_inner .video_box video{display:block;width:100%;height:100%;box-sizing:border-box;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_box video{animation-name:video-box;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
+
