@@ -10,8 +10,7 @@
 
     $(function() {
 
-        //여기서부터 코드 작성해주세요
-
+        //
         $('.video_box button.video_btn').on('click', function(){
             var $this = $(this),
                 $Video = $this.siblings('video'),
@@ -33,8 +32,30 @@
             });
         });
 
-
-
+        //
+        var $ScrollAnimation = $('.scroll_animation');
+        $ScrollAnimation.each(function(){
+            var $this = $(this),
+                scrollTop = $window.scrollTop(),
+                scrollBottom = scrollTop + $window.height(),
+                contentOffset = $this.offset();
+            if(scrollBottom > contentOffset.top + 80) {
+                $this.addClass('scroll_active');
+            }
+        });
+        $window.on('scroll', function(event) {
+            $ScrollAnimation.each(function(){
+                var $this = $(this),
+                    scrollTop = $window.scrollTop(),
+                    scrollBottom = scrollTop + $window.height(),
+                    contentOffset = $this.offset();
+                if(scrollBottom > contentOffset.top + 80) {
+                    $this.addClass('scroll_active');
+                }else{
+                    $this.removeClass('scroll_active');
+                }
+            });
+        });
 
 
 
