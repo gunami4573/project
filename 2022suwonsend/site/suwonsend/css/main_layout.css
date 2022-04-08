@@ -20,6 +20,14 @@
 main{display:block;width:100%;box-sizing:border-box;}
 
 /* 애니메이션 모음 */
+@keyframes text_card {
+    from{transform-origin:right center;transform:perspective(1500px) rotateY(90deg);}
+    to{transform-origin:right center;transform:perspective(1500px) rotateY(0deg);}
+}
+@keyframes video_card {
+    from{transform-origin:left center;transform:perspective(1500px) rotateY(-90deg);}
+    to{transform-origin:left center;transform:perspective(1500px) rotateY(0deg);}
+}
 @keyframes text-opacity {
     from{opacity:0;visibility:hidden;}
     to{opacity:1;visibility:visible;}
@@ -56,7 +64,8 @@ main{display:block;width:100%;box-sizing:border-box;}
 .send_list_box .send_list .send_item .send_inner{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 
 /* 임용장영역 */
-.send_list_box .send_list .send_item.text_card{background-color:#fff;border:2px solid rgba(70, 77, 116, 0.7);}
+.send_list_box .send_list .send_item.text_card{z-index:1;background-color:#fff;border:2px solid rgba(70, 77, 116, 0.7);}
+.send_list_box .send_list .send_item.text_card{animation-name:text_card;animation-duration:900ms;animation-delay:0s;animation-timing-function:linear;animation-fill-mode:both;}
 .send_list_box .send_list .send_item.text_card .send_inner{padding:184px 75px 208px;}
 .send_list_box .send_list .send_item.text_card .send_inner:before{display:block;position:absolute;top:-1px;left:calc(50% - 34px);width:68px;height:154px;background-image:url(../images/suwonsend/text_card_icon.png);background-repeat:no-repeat;background-position:center bottom;background-color:#014099;content:'';box-sizing:border-box;}
 .send_list_box .send_list .send_item.text_card .send_inner:before{animation-name:text-card-icon;animation-duration:1000ms;animation-delay:0s;animation-timing-function:ease-in-out;animation-fill-mode:both;}
@@ -89,6 +98,7 @@ main{display:block;width:100%;box-sizing:border-box;}
 
 /* 영상영역 */
 .send_list_box .send_list .send_item.video_card{background-color:#004098;overflow:hidden;}
+.send_list_box .send_list .send_item.video_card{animation-name:video_card;animation-duration:900ms;animation-delay:0s;animation-timing-function:linear;animation-fill-mode:both;}
 .send_list_box .send_list .send_item.video_card:before{display:block;position:absolute;top:-279px;left:calc(50% - 283px);width:567px;height:1180px;background-image:url(../images/suwonsend/video_card_bg.png);background-repeat:no-repeat;background-position:center center;content:'';box-sizing:border-box;opacity:0.05;}
 .send_list_box .send_list .send_item.video_card:before{animation-name:video-card-bg;animation-duration:1000ms;animation-delay:0s;animation-timing-function:ease-in-out;animation-fill-mode:both;}
 .send_list_box .send_list .send_item.video_card .send_inner{padding:81px 77px 149px;}
@@ -99,15 +109,20 @@ main{display:block;width:100%;box-sizing:border-box;}
 .send_list_box .send_list .send_item.video_card .send_inner .video_title:after{animation-name:video-title-after;animation-duration:1000ms;animation-delay:1000ms;animation-timing-function:ease-in-out;animation-fill-mode:both;}
 .send_list_box .send_list .send_item.video_card .send_inner .video_title em{display:inline-block;font-size:22px;color:#fff;line-height:30px;letter-spacing:-0.02em;font-weight:400;vertical-align:top;box-sizing:border-box;}
 .send_list_box .send_list .send_item.video_card .send_inner .video_title em{animation-name:text-opacity;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
-
 .send_list_box .send_list .send_item.video_card .send_inner .video_box{display:block;position:relative;width:100%;height:250px;margin:49px 0 20px;background-color:#000;box-sizing:border-box;}
+.send_list_box .send_list .send_item.video_card .send_inner .video_box{animation-name:text-opacity;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
 .send_list_box .send_list .send_item.video_card .send_inner .video_box .video_btn{display:block;position:absolute;z-index:1;top:0;left:0;width:100%;height:100%;border:none;font-size:0;line-height:0;box-sizing:border-box;visibility:hidden;opacity:0;transform-origin:center center;transition-property:visibility, opacity;transition-duration:250ms;transition-timing-function:ease-in-out;}
 .send_list_box .send_list .send_item.video_card .send_inner .video_box:hover .video_btn{visibility:visible;opacity:1;}
 .send_list_box .send_list .send_item.video_card .send_inner .video_box .video_btn:before{display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;content:'';opacity:0.6;}
 .send_list_box .send_list .send_item.video_card .send_inner .video_box .video_btn:after{display:block;position:absolute;top:50%;left:50%;z-index:1;transform:translateX(-50%) translateY(-50%);width:53px;height:53px;background-image:url(../images/suwonsend/video_btn_icon.png);background-repeat:no-repeat;background-position:left top;content:'';}
 .send_list_box .send_list .send_item.video_card .send_inner .video_box.active .video_btn:after{background-position:-53px top;}
-
-
 .send_list_box .send_list .send_item.video_card .send_inner .video_box video{display:block;width:100%;height:100%;box-sizing:border-box;}
-.send_list_box .send_list .send_item.video_card .send_inner .video_box video{animation-name:video-box;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
-
+.send_list_box .send_list .send_item.video_card .send_inner .screenplay_box{display:block;width:100%;box-sizing:border-box;overflow-y:hidden;}
+.send_list_box .send_list .send_item.video_card .send_inner .screenplay_box{animation-name:text-opacity;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.video_card .send_inner .screenplay_box .screenplay_inner{display:block;width:100%;min-height:130px;max-height:130px;overflow-y:scroll;text-align:left;}
+.send_list_box .send_list .send_item.video_card .send_inner .screenplay_box .screenplay_inner .desc{display:block;width:100%;font-size:15px;color:#fff;line-height:26px;letter-spacing:-0.02em;font-weight:200;font-family:'Notokr';word-break:keep-all;box-sizing:border-box;}
+.send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box{display:block;position:absolute;bottom:75px;left:77px;width:calc(100% - 154px);padding-left:300px;font-size:0;line-height:0;box-sizing:border-box;text-align:right;}
+.send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box:before{display:block;position:absolute;top:50%;left:0;width:300px;height:1px;background-color:#fff;content:'';box-sizing:border-box;}
+.send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box:before{animation-name:text-opacity;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
+.send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box .suwon_title{display:inline-block;font-size:20px;color:#fff;line-height:30px;letter-spacing:-0.08em;font-weight:600;font-family:'Notokr';vertical-align:top;box-sizing:border-box;}
+.send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box .suwon_title{animation-name:text-opacity;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
