@@ -21,12 +21,18 @@ main{display:block;width:100%;box-sizing:border-box;}
 
 /* 애니메이션 모음 */
 @keyframes text_card {
-    from{transform-origin:right center;transform:perspective(1500px) rotateY(90deg);}
-    to{transform-origin:right center;transform:perspective(1500px) rotateY(0deg);}
+    from{transform-origin:right center;transform:perspective(2000px) rotateY(90deg);}
+    to{transform-origin:right center;transform:perspective(2000px) rotateY(0deg);}
+    /*0%{transform-origin:right center;transform:perspective(2000px) rotateY(90deg);}*/
+    /*95%{transform-origin:right center;transform:perspective(2000px);}*/
+    /*100%{transform-origin:right center;transform:perspective(0px) rotateY(0deg);}*/
 }
 @keyframes video_card {
-    from{transform-origin:left center;transform:perspective(1500px) rotateY(-90deg);}
-    to{transform-origin:left center;transform:perspective(1500px) rotateY(0deg);}
+    from{transform-origin:left center;transform:perspective(2000px) rotateY(-90deg);}
+    to{transform-origin:left center;transform:perspective(2000px) rotateY(0deg);}
+    /*0%{transform-origin:left center;transform:perspective(2000px) rotateY(-90deg);}*/
+    /*95%{transform-origin:left center;transform:perspective(2000px);}*/
+    /*100%{transform-origin:left center;transform:perspective(0px) rotateY(0deg);}*/
 }
 @keyframes text-opacity {
     from{opacity:0;visibility:hidden;}
@@ -55,13 +61,26 @@ main{display:block;width:100%;box-sizing:border-box;}
 
 /* 카드 공통 영역 */
 .send{display:block;width:100%;box-sizing:border-box;}
-.send .send_wrap{display:block;position:relative;z-index:2;width:100%;min-height:950px;padding:85px calc((100% - 1400px) / 2) 160px;box-sizing:border-box;}
+.send .send_wrap{display:block;position:relative;z-index:2;width:100%;min-height:950px;padding:85px calc((100% - 1400px) / 2) 160px;box-sizing:border-box;transition-property:padding;transition-duration:200ms;transition-timing-function:linear;}
 .send .send_wrap:before{display:block;position:absolute;top:240px;left:0;width:100%;height:calc(100% - 240px);background-color:#ebf3f9;content:'';box-sizing:border-box;}
 .send_list_box{display:block;width:100%;box-sizing:border-box;}
-.send_list_box .send_list{display:block;position:relative;width:100%;max-width:1190px;margin:0 auto;font-size:0;line-height:0;box-sizing:border-box;text-align:center;}
+.send_list_box .send_list{display:block;position:relative;width:100%;max-width:1190px;margin:0 auto;font-size:0;line-height:0;box-sizing:border-box;text-align:center;transition-property:width;transition-duration:200ms;transition-timing-function:linear;}
 .send_list_box .send_list .send_item{display:inline-block;position:relative;width:calc((100% - 60px) / 2);min-height:795px;margin-left:60px;vertical-align:top;box-sizing:border-box;box-shadow:20px 22px 30px rgba(15, 32, 106, 0.15);}
 .send_list_box .send_list .send_item:first-child{margin-left:0;}
 .send_list_box .send_list .send_item .send_inner{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+@media all and (max-width:1400px){
+    .send .send_wrap{padding:30px calc((100% - 1000px) / 2) 120px;}
+    .send_list_box .send_list{max-width:none;}
+    .send_list_box .send_list .send_item{width:calc((100% - 30px) / 2);min-height:800px;margin-left:30px;}
+}
+@media all and (max-width:1000px){
+    .send .send_wrap{padding:30px 3% 120px;}
+    .send_list_box .send_list .send_item{display:block;width:100%;min-height:0;margin-left:0;}
+}
+@media all and (max-width:640px){
+    .send .send_wrap{padding-bottom:130px;}
+}
+
 
 /* 임용장영역 */
 .send_list_box .send_list .send_item.text_card{z-index:1;background-color:#fff;border:2px solid rgba(70, 77, 116, 0.7);}
@@ -94,6 +113,27 @@ main{display:block;width:100%;box-sizing:border-box;}
 .send_list_box .send_list .send_item.text_card .send_inner .card_stamp{animation-name:text-opacity;animation-duration:800ms;animation-delay:2600ms;animation-timing-function:linear;animation-fill-mode:both;}
 .send_list_box .send_list .send_item.text_card .send_inner .card_stamp .stamp_title{display:inline-block;position:relative;z-index:1;width:auto;font-size:30px;color:#333;line-height:58px;letter-spacing:-0.02em;font-weight:600;vertical-align:top;box-sizing:border-box;}
 .send_list_box .send_list .send_item.text_card .send_inner .card_stamp img{display:inline-block;position:absolute;top:0;right:0;width:58px;height:58px;vertical-align:top;box-sizing:border-box;}
+@media all and (max-width:1400px){
+    .send_list_box .send_list .send_item.text_card .send_inner{padding-right:38px;padding-left:38px;}
+}
+@media all and (max-width:1000px){
+    .send_list_box .send_list .send_item.text_card{animation:none;}
+    .send_list_box .send_list .send_item.text_card .send_inner .card_desc .desc_text{font-size:18px;}
+}
+@media all and (max-width:640px){
+    .send_list_box .send_list .send_item.text_card .send_inner{padding:130px 3% 98px;}
+    .send_list_box .send_list .send_item.text_card .send_inner:before{height:120px;animation:none;}
+    .send_list_box .send_list .send_item.text_card .send_inner .card_title{margin-bottom:20px;}
+    .send_list_box .send_list .send_item.text_card .send_inner .card_title em{font-size:32px;}
+    .send_list_box .send_list .send_item.text_card .send_inner .card_name{margin-bottom:10px;}
+    .send_list_box .send_list .send_item.text_card .send_inner .card_name .floor.top .cell_inner .category{font-size:14px;}
+    .send_list_box .send_list .send_item.text_card .send_inner .card_name .floor.bottom .cell_inner .name{font-size:22px;}
+    .send_list_box .send_list .send_item.text_card .send_inner .card_desc .desc_text{height:120px;font-size:15px;line-height:20px;}
+    .send_list_box .send_list .send_item.text_card .send_inner .card_date .date em{font-size:16px;line-height:20px;}
+    .send_list_box .send_list .send_item.text_card .send_inner .card_stamp{bottom:30px;}
+    .send_list_box .send_list .send_item.text_card .send_inner .card_stamp .stamp_title{font-size:25px;}
+}
+
 
 
 /* 영상영역 */
@@ -126,7 +166,23 @@ main{display:block;width:100%;box-sizing:border-box;}
 .send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box:before{animation-name:text-opacity;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
 .send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box .suwon_title{display:inline-block;font-size:20px;color:#fff;line-height:30px;letter-spacing:-0.08em;font-weight:600;font-family:'NotoKr';vertical-align:top;box-sizing:border-box;}
 .send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box .suwon_title{animation-name:text-opacity;animation-duration:800ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
-
+@media all and (max-width:1400px){
+    .send_list_box .send_list .send_item.video_card .send_inner{padding-right:40px;padding-left:40px;}
+    .send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box{left:40px;width:calc(100% - 80px);}
+}
+@media all and (max-width:1000px){
+    .send_list_box .send_list .send_item.video_card{margin-top:20px;animation:none;}
+}
+@media all and (max-width:640px){
+    .send_list_box .send_list .send_item.video_card .send_inner{padding:30px 3% 70px;}
+    .send_list_box .send_list .send_item.video_card .send_inner .video_title{padding-top:23px;padding-bottom:23px;}
+    .send_list_box .send_list .send_item.video_card .send_inner .video_title:before{width:46px;height:64px;background-size:cover;}
+    .send_list_box .send_list .send_item.video_card .send_inner .video_box{margin:20px 0;}
+    .send_list_box .send_list .send_item.video_card .send_inner .screenplay_box .screenplay_inner{min-height:120px;max-height:120px;}
+    .send_list_box .send_list .send_item.video_card .send_inner .screenplay_box .screenplay_inner .desc{font-size:14px;line-height:20px;}
+    .send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box{left:3%;bottom:30px;width:94%;padding-left:0;font-size:17px;}
+    .send_list_box .send_list .send_item.video_card .send_inner .suwon_title_box:before{display:none;}
+}
 
 /* 핸드폰 전송 폼 영역 */
 #footer{display:block;position:absolute;z-index:1;bottom:0;left:0;width:100%;min-height:90px;background-color:transparent;box-sizing:border-box;overflow:hidden;}
@@ -144,3 +200,21 @@ main{display:block;width:100%;box-sizing:border-box;}
 .phone_send_form_box .phone_send_inner .form_wrap .phone_wrap.text input{display:inline-block;width:100%;height:50px;padding:0 20px;border:none;font-size:18px;color:#585c67;line-height:50px;letter-spacing:-0.02em;font-weight:400;font-family:'NotoKr';vertical-align:top;box-sizing:border-box;}
 .phone_send_form_box .phone_send_inner .form_wrap .phone_wrap.submit{display:inline-block;position:absolute;top:0;right:0;width:120px;height:50px;background-color:#4e6cec;box-sizing:border-box;text-align:center;}
 .phone_send_form_box .phone_send_inner .form_wrap .phone_wrap.submit input[type="submit"]{display:block;position:absolute;top:0;left:0;width:100%;height:100%;border:none;font-size:16px;color:#fff;line-height:50px;letter-spacing:-0.02em;font-weight:400;font-family:'NotoKr';box-sizing:border-box;}
+@media all and (max-width:1400px){
+    .phone_send_form_box{width:calc(1000px + ((100% - 1000px) / 2));}
+}
+@media all and (max-width:1000px){
+    .phone_send_form_box{width:97%;}
+}
+@media all and (max-width:640px){
+    #footer{min-height:0;}
+    .phone_send_form_box{position:relative;width:100%;border-radius:0;}
+    .phone_send_form_box{transform:rotate(0deg) translateY(90px);}
+    .phone_send_form_box .phone_send_inner{padding:20px 3%;}
+    .phone_send_form_box .phone_send_inner .title_wrap{display:block;width:100%;}
+    .phone_send_form_box .phone_send_inner .title_wrap .text{line-height:30px;}
+    .phone_send_form_box .phone_send_inner .form_wrap{display:block;width:100%;min-width:auto;margin-top:10px;margin-left:0;}
+    .phone_send_form_box .phone_send_inner .form_wrap .phone_wrap.text input{height:30px;line-height:30px;}
+    .phone_send_form_box .phone_send_inner .form_wrap .phone_wrap.submit{height:30px;}
+    .phone_send_form_box .phone_send_inner .form_wrap .phone_wrap.submit input[type="submit"]{line-height:30px;}
+}
