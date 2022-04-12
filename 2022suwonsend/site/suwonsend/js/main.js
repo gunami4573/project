@@ -10,7 +10,7 @@
 
     $(function() {
 
-        //
+        /*
         $('.video_box button.video_btn').on('click', function(){
             var $this = $(this),
                 $Video = $this.siblings('video'),
@@ -31,8 +31,9 @@
                 $Videobox.removeClass('active');
             });
         });
+        */
 
-        //
+        /*
         var $ScrollAnimation = $('.scroll_animation');
         $ScrollAnimation.each(function(){
             var $this = $(this),
@@ -56,6 +57,8 @@
                 }
             });
         });
+        */
+
 
 
 
