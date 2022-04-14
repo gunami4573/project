@@ -1,24 +1,5 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=333333&height=200&section=header&text=SI%20Total%20Project%202020~ing&fontSize=30&fontColor=ffffff)
 
-// 2020songpa (2020 송파구청 통합로그인 개편)
-- https://gunami4573.github.io/project/2020songpa/login/login1.html (통합회원 로그인)
-- https://gunami4573.github.io/project/2020songpa/login/login1-2.html (소셜로그인 설정)
-- https://gunami4573.github.io/project/2020songpa/login/login1-3.html (통합회원 아이디 찾기)
-- https://gunami4573.github.io/project/2020songpa/login/login1-4.html (통합회원 아이디 찾기 결과)
-- https://gunami4573.github.io/project/2020songpa/login/login1-5.html (통합회원 비밀번호 찾기)
-- https://gunami4573.github.io/project/2020songpa/login/login1-6.html (통합회원 비밀번호 재설정)
-- https://gunami4573.github.io/project/2020songpa/login/login2.html (비회원 로그인)
-- https://gunami4573.github.io/project/2020songpa/login/login3-1.html (회원가입 회원유형 선택)
-- https://gunami4573.github.io/project/2020songpa/login/login3-2.html (회원가입 약관동의)
-- https://gunami4573.github.io/project/2020songpa/login/login3-3.html (회원가입 본인확인)
-- https://gunami4573.github.io/project/2020songpa/login/login3-3-1.html (회원가입 본인확인(일반회원))
-- https://gunami4573.github.io/project/2020songpa/login/login3-3-2.html (회원가입 본인확인(어린이회원))
-- https://gunami4573.github.io/project/2020songpa/login/login3-5.html (회원가입 정보입력)
-- https://gunami4573.github.io/project/2020songpa/login/login3-5-1.html (회원가입 정보입력(일반회원))
-- https://gunami4573.github.io/project/2020songpa/login/login3-5-2.html (회원가입 정보입력(어린이회원))
-- https://gunami4573.github.io/project/2020songpa/login/login3-6.html (회원가입 가입완료)
-- https://gunami4573.github.io/project/2020songpa/login/login4.html (자율점검 로그인)
-
 // 2020cwg (2020 철원군청 지도기반일정서비스 신규)
 - https://gunami4573.github.io/project/2020cwg/map/map.html
 
