@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="사이트 제목">
+    <meta name="keywords" content="키워드 입력">
+    <meta name="description" content="사이트 상세설명">
+    <meta property="og:site_name" content="사이트명 표시">
+    <meta property="og:url" content="url 표기">
+    <meta property="og:title" content="페이지 제목 표시">
+    <meta property="og:description" content="페이지 설명 표시">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="./images/common/favicon.ico">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/common_program.css">
+    <link rel="stylesheet" href="./css/public_program.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/program.min.js"></script>
+    <script src="./js/login.js"></script>
+    <title>송파구 자율점검 로그인</title>
+</head>
+<body class="type2">
+<div id="wrapper">
+    <div class="wrap login4">
+        <header class="first_box">
+            <h1 class="title_box">
+                <span class="title">자율점검 로그인</span>
+            </h1>  <!--//title_box-->
+        </header>  <!--//first_box-->
+
+        <div id="container">
+            <main>
+                <div class="form_box">
+                    <div class="form_wrap">
+                        <p class="point type2 em_b_pink"><span class="skip">주의사항</span>반드시 로그인(본인인증) 후 자율점검 로그인을 진행하여 주시기 바랍니다.</p>
+                        <div class="line5"></div>
+                        <ul class="form_list clearfix">
+                            <li class="form_item">
+                                <div class="form_desc clearfix">
+                                    <form action="">    <!--//action값 채워주세요-->
+                                        <fieldset>
+                                            <legend>자율점검 로그인</legend>
+                                            <div class="input_wrap">
+                                                <div class="sd_input search_input clearfix">
+                                                    <label for="login01">상호(명칭)</label>
+                                                    <input type="text" id="login01"  class="login_text" title="상호(명칭) 입력">
+                                                    <a href="" title="검색" class="p-button p-button--small primary search_btn">검색</a>
+                                                </div>
+                                                <div class="sd_input">
+                                                    <label for="login02">대표자명</label>
+                                                    <input type="text" id="login02" class="login_text" title="대표자명 입력">
+                                                </div>
+                                            </div>
+                                            <input type="submit" title="로그인" class="login_submit" value="로그인">
+                                        </fieldset>
+                                    </form>
+                                </div>  <!--//form_desc-->
+                            </li>  <!--//form_item-->
+                        </ul>
+                    </div>   <!--//form_wrap-->
+                    <div class="popup_box"> <!--//검색 버튼 클릭시 active 클래스 추가-->
+                        <div class="popup_wrap">
+                            <div class="popup_desc">
+                                <span class="popup_title">검색 결과</span>
+                            </div>  <!--//popup_desc-->
+                            <div class="sub_desc">
+                                <div>
+                                    <form name="bbsNttSearchForm" action="./selectBbsNttList.do" method="get" class="boardSearchForm">
+                                        <fieldset>
+                                            <legend>게시물 검색</legend>
+                                            <div class="card card--bgcolor p-search">
+                                                <div class="p-form-group">
+                                                    <span class="p-form__split"></span>
+                                                    <input type="text" name="" id="" class="p-input p-input--beside" title="상호(명칭) 입력" value="" placeholder="상호(명칭) 입력">
+                                                    <span class="p-form-group__button">
+                                                        <button type="submit" class="p-button black">검색</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                    <form name="bbsNttForm" method="post" action="" data-select="checkall" data-checkallid="#check-all" data-checkname="checkid">
+                                        <fieldset>
+                                            <legend>게시물 목록</legend>
+                                            <table class="p-table" data-table="rwd" data-tabletype="simple" data-breakpoint="760">
+                                                <caption>{게시판명} 목록 - 번호, 제목, 작성자, 파일, 조회수, 작성일 정보  제공</caption>
+                                                <colgroup>
+                                                    <col style="width:10%">
+                                                    <col style="width:75%">
+                                                    <col style="width:15%">
+                                                </colgroup>
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">번호</th>
+                                                    <th scope="col">상호(명칭)</th>
+                                                    <th scope="col">선택</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody class="text_center">
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>우리동네병원</td>
+                                                    <td><button type="button" class="p-button p-button--small primary">선택</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>우리동네약국</td>
+                                                    <td><button type="button" class="p-button p-button--small primary">선택</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>우리동네약국</td>
+                                                    <td><button type="button" class="p-button p-button--small primary">선택</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>우리동네약국</td>
+                                                    <td><button type="button" class="p-button p-button--small primary">선택</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>우리동네약국</td>
+                                                    <td><button type="button" class="p-button p-button--small primary">선택</button></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </fieldset>
+                                    </form>
+<!--                                    <div class="p-empty">
+                                      등록된 게시물이 없습니다.
+                                    </div>-->
+                                    <div class="p-pagination">
+                                        <div class="p-page">
+                                            <span class="p-page__control">
+                                                <a href="#" class="p-page__link prev-end"><span class="skip">처음 페이지</span></a>
+                                                <a href="#" class="p-page__link prev"><span class="skip">이전 10 페이지</span></a>
+                                                <a href="#" class="p-page__link prev-one">이전 페이지</a>
+                                            </span>
+                                            <span class="p-page__link-group">
+                                                <strong title="현재 1페이지" class="p-page__link">1</strong>
+                                                <a href="" title="2페이지 이동" class="p-page__link active">2</a>
+                                                <a href="" title="3페이지 이동" class="p-page__link">3</a>
+                                                <a href="" title="4페이지 이동" class="p-page__link">4</a>
+                                                <a href="" title="5페이지 이동" class="p-page__link">5</a>
+                                                <a href="" title="6페이지 이동" class="p-page__link">6</a>
+                                                <a href="" title="7페이지 이동" class="p-page__link">7</a>
+                                                <a href="" title="8페이지 이동" class="p-page__link">8</a>
+                                                <a href="" title="9페이지 이동" class="p-page__link">9</a>
+                                                <a href="" title="10페이지 이동" class="p-page__link">10</a>
+                                            </span>
+                                            <span class="p-page__control">
+                                                <a href="#" class="p-page__link next-one">다음 페이지</a>
+                                                <a href="#" class="p-page__link next"><span class="skip">다음 10 페이지</span></a>
+                                                <a href="#" class="p-page__link next-end"><span class="skip">끝 페이지</span></a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  <!--//sub_desc-->
+                            <button type="button" class="close">닫기버튼</button>
+                        </div>  <!--//popup_wrap-->
+                    </div>   <!--//popup_box-->
+                </div>  <!--//form_box-->
+            </main>
+        </div>  <!--//container-->
+
+        <footer id="footer">
+            <div class="copyright">Copyright(c) Songpa-gu Office. All rights Reserved.</div>
+        </footer>   <!--//footer-->
+    </div>  <!--//wrap-->
+</div>  <!--//wrapper-->
+<script>
+    $(function(){
+        $('.search_btn').on('click', function(e){
+            e.preventDefault();
+            $('.popup_box').fadeIn(function() {
+                $(this).addClass('active');
+            });
+        });
+    });
+</script>
+</body>
+</html>
