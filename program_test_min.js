@@ -91,7 +91,6 @@ function getCalendar(objName, syear, smonth, str) {
         }
     } else alert("getCalendar(document.bbsNttForm.start_date)와 같이 입력 필드 정보를 추가 하세요.")
 }
-
 $(function () {
     var p, u, f = {}, g = !1;
     Alert = function (t) {
