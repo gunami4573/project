@@ -1,3 +1,19 @@
+//게시판 소스 수정(추후 문제 시 사용 예정) 시작
+/*
+$(document).ready(function(){
+    $('.p-media--gallery .p-media-list .p-media .p-media__link .p-media__image .p-media__image-wrap img').each(function (){
+        var $this = $(this),
+            thissrc = $this.attr('src');
+
+        if(thissrc == '/thumb/t_'){
+            $this.parent('.p-media__image-wrap').addClass('no-image').append('<em class="skip">이미지없음</em>');
+            $this.remove();
+        }
+    });
+});
+*/
+//게시판 소스 수정(추후 문제 시 사용 예정) 끝
+
 (function($) {
     'use strict';
 
