@@ -203,6 +203,60 @@
         });
         //포로갤러리 슬라이드 끝
 
+
+        //2022.05.17. 메인변경이슈
+        //메인비주얼 버튼 슬라이드(변경건) 시작
+        var $OneClickSlideList = $('.main_oneclick .main_oneclick_wrap .onclick_slide_wrap .onclick_slide_list'),
+            OneClickSlideCurrent = $('.main_oneclick .main_oneclick_wrap .onclick_slide_control .current'),
+            OneClickSlideLength = $OneClickSlideList.find('.onclick_slide_item').length;
+        $('.main_oneclick .main_oneclick_wrap .onclick_slide_wrap .onclick_slide_control .count_box span.total').text(OneClickSlideLength);
+        $OneClickSlideList.slick({
+            autoplay : false,
+            arrows : true,
+            slidesToShow : 2,
+            slidesToScroll : 1,
+            prevArrow : $('.main_oneclick .main_oneclick_wrap .onclick_slide_control .prev'),
+            nextArrow : $('.main_oneclick .main_oneclick_wrap .onclick_slide_control .next'),
+            autoArrow : $('.main_oneclick .main_oneclick_wrap .onclick_slide_control .auto'),
+            pauseText : '정지',
+            playText : '재생',
+            current : OneClickSlideCurrent,
+            customState : function(state) {
+                //현재 슬라이드 위치가 10보다 작을 때
+                if(state.current < 10) {
+                    state.current = state.current;
+                }
+                //슬라이드 갯수가 10보다 작을 때
+                if(state.total < 10) {
+                    state.total = state.total;
+                }
+                return state;
+            },
+            dots : false,
+            infinite : true,
+            swipe : true,
+            swipeToSlide : false,
+            draggable : true,
+            rows : 1,
+            fade : false,
+            //추가 기능
+            isRunOnLowIE : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            responsive: [{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 1,
+                    fade : true
+                }
+            }]
+        });
+        //메인비주얼 버튼 슬라이드(변경건) 끝
+
+
+
         $window.on('screen:tablet screen:phone', function(event) {
 
         });
