@@ -40,8 +40,8 @@
 
 
 // 2022ujb (2022 의정부시청 미래혁신교육협력센터 신규)
-- https://gunami4573.github.io/project/2022ujb/site/miracleolle/sub.html (서브 레이아웃 변경전)
 - https://gunami4573.github.io/project/2022ujb/site/miracleolle/main.html (메인 레이아웃 변경전)
+- https://gunami4573.github.io/project/2022ujb/site/miracleolle/sub.html (서브 레이아웃 변경전)
 - https://gunami4573.github.io/project/2022ujb/site/miracleolle/main2.html (메인 레이아웃 변경후)
 - https://gunami4573.github.io/project/2022ujb/site/miracleolle/sub2.html (서브 레이아웃 변경후)
 
