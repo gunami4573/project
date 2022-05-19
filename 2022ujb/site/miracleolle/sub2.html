@@ -492,22 +492,6 @@
                     <div id="contents">
 
                     </div><!-- //#contents -->
-                    <script>
-                        function getParameterByName(name) {
-                            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-                            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                                results = regex.exec(location.search);
-                            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-                        }
-                        var menukey = getParameterByName('key');
-                        $.ajax({
-                            url : '/repository/miracleolle/contents/'+menukey+'.html',
-                            async: false,
-                            success : function (data) {
-                                $('#contents').append(data);
-                            }
-                        });
-                    </script>
                 </article>
             </main>
         </div>	<!--//wrap-->
