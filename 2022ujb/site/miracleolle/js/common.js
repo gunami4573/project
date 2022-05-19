@@ -256,6 +256,7 @@ $(document).ready(function(){
                     $depthText = $this.children('.depth_text'),
                     eventTarget = event.target;
 
+                /*
                 if($depthText.find(eventTarget).length || $depthText[0] === eventTarget) {
                     if($this.hasClass('depth1_item')) {
                         if($this.hasClass('active')) {
@@ -269,6 +270,24 @@ $(document).ready(function(){
                         $this.toggleClass('active').siblings('.depth_item').removeClass('active');
                         //2022.03.22. 변경해도 되는지 물어볼 부분 //$this.toggleClass('active').find('.depth_item').removeClass('active');
                         event.preventDefault();
+                    }
+                }
+                */
+                if($this.hasClass('depth1_item')){
+                    if($depthText.find(eventTarget).length || $depthText[0] === eventTarget) {
+                        if($this.hasClass('depth1_item')) {
+                            if($this.hasClass('active')) {
+                                $html.removeClass('lnb_open');
+                            }else{
+                                $html.addClass('lnb_open');
+                            }
+                        }
+
+                        if($this.children('.depth').length) {
+                            $this.toggleClass('active').siblings('.depth_item').removeClass('active');
+                            //2022.03.22. 변경해도 되는지 물어볼 부분 //$this.toggleClass('active').find('.depth_item').removeClass('active');
+                            event.preventDefault();
+                        }
                     }
                 }
             }
