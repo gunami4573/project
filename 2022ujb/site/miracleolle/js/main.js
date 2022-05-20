@@ -147,6 +147,7 @@
             pauseOnDirectionKeyPush : true,
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
+            pauseOnFocus : true,
             responsive: [{
                 breakpoint : 641,
                 settings : {
@@ -211,7 +212,7 @@
             OneClickSlideLength = $OneClickSlideList.find('.onclick_slide_item').length;
         $('.main_oneclick .main_oneclick_wrap .onclick_slide_wrap .onclick_slide_control .count_box span.total').text(OneClickSlideLength);
         $OneClickSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             arrows : true,
             slidesToShow : 2,
             slidesToScroll : 1,
@@ -255,9 +256,8 @@
         });
         //메인비주얼 버튼 슬라이드(변경건) 끝
 
-
-
         $window.on('screen:tablet screen:phone', function(event) {
+
 
         });
     });
