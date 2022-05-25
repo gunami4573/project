@@ -236,7 +236,7 @@ input[type="submit"]{cursor:pointer;}
     .lnb .menu .depth2 .depth2_list .depth2_item.active .depth2_text{color:#000;}
     .lnb .menu .depth2 .depth2_list .depth2_item .depth2_text:hover:before{background-color:#000;}
     .lnb .menu .depth2 .depth2_list .depth2_item.active .depth2_text:before{background-color:#000;}
-    .lnb .menu .depth2 .depth2_list .depth2_item .depth2_text span{display:inline-block;position:relative;padding:0 15px 0 0;font-size:inherit;color:inherit;line-height:inherit;letter-spacing:inherit;box-sizing:border-box;vertical-align:top;}
+    .lnb .menu .depth2 .depth2_list .depth2_item .depth2_text span{display:inline-block;position:relative;padding:0 15px 0 0;font-size:inherit;color:inherit;line-height:inherit;letter-spacing:inherit;box-sizing:border-box;vertical-align:top;transition-property:padding;transition-duration:350ms;transition-timing-function:linear;}
     .lnb .menu .depth2 .depth2_list .depth2_item .depth2_text:hover span{color:inherit;}
     .lnb .menu .depth2 .depth2_list .depth2_item.has .depth2_text span:before{width:9px;height:9px;background-position:left -28px;}
     .lnb .menu .depth2 .depth2_list .depth2_item.has.active .depth2_text span:before{top:13px;width:9px;height:1px;background-position:-14px -28px;}
@@ -279,9 +279,10 @@ input[type="submit"]{cursor:pointer;}
     .lnb .menu .depth1_item.active .depth2 .depth2_list .depth2_item.active .depth3 .depth3_list .depth3_item.active .depth4 .depth4_list .depth4_item.active .depth4_text:before{border-color:#000;}
 
     .lnb_curtain{position:fixed;top:0;left:auto;right:0;z-index:1;width:100%;height:100%;}
-    .lnb_curtain button{display:block;width:100%;height:100%;border:none;box-sizing:border-box;}
+    .lnb_curtain button{display:block;width:0;height:0;border:none;box-sizing:border-box;visibility:hidden;}
     .lnb_open .lnb_curtain{height:100%;background-color:transparent;opacity:0;}
     .lnb_show .lnb_curtain{z-index:51;height:100%;background-color:rgba(0, 0, 0, 0.6);opacity:1;visibility:visible;}
+    .lnb_show .lnb_curtain button{width:100%;height:100%;visibility:visible;}
 }
 @media all and (max-width:640px){
     .header_box{padding-top:7px;padding-bottom:13px;}
