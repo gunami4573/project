@@ -48,3 +48,8 @@
 
 // 2022suwonsend (2022 수원시청 관리자 임용장발송 프로그램 신규)
 - https://gunami4573.github.io/project/2022suwonsend/site/suwonsend/main.html
+
+
+// 2022ocsports (2022 제61회 옥천군 충북도민체육대회 신규)
+- https://gunami4573.github.io/project/2022ocsports/site/sports/main.html
+- https://gunami4573.github.io/project/2022ocsports/site/sports/sub.html
