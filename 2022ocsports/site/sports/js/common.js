@@ -359,12 +359,12 @@ $(document).ready(function () {
                 name: 'wide',
                 horizontal: {
                     from: 9999,
-                    to: 1201
+                    to: 1561
                 }
             }, {
                 name: 'web',
                 horizontal: {
-                    from: 1200,
+                    from: 1560,
                     to: 1001
                 }
             }, {
