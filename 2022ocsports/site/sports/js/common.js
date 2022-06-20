@@ -348,6 +348,21 @@ $(document).ready(function () {
                 $lnbSpy.parents('.depth_item').next('.depth_item').addClass('active_next');
             }
         });
+
+        //lnb 색상 변경 시작
+        $window.on('scroll', function(event){
+            var scrollTop = $window.scrollTop(),
+                WrapperOffset = $wrapper.offset();
+            console.log(scrollTop);
+            console.dir(WrapperOffset.top);
+            if(scrollTop > WrapperOffset.top){
+                $html.addClass('lnb_scroll');
+            }
+            else if(scrollTop <= WrapperOffset.top){
+                $html.removeClass('lnb_scroll');
+            }
+        });
+        //lnb 색상 변경 끝
     });
 
     $document.on('ready', function (event) {

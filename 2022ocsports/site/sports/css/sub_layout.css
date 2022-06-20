@@ -1,1 +1,40 @@
 @charset "utf-8";
+
+/* (주)한신정보기술 박남규 - 2022.06 */
+
+/* 서브비주얼 */
+@keyframes deco_orange {
+    from{width:0px;height:0px;}
+    to{width:604px;height:203px;}
+}
+@keyframes deco_green {
+    from{width:0px;}
+    to{width:717px;}
+}
+@keyframes deco_blue {
+    from{height:0px;}
+    to{height:600px;}
+}
+@keyframes deco_pink {
+    from{height:0px;}
+    to{height:287px;}
+}
+.sub_visual{display:block;position:relative;width:100%;min-height:633px;background-repeat:no-repeat;background-position:left top;background-size:cover;font-size:0;line-height:0;box-sizing:border-box;overflow:hidden;}
+.sub_visual.sub_visual_type1{background-image:url(../images/sub/sub_visual_image01.jpg);}
+.sub_visual .deco_box{display:block;position:absolute;bottom:0;right:0;width:993px;height:0;content:'';box-sizing:border-box;}
+.sub_visual .deco_box:before{display:block;position:absolute;z-index:3;bottom:0;right:0;width:993px;height:320px;background-image:url(../images/sub/sub_visual_white_deco.png);background-repeat:no-repeat;background-position:right bottom;box-sizing:border-box;content:'';}
+.sub_visual .deco_box:after{display:block;position:absolute;z-index:3;bottom:33px;right:0;width:372px;/*height:287px;*/background-image:url(../images/sub/sub_visual_pink_deco.png);background-repeat:no-repeat;background-position:right bottom;box-sizing:border-box;content:'';}
+.sub_visual .deco_box .deco{display:block;position:absolute;background-repeat:no-repeat;background-position:left bottom;box-sizing:border-box;}
+.sub_visual .deco_box .deco.orange{bottom:33px;left:107px;z-index:2;/*width:604px;height:203px;*/background-image:url(../images/sub/sub_visual_orange_deco.png);}
+.sub_visual .deco_box .deco.green{bottom:56px;left:200px;z-index:2;/*width:717px;*/height:181px;background-image:url(../images/sub/sub_visual_green_deco.png);}
+.sub_visual .deco_box .deco.blue{bottom:33px;right:0;z-index:1;width:566px;/*height:600px;*/background-image:url(../images/sub/sub_visual_blue_deco.png);}
+
+.sub_visual .deco_box:after,
+.sub_visual .deco_box .deco{animation-timing-function:cubic-bezier(0.550, 0.085, 0.680, 0.530);animation-fill-mode:both;}
+.sub_visual .deco_box:after{animation-name:deco_pink;animation-duration:600ms;animation-delay:700ms;}
+.sub_visual .deco_box .deco.orange{animation-name:deco_orange;animation-duration:800ms;animation-delay:0s;}
+.sub_visual .deco_box .deco.green{animation-name:deco_green;animation-duration:400ms;animation-delay:400ms;}
+.sub_visual .deco_box .deco.blue{animation-name:deco_blue;animation-duration:600ms;animation-delay:500ms;}
+
+/* 컨테이너 */
+#container{min-height:1500px;background-color:black;}
