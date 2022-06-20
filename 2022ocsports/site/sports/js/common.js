@@ -353,8 +353,6 @@ $(document).ready(function () {
         $window.on('scroll', function(event){
             var scrollTop = $window.scrollTop(),
                 WrapperOffset = $wrapper.offset();
-            console.log(scrollTop);
-            console.dir(WrapperOffset.top);
             if(scrollTop > WrapperOffset.top){
                 $html.addClass('lnb_scroll');
             }
