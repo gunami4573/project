@@ -361,6 +361,14 @@ $(document).ready(function () {
             }
         });
         //lnb 색상 변경 끝
+
+        //푸터 맨위로 버튼 시작
+        $('.top_go .up_button').on('click', function() {
+            $('html, body').animate({
+                scrollTop: $('body').offset().top
+            }, 400);
+        });
+        //푸터 맨위로 버튼 끝
     });
 
     $document.on('ready', function (event) {
