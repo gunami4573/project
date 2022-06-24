@@ -3,7 +3,6 @@
 /* (주)한신정보기술 박남규 - 2022.06 */
 
 /* 서브비주얼 */
-/**/
 @keyframes deco_orange {
     from{width:0px;height:0px;}
     to{width:604px;height:203px;}
@@ -20,16 +19,11 @@
     from{height:0px;}
     to{height:287px;}
 }
-@keyframes test {
-    from{height:0%;}
-    to{height:100%;}
-}
 .sub_visual{display:block;position:relative;width:100%;min-height:633px;background-repeat:no-repeat;background-position:left top;background-size:cover;font-size:0;line-height:0;box-sizing:border-box;overflow:hidden;}
 .sub_visual_type1 .sub_visual{background-image:url(../images/sub/sub_visual_image01.jpg);}
 .sub_visual_type2 .sub_visual{background-image:url(../images/sub/sub_visual_image02.jpg);}
 .sub_visual_type3 .sub_visual{background-image:url(../images/sub/sub_visual_image03.jpg);}
 .sub_visual_type4 .sub_visual{background-image:url(../images/sub/sub_visual_image04.jpg);}
-
 .sub_visual .deco_box{display:block;position:absolute;bottom:0;right:0;width:993px;height:0;content:'';box-sizing:border-box;}
 .sub_visual .deco_box:before{display:block;position:absolute;z-index:3;bottom:0;right:0;width:993px;height:320px;background-image:url(../images/sub/sub_visual_white_deco.png);background-repeat:no-repeat;background-position:right bottom;box-sizing:border-box;content:'';}
 .sub_visual .deco_box:after{display:block;position:absolute;z-index:3;bottom:33px;right:0;width:372px;/*height:287px;*/background-image:url(../images/sub/sub_visual_pink_deco.png);background-repeat:no-repeat;background-position:right bottom;box-sizing:border-box;content:'';}
@@ -43,12 +37,10 @@
 .sub_visual .deco_box .deco.orange{animation-name:deco_orange;animation-duration:800ms;animation-delay:700ms;}
 .sub_visual .deco_box .deco.green{animation-name:deco_green;animation-duration:400ms;animation-delay:1000ms;}
 .sub_visual .deco_box .deco.blue{animation-name:deco_blue;animation-duration:600ms;animation-delay:1300ms;}
-
 .sub_visual .title_wrap{display:block;position:relative;z-index:4;width:100%;min-height:633px;padding-top:264px;box-sizing:border-box;}
 .sub_visual .title_wrap .big_title{display:table;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .sub_visual .title_wrap .big_title span{display:table-cell;width:100%;height:140px;font-size:0;line-height:0;vertical-align:middle;text-align:center;box-sizing:border-box;}
 .sub_visual .title_wrap .big_title span em{display:inline-block;font-size:60px;color:#fff;line-height:70px;letter-spacing:-0.03em;font-weight:400;font-family:'GodoB';vertical-align:top;box-sizing:border-box;text-shadow:0px 0px 68px rgba(0, 0, 0, 0.93);}
-
 .sub_visual .mascot_box{display:block;position:absolute;z-index:4;top:195px;right:0;width:272px;height:275px;font-size:0;line-height:0;box-sizing:border-box;}
 .sub_visual .mascot_box .visual_mascot{display:block;position:absolute;background-repeat:no-repeat;background-position:center center;box-sizing:border-box;}
 .sub_visual_type1 .sub_visual .mascot_box .visual_mascot{top:0;left:19px;width:243px;height:216px;background-image:url(../images/sub/visual_mascot_type1.png);}
@@ -62,7 +54,6 @@
 }
 .sub_visual .mascot_box span{animation-name:mascot_box_span;animation-duration:800ms;animation-delay:1000ms;animation-direction:alternate;animation-timing-function:cubic-bezier(0.550, 0.085, 0.680, 0.530);animation-fill-mode:both;}
 .sub_visual .mascot_box .visual_mascot_text{animation-delay:1200ms;}
-
 .sub_visual .slogan_box{display:block;position:absolute;z-index:4;top:100px;right:0;width:calc((100% - 1560px) / 2);height:calc(100% - 133px);background-color:rgba(0, 0, 0, 0.05);font-size:0;line-height:0;box-sizing:border-box;}
 .sub_visual .slogan_box .slogan_text{display:inline-block;position:absolute;top:21px;left:53px;width:55px;height:263px;background-color:#fff;font-size:0;color:transparent;line-height:0;vertical-align:top;box-sizing:border-box;}
 @media all and (max-width:1800px){
@@ -221,17 +212,28 @@ article{display:block;position:relative;width:100%;box-sizing:border-box;}
     .path_wrap .cms_path .mini_path .mini_path_list{padding-top:17px;padding-bottom:14px;}
     .path_wrap .cms_path .mini_path .mini_path_list .mini_path_item{padding-right:16px;}
     .path_wrap .cms_path .mini_path .mini_path_list .mini_path_item .text{font-size:15px;}
-
     .path_wrap .tab_menu_box{padding-bottom:28px;}
     .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item{width:calc(100% / 3);}
     .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item .tab_menu_link:before{top:0;left:0;width:100%;height:100%;}
-    .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item:nth-child(-n+3) .tab_menu_link{border-top-width:1px;}
-    .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item:nth-child(3n-2) .tab_menu_link{border-left-width:1px;}
     .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item .tab_menu_link .text{height:52px;}
     .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item .tab_menu_link .text em{font-size:17px;}
 }
+@media all and (max-width:1000px) and (min-width:641px){
+    .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item:nth-child(-n+3) .tab_menu_link{border-top-width:1px;}
+    .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item:nth-child(3n-2) .tab_menu_link{border-left-width:1px;}
+}
 @media all and (max-width:640px){
-
+    .path_wrap .cms_path{min-height:0;margin-bottom:43px;}
+    .path_wrap .cms_path .mini_path .mini_path_list{padding-top:12px;padding-bottom:12px;}
+    .path_wrap .cms_path .mini_path .mini_path_list .mini_path_item{margin-right:6px;padding-right:12px;}
+    .path_wrap .cms_path .mini_path .mini_path_list .mini_path_item.home{width:14px;margin-right:10px;}
+    .path_wrap .cms_path .mini_path .mini_path_list .mini_path_item.home:before{top:4px;width:14px;height:15px;background-position:-18px -18px;}
+    .path_wrap .cms_path .mini_path .mini_path_list .mini_path_item .text{font-size:14px;line-height:24px;}
+    .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item{width:calc(100% / 2);}
+    .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item:nth-child(-n+2) .tab_menu_link{border-top-width:1px;}
+    .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item:nth-child(2n-1) .tab_menu_link{border-left-width:1px;}
+    .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item .tab_menu_link .text{height:40px;}
+    .path_wrap .tab_menu_box .tab_menu_list .tab_menu_item .tab_menu_link .text em{font-size:15px;line-height:20px;}
 }
 
 
@@ -239,4 +241,7 @@ article{display:block;position:relative;width:100%;box-sizing:border-box;}
 #contents{display:block;width:100%;min-height:700px;padding-bottom:126px;box-sizing:border-box;}
 @media all and (max-width:1000px){
     #contents{min-height:auto;padding-bottom:70px;}
+}
+@media all and (max-width:640px){
+    #contents{padding-bottom:43px;}
 }
