@@ -73,6 +73,33 @@
             $(this).addClass('divide' + li_length);
         });
 
+        //컨텐츠 탭메뉴 시작
+        $('.cts_tab_menu_box .tab_menu_list .tab_menu_item button.tab_menu_link').on('click', function(){
+            var $this = $(this),
+                $MyTabItem = $this.parent('.tab_menu_item'),
+                IsActive = $MyTabItem.is('.cts_active'),
+                Index = $MyTabItem.index(),
+                $OtherTabItem = $MyTabItem.siblings('.tab_menu_item'),
+                $OtherBtn = $OtherTabItem.find('button.tab_menu_link'),
+                $TabMenuList = $MyTabItem.parent('.tab_menu_list'),
+                $CtsTabMenuBox = $TabMenuList.parent('.cts_tab_menu_box'),
+                $CtsTabContentBox = $CtsTabMenuBox.siblings('.cts_tab_content_box'),
+                $TabContentList = $CtsTabContentBox.find('.tab_content_list'),
+                $TabContentItem = $TabContentList.find('.tab_content_item').eq(Index),
+                $OtherTabContentItem = $TabContentItem.siblings('.tab_content_item');
+            if(!IsActive){
+                $OtherTabItem.removeClass('cts_active');
+                $OtherBtn.removeAttr('title');
+                $OtherTabContentItem.removeClass('cts_active');
+
+                $MyTabItem.addClass('cts_active');
+                $this.attr('title','선택됨');
+                $TabContentItem.addClass('cts_active');
+            }
+        });
+        //컨텐츠 탭메뉴 끝
+
+        //반응형 테이블 시작
         $('table.table.responsive').not($('.prettyprint').children()).each(function () {
             var RowSpanExist = $(this).find('td, th').is('[rowspan]'),
                 TheadExist = $(this).find('thead').length;
@@ -90,6 +117,7 @@
             }
             ;
         });
+        //반응형 테이블 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
