@@ -51,5 +51,6 @@
 
 
 // 2022ocsports (2022 제61회 옥천군 충북도민체육대회 신규)
-- https://gunami4573.github.io/project/2022ocsports/site/sports/main.html
-- https://gunami4573.github.io/project/2022ocsports/site/sports/sub.html
+- https://gunami4573.github.io/project/2022ocsports/site/sports/main.html (메인 레이아웃) (작업대기)
+- https://gunami4573.github.io/project/2022ocsports/site/sports/sub.html (서브 레이아웃) (작업완료)
+- https://gunami4573.github.io/project/2022ocsports/site/sports/template.html (템플릿) (작업중)
