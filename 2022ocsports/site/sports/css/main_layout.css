@@ -1,3 +1,28 @@
 @charset "utf-8";
 
 /* (주)한신정보기술 박남규 - 2022.06 */
+
+/* 메인전용폰트 */
+/* LAB */
+@font-face{
+    font-family:'LAB';
+    font-weight: 400;
+    src:url("../font/LAB.woff2") format('woff2'),
+    url("../font/LAB.woff") format('woff');
+}
+
+/* 메인화면전용 상, 하단 별도 */
+@media all and (min-width:1777px){
+    #header .wrap{width:1776px;}
+    .footer_banner{padding-right:calc((100% - 1776px) / 2);padding-left:calc((100% - 1776px) / 2);}
+}
+@media all and (max-width:1776px) and (min-width:1561px){
+
+}
+
+/* rowgroup1 */
+.rowgroup1{min-height:700px;background-color:grey;padding-top:180px;font-size:50px;color:#fff;line-height:55px;text-align:center;}
+.gunami_time .d_day{display:inline-block;width:110px;padding-top:4px;padding-bottom:5px;background-color:#000;font-size:50px;color:#ffec18;line-height:46px;letter-spacing:0;font-weight:400;font-family:'LAB';text-align:center;vertical-align:top;}
+.gunami_time.today .d_day{display:none;}
+.gunami_time .d_day_text{display:none;}
+.gunami_time.today .d_day_text{display:inline-block;font-size:50px;color:#fff;line-height:55px;vertical-align:top;}
