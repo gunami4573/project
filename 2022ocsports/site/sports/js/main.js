@@ -11,61 +11,63 @@
 
         //여기서부터 코드 작성해주세요
 
+        //메인 전용 좌측 네비 시작(작업예정)
+        //메인 전용 좌측 네비 끝(작업예정)
+
         //임시 디데이 날짜 구하기 시작
-        function counter(){
+        function VisualCounter(){
             var Dday = new Date("Aug 25, 2022").getTime(), //디데이
-                nowtime = new Date(), //현재 날짜 가져오기
-                Distance = Dday - nowtime,
+                NowTime = new Date(), //현재 날짜 가져오기
+                Distance = Dday - NowTime,
                 LimitDay = Math.floor(Distance / (1000 * 60 * 60 * 24)),
                 RealDay = LimitDay+1;
-            $('.gunami_time .d_day').empty().html(Math.abs(RealDay));
-            $('.gunami_time .d_day').attr('data-count', Math.abs(RealDay));
-
-            console.log('현재시간:',nowtime);
-            console.log('남은일수:',RealDay);
+            $('.main_visual .count_time .d_day').empty().html(Math.abs(RealDay));
+            $('.main_visual .count_time .d_day').attr('data-count', Math.abs(RealDay));
             if(LimitDay > -1){
-                $('.gunami_time').addClass('prev');
-                $('.gunami_time .plus_minus').empty().html('D디데이 이전 -');
+                $('.main_visual .count_time').addClass('prev');
+                $('.main_visual .count_time .plus_minus').empty().html('D -');
+                $('.main_visual .count_time .top_inner .text').empty().html('대회 개최까지 남은시간');
             }
             else if(LimitDay === -1){
-                $('.gunami_time').addClass('today');
-                $('.gunami_time .plus_minus').empty().html('D디데이 당일 -');
+                $('.main_visual .count_time').addClass('today');
+                $('.main_visual .count_time .plus_minus').empty().html('D -');
+                $('.main_visual .count_time .top_inner .text').empty().html('도민체전의 성공적인 개최를 기원합니다!');
             }
             else{
-                $('.gunami_time').addClass('next');
-                $('.gunami_time .plus_minus').empty().html('D디데이 이후 +');
+                $('.main_visual .count_time').addClass('next');
+                $('.main_visual .count_time .plus_minus').empty().html('D +');
+                $('.main_visual .count_time .top_inner .text').empty().html('충북도민체전 대회 '+Math.abs(RealDay)+'일차');
             }
         }
-        counter();
+        VisualCounter();
         //임시 디데이 구하기 끝
-
         //임시 디데이 날짜 카운팅 효과 시작
-        $('.gunami_time .d_day').each(function(){
+        $('.count_time .d_day').each(function(){
             var $this = $(this),
                 end = $this.attr('data-count');
-            console.log('data-count:',end);
-            $({start:0}).animate({
-                start : end
-            },{
-                duration:1200,
-                step : function(){
-                    if(end > 10){
-                        $this.text(Math.floor(this.start));
+            setTimeout(function(){
+                $({start:0}).animate({
+                    start : end
+                },{
+                    duration:1200,
+                    step : function(){
+                        if(end < 10){
+                            $this.text('0'+Math.floor(this.start));
+                        }
+                        else{
+                            $this.text(Math.floor(this.start));
+                        }
+                    },
+                    complete : function(){
+                        if(end < 10){
+                            $this.text('0'+this.start);
+                        }
+                        else{
+                            $this.text(this.start);
+                        }
                     }
-                    else{
-                        $this.text('0'+Math.floor(this.start));
-                    }
-                },
-                complete : function(){
-                    if(end > 10){
-                        $this.text(this.start);
-                    }
-                    else{
-                        $this.text('0'+this.start);
-                    }
-                }
-            });
-
+                });
+            }, 1600);
         });
         //임시 디데이 날짜 카운팅 효과 끝
 
