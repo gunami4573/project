@@ -36,7 +36,12 @@
 /* rowgroup1 , 메인비주얼 */
 .rowgroup1{display:block;width:100%;box-sizing:border-box;}
 .main_visual{display:block;position:relative;width:100%;background-color:#808080;box-sizing:border-box;}
+@keyframes visual-bg {
+    0%{filter:blur(10px);transform:scale(1.05);}
+    100%{filter:blur(0px);transform:scale(1);}
+}
 .main_visual:before{display:block;position:absolute;top:0;left:calc(50% - 960px);width:1920px;min-height:977px;background-image:url(../images/main/main_visual_image.jpg);background-repeat:no-repeat;background-position:left top;background-size:cover;content:'';box-sizing:border-box;}
+.main_visual:before{animation-name:visual-bg;animation-duration:800ms;animation-delay:0s;animation-timing-function:ease-in-out;animation-fill-mode:both;}
 @media all and (min-width:1921px){
     .main_visual:before{left:0;width:100%;}
 }
@@ -49,27 +54,27 @@
     0%{width:0%;}
     100%{width:100%;}
 }
-.main_visual .main_visual_wrap .deco_box i:before{animation-duration:600ms;animation-delay:800ms;animation-timing-function:cubic-bezier(0.550, 0.085, 0.680, 0.530);animation-fill-mode:both;}
+.main_visual .main_visual_wrap .deco_box i:before{animation-duration:600ms;animation-delay:400ms;animation-timing-function:cubic-bezier(0.550, 0.085, 0.680, 0.530);animation-fill-mode:both;}
 .main_visual .main_visual_wrap .deco_box i.deco_white{z-index:2;bottom:0;left:0;width:566px;height:183px;}
 .main_visual .main_visual_wrap .deco_box i.deco_white:before{animation-name:visual-deco;height:100%;background-image:url(../images/main/deco_white.png);}
 .main_visual .main_visual_wrap .deco_box i.deco_blue{z-index:2;bottom:0;left:566px;width:1354px;height:649px;}
-.main_visual .main_visual_wrap .deco_box i.deco_blue:before{animation-name:visual-deco;animation-delay:1400ms;animation-timing-function:linear;height:100%;background-image:url(../images/main/deco_blue.png);}
+.main_visual .main_visual_wrap .deco_box i.deco_blue:before{animation-name:visual-deco;animation-delay:1000ms;animation-timing-function:linear;height:100%;background-image:url(../images/main/deco_blue.png);}
 .main_visual .main_visual_wrap .deco_box i.deco_pink{z-index:1;bottom:106px;left:0;width:311px;height:167px;}
-.main_visual .main_visual_wrap .deco_box i.deco_pink:before{animation-name:visual-deco;animation-delay:1000ms;height:100%;background-image:url(../images/main/deco_pink.png);}
+.main_visual .main_visual_wrap .deco_box i.deco_pink:before{animation-name:visual-deco;animation-delay:600ms;height:100%;background-image:url(../images/main/deco_pink.png);}
 .main_visual .main_visual_wrap .deco_box i.deco_orange{z-index:1;bottom:84px;left:894px;width:703px;height:284px;}
-.main_visual .main_visual_wrap .deco_box i.deco_orange:before{animation-name:visual-deco;animation-delay:1500ms;height:100%;background-image:url(../images/main/deco_orange.png);}
+.main_visual .main_visual_wrap .deco_box i.deco_orange:before{animation-name:visual-deco;animation-delay:1100ms;height:100%;background-image:url(../images/main/deco_orange.png);}
 .main_visual .main_visual_wrap .deco_box i.deco_green{z-index:3;bottom:-112px;left:921px;width:999px;height:481px;}
-.main_visual .main_visual_wrap .deco_box i.deco_green:before{animation-name:visual-deco;animation-delay:1600ms;height:100%;background-image:url(../images/main/deco_green.png);}
+.main_visual .main_visual_wrap .deco_box i.deco_green:before{animation-name:visual-deco;animation-delay:1200ms;height:100%;background-image:url(../images/main/deco_green.png);}
 
 .main_visual .main_visual_wrap .mascot_box{display:block;position:absolute;z-index:4;bottom:171px;right:calc((100% - 1540px) / 2);transform:translateX(67px);width:395px;height:467px;padding-top:360px;box-sizing:border-box;}
-.main_visual .main_visual_wrap .mascot_box .main_visual_mascot{display:block;position:absolute;top:0;left:0;width:395px;height:354px;background-image:url(../images/main/visual_mascot.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
-@keyframes count-time {
-    0%{transform:translateY(50%);opacity:0;}
+@keyframes mascot_box {
+    0%{transform:translateY(20%);opacity:0;}
     100%{transform:translateY(0%);opacity:1;}
 }
+.main_visual .main_visual_wrap .mascot_box .main_visual_mascot{display:block;position:absolute;top:0;left:0;width:395px;height:354px;background-image:url(../images/main/visual_mascot.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
+.main_visual .main_visual_wrap .mascot_box .main_visual_mascot{animation-name:mascot_box;animation-duration:600ms;animation-delay:1200ms;animation-timing-function:cubic-bezier(0.550, 0.085, 0.680, 0.530);animation-fill-mode:both;}
 .main_visual .main_visual_wrap .mascot_box .count_time{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;text-align:center;}
-.main_visual .main_visual_wrap .mascot_box .count_time{animation-name:count-time;animation-duration:600ms;animation-delay:1600ms;animation-timing-function:cubic-bezier(0.550, 0.085, 0.680, 0.530);animation-fill-mode:both;}
-
+.main_visual .main_visual_wrap .mascot_box .count_time{animation-name:mascot_box;animation-duration:600ms;animation-delay:1600ms;animation-timing-function:cubic-bezier(0.550, 0.085, 0.680, 0.530);animation-fill-mode:both;}
 .main_visual .main_visual_wrap .mascot_box .count_time .top_inner{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .main_visual .main_visual_wrap .mascot_box .count_time .top_inner .text{display:inline-block;position:relative;width:auto;font-size:19px;color:#000;line-height:28px;letter-spacing:-0.03em;font-weight:500;font-family:'Pretendard';vertical-align:top;box-sizing:border-box;}
 .main_visual .main_visual_wrap .mascot_box .count_time.prev .top_inner .text{padding-right:28px;}
@@ -90,4 +95,4 @@
 .rowgroup2{display:block;position:relative;width:100%;min-height:776px;background-color:#fff;box-sizing:border-box;}
 .rowgroup2 i{display:block;position:absolute;top:0;left:566px;width:1354px;height:715px;content:'';box-sizing:border-box;}
 .rowgroup2 i:before{display:block;position:absolute;top:0;left:0;height:100%;background-image:url(../images/main/deco_blue_big.png);background-repeat:no-repeat;content:'';box-sizing:border-box;}
-.rowgroup2 i:before{animation-name:visual-deco;animation-duration:600ms;animation-delay:1400ms;animation-timing-function:linear;animation-fill-mode:both;}
+.rowgroup2 i:before{animation-name:visual-deco;animation-duration:600ms;animation-delay:1000ms;animation-timing-function:linear;animation-fill-mode:both;}
