@@ -24,6 +24,7 @@
     <script src="./js/slick.min.custom.1.8.0.11.js"></script>
     <script src="./js/slick.extensions.min.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/jquery.navScroll.js"></script>
     <script src="./js/main.js"></script>
     <title>2022 옥천군 충북도민체육대회 메인</title>
 </head>
@@ -226,11 +227,28 @@
         <div class="lnb_curtain"><button type="button">메뉴 닫기</button></div>
     </header>
     <div id="container">
+        <div class="oc_quick_menu">
+            <div class="quick_wrap">
+                <ul class="menu_list">
+                    <li class="menu_item01">
+                        <a href="#rowgroup1"><span class="text">메인</span></a>
+                    </li>    <!--//menu_item-->
+                    <li class="menu_item02">
+                        <a href="#rowgroup2"><span class="text">경기정보</span></a>
+                    </li>    <!--//menu_item-->
+                    <li class="menu_item03">
+                        <a href="#rowgroup3"><span class="text">경기장안내</span></a>
+                    </li>    <!--//menu_item-->
+                    <li class="menu_item04">
+                        <a href="#rowgroup4"><span class="text">알림마당</span></a>
+                    </li>    <!--//menu_item-->
+                </ul>   <!--//menu_list-->
+            </div>  <!--//quick_wrap-->
+        </div>   <!--//oc_quick_menu-->
         <main>
-            <div class="rowgroup1">
+            <div class="rowgroup1 scroll_rowgroup" id="rowgroup1">
                 <section class="main_visual">
                     <div class="main_visual_wrap">
-                        <h2 class="skip">메인비주얼</h2>
                         <div class="deco_box">
                             <i class="deco_white"></i>
                             <i class="deco_blue"></i>
@@ -238,6 +256,9 @@
                             <i class="deco_orange"></i>
                             <i class="deco_green"></i>
                         </div>  <!--//deco_box-->
+                        <div class="slogan_wrap">
+                            <h2 class="slogan_title">행복드림 옥천에서 하나된 충북도민!</h2>  <!--//slogan_title-->
+                        </div>  <!--//slogan_wrap-->
                         <div class="mascot_box">
                             <span class="main_visual_mascot"></span>    <!--//main_visual_mascot-->
                             <div class="count_time">
@@ -258,10 +279,69 @@
                     </div>  <!--//main_visual_wrap-->
                 </section>  <!--//main_visual-->
             </div>  <!--//rowgroup1-->
-            <div class="rowgroup2">
-                <i class="deco_blue"></i>
-
+            <div class="rowgroup2 scroll_rowgroup" id="rowgroup2">
+                <section class="info">
+                    <div class="info_wrap">
+                        <i class="deco_blue"></i>
+                        <div class="inner_box">
+                            <div class="info_img_wrap">
+                                <div class="info_img_list">
+                                    <div class="info_img_item" data-info-img="0">img 1</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="1">img 2</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="2">img 3</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="3">img 4</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="4">img 5</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="5">img 6</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="6">img 7</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="7">img 8</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="8">img 9</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="9">img 10</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="10">img 11</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="11">img 12</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="12">img 13</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="13">img 14</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="14">img 15</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="15">img 16</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="16">img 17</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="17">img 18</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="18">img 19</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="19">img 20</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="20">img 21</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="21">img 22</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="22">img 23</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="23">img 24</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="24">img 25</div>  <!--//info_img_item-->
+                                    <div class="info_img_item" data-info-img="25">img 26</div>  <!--//info_img_item-->
+                                </div>  <!--//info_img_list-->
+                            </div>    <!--//info_img_wrap-->
+                            <div class="info_slide_wrap">
+                                <div class="info_slide_list">
+                                    <div class="info_slide_item" data-info-slide="0">
+                                        <button type="button" class="info_btn">
+                                            <i class="icon"></i>
+                                            <span class="text">육상</span> <!--//text-->
+                                            <span class="hidden_text">
+                                                <em>육상</em>
+                                            </span> <!--//hidden_text-->
+                                        </button>    <!--//info_btn-->
+                                    </div>  <!--//info_slide_item-->
+                                </div>  <!--//info_slide_list-->
+                                <div class="info_slide_btn_box">
+                                    <button type="button" class="prev">이전</button>
+                                    <span class="count_box">
+                                        <span class="count"></span>
+                                        <span class="bar">/</span>
+                                        <span class="total"></span>
+                                    </span>    <!--//count_box-->
+                                    <button type="button" class="next">다음</button>
+                                </div>  <!--//info_slide_btn_box-->
+                            </div>    <!--//info_slide_wrap-->
+                        </div>  <!--//inner_box-->
+                    </div>  <!--//info_wrap-->
+                </section>  <!--//info-->
             </div>  <!--//rowgroup2-->
+            <div class="rowgroup3 scroll_rowgroup" id="rowgroup3" style="min-height:561px;background-color:pink;"></div>
+            <div class="rowgroup4 scroll_rowgroup" id="rowgroup4" style="min-height:759px;background-color:gray;"></div>
         </main>
     </div>  <!-- //#container -->
     <footer id="footer">

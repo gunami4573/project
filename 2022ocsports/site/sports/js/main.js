@@ -11,10 +11,34 @@
 
         //여기서부터 코드 작성해주세요
 
-        //메인 전용 좌측 네비 시작(작업예정)
-        //메인 전용 좌측 네비 끝(작업예정)
+        //퀵메뉴 스크립트 시작
+        $('.oc_quick_menu .quick_wrap').navScroll({
+            mobileDropdown: false,
+            mobileBreakpoint: 1001,
+            scrollTime: 150,
+            scrollSpy: true,
+            activeParent: true,
+            navHeight:'82'
+        });
+        $window.on('scroll', function(){
+            var $this = $(this),
+                WindowScrollTop = $this.scrollTop(),
+                WindowScrollBottom = WindowScrollTop + $window.height(),
+                $OcQuickMenu = $('.oc_quick_menu'),
+                $Footer = $('#footer'),
+                FooterTop = $Footer.offset().top;
+            setTimeout(function(){
+                if(WindowScrollBottom >= FooterTop+208){
+                    $OcQuickMenu.addClass('active');
+                }
+                else{
+                    $OcQuickMenu.removeClass('active');
+                }
+            }, 0.001);
+        });
+        //퀵메뉴 스크립트 끝
 
-        //임시 디데이 날짜 구하기 시작
+        //디데이 날짜 구하기 시작
         function VisualCounter(){
             var Dday = new Date("Aug 25, 2022").getTime(), //디데이
                 NowTime = new Date(), //현재 날짜 가져오기
@@ -40,8 +64,8 @@
             }
         }
         VisualCounter();
-        //임시 디데이 구하기 끝
-        //임시 디데이 날짜 카운팅 효과 시작
+        //디데이 구하기 끝
+        //디데이 날짜 카운팅 효과 시작
         $('.count_time .d_day').each(function(){
             var $this = $(this),
                 end = $this.attr('data-count');
@@ -69,7 +93,48 @@
                 });
             }, 1600);
         });
-        //임시 디데이 날짜 카운팅 효과 끝
+        //디데이 날짜 카운팅 효과 끝
+
+        //경기정보 슬라이드 시작
+        var $InfoSlideList = $('.info .info_wrap .info_slide_wrap .info_slide_list');
+        $InfoSlideList.slick({
+            autoplay : true,
+            dots : false,
+            arrows : false,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            infinite : false,
+            swipe : false,
+            swipeToSlide : false,
+            draggable : false,
+            rows : 4, //여러줄
+            slidesPerRow : 7, //여러줄 일 때 한줄의 몇개 출력
+            variableWidth : true, //width를 css로 제어
+            responsive: [{
+                breakpoint : 1001,
+                settings : {
+                    arrows : true,
+                    rows : 2, //여러줄
+                    slidesPerRow : 6, //여러줄 일 때 한줄의 몇개 출력
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    infinite: true
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    arrows : true,
+                    rows : 2, //여러줄
+                    slidesPerRow : 3, //여러줄 일 때 한줄의 몇개 출력
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    infinite: true
+                }
+            }]
+        });
+        //경기정보 슬라이드 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
