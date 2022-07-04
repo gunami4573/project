@@ -136,6 +136,30 @@
         });
         //경기정보 슬라이드 끝
 
+        //경기정보 active 표출 시작
+        $(document).on('click', '.info_slide_wrap .info_slide_list .info_slide_item button.info_btn', function(){
+            var $this = $(this),
+                $MyInfoSlideItem = $this.parent('.info_slide_item'),
+                IsActive = $MyInfoSlideItem.is('.active'),
+                SlideIndex = $MyInfoSlideItem.attr('data-info-slide'),
+                $OtherInfoSlideItem = $('.info_slide_wrap .info_slide_list .info_slide_item').not($MyInfoSlideItem),
+                $OtherBtn = $OtherInfoSlideItem.find('button.info_btn'),
+                $InfoSlideWrap = $MyInfoSlideItem.parents('.info_slide_wrap'),
+                $InfoImgWrap = $InfoSlideWrap.siblings('.info_img_wrap'),
+                $InfoImgList = $InfoImgWrap.find('.info_img_list'),
+                $MyInfoImgItem = $InfoImgList.find('.info_img_item[data-info-img="'+SlideIndex+'"]'),
+                $OtherInfoImgItem = $InfoImgList.find('.info_img_item').not($MyInfoImgItem);
+            if(!IsActive){
+                $OtherInfoSlideItem.removeClass('active');
+                $OtherBtn.removeAttr('title');
+                $MyInfoSlideItem.addClass('active');
+                $this.attr('title', '선택됨');
+                $OtherInfoImgItem.removeClass('active');
+                $MyInfoImgItem.addClass('active');
+            }
+        });
+        //경기정보 active 표출 끝
+
         $window.on('screen:tablet screen:phone', function (event) {
 
         });
