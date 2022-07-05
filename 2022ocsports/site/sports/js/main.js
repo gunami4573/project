@@ -11,6 +11,7 @@
 
         //여기서부터 코드 작성해주세요
 
+
         //퀵메뉴 스크립트 시작
         $('.oc_quick_menu .quick_wrap').navScroll({
             mobileDropdown: false,
@@ -37,6 +38,7 @@
             }, 0.001);
         });
         //퀵메뉴 스크립트 끝
+
 
         //디데이 날짜 구하기 시작
         function VisualCounter(){
@@ -95,6 +97,7 @@
         });
         //디데이 날짜 카운팅 효과 끝
 
+
         //경기정보 슬라이드 시작
         var $InfoSlideList = $('.info .info_wrap .info_slide_wrap .info_slide_list');
         $InfoSlideList.slick({
@@ -136,6 +139,7 @@
         });
         //경기정보 슬라이드 끝
 
+
         //경기정보 active 표출 시작
         $(document).on('click', '.info_slide_wrap .info_slide_list .info_slide_item button.info_btn', function(){
             var $this = $(this),
@@ -159,6 +163,93 @@
             }
         });
         //경기정보 active 표출 끝
+
+
+        //경기장안내 슬라이드 시작
+        var $StadiumSlideList = $('.stadium .stadium_wrap .stadium_slide_wrap .stadium_slide_list');
+        $StadiumSlideList.slick({
+            autoplay : false,
+            dots : false,
+            arrows : true,
+            prevArrow : $('.stadium .stadium_wrap .stadium_slide_wrap .title_wrap .prev'),
+            nextArrow : $('.stadium .stadium_wrap .stadium_slide_wrap .title_wrap .next'),
+            slidesToShow : 3,
+            slidesToScroll : 1,
+            infinite : true,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
+            variableWidth : true, //width를 css로 제어
+            zIndex : 4,
+            responsive: [{}]
+        });
+        //경기장안내 슬라이드 끝
+
+
+        //알림마당 링크 hover active 시작
+        $('.notice .notice_wrap .link_list .link_item').on('mouseenter', function(){
+            var $this = $(this),
+                $OtherLinkItem = $this.siblings('.link_item');
+            $this.addClass('active');
+            $OtherLinkItem.removeClass('active');
+        });
+        //알림마당 링크 hover active 끝
+
+
+        //홍보영상 공통롤링 시작
+        var $NoticeSlideWrap = $('.notice .notice_wrap .notice_slide_wrap .notice_slide_total .notice_slide_list_wrap');
+        $NoticeSlideWrap.each(function(){
+            var $NoticeSlide = $(this).find('.notice_slide_list'),
+                $SlideItem = $NoticeSlide.find('.notice_slide_item'),
+                $SlideControl = $NoticeSlide.siblings('.notice_slide_control');
+            $NoticeSlide.slick({
+                autoplay : false,
+                dots : false,
+                slidesToShow : 1,
+                slidesToScroll : 1,
+                infinite : true,
+                prevArrow : $SlideControl.find('.prev'),
+                nextArrow : $SlideControl.find('.next'),
+                pauseOnDotsHover : true,
+                swipe : true,
+                swipeToSlide : true,
+                draggable : true,
+                variableWidth : false,
+                zIndex : 1,
+                fade : true,
+                //추가 기능
+                isRunOnLowIE : false,
+                pauseOnArrowClick : true,
+                pauseOnDirectionKeyPush : true,
+                pauseOnSwipe : true,
+                pauseOnDotsClick : true,
+                responsive: [{}]
+            });
+        });
+        //홍보영상 tab버튼
+        $('.notice .notice_wrap .notice_slide_wrap .notice_slide_tab_list .notice_slide_tab_item button.notice_slide_tab_btn').on('click', function(){
+            var $this = $(this),
+                $MyParent = $this.parent('.notice_slide_tab_item'),
+                IsActive = $MyParent.is('.active'),
+                ParentIndex = $MyParent.index(),
+                $OtherParents = $MyParent.siblings('.notice_slide_tab_item'),
+                $OtherBtns = $OtherParents.find('button.notice_slide_tab_btn'),
+
+                $NoticeSlideTotal = $this.parents('.notice_slide_tab_list').siblings('.notice_slide_total'),
+                $MyNoticeSlide = $NoticeSlideTotal.find('.notice_slide_list_wrap').eq(ParentIndex),
+                $MySlide = $MyNoticeSlide.find('.notice_slide_list'),
+                $OtherNoticeSlide = $MyNoticeSlide.siblings('.notice_slide_list_wrap');
+            if(!IsActive){
+                $OtherParents.removeClass('active');
+                $OtherBtns.removeAttr('title');
+                $MyParent.addClass('active');
+                $this.attr('title', '선택됨');
+                $OtherNoticeSlide.removeClass('active');
+                $MyNoticeSlide.addClass('active');
+                $MySlide.slick('setPosition');
+            };
+        });
+        //홍보영상 공통롤링 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
