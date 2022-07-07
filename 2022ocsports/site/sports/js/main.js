@@ -181,7 +181,17 @@
             draggable : true,
             variableWidth : true, //width를 css로 제어
             zIndex : 4,
-            responsive: [{}]
+            responsive: [{
+                breakpoint : 1777,
+                settings : {
+                    slidesToShow : 2
+                }
+            },{
+                breakpoint : 1331,
+                settings : {
+                    slidesToShow : 1
+                }
+            }]
         });
         //경기장안내 슬라이드 끝
 
