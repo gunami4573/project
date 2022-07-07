@@ -101,9 +101,24 @@
         //경기정보 슬라이드 시작
         var $InfoSlideList = $('.info .info_wrap .info_slide_wrap .info_slide_list');
         $InfoSlideList.slick({
-            autoplay : true,
+            autoplay : false,
             dots : false,
-            arrows : false,
+            arrows : true,
+            prevArrow : $('.info .info_wrap .info_slide_wrap .info_slide_btn_box .prev'),
+            nextArrow : $('.info .info_wrap .info_slide_wrap .info_slide_btn_box .next'),
+            total : $('.info .info_wrap .info_slide_wrap .info_slide_btn_box .total'),
+            current : $('.info .info_wrap .info_slide_wrap .info_slide_btn_box .current'),
+            customState : function(state) {
+                //현재 슬라이드 위치가 10보다 작을 때
+                if(state.current < 10) {
+                    state.current = state.current;
+                }
+                //슬라이드 갯수가 10보다 작을 때
+                if(state.total < 10) {
+                    state.total = state.total;
+                }
+                return state;
+            },
             slidesToShow : 1,
             slidesToScroll : 1,
             infinite : false,
@@ -116,24 +131,30 @@
             responsive: [{
                 breakpoint : 1001,
                 settings : {
-                    arrows : true,
+                    autoplay : false,
+                    slidesToShow : 1,
                     rows : 2, //여러줄
                     slidesPerRow : 6, //여러줄 일 때 한줄의 몇개 출력
                     swipe : true,
                     swipeToSlide : true,
                     draggable : true,
-                    infinite: true
+                    infinite: true,
+                    fade : true,
+                    variableWidth : false
                 }
             },{
                 breakpoint : 641,
                 settings : {
-                    arrows : true,
+                    autoplay : false,
+                    slidesToShow : 1,
                     rows : 2, //여러줄
                     slidesPerRow : 3, //여러줄 일 때 한줄의 몇개 출력
                     swipe : true,
                     swipeToSlide : true,
                     draggable : true,
-                    infinite: true
+                    infinite: true,
+                    fade : true,
+                    variableWidth : false
                 }
             }]
         });
