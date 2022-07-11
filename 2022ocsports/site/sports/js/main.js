@@ -11,7 +11,6 @@
 
         //여기서부터 코드 작성해주세요
 
-
         //퀵메뉴 스크립트 시작
         $('.oc_quick_menu .quick_wrap').navScroll({
             mobileDropdown: false,
@@ -38,7 +37,6 @@
             }, 0.001);
         });
         //퀵메뉴 스크립트 끝
-
 
         //디데이 날짜 구하기 시작
         function VisualCounter(){
@@ -97,7 +95,6 @@
         });
         //디데이 날짜 카운팅 효과 끝
 
-
         //경기정보 슬라이드 시작
         var $InfoSlideList = $('.info .info_wrap .info_slide_wrap .info_slide_list');
         $InfoSlideList.slick({
@@ -111,11 +108,11 @@
             customState : function(state) {
                 //현재 슬라이드 위치가 10보다 작을 때
                 if(state.current < 10) {
-                    state.current = state.current;
+                    state.current = '0' + state.current;
                 }
                 //슬라이드 갯수가 10보다 작을 때
                 if(state.total < 10) {
-                    state.total = state.total;
+                    state.total = '0' + state.total;
                 }
                 return state;
             },
@@ -135,9 +132,6 @@
                     slidesToShow : 1,
                     rows : 2, //여러줄
                     slidesPerRow : 6, //여러줄 일 때 한줄의 몇개 출력
-                    swipe : true,
-                    swipeToSlide : true,
-                    draggable : true,
                     infinite: true,
                     fade : true,
                     variableWidth : false
@@ -149,9 +143,6 @@
                     slidesToShow : 1,
                     rows : 2, //여러줄
                     slidesPerRow : 3, //여러줄 일 때 한줄의 몇개 출력
-                    swipe : true,
-                    swipeToSlide : true,
-                    draggable : true,
                     infinite: true,
                     fade : true,
                     variableWidth : false
@@ -159,7 +150,6 @@
             }]
         });
         //경기정보 슬라이드 끝
-
 
         //경기정보 active 표출 시작
         $(document).on('click', '.info_slide_wrap .info_slide_list .info_slide_item button.info_btn', function(){
@@ -184,7 +174,6 @@
             }
         });
         //경기정보 active 표출 끝
-
 
         //경기장안내 슬라이드 시작
         var $StadiumSlideList = $('.stadium .stadium_wrap .stadium_slide_wrap .stadium_slide_list');
@@ -212,10 +201,25 @@
                 settings : {
                     slidesToShow : 1
                 }
+            },{
+                breakpoint : 1001,
+                settings : {
+                    slidesToShow : 2
+                }
+            },{
+                breakpoint : 895,
+                settings : {
+                    slidesToShow : 1
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 1,
+                    variableWidth : false
+                }
             }]
         });
         //경기장안내 슬라이드 끝
-
 
         //알림마당 링크 hover active 시작
         $('.notice .notice_wrap .link_list .link_item').on('mouseenter', function(){
@@ -225,7 +229,6 @@
             $OtherLinkItem.removeClass('active');
         });
         //알림마당 링크 hover active 끝
-
 
         //홍보영상 공통롤링 시작
         var $NoticeSlideWrap = $('.notice .notice_wrap .notice_slide_wrap .notice_slide_total .notice_slide_list_wrap');
