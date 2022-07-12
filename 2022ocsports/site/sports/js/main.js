@@ -261,6 +261,7 @@
             });
         });
         //홍보영상 tab버튼
+        /*
         $('.notice .notice_wrap .notice_slide_wrap .notice_slide_tab_list .notice_slide_tab_item button.notice_slide_tab_btn').on('click', function(){
             var $this = $(this),
                 $MyParent = $this.parent('.notice_slide_tab_item'),
@@ -283,6 +284,7 @@
                 $MySlide.slick('setPosition');
             };
         });
+        */
         //홍보영상 공통롤링 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
