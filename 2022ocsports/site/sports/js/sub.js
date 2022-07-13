@@ -118,6 +118,14 @@
         });
         //반응형 테이블 끝
 
+        //컨텐츠 스크롤 효과 시작
+        $('.waypoint').waypoint(function(direction) {
+            $(this.element)[(direction === 'down') ? 'addClass' : 'removeClass']('active');
+        }, {
+            offset : '90%'
+        });
+        //컨텐츠 스크롤 효과 끝
+
         $window.on('screen:tablet screen:phone', function (event) {
 
         });

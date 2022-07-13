@@ -240,6 +240,25 @@ p{display:block;width:100%;font-size:18px;color:#424242;line-height:35px;letter-
 @media all and (max-width:1000px){
     .box_img .img_zoom{display:block;}
 }
+/* 대진표 확대보기 박스 */
+.box_img.deco{padding:150px 10px;}
+.box_img.deco:before,
+.box_img.deco:after{display:block;position:absolute;height:100%;content:'';background-repeat:no-repeat;background-size:contain;box-sizing:border-box;}
+.box_img.deco:before{top:0;left:0;width:204px;background-image:url(../images/template/box_img_deco_before.png);background-position:left top;}
+.box_img.deco:after{bottom:0;right:0;width:448px;background-image:url(../images/template/box_img_deco_after.png);background-position:right bottom;}
+.box_img.deco .inner img{position:relative;z-index:1;}
+.box_img_deco_title{display:block;position:relative;width:100%;margin-top:60px;padding:33px 3%;font-size:0;line-height:0;box-sizing:border-box;text-align:center;}
+.box_img_deco_title:before{display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-image:url(../images/template/box_img_deco_title.png);background-repeat:no-repeat;background-position:center center;background-size:cover;content:'';box-sizing:border-box;}
+.box_img_deco_title .deco_text{display:inline-block;position:relative;z-index:1;font-size:46px;color:#fff;line-height:54px;letter-spacing:-0.03em;font-weight:400;font-family:"GodoB";vertical-align:top;box-sizing:border-box;}
+@media all and (max-width:1560px){
+    .box_img_deco_title{margin-top:30px;}
+}
+@media all and (max-width:1000px){
+    .box_img.deco{padding:35px;}
+    .box_img_deco_title{margin-top:20px;padding:10px 3%;}
+    .box_img_deco_title:before{background-position:right top;}
+    .box_img_deco_title .deco_text{font-size:24px;line-height:30px;}
+}
 
 
 /* 폼영역 */
