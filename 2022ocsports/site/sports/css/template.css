@@ -156,9 +156,9 @@ p{display:block;width:100%;font-size:18px;color:#424242;line-height:35px;letter-
 .table th:last-child, .table td:last-child{border-right:none;}
 .table thead th,
 .table tbody th,
-.table tfoot th{background-color:#fafafa;font-size:18px;color:#000;line-height:24px;letter-spacing:-0.03em;font-weight:300;}
+.table tfoot th{background-color:#fafafa;font-size:18px;color:#000;line-height:24px;letter-spacing:-0.03em;font-weight:300;word-break:keep-all;}
 .table tbody td,
-.table tfoot td{background-color:transparent;font-size:17px;color:#333;line-height:24px;letter-spacing:-0.03em;font-weight:400;text-align:center;}
+.table tfoot td{background-color:transparent;font-size:17px;color:#333;line-height:24px;letter-spacing:-0.03em;font-weight:400;word-break:keep-all;text-align:center;}
 /* 가로형테이블 */
 @media all and (min-width:641px){
     .table.type2 tbody tr:first-child th, .table.type2 tbody tr:first-child td{border-top:2px solid #000;}
@@ -171,10 +171,10 @@ p{display:block;width:100%;font-size:18px;color:#424242;line-height:35px;letter-
     .table.responsive tbody tr{position:relative;display:block;border-bottom:1px solid #d2d2d2;}
     .table.responsive tbody tr:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
     .table.responsive tbody tr:nth-child(odd){background:#fafafa;}
-    .table.responsive tbody td{display:block;padding:4px 3%;border:none;text-align:left;box-sizing:border-box;background-color:transparent;}
-    .table.responsive tbody th{display:block;padding:4px 3%;text-align:left;vertical-align:middle;background-color:transparent;border:none;}
+    .table.responsive tbody td{display:block;padding:4px 3%;border:none;font-size:16px;text-align:left;box-sizing:border-box;background-color:transparent;}
+    .table.responsive tbody th{display:block;padding:4px 3%;text-align:left;font-size:16px;vertical-align:middle;background-color:transparent;border:none;}
     .table.responsive tbody tr:first-child td, .table.responsive tbody tr:first-child th{border-top:none;}
-    .table.responsive thead + tbody th:before, .table.responsive tbody td:before{display:inline;color:#000;font-size:17px;font-weight:300;content:attr(data-content)' : ';}/* thead의 내용을 tbody의 th, td에 각각 삽입 */
+    .table.responsive thead + tbody th:before, .table.responsive tbody td:before{display:inline;color:#000;font-size:16px;font-weight:300;content:attr(data-content)' : ';}/* thead의 내용을 tbody의 th, td에 각각 삽입 */
     .table.type2.responsive thead + tbody th:before, .table.type2.responsive tbody td:before{padding-left:10px;font-size:0;color:transparent;content:'';}
     .table.responsive tfoot tr{position:relative;display:block;border-bottom:1px solid #d2d2d2;}
     .table.responsive tfoot tr:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
@@ -185,7 +185,28 @@ p{display:block;width:100%;font-size:18px;color:#424242;line-height:35px;letter-
     .table.responsive tfoot th:before, .table.responsive tfoot td:before{display:inline;content:attr(data-content)' : ';}/* thead의 내용을 tbody의 th, td에 각각 삽입 */
 }
 /* 스크롤테이블 */
-@media only screen and (max-width:640px){
+.table_scroll .table thead tr th,
+.table_scroll .table tbody tr th,
+.table_scroll .table tbody tr td{word-break:keep-all;}
+@media all and (max-width:1560px){
+    .table_scroll .table thead tr th,
+    .table_scroll .table tbody tr th,
+    .table_scroll .table tbody tr td{padding-top:10px;padding-bottom:10px;}
+}
+@media all and (max-width:1000px){
+    .table_scroll .table thead tr th,
+    .table_scroll .table thead tr th,
+    .table_scroll .table tbody tr td{padding-right:5px;padding-left:5px;}
+    .table_scroll .table thead tr th{font-size:17px;}
+    .table_scroll .table tbody tr th,
+    .table_scroll .table tbody tr td{font-size:16px;}
+}
+@media all and (max-width:800px){
+    .table_scroll .table thead tr th,
+    .table_scroll .table tbody tr th,
+    .table_scroll .table tbody tr td{padding-top:5px;padding-bottom:5px;}
+}
+@media all and (max-width:640px){
     .table_scroll{position:relative;max-width:100%;overflow-x:auto;}
     .table_scroll table{min-width:800px;}
 }
