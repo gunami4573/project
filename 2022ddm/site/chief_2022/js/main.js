@@ -14,7 +14,7 @@
         //메인 비주얼 슬라이드 시작
         var $VisualSlideList = $('.main_visual .main_visual_wrap .visual_slide_wrap .visual_slide_list');
         $VisualSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             autoplaySpeed : 5000,
             speed : 1500,
             dots : true,
@@ -88,7 +88,7 @@
         //스케줄 슬라이드 시작
         var $ScheduleSlideList = $('.schedule .schedule_wrap .schedule_slide_wrap .schedule_slide_list');
         $ScheduleSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             autoplaySpeed : 3000,
             speed : 1000,
             arrows : false,
