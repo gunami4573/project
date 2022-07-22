@@ -54,3 +54,6 @@
 - https://gunami4573.github.io/project/2022ocsports/site/sports/main.html (메인 레이아웃)
 - https://gunami4573.github.io/project/2022ocsports/site/sports/sub.html (서브 레이아웃)
 - https://gunami4573.github.io/project/2022ocsports/site/sports/template.html (충북도민체육대회 템플릿)
+
+// 2022ocsports (2022 동대문구청장실 신규)
+- https://gunami4573.github.io/project/2022ddm/site/chief_2022/main.html (메인 레이아웃)
