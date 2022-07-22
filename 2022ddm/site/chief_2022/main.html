@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes" />
+	<meta name="keywords" content="@@{siteInfo.siteKwrd}" />
+	<meta name="description" content="@@{siteInfo.siteDc}" />
+	<meta name="theme-color" content="015acd" />
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="@@{siteInfo.siteKwrd}">
+	<meta property="og:description" content="@@{siteInfo.siteKwrd} 페이지 입니다.">
+	<meta property="og:image" content="../../common/images/layout/sns_theme.png">
+	<meta property="og:url" content="url 넣어주세요">
+	<link rel="stylesheet" type="text/css" href="../chief_2022/css/main.css" />
+	<!--[if lt IE 9]><script src="../../common/js/html5.js"></script><![endif]-->
+	<script src="../../common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../common/js/jquery.easing.1.3.min.js"></script>
+	<script src="../../common/js/plugins.js"></script>
+	<!--//<script src="../../common/js/program.min.js"></script>-->
+	<script src="../../common/js/NeoVirtualKeyboard.min.js"></script>
+	<script>
+		var site = {
+			id : '@@{siteInfo.siteId}',
+			key : '@@{key}',
+			layout : '@@{layout}',
+			order : '@@{menuInfo.naviList[0].menuOrdr}',
+			login : '<% if( null != loginVO ) { %>true<% }else{ %>false<% } %>'
+		};
+	</script>
+    <script src="../chief_2022/js/slick.min.custom.1.8.0.11.js"></script>
+    <script src="../chief_2022/js/slick.extensions.min.js"></script>
+	<script src="../public/js/common.js"></script>
+	<script src="../chief_2022/js/main.js"></script>
+	<title>2022 동대문구청장실 메인</title>
+</head>
+<body id="@@{layout}@@{menuInfo.naviList[0].menuOrdr}" class="@@{siteInfo.siteId} page@@{key}">
+<div id="wrapper">
+    <header id="header">
+        <h1 class="skip">@@{siteInfo.siteNm}</h1>
+        <div class="accessibility">
+            <a href="#container">본문 바로가기</a>
+        </div>
+
+        <div class="wrap">
+            <div class="logo">
+                <a href="./index.do" class="logo_anchor">
+                    <span class="logo_image">서울의 문 동대문구</span>
+                    <span class="logo_name">열린구청장실</span>
+                </a>
+            </div>
+        </div>
+        <div class="gnb">
+            <div class="wrap clearfix">
+                <div class="site">
+                    <ul class="site_list">
+                        <li class="site_item n1"><a href="/www/index.do" target="_blank" title="새창" class="site_anchor">동대문구청</a></li>
+                        <li class="site_item n2"><a href="/health/index.do" target="_blank" title="새창" class="site_anchor">보건소</a></li>
+                        <li class="site_item n3"><a href="http://council.ddm.go.kr" target="_blank" title="새창" class="site_anchor">구의회</a></li>
+                        <li class="site_item n4"><a href="/tour/index.do" target="_blank" title="새창" class="site_anchor">문화관광</a></li>
+                        <li class="site_item n5"><a href="/reserve/index.do" target="_blank" title="새창" class="site_anchor">예약포털</a></li>
+                        <li class="site_item n6 family ">
+                            <button type="button" class="site_anchor family_open" data-header-pop="family" data-title="주요사이트" title="주요사이트 열기"><span>주요사이트</span></button>
+                            <div class="family_content" data-header-panel="family">
+                                <p class="sub_title">동대문구 주요사이트를 한눈에!</p>
+                                <h2>
+                                    <img src="../public/images../../common/family_title.png" alt="동대문구 관련홈페이지 모아보기">
+                                </h2>
+                                <ul class="family_list clearfix">
+                                    <li class="family_item n1">
+                                        <div class="family_category"><span>패밀리사이트</span></div>
+                                        <div class="list_box">
+                                            <ul>
+                                                <li><a href="/lll/index.do" class="family_anchor" target="_blank" title="평생학습관 바로가기 새창열림">평생학습관</a></li>
+                                                <li><a href="http://www.ddmjinhak.co.kr/" class="family_anchor" target="_blank" title="동대문구 진학상담센터 바로가기 새창열림">동대문구 진학상담센터</a></li>
+                                                <li><a href="http://www.dbs.go.kr" class="family_anchor" target="_blank"  title="인터넷 방송 바로가기 새창열림">인터넷 방송</a></li>
+                                                <li><a href="http://ddm.seoulvc.kr/front;jsessionid=D58501C07C61EECF5F17BDBCD9E927D4" class="family_anchor" target="_blank"  title="자원봉사 바로가기 새창열림">자원봉사</a></li>
+                                                <li><a href="http://www.elis.go.kr/newlaib/laibLaws/h1126/laws.jsp?regionId=11230" class="family_anchor" target="_blank"  title="자치법규 바로가기 새창열림">자치법규</a></li>
+                                                <li><a href="/ddmmap/sub.do?key=1611" class="family_anchor" title="동대문구 데이터플랫폼 바로가기">동대문구 데이터플랫폼</a></li>
+                                                <li><a href="http://memory.ddm.go.kr/" class="family_anchor" target="_blank"  title="동대문구 기억여행 바로가기 새창열림">동대문구 기억여행</a></li>
+                                                <li><a href="/tour/index.do" class="family_anchor" target="_blank"  title="문화관광 바로가기 새창열림">문화관광</a></li>
+                                                <li><a href="https://cartax.seoul.go.kr/cartax/main/main.do" class="family_anchor" target="_blank"  title="주정차서비스 바로가기 새창열림">주정차서비스</a></li>
+                                                <li><a href="/sun/index.do" class="family_anchor" title="선농단역사문화관 바로가기">선농단역사문화관</a></li>
+                                                <li><a href="/ob/index.do" class="family_anchor" title="동대문가족만남의광장 바로가기">동대문가족만남의광장</a></li>
+                                                <li><a href="/cfc/index.do" class="family_anchor" target="_blank"  title="아동친화도시 바로가기 새창열림">아동친화도시</a></li>
+                                                <li><a href="https://www.yeogiro24.co.kr" class="family_anchor" target="_blank"  title="대형폐기물 배출신고 바로가기 새창열림">대형폐기물 배출신고</a></li>
+                                                <li><a href="https://job.seoul.go.kr/dongdaemun/Main.do?method=getMain" class="family_anchor" target="_blank"  title="일자리센터 바로가기 새창열림">일자리센터</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="family_item n2">
+                                        <div class="family_category"><span>동주민센터</span></div>
+                                        <div class="list_box">
+                                            <ul>
+                                                <li><a href="/www/sub.do?key=336" class="family_anchor" target="_blank" title="용 신 동 바로가기 새창열림">용신동</a></li>
+                                                <li><a href="/www/sub.do?key=416" class="family_anchor" target="_blank" title="제 기 동 바로가기 새창열림">제기동</a></li>
+                                                <li><a href="/www/sub.do?key=432" class="family_anchor" target="_blank" title="전농 1동 바로가기 새창열림">전농1동</a></li>
+                                                <li><a href="/www/sub.do?key=448" class="family_anchor" target="_blank" title="전농 2동 바로가기 새창열림">전농2동</a></li>
+                                                <li><a href="/www/sub.do?key=304" class="family_anchor" target="_blank" title="답십리1동 바로가기 새창열림">답십리1동</a></li>
+                                                <li><a href="/www/sub.do?key=320" class="family_anchor" target="_blank" title="답십리2동 바로가기 새창열림">답십리2동</a></li>
+                                                <li><a href="/www/sub.do?key=384" class="family_anchor" target="_blank" title="장안 1동 바로가기 새창열림">장안1동</a></li>
+                                                <li><a href="/www/sub.do?key=400" class="family_anchor" target="_blank" title="장안 2동 바로가기 새창열림">장안2동</a></li>
+                                                <li><a href="/www/sub.do?key=464" class="family_anchor" target="_blank" title="청량리동 바로가기 새창열림">청량리동</a></li>
+                                                <li><a href="/www/sub.do?key=480" class="family_anchor" target="_blank" title="회 기 동 바로가기 새창열림">회기동</a></li>
+                                                <li><a href="/www/sub.do?key=496" class="family_anchor" target="_blank" title="휘경 1동 바로가기 새창열림">휘경1동</a></li>
+                                                <li><a href="/www/sub.do?key=512" class="family_anchor" target="_blank" title="휘경 2동 바로가기 새창열림">휘경2동</a></li>
+                                                <li><a href="/www/sub.do?key=352" class="family_anchor" target="_blank" title="이문 1동 바로가기 새창열림">이문1동</a></li>
+                                                <li><a href="/www/sub.do?key=368" class="family_anchor" target="_blank" title="이문 2동 바로가기 새창열림">이문2동</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="family_item n3">
+                                        <div class="family_category"><span>유관기관</span></div>
+                                        <div class="list_box">
+                                            <ul>
+                                                <li><a href="http://www.dfmc.kr/" class="family_anchor" target="_blank" title="동대문구 시설관리공단 바로가기 새창열림">동대문구 시설관리공단</a></li>
+                                                <li><a href="https://ddmac.or.kr/" class="family_anchor" target="_blank" title="동대문문화재단 바로가기 새창열림">동대문문화재단</a></li>
+                                                <li><a href="https://ddmlib.sen.go.kr/ddmlib/index.do?getContextPath=" class="family_anchor" target="_blank" title="동대문구립 도서관 바로가기 새창열림">동대문 도서관</a></li>
+                                                <li><a href="https://www.ddmwarak.com" class="family_anchor" target="_blank" title="진로직업체험센터 바로가기 새창열림">진로직업체험센터</a></li>
+                                                <li><a href="https://www.l4d.or.kr/intro/index.do" class="family_anchor" target="_blank" title="동대문구립 도서관 바로가기 새창열림">동대문구립 도서관</a></li>
+                                                <li><a href="http://www.xn--o39apqfng02furo.com/" class="family_anchor" target="_blank" title="답십리고미술상가 바로가기 새창열림">답십리고미술상가</a></li>
+                                                <li><a href="http://www.ddmeducenter.net/" class="family_anchor" target="_blank" title="동대문교육복지센터 바로가기 새창열림">동대문교육복지센터</a></li>
+                                            </ul>
+                                            <ul>
+                                                <li><a href="http://www.pungmul.or.kr/" class="family_anchor" target="_blank" title="서울풍물시장 바로가기 새창열림">서울풍물시장</a></li>
+                                                <li><a href="http://dongdaemun.kccf.or.kr/" class="family_anchor" target="_blank" title="동대문 문화원 바로가기 새창열림">동대문 문화원</a></li>
+                                                <li><a href="http://chpungyh.co.kr/" class="family_anchor" target="_blank" title="청풍 유스호스텔 바로가기 새창열림">청풍 유스호스텔</a></li>
+                                                <li><a href="http://www.ddmy.or.kr/" class="family_anchor" target="_blank" title="동대문청소년수련원 바로가기 새창열림">동대문청소년수련원</a></li>
+                                                <li><a href="http://www.ddm7330.co.kr" class="family_anchor" target="_blank" title=">동대문구 체육회 바로가기 새창열림">동대문구 체육회</a></li>
+                                                <li><a href="https://ddmhfc.familynet.or.kr/center/index.do" class="family_anchor" target="_blank" title="건강가정지원센터 바로가기 새창열림">동대문구가족센터</a></li>
+                                                <li><a href="https://dongdaemun.seouldementia.or.kr/Default.asp" class="family_anchor" target="_blank" title="치매지원센터 바로가기 새창열림">치매지원센터</a></li>
+                                                <li><a href="https://www.ddmccic.or.kr/new/main/" class="family_anchor" target="_blank" title="보육정보센터 바로가기 새창열림">보육정보센터</a></li>
+                                                <li><a href="https://su.nec.go.kr/su/main/contents.do?guSiGunId=dd&menuNo=200088" class="family_anchor" target="_blank" title="선거관리위원회 바로가기 새창열림">선거관리위원회</a></li>
+                                                <li><a href="http://www.yeaeunpark.com/" class="family_anchor" target="_blank" title="추모의집(예은추모공원) 바로가기 새창열림">추모의집(예은추모공원)</a></li>
+                                                <li><a href="http://museum.ddm.go.kr/" class="family_anchor" target="_blank" title="한의약박물관 바로가기 새창열림">한의약박물관</a></li>
+                                                <li><a href="http://www.ddmorc.com" class="family_anchor" target="_blank" title="구립청소년오케스트라 바로가기 새창열림">구립청소년오케스트라</a></li>
+                                                <li><a href="http://kmedi.ddm.go.kr" class="family_anchor" target="_blank" title="서울한방진흥센터 바로가기 새창열림">서울한방진흥센터</a></li>
+                                                <li><a href="http://ddmzine.ddm.go.kr" class="family_anchor" target="_blank" title="동대문디지털매거진 바로가기 새창열림">동대문디지털매거진</a></li>
+                                                <li><a href="http://dfcenter.ddm.go.kr" class="family_anchor" target="_blank" title="동대문구 패션봉제지원센터 바로가기 새창열림">동대문구 패션봉제지원센터</a></li>
+                                                <li><a href="http://www.skplacard.co.kr" class="family_anchor" target="_blank" title="동대문구 LED 전자게시대 바로가기 새창열림">동대문구LED전자게시대</a></li>
+                                                <li><a href="http://www.seoulyak.com" class="family_anchor" target="_blank" title="서울약령시 홈페이지 바로가기 새창열림">서울약령시 홈페이지</a></li>
+                                                <li><a href="http://www.dcsw.or.kr" class="family_anchor" target="_blank" title="동대문구사회복지협의회 바로가기 새창열림">동대문구사회복지협의회</a></li>
+                                                <li><a href="http://eastse.net" class="family_anchor" target="_blank" title="동대문구사회적경제지원센터 바로가기 새창열림">동대문구사회적경제지원센터</a></li>
+                                                <li><a href="https://www.gov.kr/portal/orgInfo?Mcode=11180" class="family_anchor" target="_blank" title="정부/지자체 조직도 바로가기 새창열림">정부/지자체 조직도</a></li>
+                                                <li><a href="http://dsnfilmart.or.kr/" class="family_anchor" target="_blank" title="답십리영화미디어아트센터 바로가기 새창열림">답십리영화미디어아트센터</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="family_item n4">
+                                        <div class="family_category"><span>서울시자치구</span></div>
+                                        <div class="list_box">
+                                            <ul>
+                                                <li><a href="http://www.seoul.go.kr/" class="family_anchor" target="_blank" title="서울시 바로가기 새창열림">서울시</a></li>
+                                                <li><a href="http://www.gangnam.go.kr/" class="family_anchor" target="_blank" title="강남구 바로가기 새창열림">강남구</a></li>
+                                                <li><a href="http://www.gangdong.go.kr/" class="family_anchor" target="_blank" title="강동구 바로가기 새창열림">강동구</a></li>
+                                                <li><a href="http://www.gangbuk.go.kr/" class="family_anchor" target="_blank" title="강북구 바로가기 새창열림">강북구</a></li>
+                                                <li><a href="http://gangseo.seoul.kr/" class="family_anchor" target="_blank" title="강서구 바로가기 새창열림">강서구</a></li>
+                                                <li><a href="http://www.gwanak.go.kr/" class="family_anchor" target="_blank" title="관악구 바로가기 새창열림">관악구</a></li>
+                                                <li><a href="http://www.gwangjin.go.kr/" class="family_anchor" target="_blank" title="광진구 바로가기 새창열림">광진구</a></li>
+                                                <li><a href="http://guro.go.kr/" class="family_anchor" target="_blank" title="구로구 바로가기 새창열림">구로구</a></li>
+                                                <li><a href="http://www.geumcheon.go.kr/" class="family_anchor" target="_blank" title="금천구 바로가기 새창열림">금천구</a></li>
+                                                <li><a href="http://www.nowon.kr/" class="family_anchor" target="_blank" title="노원구 바로가기 새창열림">노원구</a></li>
+                                                <li><a href="http://www.dobong.go.kr/" class="family_anchor" target="_blank" title="도봉구 바로가기 새창열림">도봉구</a></li>
+                                                <li><a href="http://www.dongjak.go.kr/" class="family_anchor" target="_blank" title="동작구 바로가기 새창열림">동작구</a></li>
+                                                <li><a href="http://www.mapo.go.kr/" class="family_anchor" target="_blank" title="마포구 바로가기 새창열림">마포구</a></li>
+                                                <li><a href="http://www.sdm.go.kr/" class="family_anchor" target="_blank" title="서대문구 바로가기 새창열림">서대문구</a></li>
+                                                <li><a href="http://www.seocho.seoul.kr/" class="family_anchor" target="_blank" title="서초구 바로가기 새창열림">서초구</a></li>
+                                                <li><a href="http://www.sd.go.kr" class="family_anchor" target="_blank" title="성동구 바로가기 새창열림">성동구</a></li>
+                                                <li><a href="http://www.sb.go.kr/" class="family_anchor" target="_blank" title="성북구 바로가기 새창열림">성북구</a></li>
+                                                <li><a href="http://www.songpa.go.kr/" class="family_anchor" target="_blank" title="송파구 바로가기 새창열림">송파구</a></li>
+                                                <li><a href="http://www.yangcheon.go.kr/#" class="family_anchor" target="_blank" title="양천구 바로가기 새창열림">양천구</a></li>
+                                                <li><a href="http://www.ydp.go.kr/" class="family_anchor" target="_blank" title="영등포구 바로가기 새창열림">영등포구</a></li>
+                                                <li><a href="http://www.yongsan.go.kr/" class="family_anchor" target="_blank" title="용산구 바로가기 새창열림">용산구</a></li>
+                                                <li><a href="https://www.ep.go.kr/www/index.do" class="family_anchor" target="_blank" title="은평구 바로가기 새창열림">은평구</a></li>
+                                                <li><a href="http://www.jongno.go.kr/" class="family_anchor" target="_blank" title="종로구 바로가기 새창열림">종로구</a></li>
+                                                <li><a href="http://www.junggu.seoul.kr/" class="family_anchor" target="_blank" title="중구 바로가기 새창열림">중구</a></li>
+                                                <li><a href="https://www.jungnang.go.kr" class="family_anchor" target="_blank" title="중랑구 바로가기 새창열림">중랑구</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="sitebox_close">닫기</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="home">
+            <div id="lnb" class="lnb" data-header-pop="lnb" data-title="메뉴">
+                <div class="menu_show">
+                    <button type="button" class="menu_btn"><i class="ri-menu-line"></i><span class="skip">주메뉴 열기</span></button>
+                </div>
+                <nav class="menu after eachdown">
+                    <h2 class="skip">주메뉴</h2>
+                    <div class="menu_header">
+                        <div class="site">
+                            <div class="family">
+                                <button type="button" class="site_anchor family_open" data-header-pop="family" data-title="주요사이트" title="주요사이트 열기">주요사이트</button>
+                            </div>
+                            <div class="language">
+                                <button type="button" class="site_anchor language_button" data-header-pop="language" data-title="외국어" title="외국어 열기">GLOBAL</button>
+                                <div class="language_panel" data-header-panel="language">
+                                    <ul class="language_list">
+                                        <li class="language_item"><a href="/www/index.do" target="_blank" title="새창" class="language_anchor">KOREAN</a></li>
+                                        <li class="language_item"><a href="/eng/index.do" target="_blank" title="새창" class="language_anchor">ENGLISH</a></li>
+                                        <li class="language_item"><a href="/jpn/index.do" target="_blank" title="새창" class="language_anchor">JAPANESE</a></li>
+                                        <li class="language_item"><a href="/chn/index.do" target="_blank" title="새창" class="language_anchor">CHINESE</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="site_link">
+                            <li><a href="/www/index.do" target="_blank" title="새창" rel="noopener noreferrer">동대문구청</a></li>
+                            <li><a href="/health/index.do" target="_blank" title="새창" rel="noopener noreferrer">보건소</a></li>
+                            <li><a href="http://council.ddm.go.kr/" target="_blank" title="새창" rel="noopener">구의회</a></li>
+                            <li><a href="/reserve/index.do" target="_blank" title="새창" rel="noopener noreferrer">예약포털</a></li>
+                        </ul>
+                    </div>
+                    <div class="wrap">
+                        <div class="depth depth1"> <!-- 차수에 맞는 숫자와 조합하여 클래스를 넣어주세요 (예 : depth#, depth#_#) -->
+                            <!-- 선택된 가장 하위 메뉴 a  태그에 'spy' class 붙여주세요 -->
+                            <ul class="depth_list depth1_list">
+                                <li class="depth_item depth1_item actived"><!-- 'actived' class는 'spy' class가 들어가 있을 때 자동으로 들어갑니다. -->
+                                    <a href="" class="depth_text depth1_text"><span>이필형입니다</span></a>
+                                    <div class="depth depth2">
+                                        <div class="depth2_content">
+                                            <ul class="depth_list depth2_list">
+                                                <li class="depth_item depth2_item">
+                                                    <a href="" class="depth_text depth2_text">종합민원실</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원실 안내 4차 있음</a>
+                                                                <div class="depth depth4">
+                                                                    <ul class="depth_list depth4_list">
+                                                                        <li class="depth_item depth4_item"><a href="" class="depth_text depth4_text">행정정보공동이용</a></li>
+                                                                        <li class="depth_item depth4_item"><a href="" class="depth_text depth4_text">민원 1회방문처리제</a></li>
+                                                                        <li class="depth_item depth4_item"><a href="" class="depth_text depth4_text">민원미란다</a></li>
+                                                                        <li class="depth_item depth4_item"><a href="" class="depth_text depth4_text">사전심사청구제</a></li>
+                                                                        <li class="depth_item depth4_item"><a href="" class="depth_text depth4_text">폐업신고 원스톱서비스</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">담당자 전화 검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원편람</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text" target="_blank" title="새창">민원24</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">무인민원발급기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원편의 시책 및 제도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">행정처분불복절차</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item">
+                                                    <a href="" class="depth_text depth2_text">종합민원실</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원실 안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">담당자 전화 검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원편람</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text" target="_blank" title="새창">민원24</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">무인민원발급기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원편의 시책 및 제도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">행정처분불복절차</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item">
+                                                    <a href="" class="depth_text depth2_text">종합민원실</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원실 안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">담당자 전화 검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원편람</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text" target="_blank" title="새창">민원24</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">무인민원발급기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원편의 시책 및 제도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">행정처분불복절차</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item">
+                                                    <a href="" class="depth_text depth2_text">종합민원실</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원실 안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">담당자 전화 검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원편람</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text" target="_blank" title="새창">민원24</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">무인민원발급기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원편의 시책 및 제도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">행정처분불복절차</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item">
+                                                    <a href="" class="depth_text depth2_text">종합민원실</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원실 안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">담당자 전화 검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원편람</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text" target="_blank" title="새창">민원24</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">무인민원발급기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">민원편의 시책 및 제도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">행정처분불복절차</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="depth_item depth1_item">
+                                    <a href="#" class="depth_text depth1_text"><span>구정목표 및 운영방향</span></a>
+                                    <div class="depth depth2">
+                                        <div class="depth2_content">
+                                            <ul class="depth_list depth2_list">
+                                                <li class="depth_item depth2_item">
+                                                    <a href="#" class="depth_text depth2_text">종합민원실</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원실 안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">담당자 전화 검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원편람</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text" target="_blank" title="새창">민원24</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">무인민원발급기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원편의 시책 및 제도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">행정처분불복절차</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item">
+                                                    <a href="#" class="depth_text depth2_text">종합민원실</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원실 안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">담당자 전화 검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원편람</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text" target="_blank" title="새창">민원24</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">무인민원발급기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원편의 시책 및 제도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">행정처분불복절차</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item">
+                                                    <a href="#" class="depth_text depth2_text">종합민원실</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원실 안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">담당자 전화 검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원편람</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text" target="_blank" title="새창">민원24</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">무인민원발급기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원편의 시책 및 제도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">행정처분불복절차</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item">
+                                                    <a href="#" class="depth_text depth2_text">종합민원실</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원실 안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">담당자 전화 검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원편람</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text" target="_blank" title="새창">민원24</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">무인민원발급기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원편의 시책 및 제도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">행정처분불복절차</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item">
+                                                    <a href="#" class="depth_text depth2_text">종합민원실</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원실 안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">담당자 전화 검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원편람</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text" target="_blank" title="새창">민원24</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">무인민원발급기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">민원편의 시책 및 제도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">행정처분불복절차</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="depth_item depth1_item ">
+                                    <a href="#" class="depth_text depth1_text"><span>매니페스토</span></a>
+                                    <div class="depth depth2">
+                                        <div class="depth2_content">
+                                            <ul class="depth_list depth2_list ">
+                                                <li class="depth_item depth2_item ">
+                                                    <a href="#" class="depth_text depth2_text">행정자료</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">성과관리</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">각종 위원회</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">녹색송파위원회</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">송파 국공유지 현황</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">송파통계</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">외부에서 평가한 송파</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">지하수 수위자료 공개</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a href="#" class="depth_text depth2_text">예산/결산</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2240&amp;" >예산정보</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2241&amp;" >결산정보</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2242&amp;" >지방재정공시안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/selectBbsNttList.do?bbsNo=191&amp;key=2243&amp;" >지방재정공시</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/selectBbsNttList.do?bbsNo=221&amp;key=2304&amp;" >예산집행 실명공표목록</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2305&amp;" >중기 지방재정계획</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2307&amp;" >지방공기업</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a class="depth_text depth2_text " href="/www/contents.do?key=2311&amp;" >정보공개</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2311&amp;" >행정정보 공개</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2312&amp;" >비공개정보 세부기준</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/selectBbsNttList.do?bbsNo=303&amp;key=2313&amp;" >사전정보공표목록</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a class="depth_text depth3_text " href="https://www.open.go.kr/othicInfo/infoList/infoList.do?" target="_blank" title="새창" rel="noopener noreferrer">우리구 정보목록</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a class="depth_text depth3_text " href="/www/selectBbsNttList.do?bbsNo=26&amp;key=2318&amp;" >감사·청렴</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/selectBbsNttList.do?bbsNo=327&amp;key=2323&amp;" >업무추진비</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2325&amp;" >정책실명제</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2328&amp;" >공공데이터 개방</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="http://openfinance.seoul.go.kr/songpa/fundsoperating?mngId=2&amp;localGovCd=24&amp;" target="_blank" title="새창" rel="noopener noreferrer">재정정보</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2330&amp;" >조직운영 핵심지표</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a class="depth_text depth2_text " href="https://www.open.go.kr/com/main/mainView.do?" >정보공개신청</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="https://www.open.go.kr/com/main/mainView.do?" target="_blank" title="새창" rel="noopener noreferrer">청구</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/selectBbsNttList.do?bbsNo=33&amp;key=2334&amp;" >서식</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item">
+                                                    <a class="depth_text depth2_text " href="/www/contents.do?key=2336&amp;" >계약정보</a>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a class="depth_text depth2_text " href="http://www.elis.go.kr/newlaib/renew_laibLaws/h1126/laws_new.jsp?regionId=11710&amp;" >법률정보</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="http://www.elis.go.kr/newlaib/renew_laibLaws/h1126/laws_new.jsp?regionId=11710&amp;" target="_blank" title="새창" rel="noopener noreferrer">송파구자치법규</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="http://legal.seoul.go.kr/?" target="_blank" title="새창" rel="noopener noreferrer">서울시자치법규</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="https://www.moleg.go.kr/?" target="_blank" title="새창" rel="noopener noreferrer">대한민국현행법령</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/selectBbsNttList.do?bbsNo=34&amp;key=2341&amp;" >입법예고</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2343&amp;" >무료법률상담</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=5354&amp;" >규제입증책임제</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a class="depth_text depth2_text " href="/map/index.do?" >지도서비스</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/map/index.do?" target="_blank" title="새창" rel="noopener noreferrer">스마트송파지도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/sub.do?key=3051&amp;" target="_blank" title="새창" rel="noopener noreferrer">복지지도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/sub.do?key=5048&amp;" target="_blank" title="새창" rel="noopener noreferrer">공사장 찾기 서비스</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/culture/sub.do?key=3832&amp;" target="_blank" title="새창" rel="noopener noreferrer">착한가격업소</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/sub.do?key=2359&amp;" >생활안내지도</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="depth_item depth1_item ">
+                                    <a href="#" class="depth_text depth1_text"><span>구청장24시</span></a>
+                                    <div class="depth depth2">
+                                        <div class="depth2_content">
+                                            <ul class="depth_list depth2_list ">
+                                                <li class="depth_item depth2_item ">
+                                                    <a class="depth_text depth2_text " href="/www/contents.do?key=2355&amp;" >구청안내</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/chief/contents.do?key=3722&amp;" target="_blank" title="새창" rel="noopener noreferrer">구청장 인사말</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2355&amp;" >행정조직도</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/selectEmpList.do?key=2356&amp;" >직원검색</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2357&amp;" >청사안내</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2358&amp;" >찾아오시는 길</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/selectBbsNttList.do?bbsNo=261&amp;key=2359&amp;" >생활안내 지도</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a class="depth_text depth2_text " href="/www/contents.do?key=2361&amp;" >구정 기본현황</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2361&amp;" >비전/기본현황</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a class="depth_text depth2_text " href="/www/contents.do?key=2364&amp;" >송파연혁</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2364&amp;" >연혁</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2365&amp;" >역대 구청장</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a class="depth_text depth2_text " href="/www/contents.do?key=2367&amp;" >송파역사</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2367&amp;" >동명유래</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/contents.do?key=2368&amp;" >지명유래</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a class="depth_text depth3_text " href="/www/selectBbsNttList.do?bbsNo=35&amp;key=2369&amp;" >인터넷기록관</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a href="#" class="depth_text depth2_text" target="_blank">구상징</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">심벌마크</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">캐릭터</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">꽃, 나무, 새</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">국제 관광도시 송파 CI</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">구정슬로건</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item">
+                                                    <a href="#" class="depth_text depth2_text">동주민센터</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">동주민센터 한눈에 보기</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">가락1동</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">잠실6동</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">잠실7동</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">잠실본동</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">장지동</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">풍납1동</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">풍납2동</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">작은 도서관</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a href="#" class="depth_text depth2_text">자매도시</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">국제교류</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">국내교류</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">자매도시 직거래장터</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a href="#" class="depth_text depth2_text ">관내 주요기관</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">관공서</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text" >복지시설</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">언론기관</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">교육기관</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">의료기관</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">금융기관</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="depth_item depth2_item ">
+                                                    <a href="#" class="depth_text depth2_text ">관내 주요기관</a>
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list ">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">관공서</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text" >복지시설</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">언론기관</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">교육기관</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item ">
+                                                                <a href="#" class="depth_text depth3_text">의료기관</a>
+                                                            </li>
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="#" class="depth_text depth3_text">금융기관</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- 분야별정보 -->
+                                <li class="depth_item depth1_item ">
+                                    <a class="depth_text depth1_text " href="#n" ><span>공감과소통</span></a>
+                                    <div class="depth depth2">
+                                        <div class="depth2_content">
+                                            <div class="section_depth">
+                                                <ul class="depth_list depth2_list ">
+                                                    <li class="depth_item depth2_item tab_active  ">
+                                                        <a href="#n" class="depth_text depth2_text">
+                                                            <span>기업/일자리</span>
+                                                        </a>
+                                                        <div class="depth depth3">
+                                                            <ul class="depth_list depth3_list">
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=2797&amp;"  class="depth_text depth3_text">중소기업지원 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=2809&amp;"  class="depth_text depth3_text">일자리사업 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/job/index.do?"  class="depth_text depth3_text">일자리시설 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=2840&amp;"  class="depth_text depth3_text">사회적기업등 지원 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/selectBbsNttList.do?bbsNo=94&amp;key=2837&amp;"  class="depth_text depth3_text">채용정보 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/tourListMain.do?key=4990&amp;resrceClssCd=TR0179&amp;"  class="depth_text depth3_text">경제 </a>
+
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="depth_item depth2_item   ">
+                                                        <a href="#n" class="depth_text depth2_text">
+                                                            <span>복지</span>
+                                                        </a>
+                                                        <div class="depth depth3">
+                                                            <ul class="depth_list depth3_list">
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=2894&amp;"  class="depth_text depth3_text">일반 복지사업 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=2909&amp;"  class="depth_text depth3_text">저소득 주민복지 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=2985&amp;"  class="depth_text depth3_text">노인복지 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=2994&amp;"  class="depth_text depth3_text">장애인복지 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=4181&amp;"  class="depth_text depth3_text">주거복지 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=2956&amp;"  class="depth_text depth3_text">여성·영유아·가족복지 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=4190&amp;"  class="depth_text depth3_text">고용복지 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=4198&amp;"  class="depth_text depth3_text">아동·청소년 친화도시 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/tourListMain.do?key=3051&amp;resrceClssCd=LV0004&amp;sc1=LV0004&amp;sc3=LV0061&amp;"  class="depth_text depth3_text">복지시설 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=3072&amp;"  class="depth_text depth3_text">열린광장 </a>
+
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="depth_item depth2_item   ">
+                                                        <a href="#n" class="depth_text depth2_text">
+                                                            <span>안전/교통</span>
+                                                        </a>
+                                                        <div class="depth depth3">
+                                                            <ul class="depth_list depth3_list">
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/clnsMain.do?key=3076&amp;"  class="depth_text depth3_text">민방위 </a>
+
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=3103&amp;"  class="depth_text depth3_text">안전 </a>
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=3125&amp;"  class="depth_text depth3_text">교통 </a>
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=3144&amp;"  class="depth_text depth3_text">자전거 여행 </a>
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=5287&amp;"  class="depth_text depth3_text">개인형 이동장치 </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="depth_item depth2_item   ">
+                                                        <a href="#n" class="depth_text depth2_text">
+                                                            <span>주택/도시</span>
+                                                        </a>
+                                                        <div class="depth depth3">
+                                                            <ul class="depth_list depth3_list">
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=3225&amp;"  class="depth_text depth3_text">도시계획 </a>
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=4862&amp;"  class="depth_text depth3_text">재개발/재건축 </a>
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/selectBbsNttList.do?bbsNo=116&amp;key=3320&amp;"  class="depth_text depth3_text">공동주택 </a>
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=3342&amp;"  class="depth_text depth3_text">교통대책 </a>
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=3347&amp;"  class="depth_text depth3_text">하천 </a>
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=3355&amp;"  class="depth_text depth3_text">건축행정 </a>
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="http://land.songpa.go.kr/land/?" target="_blank" title="새창" class="depth_text depth3_text" rel="noopener noreferrer">부동산 </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="depth_item depth2_item   ">
+                                                        <a href="#n" class="depth_text depth2_text">
+                                                            <span>환경/청소</span>
+                                                        </a>
+                                                        <div class="depth depth3">
+                                                            <ul class="depth_list depth3_list">
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=3186&amp;"  class="depth_text depth3_text">환경/위생 </a>
+                                                                </li>
+                                                                <li class="depth_item depth3_item  ">
+                                                                    <a href="/www/contents.do?key=3153&amp;"  class="depth_text depth3_text">청소/재활용 </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu_hide">
+                        <button type="button" class="menu_btn">주메뉴 닫기</button>
+                    </div>
+                    <div class="sitemap"><a href="">전체메뉴보기</a></div>
+                </nav>
+            </div>
+            <div class="lnb_curtain"><button type="button">메뉴 닫기</button></div>
+            <div class="search">
+                <div class="wrap">
+                    <button class="search_open" data-header-pop="search" data-title="통합검색" title="통합검색 열기">통합검색 열기</button>
+                </div>
+                <div class="search_panel" data-header-panel="search">
+                    <div class="wrap">
+                        <h2 class="skip">통합검색</h2>
+                        <form action="" method="get" class="search_form">
+                            <fieldset class="search_fieldset">
+                                <legend>검색</legend>
+                                <div class="search_input">
+                                    <label for="contentSj" class="skip">통합검색</label>
+                                    <input type="search" id="contentSj" placeholder="검색어를 입력해 주세요."  class="search_query" />
+                                </div>
+                                <input type="submit" class="search_submit" title="검색">
+                            </fieldset>
+                        </form>
+                        <button class="search_close" title="통합검색 닫기">통합검색 닫기</button>
+                    </div>
+                </div>
+            </div>
+            <div class="link">
+                <div class="wrap">
+                    <ul class="link_list clearfix">
+                        <li class="link_item login">
+                            <!--1. 로그인 버튼 로그인창으로 이동-->
+                            <!--							<a href="#" class="link_anchor login_button">-->
+                            <!--								<i class="ri-user-line"></i><span class="skip">로그인</span>-->
+                            <!--							</a>-->
+
+                            <!-- 2. 로그인 후 버튼-->
+                            <button  type="button" class="link_anchor myinfo_button" data-header-pop="myinfo" data-title="내 정보">
+                                <i class="ri-user-settings-line"></i><span class="skip">내 정보</span>
+                                <!--알림이 있을때 / 100개 이상일때는 99+ 로 나오고 span에 class:over 추가해주세요!-->
+                                <!--알림이 없을 때 / span 삭제-->
+                                <span class="alarm" title="나의 알림 개수"><em>3</em></span>
+                            </button>
+                            <div class="login_panel" data-header-panel="myinfo">
+                                <div class="top_box">
+                                    <span class="top_title">알림이 도착했어요!</span>
+                                    <ul>
+                                        <li>민원 답변 <a href="#n">1 건</a></li>
+                                        <li>강좌교육 일정 <a href="#n">1 건</a></li>
+                                    </ul>
+                                </div>
+                                <ul class="login_list">
+                                    <li class="mypage_button"><a href="#">개인정보 수정</a></li>
+                                    <li class="pw_button"><a href="#">비밀번호 변경</a></li>
+                                    <li class="logout_button"><a href="#">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="sitemap">
+                <div class="wrap">
+                    <a href="#n" class="sitemap_anchor"><i class="ri-menu-line"></i><span>사이트맵</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+	<div id="container">
+		<main class="colgroup">
+            <div class="rowgroup1">
+                <section class="main_visual">
+                    <h2 class="skip">메인비주얼 영역</h2>
+                    <div class="main_visual_wrap">
+                        <div class="visual_slide_wrap">
+                            <i class="visual_deco_box"></i> <!--//visual_deco_box-->
+                            <div class="visual_slide_list">
+                                <div class="visual_slide_item">    <!--//img_wrap 에 background-image cms에서 사진 등록시 변경 기능 들어가게 되면 개발 부탁드리겠습니다-->
+                                    <i class="slide_title_bg"></i>  <!--//slide_title_bg-->
+                                    <span class="img_wrap" style="background-image:url(../chief_2022/images/main/main_visual_img02.jpg)"></span>  <!--//-->
+                                    <span class="title_wrap">
+                                        <span class="mini_title">동대문구청장 이필형입니다</span>    <!--//mini_title-->
+                                        <span class="big_title">
+                                            <span class="text text01">구민의 작은 목소리도 귀담아 듣는</span> <br>
+                                            <span class="text text02">구청장이 되겠습니다</span>
+                                        </span> <!--//big_title-->
+                                    </span> <!--//title_wrap-->
+                                </div>   <!--//visual_slide_item-->
+                                <div class="visual_slide_item">    <!--//img_wrap 에 background-image cms에서 사진 등록시 변경 기능 들어가게 되면 개발 부탁드리겠습니다-->
+                                    <i class="slide_title_bg"></i>  <!--//slide_title_bg-->
+                                    <span class="img_wrap" style="background-image:url(../chief_2022/images/main/main_visual_img03.jpg)"></span>  <!--//-->
+                                    <span class="title_wrap">
+                                        <span class="mini_title">동대문구청장 이필형입니다</span>    <!--//mini_title-->
+                                        <span class="big_title">
+                                            <span class="text text01">쾌적하게 안전하게 투명하게</span> <br>
+                                            <span class="text text02">동대문의 미래를 열겠습니다</span>
+                                        </span> <!--//big_title-->
+                                    </span> <!--//title_wrap-->
+                                </div>   <!--//visual_slide_item-->
+                            </div>  <!--//visual_slide_list-->
+                            <div class="visual_slide_btn_box">
+                                <div class="visual_dots_box"></div> <!--//visual_dots_box-->
+                            </div>    <!--//visual_slide_btn_box-->
+                            <div class="more_btn_box">
+                                <a href="" class="more_link">
+                                    <span class="more_text">구청장에게 바란다</span>  <!--//more_text-->
+                                </a>   <!--//more_link-->
+                            </div>  <!--//more_btn_box-->
+                        </div>  <!--//visual_slide_wrap-->
+                    </div>  <!--//main_visual_wrap-->
+                </section>  <!--//main_visual-->
+            </div>  <!--//rowgroup1-->
+            <div class="rowgroup2">
+                <section class="photo_gallery">
+                    <div class="photo_gallery_wrap scroll_ani">
+                        <div class="p_g_title_wrap">
+                            <h2 class="p_g_title">
+                                <span class="top_text">현장속에서</span> <br>
+                                <span class="bottom_text">구민을 만나는 곳</span>
+                            </h2>   <!--//p_g_title-->
+                            <div class="title_desc">
+                                <span class="img_text">photo gallery</span> <!--//img_text-->
+                                <p class="desc">
+                                    동대문구 홈페이지는 동대문구청과 구민이 항상 만날<br> 수 있는 가장 가까운 공간입니다<br> 구청에 직접 찾아오지 않고서도 다양한 정보와 편리한<br> 서비스를 이용하실 수 있기를 바랍니다
+                                </p>    <!--//desc-->
+                            </div>  <!--//title_desc-->
+                        </div>  <!--//p_g_title_wrap-->
+                        <div class="p_g_slide_wrap">
+                            <div class="p_g_slide_list scroll_ani">
+                                <div class="p_g_slide_item">
+                                    <a href="" class="p_g_slide_link">  <!--//사진 cms 개발처리 되어야 할 시에 background-image:url()에 경로 개발 부탁드립니다-->
+                                        <span class="img_wrap">
+                                            <i class="real_img" style="background-image:url(../chief_2022/images/main/p_g_img01.png)"></i>
+                                        </span>  <!--//img_wrap-->
+                                        <span class="title_wrap">
+                                            <span class="text">관내 빗물 펌프장 및 중량천 시설물 점검</span>
+                                        </span> <!--//title_wrap-->
+                                    </a>  <!--//p_g_slide_link-->
+                                </div>  <!--//p_g_slide_item-->
+                                <div class="p_g_slide_item">
+                                    <a href="" class="p_g_slide_link">  <!--//사진 cms 개발처리 되어야 할 시에 background-image:url()에 경로 개발 부탁드립니다-->
+                                        <span class="img_wrap">
+                                            <i class="real_img" style="background-image:url(../chief_2022/images/main/p_g_img02.png)"></i>
+                                        </span>  <!--//img_wrap-->
+                                        <span class="title_wrap">
+                                            <span class="text">구청 어린이집 방문</span>
+                                        </span> <!--//title_wrap-->
+                                    </a>  <!--//p_g_slide_link-->
+                                </div>  <!--//p_g_slide_item-->
+                                <div class="p_g_slide_item">
+                                    <a href="" class="p_g_slide_link">  <!--//사진 cms 개발처리 되어야 할 시에 background-image:url()에 경로 개발 부탁드립니다-->
+                                        <span class="img_wrap">
+                                            <i class="real_img" style="background-image:url(../chief_2022/images/main/p_g_img03.png)"></i>
+                                        </span>  <!--//img_wrap-->
+                                        <span class="title_wrap">
+                                            <span class="text">동대문구청장 취임식</span>
+                                        </span> <!--//title_wrap-->
+                                    </a>  <!--//p_g_slide_link-->
+                                </div>  <!--//p_g_slide_item-->
+                                <div class="p_g_slide_item">
+                                    <a href="" class="p_g_slide_link">  <!--//사진 cms 개발처리 되어야 할 시에 background-image:url()에 경로 개발 부탁드립니다-->
+                                        <span class="img_wrap">
+                                            <i class="real_img" style="background-image:url(../chief_2022/images/main/p_g_img04.png)"></i>
+                                        </span>  <!--//img_wrap-->
+                                        <span class="title_wrap">
+                                            <span class="text">6.25 순진 16지사 위령비 참배</span>
+                                        </span> <!--//title_wrap-->
+                                    </a>  <!--//p_g_slide_link-->
+                                </div>  <!--//p_g_slide_item-->
+                            </div>  <!--//p_g_slide_list-->
+                        </div>  <!--//p_g_slide_wrap-->
+                    </div>  <!--//photo_gallery_wrap-->
+                </section>   <!--//photo_gallery-->
+            </div>  <!--//rowgroup2-->
+            <div class="rowgroup3">
+                <section class="schedule">
+                    <div class="schedule_wrap">
+                        <div class="schedule_title_wrap">
+                            <!--//year(년 , 숫자), month(월 , 영어), day(일 , 숫자) 에 오늘날짜 시간 뿌려주시고-->
+                            <!--//day number 부분은 두자리 01 ~ 31 , 앞자리 숫자와 뒷자리 숫자 폰트사이즈가 다르니 따로 뿌려주세요-->
+                            <div class="text_wrap left">
+                                <h2 class="title">오늘의 일정</h2> <br>
+                                <span class="month">June</span>
+                                <em class="dots">,</em>
+                                <span class="year">2022</span>
+                            </div>  <!--//text_wrap left-->
+                            <div class="text_wrap right">
+                                <span class="day">
+                                    <span class="number">25</span>
+                                    <span class="skip">일</span>
+                                </span>   <!--//day-->
+                            </div>  <!--//text_wrap right-->
+                        </div>    <!--//schedule_title_wrap-->
+                        <div class="schedule_slide_wrap">
+                            <div class="schedule_slide_list">   <!--//오늘의 일정 시간 빠른순서대로 데이터 뿌려주세요-->
+                                <div class="schedule_slide_item">
+                                    <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                        <span class="desc_title">
+                                            휘경1동 희망복지위원회
+                                            사랑의 김장나눔 행사
+                                        </span>    <!--//desc_title-->
+                                        <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                    </a>    <!--//schedule_slide_link-->
+                                </div>    <!--//schedule_slide_item-->
+                                <div class="schedule_slide_item">
+                                    <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">pm</em>
+                                            <em class="num">03:25</em>
+                                        </span>    <!--//time-->
+                                        <span class="desc_title">
+                                            용신동 행사추진위원회
+                                            김장나눔 행사
+                                        </span>    <!--//desc_title-->
+                                        <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">용신동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">구청장협의회 임시회의(영상회의)</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                    </a>    <!--//schedule_slide_link-->
+                                </div>    <!--//schedule_slide_item-->
+                                <div class="schedule_slide_item">
+                                    <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">pm</em>
+                                            <em class="num">04:00</em>
+                                        </span>    <!--//time-->
+                                        <span class="desc_title">
+                                            수도권특별방역대책
+                                            관련 중대본 영상회의
+                                        </span>    <!--//desc_title-->
+                                        <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">백범김구기념관 컨벤션홀</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">세종대왕 전통예술 경연대회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                    </a>    <!--//schedule_slide_link-->
+                                </div>    <!--//schedule_slide_item-->
+                                <div class="schedule_slide_item">
+                                    <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">00:00</em>
+                                        </span>    <!--//time-->
+                                        <span class="desc_title">
+                                            일정 제목 한줄
+                                        </span>    <!--//desc_title-->
+                                        <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">장소 들어가는 곳 한줄까지 커버 커버 커버 커버</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">내용 들어가는 곳 내용 들어가는 곳 세줄까지 커버 커버 커버 커버 커버</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                    </a>    <!--//schedule_slide_link-->
+                                </div>    <!--//schedule_slide_item-->
+                            </div>    <!--//schedule_slide_list-->
+                            <div class="more_btn_box">
+                                <a href="" class="more_link">
+                                    <span class="more_text">모든 일정</span>  <!--//more_text-->
+                                </a>   <!--//more_link-->
+                            </div>  <!--//more_btn_box-->
+                        </div>    <!--//schedule_slide_wrap-->
+                    </div>   <!--//schedule_wrap-->
+                </section>    <!--//schedule-->
+            </div>  <!--//rowgroup3-->
+		</main> <!--//colgroup-->
+	</div>  <!--//#container-->
+    <footer id="footer">
+        <div class="wrap">
+            <div class="footer_content clearfix">
+                <div class="link">
+                    <ul class="link_list clearfix">
+                        <li class="link_item n1"><a href="/www/contents.do?key=1009" class="link_anchor">개인정보처리지침</a></li>
+                        <li class="link_item n2"><a href="/www/sub.do?key=1012" class="link_anchor">홈페이지오류신고</a></li>
+                    </ul>
+                </div>
+                <div class="footer_info">
+                    <address>
+                        <div class="address">(02565) 서울시 동대문구 천호대로 145 (용두동)</div>
+                        <div class="tel_area">
+                            <span>전화: 대표번호 02-2127-5000</span>
+                            <span>(120 다산콜센터로 연결)</span>
+                            <span>02-2127-4000(야간·공휴일·당직실)</span>
+
+                        </div>
+                        <div class="fax">FAX : 02-2127-5096</div>
+                    </address>
+                    <p class="copyright">COPYRIGHT 2022 DONGDAEMUN-GU. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+
+            <div class="up">
+                <a href="#wrapper" class="up_button"><i class="ri-arrow-up-line"></i><span class="skip">맨위로</span></a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
+
