@@ -69,7 +69,7 @@
         //포토갤러리 슬라이드 시작
         var $PGSlideList = $('.photo_gallery .photo_gallery_wrap .p_g_slide_wrap .p_g_slide_list');
         $PGSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             arrows : false,
             slidesToShow : 1,
             slidesToScroll : 1,
@@ -80,8 +80,24 @@
             rows : 2, //여러줄
             slidesPerRow : 2, //여러줄 일 때 한줄의 몇개 출력
             variableWidth : false, //width를 css로 제어
+            vertical : false, //세로모드 유무
+            verticalSwiping : false, //세로일때 터치 유무
             zIndex : 3,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 2,
+                    slidesToScroll : 1,
+                    rows : 1,
+                    slidesPerRow : 1,
+                    infinite : true,
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    vertical : true,
+                    verticalSwiping : true
+                }
+            }]
         });
         //포토갤러리 슬라이드 끝
 
@@ -99,6 +115,8 @@
             swipeToSlide : true,
             draggable : true,
             variableWidth : true, //width를 css로 제어
+            vertical : false, //세로모드 유무
+            verticalSwiping : false, //세로일때 터치 유무
             zIndex : 3,
             responsive : [{
                 breakpoint : 1671,
@@ -110,6 +128,24 @@
                 breakpoint : 1281,
                 settings : {
                     slidesToShow : 1,
+                    slidesToScroll : 1
+                }
+            },{
+                breakpoint : 1001,
+                settings : {
+                    variableWidth : false,
+                    vertical : true,
+                    verticalSwiping : true,
+                    slidesToShow : 2,
+                    slidesToScroll : 1
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    variableWidth : false,
+                    vertical : true,
+                    verticalSwiping : true,
+                    slidesToShow : 3,
                     slidesToScroll : 1
                 }
             }]
