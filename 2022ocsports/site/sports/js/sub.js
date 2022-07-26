@@ -1,3 +1,13 @@
+//파라미터 읽기 시작
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+//파라미터 읽기 끝
+
 (function ($) {
     'use strict';
 
@@ -8,6 +18,7 @@
         $screen = $.screen,
         $inArray = $.inArray;
     $(function () {
+        var active = getParameterByName('active');
 
         //사이드
         var $container = $('#container'),
@@ -125,6 +136,70 @@
             offset : '90%'
         });
         //컨텐츠 스크롤 효과 끝
+
+        //경기종목 전용 탭메뉴 리뉴얼 시작
+        var $PlayTabInner = $('.play_tab_menu_box .inner'),
+            $PlayTabMobileBtn = $PlayTabInner.find('.play_m_tab_btn');
+        $PlayTabMobileBtn.on('click', function(){
+            var $this = $(this),
+                $PlayTabInner = $this.parent('.inner'),
+                IsActive = $PlayTabInner.is('.active');
+            if (!IsActive) {
+                $this.next('.hidden_layer').stop().slideDown('250', 'easeOutExpo');
+                $PlayTabInner.addClass('active');
+            } else {
+                $this.next('.hidden_layer').stop().slideUp('250', 'easeOutExpo');
+                $PlayTabInner.removeClass('active');
+            };
+        });
+        var $PlayTabMenuBox = $('.play_tab_menu_box');
+        $PlayTabMenuBox.each(function(index, element){
+            var $PlayTabMenuButton = $(element).find('.play_tab_btn'),
+                $PlayTabMenuContent = $(element).find('.play_content');
+            $PlayTabMenuButton.on('click', function(){
+                var $this = $(this),
+                    index = $PlayTabMenuButton.index(this),
+                    TabButtonText = $this.text(),
+                    IsTabAll = $this.is('.tab_all'),
+                    $HiddenLayer = $this.parents('.hidden_layer'),
+                    $PlayTabMenuBox_menu = $this.parents('.inner');
+                $this.attr('title', '선택됨').closest('.play_tab_item').addClass('active').siblings('.play_tab_item').removeClass('active').find('.play_tab_btn').removeAttr('title');
+                $this.parents('.play_tab_menu_box').find('.play_m_tab_btn').attr('title','탭 메뉴 열기');
+                $this.parents('.play_tab_menu_box').find('.play_m_tab_btn .text').text(TabButtonText);
+                $PlayTabMenuContent.eq(index).addClass('active').siblings('.play_content').removeClass('active');
+
+                var $PlayTabMenuContentMap = $PlayTabMenuContent.eq(index).find('.map_area'),
+                    $OtherPlayTabMenuContentMap = $PlayTabMenuContent.eq(index).siblings('.play_content').find('.map_area');
+
+                if($OtherPlayTabMenuContentMap.length){
+                    $OtherPlayTabMenuContentMap.empty();
+                }
+                if($PlayTabMenuContentMap.length){
+                    $PlayTabMenuContentMap.each(function(){
+                        var $this = $(this),
+                            MyMapLat = $this.attr('data-lat'),
+                            MyMapLng = $this.attr('data-lng');
+                        $this.empty();
+                        $this.checkMap({
+                            lat : MyMapLat,
+                            lng : MyMapLng
+                        });
+                    });
+                }
+                if ($window.width() <= 1000) {
+                    $PlayTabMenuBox_menu.removeClass('active');
+                    $HiddenLayer.slideUp();
+                };
+                if ($window.width() <= 1000 && IsTabAll) {
+                    $PlayTabMenuBox_menu.removeClass('active');
+                    $HiddenLayer.slideUp();
+                };
+            });
+        });
+        if(active){
+            $('.play_tab_menu_box .inner .play_tab_list .play_tab_item').eq(active-1).find('button.play_tab_btn').click();
+        }
+        //경기종목 전용 탭메뉴 리뉴얼 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
