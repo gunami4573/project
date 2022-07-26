@@ -178,7 +178,7 @@
         //경기장안내 슬라이드 시작
         var $StadiumSlideList = $('.stadium .stadium_wrap .stadium_slide_wrap .stadium_slide_list');
         $StadiumSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             dots : false,
             arrows : true,
             prevArrow : $('.stadium .stadium_wrap .stadium_slide_wrap .title_wrap .prev'),
