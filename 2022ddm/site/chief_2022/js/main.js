@@ -164,7 +164,9 @@
                 $OtherWeekBtn = $OtherWeekItem.find('button.week_btn'),
                 $ScheduleSlideInner = $('.schedule .schedule_wrap .slide_inner'),
                 $MyScheduleSlideList = $ScheduleSlideInner.find('.schedule_slide_list').eq(MyWeekItemIndex),
-                $OtherScheduleSlideList = $MyScheduleSlideList.siblings('.schedule_slide_list');
+                $OtherScheduleSlideList = $MyScheduleSlideList.siblings('.schedule_slide_list'),
+                MyWeekNumber = $this.find('.number').text(),
+                ScheduleTitleNumber = $('.schedule .schedule_wrap .schedule_title_wrap .text_wrap.right .day .number');
             if(!IsActive){
                 $OtherWeekItem.removeClass('active');
                 $OtherWeekBtn.removeAttr('title','선택됨');
@@ -172,6 +174,7 @@
                 $this.attr('title', '선택됨');
                 $OtherScheduleSlideList.removeClass('active');
                 $MyScheduleSlideList.addClass('active').slick('setPosition');
+                ScheduleTitleNumber.text(MyWeekNumber);
             }
         });
         //스케줄 일주일 탭버튼 끝
