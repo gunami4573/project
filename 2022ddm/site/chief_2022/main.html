@@ -1238,7 +1238,7 @@
                     <div class="schedule_wrap">
                         <div class="schedule_title_wrap">
                             <!--//year(년 , 숫자), month(월 , 영어), day(일 , 숫자) 에 오늘날짜 시간 뿌려주시고-->
-                            <!--//day number 부분은 두자리 01 ~ 31 , 앞자리 숫자와 뒷자리 숫자 폰트사이즈가 다르니 따로 뿌려주세요-->
+                            <!--//day number 부분은 꼭 두자리 01 ~ 31 로 뿌려주세요-->
                             <div class="text_wrap left">
                                 <h2 class="title">오늘의 일정</h2> <br>
                                 <span class="month">July</span>
@@ -1247,24 +1247,91 @@
                             </div>  <!--//text_wrap left-->
                             <div class="text_wrap right">
                                 <span class="day">
-                                    <span class="number">25</span>
+                                    <span class="number">28</span>
                                     <span class="skip">일</span>
                                 </span>   <!--//day-->
                             </div>  <!--//text_wrap right-->
                         </div>    <!--//schedule_title_wrap-->
+                        <div class="schedule_week_btn_box">
+                            <!--//마크업 추가되었습니다 , 오늘날짜가 포함된 일주일( 월(날짜) ~ 일(날짜) 별로 ) 각각 들어올 수 있게 해주세요-->
+                            <!--//오늘날짜 week_item 클레스에 today클레스와 active클레스 두개 붙게 부탁드립니다-->
+                            <!--//버튼 클릭 시(스크립트처리됨) 하단 슬라이드와 같은 날짜의 슬라이드(schedule_slide_list)에 active 클레스가 붙습니다-->
+                            <!--//오늘날짜 week_item 안에 있는 week_btn 에 title="선택됨" 첫 로딩시 들어올 수 있게 부탁드립니다-->
+                            <!--//week_btn 안에 있는 number 의 숫자는 꼭 01 ~ 31 형식으로 뿌려주세요 -->
+                            <div class="week_list">
+                                <!--//오늘날짜가 포함된 일주일 중 월요일 일정보기 버튼-->
+                                <div class="week_item">
+                                    <button type="button" class="week_btn">
+                                        <span class="day">월</span>    <!--//day-->
+                                        <br>
+                                        <span class="number">25</span>    <!--//number-->
+                                    </button>   <!--//week_btn-->
+                                </div>   <!--//week_item-->
+                                <!--//오늘날짜가 포함된 일주일 중 화요일 일정보기 버튼-->
+                                <div class="week_item">
+                                    <button type="button" class="week_btn">
+                                        <span class="day">화</span>    <!--//day-->
+                                        <br>
+                                        <span class="number">26</span>    <!--//number-->
+                                    </button>   <!--//week_btn-->
+                                </div>   <!--//week_item-->
+                                <!--//오늘날짜가 포함된 일주일 중 수요일 일정보기 버튼-->
+                                <div class="week_item">
+                                    <button type="button" class="week_btn">
+                                        <span class="day">수</span>    <!--//day-->
+                                        <br>
+                                        <span class="number">27</span>    <!--//number-->
+                                    </button>   <!--//week_btn-->
+                                </div>   <!--//week_item-->
+                                <!--//오늘날짜가 포함된 일주일 중 목요일 일정보기 버튼-->
+                                <div class="week_item today active">
+                                    <button type="button" class="week_btn" title="선택됨">
+                                        <span class="day">목</span>    <!--//day-->
+                                        <br>
+                                        <span class="number">28</span>    <!--//number-->
+                                    </button>   <!--//week_btn-->
+                                </div>   <!--//week_item-->
+                                <!--//오늘날짜가 포함된 일주일 중 금요일 일정보기 버튼-->
+                                <div class="week_item">
+                                    <button type="button" class="week_btn">
+                                        <span class="day">금</span>    <!--//day-->
+                                        <br>
+                                        <span class="number">29</span>    <!--//number-->
+                                    </button>   <!--//week_btn-->
+                                </div>   <!--//week_item-->
+                                <!--//오늘날짜가 포함된 일주일 중 토요일 일정보기 버튼-->
+                                <div class="week_item">
+                                    <button type="button" class="week_btn">
+                                        <span class="day">토</span>    <!--//day-->
+                                        <br>
+                                        <span class="number">30</span>    <!--//number-->
+                                    </button>   <!--//week_btn-->
+                                </div>   <!--//week_item-->
+                                <!--//오늘날짜가 포함된 일주일 중 일요일 일정보기 버튼-->
+                                <div class="week_item">
+                                    <button type="button" class="week_btn">
+                                        <span class="day">일</span>    <!--//day-->
+                                        <br>
+                                        <span class="number">31</span>    <!--//number-->
+                                    </button>   <!--//week_btn-->
+                                </div>   <!--//week_item-->
+                            </div>  <!--//week_list-->
+                        </div>  <!--//schedule_week_btn_box-->
                         <div class="schedule_slide_wrap">
-                            <div class="schedule_slide_list">   <!--//오늘의 일정 시간 빠른순서대로 데이터 뿌려주세요-->
-                                <div class="schedule_slide_item">
-                                    <a href="" class="schedule_slide_link">
+                            <div class="slide_inner">    <!--//마크업 추가되었습니다 , 오늘날짜가 포함된 일주일( 월(날짜) ~ 일(날짜) 별로 ) 일정 슬라이드(schedule_slide_list) 각각 들어올 수 있게 해주세요-->
+                                <!--//오늘날짜인 schedule_slide_list 클레스에 active 클레스가 붙어야만 화면상에 슬라이드 표출 및 동작합니다-->
+
+                                <!--//오늘날짜가 포함된 일주일 중 월요일 일정--><div class="schedule_slide_list">   <!--//오늘의 일정 시간 빠른순서대로 데이터 뿌려주세요-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
                                         <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
                                             <em class="a_p">am</em>
                                             <em class="num">08:30</em>
                                         </span>    <!--//time-->
-                                        <span class="desc_title">
-                                            휘경1동 희망복지위원회
-                                            사랑의 김장나눔 행사
+                                            <span class="desc_title">
+                                            월요일 제목 제목 제목
                                         </span>    <!--//desc_title-->
-                                        <span class="desc_list">
+                                            <span class="desc_list">
                                             <span class="desc_item">
                                                 <em class="title">장소</em>
                                                 <em class="text">휘경 1동 주민센터</em>
@@ -1274,19 +1341,278 @@
                                                 <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
                                             </span> <!--//desc_item-->
                                         </span> <!--//desc_list-->
-                                    </a>    <!--//schedule_slide_link-->
-                                </div>    <!--//schedule_slide_item-->
-                                <div class="schedule_slide_item">
-                                    <a href="" class="schedule_slide_link">
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            월요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            월요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            월요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                </div>    <!--//schedule_slide_list-->
+                                <!--//오늘날짜가 포함된 일주일 중 화요일 일정--><div class="schedule_slide_list">   <!--//오늘의 일정 시간 빠른순서대로 데이터 뿌려주세요-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            화요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            화요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            화요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            화요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                </div>    <!--//schedule_slide_list-->
+                                <!--//오늘날짜가 포함된 일주일 중 수요일 일정--><div class="schedule_slide_list">   <!--//오늘의 일정 시간 빠른순서대로 데이터 뿌려주세요-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            수요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            수요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            수요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            수요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                </div>    <!--//schedule_slide_list-->
+                                <!--//오늘날짜가 포함된 일주일 중 목요일 일정--><div class="schedule_slide_list active">   <!--//오늘의 일정 시간 빠른순서대로 데이터 뿌려주세요-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            휘경1동 희망복지위원회
+                                            사랑의 김장나눔 행사
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
                                         <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
                                             <em class="a_p">pm</em>
                                             <em class="num">03:25</em>
                                         </span>    <!--//time-->
-                                        <span class="desc_title">
+                                            <span class="desc_title">
                                             용신동 행사추진위원회
                                             김장나눔 행사
                                         </span>    <!--//desc_title-->
-                                        <span class="desc_list">
+                                            <span class="desc_list">
                                             <span class="desc_item">
                                                 <em class="title">장소</em>
                                                 <em class="text">용신동 주민센터</em>
@@ -1296,19 +1622,19 @@
                                                 <em class="text">구청장협의회 임시회의</em>
                                             </span> <!--//desc_item-->
                                         </span> <!--//desc_list-->
-                                    </a>    <!--//schedule_slide_link-->
-                                </div>    <!--//schedule_slide_item-->
-                                <div class="schedule_slide_item">
-                                    <a href="" class="schedule_slide_link">
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
                                         <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
                                             <em class="a_p">pm</em>
                                             <em class="num">04:00</em>
                                         </span>    <!--//time-->
-                                        <span class="desc_title">
+                                            <span class="desc_title">
                                             수도권특별방역대책
                                             관련 중대본 영상회의
                                         </span>    <!--//desc_title-->
-                                        <span class="desc_list">
+                                            <span class="desc_list">
                                             <span class="desc_item">
                                                 <em class="title">장소</em>
                                                 <em class="text">백범김구기념관 컨벤션홀</em>
@@ -1318,18 +1644,18 @@
                                                 <em class="text">세종대왕 전통예술 경연대회</em>
                                             </span> <!--//desc_item-->
                                         </span> <!--//desc_list-->
-                                    </a>    <!--//schedule_slide_link-->
-                                </div>    <!--//schedule_slide_item-->
-                                <div class="schedule_slide_item">
-                                    <a href="" class="schedule_slide_link">
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
                                         <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
                                             <em class="a_p">am</em>
                                             <em class="num">00:00</em>
                                         </span>    <!--//time-->
-                                        <span class="desc_title">
+                                            <span class="desc_title">
                                             일정 제목 한줄
                                         </span>    <!--//desc_title-->
-                                        <span class="desc_list">
+                                            <span class="desc_list">
                                             <span class="desc_item">
                                                 <em class="title">장소</em>
                                                 <em class="text">장소 들어가는 곳 한줄까지 커버 커버 커버 커버</em>
@@ -1339,9 +1665,268 @@
                                                 <em class="text">내용 들어가는 곳 내용 들어가는 곳 세줄까지 커버 커버 커버 커버 커버</em>
                                             </span> <!--//desc_item-->
                                         </span> <!--//desc_list-->
-                                    </a>    <!--//schedule_slide_link-->
-                                </div>    <!--//schedule_slide_item-->
-                            </div>    <!--//schedule_slide_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                </div>    <!--//schedule_slide_list-->
+                                <!--//오늘날짜가 포함된 일주일 중 금요일 일정--><div class="schedule_slide_list">   <!--//오늘의 일정 시간 빠른순서대로 데이터 뿌려주세요-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            금요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            금요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            금요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            금요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                </div>    <!--//schedule_slide_list-->
+                                <!--//오늘날짜가 포함된 일주일 중 토요일 일정--><div class="schedule_slide_list">   <!--//오늘의 일정 시간 빠른순서대로 데이터 뿌려주세요-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            토요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            토요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            토요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            토요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                </div>    <!--//schedule_slide_list-->
+                                <!--//오늘날짜가 포함된 일주일 중 일요일 일정--><div class="schedule_slide_list">   <!--//오늘의 일정 시간 빠른순서대로 데이터 뿌려주세요-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            일요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            일요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            일요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                    <div class="schedule_slide_item">
+                                        <a href="" class="schedule_slide_link">
+                                        <span class="time"> <!--//time 시간 오전, 오후 구분 해서 뿌려주세요-->
+                                            <em class="a_p">am</em>
+                                            <em class="num">08:30</em>
+                                        </span>    <!--//time-->
+                                            <span class="desc_title">
+                                            일요일 제목 제목 제목
+                                        </span>    <!--//desc_title-->
+                                            <span class="desc_list">
+                                            <span class="desc_item">
+                                                <em class="title">장소</em>
+                                                <em class="text">휘경 1동 주민센터</em>
+                                            </span> <!--//desc_item-->
+                                            <span class="desc_item">
+                                                <em class="title">내용</em>
+                                                <em class="text">제기동 감초마을 도시재생뉴딜사업 2021 주민협의체 총회</em>
+                                            </span> <!--//desc_item-->
+                                        </span> <!--//desc_list-->
+                                        </a>    <!--//schedule_slide_link-->
+                                    </div>    <!--//schedule_slide_item-->
+                                </div>    <!--//schedule_slide_list-->
+                            </div>    <!--//slide_inner-->
                             <div class="more_btn_box">
                                 <a href="" class="more_link">
                                     <span class="more_text">모든 일정</span>  <!--//more_text-->

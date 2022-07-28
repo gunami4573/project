@@ -102,55 +102,79 @@
         //포토갤러리 슬라이드 끝
 
         //스케줄 슬라이드 시작
-        var $ScheduleSlideList = $('.schedule .schedule_wrap .schedule_slide_wrap .schedule_slide_list');
-        $ScheduleSlideList.slick({
-            autoplay : true,
-            autoplaySpeed : 3000,
-            speed : 1000,
-            arrows : false,
-            slidesToShow : 3,
-            slidesToScroll : 1,
-            infinite : true,
-            swipe : true,
-            swipeToSlide : true,
-            draggable : true,
-            variableWidth : true, //width를 css로 제어
-            vertical : false, //세로모드 유무
-            verticalSwiping : false, //세로일때 터치 유무
-            zIndex : 3,
-            responsive : [{
-                breakpoint : 1671,
-                settings : {
-                    slidesToShow : 2,
-                    slidesToScroll : 1
-                }
-            },{
-                breakpoint : 1281,
-                settings : {
-                    slidesToShow : 1,
-                    slidesToScroll : 1
-                }
-            },{
-                breakpoint : 1001,
-                settings : {
-                    variableWidth : false,
-                    vertical : true,
-                    verticalSwiping : true,
-                    slidesToShow : 2,
-                    slidesToScroll : 1
-                }
-            },{
-                breakpoint : 641,
-                settings : {
-                    variableWidth : false,
-                    vertical : true,
-                    verticalSwiping : true,
-                    slidesToShow : 3,
-                    slidesToScroll : 1
-                }
-            }]
+        var $ScheduleSlideList = $('.schedule .schedule_wrap .schedule_slide_wrap .slide_inner .schedule_slide_list');
+        $ScheduleSlideList.each(function(){
+            var $this = $(this);
+            $this.slick({
+                autoplay : true,
+                autoplaySpeed : 3000,
+                speed : 1000,
+                arrows : false,
+                slidesToShow : 3,
+                slidesToScroll : 1,
+                infinite : true,
+                swipe : true,
+                swipeToSlide : true,
+                draggable : true,
+                variableWidth : true, //width를 css로 제어
+                vertical : false, //세로모드 유무
+                verticalSwiping : false, //세로일때 터치 유무
+                zIndex : 3,
+                responsive : [{
+                    breakpoint : 1671,
+                    settings : {
+                        slidesToShow : 2,
+                        slidesToScroll : 1
+                    }
+                },{
+                    breakpoint : 1281,
+                    settings : {
+                        slidesToShow : 1,
+                        slidesToScroll : 1
+                    }
+                },{
+                    breakpoint : 1001,
+                    settings : {
+                        variableWidth : false,
+                        vertical : true,
+                        verticalSwiping : true,
+                        slidesToShow : 2,
+                        slidesToScroll : 1
+                    }
+                },{
+                    breakpoint : 641,
+                    settings : {
+                        variableWidth : false,
+                        vertical : true,
+                        verticalSwiping : true,
+                        slidesToShow : 3,
+                        slidesToScroll : 1
+                    }
+                }]
+            });
         });
         //스케줄 슬라이드 끝
+        //스케줄 일주일 탭버튼 시작
+        $('.schedule .schedule_wrap .schedule_week_btn_box .week_list .week_item button.week_btn').on('click', function(){
+            var $this = $(this),
+                $MyWeekItem = $this.parent('.week_item'),
+                IsActive = $MyWeekItem.is('.active'),
+                MyWeekItemIndex = $MyWeekItem.index(),
+                $OtherWeekItem = $MyWeekItem.siblings('.week_item'),
+                $OtherWeekBtn = $OtherWeekItem.find('button.week_btn'),
+                $ScheduleSlideInner = $('.schedule .schedule_wrap .slide_inner'),
+                $MyScheduleSlideList = $ScheduleSlideInner.find('.schedule_slide_list').eq(MyWeekItemIndex),
+                $OtherScheduleSlideList = $MyScheduleSlideList.siblings('.schedule_slide_list');
+            if(!IsActive){
+                $OtherWeekItem.removeClass('active');
+                $OtherWeekBtn.removeAttr('title','선택됨');
+                $MyWeekItem.addClass('active');
+                $this.attr('title', '선택됨');
+                $OtherScheduleSlideList.removeClass('active');
+                $MyScheduleSlideList.addClass('active').slick('setPosition');
+            }
+        });
+        //스케줄 일주일 탭버튼 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
