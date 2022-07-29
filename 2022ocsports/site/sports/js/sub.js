@@ -137,6 +137,25 @@ function getParameterByName(name) {
         });
         //컨텐츠 스크롤 효과 끝
 
+        //play_tab_menu_box 자동높이설정
+        var activeBox = $('.play_content.active'),
+            activeHeight = activeBox.height(),
+            tabHeight = $('.play_tab_menu_box .inner').height();
+        $('.play_tab_menu_box').height(activeHeight + tabHeight);
+
+        var lastWidth = $(window).width();
+        $(window).resize(function() {
+            var result = Math.abs(lastWidth - $(window).width());
+            if(result > 50) {
+                var activeBox = $('.play_content.active'),
+                    activeHeight = activeBox.height(),
+                    tabHeight = $('.play_tab_menu_box .inner').height();
+                $('.play_tab_menu_box').height(activeHeight + tabHeight);
+                lastWidth = $(window).width();
+            }
+        });
+        //play_tab_menu_box 자동높이설정 끝
+
         //경기종목 전용 탭메뉴 리뉴얼 시작
         var $PlayTabInner = $('.play_tab_menu_box .inner'),
             $PlayTabMobileBtn = $PlayTabInner.find('.play_m_tab_btn');
@@ -167,6 +186,11 @@ function getParameterByName(name) {
                 $this.parents('.play_tab_menu_box').find('.play_m_tab_btn').attr('title','탭 메뉴 열기');
                 $this.parents('.play_tab_menu_box').find('.play_m_tab_btn .text').text(TabButtonText);
                 $PlayTabMenuContent.eq(index).addClass('active').siblings('.play_content').removeClass('active');
+
+                var activeBox = $('.play_content.active'),
+                    activeHeight = activeBox.height(),
+                    tabHeight = $('.play_tab_menu_box .inner').height();
+                $('.play_tab_menu_box').height(activeHeight + tabHeight);
 
                 var $PlayTabMenuContentMap = $PlayTabMenuContent.eq(index).find('.map_area'),
                     $OtherPlayTabMenuContentMap = $PlayTabMenuContent.eq(index).siblings('.play_content').find('.map_area');

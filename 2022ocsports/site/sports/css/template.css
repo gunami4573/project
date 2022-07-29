@@ -572,7 +572,7 @@ p{display:block;width:100%;font-size:18px;color:#424242;line-height:35px;letter-
 
 
 /* 컨텐츠 공통 스크롤 이벤트 효과 */
-.waypoint{opacity:0;transform:translateY(-50px);transition:1000ms;}
+.waypoint{opacity:0;transform:translateY(-50px);transition:opacity 1000ms, transform 1000ms;}
 .waypoint.active{opacity:1; transform:translateY(0);}
 
 
@@ -672,8 +672,8 @@ p{display:block;width:100%;font-size:18px;color:#424242;line-height:35px;letter-
 .play_tab_menu_box .inner .play_tab_list .play_tab_item:nth-child(24) .play_tab_btn .text:before{bottom:60px;left:-7px;width:42px;height:41px;background-position:-800px -80px;}
 .play_tab_menu_box .inner .play_tab_list .play_tab_item:nth-child(25) .play_tab_btn .text:before{bottom:49px;left:19px;width:49px;height:56px;background-position:-880px -80px;}
 .play_tab_menu_box .inner .play_tab_list .play_tab_item:nth-child(26) .play_tab_btn .text:before{bottom:51px;left:6px;width:33px;height:54px;background-position:-960px -80px;}
-.play_content{display:none;width:100%;box-sizing:border-box;}
-.play_content.active{display:block;}
+.play_content{width:100%;box-sizing:border-box;visibility: hidden;position: absolute;}
+.play_content.active{visibility: visible;}
 @media all and (min-width:1001px){
     .play_tab_menu_box .inner .hidden_layer{display:block !important;}
     .play_content h4,
