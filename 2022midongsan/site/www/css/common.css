@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+/* (주)한신정보기술 박남규 - 2022.08 */
+
+/* 기본세팅 */
+body{position:relative;font-size:18px;color:#424242;line-height:35px;letter-spacing:-0.01em;font-weight:400;font-family:'Score','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+a:link{color:#444;text-decoration:none;}
+a:visited{color:#444;text-decoration:none;}
+a:hover{color:#444;text-decoration:underline;}
+a:active{color:#444;text-decoration:underline;}
+a span{cursor:pointer;}
+button{cursor:pointer;font-family:'Score','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+input{font-family:'Score','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+input[type="submit"]{cursor:pointer;}
+
+/* 본문바로가기  */
+.accessibility{position:relative;overflow:hidden;z-index:3000;width:100%;}
+.accessibility a{display:block;overflow:hidden;z-index:3000;height:1px;width:1px;font-size:0;line-height:0;text-align:center}
+.accessibility a:focus, #accessibility a:hover, #accessibility a:active{width:auto;height:auto;margin:0;padding:8px 0;background:#20262c;font-size:14px;font-weight:700;line-height:30px;color:#fff;}
+
+/* Slider */
+.slick-slider{position:relative;display:block;box-sizing:border-box;}
+.slick-list{position:relative;display:block;overflow:hidden;margin:0;padding:0;}
+.slick-list:focus{outline:none;}
+.slick-list.dragging{cursor:pointer;}
+.slick-track{ position:relative;top:0;left:0;display:block;}
+.slick-track:before,.slick-track:after{display:table;content:'';}
+.slick-track:after{clear:both;}
+.slick-loading .slick-track{visibility:hidden;}
+.slick-slide{display:none;float:left;height:100%;min-height:1px;}
+[dir='rtl'] .slick-slide{float:right;}
+.slick-slide img{display:block;width:100%;}
+.slick-slide.slick-loading img{display:none;}
+.slick-initialized .slick-slide{display:block;}
+.slick-loading .slick-slide{visibility:hidden;}
+.slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent;}
+#scrollbar{display:block;visibility:hidden;overflow-x:scroll;overflow-y:scroll;position:absolute;top:-100px;left:-100px;z-index:-1;width:100px;height:100px;}
+
+/* 메뉴공통css */
+/* 메뉴 */
+.menu.init, .menu.init:before, .menu.init:after, .menu.init .depth, .menu.init .depth:before, .menu.init .depth:after, .menu.init .depth_list, .menu.init .depth_list:before, .menu.init .depth_list:after, .menu.init .depth_item, .menu.init .depth_item:before, .menu.init .depth_item:after, .menu.init .depth_text, .menu.init .depth_text:before, .menu.init .depth_text:after, .menu.init .depth_title, .menu.init .depth_title:before, .menu.init .depth_title:after{transition-property:all;transition-duration:0.25s;transition-timing-function:linear;}
+.menu, .menu .depth, .menu .depth_list, .menu .depth_item, .menu .depth_text{position:relative;}
+.menu{font-size:0px;line-height:0px;}
+.menu .depth:not(.depth1){visibility:hidden;opacity:0;overflow:hidden;}
+.menu .depth1{z-index:30;}
+.menu .depth_list{z-index:10;}
+.menu .depth_text{display:inline-block;}
+
+/* 1, 2차 메뉴 배경 */
+.menu.before:before, .menu.after:after{display:block;position:absolute;}
+.menu.before:before{z-index:10;}
+.menu.after:after{z-index:20;}
+
+/* 제목 상자 */
+.menu .depth_title{overflow:hidden;position:absolute;z-index:20;}
+
+/* 옵션 */
+.menu .depth1.clearfix .depth1_list{float:right;}
+.menu .depth_list.clearfix > .depth_item{float:left;}
+.menu .depth_list.cut > .depth_item{display:inline-block;vertical-align:top;}
+
+/* 풀 다운 */
+.menu.pulldown .depth1{height:100%;}
+.menu.pulldown .depth1_list, .menu.pulldown .depth1_item{height:inherit;}
+.menu.pulldown .depth2{position:absolute;bottom:0;left:0;width:100%;}
+
+/* 이치 다운 */
+.menu.eachdown .depth1{height:100%;}
+.menu.eachdown .depth1_list, .menu.eachdown .depth1_item{position:static;height:inherit;}
+.menu.eachdown .depth2{position:absolute;bottom:0;left:0;width:100%;}
+
+/* 드롭 다운 */
+.menu.dropdown .depth2{position:absolute;top:100%;left:0;width:100%;transform-origin:center top;transform:scaleY(0);}
+
+/* wrapper, wrap */
+#wrapper{position:relative;min-width:1430px;overflow:hidden;}
+.wrap{position:relative;width:1430px;margin:0 auto;}
+.skip{overflow:hidden;}
+@media screen and (max-width:1430px){
+    #wrapper{min-width:1000px;}
+    .wrap{width:1000px;}
+}
+@media screen and (max-width:1000px){
+    #wrapper{min-width:0;}
+    .wrap{width:94%;}
+}
+@media screen and (max-width:640px){
+
+}
+
+/* 공통 헤더 */
+#header{display:block;position:relative;z-index:50;box-sizing:border-box;}
+/* 헤더박스 */
+.header_box{display:block;position:relative;width:100%;box-sizing:border-box;}
+.header_box .logo{display:block;position:absolute;z-index:31;top:82px;left:-106px;font-size:0;line-height:0;box-sizing:border-box;}
+.header_box .logo a{display:inline-block;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.header_box .logo a:hover{text-decoration:none;}
+.header_box .logo a span{display:inline-block;position:relative;padding-left:62px;font-size:22px;color:#fff;line-height:28px;letter-spacing:-0.03em;font-weight:600;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+.header_box .logo a .logo_icon{display:block;position:absolute;top:-5px;left:0;width:48px;height:39px;background-image:url(../images/common/logo_sprite.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
+.header_box .menu_show{}
+.header_box .menu_show .menu_button{}
+@media screen and (min-width:1001px){
+    .header_box .menu_show{display:none;}
+}
+@media screen and (max-width:1000px){
+    .header_box{display:none;}
+}
+
+/* LNB */
+.lnb{display:block;position:absolute;z-index:30;top:0;left:0;width:100%;box-sizing:border-box;}
+.lnb .menu{height:145px;}
+.lnb .menu .depth1{display:block;position:static;width:1430px;margin:auto;box-sizing:border-box;}
+.lnb .menu .depth1 .depth1_list{display:block;float:right;padding-top:45px;padding-right:287px;box-sizing:border-box;text-align:right;}
+.lnb .menu .depth1 .depth1_list .depth1_item{display:inline-block;float:none;width:auto;margin-left:84px;vertical-align:top;box-sizing:border-box;}
+.lnb .menu .depth1 .depth1_list .depth1_item:first-child{margin-left:0;}
+.lnb .menu .depth1 .depth1_list .depth1_item .depth1_text{display:table;position:relative;width:auto;box-sizing:border-box;}
+.lnb .menu .depth1 .depth1_list .depth1_item .depth1_text:hover{text-decoration:none;}
+.lnb .menu .depth1 .depth1_list .depth1_item .depth1_text span{display:table-cell;width:auto;height:100px;font-size:19px;color:#fff;line-height:28px;letter-spacing:-0.03em;font-weight:500;font-family:'Score';vertical-align:middle;box-sizing:border-box;text-align:center;}
+
+.lnb .menu .depth2{}
+@media screen and (min-width:1001px){
+    .lnb .lnb_topbox{display:none;}
+    .lnb .menu_hide{display:none;}
+    .lnb_curtain{display:none;}
+}
+/* 헤더GNB */
+.header_gnb{display:block;position:relative;width:100%;box-sizing:border-box;}
+
+
+/* 공통 푸터 */
+#footer{display:block;position:relative;z-index:50;box-sizing:border-box;}
