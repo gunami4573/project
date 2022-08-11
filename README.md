@@ -30,7 +30,7 @@
 
 
 // 2022guri (2022 구리시청 전면개편)
-- https://gunami4573.github.io/project/2022guri/site/culture/main.html (문화광관)
+- https://gunami4573.github.io/project/2022guri/site/culture/main.html (문화관광)
 - https://gunami4573.github.io/project/2022guri/site/dong1/main.html (행정복지센터)
 - https://gunami4573.github.io/project/2022guri/site/eng/main.html (영문)
 - https://gunami4573.github.io/project/2022guri/site/environment/main.html (환경관리사업소)
