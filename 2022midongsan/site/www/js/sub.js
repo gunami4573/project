@@ -69,11 +69,14 @@
 
         //여기서부터 코드 작성해주세요
 
+        //템플릿 프리티프린트 영역 시작
         $('.tab_menu').not($('.prettyprint').children()).each(function () {
             var li_length = $(this).children('ul').find('li').length;
             $(this).addClass('divide' + li_length);
         });
+        //템플릿 프리티프린트 영역 끝
 
+        //반응형 테이블 시작
         $('table.table.responsive').not($('.prettyprint').children()).each(function () {
             var RowSpanExist = $(this).find('td, th').is('[rowspan]'),
                 TheadExist = $(this).find('thead').length;
@@ -88,9 +91,39 @@
                         TheadText = $(this).parents('tfoot').siblings('thead').find('th').eq(ThisIndex).text();
                     $(this).attr('data-content', TheadText);
                 });
-            }
-            ;
+            };
         });
+        //반응형 테이블 끝
+
+        //2차 ~ 4차 cms 메뉴 선택 시작
+        var $VertiDepth = $('.verti_depth_box .verti_depth');
+        $VertiDepth.each(function(){
+            var $this = $(this),
+                $VertiDepthBtn = $this.find('button.verti_depth_btn');
+            $VertiDepthBtn.on('click', function(){
+                var $Btn = $(this),
+                    $MyVertiDepth = $Btn.parent('.verti_depth'),
+                    IsActive = $MyVertiDepth.is('.active'),
+                    $OtherVertiDepth = $MyVertiDepth.siblings('.verti_depth'),
+                    $OtherBtn = $OtherVertiDepth.find('button.verti_depth_btn'),
+                    $MyVertiDepthLayer = $Btn.siblings('.verti_depth_layer'),
+                    $OtherVertiDepthLayer = $OtherVertiDepth.find('.verti_depth_layer');
+                if(!IsActive){
+                    $OtherVertiDepth.removeClass('active');
+                    $OtherBtn.attr('title', '목록열기');
+                    $MyVertiDepth.addClass('active');
+                    $Btn.attr('title', '목록닫기');
+                    $OtherVertiDepthLayer.slideUp(250, 'linear');
+                    $MyVertiDepthLayer.slideDown(250, 'linear');
+                }
+                else{
+                    $MyVertiDepth.removeClass('active');
+                    $Btn.attr('title', '목록열기');
+                    $MyVertiDepthLayer.slideUp(250, 'linear');
+                }
+            });
+        });
+        //2차 ~ 4차 cms 메뉴 선택 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 

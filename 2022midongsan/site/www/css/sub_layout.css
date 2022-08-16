@@ -6,3 +6,47 @@
 .sub_visual{display:block;position:relative;width:100%;min-height:506px;box-sizing:border-box;}
 .sub_visual:before{display:block;position:absolute;top:0;left:calc(50% - 960px);width:1920px;height:100%;background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
 .sub_visual.type1:before{background-image:url(../images/sub/visual_img_type1.jpg);}
+@media screen and (min-width:1921px){
+    .sub_visual:before{left:0;width:100%;background-size:cover;}
+}
+
+/* 2차 ~ 4차 메뉴 선택 (verti_menu) */
+.sub_head{display:block;position:absolute;bottom:100%;left:0;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.verti_menu{display:block;position:relative;width:100%;min-height:91px;padding-top:28px;padding-left:462px;font-size:0;line-height:0;box-sizing:border-box;}
+@keyframes verti-title-inner {
+    from{opacity:0;transform-origin:left center;transform:translateX(-50%) scaleX(0);}
+    to{opacity:1;transform-origin:left center;transform:translateX(0px) scaleX(1);}
+}
+@keyframes verti-depth-box {
+    from{opacity:0;transform-origin:left center;transform:translateX(-20%) scaleX(0);}
+    to{opacity:1;transform-origin:left center;transform:translateX(0px) scaleX(1);}
+}
+.verti_menu .verti_title_inner{display:block;position:absolute;top:0;right:calc(100% - 462px);width:100%;height:91px;padding-top:37px;padding-right:22px;background-image:linear-gradient(to right, #0eae57 0%, #0eae57 30%, #046d6e 100%);border-radius:0 90px 0 0;font-size:0;line-height:0;box-sizing:border-box;text-align:right;overflow:hidden;}
+.verti_menu .verti_title_inner{animation-name:verti-title-inner;animation-duration:1000ms;animation-delay:0s;animation-timing-function:ease-in-out;animation-fill-mode:both;}
+.verti_menu .verti_title_inner .verti_deco_title{display:inline-block;font-size:68px;color:rgba(255, 255, 255, 0.11);line-height:68px;letter-spacing:-0.01em;font-weight:700;font-family:'Montserrat';vertical-align:top;box-sizing:border-box;}
+.verti_menu .verti_depth_box{display:block;position:relative;width:100%;min-height:63px;padding-top:21px;font-size:0;line-height:0;box-sizing:border-box;}
+.verti_menu .verti_depth_box{animation-name:verti-depth-box;animation-duration:500ms;animation-delay:700ms;animation-timing-function:ease-in-out;animation-fill-mode:both;}
+.verti_menu .verti_depth_box:before{display:block;position:absolute;bottom:0;left:-80px;width:100vw;min-height:96px;background-image:url(../images/sub/verti_menu_bg_deco.png);background-repeat:no-repeat;background-position:left bottom;background-size:contain;content:'';box-sizing:border-box;}
+@media screen and (min-width:1921px){
+    .verti_menu .verti_depth_box:before{background-size:100% 96px;}
+}
+.verti_menu .verti_depth_box .verti_depth{display:inline-block;position:relative;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;transition-property:width;transition-duration:250ms;transition-timing-function:ease-in-out;}
+.verti_menu .verti_depth_box .verti_depth:before{display:block;position:absolute;top:15px;right:0;width:1px;height:13px;background-color:#ccc;content:'';box-sizing:border-box;}
+.verti_menu .verti_depth_box .verti_depth:last-child:before{display:none;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_btn{display:inline-block;position:relative;z-index:2;padding-right:24px;padding-left:24px;border:none;vertical-align:top;box-sizing:border-box;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_btn span{display:table;position:relative;width:auto;font-size:0;line-height:0;box-sizing:border-box;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_btn span:before{display:block;position:absolute;top:50%;left:calc(50% + 2px);transform:translateX(-50%);width:0px;height:10px;background-color:transparent;border-radius:5px;content:'';box-sizing:border-box;opacity:0;transition-property:width, background-color, opacity;transition-duration:250ms;transition-timing-function:ease-in-out;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_btn:hover span:before{width:calc(100% + 12px);background-color:#c2edda;opacity:1;}
+.verti_menu .verti_depth_box .verti_depth.active .verti_depth_btn span:before{width:calc(100% + 12px);background-color:#c2edda;opacity:1;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_btn span em{display:table-cell;position:relative;width:100%;height:42px;font-size:17px;color:#565656;line-height:21px;letter-spacing:-0.01em;font-weight:400;font-family:'Score';vertical-align:middle;box-sizing:border-box;transition-property:color;transition-duration:250ms;transition-timing-function:ease-in-out;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_btn:hover span em{color:#000;}
+.verti_menu .verti_depth_box .verti_depth.active .verti_depth_btn span em{color:#018a7f;font-weight:600;}
+
+.verti_menu .verti_depth_box .verti_depth .verti_depth_layer{display:none;position:absolute;top:42px;left:0;width:100%;box-sizing:border-box;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list{display:inline-block;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item{display:inline-block;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text{display:inline-block;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text span{display:inline-block;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text span em{display:inline-block;padding-left:24px;font-size:16px;color:#f00;line-height:24px;word-break:keep-all;vertical-align:top;box-sizing:border-box;}
+.verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text:hover span em{text-decoration:underline;}
+
