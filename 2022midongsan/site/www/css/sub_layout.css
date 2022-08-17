@@ -3,16 +3,53 @@
 /* (주)한신정보기술 박남규 - 2022.08 */
 
 /* 서브비주얼 */
-.sub_visual{display:block;position:relative;width:100%;min-height:506px;box-sizing:border-box;}
-.sub_visual:before{display:block;position:absolute;top:0;left:calc(50% - 960px);width:1920px;height:100%;background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
+@keyframes visual-before {
+    from{transform-origin:right top;transform:scale(1.1);filter:blur(1px);}
+    to{transform-origin:right top;transform:scale(1);filter:blur(0px);}
+}
+.sub_visual{display:block;position:relative;width:100%;min-height:506px;box-sizing:border-box;overflow:hidden;}
+.sub_visual:before{display:block;position:absolute;top:0;left:calc(50% - 960px);width:1920px;height:100%;background-image:url(../images/sub/visual_img_type1.jpg);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
 .sub_visual.type1:before{background-image:url(../images/sub/visual_img_type1.jpg);}
+.sub_visual.type2:before{background-image:url(../images/sub/visual_img_type2.jpg);}
+.sub_visual.type3:before{background-image:url(../images/sub/visual_img_type3.jpg);}
+.sub_visual.type4:before{background-image:url(../images/sub/visual_img_type4.jpg);}
+.sub_visual.type5:before{background-image:url(../images/sub/visual_img_type5.jpg);}
+.sub_visual.type6:before{background-image:url(../images/sub/visual_img_type6.jpg);}
 @media screen and (min-width:1921px){
     .sub_visual:before{left:0;width:100%;background-size:cover;}
 }
+.sub_visual .wrap{padding-top:145px;padding-bottom:91px;}
+@keyframes visual-text {
+    from{letter-spacing:0.03em;opacity:0;}
+    to{letter-spacing:-0.03em;opacity:1;}
+}
+.sub_visual .visual_inner{display:block;width:100%;padding-top:74px;padding-bottom:97px;font-size:0;line-height:0;box-sizing:border-box;}
+.sub_visual .visual_inner .visual_title{display:block;position:relative;width:100%;margin:0;padding:0;font-size:0;line-height:0;box-sizing:border-box;}
+.sub_visual .visual_inner .visual_title .text{display:inline-block;font-size:48px;color:#fff;line-height:64px;letter-spacing:-0.03em;font-weight:600;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+.sub_visual .visual_inner .visual_path_wrap{display:block;position:relative;width:100%;margin-top:9px;font-size:0;line-height:0;box-sizing:border-box;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item{display:inline-block;position:relative;margin-left:18px;padding-right:20px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item:before{display:block;position:absolute;top:calc(50% - 5px);right:0;width:6px;height:11px;background-image:url(../images/sub/visual_path_icon.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item:first-child{margin-left:0;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item:last-child{padding-right:0;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item:last-child:before{display:none;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item .visual_path_link{display:inline-block;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item .visual_path_link:hover{text-decoration:underline;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item .visual_path_link .text{display:inline-block;font-size:16px;color:#fff;line-height:26px;letter-spacing:-0.03em;font-weight:400;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item .visual_path_link:hover .text{text-decoration:underline;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item.home .visual_path_link{position:relative;width:18px;height:26px;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item.home .visual_path_link:before{display:block;position:absolute;top:calc(50% - 9px);left:0;width:18px;height:18px;background-image:url(../images/common/common_sprite.png);background-repeat:no-repeat;background-position:left -120px;content:'';box-sizing:border-box;transform:rotateY(0deg);transition-property:transform;transition-duration:500ms;transition-timing-function:ease-in-out;}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item.home .visual_path_link:hover:before{transform:rotateY(360deg);}
+.sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item.home .visual_path_link .text{font-size:0;line-height:0;}
+@media screen and (min-width:1001px){
+    .sub_visual:before{animation-name:visual-before;animation-duration:1400ms;animation-delay:0s;animation-timing-function:ease-in-out;animation-fill-mode:both;}
+    .sub_visual .visual_inner .visual_title .text,
+    .sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item .visual_path_link .text{animation-name:visual-text;animation-duration:800ms;animation-delay:0s;animation-timing-function:ease-in;animation-fill-mode:both;}
+}
 
-/* 2차 ~ 4차 메뉴 선택 (verti_menu) */
-.sub_head{display:block;position:absolute;bottom:100%;left:0;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
-.verti_menu{display:block;position:relative;width:100%;min-height:91px;padding-top:28px;padding-left:454px;font-size:0;line-height:0;box-sizing:border-box;}
+/* 1차 ~ 3차 메뉴 선택 (verti_menu) */
+.sub_head{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.verti_menu{display:block;position:absolute;bottom:100%;left:0;width:100%;min-height:91px;padding-top:28px;padding-left:454px;font-size:0;line-height:0;box-sizing:border-box;}
 @keyframes verti-title-inner {
     from{opacity:0;transform-origin:left center;transform:translateX(-50%) scaleX(0);}
     to{opacity:1;transform-origin:left center;transform:translateX(0px) scaleX(1);}
@@ -45,11 +82,6 @@
 .verti_menu .verti_depth_box .verti_depth .verti_depth_btn span:before{display:block;position:absolute;top:50%;left:calc(50% + 2px);transform:translateX(-50%);width:0px;height:10px;background-color:transparent;border-radius:5px;content:'';box-sizing:border-box;opacity:0;transition-property:width, background-color, opacity;transition-duration:250ms;transition-timing-function:ease-in-out;}
 .verti_menu .verti_depth_box .verti_depth .verti_depth_btn span em{display:table-cell;position:relative;width:100%;height:42px;font-size:18px;color:#242424;line-height:21px;letter-spacing:-0.01em;font-weight:400;font-family:'Score';vertical-align:middle;box-sizing:border-box;transition-property:color;transition-duration:250ms;transition-timing-function:ease-in-out;}
 .verti_menu .verti_depth_box .verti_depth.active .verti_depth_btn span em{color:#018a7f;font-weight:500;}
-
-
-
-
-
 .verti_menu .verti_depth_box .verti_depth .verti_depth_layer{display:none;position:absolute;top:42px;left:0;width:100%;padding-right:17px;box-sizing:border-box;}
 .verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list{display:block;width:100%;padding-top:13px;padding-bottom:13px;background-color:rgba(231, 247, 240, 0.9);border-radius:10px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
 .verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item{display:block;width:100%;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
@@ -59,3 +91,8 @@
 .verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text span em{display:inline-block;width:100%;font-size:17px;color:#018a7f;line-height:33px;letter-spacing:-0.03em;font-weight:400;font-family:'Score';word-break:keep-all;vertical-align:top;box-sizing:border-box;}
 .verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text:hover span em{text-decoration:underline;}
 
+/* 하위메뉴탭메뉴 사용여부 ( type1 , type2 ) */
+
+
+/* 컨텐츠 영역 */
+#contents{display:block;width:100%;min-height:500px;margin-bottom:100px;box-sizing:border-box;}

@@ -95,7 +95,7 @@
         });
         //반응형 테이블 끝
 
-        //2차 ~ 4차 cms 메뉴 선택 시작
+        //1차 ~ 4차 메뉴 선택 시작
         var $VertiDepth = $('.verti_depth_box .verti_depth');
         $VertiDepth.each(function(){
             var $this = $(this),
@@ -123,7 +123,7 @@
                 }
             });
         });
-        //2차 ~ 4차 cms 메뉴 선택 끝
+        //1차 ~ 4차 메뉴 선택 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
