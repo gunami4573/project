@@ -41,6 +41,10 @@
 .sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item.home .visual_path_link:before{display:block;position:absolute;top:calc(50% - 9px);left:0;width:18px;height:18px;background-image:url(../images/common/common_sprite.png);background-repeat:no-repeat;background-position:left -120px;content:'';box-sizing:border-box;transform:rotateY(0deg);transition-property:transform;transition-duration:500ms;transition-timing-function:ease-in-out;}
 .sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item.home .visual_path_link:hover:before{transform:rotateY(360deg);}
 .sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item.home .visual_path_link .text{font-size:0;line-height:0;}
+@media screen and (max-width:1430px){
+    .sub_visual .visual_inner{padding-left:10px;padding-bottom:81px;}
+    .sub_visual .visual_inner .visual_title .text{font-size:36px;line-height:40px;}
+}
 @media screen and (min-width:1001px){
     .sub_visual:before{animation-name:visual-before;animation-duration:1400ms;animation-delay:0s;animation-timing-function:ease-in-out;animation-fill-mode:both;}
     .sub_visual .visual_inner .visual_title .text,
@@ -90,9 +94,20 @@
 .verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text span{display:inline-block;width:100%;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
 .verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text span em{display:inline-block;width:100%;font-size:17px;color:#018a7f;line-height:33px;letter-spacing:-0.03em;font-weight:400;font-family:'Score';word-break:keep-all;vertical-align:top;box-sizing:border-box;}
 .verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text:hover span em{text-decoration:underline;}
+@media screen and (min-width:1001px) and (max-width:1430px){
+    .verti_menu{left:50%;transform:translateX(-50%);width:100vw;}
+    .verti_menu .verti_depth_box:before{background-size:1295px 96px;}
+}
+@media screen and (min-width:1001px) and (max-width:1200px){
+    .verti_menu{padding-left:200px;}
+    .verti_menu .verti_title_inner{top:-40px;right:calc(100% - 500px);height:131px;padding-top:20px;padding-right:20px;}
+    .verti_menu .verti_title_inner .verti_deco_title{font-size:74px;line-height:74px;}
+}
 
 /* 하위메뉴탭메뉴 사용여부 ( type1 , type2 ) */
-.cms_tab_box{}
+.cms_tab_box{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.cms_tab_box .cms_tab_inner{}
+.cms_tab_box .cms_tab_inner .cms_tab_open_btn{border:none;}
 
 /* 컨텐츠 영역 */
 #contents{display:block;width:100%;min-height:500px;margin-bottom:100px;box-sizing:border-box;}
