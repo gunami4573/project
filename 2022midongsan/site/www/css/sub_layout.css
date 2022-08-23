@@ -55,14 +55,28 @@
 @media screen and (max-width:1000px){
     .sub_visual{min-height:443px;}
     .sub_visual .wrap{padding-top:79px;padding-bottom:63px;}
-    .sub_visual .visual_inner{padding:123px 153px 0 0;}
+    .sub_visual .visual_inner{padding:123px 135px 0 0;}
     .sub_visual .visual_inner .visual_title{z-index:50;}
     .lnb_show .sub_visual .visual_inner .visual_title{z-index:inherit;}
     .sub_visual .visual_inner .visual_title .text{font-size:30px;line-height:46px;word-break:keep-all;}
     .sub_visual .visual_inner .visual_path_wrap{z-index:50;margin-top:7px;}
     .lnb_show .sub_visual .visual_inner .visual_path_wrap{z-index:inherit;}
-    .sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item{margin-left:15px;padding-right:15px;}
+    .sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item{margin-left:15px;padding-right:20px;}
     .sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item .visual_path_link .text{font-size:14px;}
+}
+@media screen and (min-width:641px) and (max-width:700px){
+    .sub_visual .visual_inner{padding-top:95px;padding-right:170px;}
+}
+@media screen and (max-width:640px){
+    .sub_visual{min-height:0;}
+    .sub_visual:before{background-position:center top;background-size:contain;}
+    .sub_visual .wrap{padding-top:60px;padding-bottom:0;}
+    .sub_visual .visual_inner{padding:10% 0 5%;}
+    .sub_visual .visual_inner .visual_title{padding-right:17%;}
+    .sub_visual .visual_inner .visual_title .text{font-size:24px;line-height:36px;}
+    .sub_visual .visual_inner .visual_path_wrap{margin-top:5%;padding-right:12%;}
+    .sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item{margin-left:5px;padding-right:15px;}
+    .sub_visual .visual_inner .visual_path_wrap .visual_path_list .visual_path_item:first-child{padding-right:20px;}
 }
 
 /* 1차 ~ 3차 메뉴 선택 (verti_menu) */
@@ -120,7 +134,28 @@
 @media screen and (max-width:1000px){
     .verti_menu{min-height:0;padding-top:0;padding-left:49px;}
     .verti_menu .verti_title_inner{display:none;}
+    .verti_menu .verti_depth_box{padding-top:22px;}
     .verti_menu .verti_depth_box:before{left:-76px;width:103vw;min-height:63px;background-size:auto 96px;}
+    .verti_menu .verti_depth_box .verti_depth{margin-right:30px;padding-right:16px;}
+    .verti_menu .verti_depth_box .verti_depth:before{top:calc(50% - 9px);height:18px;}
+    .verti_menu .verti_depth_box .verti_depth .verti_depth_btn{min-width:183px;max-width:183px;padding-right:14px;overflow:hidden;}
+    .verti_menu .verti_depth_box .verti_depth .verti_depth_btn:before{right:0;}
+    .verti_menu .verti_depth_box .verti_depth .verti_depth_btn span{display:block;height:30px;}
+    .verti_menu .verti_depth_box .verti_depth .verti_depth_btn span em{display:inline-block;position:relative;top:50%;transform:translateY(-50%);width:100%;max-width:100%;min-width:100%;height:auto;font-size:15px;line-height:20px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .verti_menu .verti_depth_box .verti_depth.home .home_link{width:31px;height:30px;}
+    .verti_menu .verti_depth_box .verti_depth .verti_depth_layer{top:36px;left:-11px;padding-right:4px;}
+    .verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list{padding-top:15px;padding-bottom:16px;}
+    .verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text{padding:0 5px 0 14px;}
+    .verti_menu .verti_depth_box .verti_depth .verti_depth_layer .verti_depth_list .verti_depth_item .verti_depth_text span em{font-size:15px;line-height:30px;}
+}
+@media screen and (min-width:701px) and (max-width:790px){
+    .verti_menu .verti_depth_box .verti_depth .verti_depth_btn{min-width:150px;max-width:150px;}
+}
+@media screen and (min-width:641px) and (max-width:700px){
+    .verti_menu .verti_depth_box .verti_depth .verti_depth_btn{min-width:138px;max-width:138px;}
+}
+@media screen and (max-width:640px){
+    .verti_menu{display:none;}
 }
 
 /* 하위메뉴탭메뉴 사용여부 ( type1 , type2 ) */
@@ -130,3 +165,9 @@
 
 /* 컨텐츠 영역 */
 #contents{display:block;width:100%;min-height:500px;margin-bottom:100px;box-sizing:border-box;}
+@media screen and (max-width:1000px){
+    #contents{min-height:720px;margin-bottom:168px;}
+}
+@media screen and (max-width:640px){
+    #contents{min-height:300px;margin-bottom:50px;}
+}
