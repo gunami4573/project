@@ -95,7 +95,7 @@
         });
         //반응형 테이블 끝
 
-        //1차 ~ 4차 메뉴 선택 시작
+        //1차 ~ 3차 메뉴 선택 시작
         var $VertiDepth = $('.verti_depth_box .verti_depth');
         $VertiDepth.each(function(){
             var $this = $(this),
@@ -123,7 +123,37 @@
                 }
             });
         });
-        //1차 ~ 4차 메뉴 선택 끝
+        //1차 ~ 3차 메뉴 선택 끝
+
+        //탭메뉴 모양 시작
+        var $CmsTabBox = $('.cms_tab_box');
+        $CmsTabBox.each(function(){
+            var $this = $(this),
+                $CmsTabList = $this.find('.cms_tab_list'),
+                $CmsTabItem = $CmsTabList.find('.cms_tab_item'),
+                CmsTabItemLength = $CmsTabItem.length;
+            if(CmsTabItemLength === 4){
+                $this.addClass('cms_depth4');
+            }
+            if(CmsTabItemLength === 3){
+                $this.addClass('cms_depth3');
+            }
+            if(CmsTabItemLength === 2){
+                $this.addClass('cms_depth2');
+            }
+            if(CmsTabItemLength === 1){
+                $this.addClass('cms_depth1');
+            }
+        });
+        //탭메뉴 모양 끝
+
+        //탭메뉴 active 줬다 빼기 시작
+        var $CmsTabBoxTempType = $('.cms_tab_box.temp_type');
+        $CmsTabBoxTempType.each(function(){
+            var $this = $(this);
+        });
+        //탭메뉴 active 줬다 빼기 끝
+
 
         $window.on('screen:tablet screen:phone', function (event) {
 
