@@ -150,7 +150,32 @@
         //탭메뉴 active 줬다 빼기 시작
         var $CmsTabBoxTempType = $('.cms_tab_box.temp_type');
         $CmsTabBoxTempType.each(function(){
-            var $this = $(this);
+            var $this = $(this),
+                $TabList = $this.find('.cms_tab_list'),
+                $TabItem = $TabList.find('.cms_tab_item'),
+                $TabBtn = $TabItem.find('button.cms_tab_link');
+            $TabBtn.on('click', function(){
+                var $ThisBtn = $(this),
+                    $MyTabItem = $ThisBtn.parent('.cms_tab_item'),
+                    $OtherTabItem = $MyTabItem.siblings('.cms_tab_item'),
+                    $OtherBtn = $OtherTabItem.find('button.cms_tab_link'),
+                    MyIndex = $MyTabItem.index(),
+                    IsActive = $MyTabItem.is('.active'),
+                    $MyTabList = $MyTabItem.parent('.cms_tab_list'),
+                    $MyTabInner = $MyTabList.parent('.cms_tab_inner'),
+                    $MyTabBox = $MyTabInner.parent('.cms_tab_box.temp_type'),
+                    $TabCtsBox = $MyTabBox.siblings('.tab_cts_box'),
+                    $MyTabCts = $TabCtsBox.find('.tab_cts').eq(MyIndex),
+                    $OtherTabCts = $MyTabCts.siblings('.tab_cts');
+                if(!IsActive){
+                    $OtherTabItem.removeClass('active');
+                    $OtherBtn.removeAttr('title');
+                    $MyTabItem.addClass('active');
+                    $ThisBtn.attr('title', '선택됨');
+                    $OtherTabCts.removeClass('active');
+                    $MyTabCts.addClass('active');
+                }
+            });
         });
         //탭메뉴 active 줬다 빼기 끝
 

@@ -2,6 +2,66 @@
 
 /* (주)한신정보기술 박남규 - 2022.08 */
 
-/* 제목 */
-h3, .h3{display:block;width:100%;margin-top:50px;margin-bottom:50px;font-size:30px;color:#242424;line-height:44px;letter-spacing:-0.03em;font-weight:500;font-family:'Score';text-align:center;}
-h3:before, .h3:before{display:inline-block;width:16px;height:27px;margin-top:8px;margin-right:13px;background-color:#f00;vertical-align:top;box-sizing:border-box;}
+/* 제목, 본문 */
+h3, .h3{display:block;position:relative;width:100%;margin-top:50px;margin-bottom:22px;font-size:0;line-height:0;text-align:center;box-sizing:border-box;}
+h3 span, .h3 span{display:inline-block;position:relative;padding-left:29px;font-size:30px;color:#242424;line-height:44px;letter-spacing:-0.03em;font-weight:500;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+h3 span:before, .h3 span:before{display:block;position:absolute;top:8px;left:0;width:16px;height:27px;background-image:url(../images/template/template_sprite.png);background-repeat:no-repeat;background-position:left top;content:'';}
+h4, .h4{display:block;position:relative;width:100%;margin-top:22px;margin-bottom:14px;padding-left:13px;font-size:0;line-height:0;box-sizing:border-box;}
+h4:before, .h4:before{display:block;position:absolute;top:-4px;left:0;width:22px;height:22px;background-image:linear-gradient(to bottom, #70d8b0 0%, #f4fcda 100%);border-radius:100%;content:'';opacity:0.56;}
+h4 span, .h4 span{display:inline-block;position:relative;font-size:26px;color:#0a9361;line-height:42px;letter-spacing:-0.03em;font-weight:500;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+h5, .h5{display:block;position:relative;width:100%;margin-top:14px;margin-bottom:12px;padding-left:15px;font-size:0;line-height:0;box-sizing:border-box;}
+h5:before, .h5:before{display:block;position:absolute;top:11px;left:1px;width:5px;height:19px;background-color:#068f8b;border-radius:2px;content:'';}
+h5 span, .h5 span{display:inline-block;position:relative;font-size:22px;color:#068f8b;line-height:40px;letter-spacing:-0.03em;font-weight:500;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+h6, .h6{display:block;position:relative;width:100%;margin-top:12px;margin-bottom:12px;padding-left:21px;font-size:0;line-height:0;box-sizing:border-box;}
+h6:before, .h6:before{display:block;position:absolute;top:13px;left:0;width:13px;height:11px;background-image:url(../images/template/template_sprite.png);background-repeat:no-repeat;background-position:-30px top;content:'';}
+h6 span, .h6 span{display:inline-block;position:relative;font-size:20px;color:#926f0f;line-height:38px;letter-spacing:-0.03em;font-weight:500;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+@media screen and (max-width:1430px){
+    h3, .h3{margin-top:30px;margin-bottom:15px;}
+    h3 span, .h3 span{font-size:28px;line-height:42px;}
+    h4, .h4{margin-top:15px;margin-bottom:10px;}
+    h4 span, .h4 span{font-size:24px;line-height:40px;}
+    h5, .h5{margin-top:10px;margin-bottom:5px;}
+    h5 span, .h5 span{font-size:20px;line-height:38px;}
+    h6, .h6{margin-top:5px;margin-bottom:5px;}
+    h6 span, .h6 span{font-size:18px;line-height:36px;}
+}
+@media screen and (max-width:1000px){
+    h3 span, .h3 span{padding-left:21px;}
+    h3 span:before, .h3 span:before{top:7px;}
+    h3 span, .h3 span{font-size:26px;line-height:38px;}
+    h4, .h4{padding-left:0;}
+    h4:before, .h4:before{left:-8px;}
+    h4 span, .h4 span{font-size:22px;line-height:36px;}
+    h5, .h5{padding-left:10px;}
+    h5 span, .h5 span{font-size:18px;line-height:34px;}
+    h5:before, .h5:before{top:7px;}
+    h6, .h6{padding-left:18px;}
+    h6 span, .h6 span{font-size:16px;line-height:32px;}
+    h6:before, .h6:before{top:11px;}
+}
+@media screen and (max-width:640px){
+    h3, .h3{margin-top:20px;margin-bottom:10px;}
+    h3 span, .h3 span{font-size:20px;line-height:30px;}
+    h3 span:before, .h3 span:before{top:3px;}
+    h4, .h4{margin-top:10px;margin-bottom:5px;}
+    h4 span, .h4 span{font-size:18px;line-height:24px;}
+    h5, .h5{margin-top:8px;margin-bottom:3px;}
+    h5:before, .h5:before{top:2px;}
+    h5 span, .h5 span{font-size:16px;line-height:22px;}
+    h6, .h6{margin-top:5px;}
+    h6:before, .h6:before{top:5px;}
+    h6 span, .h6 span{font-size:15px;line-height:20px;}
+    p{font-size:15px;line-height:24px;}
+}
+
+/* 강조 */
+.em_green{color:#0a9361;}
+.em_blue{color:#3b82e7;}
+.em_red{color:#e5440c;}
+.em_orange{color:#dc650d;}
+.em_b_green{color:#0a9361;font-weight:300;}
+.em_b_blue{color:#3b82e7;font-weight:300;}
+.em_b_red{color:#e5440c;font-weight:300;}
+.em_b_orange{color:#dc650d;font-weight:300;}
+
+/* 목록 */
