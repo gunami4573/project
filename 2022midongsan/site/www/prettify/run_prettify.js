@@ -103,11 +103,11 @@
                     g = null)
             };
             g.type = "text/javascript";
-            g.src = "./lang/lang-" + encodeURIComponent(H[l]) + ".js";
+            g.src = "./prettify/lang/lang-" + encodeURIComponent(H[l]) + ".js";
             N.insertBefore(g, N.firstChild)
         })(H[l]);
-        for (var S = H.length, F = [], l = 0, B = P.length; l < B; ++l) F.push("./skins/" + encodeURIComponent(P[l]) + ".css");
-        F.push("./skins/prettify.css");
+        for (var S = H.length, F = [], l = 0, B = P.length; l < B; ++l) F.push("./prettify/skins/" + encodeURIComponent(P[l]) + ".css");
+        F.push("./prettify/skins/prettify.css");
         (function (g) {
             function r(l) {
                 if (l !== x) {
@@ -158,7 +158,7 @@
                                 a + 2 < h && "-" === c[a + 1] ? (p = d(c[a + 2]), a += 2) : p = m;
                                 e.push([m, p]);
                                 65 > p || 122 < m || (65 > p || 90 < m || e.push([Math.max(65, m) | 32, Math.min(p, 90) | 32]), 97 > p || 122 < m ||
-                                    e.push([Math.max(97, m) & -33, Math.min(p, 122) & -33]))
+                                e.push([Math.max(97, m) & -33, Math.min(p, 122) & -33]))
                             }
                         }
                         e.sort(function (e, a) {
@@ -174,7 +174,7 @@
 
                     function g(e) {
                         for (var a = e.source.match(RegExp("(?:\\[(?:[^\\x5C\\x5D]|\\\\[\\s\\S])*\\]|\\\\u[A-Fa-f0-9]{4}|\\\\x[A-Fa-f0-9]{2}|\\\\[0-9]+|\\\\[^ux0-9]|\\(\\?[:!=]|[\\(\\)\\^]|[^\\x5B\\x5C\\(\\)\\^]+)",
-                                "g")), b = a.length, d = [], h = 0, m = 0; h < b; ++h) {
+                            "g")), b = a.length, d = [], h = 0, m = 0; h < b; ++h) {
                             var p = a[h];
                             "(" === p ? ++m : "\\" === p.charAt(0) && (p = +p.substring(1)) && (p <= m ? d[p] = -1 : a[h] = f(p))
                         }
@@ -198,13 +198,13 @@
                         }
                     }
                     for (var k = {
-                            b: 8,
-                            t: 9,
-                            n: 10,
-                            v: 11,
-                            f: 12,
-                            r: 13
-                        }, u = [], I = 0, b = a.length; I < b; ++I) {
+                        b: 8,
+                        t: 9,
+                        n: 10,
+                        v: 11,
+                        f: 12,
+                        r: 13
+                    }, u = [], I = 0, b = a.length; I < b; ++I) {
                         t = a[I];
                         if (t.global || t.multiline) throw Error("" + t);
                         u.push("(?:" + g(t) + ")")
@@ -218,7 +218,7 @@
                         if (1 == b) {
                             if (!c.test(a.className)) {
                                 for (b =
-                                    a.firstChild; b; b = b.nextSibling) f(b);
+                                         a.firstChild; b; b = b.nextSibling) f(b);
                                 b = a.nodeName.toLowerCase();
                                 if ("br" === b || "li" === b) g[q] = "\n", A[q << 1] = r++, A[q++ << 1 | 1] = a
                             }
@@ -252,7 +252,7 @@
                 function z(a) {
                     for (var d = void 0, f = a.firstChild; f; f =
                         f.nextSibling) var c = f.nodeType,
-                        d = 1 === c ? d ? a : f : 3 === c ? S.test(f.nodeValue) ? a : d : d;
+                             d = 1 === c ? d ? a : f : 3 === c ? S.test(f.nodeValue) ? a : d : d;
                     return d === a ? void 0 : d
                 }
 
@@ -316,18 +316,18 @@
                         f = [];
                     a.tripleQuotedStrings ? d.push(["str", /^(?:\'\'\'(?:[^\'\\]|\\[\s\S]|\'{1,2}(?=[^\']))*(?:\'\'\'|$)|\"\"\"(?:[^\"\\]|\\[\s\S]|\"{1,2}(?=[^\"]))*(?:\"\"\"|$)|\'(?:[^\\\']|\\[\s\S])*(?:\'|$)|\"(?:[^\\\"]|\\[\s\S])*(?:\"|$))/, null, "'\""]) : a.multiLineStrings ? d.push(["str", /^(?:\'(?:[^\\\']|\\[\s\S])*(?:\'|$)|\"(?:[^\\\"]|\\[\s\S])*(?:\"|$)|\`(?:[^\\\`]|\\[\s\S])*(?:\`|$))/, null, "'\"`"]) : d.push(["str", /^(?:\'(?:[^\\\'\r\n]|\\.)*(?:\'|$)|\"(?:[^\\\"\r\n]|\\.)*(?:\"|$))/, null, "\"'"]);
                     a.verbatimStrings &&
-                        f.push(["str", /^@\"(?:[^\"]|\"\")*(?:\"|$)/, null]);
+                    f.push(["str", /^@\"(?:[^\"]|\"\")*(?:\"|$)/, null]);
                     var c = a.hashComments;
                     c && (a.cStyleComments ? (1 < c ? d.push(["com", /^#(?:##(?:[^#]|#(?!##))*(?:###|$)|.*)/, null, "#"]) : d.push(["com", /^#(?:(?:define|e(?:l|nd)if|else|error|ifn?def|include|line|pragma|undef|warning)\b|[^\r\n]*)/, null, "#"]), f.push(["str", /^<(?:(?:(?:\.\.\/)*|\/?)(?:[\w-]+(?:\/[\w-]+)+)?[\w-]+\.h(?:h|pp|\+\+)?|[a-z]\w*)>/, null])) : d.push(["com", /^#[^\r\n]*/, null, "#"]));
                     a.cStyleComments && (f.push(["com", /^\/\/[^\r\n]*/, null]), f.push(["com", /^\/\*[\s\S]*?(?:\*\/|$)/,
-null]));
+                        null]));
                     if (c = a.regexLiterals) {
                         var g = (c = 1 < c ? "" : "\n\r") ? "." : "[\\S\\s]";
                         f.push(["lang-regex", RegExp("^(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*(" + ("/(?=[^/*" + c + "])(?:[^/\\x5B\\x5C" + c + "]|\\x5C" + g + "|\\x5B(?:[^\\x5C\\x5D" + c + "]|\\x5C" + g + ")*(?:\\x5D|$))+/") + ")")])
                     }(c = a.types) && f.push(["typ", c]);
                     c = ("" + a.keywords).replace(/^ | $/g, "");
                     c.length && f.push(["kwd",
-new RegExp("^(?:" + c.replace(/[\s,]+/g, "|") + ")\\b"), null]);
+                        new RegExp("^(?:" + c.replace(/[\s,]+/g, "|") + ")\\b"), null]);
                     d.push(["pln", /^\s+/, null, " \r\n\t\u00a0"]);
                     c = "^.[^\\s\\w.$@'\"`/\\\\]*";
                     a.regexLiterals && (c += "(?!s*/)");
@@ -366,7 +366,7 @@ new RegExp("^(?:" + c.replace(/[\s,]+/g, "|") + ")\\b"), null]);
                             if (a = a.parentNode, !a) return;
                         a = c(a.nextSibling, 0);
                         for (var e;
-                            (e = a.parentNode) && 1 === e.nodeType;) a = e;
+                             (e = a.parentNode) && 1 === e.nodeType;) a = e;
                         b.push(a)
                     }
                     for (var r = /(?:^|\s)nocode(?:\s|$)/, n = /\r\n?|\n/, q = a.ownerDocument, k = q.createElement("li"); a.firstChild;) k.appendChild(a.firstChild);
@@ -376,7 +376,7 @@ new RegExp("^(?:" + c.replace(/[\s,]+/g, "|") + ")\\b"), null]);
                     l.className = "linenums";
                     d = Math.max(0, d - 1 | 0) || 0;
                     for (var t =
-                            0, u = b.length; t < u; ++t) k = b[t], k.className = "L" + (t + d) % 10, k.firstChild || k.appendChild(q.createTextNode("\u00a0")), l.appendChild(k);
+                        0, u = b.length; t < u; ++t) k = b[t], k.className = "L" + (t + d) % 10, k.firstChild || k.appendChild(q.createTextNode("\u00a0")), l.appendChild(k);
                     a.appendChild(l)
                 }
 
@@ -459,7 +459,7 @@ new RegExp("^(?:" + c.replace(/[\s,]+/g, "|") + ")\\b"), null]);
                 var Q = "undefined" !== typeof window ? window : {},
                     J = ["break,continue,do,else,for,if,return,while"],
                     K = [[J, "auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,restrict,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile"],
-"catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof"],
+                        "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof"],
                     R = [K, "alignas,alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,noexcept,noreturn,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where"],
                     L = [K, "abstract,assert,boolean,byte,extends,finally,final,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient"],
                     M = [K, "abstract,add,alias,as,ascending,async,await,base,bool,by,byte,checked,decimal,delegate,descending,dynamic,event,finally,fixed,foreach,from,get,global,group,implicit,in,interface,internal,into,is,join,let,lock,null,object,out,override,orderby,params,partial,readonly,ref,remove,sbyte,sealed,select,set,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,value,var,virtual,where,yield"],
@@ -479,9 +479,9 @@ new RegExp("^(?:" + c.replace(/[\s,]+/g, "|") + ")\\b"), null]);
                     V = {};
                 n(T, ["default-code"]);
                 n(E([], [["pln", /^[^<?]+/], ["dec", /^<!\w[^>]*(?:>|$)/], ["com", /^<\!--[\s\S]*?(?:-\->|$)/], ["lang-", /^<\?([\s\S]+?)(?:\?>|$)/], ["lang-", /^<%([\s\S]+?)(?:%>|$)/], ["pun", /^(?:<[%?]|[%?]>)/], ["lang-",
-/^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i], ["lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i], ["lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i], ["lang-in.tag", /^(<\/?[a-z][^<>]*>)/i]]), "default-markup htm html mxml xhtml xml xsl".split(" "));
+                    /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i], ["lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i], ["lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i], ["lang-in.tag", /^(<\/?[a-z][^<>]*>)/i]]), "default-markup htm html mxml xhtml xml xsl".split(" "));
                 n(E([["pln", /^[\s]+/, null, " \t\r\n"], ["atv", /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, "\"'"]], [["tag", /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i], ["atn", /^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i], ["lang-uq.val", /^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/],
-["pun", /^[=<>\/]+/], ["lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i], ["lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i], ["lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i], ["lang-css", /^style\s*=\s*\"([^\"]+)\"/i], ["lang-css", /^style\s*=\s*\'([^\']+)\'/i], ["lang-css", /^style\s*=\s*([^\"\'>\s]+)/i]]), ["in.tag"]);
+                    ["pun", /^[=<>\/]+/], ["lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i], ["lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i], ["lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i], ["lang-css", /^style\s*=\s*\"([^\"]+)\"/i], ["lang-css", /^style\s*=\s*\'([^\']+)\'/i], ["lang-css", /^style\s*=\s*([^\"\'>\s]+)/i]]), ["in.tag"]);
                 n(E([], [["atv", /^[\s\S]+/]]), ["uq.val"]);
                 n(v({
                     keywords: R,
@@ -520,7 +520,7 @@ new RegExp("^(?:" + c.replace(/[\s,]+/g, "|") + ")\\b"), null]);
                         multiLineStrings: !0,
                         regexLiterals: 2
                     }),
-["perl", "pl", "pm"]);
+                    ["perl", "pl", "pm"]);
                 n(v({
                     keywords: O,
                     hashComments: !0,
@@ -541,7 +541,7 @@ new RegExp("^(?:" + c.replace(/[\s,]+/g, "|") + ")\\b"), null]);
                     regexLiterals: !0
                 }), ["coffee"]);
                 n(E([], [["str", /^[\s\S]+/]]),
-["regex"]);
+                    ["regex"]);
                 var U = Q.PR = {
                         createSimpleLexer: E,
                         registerLangHandler: n,
