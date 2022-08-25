@@ -758,8 +758,14 @@
                                     <li class="cms_tab_item ">
                                         <button type="button" class="cms_tab_link"><span><em>블릿/주의,경고</em></span></button>    <!--//cms_tab_link-->
                                     </li>  <!--//cms_tab_item-->
+                                    <li class="cms_tab_item ">
+                                        <button type="button" class="cms_tab_link"><span><em>박스</em></span></button>    <!--//cms_tab_link-->
+                                    </li>  <!--//cms_tab_item-->
                                     <li class="cms_tab_item active">
-                                        <button type="button" class="cms_tab_link" title="선택됨"><span><em>박스</em></span></button>    <!--//cms_tab_link-->
+                                        <button type="button" class="cms_tab_link" title="선택됨"><span><em>테이블</em></span></button>    <!--//cms_tab_link-->
+                                    </li>  <!--//cms_tab_item-->
+                                    <li class="cms_tab_item ">
+                                        <button type="button" class="cms_tab_link"><span><em>폼요소</em></span></button>    <!--//cms_tab_link-->
                                     </li>  <!--//cms_tab_item-->
                                 </ul>   <!--//cms_tab_list-->
                             </div>  <!--//cms_tab_inner-->
@@ -1084,7 +1090,7 @@
                                     </div>  <!--//warning_box-->
                                 </xmp>
                             </div>    <!--//tab_cts-->
-                            <div class="tab_cts active">
+                            <div class="tab_cts">
                                 <h3><span>박스 기본 ( .box &gt; .box_inner )</span></h3>
                                 <div class="box">
                                     <div class="box_inner">
@@ -1155,6 +1161,352 @@
         </div>   <!--//box_inner-->
     </div>  <!--//box info_type-->
 </xmp>
+                            </div>    <!--//tab_cts-->
+                            <div class="tab_cts active">
+                                <h3><span>테이블 // colgroup &gt; col 은 내부스타일로 width %쓰기</span></h3>
+                                <h4><span>기본테이블(.table)</span></h4>
+                                <div class="table_unit">
+                                    <span class="warning"><span class="skip">강조</span>테이블 유닛 .table_unit &gt; .warning 사용 , 필요 없으면 삭제할 것</span>
+                                </div> <!--//table_unit-->
+                                <table class="table">
+                                    <caption>기본테이블 - 캡션은 필수작성</caption>
+                                    <colgroup>
+                                        <col style="width:25%;" />
+                                        <col style="width:25%;" />
+                                        <col style="width:25%;" />
+                                        <col style="width:25%;" />
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" rowspan="3">제목1</th>
+                                        <th scope="col" colspan="2">제목2</th>
+                                        <th scope="col" rowspan="2">제목3</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">제목2-1</th>
+                                        <th scope="col">제목2-2</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">제목2-1-1</th>
+                                        <th scope="col">제목2-2-1</th>
+                                        <th scope="col">제목3-1</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">tbody th font-size:17px;</th>
+                                        <td>tbody td font-size:16px;</td>
+                                        <td>tbody td font-size:16px;</td>
+                                        <td>tbody td font-size:16px;</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">tbody th font-size:17px;</th>
+                                        <td>tbody td font-size:16px;</td>
+                                        <td>tbody td font-size:16px;</td>
+                                        <td>tbody td font-size:16px;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>    <!--//table-->
+<xmp class="prettyprint linenums xmp">
+    <div class="table_unit">
+        <span class="warning"><span class="skip">강조</span>테이블 유닛 .table_unit &gt; .warning 사용 , 필요 없으면 삭제할 것</span>
+    </div> <!--//table_unit-->
+    <table class="table">
+        <caption>기본테이블 - 캡션은 필수작성</caption>
+        <colgroup>
+            <col style="width:25%;" />
+            <col style="width:25%;" />
+            <col style="width:25%;" />
+            <col style="width:25%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col" rowspan="3">제목1</th>
+                <th scope="col" colspan="2">제목2</th>
+                <th scope="col" rowspan="2">제목3</th>
+            </tr>
+            <tr>
+                <th scope="col">제목2-1</th>
+                <th scope="col">제목2-2</th>
+            </tr>
+            <tr>
+                <th scope="col">제목2-1-1</th>
+                <th scope="col">제목2-2-1</th>
+                <th scope="col">제목3-1</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">tbody th font-size:17px;</th>
+                <td>tbody td font-size:16px;</td>
+                <td>tbody td font-size:16px;</td>
+                <td>tbody td font-size:16px;</td>
+            </tr>
+            <tr>
+                <th scope="row">tbody th font-size:17px;</th>
+                <td>tbody td font-size:16px;</td>
+                <td>tbody td font-size:16px;</td>
+                <td>tbody td font-size:16px;</td>
+            </tr>
+        </tbody>
+    </table>    <!--//table-->
+</xmp>
+                                <h4><span>세로형테이블(.table.type2)</span></h4>
+                                <div class="table_unit">
+                                    <span class="warning"><span class="skip">강조</span>테이블 유닛 .table_unit &gt; .warning 사용 , 필요 없으면 삭제할 것</span>
+                                </div> <!--//table_unit-->
+                                <table class="table type2">
+                                    <caption>세로형테이블(제목) - tbody의 th 값 나열</caption>
+                                    <colgroup>
+                                        <col style="width:30%;" />
+                                        <col style="width:70%;" />
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">제목1</th>
+                                        <td>내용1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">제목2</th>
+                                        <td>내용2</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">제목3</th>
+                                        <td>내용3</td>
+                                    </tr>
+                                    </tbody>
+                                </table>    <!--//table type2-->
+<xmp class="prettyprint linenums xmp">
+    <div class="table_unit">
+        <span class="warning"><span class="skip">강조</span>테이블 유닛 .table_unit &gt; .warning 사용 , 필요 없으면 삭제할 것</span>
+    </div> <!--//table_unit-->
+    <table class="table type2">
+        <caption>세로형테이블(제목) - tbody의 th 값 나열</caption>
+        <colgroup>
+            <col style="width:30%;" />
+            <col style="width:70%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row">제목1</th>
+                <td>내용1</td>
+            </tr>
+            <tr>
+                <th scope="row">제목2</th>
+                <td>내용2</td>
+            </tr>
+            <tr>
+                <th scope="row">제목3</th>
+                <td>내용3</td>
+            </tr>
+        </tbody>
+    </table>    <!--//table type2-->
+</xmp>
+                                <h3><span>반응형테이블은 colspan, rowspan 있으면 작동 X</span></h3>
+                                <h4><span>반응형테이블(.table.responsive)</span></h4>
+                                <div class="table_unit">
+                                    <span class="warning"><span class="skip">강조</span>테이블 유닛 .table_unit &gt; .warning 사용 , 필요 없으면 삭제할 것</span>
+                                </div> <!--//table_unit-->
+                                <table class="table responsive">
+                                    <caption>반응형테이블(제목) - 캡션은 필수작성</caption>
+                                    <colgroup>
+                                        <col style="width:33.33%" />
+                                        <col style="width:33.33%" />
+                                        <col style="width:33.33%" />
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">제목1</th>
+                                        <th scope="col">제목2</th>
+                                        <th scope="col">제목3</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>내용1-1</td>
+                                        <td>내용2-1</td>
+                                        <td>내용3-1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>내용1-2</td>
+                                        <td>내용2-2</td>
+                                        <td>내용3-2</td>
+                                    </tr>
+                                    </tbody>
+                                </table>    <!--//table responsive-->
+<xmp class="prettyprint linenums xmp">
+    <div class="table_unit">
+        <span class="warning"><span class="skip">강조</span>테이블 유닛 .table_unit &gt; .warning 사용 , 필요 없으면 삭제할 것</span>
+    </div> <!--//table_unit-->
+    <table class="table responsive">
+        <caption>반응형테이블(제목) - 캡션은 필수작성</caption>
+        <colgroup>
+            <col style="width:33.33%" />
+            <col style="width:33.33%" />
+            <col style="width:33.33%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">제목1</th>
+                <th scope="col">제목2</th>
+                <th scope="col">제목3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용1-1</td>
+                <td>내용2-1</td>
+                <td>내용3-1</td>
+            </tr>
+            <tr>
+                <td>내용1-2</td>
+                <td>내용2-2</td>
+                <td>내용3-2</td>
+            </tr>
+        </tbody>
+    </table>    <!--//table responsive-->
+</xmp>
+                                <h4><span>세로형반응형테이블(.table.type2.responsive)</span></h4>
+                                <div class="table_unit">
+                                    <span class="warning"><span class="skip">강조</span>테이블 유닛 .table_unit &gt; .warning 사용 , 필요 없으면 삭제할 것</span>
+                                </div> <!--//table_unit-->
+                                <table class="table type2 responsive">
+                                    <caption>세로형반응형테이블(제목) - 캡션은 필수작성</caption>
+                                    <colgroup>
+                                        <col style="width:30%" />
+                                        <col style="width:70%" />
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">제목</th>
+                                        <td>내용</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">제목</th>
+                                        <td>내용</td>
+                                    </tr>
+                                    </tbody>
+                                </table>    <!--//table type2 responsive-->
+<xmp class="prettyprint linenums xmp">
+    <div class="table_unit">
+        <span class="warning"><span class="skip">강조</span>테이블 유닛 .table_unit &gt; .warning 사용 , 필요 없으면 삭제할 것</span>
+    </div> <!--//table_unit-->
+    <table class="table type2 responsive">
+        <caption>세로형반응형테이블(제목) - 캡션은 필수작성</caption>
+        <colgroup>
+            <col style="width:30%" />
+            <col style="width:70%" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row">제목</th>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <th scope="row">제목</th>
+                <td>내용</td>
+            </tr>
+        </tbody>
+    </table>    <!--//table type2 responsive-->
+</xmp>
+                                <h3><span>스크롤테이블( .table_scroll &gt; table ) // 반응형(responsive)불가</span></h3>
+                                <div class="table_scroll">
+                                    <div class="table_unit">
+                                        <span class="warning"><span class="skip">강조</span>일반테이블</span>
+                                    </div> <!--//table_unit-->
+                                    <table class="table">
+                                        <caption>테이블(제목) - 캡션은 필수작성</caption>
+                                        <colgroup>
+                                            <col style="width:30%" />
+                                            <col style="width:70%" />
+                                        </colgroup>
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">제목</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>내용</td>
+                                            <td>내용</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>    <!--//table-->
+                                </div>  <!--//table_scroll-->
+                                <div class="table_scroll">
+                                    <div class="table_unit">
+                                        <span class="warning"><span class="skip">강조</span>세로형테이블</span>
+                                    </div> <!--//table_unit-->
+                                    <table class="table type2">
+                                        <caption>세로형테이블(제목) - 캡션은 필수작성</caption>
+                                        <colgroup>
+                                            <col style="width:30%" />
+                                            <col style="width:70%" />
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">제목</th>
+                                            <td>내용</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">제목</th>
+                                            <td>내용</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>    <!--//table type2-->
+                                </div>  <!--//table_scroll-->
+<xmp class="prettyprint linenums xmp">
+    <div class="table_scroll">
+        <div class="table_unit">
+            <span class="warning"><span class="skip">강조</span>일반테이블</span>
+        </div> <!--//table_unit-->
+        <table class="table">
+            <caption>테이블(제목) - 캡션은 필수작성</caption>
+            <colgroup>
+                <col style="width:30%" />
+                <col style="width:70%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">제목</th>
+                    <th scope="col">제목</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>내용</td>
+                    <td>내용</td>
+                </tr>
+            </tbody>
+        </table>    <!--//table-->
+    </div>  <!--//table_scroll-->
+    <div class="table_scroll">
+        <div class="table_unit">
+            <span class="warning"><span class="skip">강조</span>세로형테이블</span>
+        </div> <!--//table_unit-->
+        <table class="table type2">
+            <caption>세로형테이블(제목) - 캡션은 필수작성</caption>
+            <colgroup>
+                <col style="width:30%" />
+                <col style="width:70%" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">제목</th>
+                    <td>내용</td>
+                </tr>
+                <tr>
+                    <th scope="row">제목</th>
+                    <td>내용</td>
+                </tr>
+            </tbody>
+        </table>    <!--//table type2-->
+    </div>  <!--//table_scroll-->
+</xmp>
+                            </div>    <!--//tab_cts-->
+                            <div class="tab_cts">
+                                <h3><span>버튼/링크/인풋</span></h3>
                             </div>    <!--//tab_cts-->
                         </div>  <!--//tab_cts_box-->
                     </div><!-- //#contents -->
