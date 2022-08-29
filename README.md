@@ -1,9 +1,9 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=333333&height=200&section=header&text=SI%20Total%20Project%202020~ing&fontSize=30&fontColor=ffffff)
 
 // 2022midongsan (2022 미동산수목원 신규)
-- https://gunami4573.github.io/project/2022midongsan/site/www/sub.html (서브 레이아웃)
-- https://gunami4573.github.io/project/2022midongsan/site/www/template.html (템플릿)
-- https://gunami4573.github.io/project/2022midongsan/site/www/main.html (메인 레이아웃) (작업대기)
+- https://gunami4573.github.io/project/2022midongsan/site/midongsan/sub.html (서브 레이아웃)
+- https://gunami4573.github.io/project/2022midongsan/site/midongsan/template.html (템플릿)
+- https://gunami4573.github.io/project/2022midongsan/site/midongsan/main.html (메인 레이아웃) (작업대기)
 
 // 2022ocsports (2022 동대문구청장실 신규)
 - https://gunami4573.github.io/project/2022ddm/site/chief_2022/main.html (메인 레이아웃)
