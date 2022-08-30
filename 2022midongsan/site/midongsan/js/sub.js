@@ -179,6 +179,87 @@
         });
         //탭메뉴 active 줬다 빼기 끝
 
+        //미동산 전용 셀렉트 시작
+        var $TempSelect = $('.temp_select');
+        $TempSelect.each(function(){
+            var $this = $(this),
+                $FakeSelect = $this.find('.fake_select'),
+                $FakeSelectOpenBtn = $FakeSelect.find('button.fake_select_open_btn'),
+                $FakeSelectList = $FakeSelect.find('.fake_select_list'),
+                $FakeSelectItem = $FakeSelectList.find('.fake_select_item'),
+                $FakeSelectBtn = $FakeSelectItem.find('button.fake_select_btn'),
+                $FakeSelectItemActive = $FakeSelectItem.siblings('.fake_select_item.active'),
+                $FakeSelectActiveBtn = $FakeSelectItemActive.find('button.fake_select_btn'),
+                StartFakeSelectActiveBtnText = $FakeSelectActiveBtn.text(),
+                $SelectedText = $FakeSelectOpenBtn.find('.selected_text'),
+                StartFakeSelectItemActiveIndex = $FakeSelectItemActive.index(),
+                $StartRealSelect = $FakeSelect.siblings('select.real_select'),
+                $StartRealSelectOption = $StartRealSelect.find('option').eq(StartFakeSelectItemActiveIndex);
+
+            $StartRealSelectOption.attr('selected', 'selected');
+            $SelectedText.empty().text(StartFakeSelectActiveBtnText);
+
+            //option에 텍스트 매칭
+            $FakeSelectItem.each(function(){
+                var $this = $(this),
+                    StartIndex = $this.index(),
+                    $StartFakeBtn = $this.find('button.fake_select_btn'),
+                    $StartFakeBtnText = $StartFakeBtn.text(),
+                    $StartFakeSelectList = $this.parent('.fake_select_list'),
+                    $StartFakeSelect = $StartFakeSelectList.parent('.fake_select'),
+                    $StartRealSelect = $StartFakeSelect.siblings('select.real_select'),
+                    $StartRealOption = $StartRealSelect.find('option').eq(StartIndex).empty().text($StartFakeBtnText);
+            });
+            //가짜셀렉트 레이어 표출
+            $FakeSelectOpenBtn.on('click', function(){
+                var $this = $(this),
+                    $thisFakeSelect = $this.parent('.fake_select'),
+                    $thisTempSelect = $thisFakeSelect.parent('.temp_select'),
+                    IsActive = $thisTempSelect.is('.active');
+                if(!IsActive){
+                    $FakeSelectList.slideDown(250, 'linear');
+                    $thisTempSelect.addClass('active');
+                    $this.attr('title', '하위메뉴닫기');
+                }
+                else{
+                    $FakeSelectList.slideUp(250, 'linear');
+                    $thisTempSelect.removeClass('active');
+                    $this.attr('title', '하위메뉴열기');
+                }
+            });
+            //가짜셀렉트의 버튼과 진짜셀렉트의 option값 매칭 및 selected
+            $FakeSelectBtn.on('click', function(){
+                var $this = $(this),
+                    thisText = $this.text(),
+                    $thisFakeSelectItem = $this.parent('.fake_select_item'),
+                    thisFakeSelectItemIndex = $thisFakeSelectItem.index(),
+                    $otherFakeSelectItem = $thisFakeSelectItem.siblings('.fake_select_item'),
+                    $otehrFakeSelectBtn = $otherFakeSelectItem.find('button.fake_select_btn'),
+                    $thisFakeSelectList = $thisFakeSelectItem.parent('.fake_select_list'),
+                    $thisFakeSelect = $thisFakeSelectList.parent('.fake_select'),
+                    $thisTempSelect = $thisFakeSelect.parent('.temp_select'),
+                    IsActive = $thisTempSelect.is('.active'),
+                    $FakeSelectOpenBtn = $thisFakeSelectList.siblings('button.fake_select_open_btn'),
+                    $SelectedText = $FakeSelectOpenBtn.find('.selected_text'),
+                    $RealSelect = $thisFakeSelect.siblings('select.real_select'),
+                    $RealSelectOption = $RealSelect.find('option').eq(thisFakeSelectItemIndex),
+                    $OtherRealSelectOption = $RealSelectOption.siblings('option');
+                if(IsActive){
+                    $otherFakeSelectItem.removeClass('active');
+                    $otehrFakeSelectBtn.removeAttr('title');
+                    $thisFakeSelectItem.addClass('active');
+                    $this.attr('title', '선택됨');
+                    $OtherRealSelectOption.removeAttr('selected');
+                    $RealSelectOption.attr('selected', 'selected');
+                    $FakeSelectOpenBtn.attr('title', '하위메뉴열기');
+                    $SelectedText.text(thisText);
+                    $thisFakeSelectList.slideUp(250, 'linear');
+                    $thisTempSelect.removeClass('active');
+                }
+            });
+        });
+        //미동산 전용 셀렉트 끝
+
 
         $window.on('screen:tablet screen:phone', function (event) {
 

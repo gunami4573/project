@@ -1891,6 +1891,76 @@
         <label for="맞출것3">비활성 라디오박스</label>
     </span>  <!--//temp_form radio-->
 </xmp>
+                                <h3><span>미동산 셀렉트박스(.temp_select &gt; select.real_select // .fake_select)</span></h3>
+                                <h5><span>select.read_select &gt; option 갯수와 .fake_select &gt; .fake_select_list &gt; .fake_select_item 개수 맞출것</span></h5>
+                                <h5><span>select.read_select &gt; option 의 텍스트는 비워둬도 .fake_select &gt; .fake_select_list &gt; .fake_select_item &gt; .fake_select_btn의 텍스트가 로딩시 스크립트로 자동으로 들어오게 짜여져있음</span></h5>
+                                <h5><span>select.read_select &gt; option 의 selected(접근성 고려 옵션값 선택)는 .fake_select_item 에 active 클레스 준 곳과 매칭되어 자동으로 들어옴</span></h5>
+                                <h5><span>.fake_select_item 에 active 클레스 달려있는 곳 안에 있는 .fake_select_btn 에는 title="선택됨" 꼭 줄것</span></h5>
+                                <h5><span>.selected_text 값 비워두면 .fake_select_item.active 안에 있는 .fake_select_btn 의 텍스트 값 자동으로 들어감</span></h5>
+                                <div class="temp_select">
+                                    <select title="어떤것을 선택하는지 쓸 것" class="real_select">
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>  <!--//real_select-->
+                                    <span class="fake_select">
+                                        <button type="button" title="하위메뉴열기" class="fake_select_open_btn">
+                                            <span class="selected_text"></span>  <!--//selected_text-->
+                                        </button>  <!--//fake_select_open_btn-->
+                                        <span class="fake_select_list">
+                                            <span class="fake_select_item active">
+                                                <button type="button" class="fake_select_btn" title="선택됨">option1</button>  <!--//fake_select_btn-->
+                                            </span>  <!--//fake_select_item-->
+                                            <span class="fake_select_item ">
+                                                <button type="button" class="fake_select_btn">option2</button>  <!--//fake_select_btn-->
+                                            </span>  <!--//fake_select_item-->
+                                            <span class="fake_select_item">
+                                                <button type="button" class="fake_select_btn">option3</button>  <!--//fake_select_btn-->
+                                            </span>  <!--//fake_select_item-->
+                                            <span class="fake_select_item">
+                                                <button type="button" class="fake_select_btn">option4</button>  <!--//fake_select_btn-->
+                                            </span>  <!--//fake_select_item-->
+                                            <span class="fake_select_item">
+                                                <button type="button" class="fake_select_btn">option5</button>  <!--//fake_select_btn-->
+                                            </span>  <!--//fake_select_item-->
+                                        </span>  <!--//fake_select_list-->
+                                    </span>  <!--//fake_select-->
+                                </div>  <!--//temp_select-->
+<xmp class="prettyprint linenums xmp">
+    <div class="temp_select">
+        <select title="어떤것을 선택하는지 쓸 것" class="real_select">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>  <!--//real_select-->
+        <span class="fake_select">
+            <button type="button" title="하위메뉴열기" class="fake_select_open_btn">
+                <span class="selected_text"></span>  <!--//selected_text-->
+            </button>  <!--//fake_select_open_btn-->
+            <span class="fake_select_list">
+                <span class="fake_select_item active">
+                    <button type="button" class="fake_select_btn" title="선택됨">option1</button>  <!--//fake_select_btn-->
+                </span>  <!--//fake_select_item-->
+                <span class="fake_select_item ">
+                    <button type="button" class="fake_select_btn">option2</button>  <!--//fake_select_btn-->
+                </span>  <!--//fake_select_item-->
+                <span class="fake_select_item">
+                    <button type="button" class="fake_select_btn">option3</button>  <!--//fake_select_btn-->
+                </span>  <!--//fake_select_item-->
+                <span class="fake_select_item">
+                    <button type="button" class="fake_select_btn">option4</button>  <!--//fake_select_btn-->
+                </span>  <!--//fake_select_item-->
+                <span class="fake_select_item">
+                    <button type="button" class="fake_select_btn">option5</button>  <!--//fake_select_btn-->
+                </span>  <!--//fake_select_item-->
+            </span>  <!--//fake_select_list-->
+        </span>  <!--//fake_select-->
+    </div>  <!--//temp_select-->
+</xmp>
                             </div>    <!--//tab_cts-->
                         </div>  <!--//tab_cts_box-->
                     </div><!-- //#contents -->
