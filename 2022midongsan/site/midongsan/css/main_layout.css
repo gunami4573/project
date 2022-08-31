@@ -104,10 +104,18 @@
     from{transform-origin:left bottom;transform:translateX(-100%)}
     to{transform-origin:left bottom;transform:translateX(0px)}
 }
+@keyframes holiday-box {
+    from{opacity:0;transform:translateY(10%);}
+    to{opacity:1;transform:translateY(0px);}
+}
+@keyframes holiday-icon {
+    from{transform-origin:right top;transform:scale(0) rotate(540deg);}
+    to{transform-origin:right top;transform:scale(1) rotate(0deg);}
+}
 .rowgroup1{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .main_visual{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .main_visual .main_visual_wrap{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
-.main_visual .main_visual_wrap .visual_deco_box{display:block;position:absolute;bottom:0;left:0;width:100%;height:100%;font-size:0;line-height:0;box-sizing:border-box;overflow:hidden;}
+.main_visual .main_visual_wrap .visual_deco_box{display:block;position:absolute;z-index:0;bottom:0;left:0;width:100%;height:100%;font-size:0;line-height:0;box-sizing:border-box;overflow:hidden;}
 .main_visual .main_visual_wrap .visual_deco_box .visual_deco{display:block;position:absolute;box-sizing:border-box;}
 .main_visual .main_visual_wrap .visual_deco_box .visual_deco{animation-duration:1500ms;animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-fill-mode:both;}
 .main_visual .main_visual_wrap .visual_deco_box .visual_deco:before{display:block;position:absolute;width:100%;height:100%;background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
@@ -152,7 +160,6 @@
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .vr_link_box .vr_link:before{display:block;position:absolute;top:10px;left:9px;width:111px;height:110px;background-image:url(../images/main/vr_link_deco.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .vr_link_box .vr_link:before{animation-name:vr-deco;animation-duration:2000ms;animation-delay:0s;animation-timing-function:linear;animation-direction:alternate;animation-iteration-count:infinite;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .vr_link_box .vr_link .vr_link_text{display:inline-block;position:relative;font-size:20px;color:#fff;line-height:24px;letter-spacing:0;font-weight:600;font-family:'Score';vertical-align:top;box-sizing:border-box;text-shadow:0px 0px 5px rgba(96, 74, 203, 0.6);}
-
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_list{display:block;position:relative;z-index:1;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_list .slick-list{font-size:0;line-height:0;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_list .slick-slide{font-size:0;line-height:0;transform-origin:right center;transform:scaleX(0) scaleY(-0.5) rotateY(-45deg);opacity:0;transition-property:transform, opacity, filter;transition-duration:1200ms;transition-timing-function:ease-in-out;}
@@ -161,7 +168,6 @@
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_list .midong_slide_item .midong_slide_link{display:block;position:relative;width:100%;min-height:546px;border-radius:180px 0 180px 0;box-shadow:12px 21px 49px rgba(0, 0, 0, 0.2);font-size:0;line-height:0;box-sizing:border-box;overflow:hidden;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_list .midong_slide_item .midong_slide_link .img_wrap{display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-repeat:no-repeat;background-position:center center;background-size:cover;box-sizing:border-box;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_list .midong_slide_item .midong_slide_link .img_wrap .img_text{display:block;position:absolute;top:0;left:0;font-size:0;color:transparent;line-height:0;}
-
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control{display:block;position:absolute;z-index:2;bottom:54px;left:calc(((100% - 1640px) / 2) + 848px);width:193px;height:86px;background-color:#0e4d07;border-radius:5px 50px 5px 5px;font-size:0;line-height:0;box-sizing:border-box;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control button{display:inline-block;position:relative;width:50%;height:100%;border:none;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control .prev{padding-right:1px;}
@@ -175,3 +181,46 @@
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control .prev:hover:after{transform:rotate(180deg);}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control .next:after{right:45px;transform:rotate(180deg);}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control .next:hover:after{transform:rotate(0deg);}
+
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap{display:block;position:relative;width:100%;padding:0 calc((100% - 1640px) / 2);box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner{display:block;position:relative;width:100%;min-height:133px;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box{display:block;width:100%;padding-right:400px;padding-left:150px;font-size:0;line-height:0;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_title{display:block;width:auto;font-size:0;line-height:0;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_title{animation-name:holiday-box;animation-duration:1500ms;animation-delay:3000ms;animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-fill-mode:both;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_title span{display:inline-block;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_title .text{position:relative;padding-left:63px;font-size:30px;color:#000;line-height:40px;letter-spacing:-0.03em;font-weight:700;font-family:'Score';}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_title .text:before{display:block;position:absolute;top:1px;left:0;width:49px;height:44px;background-image:url(../images/main/holiday_icon.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_title .text:before{animation-name:holiday-icon;animation-duration:1000ms;animation-delay:4000ms;animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-fill-mode:both;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_title .number_inner{margin-left:19px;padding:0 17px;background-color:#dffad6;border-radius:8px;text-align:center;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_title .number_inner em{display:inline-block;font-size:23px;color:#175a10;line-height:40px;letter-spacing:-0.03em;font-weight:500;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_title .number_inner .point_b{font-weight:800;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_title .number_inner .month{margin-left:10px;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list{display:inline-block;position:relative;width:auto;margin-top:16px;padding:0 3px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list:before{display:block;position:absolute;bottom:0;left:0;width:100%;height:14px;background-color:#dffad6;content:'';}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list{animation-name:holiday-box;animation-duration:1500ms;animation-delay:3200ms;animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-fill-mode:both;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item{display:inline-block;position:relative;margin-left:13px;padding-right:13px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item:before{display:block;position:absolute;top:calc(50% - 9px);right:0;width:2px;height:18px;background-color:rgba(0, 0, 0, 0.5);content:'';}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item:first-child{margin-left:0;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item:last-child{padding-right:0;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item:last-child:before{display:none;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item em{display:inline-block;font-size:18px;color:#000;line-height:30px;letter-spacing:-0.03em;font-weight:400;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box{display:block;position:absolute;top:0;right:0;max-width:400px;font-size:0;line-height:0; text-align:right;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box{animation-name:holiday-box;animation-duration:1500ms;animation-delay:2600ms;animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-fill-mode:both;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner{display:inline-block;position:relative;width:auto;padding-top:49px;padding-right:17px;padding-left:85px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .icon{display:inline-block;position:relative;min-width:85px;height:56px;padding-right:30px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .icon:before{display:inline-block;position:relative;top:50%;transform:translateY(-50%);background-image:url(../images/main/weather_icon.png);background-repeat:no-repeat;content:'';vertical-align:top;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box.type1 .weather_inner .icon:before{width:40px;height:43px;background-position:left top;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box.type2 .weather_inner .icon:before{width:55px;height:45px;background-position:left -100px;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box.type3 .weather_inner .icon:before{width:65px;height:45px;background-position:left -200px;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box.type4 .weather_inner .icon:before{width:63px;height:42px;background-position:left -300px;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box.type5 .weather_inner .icon:before{width:43px;height:47px;background-position:left -400px;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box.type6 .weather_inner .icon:before{width:45px;height:46px;background-position:left -500px;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box.type7 .weather_inner .icon:before{width:47px;height:47px;background-position:left -600px;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box.type8 .weather_inner .icon:before{width:43px;height:46px;background-position:left -700px;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .icon:after{display:block;position:absolute;top:0;right:16px;width:2px;height:100%;background-color:#000;content:'';box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .desc_inner{display:inline-block;width:auto;vertical-align:top;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .desc_inner .desc{display:block;width:auto;font-size:0;line-height:0;box-sizing:border-box;text-align:left;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .desc_inner .desc em{display:inline-block;font-size:20px;color:#000;line-height:28px;letter-spacing:-0.03em;font-weight:400;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .desc_inner .desc.top em{font-weight:600;}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .desc_inner .desc .weather_day,
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .desc_inner .desc .weather_tem{margin-left:8px;}

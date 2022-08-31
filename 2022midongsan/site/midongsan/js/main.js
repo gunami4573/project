@@ -38,8 +38,8 @@
             $MidongSlidePrev = $('.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control .prev'),
             $MidongSlideNext = $('.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control .next');
         $MidongSlideList.slick({
-            autoplay : false,
-            autoplaySpeed : 2000,
+            autoplay : true,
+            autoplaySpeed : 4000,
             speed : 1200,
             dots : false,
             arrows : true,
@@ -52,6 +52,7 @@
             swipeToSlide : false,
             draggable : false,
             zIndex : 4,
+            pauseOnHover : false,
             responsive: [{}]
         });
 
