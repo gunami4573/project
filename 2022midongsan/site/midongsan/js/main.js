@@ -51,7 +51,7 @@
             swipe : false,
             swipeToSlide : false,
             draggable : false,
-            zIndex : 1,
+            zIndex : 4,
             responsive: [{}]
         });
 
