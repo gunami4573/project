@@ -109,8 +109,8 @@
     to{opacity:1;transform:translateY(0px);}
 }
 @keyframes holiday-icon {
-    from{transform-origin:right top;transform:scale(0) rotate(540deg);}
-    to{transform-origin:right top;transform:scale(1) rotate(0deg);}
+    from{transform-origin:right top;transform:scale(0) rotate(540deg);opacity:0;}
+    to{transform-origin:right top;transform:scale(1) rotate(0deg);opacity:1;}
 }
 .rowgroup1{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .main_visual{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
@@ -199,7 +199,7 @@
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list:before{display:block;position:absolute;bottom:0;left:0;width:100%;height:14px;background-color:#dffad6;content:'';}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list{animation-name:holiday-box;animation-duration:1500ms;animation-delay:3200ms;animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-fill-mode:both;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item{display:inline-block;position:relative;margin-left:13px;padding-right:13px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
-.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item:before{display:block;position:absolute;top:calc(50% - 9px);right:0;width:2px;height:18px;background-color:rgba(0, 0, 0, 0.5);content:'';}
+.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item:before{display:block;position:absolute;top:calc(50% - 9px);right:-3px;width:2px;height:18px;background-color:rgba(0, 0, 0, 0.5);content:'';}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item:first-child{margin-left:0;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item:last-child{padding-right:0;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .holiday_box .holiday_list .holiday_item:last-child:before{display:none;}
@@ -224,3 +224,35 @@
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .desc_inner .desc.top em{font-weight:600;}
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .desc_inner .desc .weather_day,
 .main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_desc_wrap .desc_inner .weather_box .weather_inner .desc_inner .desc .weather_tem{margin-left:8px;}
+
+/* rowgroup2(프로그램 서비스영역) */
+.rowgroup2{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.service{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.service .service_wrap{display:block;position:relative;width:100%;min-height:1002px;background-color:#262626;font-size:0;line-height:0;box-sizing:border-box;overflow:hidden;}
+.service .service_wrap:before{display:block;position:absolute;z-index:1;top:0;left:0;width:100%;height:100%;background-color:rgba(1, 95, 51, 0.6);content:'';box-sizing:border-box;}
+.service .service_wrap:after{display:block;position:absolute;top:0;left:calc(50% - 970px);width:1941px;height:1293px;background-image:url(../images/main/service_bg.jpg);background-repeat:no-repeat;background-position:left top -120px;background-attachment:fixed;content:'';opacity:0.3;box-sizing:border-box;}
+
+.service .service_wrap .service_top_desc{display:block;position:relative;z-index:1;width:100%;box-sizing:border-box;text-align:center;}
+.service .service_wrap .service_tab{display:block;position:relative;z-index:1;width:100%;box-sizing:border-box;}
+.service .service_wrap .service_tab .tab_box{font-size:20px;color:#fff;line-height:30px;}
+.service .service_wrap .service_tab .tab_box .tab_box_list{}
+.service .service_wrap .service_tab .tab_box .tab_box_list .tab_box_item{}
+.service .service_wrap .service_tab .tab_box .tab_box_list .tab_box_item .tab_box_btn{border:none;}
+
+.service .service_wrap .service_tab .tab_slide_box{}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item{display:none;}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item.active{display:block;}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap{}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_list{display:block;width:100%;padding:0 73px;font-size:0;line-height:0;box-sizing:border-box;}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_list .slick-list{/*padding-right:67px;*/font-size:0;line-height:0;}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_list .slick-slide{font-size:0;line-height:0;}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_list .slick-slide.slick-active{}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_list .service_slide_item{display:block;width:100%;padding:83px 60px;box-sizing:border-box;}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_list .service_slide_item .service_slide_link{display:block;width:100%;min-height:359px;background-color:#f00;box-shadow:10px 10px 10px #000;box-sizing:border-box;}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item:nth-child(2) .service_slide_wrap .service_slide_list .service_slide_item .service_slide_link{background-color:#00f;}
+
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_control{}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_control .btn_box{}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_control .btn_box button{}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_control .btn_box .prev{}
+.service .service_wrap .service_tab .tab_slide_box .tab_slide_item .service_slide_wrap .service_slide_control .btn_box .next{}
