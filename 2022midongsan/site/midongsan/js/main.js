@@ -33,6 +33,33 @@
         });
         //텍스트 에니메이션 플러그인 끝
 
+        //rowgroup 스크롤엑티브 시작
+        var $ScrollAni = $('.scroll_ani');
+        $ScrollAni.each(function(){
+            var $this = $(this),
+                scrollTop = $window.scrollTop(),
+                scrollBottom = scrollTop + $window.height(),
+                contentOffset = $this.offset();
+            if(scrollBottom > contentOffset.top) {
+                $this.addClass('scroll_active');
+            }
+        });
+        $window.on('scroll', function(event) {
+            $ScrollAni.each(function(){
+                var $this = $(this),
+                    scrollTop = $window.scrollTop(),
+                    scrollBottom = scrollTop + $window.height(),
+                    contentOffset = $this.offset();
+                if(scrollBottom > contentOffset.top) {
+                    $this.addClass('scroll_active');
+                }
+                else{
+                    $this.removeClass('scroll_active');
+                }
+            });
+        });
+        //rowgroup 스크롤엑티브 끝
+
         //메인 비주얼 슬라이드 시작
         var $MidongSlideList = $('.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_list'),
             $MidongSlidePrev = $('.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control .prev'),
@@ -52,7 +79,7 @@
             swipeToSlide : false,
             draggable : false,
             zIndex : 4,
-            pauseOnHover : false,
+            pauseOnHover : true,
             responsive: [{}]
         });
         //메인 비주얼 슬라이드 끝
@@ -63,9 +90,23 @@
             var $this = $(this),
                 $ServiceSlideWrap = $this.find('.service_slide_wrap'),
                 $ServiceSlideList = $ServiceSlideWrap.find('.service_slide_list'),
-                $ServiceSlideControl = $ServiceSlideList.siblings('.service_slide_control');
+                $ServiceSlideItem = $ServiceSlideList.find('.service_slide_item'),
+                ServiceSlideItemLength = $ServiceSlideItem.length,
+                $ServiceSlideControl = $ServiceSlideList.siblings('.service_slide_control'),
+                $ArrowBar = $ServiceSlideControl.find('.arrow_bar'),
+                percent;
+            $ServiceSlideList.on('init', function(event, slick, currentSlide, nextSlide) {
+                percent = ((slick.currentSlide+1) / (slick.slideCount)) * 100;
+                $ArrowBar.css('width', percent + '%');
+            });
+            $ServiceSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                percent = ((nextSlide+1) / (slick.slideCount)) * 100;
+                $ArrowBar.css('width', percent + '%');
+            });
             $ServiceSlideList.slick({
                 autoplay : true,
+                autoplaySpeed : 1500,
+                speed : 1500,
                 dots : false,
                 arrows : true,
                 prevArrow : $ServiceSlideControl.find('.prev'),
@@ -77,7 +118,7 @@
                 swipeToSlide : true,
                 draggable : true,
                 zIndex : 1,
-                pauseOnHover : false,
+                pauseOnHover : true,
                 responsive: [{}]
             });
         });
