@@ -90,8 +90,6 @@
             var $this = $(this),
                 $ServiceSlideWrap = $this.find('.service_slide_wrap'),
                 $ServiceSlideList = $ServiceSlideWrap.find('.service_slide_list'),
-                $ServiceSlideItem = $ServiceSlideList.find('.service_slide_item'),
-                ServiceSlideItemLength = $ServiceSlideItem.length,
                 $ServiceSlideControl = $ServiceSlideList.siblings('.service_slide_control'),
                 $ArrowBar = $ServiceSlideControl.find('.arrow_bar'),
                 percent;
@@ -147,6 +145,56 @@
             }
         });
         //프로그램 슬라이드 및 탭 끝
+
+        //공지사항 슬라이드 및 탭 시작
+        var $NoticeTabSlideItem = $('.notice .notice_wrap .notice_tab .tab_slide_box .tab_slide_item');
+        $NoticeTabSlideItem.each(function(){
+            var $this = $(this),
+                $NoticeSlideWrap = $this.find('.notice_slide_wrap'),
+                $NoticeSlideList = $NoticeSlideWrap.find('.notice_slide_list'),
+                $NoticeSlideControl = $NoticeSlideList.siblings('.notice_slide_control');
+            $NoticeSlideList.slick({
+                autoplay : false,
+                dots : false,
+                arrows : true,
+                prevArrow : $NoticeSlideControl.find('.prev'),
+                nextArrow : $NoticeSlideControl.find('.next'),
+                slidesToShow : 3,
+                slidesToScroll : 1,
+                infinite : true,
+                swipe : true,
+                swipeToSlide : true,
+                draggable : true,
+                zIndex : 1,
+                pauseOnHover : true,
+                responsive: [{}]
+            });
+        });
+        $('.notice .notice_wrap .notice_tab .tab_box .tab_box_list .tab_box_item button.tab_box_btn').on('click', function(){
+            var $this = $(this),
+                $MyTabBoxItem = $this.parent('.tab_box_item'),
+                IsActive = $MyTabBoxItem.is('.active'),
+                MyTabBoxIndex = $MyTabBoxItem.index(),
+                $OtherTabBoxItem = $MyTabBoxItem.siblings('.tab_box_item'),
+                $OtherTabBoxBtn = $OtherTabBoxItem.find('button.tab_box_btn'),
+                $MyTabBoxList = $MyTabBoxItem.parent('.tab_box_list'),
+                $TabBox = $MyTabBoxList.parent('.tab_box'),
+                $TabSlideBox = $TabBox.siblings('.tab_slide_box'),
+                $MyTabSlideItem = $TabSlideBox.find('.tab_slide_item').eq(MyTabBoxIndex),
+                $OtherTabSlideItem = $MyTabSlideItem.siblings('.tab_slide_item'),
+                $MySlideWrap = $MyTabSlideItem.find('.notice_slide_wrap'),
+                $MySlideList = $MySlideWrap.find('.notice_slide_list');
+            if(!IsActive){
+                $OtherTabBoxItem.removeClass('active');
+                $OtherTabBoxBtn.removeAttr('title');
+                $MyTabBoxItem.addClass('active');
+                $this.attr('title', '선택됨');
+                $OtherTabSlideItem.removeClass('active');
+                $MyTabSlideItem.addClass('active');
+                $MySlideList.slick('setPosition');
+            }
+        });
+        //공지사항 슬라이드 및 탭 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
