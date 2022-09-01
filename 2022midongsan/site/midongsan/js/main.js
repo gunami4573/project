@@ -38,7 +38,7 @@
             $MidongSlidePrev = $('.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control .prev'),
             $MidongSlideNext = $('.main_visual .main_visual_wrap .visual_inner_box .wrap_box .midong_slide_wrap .midong_slide_control .next');
         $MidongSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             autoplaySpeed : 4000,
             speed : 1200,
             dots : false,
@@ -65,7 +65,7 @@
                 $ServiceSlideList = $ServiceSlideWrap.find('.service_slide_list'),
                 $ServiceSlideControl = $ServiceSlideList.siblings('.service_slide_control');
             $ServiceSlideList.slick({
-                autoplay : false,
+                autoplay : true,
                 dots : false,
                 arrows : true,
                 prevArrow : $ServiceSlideControl.find('.prev'),
