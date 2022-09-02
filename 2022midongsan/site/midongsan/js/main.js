@@ -196,6 +196,32 @@
         });
         //공지사항 슬라이드 및 탭 끝
 
+        //장소소개 슬라이드 시작
+        var $PlaceArea = $('.place .place_wrap .place_area');
+        $PlaceArea.each(function(){
+            var $this = $(this),
+                $PlaceSlideWrap = $this.find('.place_slide_wrap'),
+                $PlaceSlideList = $PlaceSlideWrap.find('.place_slide_list'),
+                $PlaceSlideControl = $PlaceSlideWrap.find('.place_slide_control');
+            $PlaceSlideList.slick({
+                autoplay : true,
+                dots : false,
+                arrows : true,
+                prevArrow : $PlaceSlideControl.find('.prev'),
+                nextArrow : $PlaceSlideControl.find('.next'),
+                slidesToShow : 1,
+                slidesToScroll : 1,
+                infinite : true,
+                swipe : true,
+                swipeToSlide : true,
+                draggable : true,
+                zIndex : 1,
+                pauseOnHover : true,
+                responsive: [{}]
+            });
+        });
+        //장소소개 슬라이드 끝
+
         $window.on('screen:tablet screen:phone', function (event) {
 
         });
