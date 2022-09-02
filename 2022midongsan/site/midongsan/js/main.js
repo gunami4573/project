@@ -154,7 +154,7 @@
                 $NoticeSlideList = $NoticeSlideWrap.find('.notice_slide_list'),
                 $NoticeSlideControl = $NoticeSlideList.siblings('.notice_slide_control');
             $NoticeSlideList.slick({
-                autoplay : false,
+                autoplay : true,
                 dots : false,
                 arrows : true,
                 prevArrow : $NoticeSlideControl.find('.prev'),
