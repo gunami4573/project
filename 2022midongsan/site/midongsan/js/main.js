@@ -167,7 +167,12 @@
                 draggable : true,
                 zIndex : 1,
                 pauseOnHover : true,
-                responsive: [{}]
+                responsive: [{
+                    breakpoint : 1431,
+                    settings : {
+                        slidesToShow : 2,
+                    }
+                }]
             });
         });
         $('.notice .notice_wrap .notice_tab .tab_box .tab_box_list .tab_box_item button.tab_box_btn').on('click', function(){
