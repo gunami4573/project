@@ -141,11 +141,46 @@ input[type="submit"]{cursor:pointer;}
 }
 @media screen and (max-width:640px){
     .header_box{height:60px;padding-top:16px;}
-    .header_box:before{width:auto;height:0;padding:25%;background-size:contain;}
+    .header_box:before{width:auto;height:0;padding:32%;background-size:contain;}
     .header_box:after{top:40px;right:60px;width:auto;height:0;padding:7%;background-size:contain;}
     .header_box .logo a .logo_icon{transform:scale(0.88);}
     .header_box .logo a span{padding-left:48px;font-size:17px;}
 }
+
+/* 날씨박스추가(1000px부터) / 2022.09.06. */
+.header_box .weather_box{display:none;}
+@media screen and (max-width:1000px){
+    .header_box .weather_box{display:block;position:absolute;top:0;right:24px;padding-right:33px;font-size:0;line-height:0;box-sizing:border-box;text-align:right;}
+    .header_box .weather_box .weather_inner{display:inline-block;width:auto;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+    .header_box .weather_box .weather_inner .icon{display:inline-block;position:relative;min-width:39px;height:30px;font-size:0;line-height:0;box-sizing:border-box;}
+    .header_box .weather_box .weather_inner .icon:before{display:block;position:absolute;top:50%;left:50%;transform:translateX(-50%) translateY(-50%) scale(0.55);background-repeat:no-repeat;background-position:center center;content:'';}
+    .header_box .weather_box.type1 .weather_inner .icon:before{width:53px;height:53px;background-image:url(../images/common/weather_icon_type1.png);}
+    .header_box .weather_box.type2 .weather_inner .icon:before{width:74px;height:55px;background-image:url(../images/common/weather_icon_type2.png);}
+    .header_box .weather_box.type3 .weather_inner .icon:before{width:85px;height:55px;background-image:url(../images/common/weather_icon_type3.png);}
+    .header_box .weather_box.type4 .weather_inner .icon:before{width:84px;height:51px;background-image:url(../images/common/weather_icon_type4.png);}
+    .header_box .weather_box.type5 .weather_inner .icon:before{width:56px;height:58px;background-image:url(../images/common/weather_icon_type5.png);}
+    .header_box .weather_box.type6 .weather_inner .icon:before{width:59px;height:56px;background-image:url(../images/common/weather_icon_type6.png);}
+    .header_box .weather_box.type7 .weather_inner .icon:before{width:62px;height:58px;background-image:url(../images/common/weather_icon_type7.png);}
+    .header_box .weather_box.type8 .weather_inner .icon:before{width:56px;height:56px;background-image:url(../images/common/weather_icon_type8.png);}
+    .header_box .weather_box .weather_inner .desc_inner{display:inline-block;position:relative;margin-left:10px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+    .header_box .weather_box .weather_inner .desc_inner .desc{display:inline-block;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+    .header_box .weather_box .weather_inner .desc_inner .desc.bottom{margin-left:10px;}
+    .header_box .weather_box .weather_inner .desc_inner .desc em{display:inline-block;font-size:16px;color:#fff;line-height:30px;letter-spacing:-0.03em;font-family:'Score';vertical-align:top;box-sizing:border-box;}
+    .header_box .weather_box .weather_inner .desc_inner .desc.top em{font-weight:600;}
+    .header_box .weather_box .weather_inner .desc_inner .desc.top .weather_day{margin-left:10px;}
+    .header_box .weather_box .weather_inner .desc_inner .desc.bottom em{font-weight:300;}
+    .header_box .weather_box .weather_inner .desc_inner .desc.bottom .weather_tem{margin-left:10px;}
+}
+@media screen and (max-width:640px){
+    .header_box .weather_box .weather_inner .desc_inner .desc.bottom{display:none;}
+    .header_box .weather_box{padding-right:10px;}
+    .header_box .weather_box .weather_inner .icon{min-width:30px;}
+    .header_box .weather_box .weather_inner .icon:before{transform:translateX(-50%) translateY(-50%) scale(0.4);}
+    .header_box .weather_box .weather_inner .desc_inner{margin-left:5px;}
+    .header_box .weather_box .weather_inner .desc_inner .desc em{font-size:14px;}
+    .header_box .weather_box .weather_inner .desc_inner .desc.top .weather_day{margin-left:5px;}
+}
+
 
 /* LNB */
 .lnb{display:block;position:absolute;z-index:30;top:0;left:0;width:100%;background-color:transparent;box-shadow:0px 0px 0px transparent;box-sizing:border-box;transition-property:background-color, box-shadow;transition-duration:250ms;transition-timing-function:linear;}
