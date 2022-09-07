@@ -102,7 +102,7 @@
                 $ArrowBar.css('width', percent + '%');
             });
             $ServiceSlideList.slick({
-                autoplay : true,
+                autoplay : false,
                 autoplaySpeed : 1500,
                 speed : 1500,
                 dots : false,
@@ -117,7 +117,14 @@
                 draggable : true,
                 zIndex : 1,
                 pauseOnHover : true,
-                responsive: [{}]
+                variableWidth : false,
+                responsive: [{
+                    breakpoint : 1001,
+                    settings : {
+                        variableWidth : true,
+                        slidesToShow : 3
+                    }
+                }]
             });
         });
         $('.service .service_wrap .service_tab .tab_box .tab_box_list .tab_box_item button.tab_box_btn').on('click', function(){
@@ -154,7 +161,7 @@
                 $NoticeSlideList = $NoticeSlideWrap.find('.notice_slide_list'),
                 $NoticeSlideControl = $NoticeSlideList.siblings('.notice_slide_control');
             $NoticeSlideList.slick({
-                autoplay : true,
+                autoplay : false,
                 dots : false,
                 arrows : true,
                 prevArrow : $NoticeSlideControl.find('.prev'),
@@ -167,10 +174,19 @@
                 draggable : true,
                 zIndex : 1,
                 pauseOnHover : true,
+                vertical : false,
+                verticalSwiping : false,
                 responsive: [{
                     breakpoint : 1431,
                     settings : {
+                        slidesToShow : 2
+                    }
+                },{
+                    breakpoint : 1001,
+                    settings : {
                         slidesToShow : 2,
+                        vertical : true,
+                        verticalSwiping : true,
                     }
                 }]
             });
