@@ -75,9 +75,9 @@
             slidesToShow : 1,
             slidesToScroll : 1,
             infinite : true,
-            swipe : false,
-            swipeToSlide : false,
-            draggable : false,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
             zIndex : 4,
             pauseOnHover : true,
             responsive: [{}]
@@ -102,7 +102,7 @@
                 $ArrowBar.css('width', percent + '%');
             });
             $ServiceSlideList.slick({
-                autoplay : false,
+                autoplay : true,
                 autoplaySpeed : 1500,
                 speed : 1500,
                 dots : false,
@@ -161,7 +161,7 @@
                 $NoticeSlideList = $NoticeSlideWrap.find('.notice_slide_list'),
                 $NoticeSlideControl = $NoticeSlideList.siblings('.notice_slide_control');
             $NoticeSlideList.slick({
-                autoplay : false,
+                autoplay : true,
                 dots : false,
                 arrows : true,
                 prevArrow : $NoticeSlideControl.find('.prev'),
