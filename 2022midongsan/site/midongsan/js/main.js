@@ -102,7 +102,7 @@
                 $ArrowBar.css('width', percent + '%');
             });
             $ServiceSlideList.slick({
-                autoplay : true,
+                autoplay : false,
                 autoplaySpeed : 1500,
                 speed : 1500,
                 dots : false,
@@ -123,6 +123,12 @@
                     settings : {
                         variableWidth : true,
                         slidesToShow : 3
+                    }
+                },{
+                    breakpoint : 1001,
+                    settings : {
+                        variableWidth : false,
+                        slidesToShow : 1
                     }
                 }]
             });
@@ -185,6 +191,13 @@
                     breakpoint : 1001,
                     settings : {
                         slidesToShow : 2,
+                        vertical : true,
+                        verticalSwiping : true,
+                    }
+                },{
+                    breakpoint : 641,
+                    settings : {
+                        slidesToShow : 3,
                         vertical : true,
                         verticalSwiping : true,
                     }
