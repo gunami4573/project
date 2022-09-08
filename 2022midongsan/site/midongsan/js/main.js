@@ -80,6 +80,7 @@
             draggable : true,
             zIndex : 4,
             pauseOnHover : true,
+            pauseOnFocus : true,
             responsive: [{}]
         });
         //메인 비주얼 슬라이드 끝
@@ -117,6 +118,7 @@
                 draggable : true,
                 zIndex : 1,
                 pauseOnHover : true,
+                pauseOnFocus : true,
                 variableWidth : false,
                 responsive: [{
                     breakpoint : 1001,
@@ -180,6 +182,7 @@
                 draggable : true,
                 zIndex : 1,
                 pauseOnHover : true,
+                pauseOnFocus : true,
                 vertical : false,
                 verticalSwiping : false,
                 responsive: [{
@@ -251,6 +254,7 @@
                 draggable : true,
                 zIndex : 1,
                 pauseOnHover : true,
+                pauseOnFocus : true,
                 responsive: [{}]
             });
         });
