@@ -103,7 +103,7 @@
                 $ArrowBar.css('width', percent + '%');
             });
             $ServiceSlideList.slick({
-                autoplay : true,
+                autoplay : false,
                 autoplaySpeed : 1500,
                 speed : 1500,
                 dots : false,
@@ -127,7 +127,7 @@
                         slidesToShow : 3
                     }
                 },{
-                    breakpoint : 1001,
+                    breakpoint : 641,
                     settings : {
                         variableWidth : false,
                         slidesToShow : 1
