@@ -125,6 +125,22 @@
         });
         //1차 ~ 3차 메뉴 선택 끝
 
+        //sns 공유버튼 시작
+        $('.verti_menu .verti_sns_box button.sns_open').on('click', function(){
+            var $this = $(this),
+                $VertiSnsBox = $this.parent('.verti_sns_box'),
+                IsLayerOpen = $VertiSnsBox.is('.layer_open');
+            if(!IsLayerOpen){
+                $VertiSnsBox.addClass('layer_open');
+            }
+        });
+        $('.verti_menu .verti_sns_box .sns_layer button.sns_close').on('click', function(){
+            var $this = $(this),
+                $VertiSnsBox = $this.parents('.verti_sns_box');
+            $VertiSnsBox.removeClass('layer_open');
+        });
+        //sns 공유버튼 끝
+
         //탭메뉴 모양 시작
         var $CmsTabBox = $('.cms_tab_box');
         $CmsTabBox.each(function(){
