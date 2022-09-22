@@ -96,7 +96,7 @@
 .verti_menu .verti_title_inner .verti_deco_title{display:inline-block;font-size:68px;color:rgba(255, 255, 255, 0.11);line-height:68px;letter-spacing:-0.01em;font-weight:700;font-family:'Montserrat';vertical-align:top;box-sizing:border-box;}
 .verti_menu .verti_depth_box{display:block;position:relative;width:100%;min-height:63px;padding-top:21px;font-size:0;line-height:0;box-sizing:border-box;}
 .verti_menu .verti_depth_box{animation-name:verti-depth-box;animation-duration:500ms;animation-delay:700ms;animation-timing-function:ease-in-out;animation-fill-mode:both;}
-.verti_menu .verti_depth_box:before{display:block;position:absolute;bottom:0;left:-80px;width:100vw;min-height:96px;background-image:url(../images/sub/verti_menu_bg_deco.png);background-repeat:no-repeat;background-position:left bottom;background-size:contain;content:'';box-sizing:border-box;}
+.verti_menu .verti_depth_box:before{display:block;position:absolute;bottom:0;left:-74px;width:100vw;min-height:96px;background-image:url(../images/sub/verti_menu_bg_deco.png);background-repeat:no-repeat;background-position:left bottom;background-size:contain;content:'';box-sizing:border-box;}
 @media screen and (min-width:1921px){
     .verti_menu .verti_depth_box:before{background-size:100% 96px;}
 }
@@ -215,7 +215,7 @@
 .cms_tab_box .cms_tab_inner .cms_tab_list{display:block;width:100%;border-left:1px solid #d7d7d7;font-size:0;line-height:0;box-sizing:border-box;}
 .cms_tab_box .cms_tab_inner .cms_tab_list .cms_tab_item{display:inline-block;position:relative;width:20%;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;overflow:hidden;}
 .cms_tab_box .cms_tab_inner .cms_tab_list .cms_tab_item.active{box-shadow:9px 12px 16px rgba(20, 150, 105, 0.43);}
-.cms_tab_box .cms_tab_inner .cms_tab_list .cms_tab_item .cms_tab_link{display:block;position:relative;width:100%;border-top:0;border-left:0;border-right:1px solid #d7d7d7;border-bottom:1px solid #d7d7d7;font-size:0;line-height:0;box-sizing:border-box;}
+.cms_tab_box .cms_tab_inner .cms_tab_list .cms_tab_item .cms_tab_link{display:block;position:relative;width:100%;border-top:0;border-left:0;background-color:#fff;border-right:1px solid #d7d7d7;border-bottom:1px solid #d7d7d7;font-size:0;line-height:0;box-sizing:border-box;}
 .cms_tab_box .cms_tab_inner .cms_tab_list .cms_tab_item:nth-child(-n+5) .cms_tab_link{border-top:1px solid #d7d7d7;}
 .cms_tab_box .cms_tab_inner .cms_tab_list .cms_tab_item .cms_tab_link:before{display:block;position:absolute;z-index:1;top:-1px;left:-1px;width:calc(100% + 2px);height:calc(100% + 2px);background-image:linear-gradient(135deg, #4dbd4f 0%, #1d9a63 50%, #099a7f 100%);content:'';visibility:hidden;opacity:0;transition-property:visibility, opacity;transition-duration:250ms;transition-timing-function:ease-in-out;}
 .cms_tab_box .cms_tab_inner .cms_tab_list .cms_tab_item .cms_tab_link:after{display:block;position:absolute;z-index:1;bottom:-1px;left:-1px;width:287px;height:62px;background-image:url(../images/sub/cms_tab_link_deco1.png);background-repeat:no-repeat;background-position:left bottom;content:'';visibility:hidden;opacity:0;transition-property:visibility, opacity;transition-duration:250ms;transition-timing-function:ease-in-out;}
@@ -280,4 +280,15 @@
 }
 @media screen and (max-width:640px){
     #contents{min-height:300px;margin-bottom:50px;}
+}
+
+
+/* 2022. 09. 22. - 헤더, 컨테이너 하위메뉴 z-index 겹침 수정건 */
+@media screen and (max-width:640px){
+    .header_box{z-index:1;}
+    .header_box:before{z-index:0;}
+    #container{z-index:50;}
+    .lnb_show #container{z-index:30;}
+    .lnb_open.lnb_show #container{z-index:30;}
+    .cms_tab_box{position:relative;z-index:1;}
 }
