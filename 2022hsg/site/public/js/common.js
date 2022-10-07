@@ -345,9 +345,33 @@ $(document).ready(function () {
                 $LangList.slideUp(150, 'linear');
             }
         });
-
         //외국어 페이지 선택 끝
 
+        //주요사이트 바로가기 레이어 시작
+        $('#header .header_gnb .direct_link_wrap .direct .direct_list .direct_item.primary button.direct_link').on('click', function(){
+            var $this = $(this),
+                $Header = $this.parents('#header'),
+                $DirectLayer = $Header.siblings('.direct_layer'),
+                IsDirectOpen = $DirectLayer.is('.direct_open'),
+                $DirectLayerCloseBtn = $DirectLayer.find('button.direct_layer_close');
+            if(!IsDirectOpen){
+                $DirectLayer.addClass('direct_open');
+                $DirectLayerCloseBtn.focus();
+            }
+        });
+        $('.direct_layer .layer_btn_box button.direct_layer_close').on('click', function(){
+            var $this = $(this),
+                $LayerBtnBox = $this.parent('.layer_btn_box'),
+                $DirectLayer = $LayerBtnBox.parent('.direct_layer'),
+                IsDirectOpen = $DirectLayer.is('.direct_open'),
+                $Header = $DirectLayer.siblings('#header'),
+                $DirectLinkBtn = $Header.find('button.direct_link');
+            if(IsDirectOpen){
+                $DirectLayer.removeClass('direct_open');
+                $DirectLinkBtn.focus();
+            }
+        });
+        //주요사이트 바로가기 레이어 끝
 
         $window.on('screen:wide screen:web', function (event) {
             refreshLnbHeight();
@@ -381,12 +405,12 @@ $(document).ready(function () {
                 name: 'wide',
                 horizontal: {
                     from: 9999,
-                    to: 1431
+                    to: 1501
                 }
             }, {
                 name: 'web',
                 horizontal: {
-                    from: 1430,
+                    from: 1500,
                     to: 1001
                 }
             }, {
