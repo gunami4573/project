@@ -95,6 +95,38 @@
         });
         //반응형 테이블 끝
 
+        //공유하기 버튼 시작
+        $('.sub_head .share_box .share_layer button.share_layer_btn').on('click', function(){
+            var $this = $(this),
+                $ShareLayer = $this.parent('.share_layer'),
+                IsShareOpen = $ShareLayer.is('.share_open');
+            if(!IsShareOpen){
+                $ShareLayer.addClass('share_open');
+                $this.attr('title', '닫기');
+            }
+            else{
+                $ShareLayer.removeClass('share_open');
+                $this.attr('title', '열기');
+            }
+        });
+        //공유하기 버튼 끝
+
+        //현재 URL 복사 시작
+        function UrlCopy(url){
+            var $temp = $('<input>');
+            $('body').append($temp);
+            $temp.val(url).select();
+            document.execCommand('copy');
+            $temp.remove();
+            alert('URL이 복사되었습니다.');
+        }
+        $('button.url_copy').on('click', function(e){
+            e.preventDefault();
+            var link = location.href;
+            UrlCopy(link);
+        });
+        //현재 URL 복사 끝
+
 
 
         $window.on('screen:tablet screen:phone', function (event) {

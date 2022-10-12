@@ -341,7 +341,7 @@ $(document).ready(function () {
             }
             else{
                 $Language.removeClass('lang_open');
-                $this.attr('title', '언어선택 열리');
+                $this.attr('title', '언어선택 열기');
                 $LangList.slideUp(150, 'linear');
             }
         });
