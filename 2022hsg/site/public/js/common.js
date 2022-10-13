@@ -371,8 +371,10 @@ $(document).ready(function () {
                 $Header = $DirectLayer.siblings('#header'),
                 $DirectLinkBtn = $Header.find('button.direct_link');
             if(IsDirectOpen){
-                $DirectLayer.removeClass('direct_open');
                 $DirectLayer.removeClass('direct_ani');
+                setTimeout(function(){
+                    $DirectLayer.removeClass('direct_open');
+                }, 1000);
                 $DirectLinkBtn.focus();
             }
         });
