@@ -356,19 +356,48 @@ $(document).ready(function () {
                 $DirectLayerCloseBtn = $DirectLayer.find('button.direct_layer_close');
             if(!IsDirectOpen){
                 $DirectLayer.addClass('direct_open');
+                setTimeout(function(){
+                    $DirectLayer.addClass('direct_ani');
+                }, 100);
                 $DirectLayerCloseBtn.focus();
             }
         });
         $('.direct_layer .layer_btn_box button.direct_layer_close').on('click', function(){
             var $this = $(this),
                 $LayerBtnBox = $this.parent('.layer_btn_box'),
-                $DirectLayer = $LayerBtnBox.parent('.direct_layer'),
+                $WhiteInner = $LayerBtnBox.parent('.white_inner'),
+                $DirectLayer = $WhiteInner.parent('.direct_layer'),
                 IsDirectOpen = $DirectLayer.is('.direct_open'),
                 $Header = $DirectLayer.siblings('#header'),
                 $DirectLinkBtn = $Header.find('button.direct_link');
             if(IsDirectOpen){
                 $DirectLayer.removeClass('direct_open');
+                $DirectLayer.removeClass('direct_ani');
                 $DirectLinkBtn.focus();
+            }
+        });
+        $('.direct_layer .white_inner .direct_inner .direct_list_wrap .deco_inner .choice_list .choice_item button.choice_btn').on('click', function(){
+            var $this = $(this),
+                $MyItem = $this.parent('.choice_item'),
+                MyIndex = $MyItem.index(),
+                IsActive = $MyItem.is('.active'),
+                $OtherItem = $MyItem.siblings('.choice_item'),
+                $OtherBtn = $OtherItem.find('button.choice_btn'),
+                $MyList = $MyItem.parent('.choice_list'),
+                $MyDecoInner = $MyList.parent('.deco_inner'),
+                $MyWrap = $MyDecoInner.parent('.direct_list_wrap'),
+                $ConWrap = $MyWrap.siblings('.direct_con_wrap'),
+                $ConDecoInner = $ConWrap.find('.deco_inner'),
+                $ChoiceCon = $ConDecoInner.find('.choice_con'),
+                $ChoiceConItem = $ChoiceCon.find('.con_item').eq(MyIndex),
+                $OtherChoiceConItem = $ChoiceConItem.siblings('.con_item');
+            if(!IsActive){
+                $OtherItem.removeClass('active');
+                $OtherBtn.removeAttr('title');
+                $MyItem.addClass('active');
+                $this.attr('title', '선택됨');
+                $OtherChoiceConItem.removeClass('active');
+                $ChoiceConItem.addClass('active');
             }
         });
         //주요사이트 바로가기 레이어 끝
