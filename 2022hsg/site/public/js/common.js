@@ -387,30 +387,6 @@ $(document).ready(function () {
                 $DirectLinkBtn.focus();
             }
         });
-        $(document).on('click', '.direct_layer .white_inner .direct_inner .direct_list_wrap .deco_inner .choice_list .choice_item button.choice_btn', function(){
-            var $this = $(this),
-                $MyItem = $this.parent('.choice_item'),
-                MyIndex = $MyItem.index(),
-                IsActive = $MyItem.is('.active'),
-                $OtherItem = $MyItem.siblings('.choice_item'),
-                $OtherBtn = $OtherItem.find('button.choice_btn'),
-                $MyList = $MyItem.parent('.choice_list'),
-                $MyDecoInner = $MyList.parent('.deco_inner'),
-                $MyWrap = $MyDecoInner.parent('.direct_list_wrap'),
-                $ConWrap = $MyWrap.siblings('.direct_con_wrap'),
-                $ConDecoInner = $ConWrap.find('.deco_inner'),
-                $ChoiceCon = $ConDecoInner.find('.choice_con'),
-                $ChoiceConItem = $ChoiceCon.find('.con_item').eq(MyIndex),
-                $OtherChoiceConItem = $ChoiceConItem.siblings('.con_item');
-            if(!IsActive){
-                $OtherItem.removeClass('active');
-                $OtherBtn.removeAttr('title');
-                $MyItem.addClass('active');
-                $this.attr('title', '선택됨');
-                $OtherChoiceConItem.removeClass('active');
-                $ChoiceConItem.addClass('active');
-            }
-        });
         //주요사이트 바로가기 레이어 끝
 
         //배너 슬라이드 시작
