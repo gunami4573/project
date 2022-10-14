@@ -349,7 +349,7 @@ $(document).ready(function () {
 
         //주요사이트 레이어 ajax 시작
         $.ajax({
-            url : '../../direct/direct_layer.html',
+            url : '/project/2022hsg/site/public/direct/direct_layer.html',
             success : function (data) {
                 $header.after(data);
             }
