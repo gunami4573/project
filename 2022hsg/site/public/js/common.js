@@ -413,6 +413,49 @@ $(document).ready(function () {
         });
         //주요사이트 바로가기 레이어 끝
 
+        //배너 슬라이드 시작
+        var $BannerList = $('.footer_banner .banner_slide_wrap .banner_list');
+        $BannerList.slick({
+            //기본
+            autoplay : true,
+            dots : false,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
+            slidesToShow : 7,
+            slidesToScroll : 1,
+            variableWidth : true,
+            infinite: true,
+            prevArrow : $('.footer_banner .banner_slide_wrap .banner_control .prev'),
+            nextArrow : $('.footer_banner .banner_slide_wrap .banner_control .next'),
+            autoArrow : $('.footer_banner .banner_slide_wrap .banner_control .auto'),
+            isRunOnLowIE : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            pauseText : '정지',
+            playText : '재생',
+            responsive : [{}]
+        });
+        //배너 슬라이드 끝
+
+        //푸터 관련기관 열기
+        $('#footer .engine_box button.engine_open_btn').on('click', function(){
+            var $this = $(this),
+                $EngineBox = $this.parent('.engine_box'),
+                IsEngineOpen = $EngineBox.is('.engine_open');
+            if(!IsEngineOpen){
+                $this.attr('title', '목록닫기');
+                $EngineBox.addClass('engine_open');
+            }
+            else{
+                $this.attr('title', '목록열기');
+                $EngineBox.removeClass('engine_open');
+            }
+        });
+        //푸터 관련기관 닫기
+
         $window.on('screen:wide screen:web', function (event) {
             refreshLnbHeight();
 
