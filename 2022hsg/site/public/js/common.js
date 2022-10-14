@@ -347,6 +347,15 @@ $(document).ready(function () {
         });
         //외국어 페이지 선택 끝
 
+        //주요사이트 레이어 ajax 시작
+        $.ajax({
+            url : '../../direct/direct_layer.html',
+            success : function (data) {
+                $header.after(data);
+            }
+        });
+        //주요사이트 레이어 ajax 끝
+
         //주요사이트 바로가기 레이어 시작
         $('#header .header_gnb .direct_link_wrap .direct .direct_list .direct_item.primary button.direct_link').on('click', function(){
             var $this = $(this),
@@ -362,7 +371,7 @@ $(document).ready(function () {
                 $DirectLayerCloseBtn.focus();
             }
         });
-        $('.direct_layer .layer_btn_box button.direct_layer_close').on('click', function(){
+        $(document).on('click', '.direct_layer .layer_btn_box button.direct_layer_close', function(){
             var $this = $(this),
                 $LayerBtnBox = $this.parent('.layer_btn_box'),
                 $WhiteInner = $LayerBtnBox.parent('.white_inner'),
@@ -378,7 +387,7 @@ $(document).ready(function () {
                 $DirectLinkBtn.focus();
             }
         });
-        $('.direct_layer .white_inner .direct_inner .direct_list_wrap .deco_inner .choice_list .choice_item button.choice_btn').on('click', function(){
+        $(document).on('click', '.direct_layer .white_inner .direct_inner .direct_list_wrap .deco_inner .choice_list .choice_item button.choice_btn', function(){
             var $this = $(this),
                 $MyItem = $this.parent('.choice_item'),
                 MyIndex = $MyItem.index(),
