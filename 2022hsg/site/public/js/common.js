@@ -393,7 +393,7 @@ $(document).ready(function () {
         var $BannerList = $('.footer_banner .banner_slide_wrap .banner_list');
         $BannerList.slick({
             //기본
-            autoplay : true,
+            autoplay : false,
             dots : false,
             swipe : true,
             swipeToSlide : true,
@@ -412,7 +412,27 @@ $(document).ready(function () {
             pauseOnDotsClick : true,
             pauseText : '정지',
             playText : '재생',
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 1501,
+                settings : {
+                    slidesToShow : 6
+                }
+            },{
+                breakpoint : 1401,
+                settings : {
+                    slidesToShow : 5
+                }
+            },{
+                breakpoint : 1301,
+                settings : {
+                    slidesToShow : 4
+                }
+            },{
+                breakpoint : 1151,
+                settings : {
+                    slidesToShow : 3
+                }
+            }]
         });
         //배너 슬라이드 끝
 
