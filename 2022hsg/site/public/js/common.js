@@ -416,7 +416,7 @@ $(document).ready(function () {
         });
         //배너 슬라이드 끝
 
-        //푸터 관련기관 열기
+        //푸터 관련기관 열기 시작
         $('#footer .engine_box button.engine_open_btn').on('click', function(){
             var $this = $(this),
                 $EngineBox = $this.parent('.engine_box'),
@@ -430,7 +430,15 @@ $(document).ready(function () {
                 $EngineBox.removeClass('engine_open');
             }
         });
-        //푸터 관련기관 닫기
+        //푸터 관련기관 열기 끝
+
+        //푸터 상단 바로가기 시작
+        $('.footer_top .up_button').on('click', function() {
+            $('html, body').animate({
+                scrollTop: $('body').offset().top
+            }, 400);
+        });
+        //푸터 상단 바로가기 끝
 
         $window.on('screen:wide screen:web', function (event) {
             refreshLnbHeight();
