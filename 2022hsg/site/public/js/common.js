@@ -329,7 +329,7 @@ $(document).ready(function () {
         //여기서부터 코드 작성해주세요
 
         //외국어 페이지 선택 시작
-        $('.header_gnb .language button.lang_btn').on('click', function(){
+        $(document).on('click', '.language button.lang_btn', function(){
             var $this = $(this),
                 $Language = $this.parent('.language'),
                 IsLangOpen = $Language.is('.lang_open'),
@@ -357,7 +357,7 @@ $(document).ready(function () {
         //주요사이트 레이어 ajax 끝
 
         //주요사이트 바로가기 레이어 시작
-        $('#header .header_gnb .direct_link_wrap .direct .direct_list .direct_item.primary button.direct_link').on('click', function(){
+        $(document).on('click', '.direct_link_wrap .direct .direct_list .direct_item.primary button.direct_link', function(){
             var $this = $(this),
                 $Header = $this.parents('#header'),
                 $DirectLayer = $Header.siblings('.direct_layer'),
@@ -367,7 +367,7 @@ $(document).ready(function () {
                 $DirectLayer.addClass('direct_open');
                 setTimeout(function(){
                     $DirectLayer.addClass('direct_ani');
-                }, 100);
+                }, 50);
                 $DirectLayerCloseBtn.focus();
             }
         });
@@ -383,7 +383,7 @@ $(document).ready(function () {
                 $DirectLayer.removeClass('direct_ani');
                 setTimeout(function(){
                     $DirectLayer.removeClass('direct_open');
-                }, 1000);
+                }, 800);
                 $DirectLinkBtn.focus();
             }
         });
