@@ -102,11 +102,11 @@
                 IsShareOpen = $ShareLayer.is('.share_open');
             if(!IsShareOpen){
                 $ShareLayer.addClass('share_open');
-                $this.attr('title', '닫기');
+                $this.attr('title', '목록닫기');
             }
             else{
                 $ShareLayer.removeClass('share_open');
-                $this.attr('title', '열기');
+                $this.attr('title', '목록열기');
             }
         });
         //공유하기 버튼 끝
