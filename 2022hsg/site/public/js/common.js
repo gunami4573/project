@@ -443,6 +443,11 @@ $(document).ready(function () {
                 settings : {
                     slidesToShow : 2
                 }
+            },{
+                breakpoint : 481,
+                settings : {
+                    slidesToShow : 1
+                }
             }]
         });
         //배너 슬라이드 끝
