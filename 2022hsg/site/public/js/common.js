@@ -365,9 +365,8 @@ $(document).ready(function () {
                 $DirectLayerCloseBtn = $DirectLayer.find('button.direct_layer_close');
             if(!IsDirectOpen){
                 $DirectLayer.addClass('direct_open');
-                setTimeout(function(){
-                    $DirectLayer.addClass('direct_ani');
-                }, 50);
+                $DirectLayer.fadeIn();
+                $DirectLayer.addClass('direct_ani');
                 $DirectLayerCloseBtn.focus();
             }
         });
@@ -382,8 +381,9 @@ $(document).ready(function () {
             if(IsDirectOpen){
                 $DirectLayer.removeClass('direct_ani');
                 setTimeout(function(){
-                    $DirectLayer.removeClass('direct_open');
+                    $DirectLayer.fadeOut();
                 }, 800);
+                $DirectLayer.removeClass('direct_open');
                 $DirectLinkBtn.focus();
             }
         });
