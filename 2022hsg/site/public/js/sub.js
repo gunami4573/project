@@ -133,11 +133,11 @@
                 $TabDepth1 = $this.parent('.tab_depth1'),
                 IsTabOpen = $TabDepth1.is('.tab_open');
             if(!IsTabOpen){
-                $this.attr('title', '5차메뉴 목록 닫기');
+                $this.attr('title', '목록 닫기');
                 $TabDepth1.addClass('tab_open');
             }
             else{
-                $this.attr('title', '5차메뉴 목록 열기');
+                $this.attr('title', '목록 열기');
                 $TabDepth1.removeClass('tab_open');
             }
         });
@@ -151,12 +151,12 @@
                 IsTabOpen = $TabDepth2.is('.tab_open');
             if(!IsTabOpen){
                 $Container.css('z-index','30');
-                $this.attr('title', '6차메뉴 목록 닫기');
+                $this.attr('title', '목록 닫기');
                 $TabDepth2.addClass('tab_open');
             }
             else{
                 $Container.css('z-index','29');
-                $this.attr('title', '6차메뉴 목록 열기');
+                $this.attr('title', '목록 열기');
                 $TabDepth2.removeClass('tab_open');
             }
         });
