@@ -127,6 +127,40 @@
         });
         //현재 URL 복사 끝
 
+        //반응형 탭 5차메뉴 열기 버튼 시작
+        $('button.tab_depth1_open').on('click', function(){
+            var $this = $(this),
+                $TabDepth1 = $this.parent('.tab_depth1'),
+                IsTabOpen = $TabDepth1.is('.tab_open');
+            if(!IsTabOpen){
+                $this.attr('title', '5차메뉴 목록 닫기');
+                $TabDepth1.addClass('tab_open');
+            }
+            else{
+                $this.attr('title', '5차메뉴 목록 열기');
+                $TabDepth1.removeClass('tab_open');
+            }
+        });
+        //반응형 탭 5차메뉴 열기 버튼 끝
+
+        //반응형 탭 6차메뉴 열기 버튼 시작
+        $('button.tab_depth2_open').on('click', function(){
+            var $Container = $('#container');
+            var $this = $(this),
+                $TabDepth2 = $this.parent('.tab_depth2'),
+                IsTabOpen = $TabDepth2.is('.tab_open');
+            if(!IsTabOpen){
+                $Container.css('z-index','30');
+                $this.attr('title', '6차메뉴 목록 닫기');
+                $TabDepth2.addClass('tab_open');
+            }
+            else{
+                $Container.css('z-index','29');
+                $this.attr('title', '6차메뉴 목록 열기');
+                $TabDepth2.removeClass('tab_open');
+            }
+        });
+        //반응형 탭 6차메뉴 열기 버튼 끝
 
 
         $window.on('screen:tablet screen:phone', function (event) {

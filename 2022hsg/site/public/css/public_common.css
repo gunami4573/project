@@ -306,8 +306,7 @@ body[data-layout-type="www-type"] .header_box .wrap .logo a span{display:none;}
 .lnb .menu .depth2 .menu_depth2_title{display:block;position:absolute;top:0;left:calc((100% - 1500px) / 2);width:270px;height:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .lnb .menu .depth2 .menu_depth2_title:before,
 .lnb .menu .depth2 .menu_depth2_title:after{display:block;position:absolute;z-index:1;content:'';box-sizing:border-box;}
-.lnb .menu .depth2 .menu_depth2_title:before{top:50%;right:0;width:0px;height:0px;background-color:#f5f0f5;transform-origin:right center;transform:translateX(50vw) translateY(-50%) scale(0);border-radius:100%;transition-property:width, height, transform, border-radius;transition-duration:2000ms;transition-timing-function:ease-out;}
-.lnb .menu .depth1_item.active .depth2 .menu_depth2_title:before{width:100vw;height:100%;transform:translateX(0px) translateY(-50%) scale(1);border-radius:0px;}
+.lnb .menu .depth2 .menu_depth2_title:before{top:0;right:0;width:100vw;height:100%;background-color:#f5f0f5;transform-origin:right center;}
 .lnb .menu .depth2 .menu_depth2_title:after{z-index:3;top:0;right:0;width:1px;height:0px;background-color:#e5e5e5;transition-property:height;transition-duration:2000ms;transition-timing-function:ease-in-out;}
 .lnb .menu .depth1_item.active .depth2 .menu_depth2_title:after{height:100%;}
 .lnb .menu .depth2 .menu_depth2_title .deco_box{display:block;position:absolute;z-index:3;top:0;left:0;width:100vw;height:100%;font-size:0;line-height:0;box-sizing:border-box;}
@@ -324,7 +323,7 @@ body[data-layout-type="www-type"] .header_box .wrap .logo a span{display:none;}
 .lnb .menu .depth2 .menu_depth2_title .title_inner .title_text em{display:inline-block;position:relative;top:50%;transform:translateY(-50%);font-size:36px;color:#5f285c;line-height:44px;letter-spacing:-0.03em;font-weight:600;font-family:'Pretendard';vertical-align:top;box-sizing:border-box;}
 .lnb .menu .depth2 .menu_depth2_title .title_inner .title_desc{display:block;position:relative;width:100%;margin-top:8px;padding-bottom:110px;font-size:18px;color:#756774;line-height:30px;letter-spacing:-0.03em;font-weight:400;font-family:'Pretendard';box-sizing:border-box;}
 .lnb .menu .depth2 .menu_depth2_title .title_inner .title_desc:before{display:block;position:absolute;bottom:0;left:0;width:74px;height:65px;background-image:url(../images/common/depth2_title_icon01.png);background-repeat:no-repeat;background-position:center center;content:'';box-sizing:border-box;}
-.lnb .menu .depth2 .depth2_list{display:block;position:relative;float:right;width:calc(100% - 270px);min-height:417px;padding-top:23px;padding-bottom:57px;padding-left:80px;background-color:transparent;font-size:0;line-height:0;box-sizing:border-box;transform:translateX(-20%);opacity:0;transition-property:background-color, transform, opacity;transition-duration:750ms;transition-timing-function:ease-in-out;}
+.lnb .menu .depth2 .depth2_list{display:block;position:relative;float:right;width:calc(100% - 270px);min-height:417px;padding-top:23px;padding-bottom:57px;padding-left:80px;background-color:transparent;font-size:0;line-height:0;box-sizing:border-box;transform:translateX(-20%);opacity:0;transition-property:background-color, transform, opacity;transition-duration:1200ms;transition-timing-function:ease-in-out;}
 .lnb_open .lnb .menu .depth1_item.active .depth2 .depth2_list{background-color:#fff;transform:translateX(0px);opacity:1;}
 .lnb .menu .depth2 .depth2_list .depth2_item{display:inline-block;width:calc((100% - 114px) / 4);margin-top:20px;margin-right:38px;vertical-align:top;box-sizing:border-box;}
 .lnb .menu .depth2 .depth2_list .depth2_item:nth-child(4n){margin-right:0;}
@@ -802,6 +801,17 @@ body[data-layout-type="www-type"] .header_box .wrap .logo a span{display:none;}
     .direct_layer .white_inner .direct_inner .direct_con_wrap .deco_inner .con_list.con02 .con_item .con_text em{font-size:13px;}
 }
 /* 주요사이트 바로가기 레이어 끝 */
+
+/* 횡성 타입별 투명도 시작 */
+body[data-trans="white"]{}
+@media screen and (min-width:1001px){
+    body[data-trans="white"] #header{position:absolute;top:0;left:0;width:100%;}
+    body[data-trans="white"] .header_gnb{background-color:transparent;}
+    .lnb_open body[data-trans="white"] .header_gnb{background-color:#fff;}
+    body[data-trans="white"] .lnb .menu{background-color:transparent;}
+    .lnb_open  body[data-trans="white"] .lnb .menu{background-color:#fff;}
+}
+/* 횡성 타입별 투명도 끝 */
 
 /* container 시작 */
 #container{display:block;position:relative;z-index:29;box-sizing:border-box;}
