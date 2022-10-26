@@ -127,7 +127,7 @@
         });
         //현재 URL 복사 끝
 
-        //반응형 탭 5차메뉴 열기 버튼 시작
+        //반응형 CMS 탭 5차메뉴 열기 버튼 시작
         $('button.tab_depth1_open').on('click', function(){
             var $this = $(this),
                 $TabDepth1 = $this.parent('.tab_depth1'),
@@ -141,9 +141,9 @@
                 $TabDepth1.removeClass('tab_open');
             }
         });
-        //반응형 탭 5차메뉴 열기 버튼 끝
+        //반응형 CMS 탭 5차메뉴 열기 버튼 끝
 
-        //반응형 탭 6차메뉴 열기 버튼 시작
+        //반응형 CMS 탭 6차메뉴 열기 버튼 시작
         $('button.tab_depth2_open').on('click', function(){
             var $Container = $('#container');
             var $this = $(this),
@@ -160,7 +160,50 @@
                 $TabDepth2.removeClass('tab_open');
             }
         });
-        //반응형 탭 6차메뉴 열기 버튼 끝
+        //반응형 CMS 탭 6차메뉴 열기 버튼 끝
+
+        //컨텐츠 내부 탭메뉴 시작
+        $('.temp_tab_box .temp_depth .temp_tab_list .temp_tab_item button.temp_tab_link').on('click', function(){
+            var $this = $(this),
+                $MyTabItem = $this.parent('.temp_tab_item'),
+                MyTabIndex = $MyTabItem.index(),
+                IsActive = $MyTabItem.is('.active'),
+                $OtherTabItem = $MyTabItem.siblings('.temp_tab_item'),
+                $OtherTabBtn = $OtherTabItem.find('button.temp_tab_link'),
+                $MyTabList = $MyTabItem.parent('.temp_tab_list'),
+                $MyTabDepth = $MyTabList.parent('.temp_depth'),
+                $MyTabBox = $MyTabDepth.parent('.temp_tab_box'),
+                $TempConBox = $MyTabBox.siblings('.temp_con_box'),
+                $TempConItem = $TempConBox.find('.temp_con_item').eq(MyTabIndex),
+                $OtherTempConItem = $TempConItem.siblings('.temp_con_item');
+            if(!IsActive){
+                $OtherTabItem.removeClass('active');
+                $OtherTabBtn.removeAttr('title');
+                $MyTabItem.addClass('active');
+                $this.attr('title', '선택됨');
+                $OtherTempConItem.removeClass('active');
+                $TempConItem.addClass('active');
+                $MyTabDepth.removeClass('tab_open');
+                $MyTabDepth.find('button.temp_depth1_open').attr('title', '목록 열기');
+
+                var $MyText = $this.find('span em').text();
+                $MyTabDepth.find('button.temp_depth1_open span em').text($MyText);
+            }
+        });
+        $('.temp_tab_box .temp_depth button.temp_depth1_open').on('click', function(){
+            var $this = $(this),
+                $TempDepth1 = $this.parent('.temp_depth1'),
+                IsTabOpen = $TempDepth1.is('.tab_open');
+            if(!IsTabOpen){
+                $this.attr('title', '목록 닫기');
+                $TempDepth1.addClass('tab_open');
+            }
+            else{
+                $this.attr('title', '목록 열기');
+                $TempDepth1.removeClass('tab_open');
+            }
+        });
+        //컨텐츠 내부 탭메뉴 끝
 
 
         $window.on('screen:tablet screen:phone', function (event) {
