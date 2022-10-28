@@ -205,6 +205,22 @@
         });
         //컨텐츠 내부 탭메뉴 끝
 
+        //박스 높이 자동 정렬 시작(보류)
+        function autoHeight(){
+            var $HsgHeightBox = $('.hsg_height_box');
+            $HsgHeightBox.each(function(){
+                var MyHeightArray = [], i;
+                var $this = $(this),
+                    $HsgHeight = $this.find('.hsg_height'),
+                    HsgHeightLength = $HsgHeight.length;
+                for(i=0;i<HsgHeightLength;i++){
+                    MyHeightArray.push($HsgHeight.eq(i).outerHeight());
+                }
+                $HsgHeight.outerHeight(Math.max.apply(null, MyHeightArray));
+            });
+        }
+        //박스 높이 자동 정렬 끝(보류)
+
 
         $window.on('screen:tablet screen:phone', function (event) {
 
