@@ -185,7 +185,6 @@
                 $TempConItem.addClass('active');
                 $MyTabDepth.removeClass('tab_open');
                 $MyTabDepth.find('button.temp_depth1_open').attr('title', '목록 열기');
-
                 var $MyText = $this.find('span em').text();
                 $MyTabDepth.find('button.temp_depth1_open span em').text($MyText);
             }
