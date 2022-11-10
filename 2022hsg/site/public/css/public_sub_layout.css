@@ -140,7 +140,7 @@
     .side .side_menu .menu .depth1 .depth1_list .depth1_item.has .depth1_text:after{right:10px;}
     .side .side_menu .menu .depth1 .depth1_list .depth1_item .depth1_text[target="_blank"]:after{right:10px;}
     .side .side_menu .menu .depth1 .depth1_list .depth1_item .depth1_text span em{font-size:17px;}
-    .side .side_menu .menu .depth1_item.active .depth2 .depth2_list{padding-top:10px;padding-bottom:10px;}
+    .side .side_menu .menu .depth1_item.active .depth2 .depth2_list{padding-top:10px;}
     .side .side_menu .menu .depth1_item.active .depth2 .depth2_list .depth2_item .depth2_text span em{line-height:22px;}
     .side .side_menu .menu .depth1_item.active .depth2 .depth2_list .depth2_item.has .depth2_text span em:before{top:7px;}
     .side .side_menu .menu .depth1_item.active .depth2 .depth2_list .depth2_item .depth2_text[target="_blank"] span em:before{top:4px;}
@@ -162,7 +162,7 @@
     #container main{float:none;width:100%;}
 }
 /* sub_head */
-.sub_head{display:block;position:relative;width:100%;padding-bottom:48px;font-size:0;line-height:0;box-sizing:border-box;}
+.sub_head{display:block;position:relative;z-index:5;width:100%;padding-bottom:48px;font-size:0;line-height:0;box-sizing:border-box;}
 /* top_box */
 .sub_head .top_box{display:block;position:relative;width:100%;padding-right:155px;font-size:0;line-height:0;box-sizing:border-box;}
 .sub_head .top_box:before{display:block;position:absolute;bottom:0;left:0;width:100%;height:1px;background-color:#d1d1d1;content:'';box-sizing:border-box;}
@@ -358,9 +358,20 @@
 }
 /* 컨텐츠 min-height */
 #contents{display:block;width:100%;min-height:594px;box-sizing:border-box;}
-@media screen and (min-width:1001px){
-    #contents{}
-}
+#contents .contents_bottom{margin-top:80px;}
+#contents .contents_bottom .skip{width:0;height:0;font-size:0;line-height:0;}
 @media screen and (max-width:1000px){
     #contents{min-height:384px;}
 }
+
+/* 횡성 서브 화이트버전 시작 */
+@media screen and (min-width:1001px){
+    body.sub[data-trans="white"] .sub_visual{padding-top:162px;background-color:cornflowerblue;}
+}
+@media screen and (max-width:1000px){
+    body.sub[data-trans="white"] .sub_visual{margin-top:-101px;padding-top:101px;background-color:cornflowerblue;}
+}
+@media screen and (max-width:640px){
+    body.sub[data-trans="white"] .sub_visual{margin-top:-81px;padding-top:81px;background-color:cornflowerblue;}
+}
+/* 횡성 서브 화이트버전 끝 */
