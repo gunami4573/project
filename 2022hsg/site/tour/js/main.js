@@ -35,9 +35,9 @@
             draggable : true,
             slidesToShow : 1,
             slidesToScroll : 1,
-            variableWidth: false,
-            pauseOnHover: true,
-            infinite: true,
+            variableWidth : false,
+            pauseOnHover : true,
+            infinite : true,
             fade : true,
             zIndex : 5,
             prevArrow : $VisualSlideControlWrap.find('.prev'),
@@ -128,7 +128,7 @@
             draggable : false,
             slidesToShow : 11,
             slidesToScroll : 1,
-            variableWidth: true,
+            variableWidth : true,
             zIndex : 5,
             responsive : []
         });
@@ -142,11 +142,10 @@
             draggable : false,
             slidesToShow : 11,
             slidesToScroll : 1,
-            variableWidth: true,
+            variableWidth : true,
             zIndex : 5,
             responsive : []
         });
-
         $('.map_slide_wrap button.map_slide_btn').on('click', function(){
             var $this = $(this),
                 $MyMapItem = $this.parent('.map_slide_item'),
