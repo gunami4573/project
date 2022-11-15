@@ -57,7 +57,7 @@
                 }
                 return state;
             },
-            responsive : []
+            responsive : [{}]
         });
         $VisualSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
             var $currentslide = $(slick.$slides[currentSlide]),
@@ -144,8 +144,9 @@
             slidesToScroll : 1,
             variableWidth : true,
             zIndex : 5,
-            responsive : []
+            responsive : [{}]
         });
+
         $('.map_slide_wrap button.map_slide_btn').on('click', function(){
             var $this = $(this),
                 $MyMapItem = $this.parent('.map_slide_item'),
