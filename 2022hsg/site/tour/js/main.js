@@ -110,14 +110,14 @@
                 var $this = $(this),
                     ThisOffSet = $this.offset(),
                     ThisOffSetTop = ThisOffSet.top;
-                if(ScrollLocation+300 > ThisOffSetTop){
+                if(ScrollLocation+400 > ThisOffSetTop){
                     $this.addClass('scroll_ani');
                 }
             });
         });
         //스크롤 애니메이션 끝
 
-        //추천여행지 지도 슬라이드
+        //추천여행지 지도 및 디테일 슬라이드 시작
         var $MapSlideList = $('.hsg_map .hsg_map_wrap .map_slide_wrap .map_slide_list');
         $MapSlideList.slick({
             autoplay : false,
@@ -130,12 +130,12 @@
             slidesToScroll : 1,
             variableWidth : true,
             zIndex : 5,
-            responsive : []
+            responsive : [{}]
         });
         var $DescSlideList = $('.hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list');
         $DescSlideList.slick({
             autoplay : false,
-            arrows :false,
+            arrows : false,
             dots : false,
             swipe : false,
             swipeToSlide : false,
@@ -146,7 +146,6 @@
             zIndex : 5,
             responsive : [{}]
         });
-
         $('.map_slide_wrap button.map_slide_btn').on('click', function(){
             var $this = $(this),
                 $MyMapItem = $this.parent('.map_slide_item'),
@@ -160,13 +159,42 @@
                 $OtherMapItem.removeClass('active');
                 $OtherMapBtn.removeAttr('title');
                 $OtherDescSlideItem.removeClass('active');
-
                 $MyMapItem.addClass('active');
                 $this.attr('title', '선택됨');
                 $MyDescSlideItem.addClass('active');
             }
         });
-        //추천여행지 지도 슬라이드 끝
+        //추천여행지 지도 및 디테일 슬라이드 끝
+
+        //축제 및 행사 슬라이드 시작
+        var $FestivalProgressBar = $('.festival .festival_wrap .festival_slide_wrap .festival_slide_control .progress_box .bar'),
+            percent;
+        var $FestivalSlideList = $('.festival .festival_wrap .festival_slide_wrap .festival_slide_list');
+        $FestivalSlideList.on('init', function(event, slick, currentSlide, nextSlide){
+            percent = ((slick.currentSlide+1) / (slick.slideCount)) * 100;
+            $FestivalProgressBar.css('width', percent + '%');
+        });
+        $FestivalSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            percent = ((nextSlide+1) / (slick.slideCount)) * 100;
+            $FestivalProgressBar.css('width', percent + '%');
+        });
+        $FestivalSlideList.slick({
+            autoplay : true,
+            autoplaySpeed : 3000,
+            speed : 1000,
+            arrows : true,
+            prevArrow : $('.festival .festival_wrap .festival_slide_wrap .festival_slide_control .btn_box .prev'),
+            nextArrow : $('.festival .festival_wrap .festival_slide_wrap .festival_slide_control .btn_box .next'),
+            dots : false,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
+            slidesToShow : 4,
+            slidesToScroll : 1,
+            zIndex : 5,
+            responsive : [{}]
+        });
+        //축제 및 행사 슬라이드 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
