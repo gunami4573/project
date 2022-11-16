@@ -80,11 +80,15 @@
 /* 횡성여행 메인 상단깨기 끝 */
 
 /* 횡성여행 메인 컨테이너, 푸터 시작 */
-#container{z-index:29;}
-#footer{z-index:28;}
+#container{z-index:28;}
+#footer{z-index:29;}
+.footer_banner{display:none;}
+@media screen and (min-width:1681px){
+    .footer_top{right:calc(((100% - 1680px) / 2) - 26px);}
+}
 /* 횡성여행 메인 컨테이너, 푸터 끝 */
 
-/* rowgroup1(비주얼) 시작 */
+/* rowgroup1(비주얼 영역) 시작 */
 .rowgroup1{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .tour_visual{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .tour_visual .tour_visual_wrap{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
@@ -124,9 +128,21 @@
 .tour_visual .tour_visual_wrap .visual_slide_wrap .visual_slide_control .btn_box button:before{display:block;position:absolute;top:calc(50% - 8px);left:calc(50% - 5px);width:10px;height:17px;background-image:url(../images/main/visual_btn.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
 .tour_visual .tour_visual_wrap .visual_slide_wrap .visual_slide_control .btn_box .next{margin-left:22px;}
 .tour_visual .tour_visual_wrap .visual_slide_wrap .visual_slide_control .btn_box .next:before{transform:rotate(180deg);}
-/* rowgroup1(비주얼) 끝 */
+@media screen and (max-width:1680px){
 
-/* rowgroup1(퀵메뉴) 시작 */
+}
+@media screen and (max-width:1500px){
+
+}
+@media screen and (max-width:1000px){
+
+}
+@media screen and (max-width:640px){
+
+}
+/* rowgroup1(비주얼 영역) 끝 */
+
+/* rowgroup1(퀵메뉴 영역) 시작 */
 .quick_link_box{display:block;position:fixed;z-index:10;top:calc(50% - 301px);right:0;width:120px;padding-left:34px;font-size:0;line-height:0;box-sizing:border-box;transform:translateX(86px);transition-property:transform;transition-duration:400ms;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
 .quick_link_box.active{transform:translateX(0px);}
 .quick_link_box .quick_open_box{display:block;position:absolute;top:calc(50% - 30px);left:4px;font-size:0;line-height:0;box-sizing:border-box;}
@@ -151,9 +167,9 @@
 .quick_link_box .quick_list_box .quick_list .quick_item.quick05 .quick_link span em:before{top:8px;left:calc(50% - 15px);width:29px;height:26px;background-position:-240px top;}
 .quick_link_box .quick_list_box .quick_list .quick_item.quick06 .quick_link span em:before{top:2px;left:calc(50% - 11px);width:23px;height:31px;background-position:-300px top;}
 .quick_link_box .quick_list_box .quick_list .quick_item.quick07 .quick_link span em:before{top:3px;left:calc(50% - 14px);width:28px;height:29px;background-position:-360px top;}
-/* rowgroup1(퀵메뉴) 끝 */
+/* rowgroup1(퀵메뉴 영역) 끝 */
 
-/* rowgroup2(추천여행지) 시작 */
+/* rowgroup2(추천여행지 영역) 시작 */
 .rowgroup2{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .hsg_map{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .hsg_map .hsg_map_wrap{display:block;position:relative;width:100%;min-height:1054px;padding:0 calc((100% - 1680px) / 2);font-size:0;line-height:0;box-sizing:border-box;}
@@ -229,6 +245,7 @@
 .hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list .desc_slide_item .desc_slide_link:hover .round_box:before{width:100%;height:100%;opacity:1;}
 .hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list .desc_slide_item .desc_slide_link .round_box .desc_inner{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;text-align:center;}
 .hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list .desc_slide_item .desc_slide_link .round_box .desc_inner .title_box{display:block;position:relative;width:100%;padding-top:84px;padding-bottom:42px;font-size:0;line-height:0;box-sizing:border-box;}
+.hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list .desc_slide_item .desc_slide_link .round_box .desc_inner .title_box:before{display:block;position:absolute;bottom:0;left:calc(50% - 8px);width:17px;height:22px;background-image:url(../images/main/desc_slide_arrow_icon.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
 .hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list .desc_slide_item .desc_slide_link .round_box .desc_inner .title_box .deco{display:block;position:absolute;top:0;left:50%;transform:translateX(-50%);font-size:0;line-height:0;box-sizing:border-box;}
 .hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list .desc_slide_item .desc_slide_link .round_box .desc_inner .title_box .deco:before,
 .hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list .desc_slide_item .desc_slide_link .round_box .desc_inner .title_box .deco:after{display:block;position:absolute;top:calc(50% - 18px);width:36px;height:36px;border-radius:100%;content:'';box-sizing:border-box;transition-property:background-color;transition-duration:750ms;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
@@ -264,10 +281,22 @@
 .hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list .desc_slide_item .desc_slide_link .round_box .img_inner{display:block;position:absolute;top:-81px;right:65px;width:315px;height:446px;font-size:0;line-height:0;box-sizing:border-box;}
 .hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list .desc_slide_item .desc_slide_link .round_box .img_inner:before{display:block;position:absolute;top:-5px;right:-8px;width:100%;height:100%;background-color:#496fb4;border-radius:158px 158px 0 0;box-sizing:border-box;}
 .hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list .desc_slide_item .desc_slide_link .round_box .img_inner img{display:block;position:relative;width:100%;height:100%;border-radius:158px 158px 0 0;box-sizing:border-box;overflow:hidden;}
-/* rowgroup2(추천여행지) 끝 */
+@media screen and (max-width:1680px){
+
+}
+@media screen and (max-width:1500px){
+
+}
+@media screen and (max-width:1000px){
+
+}
+@media screen and (max-width:640px){
+
+}
+/* rowgroup2(추천여행지 영역) 끝 */
 
 
-/* rowgroup3(축제,행사) 시작 */
+/* rowgroup3(축제,행사 영역) 시작 */
 .rowgroup3{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .festival{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .festival .festival_wrap{display:block;position:relative;width:100%;min-height:888px;padding:0 calc((100% - 1680px) / 2);font-size:0;line-height:0;box-sizing:border-box;}
@@ -307,10 +336,22 @@
 .festival .festival_wrap .festival_slide_wrap .festival_slide_control .more_box .festival_more_link:hover{text-decoration:none;letter-spacing:0.5em;}
 .festival .festival_wrap .festival_slide_wrap .festival_slide_control .more_box .festival_more_link:before{display:block;position:absolute;top:4px;right:0;width:15px;height:8px;background-image:url(../images/main/festival_btn.png);background-repeat:no-repeat;background-position:left -20px;content:'';box-sizing:border-box;transform:rotateX(0deg);transition-property:transform;transition-duration:750ms;transition-timing-function:ease-in-out;}
 .festival .festival_wrap .festival_slide_wrap .festival_slide_control .more_box .festival_more_link:hover:before{transform:rotateX(720deg);}
-/* rowgroup3(축제,행사) 끝 */
+@media screen and (max-width:1680px){
+
+}
+@media screen and (max-width:1500px){
+
+}
+@media screen and (max-width:1000px){
+
+}
+@media screen and (max-width:640px){
+
+}
+/* rowgroup3(축제,행사 영역) 끝 */
 
 
-/* rowgroup4(바로가기영역) 시작 */
+/* rowgroup4(바로가기 영역) 시작 */
 .rowgroup4{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .tour_direct{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .tour_direct .tour_direct_wrap{display:block;position:relative;width:100%;min-height:365px;padding:0 calc((100% - 1680px) / 2);font-size:0;line-height:0;box-sizing:border-box;text-align:center;}
@@ -339,4 +380,102 @@
 .tour_direct .tour_direct_wrap .tour_direct_list .tour_direct_item.item07 .tour_direct_link .direct_deco:before{top:calc(50% - 28px);left:calc(50% - 36px);width:73px;height:57px;background-position:-480px top;}
 .tour_direct .tour_direct_wrap .tour_direct_list .tour_direct_item .tour_direct_link .text{display:block;width:100%;margin-top:17px;font-size:18px;color:#333;line-height:26px;letter-spacing:-0.03em;font-weight:400;font-family:'Pretendard';box-sizing:border-box;}
 .tour_direct .tour_direct_wrap .tour_direct_list .tour_direct_item .tour_direct_link:hover .text{text-decoration:underline;}
-/* rowgroup4(바로가기영역) 끝 */
+/* rowgroup4(바로가기 영역) 끝 */
+
+
+/* rowgroup5(유튜브썸네일 영역) 시작 */
+.rowgroup5{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap{display:block;position:relative;width:100%;padding-left:calc((100% - 1680px) / 2);font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .back_bg{display:block;position:absolute;top:0;left:0;width:100%;height:370px;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .back_bg .back_deco{display:block;width:0px;height:calc(100% / 5);background-color:transparent;font-size:0;line-height:0;box-sizing:border-box;transition-property:width, background-color;transition-duration:1000ms;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
+.tour_youtube .tour_youtube_wrap .back_bg .back_deco:nth-child(1){transition-delay:100ms;}
+.tour_youtube .tour_youtube_wrap .back_bg .back_deco:nth-child(2){transition-delay:200ms;}
+.tour_youtube .tour_youtube_wrap .back_bg .back_deco:nth-child(3){transition-delay:300ms;}
+.tour_youtube .tour_youtube_wrap .back_bg .back_deco:nth-child(4){transition-delay:400ms;}
+.tour_youtube .tour_youtube_wrap .back_bg .back_deco:nth-child(5){transition-delay:500ms;}
+.scroll_ani .tour_youtube .tour_youtube_wrap .back_bg .back_deco{width:100%;background-color:#683f3b;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap{display:block;position:relative;width:100%;min-height:591px;padding-left:156px;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap{display:block;position:absolute;top:0;left:156px;width:547px;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .title_slide_wrap{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;transform:translateX(-100px);opacity:0;transition-property:transform, opacity;transition-duration:1200ms;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
+.scroll_ani .tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .title_slide_wrap{transform:translateX(0px);opacity:1;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .title_slide_wrap .title_slide_list{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .title_slide_wrap .title_slide_list .slick-list{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .title_slide_wrap .title_slide_list .slick-slide{min-height:0;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .title_slide_wrap .title_slide_list .title_slide_item{display:block;position:relative;width:100%;padding-top:81px;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .title_slide_wrap .title_slide_list .title_slide_item .title_hashtag{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .title_slide_wrap .title_slide_list .title_slide_item .title_hashtag em{display:inline-block;font-size:18px;color:#ff8b36;line-height:30px;letter-spacing:-0.03em;font-weight:400;font-family:'Hahmlet';vertical-align:top;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .title_slide_wrap .title_slide_list .title_slide_item .title_hashtag em + em{margin-left:5px;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .title_slide_wrap .title_slide_list .title_slide_item .youtube_title{display:block;position:relative;width:100%;margin-top:18px;font-size:34px;color:#fff;line-height:43px;letter-spacing:-0.03em;font-weight:300;font-family:'Hahmlet';box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .youtube_total_control{display:block;position:relative;z-index:1;width:100%;margin-top:33px;font-size:0;line-height:0;box-sizing:border-box;transform:translateY(100px);opacity:0;transition-property:transform, opacity;transition-duration:1400ms;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
+.scroll_ani .tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .youtube_total_control{transform:translateY(0px);opacity:1;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .youtube_total_control button{display:inline-block;position:relative;width:52px;height:52px;border:1px solid rgba(255, 255, 255, 0.35);border-radius:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .youtube_total_control button + button{margin-left:16px;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .youtube_total_control button:before{display:block;position:absolute;top:calc(50% - 8px);left:calc(50% - 8px);width:16px;height:16px;background-image:url(../images/main/youtube_slide_btn.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;transform:rotateX(0deg) rotateY(0deg);transition-property:transform;transition-duration:500ms;transition-timing-function:ease-in-out;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .youtube_total_control button:hover:before{transform:rotateX(360deg) rotateY(0deg);}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .youtube_total_control .next:before{transform:rotateX(0deg) rotateY(180deg);}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .left_wrap .youtube_total_control .next:hover:before{transform:rotateX(360deg) rotateY(180deg);}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;transform:translateX(100%);transition-property:transform;transition-duration:1400ms;transition-delay:400ms;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
+.scroll_ani .tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap{transform:translateX(0px);}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap .thumnail_slide_list{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap .thumnail_slide_list .slick-list{display:block;position:relative;width:100%;min-height:0;margin-left:547px;padding-top:137px;padding-bottom:104px;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap .thumnail_slide_list .slick-slide{width:600px;min-height:0;margin-left:50px;font-size:0;line-height:0;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap .thumnail_slide_list .thumnail_slide_item{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap .thumnail_slide_list .thumnail_slide_item .thumnail_slide_link{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap .thumnail_slide_list .thumnail_slide_item .thumnail_slide_link .thumnail_img_wrap{display:block;position:relative;width:100%;min-height:350px;background-color:#f00;border-radius:25px;font-size:0;line-height:0;box-sizing:border-box;box-shadow:12px 21px 24px rgba(0, 0, 0, 0.13);overflow:hidden;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap .thumnail_slide_list .thumnail_slide_item .thumnail_slide_link .thumnail_img_wrap img{display:block;position:absolute;top:0;left:0;width:100%;height:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap .thumnail_slide_list .thumnail_slide_item .thumnail_slide_link .play_icon{display:block;position:absolute;top:calc(50% - 37px);left:calc(50% - 37px);width:74px;height:74px;border:2px solid rgba(255, 255, 255, 0.5);border-radius:100%;font-size:0;line-height:0;box-sizing:border-box;filter:blur(3px);transform:translateY(20%);opacity:0;transition-property:filter, transform, opacity;transition-duration:250ms;transition-timing-function:ease-in-out;}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap .thumnail_slide_list .thumnail_slide_item .thumnail_slide_link:hover .play_icon{transform:translateY(0px);opacity:1;filter:blur(0px);}
+.tour_youtube .tour_youtube_wrap .youtube_total_wrap .right_wrap .thumnail_slide_wrap .thumnail_slide_list .thumnail_slide_item .thumnail_slide_link .play_icon:before{display:block;position:absolute;top:calc(50% - 14px);left:calc(50% - 9px);width:23px;height:28px;background-image:url(../images/main/youtube_play_icon.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
+@media screen and (max-width:1680px){
+
+}
+@media screen and (max-width:1500px){
+
+}
+@media screen and (max-width:1000px){
+
+}
+@media screen and (max-width:640px){
+
+}
+/* rowgroup5(유튜브썸네일 영역) 끝 */
+
+/* rowgroup6(횡성여행 자세히보기 링크영역) 시작 */
+.rowgroup6{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_detail{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_detail .tour_detail_wrap{display:block;position:relative;width:100%;padding:0 calc((100% - 1680px) / 2);font-size:0;line-height:0;box-sizing:border-box;}
+.tour_detail .tour_detail_wrap .tour_detail_list{display:block;position:relative;width:1500px;margin:0 auto;padding-bottom:84px;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item{display:inline-block;position:relative;width:calc((100% - 171px) / 4);margin-left:57px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;transform:translateX(-50%);opacity:0;transition-property:transform, opacity;transition-duration:750ms;transition-timing-function:ease-in-out;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item:nth-child(1){margin-left:0;transition-delay:100ms;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item:nth-child(2){transition-delay:200ms;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item:nth-child(3){transition-delay:300ms;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item:nth-child(4){transition-delay:400ms;}
+.scroll_ani .tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item{transform:translateX(0px);opacity:1;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link{display:block;position:relative;width:100%;min-height:383px;font-size:0;line-height:0;box-sizing:border-box;text-align:center;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link:before{display:block;position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:0;border-style:solid;border-top-width:150px;border-top-color:#f7f7f7;border-right-width:0px;border-right-color:transparent;border-left-width:330px;border-left-color:#f7f7f7;border-bottom-width:150px;border-bottom-color:#f7f7f7;border-radius:58px;content:'';box-sizing:border-box;transition-property:border-top-color, border-bottom-color, border-radius;transition-duration:500ms;transition-timing-function:ease-in-out;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link:hover{text-decoration:none;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link:hover:before{border-top-color:transparent;border-bottom-color:transparent;border-radius:0px;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link .detail_img_wrap{display:inline-block;position:relative;width:176px;height:176px;border-radius:100%;font-size:0;line-height:0;box-sizing:border-box;overflow:hidden;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link .detail_img_wrap img{display:block;position:absolute;top:0;left:0;width:100%;height:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link .detail_title{display:block;position:relative;margin-top:32px;font-size:26px;color:#393939;line-height:36px;letter-spacing:-0.03em;font-weight:400;font-family:'Hahmlet';box-sizing:border-box;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link .detail_more{display:block;position:relative;width:180px;margin:31px auto 0;background-color:transparent;border:1px solid #d0d0d0;border-radius:25px;font-size:0;line-height:0;box-sizing:border-box;text-align:center;box-shadow:0px 0px 0px transparent;transition-property:background-color, border-color, box-shadow;transition-duration:500ms;transition-timing-function:ease-in-out;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link:hover .detail_more{background-color:#fff;border-color:#fff;box-shadow:0px 3px 30px rgba(0, 0, 0, 0.07);}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link .detail_more em{display:inline-block;position:relative;padding-right:35px;font-size:16px;color:#80767b;line-height:50px;letter-spacing:-0.03em;font-weight:500;font-family:'Pretendard';vertical-align:top;box-sizing:border-box;transition-property:color;transition-duration:500ms;transition-timing-function:ease-in-out;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link:hover .detail_more em{color:#b00a35;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link .detail_more em:before{display:block;position:absolute;top:calc(50% - 4px);right:0;width:15px;height:8px;background-image:url(../images/main/tour_detail_icon.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
+.tour_detail .tour_detail_wrap .tour_detail_list .tour_detail_item .tour_detail_link:hover .detail_more em:before{background-position:-20px top;}
+@media screen and (max-width:1680px){
+
+}
+@media screen and (max-width:1500px){
+
+}
+@media screen and (max-width:1000px){
+
+}
+@media screen and (max-width:640px){
+
+}
+/* rowgroup6(횡성여행 자세히보기 링크영역) 끝 */

@@ -80,10 +80,12 @@
             if(!IsActive){
                 $QuickLinkBox.addClass('active');
                 $this.attr('title', '레이어 닫기');
+                $('#footer').css('z-index', '27');
             }
             else{
                 $QuickLinkBox.removeClass('active');
                 $this.attr('title', '레이어 열기');
+                $('#footer').css('z-index', '29');
             }
         });
         //퀵메뉴 끝
@@ -195,6 +197,48 @@
             responsive : [{}]
         });
         //축제 및 행사 슬라이드 끝
+
+        //유튜브 썸네일 슬라이드 시작
+        var $YoutubeTitleSlide = $('.tour_youtube .tour_youtube_wrap .youtube_total_wrap .title_slide_wrap .title_slide_list'),
+            $YoutubeThumnailSlide = $('.tour_youtube .tour_youtube_wrap .youtube_total_wrap .thumnail_slide_wrap .thumnail_slide_list');
+        $YoutubeTitleSlide.slick({
+            autoplay : true,
+            autoplaySpeed : 3000,
+            speed : 1000,
+            arrows : true,
+            prevArrow : $('.tour_youtube .tour_youtube_wrap .youtube_total_wrap .youtube_total_control .prev'),
+            nextArrow : $('.tour_youtube .tour_youtube_wrap .youtube_total_wrap .youtube_total_control .next'),
+            dots : false,
+            swipe : false,
+            swipeToSlide : false,
+            draggable : false,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            variableWidth : false,
+            fade : true,
+            infinite : true,
+            zIndex : 5,
+            asNavFor: $YoutubeThumnailSlide,
+            responsive : [{}]
+        });
+        $YoutubeThumnailSlide.slick({
+            autoplay : true,
+            autoplaySpeed : 3000,
+            speed : 1000,
+            arrows : false,
+            dots : false,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            variableWidth : true,
+            infinite : true,
+            zIndex : 5,
+            asNavFor : $YoutubeTitleSlide,
+            responsive : [{}]
+        });
+        //유튜브 썸네일 슬라이드 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
