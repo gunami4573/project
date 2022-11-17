@@ -198,7 +198,7 @@
                 }
             }]
         });
-        $('.map_slide_wrap button.map_slide_btn').on('click', function(){
+        $(document).on('click', '.map_slide_wrap button.map_slide_btn', function() {
             var $this = $(this),
                 $MyMapItem = $this.parent('.map_slide_item'),
                 IsActive = $MyMapItem.is('.active'),
