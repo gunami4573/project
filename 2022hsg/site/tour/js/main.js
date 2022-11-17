@@ -194,7 +194,12 @@
             slidesToShow : 4,
             slidesToScroll : 1,
             zIndex : 5,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 1001,
+                settings : {
+                    slidesToShow : 3
+                }
+            }]
         });
         //축제 및 행사 슬라이드 끝
 
@@ -236,7 +241,17 @@
             infinite : true,
             zIndex : 5,
             asNavFor : $YoutubeTitleSlide,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 1681,
+                settings : {
+                    slidesToShow : 2
+                }
+            },{
+                breakpoint : 1401,
+                settings : {
+                    slidesToShow : 2
+                }
+            }]
         });
         //유튜브 썸네일 슬라이드 끝
 
