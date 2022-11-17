@@ -120,7 +120,8 @@
         //스크롤 애니메이션 끝
 
         //추천여행지 지도 및 디테일 슬라이드 시작
-        var $MapSlideList = $('.hsg_map .hsg_map_wrap .map_slide_wrap .map_slide_list');
+        var $MapSlideList = $('.hsg_map .hsg_map_wrap .map_slide_wrap .map_slide_list'),
+            $DescSlideList = $('.hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list');
         $MapSlideList.slick({
             autoplay : false,
             arrows :false,
@@ -132,9 +133,41 @@
             slidesToScroll : 1,
             variableWidth : true,
             zIndex : 5,
-            responsive : [{}]
+            asNavFor: $DescSlideList,
+            responsive : [{
+                breakpoint : 641,
+                settings : {
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    slidesToShow : 6
+                }
+            },{
+                breakpoint : 585,
+                settings : {
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    slidesToShow : 5
+                }
+            },{
+                breakpoint : 473,
+                settings : {
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    slidesToShow : 4
+                }
+            },{
+                breakpoint : 364,
+                settings : {
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    slidesToShow : 3
+                }
+            }]
         });
-        var $DescSlideList = $('.hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list');
         $DescSlideList.slick({
             autoplay : false,
             arrows : false,
@@ -146,7 +179,24 @@
             slidesToScroll : 1,
             variableWidth : true,
             zIndex : 5,
-            responsive : [{}]
+            asNavFor: $MapSlideList,
+            responsive : [{
+                breakpoint : 641,
+                settings : {
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    slidesToShow : 2
+                }
+            },{
+                breakpoint : 543,
+                settings : {
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    slidesToShow : 1
+                }
+            }]
         });
         $('.map_slide_wrap button.map_slide_btn').on('click', function(){
             var $this = $(this),
