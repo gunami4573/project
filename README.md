@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=333333&height=200&section=header&text=SI%20Total%20Project%202020~ing&fontSize=30&fontColor=ffffff)
 
 // 2022midongsan (2022 횡성군청 전면개편)
-- https://gunami4573.github.io/project/2022hsg/site/tour/main.html (횡성여행 메인 레이아웃) (작업중)
+- https://gunami4573.github.io/project/2022hsg/site/tour/main.html (횡성여행 메인 레이아웃)
 - https://gunami4573.github.io/project/2022hsg/site/public/public_template.html (전체 공통 템플릿)
 - https://gunami4573.github.io/project/2022hsg/site/public/public_sub.html (부설사이트 공통 서브 레이아웃)
 - https://gunami4573.github.io/project/2022hsg/site/www/www_sub.html (대표사이트 서브 레이아웃)
