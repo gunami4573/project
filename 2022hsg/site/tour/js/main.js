@@ -123,7 +123,7 @@
         var $MapSlideList = $('.hsg_map .hsg_map_wrap .map_slide_wrap .map_slide_list'),
             $DescSlideList = $('.hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_list');
         $MapSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             arrows :false,
             dots : false,
             swipe : false,
@@ -168,9 +168,20 @@
                 }
             }]
         });
+        var descpercent;
+        $DescSlideList.on('init', function(event, slick, currentSlide, nextSlide){
+            descpercent = ((slick.currentSlide+1) / (slick.slideCount)) * 100;
+            $('.hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_control .progress_box .bar').css('width', descpercent + '%');
+        });
+        $DescSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            descpercent = ((nextSlide+1) / (slick.slideCount)) * 100;
+            $('.hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_control .progress_box .bar').css('width', descpercent + '%');
+        });
         $DescSlideList.slick({
-            autoplay : false,
-            arrows : false,
+            autoplay : true,
+            arrows : true,
+            prevArrow : $('.hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_control .btn_box .prev'),
+            nextArrow : $('.hsg_map .hsg_map_wrap .desc_slide_wrap .desc_slide_control .btn_box .next'),
             dots : false,
             swipe : false,
             swipeToSlide : false,
@@ -186,7 +197,7 @@
                     swipe : true,
                     swipeToSlide : true,
                     draggable : true,
-                    slidesToShow : 2
+                    slidesToShow : 1
                 }
             },{
                 breakpoint : 543,
@@ -244,10 +255,23 @@
             slidesToShow : 4,
             slidesToScroll : 1,
             zIndex : 5,
+            variableWidth : false,
             responsive : [{
                 breakpoint : 1001,
                 settings : {
                     slidesToShow : 3
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 2,
+                    variableWidth : true,
+                }
+            },{
+                breakpoint : 441,
+                settings : {
+                    slidesToShow : 1,
+                    variableWidth : true,
                 }
             }]
         });
@@ -258,8 +282,8 @@
             $YoutubeThumnailSlide = $('.tour_youtube .tour_youtube_wrap .youtube_total_wrap .thumnail_slide_wrap .thumnail_slide_list');
         $YoutubeTitleSlide.slick({
             autoplay : true,
-            autoplaySpeed : 3000,
-            speed : 1000,
+            autoplaySpeed : 4000,
+            speed : 1500,
             arrows : true,
             prevArrow : $('.tour_youtube .tour_youtube_wrap .youtube_total_wrap .youtube_total_control .prev'),
             nextArrow : $('.tour_youtube .tour_youtube_wrap .youtube_total_wrap .youtube_total_control .next'),
@@ -278,8 +302,8 @@
         });
         $YoutubeThumnailSlide.slick({
             autoplay : true,
-            autoplaySpeed : 3000,
-            speed : 1000,
+            autoplaySpeed : 4000,
+            speed : 1500,
             arrows : false,
             dots : false,
             swipe : true,
@@ -299,7 +323,13 @@
             },{
                 breakpoint : 1401,
                 settings : {
-                    slidesToShow : 2
+                    slidesToShow : 1
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 1,
+                    variableWidth : false
                 }
             }]
         });
