@@ -10,6 +10,25 @@
     src:url("../font/GmarketSansTTFBold.woff2") format('woff2'),
     url("../font/GmarketSansTTFBold.woff") format('woff');
 }
+@font-face{
+    font-family:'TTF';
+    font-weight:500;
+    src:url("../font/GmarketSansTTFMedium.woff2") format('woff2'),
+    url("../font/GmarketSansTTFMedium.woff") format('woff');
+}
+/* Montserrat */
+@font-face{
+    font-family:'Montserrat';
+    font-weight:700;
+    src:url("../font/Montserrat-SemiBold.woff2") format('woff2'),
+    url("../font/Montserrat-SemiBold.woff") format('woff');
+}
+@font-face{
+    font-family:'Montserrat';
+    font-weight:600;
+    src:url("../font/Montserrat-Bold.woff2") format('woff2'),
+    url("../font/Montserrat-Bold.woff") format('woff');
+}
 /* 횡성 열린군수실 메인전용 폰트 끝 */
 
 /* 횡성 열린군수실 메인 상단깨기 시작 */
@@ -80,21 +99,21 @@
 
 
 /* 횡성 열린군수실 메인 컨테이너, 푸터 시작 */
-
 /* 횡성 열린군수실 메인 컨테이너, 푸터 끝 */
 
 
 /* rowgroup1(오늘의 일정 영역) 시작 */
 .rowgroup1{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .mayor_today{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
-.mayor_today .mayor_today_wrap{display:block;position:relative;width:100%;padding:160px calc((100% - 1650px) / 2) 0;background-color:#f1f1f1;font-size:0;line-height:0;box-sizing:border-box;}
-
-.mayor_today .mayor_today_wrap .title_wrap{display:inline-block;position:relative;width:1076px;min-height:907px;padding-left:78px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap{display:block;position:relative;width:100%;min-height:907px;padding:160px calc((100% - 1650px) / 2) 0;background-color:#f1f1f1;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .title_wrap{display:inline-block;position:relative;width:1076px;min-height:747px;padding-left:78px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap:before{display:block;position:absolute;top:33px;left:-165px;width:351px;height:243px;background-image:url(../images/main/mayor_title_wrap_before.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .title_box{display:block;position:relative;z-index:2;width:100%;padding-top:194px;font-size:0;line-height:0;box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .title_box span{display:block;position:relative;font-size:0;line-height:0;box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .title_box span em{display:inline-block;position:relative;letter-spacing:-0.03em;font-weight:600;font-family:'TTF';vertical-align:top;box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .title_box .red{display:inline-block;vertical-align:top;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .title_wrap .title_box .red.icon{position:relative;}
+.mayor_today .mayor_today_wrap .title_wrap .title_box .red.icon:before{display:block;position:absolute;bottom:calc(100% + 8px);left:calc(100% + 3px);width:66px;height:57px;background-image:url(../images/main/mayor_title_before.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .title_box .red + .red{margin-left:15px;}
 .mayor_today .mayor_today_wrap .title_wrap .title_box .red + .red:before{display:block;position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:calc(100% + 10px);height:20px;background-color:#faebc8;content:'';box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .title_box .red em{font-size:58px;color:#b00d33;line-height:62px;}
@@ -102,39 +121,85 @@
 .mayor_today .mayor_today_wrap .title_wrap .title_box .brown em{font-size:70px;color:#a47f64;line-height:75px;}
 .mayor_today .mayor_today_wrap .title_wrap .title_box .black{margin-top:-5px;}
 .mayor_today .mayor_today_wrap .title_wrap .title_box .black em{font-size:70px;color:#000;line-height:75px;}
-
 .mayor_today .mayor_today_wrap .title_wrap .img_box{display:block;position:absolute;z-index:1;top:calc(100% - 653px);right:104px;width:511px;height:653px;font-size:0;line-height:0;box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .img_box img{display:block;position:absolute;top:0;left:0;width:100%;height:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box{display:block;position:relative;margin-top:144px;font-size:0;line-height:0;box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_title{display:inline-block;position:relative;width:auto;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_title:before{display:block;position:absolute;top:12px;left:calc(100% + 40px);width:500px;height:1px;background-color:#bfbabb;content:'';box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_title em{display:inline-block;font-size:30px;color:#bfbabb;line-height:32px;letter-spacing:-0.03em;font-weight:600;font-family:'TTF';vertical-align:top;box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_title em:last-child{position:absolute;top:-3px;left:calc(100% + 3px);font-size:20px;line-height:22px;}
-
-
-.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list{}
-.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item{}
-.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item .mayor_sns_link{}
-
-
-
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list{display:block;position:relative;margin-top:48px;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item{display:inline-block;position:relative;margin-left:47px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item:first-child{margin-left:0;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item .mayor_sns_link{display:inline-block;position:relative;width:40px;height:40px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item .mayor_sns_link:before,
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item .mayor_sns_link:after{display:block;position:absolute;background-image:url(../images/main/sns_icon.png);background-repeat:no-repeat;content:'';box-sizing:border-box;transform:rotateY(0deg);transition-property:transform, opacity;transition-duration:750ms;transition-timing-function:ease-in-out;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item .mayor_sns_link:before{opacity:1;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item .mayor_sns_link:after{opacity:0;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item .mayor_sns_link:hover:before{transform:rotateY(360deg);opacity:0;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item .mayor_sns_link:hover:after{transform:rotateY(360deg);opacity:1;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item.facebook .mayor_sns_link:before{top:3px;left:5px;width:18px;height:34px;background-position:left top;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item.blog .mayor_sns_link:before{top:4px;left:5px;width:24px;height:32px;background-position:-40px top;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item.youtube .mayor_sns_link:before{top:9px;left:5px;width:32px;height:23px;background-position:-80px top;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item.facebook .mayor_sns_link:after{top:3px;left:5px;width:18px;height:34px;background-position:left -40px;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item.blog .mayor_sns_link:after{top:4px;left:5px;width:24px;height:32px;background-position:-40px -40px;}
+.mayor_today .mayor_today_wrap .title_wrap .mayor_sns_box .mayor_sns_list .mayor_sns_item.youtube .mayor_sns_link:after{top:9px;left:5px;width:32px;height:23px;background-position:-80px -40px;}
 .mayor_today .mayor_today_wrap .daily_wrap{display:inline-block;position:relative;width:calc(100% - 1076px);font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap{}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box{}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box .text{}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box .text.today{}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box .text.month{}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box .text.dot{}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box .text.year{}
-
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box{}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item{}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item .daily_tab_btn{}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item.active .daily_tab_btn{}
-
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box{}
-.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item{display:none;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box{display:block;position:relative;width:100%;padding-top:149px;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box .text{display:inline-block;position:relative;vertical-align:top;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box .text.today{margin-top:8px;font-size:30px;color:#000;line-height:34px;letter-spacing:-0.03em;font-weight:500;font-family:'TTF';}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box .text.month{margin-left:20px;font-size:40px;color:#a47f64;line-height:40px;letter-spacing:-0.03em;font-weight:600;font-family:'Montserrat';}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box .text.dot{font-size:40px;color:#a47f64;line-height:40px;letter-spacing:-0.03em;font-weight:600;font-family:'Montserrat';}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_title_box .text.year{margin-left:10px;font-size:40px;color:#a47f64;line-height:40px;letter-spacing:-0.03em;font-weight:600;font-family:'Montserrat';}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box{display:block;position:relative;width:100%;margin-top:11px;padding-bottom:22px;font-size:0;line-height:0;box-sizing:border-box; }
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box:before{display:block;position:absolute;bottom:0;left:0;width:100%;height:2px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAAXNSR0IArs4c6QAAABVJREFUGFdjZICA/wwMDIyMMAZIBAAbOQIDht8nTAAAAABJRU5ErkJggg==);background-repeat:repeat-x;background-position:left top;content:'';box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item{display:inline-block;margin-left:4px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item:first-child{margin-left:4px;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item .daily_tab_btn{display:inline-block;position:relative;width:60px;height:60px;background-color:transparent;border-width:1px;border-style:solid;border-color:transparent;border-radius:10px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;text-align:center;transition-property:background-color, border-color;transition-duration:300ms;transition-timing-function:ease-in-out;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item .daily_tab_btn:hover{background-color:#fff;border-color:#142670;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item.active .daily_tab_btn{background-color:#142670;border-color:#142670;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item .daily_tab_btn em{display:inline-block;position:relative;width:100%;color:#777;line-height:20px;letter-spacing:-0.03em;font-weight:500;font-family:'TTF';vertical-align:top;box-sizing:border-box;transition-property:color;transition-duration:300ms;transition-timing-function:ease-in-out;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item .daily_tab_btn .week{font-size:16px;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item .daily_tab_btn .day{font-size:20px;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item .daily_tab_btn:hover .week{color:#142670;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item .daily_tab_btn:hover .day{color:#142670;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item.active .daily_tab_btn .week{color:#fff;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item.active .daily_tab_btn .day{margin-top:-3px;color:#fff;font-weight:600;font-family:'Montserrat';}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box{display:block;position:relative;width:100%;min-height:321px;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item{display:none;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item.active{display:block;}
-
-
-
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .slick-list{display:block;position:relative;width:100%;min-height:0;border:0;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .slick-slide{display:block;position:relative;width:100%;min-height:0;border:0;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-shadow:0px 0px 0px transparent;transition-property:box-shadow;transition-duration:250ms;transition-timing-function:ease-in-out;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link:before{display:block;position:absolute;bottom:0;left:0;width:100%;height:1px;background-color:#000;content:'';box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link:hover{text-decoration:none;box-shadow:3px 4px 20px rgba(0, 0, 0, 0.1);}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .time{display:inline-block;width:184px;height:107px;padding-top:33px;padding-bottom:30px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;transform:translateX(-63px);transition-property:transform;transition-duration:250ms;transition-timing-function:ease-in-out;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link:hover .time{transform:translateX(0px);}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .time em{display:inline-block;position:relative;padding-left:63px;font-size:30px;color:#444;line-height:44px;letter-spacing:-0.03em;font-weight:700;font-family:'Montserrat';vertical-align:top;box-sizing:border-box;transition-property:color;transition-duration:250ms;transition-timing-function:ease-in-out;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .time em:before{display:block;position:absolute;top:0;left:0;width:44px;height:44px;border-radius:100%;background-color:#142670;background-image:url(../images/main/daily_time_icon.png);background-repeat:no-repeat;background-position:center center;content:'';box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .desc{display:inline-block;width:calc(100% - 184px);max-width:calc(100% - 184px);font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;transform:translateX(-63px);transition-property:transform;transition-duration:250ms;transition-timing-function:ease-in-out;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link:hover .desc{transform:translateX(0px);}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .desc .desc_flex{display:flex;flex-direction:column;justify-content:center;width:100%;height:107px;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .desc .desc_flex .title{display:block;width:100%;font-size:22px;color:#444;line-height:30px;letter-spacing:-0.03em;font-weight:700;font-family:'Pretendard';box-sizing:border-box;transition-property:color;transition-duration:250ms;transition-timing-function:ease-in-out;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link:hover .desc .desc_flex .title{color:#000;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .desc .desc_flex .info{display:block;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .desc .desc_flex .info em{display:inline-block;position:relative;font-size:18px;color:#444;line-height:28px;letter-spacing:-0.03em;font-weight:400;font-family:'Pretendard';vertical-align:top;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .desc .desc_flex .info .info_type1{color:#a47f64;font-weight:600;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .desc .desc_flex .info .info_type2{margin-left:7px;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .desc .desc_flex .info .info_type2 + .info_type1{padding-left:14px;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item .daily_slide_list .daily_slide_item .daily_slide_link .desc .desc_flex .info .info_type2 + .info_type1:before{display:block;position:absolute;top:12px;left:5px;width:3px;height:3px;border-radius:100%;background-color:#444;content:'';box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_more_box{display:block;position:relative;width:100%;margin-top:40px;font-size:0;line-height:0;box-sizing:border-box;text-align:right;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_more_box .more_link{display:inline-block;position:relative;padding-top:13px;padding-bottom:11px;padding-right:67px;font-size:19px;color:#000;line-height:22px;letter-spacing:-0.03em;font-weight:500;font-family:'TTF';vertical-align:top;box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_more_box .more_link:before{display:block;position:absolute;top:0;right:0;width:46px;height:46px;border-radius:100%;background-color:#000;background-image:url(../images/main/daily_more_before.png);background-repeat:no-repeat;background-position:center center;content:'';box-sizing:border-box;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_more_box .more_link:hover{text-decoration:none;}
+.mayor_today .mayor_today_wrap .daily_wrap .daily_more_box .more_link:hover:before{background-image:url(../images/main/daily_more_hover_before.png);}
 /* rowgroup1(오늘의 일정 영역) 끝 */
+
+/* rowgroup2(민선8기 100대 공약 영역) 시작 */
+.rowgroup2{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.promise{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.promise .promise_wrap{display:block;position:relative;width:100%;min-height:946px;padding:0 calc((100% - 1650px) / 2);background-color:#f1f1f1;font-size:0;line-height:0;box-sizing:border-box;}
+/* rowgroup2(민선8기 100대 공약 영역) 끝 */

@@ -11,6 +11,21 @@
 
         //여기서부터 코드 작성해주세요
 
+        //스크롤 애니메이션 시작
+        var $ScrollGroup = $('.scroll_group');
+        $window.on('scroll', function(event){
+            var ScrollLocation = document.documentElement.scrollTop;
+            $ScrollGroup.each(function(){
+                var $this = $(this),
+                    ThisOffSet = $this.offset(),
+                    ThisOffSetTop = ThisOffSet.top;
+                if(ScrollLocation+400 > ThisOffSetTop){
+                    $this.addClass('scroll_ani');
+                }
+            });
+        });
+        //스크롤 애니메이션 끝
+
         //오늘의 일정 탭 및 슬라이드 시작
         var $DailyConItem = $('.daily_wrap .daily_slide_wrap .daily_con_box .daily_con_item');
         $DailyConItem.each(function(){
@@ -32,6 +47,14 @@
                 vertical : true, //세로모드 유무
                 verticalSwiping : true, //세로일때 터치 유무
                 responsive: [{}]
+            });
+            $DailySlideList.on('wheel', function(e){
+                e.preventDefault();
+                if (e.originalEvent.deltaY < 0) {
+                    $(this).slick('slickPrev');
+                } else {
+                    $(this).slick('slickNext');
+                }
             });
         });
         $('.daily_wrap .daily_slide_wrap .daily_tab_box .daily_tab_item button.daily_tab_btn').on('click', function(){
