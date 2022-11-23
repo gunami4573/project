@@ -94,23 +94,19 @@
             speed : 1000,
             loop : true,  //무한루프
             navigation : {
-                prevEl : '.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .swiper_btn.prev',
-                nextEl : '.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .swiper_btn.next',
+                prevEl : '.promise .promise_wrap .swiper_btn_box .swiper_btn.prev',
+                nextEl : '.promise .promise_wrap .swiper_btn_box .swiper_btn.next',
             },
             pagination : {
-                el : '.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .number_box',
+                el : '.promise .promise_wrap .swiper_btn_box .number_box',
                 type : 'custom',
-                renderCustom: function (swiper, current, total) {
+                renderCustom : function (swiper, current, total) {
                     function ZeroOver(number) {
                         return (number < 10) ? '0' + number.toString() : number.toString();
                     }
-                    $('.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .number_box .current').text(ZeroOver(current));//current 앞에 0 필요시
-                    $('.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .number_box .total').text(ZeroOver(total));  //total 앞에 0 필요시
-                }
-            },
-            on : {
-                activeIndexChange : function () {
-                    $('.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .progressbar').empty().append(this.realIndex+1);
+                    $('.promise .promise_wrap .swiper_btn_box .number_box .current').text(ZeroOver(current));//current 앞에 0 필요시
+                    $('.promise .promise_wrap .swiper_btn_box .number_box .total').text(ZeroOver(total));  //total 앞에 0 필요시
+                    $('.promise .promise_wrap .swiper_btn_box .progressbar .gauge').css('width', (current / total) * 100 + '%');
                 }
             }
         });
