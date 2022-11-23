@@ -81,6 +81,43 @@
         });
         //오늘의 일정 탭 및 슬라이드 끝
 
+        //민선8기 100대 공약 슬라이드 시작
+        var $PromiseSwiper = new Swiper('.promise .promise_wrap .promise_swiper_wrap .swiper-container', {
+            freeMode : false,  //터치 밀었을 떄 하나씩 말고 휙 넘어가는 여부
+            slidesPerView : 'auto',  //slick 에서 사용하는 variableWidth 처럼 사용하기 위함, width 지정할 것
+            resistance : false,
+            spaceBetween : 60,  //오른쪽 마진값(px)
+            touchRatio : true,  //드래그 사용여부
+            autoplay : {
+                delay : 4000
+            },
+            speed : 1000,
+            loop : true,  //무한루프
+            navigation : {
+                prevEl : '.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .swiper_btn.prev',
+                nextEl : '.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .swiper_btn.next',
+            },
+            pagination : {
+                el : '.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .number_box',
+                type : 'custom',
+                renderCustom: function (swiper, current, total) {
+                    function ZeroOver(number) {
+                        return (number < 10) ? '0' + number.toString() : number.toString();
+                    }
+                    $('.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .number_box .current').text(ZeroOver(current));//current 앞에 0 필요시
+                    $('.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .number_box .total').text(ZeroOver(total));  //total 앞에 0 필요시
+                }
+            },
+            on : {
+                activeIndexChange : function () {
+                    $('.promise .promise_wrap .promise_swiper_wrap .swiper_btn_box .progressbar').empty().append(this.realIndex+1);
+                }
+            }
+        });
+
+
+        //민선8기 100대 공약 슬라이드 끝
+
 
         $window.on('screen:tablet screen:phone', function (event) {
 
