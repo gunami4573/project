@@ -31,6 +31,11 @@
         $DailyConItem.each(function(){
             var $this = $(this),
                 $DailySlideList = $this.find('.daily_slide_list');
+            $DailySlideList.on('init', function(event, slick, currentSlide){
+                setTimeout(function(){
+                    $html.addClass('hsg_mayor');
+                }, 100);
+            });
             $DailySlideList.slick({
                 autoplay : true,
                 dots : false,
@@ -90,9 +95,9 @@
                 touchRatio : true,  //드래그 사용여부
                 resistance : true, //슬라이드 터치 저항 여부
                 autoplay : {
-                    delay : 3000  //자동 넘어가는 시간
+                    delay : 5000  //자동 넘어가는 시간
                 },
-                speed : 1000,  //넘어가는 속도
+                speed : 800,  //넘어가는 속도
                 loop : true,  //무한루프
                 navigation : {
                     prevEl : '.promise .promise_wrap .swiper_btn_box .swiper_btn.prev',
@@ -120,9 +125,9 @@
                 touchRatio : true,  //드래그 사용여부
                 resistance : true, //슬라이드 터치 저항 여부
                 autoplay : {
-                    delay : 3000  //자동 넘어가는 시간
+                    delay : 5000  //자동 넘어가는 시간
                 },
-                speed : 1000,  //넘어가는 속도
+                speed : 1500,  //넘어가는 속도
                 loop : true,  //무한루프
                 navigation : {
                     prevEl : '.photo .photo_wrap .swiper_btn_box .swiper_btn.prev',
