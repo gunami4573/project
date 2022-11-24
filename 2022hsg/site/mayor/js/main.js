@@ -81,65 +81,63 @@
         });
         //오늘의 일정 탭 및 슬라이드 끝
 
-        //민선8기 100대 공약 스와이퍼 시작
-        var $PromiseSwiper = new Swiper('.promise .promise_wrap .promise_swiper_wrap .swiper-container', {
-            freeMode : false,  //터치 밀었을 떄 하나씩 말고 휙 넘어가는 여부
-            slidesPerView : 'auto',  //slick 에서 사용하는 variableWidth 처럼 사용하기 위함, width 지정할 것
-            resistance : false,
-            spaceBetween : 60,  //오른쪽 마진값(px)
-            touchRatio : true,  //드래그 사용여부
-            autoplay : {
-                delay : 4000
-            },
-            speed : 1000,
-            loop : true,  //무한루프
-            navigation : {
-                prevEl : '.promise .promise_wrap .swiper_btn_box .swiper_btn.prev',
-                nextEl : '.promise .promise_wrap .swiper_btn_box .swiper_btn.next',
-            },
-            pagination : {
-                el : '.promise .promise_wrap .swiper_btn_box .number_box',
-                type : 'custom',
-                renderCustom : function (swiper, current, total) {
-                    function ZeroOver(number) {
-                        return (number < 10) ? '0' + number.toString() : number.toString();
+        setTimeout(function(){
+            //민선8기 100대 공약 스와이퍼 시작
+            var $PromiseSwiper = new Swiper('.promise .promise_wrap .promise_swiper_wrap .swiper-container', {
+                freeMode : false,  //터치 밀었을 떄 하나씩 말고 휙 넘어가는 여부
+                slidesPerView : 'auto',  //slick 에서 사용하는 variableWidth 처럼 사용하기 위함, width 지정할 것
+                spaceBetween : 0,  //오른쪽 마진값(px), 0으로 놓을 시 css 지정 가능
+                touchRatio : true,  //드래그 사용여부
+                resistance : true, //슬라이드 터치 저항 여부
+                autoplay : {
+                    delay : 3000  //자동 넘어가는 시간
+                },
+                speed : 1000,  //넘어가는 속도
+                loop : true,  //무한루프
+                navigation : {
+                    prevEl : '.promise .promise_wrap .swiper_btn_box .swiper_btn.prev',
+                    nextEl : '.promise .promise_wrap .swiper_btn_box .swiper_btn.next'
+                },
+                pagination : {
+                    el : '.promise .promise_wrap .swiper_btn_box .number_box',
+                    type : 'custom',
+                    renderCustom : function (swiper, current, total) {
+                        function ZeroOver(number) {
+                            return (number < 10) ? '0' + number.toString() : number.toString();
+                        }
+                        $('.promise .promise_wrap .swiper_btn_box .number_box .current').text(ZeroOver(current));//current 앞에 0 필요시
+                        $('.promise .promise_wrap .swiper_btn_box .number_box .total').text(ZeroOver(total));  //total 앞에 0 필요시
+                        $('.promise .promise_wrap .swiper_btn_box .progressbar .gauge').css('width', (current / total) * 100 + '%');
                     }
-                    $('.promise .promise_wrap .swiper_btn_box .number_box .current').text(ZeroOver(current));//current 앞에 0 필요시
-                    $('.promise .promise_wrap .swiper_btn_box .number_box .total').text(ZeroOver(total));  //total 앞에 0 필요시
-                    $('.promise .promise_wrap .swiper_btn_box .progressbar .gauge').css('width', (current / total) * 100 + '%');
                 }
-            }
-        });
-        //민선8기 100대 공약 스와이퍼 끝
+            });
+            //민선8기 100대 공약 스와이퍼 끝
 
-        //포토갤러리 스와이퍼 시작
-        var $PhotoSwiper = new Swiper('.photo .photo_wrap .photo_swiper_wrap .swiper-container', {
-            freeMode : false,  //터치 밀었을 떄 하나씩 말고 휙 넘어가는 여부
-            slidesPerView : 3,  //slick 에서 사용하는 variableWidth 처럼 사용하기 위함, width 지정할 것
-            resistance : false,
-            spaceBetween : 40,  //오른쪽 마진값(px)
-            touchRatio : true,  //드래그 사용여부
-            /*
-            autoplay : {
-                delay : 4000
-            },
-            */
-            speed : 1000,
-            loop : false,  //무한루프
-            navigation : {
-                prevEl : '.photo .photo_wrap .swiper_btn_box .swiper_btn.prev',
-                nextEl : '.photo .photo_wrap .swiper_btn_box .swiper_btn.next',
-            },
-            pagination : {
-                el : '.photo .photo_wrap .swiper_btn_box',
-                type : 'custom',
-                renderCustom : function (swiper, current, total) {
-                    $('.photo .photo_wrap .swiper_btn_box .progressbar .gauge').css('width', (current / total) * 100 + '%');
+            //포토갤러리 스와이퍼 시작
+            var $PhotoSwiper = new Swiper('.photo .photo_wrap .photo_swiper_wrap .swiper-container', {
+                slidesPerView : 'auto',  //slick 에서 사용하는 variableWidth 처럼 사용하기 위함, width 지정할 것
+                spaceBetween : 0,  //오른쪽 마진값(px), 0으로 놓을 시 css 지정 가능
+                touchRatio : true,  //드래그 사용여부
+                resistance : true, //슬라이드 터치 저항 여부
+                autoplay : {
+                    delay : 3000  //자동 넘어가는 시간
+                },
+                speed : 1000,  //넘어가는 속도
+                loop : true,  //무한루프
+                navigation : {
+                    prevEl : '.photo .photo_wrap .swiper_btn_box .swiper_btn.prev',
+                    nextEl : '.photo .photo_wrap .swiper_btn_box .swiper_btn.next'
+                },
+                pagination : {
+                    el : '.photo .photo_wrap .swiper_btn_box',
+                    type : 'custom',
+                    renderCustom : function (swiper, current, total) {
+                        $('.photo .photo_wrap .swiper_btn_box .progressbar .gauge').css('width', (current / total) * 100 + '%');
+                    }
                 }
-            }
-        });
-        //포토갤러리 스와이퍼 끝
-
+            });
+            //포토갤러리 스와이퍼 끝
+        }, 1)
 
         $window.on('screen:tablet screen:phone', function (event) {
 
