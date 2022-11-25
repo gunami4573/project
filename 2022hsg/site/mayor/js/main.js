@@ -37,7 +37,7 @@
                 }, 100);
             });
             $DailySlideList.slick({
-                autoplay : true,
+                autoplay : false,
                 dots : false,
                 arrows : false,
                 slidesToShow : 3,
@@ -51,7 +51,12 @@
                 pauseOnFocus : true,
                 vertical : true, //세로모드 유무
                 verticalSwiping : true, //세로일때 터치 유무
-                responsive: [{}]
+                responsive: [{
+                    breakpoint : 1301,
+                    settings : {
+                        slidesToShow : 4
+                    }
+                }]
             });
             $DailySlideList.on('wheel', function(e){
                 e.preventDefault();
