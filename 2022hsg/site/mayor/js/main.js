@@ -56,6 +56,11 @@
                     settings : {
                         slidesToShow : 4
                     }
+                },{
+                    breakpoint : 801,
+                    settings : {
+                        slidesToShow : 3
+                    }
                 }]
             });
             $DailySlideList.on('wheel', function(e){
@@ -129,9 +134,11 @@
                 spaceBetween : 0,  //오른쪽 마진값(px), 0으로 놓을 시 css 지정 가능
                 touchRatio : true,  //드래그 사용여부
                 resistance : true, //슬라이드 터치 저항 여부
+                /*
                 autoplay : {
                     delay : 5000  //자동 넘어가는 시간
                 },
+                */
                 speed : 1500,  //넘어가는 속도
                 loop : true,  //무한루프
                 navigation : {
