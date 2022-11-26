@@ -124,6 +124,11 @@
                         $('.promise .promise_wrap .swiper_btn_box .number_box .total').text(ZeroOver(total));  //total 앞에 0 필요시
                         $('.promise .promise_wrap .swiper_btn_box .progressbar .gauge').css('width', (current / total) * 100 + '%');
                     }
+                },
+                breakpoints : {
+                    640 : {
+                        slidesPerView : 1
+                    }
                 }
             });
             //민선8기 100대 공약 스와이퍼 끝
