@@ -37,7 +37,7 @@
                 }, 100);
             });
             $DailySlideList.slick({
-                autoplay : false,
+                autoplay : true,
                 dots : false,
                 arrows : false,
                 slidesToShow : 3,
@@ -139,27 +139,50 @@
                 spaceBetween : 0,  //오른쪽 마진값(px), 0으로 놓을 시 css 지정 가능
                 touchRatio : true,  //드래그 사용여부
                 resistance : true, //슬라이드 터치 저항 여부
-                /*
                 autoplay : {
                     delay : 5000  //자동 넘어가는 시간
                 },
-                */
                 speed : 1500,  //넘어가는 속도
                 loop : true,  //무한루프
                 navigation : {
                     prevEl : '.photo .photo_wrap .swiper_btn_box .swiper_btn.prev',
                     nextEl : '.photo .photo_wrap .swiper_btn_box .swiper_btn.next'
-                },
-                pagination : {
-                    el : '.photo .photo_wrap .swiper_btn_box',
-                    type : 'custom',
-                    renderCustom : function (swiper, current, total) {
-                        $('.photo .photo_wrap .swiper_btn_box .progressbar .gauge').css('width', (current / total) * 100 + '%');
-                    }
                 }
             });
             //포토갤러리 스와이퍼 끝
         }, 1)
+
+        //포토갤러리 800부터 슬릭 시작
+        var $PhotoProgressBarGauge = $('.photo .photo_wrap .photo_slide_wrap .photo_slide_control .progressbar .gauge'),
+            percent;
+        var $PhotoslideList = $('.photo .photo_wrap .photo_slide_wrap .photo_slide_list');
+        $PhotoslideList.on('init', function(event, slick, currentSlide, nextSlide){
+            percent = ((slick.currentSlide+1) / (slick.slideCount)) * 100;
+            $PhotoProgressBarGauge.css('width', percent + '%');
+        });
+        $PhotoslideList.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            percent = ((nextSlide+1) / (slick.slideCount)) * 100;
+            $PhotoProgressBarGauge.css('width', percent + '%');
+        });
+        $PhotoslideList.slick({
+            autoplay : true,
+            dots : false,
+            arrows : true,
+            prevArrow : $('.photo .photo_wrap .photo_slide_wrap .photo_slide_control .prev'),
+            nextArrow : $('.photo .photo_wrap .photo_slide_wrap .photo_slide_control .next'),
+            slidesToShow : 1,
+            slidesPerRow : 3,
+            slidesToScroll : 1,
+            infinite : true,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
+            zIndex : 1,
+            pauseOnHover : true,
+            pauseOnFocus : true,
+            responsive: [{}]
+        });
+        //포토갤러리 800부터 슬릭 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
