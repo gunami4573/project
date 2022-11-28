@@ -132,27 +132,9 @@
                 }
             });
             //민선8기 100대 공약 스와이퍼 끝
-
-            //포토갤러리 스와이퍼 시작
-            var $PhotoSwiper = new Swiper('.photo .photo_wrap .photo_swiper_wrap .swiper-container', {
-                slidesPerView : 'auto',  //slick 에서 사용하는 variableWidth 처럼 사용하기 위함, width 지정할 것
-                spaceBetween : 0,  //오른쪽 마진값(px), 0으로 놓을 시 css 지정 가능
-                touchRatio : true,  //드래그 사용여부
-                resistance : true, //슬라이드 터치 저항 여부
-                autoplay : {
-                    delay : 5000  //자동 넘어가는 시간
-                },
-                speed : 1500,  //넘어가는 속도
-                loop : true,  //무한루프
-                navigation : {
-                    prevEl : '.photo .photo_wrap .swiper_btn_box .swiper_btn.prev',
-                    nextEl : '.photo .photo_wrap .swiper_btn_box .swiper_btn.next'
-                }
-            });
-            //포토갤러리 스와이퍼 끝
         }, 1)
 
-        //포토갤러리 800부터 슬릭 시작
+        //포토갤러리 슬릭 시작
         var $PhotoProgressBarGauge = $('.photo .photo_wrap .photo_slide_wrap .photo_slide_control .progressbar .gauge'),
             percent;
         var $PhotoslideList = $('.photo .photo_wrap .photo_slide_wrap .photo_slide_list');
@@ -165,7 +147,9 @@
             $PhotoProgressBarGauge.css('width', percent + '%');
         });
         $PhotoslideList.slick({
-            autoplay : true,
+            autoplay : false,
+            autoplaySpeed : 3000,
+            speed : 1000,
             dots : false,
             arrows : true,
             prevArrow : $('.photo .photo_wrap .photo_slide_wrap .photo_slide_control .prev'),
@@ -180,9 +164,14 @@
             zIndex : 1,
             pauseOnHover : true,
             pauseOnFocus : true,
-            responsive: [{}]
+            responsive: [{
+                breakpoint : 801,
+                settings : {
+
+                }
+            }]
         });
-        //포토갤러리 800부터 슬릭 끝
+        //포토갤러리 슬릭 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
