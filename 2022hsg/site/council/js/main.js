@@ -18,6 +18,7 @@
             $ImgTypeVisualSlideList.on('init', function(event, slick, currentSlide){
                 var $currentslide = $(slick.$slides[0]);
                 setTimeout(function(){
+                    $html.addClass('hsg_council');
                     $ImgTypeVisualSlideList.addClass('title_loading');
                     $currentslide.addClass('img_scale');
                 }, 1);
