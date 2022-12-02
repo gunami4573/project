@@ -66,9 +66,9 @@
                 slidesPerRow : 7,
                 slidesToScroll : 1,
                 infinite : false,
-                swipe : true,
-                swipeToSlide : true,
-                draggable : true,
+                swipe : false,
+                swipeToSlide : false,
+                draggable : false,
                 zIndex : 1,
                 variableWidth : true,
                 pauseOnHover : true,
@@ -92,6 +92,10 @@
                 $OtherTabItem.addClass('active');
                 $MyTabItem.removeClass('active');
                 $OtherConItem.removeClass('active');
+                $OtherConItem.removeClass('ani_active');
+                setTimeout(function(){
+                    $MyConItem.addClass('ani_active');
+                }, 100);
                 $MyConItem.addClass('active');
                 $MySlideList.slick('setPosition');
             }
