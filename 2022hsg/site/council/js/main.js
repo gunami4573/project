@@ -20,10 +20,12 @@
             $ImgTypeVisualSlideList.on('init', function(event, slick, currentSlide){
                 var $currentslide = $(slick.$slides[0]);
                 setTimeout(function(){
-                    $html.addClass('hsg_council');
                     $ImgTypeVisualSlideList.addClass('title_loading');
                     $currentslide.addClass('img_scale');
                 }, 1);
+                setTimeout(function(){
+                    $html.addClass('hsg_council');
+                }, 200);
             });
             $ImgTypeVisualSlideList.slick({
                 autoplay : true,
@@ -155,7 +157,13 @@
                 $FakeSelectBtnText = $FakeSelectBtn.find('em'),
                 $MyTagSelect = $OpenFakeSelectBox.find('select'),
                 $MyTagOption = $MyTagSelect.find('option').eq(MySelectItemIndex),
-                $OtherTagOption = $MyTagOption.siblings('option');
+                $OtherTagOption = $MyTagOption.siblings('option'),
+                $SelectInner = $OpenFakeSelectBox.parent('.select_inner'),
+                $DailySelectBox = $SelectInner.parent('.daily_select_box'),
+                $DailyCalendarBox = $DailySelectBox.siblings('.daily_calendar_box'),
+                $CalendarList = $DailyCalendarBox.find('.calendar_list'),
+                $CalendarItem = $CalendarList.find('.calendar_item').eq(MySelectItemIndex),
+                $OtherCalendarItem = $CalendarItem.siblings('.calendar_item');
             if(!IsActive){
                 $OtherTagOption.removeAttr('selected');
                 $MyTagOption.attr('selected', 'selected');
@@ -167,9 +175,37 @@
                 $FakeSelectList.slideUp(250);
                 $FakeSelectBtn.attr('title', '목록열기');
                 $FakeSelectBtnText.empty().text($ThisText);
+                $OtherCalendarItem.removeClass('active');
+                $CalendarItem.addClass('active');
             }
         });
         //비주얼 주차 선택 끝
+
+
+        //자주 찾는 서비스 슬라이드 시작
+        var $ServiceSlideList = $('.service .service_wrap .service_slide_wrap .service_slide_list');
+        $ServiceSlideList.slick({
+            autoplay : false,
+            autoplaySpeed : 4000,
+            speed : 2000,
+            arrows : true,
+            prevArrow : $('.service .service_wrap .service_slide_wrap .service_slide_control .prev'),
+            nextArrow : $('.service .service_wrap .service_slide_wrap .service_slide_control .next'),
+            slidesToShow : 1,
+            rows : 1,
+            slidesPerRow : 8,
+            slidesToScroll : 1,
+            infinite : true,
+            swipe : false,
+            swipeToSlide : false,
+            draggable : false,
+            zIndex : 1,
+            pauseOnHover : true,
+            pauseOnFocus : true,
+            variableWidth : true,
+            responsive: [{}]
+        });
+        //자주 찾는 서비스 슬라이드 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
