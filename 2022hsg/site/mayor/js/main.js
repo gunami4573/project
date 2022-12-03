@@ -19,7 +19,7 @@
                 var $this = $(this),
                     ThisOffSet = $this.offset(),
                     ThisOffSetTop = ThisOffSet.top;
-                if(ScrollLocation+400 > ThisOffSetTop){
+                if(ScrollLocation + 600 > ThisOffSetTop){
                     $this.addClass('scroll_ani');
                 }
             });
@@ -147,7 +147,7 @@
             $PhotoProgressBarGauge.css('width', percent + '%');
         });
         $PhotoslideList.slick({
-            autoplay : false,
+            autoplay : true,
             autoplaySpeed : 3000,
             speed : 1000,
             dots : false,
