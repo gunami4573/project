@@ -229,6 +229,7 @@
                 $TotalSlideList = $TotalSlideWrap.find('.total_slide_list');
             $TotalSlideList.slick({
                 autoplay : true,
+                autoplaySpeed : 4000,
                 dots : false,
                 arrows : false,
                 slidesToShow : 3,
