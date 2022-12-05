@@ -282,6 +282,41 @@
         });
         //(의회소식, 의정활동, 주간동정)게시판 탭메뉴 끝
 
+        //(갤러리)게시판 슬라이드 시작
+        var $GallerySlideList = $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_list');
+        $GallerySlideList.slick({
+            autoplay : true,
+            autoplaySpeed : 3000,
+            dots : false,
+            arrows : true,
+            prevArrow : $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control .prev'),
+            nextArrow : $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control .next'),
+            slidesToShow : 3,
+            slidesToScroll : 1,
+            infinite : true,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
+            zIndex : 1,
+            pauseOnHover : true,
+            pauseOnFocus : true,
+            variableWidth : true,
+            responsive: [{}]
+        });
+        $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control .prev').on('mouseover', function(){
+            $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control').addClass('prev_over');
+        });
+        $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control .prev').on('mouseleave', function(){
+            $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control').removeClass('prev_over');
+        });
+        $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control .next').on('mouseover', function(){
+            $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control').removeClass('prev_over');
+        });
+        $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control .next').on('mouseleave', function(){
+            $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control').removeClass('prev_over');
+        });
+        //(갤러리)게시판 슬라이드 끝
+
 
         $window.on('screen:tablet screen:phone', function (event) {
 
