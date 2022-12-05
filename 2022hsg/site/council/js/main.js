@@ -285,7 +285,7 @@
         //(갤러리)게시판 슬라이드 시작
         var $GallerySlideList = $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_list');
         $GallerySlideList.slick({
-            autoplay : true,
+            autoplay : false,
             autoplaySpeed : 3000,
             dots : false,
             arrows : true,
@@ -301,7 +301,17 @@
             pauseOnHover : true,
             pauseOnFocus : true,
             variableWidth : true,
-            responsive: [{}]
+            responsive: [{
+                breakpoint : 1451,
+                settings : {
+                    slidesToShow : 2
+                }
+            },{
+                breakpoint : 1111,
+                settings : {
+                    slidesToShow : 1
+                }
+            }]
         });
         $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control .prev').on('mouseover', function(){
             $('.gallery .gallery_wrap .gallery_slide_wrap .gallery_slide_control').addClass('prev_over');
