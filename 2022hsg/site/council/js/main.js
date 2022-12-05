@@ -79,7 +79,7 @@
             });
 
             $PersonTypeVisualSlideList.slick({
-                autoplay : false,
+                autoplay : true,
                 dots : false,
                 arrows : false,
                 slidesToShow : 1,
@@ -93,7 +93,20 @@
                 variableWidth : true,
                 pauseOnHover : true,
                 pauseOnFocus : true,
-                responsive: [{}]
+                responsive: [{
+                    breakpoint : 1001,
+                    settings : {
+                        vertical : true, //세로모드 유무
+                        verticalSwiping : true, //세로일때 터치 유무
+                        slidesToShow : 4,
+                        slidesPerRow : 1,
+                        infinite : true,
+                        swipe : true,
+                        swipeToSlide : true,
+                        draggable : true,
+                        variableWidth : false
+                    }
+                }]
             });
         });
         $('.visual .visual_wrap .visual_tab_list .visual_tab_item button.visual_tab_btn').on('click', function(){
