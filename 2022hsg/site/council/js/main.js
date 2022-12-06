@@ -106,6 +106,19 @@
                         draggable : true,
                         variableWidth : false
                     }
+                },{
+                    breakpoint : 641,
+                    settings : {
+                        vertical : true, //세로모드 유무
+                        verticalSwiping : true, //세로일때 터치 유무
+                        slidesToShow : 3,
+                        slidesPerRow : 1,
+                        infinite : true,
+                        swipe : true,
+                        swipeToSlide : true,
+                        draggable : true,
+                        variableWidth : false
+                    }
                 }]
             });
         });
@@ -212,9 +225,9 @@
         //자주 찾는 서비스 슬라이드 시작
         var $ServiceSlideList = $('.service .service_wrap .service_slide_wrap .service_slide_list');
         $ServiceSlideList.slick({
-            autoplay : false,
-            autoplaySpeed : 4000,
-            speed : 2000,
+            autoplay : true,
+            autoplaySpeed : 2000,
+            speed : 800,
             arrows : true,
             prevArrow : $('.service .service_wrap .service_slide_wrap .service_slide_control .prev'),
             nextArrow : $('.service .service_wrap .service_slide_wrap .service_slide_control .next'),
@@ -230,7 +243,27 @@
             pauseOnHover : true,
             pauseOnFocus : true,
             variableWidth : true,
-            responsive: [{}]
+            responsive: [{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 5,
+                    slidesPerRow : 1,
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    variableWidth : false
+                }
+            },{
+                breakpoint : 481,
+                settings : {
+                    slidesToShow : 3,
+                    slidesPerRow : 1,
+                    swipe : true,
+                    swipeToSlide : true,
+                    draggable : true,
+                    variableWidth : false
+                }
+            }]
         });
         //자주 찾는 서비스 슬라이드 끝
 
@@ -321,6 +354,16 @@
                 }
             },{
                 breakpoint : 1111,
+                settings : {
+                    slidesToShow : 1
+                }
+            },{
+                breakpoint : 1001,
+                settings : {
+                    slidesToShow : 2
+                }
+            },{
+                breakpoint : 958,
                 settings : {
                     slidesToShow : 1
                 }
