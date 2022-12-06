@@ -289,7 +289,12 @@
                 pauseOnFocus : true,
                 vertical : true, //세로모드 유무
                 verticalSwiping : true, //세로일때 터치 유무
-                responsive: [{}]
+                responsive: [{
+                    breakpoint : 641,
+                    settings : {
+                        slidesToShow : 4
+                    }
+                }]
             });
             $TotalSlideList.on('wheel', function(e){
                 e.preventDefault();
@@ -366,6 +371,13 @@
                 breakpoint : 958,
                 settings : {
                     slidesToShow : 1
+                }
+            },{
+                breakpoint : 958,
+                settings : {
+                    slidesToShow : 1,
+                    variableWidth : false,
+                    fade : true
                 }
             }]
         });
