@@ -11,6 +11,59 @@
 
         //여기서부터 코드 작성해주세요
 
+        //체험프로그램 탭 및 슬라이드 시작
+        var $TotalConItem = $('.play .play_wrap .play_total_wrap .total_con_box .total_con_list .total_con_item');
+        $TotalConItem.each(function(){
+            var $this = $(this),
+                $TotalSlideWrap = $this.find('.total_slide_wrap'),
+                $TotalSlideList = $TotalSlideWrap.find('.total_slide_list'),
+                $TotalSlideControl = $TotalSlideWrap.find('.total_slide_control');
+            $TotalSlideList.slick({
+                autoplay : false,
+                dots : false,
+                arrows : true,
+                prevArrow : $TotalSlideControl.find('.prev'),
+                nextArrow : $TotalSlideControl.find('.next'),
+                slidesToShow : 3,
+                slidesToScroll : 1,
+                infinite : true,
+                swipe : true,
+                swipeToSlide : true,
+                draggable : true,
+                zIndex : 1,
+                pauseOnHover : true,
+                pauseOnFocus : true,
+                variableWidth : true,
+                responsive: [{}]
+            });
+        });
+        $('.play .play_wrap .play_total_wrap .total_tab_box .total_tab_list .total_tab_item button.total_tab_btn').on('click', function(){
+            var $this = $(this),
+                $MyTotalTabItem = $this.parent('.total_tab_item'),
+                IsActive = $MyTotalTabItem.is('.active'),
+                MyTotalTabItemIndex = $MyTotalTabItem.index(),
+                $OtherTotalTabItem = $MyTotalTabItem.siblings('.total_tab_item'),
+                $OtherTotalTabBtn = $OtherTotalTabItem.find('button.total_tab_btn'),
+                $TotalTabList = $MyTotalTabItem.parent('.total_tab_list'),
+                $TotalTabBox = $TotalTabList.parent('.total_tab_box'),
+                $TotalConBox = $TotalTabBox.siblings('.total_con_box'),
+                $TotalConList = $TotalConBox.find('.total_con_list'),
+                $MyTotalConItem = $TotalConList.find('.total_con_item').eq(MyTotalTabItemIndex),
+                $OtherTotalConItem = $MyTotalConItem.siblings('.total_con_item'),
+                $MyTotalSlideWrap = $MyTotalConItem.find('.total_slide_wrap'),
+                $MyTotalSlideList = $MyTotalSlideWrap.find('.total_slide_list');
+            if(!IsActive){
+                $OtherTotalTabItem.removeClass('active');
+                $MyTotalTabItem.addClass('active');
+                $OtherTotalTabBtn.removeAttr('title');
+                $this.attr('title', '선택됨');
+                $OtherTotalConItem.removeClass('active');
+                $MyTotalConItem.addClass('active');
+                $MyTotalSlideList.slick('setPosition');
+            }
+        });
+        //체험프로그램 탭 및 슬라이드 끝
+
 
         $window.on('screen:tablet screen:phone', function (event) {
 
