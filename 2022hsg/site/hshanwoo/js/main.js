@@ -29,7 +29,7 @@
                 $TotalProgressBar.css('width', percent + '%');
             });
             $TotalSlideList.slick({
-                autoplay : false,
+                autoplay : true,
                 dots : false,
                 arrows : true,
                 prevArrow : $TotalSlideControl.find('.prev'),
