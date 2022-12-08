@@ -17,7 +17,17 @@
             var $this = $(this),
                 $TotalSlideWrap = $this.find('.total_slide_wrap'),
                 $TotalSlideList = $TotalSlideWrap.find('.total_slide_list'),
-                $TotalSlideControl = $TotalSlideWrap.find('.total_slide_control');
+                $TotalSlideControl = $TotalSlideWrap.find('.total_slide_control'),
+                $TotalProgressBar = $TotalSlideControl.find('.progressbar').find('i'),
+                percent;
+            $TotalSlideList.on('init', function(event, slick, currentSlide, nextSlide) {
+                percent = ((slick.currentSlide+1) / (slick.slideCount)) * 100;
+                $TotalProgressBar.css('width', percent + '%');
+            });
+            $TotalSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                percent = ((nextSlide+1) / (slick.slideCount)) * 100;
+                $TotalProgressBar.css('width', percent + '%');
+            });
             $TotalSlideList.slick({
                 autoplay : false,
                 dots : false,
