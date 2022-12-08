@@ -100,7 +100,17 @@
                 pauseOnHover : true,
                 pauseOnFocus : true,
                 variableWidth : true,
-                responsive: [{}]
+                responsive: [{
+                    breakpoint : 1801,
+                    settings : {
+                        slidesToShow : 2
+                    }
+                },{
+                    breakpoint : 1301,
+                    settings : {
+                        slidesToShow : 1
+                    }
+                }]
             });
         });
         $('.play .play_wrap .play_total_wrap .total_tab_box .total_tab_list .total_tab_item button.total_tab_btn').on('click', function(){
