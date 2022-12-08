@@ -11,6 +11,60 @@
 
         //여기서부터 코드 작성해주세요
 
+        //비주얼 슬라이드 시작
+        var $VisualSlideList = $('.visual .visual_wrap .visual_slide_wrap .visual_slide_list');
+        $VisualSlideList.on('init', function(event, slick, currentSlide, nextSlide) {
+            setTimeout(function(){
+                $('.visual .visual_wrap .visual_deco').addClass('deco_ani');
+            }, 100);
+            setTimeout(function(){
+                $('.visual .visual_wrap').addClass('visual_ani');
+            }, 500);
+        });
+        $VisualSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $('.visual .visual_wrap').removeClass('visual_ani');
+            setTimeout(function(){
+                $('.visual .visual_wrap').addClass('visual_ani');
+            }, 500);
+        });
+        $VisualSlideList.slick({
+            autoplay : true,
+            autoplaySpeed : 3000,
+            speed : 1000,
+            dots : false,
+            arrows : true,
+            prevArrow : $('.visual .visual_wrap .visual_slide_control .prev'),
+            nextArrow : $('.visual .visual_wrap .visual_slide_control .next'),
+            autoArrow : $('.visual .visual_wrap .visual_slide_control .auto'),
+            pauseText : '정지',
+            playText : '재생',
+            total : $('.visual .visual_wrap .visual_slide_control .count_box .total'),
+            current : $('.visual .visual_wrap .visual_slide_control .count_box .current'),
+            customState : function(state) {
+                //현재 슬라이드 위치가 10보다 작을 때
+                if(state.current < 10) {
+                    state.current = '0' + state.current;
+                }
+                //슬라이드 갯수가 10보다 작을 때
+                if(state.total < 10) {
+                    state.total = '0' + state.total;
+                }
+                return state;
+            },
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            infinite : true,
+            swipe : true,
+            swipeToSlide : true,
+            draggable : true,
+            zIndex : 1,
+            fade : true,
+            pauseOnHover : true,
+            pauseOnFocus : true,
+            responsive: [{}]
+        });
+        //비주얼 슬라이드 끝
+
         //체험프로그램 탭 및 슬라이드 시작
         var $TotalConItem = $('.play .play_wrap .play_total_wrap .total_con_box .total_con_list .total_con_item');
         $TotalConItem.each(function(){
@@ -30,6 +84,8 @@
             });
             $TotalSlideList.slick({
                 autoplay : true,
+                autoplaySpeed : 3000,
+                speed : 1000,
                 dots : false,
                 arrows : true,
                 prevArrow : $TotalSlideControl.find('.prev'),
