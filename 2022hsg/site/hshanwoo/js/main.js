@@ -83,7 +83,7 @@
                 $TotalProgressBar.css('width', percent + '%');
             });
             $TotalSlideList.slick({
-                autoplay : true,
+                autoplay : false,
                 autoplaySpeed : 3000,
                 speed : 1000,
                 dots : false,
@@ -106,7 +106,7 @@
                         slidesToShow : 2
                     }
                 },{
-                    breakpoint : 1301,
+                    breakpoint : 1201,
                     settings : {
                         slidesToShow : 1
                     }
