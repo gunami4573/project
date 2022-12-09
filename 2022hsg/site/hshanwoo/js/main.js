@@ -28,7 +28,7 @@
             }, 500);
         });
         $VisualSlideList.slick({
-            autoplay : true,
+            autoplay : false,
             autoplaySpeed : 3000,
             speed : 1000,
             dots : false,
@@ -109,6 +109,11 @@
                     breakpoint : 1201,
                     settings : {
                         slidesToShow : 1
+                    }
+                },{
+                    breakpoint : 1001,
+                    settings : {
+                        slidesToShow : 2
                     }
                 }]
             });
