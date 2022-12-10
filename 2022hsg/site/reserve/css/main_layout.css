@@ -30,14 +30,22 @@
     to{transform:scale(1);transform-origin:center center;}
 }
 .visual_search .total_wrap .visual_wrap .img_wrap i{display:block;position:absolute;top:0;left:calc(50% - 960px);width:1920px;height:100%;background-repeat:no-repeat;background-position:left top;background-size:contain;font-size:0;line-height:0;box-sizing:border-box;}
-.visual_search .total_wrap .visual_wrap .img_wrap i{animation-name:visual-img;animation-duration:1000ms;animation-delay:500ms;animation-fill-mode:both;animation-timing-function:ease-out;}
+.visual_search .total_wrap .visual_wrap .img_wrap i{animation-name:visual-img;animation-duration:1000ms;animation-delay:500ms;animation-timing-function:ease-out;animation-fill-mode:both;}
 .visual_search .total_wrap .visual_wrap .title_wrap{display:block;position:absolute;top:0;left:50%;transform:translateX(-50%);width:1500px;margin:0 auto;font-size:0;line-height:0;text-align:right;box-sizing:border-box;}
 .visual_search .total_wrap .visual_wrap .title_wrap .text_inner{display:inline-block;position:relative;width:800px;padding-top:170px;font-size:0;line-height:0;text-align:left;vertical-align:top;box-sizing:border-box;}
 .visual_search .total_wrap .visual_wrap .title_wrap .text_inner span{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .visual_search .total_wrap .visual_wrap .title_wrap .text_inner span em{display:inline-block;position:relative;vertical-align:top;box-sizing:border-box;}
 .visual_search .total_wrap .visual_wrap .title_wrap .text_inner span em + em{margin-left:16px;}
+@keyframes visual-text {
+    0%{letter-spacing:0.4em;opacity:0;}
+    100%{letter-spacing:-0.03em;opacity:1;}
+}
 .visual_search .total_wrap .visual_wrap .title_wrap .text_inner .black{font-size:50px;color:#333444;line-height:66px;letter-spacing:-0.03em;font-weight:400;font-family:'SB';}
 .visual_search .total_wrap .visual_wrap .title_wrap .text_inner .navy em{font-size:55px;color:#1b1464;line-height:66px;letter-spacing:-0.03em;font-weight:600;font-family:'SB';}
+.visual_search .total_wrap .visual_wrap .title_wrap .text_inner .black,
+.visual_search .total_wrap .visual_wrap .title_wrap .text_inner .navy em{animation-name:visual-text;animation-duration:700ms;animation-timing-function:cubic-bezier(0.215, 0.610, 0.355, 1.000);animation-fill-mode:both;}
+.visual_search .total_wrap .visual_wrap .title_wrap .text_inner .black{animation-delay:1000ms;}
+.visual_search .total_wrap .visual_wrap .title_wrap .text_inner .navy em{animation-delay:1400ms;}
 
 
 
