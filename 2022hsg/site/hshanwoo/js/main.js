@@ -28,7 +28,7 @@
             }, 500);
         });
         $VisualSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             autoplaySpeed : 3000,
             speed : 1500,
             dots : false,
@@ -83,7 +83,7 @@
                 $TotalProgressBar.css('width', percent + '%');
             });
             $TotalSlideList.slick({
-                autoplay : false,
+                autoplay : true,
                 autoplaySpeed : 3000,
                 speed : 1000,
                 dots : false,
