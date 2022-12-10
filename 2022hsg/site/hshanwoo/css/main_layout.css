@@ -2,7 +2,7 @@
 
 /* (주)한신정보기술 박남규 - 2022.12 */
 
-/* 횡성 군의회 전용 폰트 추가 시작 */
+/* 횡성 한우체험관 전용 폰트 추가 시작 */
 /* NotoKR */
 @font-face{
     font-family:'NotoKR';
@@ -67,7 +67,13 @@
     src:url("../font/TmoneyRoundWindExtraBold.woff2") format('woff2'),
     url("../font/TmoneyRoundWindExtraBold.woff") format('woff');
 }
-/* 횡성 군의회 전용 폰트 추가 끝 */
+/* 횡성 한우체험관 전용 폰트 추가 끝 */
+
+/* 횡성 한우체험관 상단 깨기 시작 */
+@media screen and (max-width:1000px){
+    .header_box:before{display:none;}
+}
+/* 횡성 한우체험관 상단 깨기 끝 */
 
 /* 비주얼 영역 시작 */
 .rowgroup1{display:block;position:relative;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
@@ -153,7 +159,29 @@
     .visual .visual_wrap .visual_slide_control .auto{margin-left:5px;}
 }
 @media screen and (max-width:640px){
-
+    .visual .visual_wrap .visual_deco{bottom:0;height:74px;}
+    .visual .visual_wrap .visual_deco:before{left:calc(50% - 340px);background-image:url(../images/main/visual_deco_bg_360.png);background-position:left top;}
+    .visual .visual_wrap .visual_deco.deco_ani:before{width:680px;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .visual_slide_inner .title_wrap{top:7vw;width:94%;padding-left:8.4vw;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .slick-slide[data-slick-index="0"] .visual_slide_item .visual_slide_inner .title_wrap .img_title{width:38.8vw;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .slick-slide[data-slick-index="1"] .visual_slide_item .visual_slide_inner .title_wrap .img_title{width:38.8vw;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .slick-slide[data-slick-index="2"] .visual_slide_item .visual_slide_inner .title_wrap .img_title{width:38.8vw;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .visual_slide_inner .title_wrap .middle_title{margin-top:2.66%;padding-left:4px;font-size:5.23vw;line-height:1.03em;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .visual_slide_inner .title_wrap .bottom_desc{max-width:86%;margin-top:3%;padding-left:6px;font-size:2.52vw;line-height:1.34em;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .visual_slide_inner .img_wrap{height:484px;padding:0;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .visual_slide_inner .img_wrap i{left:calc(50% - 320px);width:640px;height:100%;background-position:left top;background-size:contain;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .slick-slide[data-slick-index="0"] .visual_slide_item .visual_slide_inner .img_wrap i{background-image:url(../images/main/visual_img01_360.jpg) !important;background-position:left top;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .slick-slide[data-slick-index="1"] .visual_slide_item .visual_slide_inner .img_wrap i{background-image:url(https://via.placeholder.com/640x484) !important;}/* 비주얼 임시사진변경 */
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .slick-slide[data-slick-index="2"] .visual_slide_item .visual_slide_inner .img_wrap i{background-image:url(https://via.placeholder.com/640x484) !important;}/* 비주얼 임시사진변경 */
+    .visual .visual_wrap .visual_slide_control{display:none;}
+}
+@media screen and (max-width:480px){
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .visual_slide_inner .title_wrap{top:12.23vw;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .slick-slide[data-slick-index="0"] .visual_slide_item .visual_slide_inner .title_wrap .img_title{width:48.8vw;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .slick-slide[data-slick-index="1"] .visual_slide_item .visual_slide_inner .title_wrap .img_title{width:48.8vw;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .slick-slide[data-slick-index="2"] .visual_slide_item .visual_slide_inner .title_wrap .img_title{width:48.8vw;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .visual_slide_inner .title_wrap .middle_title{font-size:7.23vw;line-height:1.23em;}
+    .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .visual_slide_inner .title_wrap .bottom_desc{font-size:3.62vw;line-height:1.54em;}
 }
 /* 비주얼 영역 끝 */
 
@@ -350,7 +378,7 @@
     .play .play_wrap .play_total_wrap .total_tab_box .total_tab_list .total_tab_item:nth-child(n+3){margin-top:10px;}
 }
 @media screen and (max-width:640px){
-
+    .rowgroup2{margin-top:0;}
 }
 /* 체험프로그램 영역 끝 */
 

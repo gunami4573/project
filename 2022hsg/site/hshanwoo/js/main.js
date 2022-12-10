@@ -30,7 +30,7 @@
         $VisualSlideList.slick({
             autoplay : false,
             autoplaySpeed : 3000,
-            speed : 1000,
+            speed : 1500,
             dots : false,
             arrows : true,
             prevArrow : $('.visual .visual_wrap .visual_slide_control .prev'),
