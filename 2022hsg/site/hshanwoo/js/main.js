@@ -16,7 +16,7 @@
         $VisualSlideList.on('init', function(event, slick, currentSlide, nextSlide) {
             setTimeout(function(){
                 $('.visual .visual_wrap .visual_deco').addClass('deco_ani');
-            }, 100);
+            }, 1);
             setTimeout(function(){
                 $('.visual .visual_wrap').addClass('visual_ani');
             }, 500);
@@ -29,8 +29,8 @@
         });
         $VisualSlideList.slick({
             autoplay : true,
-            autoplaySpeed : 3000,
-            speed : 1500,
+            autoplaySpeed : 4500,
+            speed : 2000,
             dots : false,
             arrows : true,
             prevArrow : $('.visual .visual_wrap .visual_slide_control .prev'),
@@ -83,7 +83,7 @@
                 $TotalProgressBar.css('width', percent + '%');
             });
             $TotalSlideList.slick({
-                autoplay : true,
+                autoplay : false,
                 autoplaySpeed : 3000,
                 speed : 1000,
                 dots : false,
