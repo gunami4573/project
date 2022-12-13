@@ -10,10 +10,81 @@
     $(function () {
 
         //여기서부터 코드 작성해주세요
-
         setTimeout(function(){
             $html.addClass('hsg_reserve');
         }, 100);
+
+        //비주얼 가짜 셀렉트 시작
+        //초기 옵션값에 텍스트 밀어넣기
+        var Index,
+            $ReserveFormSelectType = $('.search_inner .reserve_form.select_type');
+        $ReserveFormSelectType.each(function(){
+            var $this = $(this),
+                $SelectInner = $this.find('.select_inner'),
+                $FakeSelectBox = $SelectInner.find('.fake_select_box'),
+                $FakeSelectList = $FakeSelectBox.find('.fake_select_list'),
+                $FakeSelectItem = $FakeSelectList.find('.fake_select_item'),
+                $FakeSelectItemActive = $FakeSelectItem.siblings('.fake_select_item.active'),
+                StartFakeSelectItemActiveIndex = $FakeSelectItemActive.index(),
+                FakeSelectLength = $FakeSelectItem.length,
+                $RealSelect = $FakeSelectBox.find('select'),
+                $RealOption = $RealSelect.find('option'),
+                $StartRealOption = $RealSelect.find('option').eq(StartFakeSelectItemActiveIndex);
+            $StartRealOption.attr('selected', 'selected');
+            setTimeout(function(){
+                for(Index=0; Index<=FakeSelectLength; Index++){
+                    $RealOption.eq(Index).empty().append($FakeSelectItem.eq(Index).text());
+                }
+            }, 1);
+        });
+        //가짜 셀렉트 목록 열기
+        $('.search_inner .reserve_form.select_type .select_inner .fake_select_box button.fake_select_btn').on('click', function(){
+            var $this = $(this),
+                $ThisFakeSelectBox = $this.parent('.fake_select_box'),
+                $ThisFakeSelectList = $ThisFakeSelectBox.find('.fake_select_list'),
+                IsActive = $ThisFakeSelectBox.is('.active');
+            if(!IsActive){
+                $ThisFakeSelectBox.addClass('active');
+                $ThisFakeSelectList.slideDown(250);
+                $this.attr('title', '목록닫기');
+            }
+            else{
+                $ThisFakeSelectBox.removeClass('active');
+                $ThisFakeSelectList.slideUp(250);
+                $this.attr('title', '목록열기');
+            }
+        });
+        //가짜 셀렉트 목록 열린 버튼 클릭시
+        $(document).on('click', '.search_inner .reserve_form.select_type .select_inner .fake_select_box .fake_select_list .fake_select_item button.fake_select_choice', function(){
+            var $this = $(this),
+                $ThisText = $this.text(),
+                $MySelectItem = $this.parent('.fake_select_item'),
+                MySelectItemIndex = $MySelectItem.index(),
+                IsActive = $MySelectItem.is('.active'),
+                $OtherSelectItem = $MySelectItem.siblings('.fake_select_item'),
+                $OtherSelectChoice = $OtherSelectItem.find('button.fake_select_choice'),
+                $FakeSelectList = $MySelectItem.parent('.fake_select_list'),
+                $OpenFakeSelectBox = $FakeSelectList.parent('.fake_select_box'),
+                $FakeSelectBtn = $FakeSelectList.siblings('button.fake_select_btn'),
+                $FakeSelectBtnText = $FakeSelectBtn.find('em'),
+                $MyTagSelect = $OpenFakeSelectBox.find('select'),
+                $MyTagOption = $MyTagSelect.find('option').eq(MySelectItemIndex),
+                $OtherTagOption = $MyTagOption.siblings('option');
+            if(!IsActive){
+                $OtherTagOption.removeAttr('selected');
+                $MyTagOption.attr('selected', 'selected');
+                $OtherSelectItem.removeClass('active');
+                $MySelectItem.addClass('active');
+                $OtherSelectChoice.removeAttr('title');
+                $this.attr('title', '선택됨');
+                $OpenFakeSelectBox.removeClass('active');
+                $FakeSelectList.slideUp(250);
+                $FakeSelectBtn.attr('title', '목록열기');
+                $FakeSelectBtnText.empty().text($ThisText);
+            }
+        });
+        //비주얼 가짜 셀렉트 끝
+
 
         //빠른예약서비스 탭 및 슬라이드 시작
         var $SpeedConItem = $('.speed .speed_wrap .speed_con_box .con_list .con_item');
