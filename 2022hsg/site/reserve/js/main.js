@@ -156,7 +156,7 @@
                 $BoardSlideWrap = $this.find('.board_slide_wrap'),
                 $BoardSlideList = $BoardSlideWrap.find('.board_slide_list');
             $BoardSlideList.slick({
-                autoplay : true,
+                autoplay : false,
                 autoplaySpeed : 3500,
                 speed : 800,
                 dots : false,
@@ -172,7 +172,17 @@
                 zIndex : 1,
                 pauseOnHover : true,
                 pauseOnFocus : true,
-                responsive: [{}]
+                responsive: [{
+                    breakpoint : 1501,
+                    settings : {
+                        slidesToShow : 3
+                    }
+                },{
+                    breakpoint : 801,
+                    settings : {
+                        slidesToShow : 2
+                    }
+                }]
             });
         });
         $('.board .board_wrap .board_top_wrap .tab_box .tab_list .tab_item button.tab_btn').on('click', function(){
