@@ -187,6 +187,18 @@
                     settings : {
                         slidesToShow : 2
                     }
+                },{
+                    breakpoint : 641,
+                    settings : {
+                        variableWidth : true,
+                        slidesToShow : 2
+                    }
+                },{
+                    breakpoint : 551,
+                    settings : {
+                        variableWidth : true,
+                        slidesToShow : 1
+                    }
                 }]
             });
         });
