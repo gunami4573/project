@@ -118,6 +118,11 @@
                     settings : {
                         slidesToShow : 2
                     }
+                },{
+                    breakpoint : 561,
+                    settings : {
+                        slidesToShow : 1
+                    }
                 }]
             });
         });
