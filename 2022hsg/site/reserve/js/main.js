@@ -139,6 +139,61 @@
         //빠른예약서비스 탭 및 슬라이드 끝
 
 
+        //게시판(공지사항) 탭 및 슬라이드 시작
+        var $BoardConItem = $('.board .board_wrap .con_box .con_list .con_item');
+        $BoardConItem.each(function(){
+            var $this = $(this),
+                $BoardSlideWrap = $this.find('.board_slide_wrap'),
+                $BoardSlideList = $BoardSlideWrap.find('.board_slide_list');
+            $BoardSlideList.slick({
+                autoplay : false,
+                autoplaySpeed : 3500,
+                speed : 800,
+                dots : false,
+                arrows : true,
+                prevArrow : $BoardSlideWrap.find('.prev'),
+                nextArrow : $BoardSlideWrap.find('.next'),
+                slidesToShow : 4,
+                slidesToScroll : 1,
+                infinite : true,
+                swipe : true,
+                swipeToSlide : true,
+                draggable : true,
+                zIndex : 1,
+                pauseOnHover : true,
+                pauseOnFocus : true,
+                responsive: [{}]
+            });
+        });
+        $('.board .board_wrap .board_top_wrap .tab_box .tab_list .tab_item button.tab_btn').on('click', function(){
+            var $this = $(this),
+                $MyBoardTabItem = $this.parent('.tab_item'),
+                IsActive = $MyBoardTabItem.is('.active'),
+                MyBoardTabItemIndex = $MyBoardTabItem.index(),
+                $OtherBoardTabItem = $MyBoardTabItem.siblings('.tab_item'),
+                $OtherBoardTabBtn = $OtherBoardTabItem.find('button.tab_btn'),
+                $BoardTabList = $MyBoardTabItem.parent('.tab_list'),
+                $BoardTabBox = $BoardTabList.parent('.tab_box'),
+                $BoardTopWrap = $BoardTabBox.parent('.board_top_wrap'),
+                $BoardBottomWrap = $BoardTopWrap.siblings('.board_bottom_wrap'),
+                $BoardConBox = $BoardBottomWrap.find('.con_box'),
+                $BoardConList = $BoardConBox.find('.con_list'),
+                $MyBoardConItem = $BoardConList.find('.con_item').eq(MyBoardTabItemIndex),
+                $OtherBoardConItem = $MyBoardConItem.siblings('.con_item'),
+                $MyBoardSlideWrap = $MyBoardConItem.find('.board_slide_wrap'),
+                $MyBoardSlideList = $MyBoardSlideWrap.find('.board_slide_list');
+            if(!IsActive){
+                $OtherBoardTabItem.removeClass('active');
+                $MyBoardTabItem.addClass('active');
+                $OtherBoardTabBtn.removeAttr('title');
+                $this.attr('title', '선택됨');
+                $OtherBoardConItem.removeClass('active');
+                $MyBoardConItem.addClass('active');
+                $MyBoardSlideList.slick('setPosition');
+            }
+        });
+        //게시판(공지사항) 탭 및 슬라이드 끝
+
         $window.on('screen:tablet screen:phone', function (event) {
 
         });
