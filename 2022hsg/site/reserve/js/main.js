@@ -93,7 +93,7 @@
                 $SpeedSlideWrap = $this.find('.speed_slide_wrap'),
                 $SpeedSlideList = $SpeedSlideWrap.find('.speed_slide_list');
             $SpeedSlideList.slick({
-                autoplay : true,
+                autoplay : false,
                 autoplaySpeed : 3500,
                 speed : 800,
                 dots : false,
@@ -108,7 +108,17 @@
                 pauseOnHover : true,
                 pauseOnFocus : true,
                 variableWidth : true,
-                responsive: [{}]
+                responsive: [{
+                    breakpoint : 1601,
+                    settings : {
+                        slidesToShow : 3
+                    }
+                },{
+                    breakpoint : 1201,
+                    settings : {
+                        slidesToShow : 2
+                    }
+                }]
             });
         });
         $('.speed .speed_wrap .speed_tab_box .tab_list .tab_item button.tab_btn').on('click', function(){
@@ -146,7 +156,7 @@
                 $BoardSlideWrap = $this.find('.board_slide_wrap'),
                 $BoardSlideList = $BoardSlideWrap.find('.board_slide_list');
             $BoardSlideList.slick({
-                autoplay : false,
+                autoplay : true,
                 autoplaySpeed : 3500,
                 speed : 800,
                 dots : false,
