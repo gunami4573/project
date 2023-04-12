@@ -1059,7 +1059,7 @@ var chartHsPlugins = {
 };
 
 !function(global, factory) {
-    "object" == typeof exports && "undefined" != typeof module ? module.exports = factory(require("chart.js")) : "function" == typeof define && define.amd ? define([ "chart.js" ], factory) : (global = global || self).ChartStyle = factory(global.Chart);
+    "object" == typeof exports && "undefined" != typeof module ? module.exports = factory(require("chartSample/Chart.js")) : "function" == typeof define && define.amd ? define([ "chartSample/Chart.js" ], factory) : (global = global || self).ChartStyle = factory(global.Chart);
 }(this, function(Chart) {
     "use strict";
     var helpers = (Chart = Chart && Chart.hasOwnProperty("default") ? Chart.default : Chart).helpers, optionsHelpers = helpers.options || {}, optionsHelpers$1 = helpers.extend(optionsHelpers, {
