@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="ChartSample.css" />
+    <title>Chart Sample List</title>
+</head>
+<body>
+    <div id="wrapper">
+        <canvas id="sampleChart01"></canvas>    <!--//#sampleChart01-->
+        <script src="Chart.js"></script>
+        <script src="ChartPlugin.js"></script>
+        <script>
+            var sampleLabel01 = ['A', 'B', 'C', 'D', 'E', 'F'];
+            var sampleDatasets01 = [
+                {
+                    type : 'line',
+                    label : 'Purple Line',
+                    backgroundColor : 'rgba(111, 29, 176, 0.3)',
+                    borderColor : 'rgba(111, 29, 176, 1)',
+                    fill : true, //라인 타입에서 백그라운드 칠할지 말지(막대바 타입에서는 해당X)
+                    data : [
+                        3000, 1000, 3000, 1000, 3000, 1000
+                    ],
+                    yAxisID : 'Left',
+                    pointRadius : 9,
+                    borderWidth : 3
+                },{
+                    type : 'line',
+                    label : 'Green Line',
+                    backgroundColor : 'rgba(34, 227, 192, 0.3)',
+                    borderColor : 'rgba(34, 227, 192, 1)',
+                    fill : true, //라인 타입에서 백그라운드 칠할지 말지(막대바 타입에서는 해당X)
+                    data : [
+                        1000, 3000, 1000, 3000, 1000, 3000
+                    ],
+                    yAxisID : 'Left',
+                    pointRadius : 9,
+                    borderWidth : 3
+                },{
+                    type : 'bar',
+                    label : 'Orange Bar',
+                    backgroundColor : 'rgba(203, 71, 26, 0.5)',
+                    borderColor : 'rgba(203, 71, 26, 1)',
+                    fill : false, //라인 타입에서 백그라운드 칠할지 말지(막대바 타입에서는 해당X)
+                    data : [
+                        30000, 30000, 30000, 30000, 30000, 30000
+                    ],
+                    yAxisID : 'Right',
+                    pointRadius : 9,
+                    borderWidth : 3
+                }
+            ];
+            var sampleOption01 = {
+                responsive : true,  //반응형 여부
+                legend: {
+                    display: true  //dafault true
+                },
+                title: {
+                    display: true,
+                    text: 'NEO Chart Edu Sample-01',
+                    fontSize: 50,  //제목 폰트 크기
+                    fontStyle: 'bold',  //제목 폰트 굵기
+                    fontColor: 'rgba(255, 98, 0, 0.7)',  //제목 폰트 색상
+                    padding: 20  //제목 폰트 여백
+                },
+                showAllTooltips : true,  //말풍선 처음부터 표출 여부
+                tooltips : {
+                    mode : 'index',
+                    intersect : false,  //마우스 올렸을 때 교차지점에만 올렸을 때 말풍선 표출 여부
+                    backgroundColor : 'rgba(5, 13, 234, 0.7)',  //말풍선 배경색
+                    borderColor : '#000',  //말풍선 테두리 색상
+                    borderWidth : 3,  //말풍선 테두리 너비 크기
+                    bodyFontColor : '#fff',  //말풍선 속 텍스트 컬러
+                    cornerRadius : 10,  //border-radius
+                    callbacks: {
+                        label : function(tooltipItem) {
+                            return sampleDatasets01[tooltipItem.datasetIndex].label + " : " + addComma(tooltipItem.yLabel.toString());
+                            //데이터값의 label 값 반환하여 해당 지점의 index 값에 맞는 label 값 표출 , 데이터값 3자리수 이상 넘어갈 시 콤마찍어 값 변환
+                        },
+                        title : function(tooltipItem) {
+                            return;
+                            //return 반환 값 쓰지 않고 label 에 같이 첨부하는 것을 추천
+                            //title 함수 미선언 시 default 자동으로 들어감
+                        }
+                    },
+                    yAlign: tooTips.yAlign,  //말풍선 y축 좌표 정렬
+                    xAlign: tooTips.xAlign  //말풍선 x축 좌표 정렬
+                },
+                scales : {
+                    yAxes : [{
+                        id : 'Left', //값 지정 후 Dataset yAxisID에 사용
+                        position : 'left', //축 위치 지정
+                        ticks : {
+                            min : 0,  //축의 최소값
+                            stepSize : 1000,  //축의 몇씩 증가
+                            max : 4000,  //축의 최대값
+                            padding : 10,  //축의 scaleLabel 텍스트와의 간격
+                            userCallback : function(value, index, values) {
+                                return addComma(value.toString());  //축의 숫자 값 3자리 숫자 당 , 찍기
+                            }
+                        },
+                        scaleLabel : {
+                            display : true,  //축 범례 사용여부
+                            labelString: "Left yAxes Value Ticks",  //축 범례 텍스트
+                            fontSize : 30,  //축 범례 폰트 크기
+                            fontStyle : 'bold',  //축 범례 폰트 굵기
+                            fontColor : 'rgba(0, 111, 255, 0.7)'  //축 범례 폰트 색상
+                        },
+                        gridLines : {
+                            display : false  //해당 축에 그리드라인 사용 여부, ★가급적 같은 축의 양쪽 값이 서로 극명하게 차이 나는 경우 사용안하는 것을 추천, 한쪽 사용 안할 시 전부 사용하지 않는 것을 추천
+                        }
+                    },{
+                        id : 'Right', //값 지정 후 Dataset yAxisID에 사용
+                        position : 'right', //축 위치 지정
+                        ticks : {
+                            min : 0,  //축의 최소값
+                            stepSize : 30000,  //축의 몇씩 증가
+                            max : 60000,  //축의 최대값
+                            padding : 10,  //축의 scaleLabel 텍스트와의 간격
+                            userCallback : function(value, index, values) {
+                                return addComma(value.toString());  //축의 숫자 값 3자리 숫자 당 , 찍기
+                            }
+                        },
+                        scaleLabel : {
+                            display : true,  //축 범례 사용여부
+                            labelString : "Right yAxes Value Ticks",  //축 범례 텍스트
+                            fontSize : 30,  //축 범례 폰트 크기
+                            fontStyle : 'bold',  //축 범례 폰트 굵기
+                            fontColor : 'rgba(0, 111, 255, 0.7)'  //축 범례 폰트 색상
+                        },
+                        gridLines : {
+                            display : false  //해당 축에 그리드라인 사용 여부, ★가급적 같은 축의 양쪽 값이 서로 극명하게 차이 나는 경우 사용안하는 것을 추천, 한쪽 사용 안할 시 전부 사용하지 않는 것을 추천
+                        }
+                    }]
+                },
+                elements : {
+                    line : {
+                        tension : 0.5, //라인형 차트 사용시에 직선:0, 굴곡:0.1 ~~~~~
+                    }
+                }
+            };
+            window.onload = function() {
+                sampleChart01 = creatChart("sampleChart01", "bar", sampleLabel01, sampleDatasets01, sampleOption01);
+                //변수명 상관 X 단, 한 페이지에 여러개의 canvas태그 사용시 변수명과 id 값 다르게 지정
+                //creatChart("canvas태그 아이디값", "그래프의형태[bar, line, horizontalBar]", 라벨값, 데이터값, 그래프옵션);
+            };
+        </script>
+    </div>    <!--//#wrapper-->
+</body>
+</html>
