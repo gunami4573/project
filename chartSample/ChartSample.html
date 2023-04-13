@@ -10,11 +10,12 @@
     <div id="wrapper">
         <canvas id="sampleChart01"></canvas>    <!--//#sampleChart01-->
         <canvas id="sampleChart02"></canvas>    <!--//#sampleChart02-->
+        <canvas id="sampleChart03"></canvas>    <!--//#sampleChart03-->
 
         <script src="Chart.js"></script>
         <script src="ChartPlugin.js"></script>
         <script>
-            //sampleChart01 Start
+            //sampleChart01 Start---------------------------------------------------------------------------------------------------------------------------------------
             var sampleLabel01 = ['A01', 'B01', 'C01', 'D01', 'E01', 'F01'];
             var sampleDatasets01 = [
                 {
@@ -52,7 +53,8 @@
                     ],
                     yAxisID : 'Right',
                     pointRadius : 9,
-                    borderWidth : 3
+                    borderWidth : 3,
+                    barPercentage: 0.2  //막대바 타입에서 너비값(%)
                 }
             ];
             var sampleOption01 = {
@@ -65,17 +67,17 @@
                     text: 'NEO Chart Edu Sample-01',
                     fontSize: 50,  //제목 폰트 크기
                     fontStyle: 'bold',  //제목 폰트 굵기
-                    fontColor: 'rgba(255, 98, 0, 0.7)',  //제목 폰트 색상
+                    fontColor: 'rgba(255, 98, 0, 0.9)',  //제목 폰트 색상
                     padding: 20  //제목 폰트 여백
                 },
                 showAllTooltips : true,  //말풍선 처음부터 표출 여부
                 tooltips : {
                     mode : 'index',
                     intersect : false,  //마우스 올렸을 때 교차지점에만 올렸을 때 말풍선 표출 여부
-                    backgroundColor : 'rgba(5, 13, 234, 0.7)',  //말풍선 배경색
-                    borderColor : '#000',  //말풍선 테두리 색상
+                    backgroundColor : 'rgba(219, 147, 43, 0.8)',  //말풍선 배경색
+                    borderColor : 'rgba(255, 98, 0, 1)',  //말풍선 테두리 색상
                     borderWidth : 3,  //말풍선 테두리 너비 크기
-                    bodyFontColor : '#fff',  //말풍선 속 텍스트 컬러
+                    bodyFontColor : 'rgba(0, 0, 0, 1)',  //말풍선 속 텍스트 컬러
                     cornerRadius : 10,  //border-radius
                     callbacks: {
                         label : function(tooltipItem) {
@@ -109,7 +111,7 @@
                             labelString: "Left yAxes Value Ticks",  //축 범례 텍스트
                             fontSize : 30,  //축 범례 폰트 크기
                             fontStyle : 'bold',  //축 범례 폰트 굵기
-                            fontColor : 'rgba(0, 111, 255, 0.7)'  //축 범례 폰트 색상
+                            fontColor : 'rgba(255, 98, 0, 0.9)'  //축 범례 폰트 색상
                         },
                         gridLines : {
                             display : false  //해당 축에 그리드라인 사용 여부, ★가급적 같은 축의 양쪽 값이 서로 극명하게 차이 나는 경우 사용안하는 것을 추천, 한쪽 사용 안할 시 전부 사용하지 않는 것을 추천
@@ -140,13 +142,14 @@
                 },
                 elements : {
                     line : {
-                        tension : 10, //라인형 차트 사용시에 직선:0, 굴곡:0.1 ~~~~~
+                        tension : 3, //라인형 차트 사용시에 직선:0, 굴곡:0.1 ~~~~~
                     }
                 }
             };
-            //sampleChart01 End
+            //sampleChart01 End-----------------------------------------------------------------------------------------------------------------------------------------
 
-            //sampleChart02 Start
+
+            //sampleChart02 Start---------------------------------------------------------------------------------------------------------------------------------------
             var sampleLabel02 = ['A02', 'B02', 'C02', 'D02', 'E02', 'F02'];
             var sampleDatasets02 = [
                 {
@@ -197,7 +200,7 @@
                     text: 'NEO Chart Edu Sample-02',
                     fontSize: 50,  //제목 폰트 크기
                     fontStyle: 'bold',  //제목 폰트 굵기
-                    fontColor: 'rgba(255, 98, 0, 0.7)',  //제목 폰트 색상
+                    fontColor: 'rgba(0, 98, 255, 0.7)',  //제목 폰트 색상
                     padding: 20  //제목 폰트 여백
                 },
                 showAllTooltips : true,  //말풍선 처음부터 표출 여부
@@ -253,11 +256,128 @@
                     }]
                 }
             };
-            //sampleChart02 End
+            //sampleChart02 End-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+            //sampleChart03 Start---------------------------------------------------------------------------------------------------------------------------------------
+            var sampleLabel03 = ['A03', 'B03', 'C03', 'D03', 'E03', 'F03'];
+            var sampleDatasets03 = [  //sampleChart03 Start (가로형 막대바 그래프 사용시 type 삭제 후 사용
+                {
+                    label : 'Green Dash Bar',
+                    backgroundColor : pattern.draw('dash', 'rgba(25, 81, 8, 0.2)', 'rgba(25, 81, 8, 1)', 20),  //pattern.draw('패턴종류', '백그라운드 색', '패턴 색', 패턴크기)
+                    borderColor : 'rgba(25, 81, 8, 1)',
+                    fill : false, //라인 타입에서 백그라운드 칠할지 말지(막대바 타입에서는 해당X)
+                    data : [
+                        4500, 3000, 2500, 2500, 3000, 4500
+                    ],
+                    pointRadius : 9,
+                    borderWidth : 3,
+                    barPercentage: 0.4,  //막대바 타입에서 너비값(%)
+                    yAxisID : 'Left'
+                },{
+                    label : 'Green Ring Bar',
+                    backgroundColor : pattern.draw('ring', 'rgba(25, 81, 8, 0.4)', 'rgba(25, 81, 8, 1)', 20),  //pattern.draw('패턴종류', '백그라운드 색', '패턴 색', 패턴크기)
+                    borderColor : 'rgba(25, 81, 8, 1)',
+                    fill : true, //라인 타입에서 백그라운드 칠할지 말지(막대바 타입에서는 해당X)
+                    data : [
+                        1000, 3000, 5000, 5000, 3000, 1000
+                    ],
+                    pointRadius : 9,
+                    borderWidth : 3,
+                    barPercentage: 0.4,  //막대바 타입에서 너비값(%)
+                    yAxisID : 'Left'
+                },{
+                    label : 'Green Cross Bar',
+                    backgroundColor : pattern.draw('cross', 'rgba(25, 81, 8, 0.6)', 'rgba(25, 81, 8, 1)', 20),  //pattern.draw('패턴종류', '백그라운드 색', '패턴 색', 패턴크기)
+                    borderColor : 'rgba(25, 81, 8, 1)',
+                    fill : true, //라인 타입에서 백그라운드 칠할지 말지(막대바 타입에서는 해당X)
+                    data : [
+                        4500, 3000, 2500, 2500, 3000, 4500
+                    ],
+                    pointRadius : 9,
+                    borderWidth : 3,
+                    barPercentage: 0.4,  //막대바 타입에서 너비값(%)
+                    yAxisID : 'Left'
+                }
+            ];
+            var sampleOption03 = {
+                responsive : true,  //반응형 여부
+                legend: {
+                    display: true  //dafault true
+                },
+                title: {
+                    display: true,
+                    text: 'NEO Chart Edu Sample-03',
+                    fontSize: 50,  //제목 폰트 크기
+                    fontStyle: 'bold',  //제목 폰트 굵기
+                    fontColor: 'rgba(25, 81, 8, 0.8)',  //제목 폰트 색상
+                    padding: 20  //제목 폰트 여백
+                },
+                tooltips : {
+                    mode : 'index',
+                    intersect : false,  //마우스 올렸을 때 교차지점에만 올렸을 때 말풍선 표출 여부
+                    backgroundColor : 'rgba(25, 81, 8, 0.8)',  //말풍선 배경색
+                    borderColor : '#000',  //말풍선 테두리 색상
+                    borderWidth : 3,  //말풍선 테두리 너비 크기
+                    bodyFontColor : '#fff',  //말풍선 속 텍스트 컬러
+                    cornerRadius : 10,  //border-radius
+                    callbacks: {
+                        label: function(tooltipItem, data) {
+                            return sampleDatasets03[tooltipItem.datasetIndex].label + " : " + addComma(tooltipItem.xLabel.toString()) + "(실제값), " + data.calculatedData[tooltipItem.datasetIndex][tooltipItem.index] + "%(백분율)";
+                        },
+                        title : function(tooltipItem) {
+                            return;
+                            //return 반환 값 쓰지 않고 label 에 같이 첨부하는 것을 추천
+                            //title 함수 미선언 시 default 자동으로 들어감
+                        }
+                    },
+                },
+                scales : {
+                    yAxes : [{
+                        id : 'Left', //값 지정 후 Dataset yAxisID에 사용
+                        position : 'left', //축 위치 지정
+                        stacked : true,  //수치 병합(★병합 시 축의 범위 값 조절 필수)
+                        scaleLabel : {
+                            display : true,  //축 범례 사용여부
+                            labelString: "Left yAxes Value Ticks",  //축 범례 텍스트
+                            fontSize : 30,  //축 범례 폰트 크기
+                            fontStyle : 'bold',  //축 범례 폰트 굵기
+                            fontColor : 'rgba(25, 81, 8, 0.8)'  //축 범례 폰트 색상
+                        }
+                    }],
+                    xAxes : [{
+                        ticks : {
+                            padding : 10,  //축의 scaleLabel 텍스트와의 간격
+                            userCallback : function(value, index, values) {
+                                return addComma(value.toString());  //축의 숫자 값 3자리 숫자 당 , 찍기
+                            }
+                        },
+                        gridLines : {
+                            display : true  //해당 축에 그리드라인 사용 여부, ★가급적 같은 축의 양쪽 값이 서로 극명하게 차이 나는 경우 사용안하는 것을 추천, 한쪽 사용 안할 시 전부 사용하지 않는 것을 추천
+                        },
+                        stacked : true,  //수치 병합(★병합 시 축의 범위 값 조절 필수)
+                        scaleLabel : {
+                            display : true,  //축 범례 사용여부
+                            labelString: "Percent(%)",  //축 범례 텍스트
+                            fontSize : 30,  //축 범례 폰트 크기
+                            fontStyle : 'bold',  //축 범례 폰트 굵기
+                            fontColor : 'rgba(25, 81, 8, 0.8)'  //축 범례 폰트 색상
+                        }
+                    }]
+                },
+                plugins : {
+                    stacked100 : {
+                        enable : true,
+                        replaceTooltipLabel : false
+                    }
+                }
+            };
+            //sampleChart03 End-----------------------------------------------------------------------------------------------------------------------------------------
 
             window.onload = function() {
                 sampleChart01 = creatChart("sampleChart01", "bar", sampleLabel01, sampleDatasets01, sampleOption01);
                 sampleChart02 = creatChart("sampleChart02", "bar", sampleLabel02, sampleDatasets02, sampleOption02);
+                sampleChart03 = creatChart("sampleChart03", "horizontalBar", sampleLabel03, sampleDatasets03, sampleOption03);
                 //변수명 상관 X 단, 한 페이지에 여러개의 canvas태그 사용시 변수명과 id 값 다르게 지정
                 //creatChart("canvas태그 아이디값", "그래프의형태[bar, line, horizontalBar]", 라벨값, 데이터값, 그래프옵션);
             };
