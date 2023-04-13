@@ -320,7 +320,8 @@
                     borderColor : '#000',  //말풍선 테두리 색상
                     borderWidth : 3,  //말풍선 테두리 너비 크기
                     bodyFontColor : '#fff',  //말풍선 속 텍스트 컬러
-                    cornerRadius : 10,  //border-radius
+                    cornerRadius : 10,  //border-radius,
+                    boxPadding : 10,
                     callbacks: {
                         label: function(tooltipItem, data) {
                             return sampleDatasets03[tooltipItem.datasetIndex].label + " : " + addComma(tooltipItem.xLabel.toString()) + "(실제값), " + data.calculatedData[tooltipItem.datasetIndex][tooltipItem.index] + "%(백분율)";
@@ -331,6 +332,8 @@
                             //title 함수 미선언 시 default 자동으로 들어감
                         }
                     },
+                    yAlign: tooTips.yAlign,  //말풍선 y축 좌표 정렬
+                    xAlign: tooTips.xAlign  //말풍선 x축 좌표 정렬
                 },
                 scales : {
                     yAxes : [{
@@ -343,6 +346,10 @@
                             fontSize : 30,  //축 범례 폰트 크기
                             fontStyle : 'bold',  //축 범례 폰트 굵기
                             fontColor : 'rgba(25, 81, 8, 0.8)'  //축 범례 폰트 색상
+                        },
+                        gridLines : {
+                            display : true,  //해당 축에 그리드라인 사용 여부, ★가급적 같은 축의 양쪽 값이 서로 극명하게 차이 나는 경우 사용안하는 것을 추천, 한쪽 사용 안할 시 전부 사용하지 않는 것을 추천
+                            color: 'rgba(25, 81, 8, 0.8)'
                         }
                     }],
                     xAxes : [{
@@ -353,7 +360,8 @@
                             }
                         },
                         gridLines : {
-                            display : true  //해당 축에 그리드라인 사용 여부, ★가급적 같은 축의 양쪽 값이 서로 극명하게 차이 나는 경우 사용안하는 것을 추천, 한쪽 사용 안할 시 전부 사용하지 않는 것을 추천
+                            display : true,  //해당 축에 그리드라인 사용 여부, ★가급적 같은 축의 양쪽 값이 서로 극명하게 차이 나는 경우 사용안하는 것을 추천, 한쪽 사용 안할 시 전부 사용하지 않는 것을 추천
+                            color: 'rgba(25, 81, 8, 0.8)'
                         },
                         stacked : true,  //수치 병합(★병합 시 축의 범위 값 조절 필수)
                         scaleLabel : {
