@@ -11,6 +11,7 @@
         <canvas id="sampleChart01"></canvas>    <!--//#sampleChart01-->
         <canvas id="sampleChart02"></canvas>    <!--//#sampleChart02-->
         <canvas id="sampleChart03"></canvas>    <!--//#sampleChart03-->
+        <canvas id="sampleChart04"></canvas>    <!--//#sampleChart04-->
 
         <script src="Chart.js"></script>
         <script src="ChartPlugin.js"></script>
@@ -28,6 +29,7 @@
                         3000, 1000, 3000, 1000, 3000, 1000
                     ],
                     yAxisID : 'Left',
+                    pointStyle : 'triangle',
                     pointRadius : 9,
                     borderWidth : 3
                 },{
@@ -40,6 +42,7 @@
                         1000, 3000, 1000, 3000, 1000, 3000
                     ],
                     yAxisID : 'Left',
+                    pointStyle : 'rect',
                     pointRadius : 9,
                     borderWidth : 3
                 },{
@@ -59,7 +62,7 @@
             ];
             var sampleOption01 = {
                 responsive : true,  //반응형 여부
-                legend: {
+                legend : {
                     display: true  //dafault true
                 },
                 title: {
@@ -72,6 +75,7 @@
                 },
                 showAllTooltips : true,  //말풍선 처음부터 표출 여부
                 tooltips : {
+                    enabled : true,  //말풍선 사용 여부
                     mode : 'index',
                     intersect : false,  //마우스 올렸을 때 교차지점에만 올렸을 때 말풍선 표출 여부
                     backgroundColor : 'rgba(219, 147, 43, 0.8)',  //말풍선 배경색
@@ -142,7 +146,7 @@
                 },
                 elements : {
                     line : {
-                        tension : 3, //라인형 차트 사용시에 직선:0, 굴곡:0.1 ~~~~~
+                        tension : 0.5, //라인형 차트 사용시에 직선:0, 굴곡:0.1 ~~~~~
                     }
                 }
             };
@@ -192,7 +196,7 @@
             ];
             var sampleOption02 = {
                 responsive : true,  //반응형 여부
-                legend: {
+                legend : {
                     display: true  //dafault true
                 },
                 title: {
@@ -205,6 +209,7 @@
                 },
                 showAllTooltips : true,  //말풍선 처음부터 표출 여부
                 tooltips : {
+                    enabled : true,  //말풍선 사용 여부
                     mode : 'index',
                     intersect : false,  //마우스 올렸을 때 교차지점에만 올렸을 때 말풍선 표출 여부
                     backgroundColor : 'rgba(5, 13, 234, 0.7)',  //말풍선 배경색
@@ -302,7 +307,7 @@
             ];
             var sampleOption03 = {
                 responsive : true,  //반응형 여부
-                legend: {
+                legend : {
                     display: true  //dafault true
                 },
                 title: {
@@ -314,6 +319,7 @@
                     padding: 20  //제목 폰트 여백
                 },
                 tooltips : {
+                    enabled : true,  //말풍선 사용 여부
                     mode : 'index',
                     intersect : false,  //마우스 올렸을 때 교차지점에만 올렸을 때 말풍선 표출 여부
                     backgroundColor : 'rgba(25, 81, 8, 0.8)',  //말풍선 배경색
@@ -382,10 +388,81 @@
             };
             //sampleChart03 End-----------------------------------------------------------------------------------------------------------------------------------------
 
+
+            //sampleChart04 Start---------------------------------------------------------------------------------------------------------------------------------------
+            var sampleLabel04 = ['1월', '2월', '3월', '4월', '5월'];
+            var sampleDatasets04 = [
+                {
+                    label : '처리현황',
+                    backgroundColor : [
+                        pattern.draw('disc', 'rgba(255, 3, 160, 0.3)', 'rgba(238, 35, 147, 0.85)', 200),  //pattern.draw('패턴종류', '백그라운드 색', '패턴 색', 패턴크기)
+                        pattern.draw('square', 'rgba(255, 3, 160, 0.3)', 'rgba(238, 35, 147, 0.85)', 200),  //pattern.draw('패턴종류', '백그라운드 색', '패턴 색', 패턴크기)
+                        pattern.draw('zigzag-vertical', 'rgba(255, 3, 160, 0.3)', 'rgba(238, 35, 147, 0.85)', 200),  //pattern.draw('패턴종류', '백그라운드 색', '패턴 색', 패턴크기)
+                        pattern.draw('box', 'rgba(255, 3, 160, 0.3)', 'rgba(238, 35, 147, 0.85)', 200),  //pattern.draw('패턴종류', '백그라운드 색', '패턴 색', 패턴크기)
+                        pattern.draw('box', 'rgba(255, 3, 160, 0.3)', 'rgba(238, 35, 147, 0.85)', 200)  //pattern.draw('패턴종류', '백그라운드 색', '패턴 색', 패턴크기)
+                    ],
+                    borderColor : [
+                        'rgba(255, 3, 160, 0.3)',
+                        'rgba(255, 3, 160, 0.3)',
+                        'rgba(255, 3, 160, 0.3)',
+                        'rgba(255, 3, 160, 0.3)',
+                        'rgba(255, 3, 160, 0.3)'
+                    ],
+                    borderWidth : 4,
+                    data: [
+                        2000, 2000, 2000, 2000, 2000
+                    ]
+                },
+            ];
+            var sampleOption04 = {
+                responsive : true,
+                legend : {
+                    display: true,
+                },
+                title: {
+                    display: true,
+                    text: 'NEO Chart Edu Sample-04',
+                    fontSize: 50,  //제목 폰트 크기
+                    fontStyle: 'bold',  //제목 폰트 굵기
+                    fontColor: 'rgba(255, 3, 160, 1)',  //제목 폰트 색상
+                    padding: 20  //제목 폰트 여백
+                },
+                tooltips : {
+                    enabled : false  //말풍선 사용 여부
+                },
+                plugins: {
+                    labels: [
+                        {
+                            render: function (args) {
+                                console.log(args);
+                                return "실제값 : " + args.value + "\n\n백분율 : " +  + args.percentage + "%";
+                            },
+                            fontColor : 'rgba(255, 255, 255, 1)',
+                            fontStyle: 'bold',
+                            fontSize : 20,
+                            textShadow : true,
+                            shadowBlur : 20,
+                            shadowOffsetX : 10,
+                            shadowOffsetY : 10,
+                            shadowColor : 'rgba(117, 6, 36, 1)',
+                        },
+                    ]
+                }
+            };
+            //sampleChart04 Start---------------------------------------------------------------------------------------------------------------------------------------
+
+
             window.onload = function() {
                 sampleChart01 = creatChart("sampleChart01", "bar", sampleLabel01, sampleDatasets01, sampleOption01);
                 sampleChart02 = creatChart("sampleChart02", "bar", sampleLabel02, sampleDatasets02, sampleOption02);
                 sampleChart03 = creatChart("sampleChart03", "horizontalBar", sampleLabel03, sampleDatasets03, sampleOption03);
+                sampleChart04 = creatChart("sampleChart04", "pie", sampleLabel04, sampleDatasets04, sampleOption04);
+
+
+                //pieRadar = creatChart("radar", "polarArea", pieLabel, pieDatasets, outsideOption);
+                //pieCircle = creatChart("circle", "doughnut", percentLabel, percentData, percentOption);
+
+
                 //변수명 상관 X 단, 한 페이지에 여러개의 canvas태그 사용시 변수명과 id 값 다르게 지정
                 //creatChart("canvas태그 아이디값", "그래프의형태[bar, line, horizontalBar]", 라벨값, 데이터값, 그래프옵션);
             };
