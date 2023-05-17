@@ -121,42 +121,42 @@ $(document).ready(function () {
     if(_browser.indexOf('msie 7.0') > -1) {
         _browser = 'ie ie7';
 
-    //ie8일 때
+        //ie8일 때
     }else if(_browser.indexOf('msie 8.0') > -1) {
         _browser = 'ie ie8';
 
-    //ie9일 때
+        //ie9일 때
     }else if(_browser.indexOf('msie 9.0') > -1) {
         _browser = 'ie ie9';
 
-    //ie10일 때
+        //ie10일 때
     }else if(_browser.indexOf('msie 10.0') > -1) {
         _browser = 'ie ie10';
 
-    //ie11일 때
+        //ie11일 때
     }else if(_browser.indexOf('trident/7.0') > -1) {
         _browser = 'ie ie11';
 
-    //edge일 때
+        //edge일 때
     }else if(_browser.indexOf('edge') > -1) {
         _browser = 'edge MS';
 
     }else if(_browser.indexOf('edg/') > -1) {
         _browser = 'edge chromium_based';
 
-    //opera일 때
+        //opera일 때
     }else if(_browser.indexOf('opr') > -1) {
         _browser = 'opera';
 
-    //chrome일 때
+        //chrome일 때
     }else if(_browser.indexOf('chrome') > -1) {
         _browser = 'chrome';
 
-    //firefox일 때
+        //firefox일 때
     }else if(_browser.indexOf('firefox') > -1) {
         _browser = 'firefox';
 
-    //safari일 때
+        //safari일 때
     }else if(_browser.indexOf('safari') > -1) {
         _browser = 'safari';
     }else{
@@ -348,6 +348,34 @@ $(document).ready(function () {
             $('.header_box .quick_link_box .quick_link_item[data-link-type="edu"]').addClass('active');
         });
         //header_box quick_link_box 끝
+
+        //footer_go 시작
+        $('.footer_go button').on('click', function() {
+            $('html, body').animate({
+                scrollTop : $('body').offset().top
+            }, 300);
+        });
+        //footer_go 끝
+
+        //footer_bottom footer_link 시작
+        $('.footer_link .link_list .link_item .link_btn').on('click', function(){
+            var $this = $(this),
+                $MyLinkItem = $this.parent('.link_item'),
+                IsActive = $MyLinkItem.is('.active'),
+                $LinkLayer = $this.siblings('.link_layer');
+            if(!IsActive){
+                $MyLinkItem.addClass('active');
+                $this.attr('title', '목록닫기');
+                $LinkLayer.slideDown(150, 'linear');
+            }
+            else{
+                $MyLinkItem.removeClass('active');
+                $this.attr('title', '목록열기');
+                $LinkLayer.slideUp(150, 'linear');
+            }
+        });
+        //footer_bottom footer_link 끝
+
 
         $window.on('screen:wide screen:web', function (event) {
             refreshLnbHeight();
