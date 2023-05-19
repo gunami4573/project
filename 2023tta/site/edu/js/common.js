@@ -321,6 +321,12 @@ $(document).ready(function () {
 
         //여기서부터 코드 작성해주세요
 
+        //header_ani 시작
+        setTimeout(function(){
+            $html.addClass('header_ani');
+        }, 100);
+        //header_ani 끝
+
         //header_box quick_link_box 시작
         $('.header_box .quick_link_box .quick_link_item .quick_link').on('mouseover', function(){
             var $this = $(this),

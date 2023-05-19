@@ -69,6 +69,41 @@
 
         //여기서부터 코드 작성해주세요
 
+        //공유하기 시작
+        $('.add_box .add_item.share button.share_btn').on('click', function(){
+            var $this = $(this),
+                $MyItem = $this.parent('.add_item.share'),
+                IsActive = $MyItem.is('.active'),
+                $ShareList = $this.siblings('.share_list');
+            if(!IsActive){
+                $MyItem.addClass('active');
+                $this.attr('공유리스트 닫기');
+                $ShareList.slideDown(200, 'linear');
+            }
+            else{
+                $MyItem.removeClass('active');
+                $this.attr('공유리스트 열기');
+                $ShareList.slideUp(200, 'linear');
+            }
+        });
+        //공유하기 끝
+
+        //링크복사 시작
+        function UrlCopy(url){
+            var $CopyTemp = $('<input>');
+            $('body').append($CopyTemp);
+            $CopyTemp.val(url).select();
+            document.execCommand('copy');
+            $CopyTemp.remove();
+            alert('URL이 복사되었습니다.');
+        }
+        $(document).on('click', '.add_box .share_list .share_item.copy a.share_link', function(e){
+            e.preventDefault();
+            var link = location.href;
+            UrlCopy(link);
+        });
+        //링크복사 끝
+
         //반응형 테이블 시작
         $('table.table.responsive').not($('.prettyprint').children()).each(function () {
             var RowSpanExist = $(this).find('td, th').is('[rowspan]'),
