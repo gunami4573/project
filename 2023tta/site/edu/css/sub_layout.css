@@ -149,9 +149,12 @@
 .sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item:nth-child(5n):before{display:none;}
 .sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item .cms_depth3_text{display:inline-block;position:relative;width:auto;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
 .sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item .cms_depth3_text span{display:inline-block;position:relative;width:auto;height:60px;font-size:0;line-height:0;box-sizing:border-box;}
-.sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item .cms_depth3_text span em{display:inline-block;position:relative;top:50%;transform:translateY(-50%);font-size:18px;color:#000;line-height:30px;letter-spacing:-0.03em;font-weight:200;font-family:'CJK';word-break:keep-all;box-sizing:border-box;}
+.sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item .cms_depth3_text span em{display:inline-block;position:relative;top:50%;transform:translateY(-50%);font-size:18px;color:#000;line-height:30px;letter-spacing:-0.03em;font-weight:200;font-family:'CJK';word-break:keep-all;box-sizing:border-box;transition-property:color;transition-duration:400ms;transition-timing-function:cubic-bezier(.52,.08,.04,1.18);}
 .sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item.active .cms_depth3_text span em,
 .sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item .cms_depth3_text:hover span em{color:#0053a0;font-weight:600;}
+.sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item .cms_depth3_text span em:before{display:block;position:absolute;top:-4px;left:calc(100% + 1px);width:6px;height:6px;border-radius:100%;background-color:#0053a0;content:'';box-sizing:border-box;transform:scale(0);transition-property:transform;transition-duration:400ms;transition-timing-function:cubic-bezier(.52,.08,.04,1.18);}
+.sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item.active .cms_depth3_text span em:before,
+.sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item .cms_depth3_text:hover span em:before{transform:scale(1);}
 .sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item .cms_depth3_text[target="_blank"] span em:after{display:inline-block;position:relative;width:16px;height:16px;margin-top:7px;margin-left:4px;background-image:url(../images/sub/sub_cms_depth_icons.png);background-repeat:no-repeat;background-position:left top;vertical-align:top;box-sizing:border-box;}
 .sub_head .cms_depth3 .cms_depth3_list .cms_depth3_item .cms_depth3_text[target="_blank"]:hover span em:after{background-position:-30px top;}
 .sub_head .cms_depth4{display:none;position:relative;width:500%;font-size:0;line-height:0;box-sizing:border-box;text-align:left;}
