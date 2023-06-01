@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="사이트 제목">
+    <meta name="keywords" content="키워드 입력">
+    <meta name="description" content="사이트 상세설명">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="og:site_name" content="사이트명 표시">
+    <meta property="og:url" content="url 표기">
+    <meta property="og:image" content="대표 이미지 경로">
+    <meta property="og:title" content="페이지 제목 표시">
+    <meta property="og:description" content="페이지 설명 표시">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="../../common/images/favicon.png">
+    <link rel="icon" href="../../common/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="../../common/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <script src="../../common/js/jquery-1.12.4.HS-20200709.min.js"></script>
+    <script src="../../common/js/jquery.screen.js"></script>
+    <script src="../../common/js/slick.min.custom.1.8.0.11.js"></script>
+    <script src="../../common/js/slick.extensions.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/jquery.navScroll.js"></script>
+    <script src="./js/main.js"></script>
+    <title>TTA 아카데미 - 메인페이지</title>
+</head>
+<body id="main" class="main">
+<div class="accessibility">
+    <a href="#container">본문 바로가기</a>
+</div>  <!--//accessibility-->
+<div id="wrapper">
+    <div id="header">
+        <div class="header_box">
+            <h1 class="header_title">
+                <a href="./index.do" class="logo">
+                    <img src="./images/common/logo_800.png" alt="TTA 한국정보통신기술협회 Telecommunications Technology Association" />
+                    <span class="site_title">아카데미</span>    <!--//site_title-->
+                </a>    <!--//logo-->
+            </h1>    <!--//header_title-->
+            <div class="quick_link_box edu">
+                <i class="blue_deco"></i>    <!--//blue_deco-->
+                <ul class="quick_link_list">
+                    <li class="quick_link_item" data-link-type="other">
+                        <a href="" class="quick_link"><span>고객서비스</span></a>    <!--//quick_link-->
+                    </li>    <!--//quick_link_item-->
+                    <li class="quick_link_item active" data-link-type="edu">
+                        <a href="./index.do" title="선택됨" class="quick_link"><span>아카데미</span></a>    <!--//quick_link-->
+                    </li>    <!--//quick_link_item-->
+                </ul>    <!--//quick_link_list-->
+            </div>    <!--//quick_link_box-->
+            <a href="" target="_blank" title="새창" rel="noopener noreferrer" class="it_direct_link">IT 품질 전문인력 육성</a>    <!--//it_direct_link-->
+            <div class="menu_show">
+                <button type="button" class="menu_button">메뉴열기</button>    <!--//menu_button-->
+            </div>    <!--//menu_show-->
+        </div>    <!--//header_box-->
+        <div class="lnb">
+            <div class="lnb_top_box">
+                <span class="lnb_title">
+                    <a href="./index.do" class="logo">
+                        <span class="site_title">아카데미</span>    <!--//site_title-->
+                    </a>    <!--//logo-->
+                    <a href="" class="login">    <!--//로그인 되어있을 때 : logout , 로그아웃 되어있을 때 : login , 개발처리 부탁드립니다-->
+                        <span>로그인</span>    <!--//로그인 되어있을 때 : logout , 로그아웃 되어있을 때 : login , 개발처리 부탁드립니다-->
+                    </a>    <!--//login-->
+                </span>    <!--//lnb_title-->
+                <div class="search_form_box">
+                    <form action="">    <!--//action값 비워놓겠습니다 개발 필수-->
+                        <fieldset>
+                            <legend>TTA 아카데미 상단 검색영역</legend>
+                            <span class="search_text">
+                                <input type="text" title="검색어 입력" placeholder="검색어를 입력하세요">
+                            </span>    <!--//search_text-->
+                            <span class="search_submit">
+                                <input type="submit" value="검색" />
+                            </span>    <!--//search_submit-->
+                        </fieldset>
+                    </form>
+                </div>    <!--//search_form_box-->
+                <div class="quick_link_box">
+                    <ul class="quick_link_list">
+                        <li class="quick_link_item">
+                            <a href="" class="quick_link"><span>고객서비스</span></a>    <!--//quick_link-->
+                        </li>    <!--//quick_link_item-->
+                        <li class="quick_link_item active">
+                            <a href="./index.do" title="선택됨" class="quick_link"><span>아카데미</span></a>    <!--//quick_link-->
+                        </li>    <!--//quick_link_item-->
+                    </ul>
+                </div>    <!--//quick_link_box-->
+            </div>    <!--//lnb_top_box-->
+            <nav class="menu pulldown">
+                <!--//메뉴를 클릭시 화면에 보이든 안보이든 해당 메뉴의 마지막 차수 중 첫번째 depth_text 에 spy 클레스 꼭 달리게 개발부탁드립니다-->
+                <!--//하단에 2차메뉴명 중 클릭예시 라는 쪽에 개발 보실 수 있게 spy 클레스 달아놓았습니다-->
+                <!--//예시 : 2차메뉴클릭 : depth2_text 를 클릭시 바로 하위의 depth3_text 가 존재한다면 class="depth3_text spy" 이런식으로-->
+                <!--//예시 : 3차메뉴클릭 : depth3_text 를 클릭시 바로 하위의 depth4_text 가 존재한다면 class="depth4_text spy" 이런식으로-->
+                <h2 class="skip">메뉴</h2>
+                <div class="depth depth1">
+                    <ul class="depth_list depth1_list">
+                        <li class="depth_item depth1_item">
+                            <a href="" class="depth_text depth1_text"><span><em>인사말</em></span></a>    <!--//depth1_text-->
+                            <div class="depth depth2">
+                                <ul class="depth_list depth2_list">
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>클릭 후 모습 예시</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text spy"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" target="_blank" title="새창" class="depth_text depth4_text"><span><em>4차메뉴 새창</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" target="_blank" title="새창" class="depth_text depth3_text"><span><em>3차메뉴 새창</em></span></a>    <!--//depth3_text-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" target="_blank" title="새창" class="depth_text depth2_text"><span><em>2차메뉴 새창</em></span></a>    <!--//depth2_text-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                </ul>    <!--//depth2_list-->
+                            </div>    <!--//depth2-->
+                        </li>    <!--//depth1_item-->
+                        <li class="depth_item depth1_item">
+                            <a href="" class="depth_text depth1_text"><span><em>교육</em></span></a>    <!--//depth1_text-->
+                            <div class="depth depth2">
+                                <ul class="depth_list depth2_list">
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                </ul>    <!--//depth2_list-->
+                            </div>    <!--//depth2-->
+                        </li>    <!--//depth1_item-->
+                        <li class="depth_item depth1_item">
+                            <a href="" class="depth_text depth1_text"><span><em>자격시험</em></span></a>    <!--//depth1_text-->
+                            <div class="depth depth2">
+                                <ul class="depth_list depth2_list">
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                </ul>    <!--//depth2_list-->
+                            </div>    <!--//depth2-->
+                        </li>    <!--//depth1_item-->
+                        <li class="depth_item depth1_item">
+                            <a href="" class="depth_text depth1_text"><span><em>고객센터</em></span></a>    <!--//depth1_text-->
+                            <div class="depth depth2">
+                                <ul class="depth_list depth2_list">
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" class="depth_text depth2_text"><span><em>2차메뉴</em></span></a>    <!--//depth2_text-->
+                                        <div class="depth depth3">
+                                            <ul class="depth_list depth3_list">
+                                                <li class="depth_item depth3_item">
+                                                    <a href="" class="depth_text depth3_text"><span><em>3차메뉴</em></span></a>    <!--//depth3_text-->
+                                                    <div class="depth depth4">
+                                                        <ul class="depth_list depth4_list">
+                                                            <li class="depth_item depth4_item">
+                                                                <a href="" class="depth_text depth4_text"><span><em>4차메뉴</em></span></a>    <!--//depth4_text-->
+                                                            </li>    <!--//depth4_item-->
+                                                        </ul>    <!--//depth4_list-->
+                                                    </div>    <!--//depth4-->
+                                                </li>    <!--//depth3_item-->
+                                            </ul>    <!--//depth3_list-->
+                                        </div>    <!--//depth3-->
+                                    </li>    <!--//depth2_item-->
+                                </ul>    <!--//depth2_list-->
+                            </div>    <!--//depth2-->
+                        </li>    <!--//depth1_item-->
+                        <li class="depth_item depth1_item">
+                            <a href="" class="depth_text depth1_text"><span><em>My Page</em></span></a>    <!--//depth1_text-->
+                            <div class="depth depth2">
+                                <ul class="depth_list depth2_list">
+                                    <li class="depth_item depth2_item">
+                                        <a href="" target="_blank" title="새창" class="depth_text depth2_text"><span><em>2차메뉴 새창</em></span></a>    <!--//depth2_text-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" target="_blank" title="새창" class="depth_text depth2_text"><span><em>2차메뉴 새창</em></span></a>    <!--//depth2_text-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" target="_blank" title="새창" class="depth_text depth2_text"><span><em>2차메뉴 새창</em></span></a>    <!--//depth2_text-->
+                                    </li>    <!--//depth2_item-->
+                                    <li class="depth_item depth2_item">
+                                        <a href="" target="_blank" title="새창" class="depth_text depth2_text"><span><em>2차메뉴 새창</em></span></a>    <!--//depth2_text-->
+                                    </li>    <!--//depth2_item-->
+                                </ul>    <!--//depth2_list-->
+                            </div>    <!--//depth2-->
+                        </li>    <!--//depth1_item-->
+                    </ul>    <!--//depth1_list-->
+                </div>    <!--//depth1-->
+                <div class="menu_deco">
+                    <div class="deco_title_box">
+                        <span class="top_title"><em>ICT 표준·품질 전문 교육기관</em></span>    <!--//top_title-->
+                        <span class="bottom_title"><em>TTA 아카데미</em></span>    <!--//bottom_title-->
+                    </div>    <!--//deco_title_box-->
+                    <div class="deco_img_box">
+                        <i class="round"></i>    <!--//round-->
+                        <i class="square"></i>    <!--//square-->
+                    </div>    <!--//deco_img_box-->
+                </div>    <!--//menu_deco-->
+            </nav>    <!--//menu-->
+            <div class="menu_hide">
+                <button type="button" class="menu_button">메뉴 닫기</button>    <!--//menu_button-->
+            </div>    <!--//menu_hide-->
+        </div>    <!--//lnb-->
+        <div class="lnb_curtain">
+            <button type="button">메뉴 닫기</button>
+        </div>    <!--//lnb_curtain-->
+        <div class="header_last">
+            <div class="search_form_box">
+                <form action="">    <!--//action값 비워놓겠습니다 개발 필수-->
+                    <fieldset>
+                        <legend>TTA 아카데미 상단 검색영역</legend>
+                        <span class="search_text">
+                            <input type="text" title="검색어 입력" placeholder="검색어를 입력하세요" />
+                        </span>    <!--//search_text-->
+                        <span class="search_submit">
+                            <input type="submit" value="검색" />
+                        </span>    <!--//search_submit-->
+                    </fieldset>
+                </form>
+            </div>    <!--//search_form_box-->
+            <div class="gnb_box">
+                <ul class="gnb_list">
+                    <li class="gnb_item login">    <!--//로그인 되어있을 때 : logout , 로그아웃 되어있을 때 : login , 개발처리 부탁드립니다-->
+                        <a href="" title="로그인" class="gnb_link">로그인</a>    <!--//로그인 되어있을 때 : 로그아웃 , 로그아웃 되어있을 때 : 로그인 , 개발처리 부탁드립니다-->
+                    </li>    <!--//gnb_item-->
+                    <li class="gnb_item sitemap">
+                        <a href="" title="사이트맵 바로가기" class="gnb_link">사이트맵</a>
+                    </li>    <!--//gnb_item-->
+                </ul>    <!--//gnb_list-->
+            </div>    <!--//gnb_box-->
+        </div>    <!--//header_last-->
+    </div>    <!--//#header-->
+    <div id="container">
+        <div class="edu_quick_menu">
+            <div class="quick_wrap">
+                <ul class="menu_list">
+                    <li class="menu_item">
+                        <a href="#rowgroup1"><span class="text">메인/공지</span></a>
+                    </li>    <!--//menu_item-->
+                    <li class="menu_item">
+                        <a href="#rowgroup2"><span class="text">진행현황</span></a>
+                    </li>    <!--//menu_item-->
+                    <li class="menu_item">
+                        <a href="#rowgroup3"><span class="text">자격소개<br> 바로가기</span></a>
+                    </li>    <!--//menu_item-->
+                </ul>   <!--//menu_list-->
+            </div>  <!--//quick_wrap-->
+        </div>   <!--//edu_quick_menu-->
+        <main>
+            <div id="rowgroup1" class="rowgroup rowgroup1">
+                <section class="total_info">
+                    <h2 class="skip">검색, 공지사항, 메인비주얼 팝업 영역</h2>
+                    <div class="total_info_wrap">
+                        <div class="deco_inner">
+                            <i class="round"></i>
+                            <i class="deco_dash_line01"></i>
+                            <i class="deco_dash_line02"></i>
+                            <i class="deco_dash_line03"></i>
+                            <i class="deco_donut_line01"></i>
+                            <i class="deco_donut_line02"></i>
+                        </div>    <!--//deco_inner-->
+                        <div class="total_inner top_type">
+                            <div class="search_inner">
+                                <div class="main_search_text_box">
+                                    <span class="top_title">ICT 표준화와 시험인증 전문 교육기관</span>    <!--//top_title-->
+                                    <span class="middle_title">TTA 아카데미</span>    <!--//middle_title-->
+                                    <div class="bottom_desc">
+                                        TTA아카데미는 ICT 표준화 및 시험인증 전문 교육기관으로 <br>
+                                        최신 ICT 표준·시험기술의 보급·확산과 표준화·품질 전문인력 양성을 위해 <br>
+                                        다양한 교육·세미나와 자격제도를 운영하고 있습니다
+                                    </div>    <!--//bottom_desc-->
+                                </div>    <!--//main_search_text_box-->
+                                <div class="main_search_form">
+                                    <form action="">    <!--//action값 채워주세요-->
+                                        <fieldset>
+                                            <legend>메인비주얼 검색 영역</legend>
+                                            <div class="input_text_box">
+                                                <span class="hash_tag">
+                                                    <em class="hash">#ICT표준</em>
+                                                    <em class="hash">#SW 테스트교육</em>
+                                                    <em class="hash">#연간교육일정표</em>
+                                                    <em class="hash">#데이터거래사</em>
+                                                </span>    <!--//hash_tag-->
+                                                <input type="text" title="검색어 입력" />
+                                            </div>    <!--//input_text_box-->
+                                            <div class="input_submit_box">
+                                                <input type="submit" value="검색하기" />
+                                            </div>    <!--//input_submit_box-->
+                                        </fieldset>
+                                    </form>
+                                </div>    <!--//main_search_form-->
+                            </div>    <!--//search_inner-->
+                        </div>    <!--//total_inner top_type-->
+                        <div class="total_inner bottom_type">
+                            <div class="board_inner">
+                                <div class="board_slide_wrap">
+                                    <div class="board_slide_control">
+                                        <div class="control_text_box">
+                                            <span class="top_text">TTA 아카데미</span>    <!--//top_text-->
+                                            <span class="bottom_text">공지사항</span>    <!--//bottom_text-->
+                                        </div>    <!--//control_text_box-->
+                                        <div class="control_btn_box">
+                                            <button type="button" title="이전 슬라이드" class="control_btn prev">이전 공지사항 게시글 슬라이드</button>    <!--//prev-->
+                                            <button type="button" title="다음 슬라이드" class="control_btn next">다음 공지사항 게시글 슬라이드</button>    <!--//next-->
+                                        </div>    <!--//control_btn_box-->
+                                    </div>    <!--//board_slide_control-->
+                                    <div class="board_slide_list">
+                                        <div class="board_slide_item new">    <!--//신규 공지사항 게시글의 경우에만 new 클레스 부여해주세요-->
+                                            <a href="" class="board_slide_link">
+                                                <span class="link_inner">
+                                                    <span class="title">공지사항 새글1 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀</span>    <!--//title-->
+                                                    <span class="desc">공지사항 새글1 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용</span>    <!--//desc-->
+                                                    <span class="date">2023-03-20</span>    <!--//date-->
+                                                </span>    <!--//link_inner-->
+                                            </a>    <!--//board_slide_link-->
+                                        </div>    <!--//board_slide_item-->
+                                        <div class="board_slide_item new">    <!--//신규 공지사항 게시글의 경우에만 new 클레스 부여해주세요-->
+                                            <a href="" class="board_slide_link">
+                                                <span class="link_inner">
+                                                    <span class="title">공지사항 새글2 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀 공지사항 새글 타이틀</span>    <!--//title-->
+                                                    <span class="desc">공지사항 새글2 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용 공지사항 새글 내용</span>    <!--//desc-->
+                                                    <span class="date">2023-03-20</span>    <!--//date-->
+                                                </span>    <!--//link_inner-->
+                                            </a>    <!--//board_slide_link-->
+                                        </div>    <!--//board_slide_item-->
+                                        <div class="board_slide_item">
+                                            <a href="" class="board_slide_link">
+                                                <span class="link_inner">
+                                                    <span class="title">공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀</span>    <!--//title-->
+                                                    <span class="desc">공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용</span>    <!--//desc-->
+                                                    <span class="date">2023-03-20</span>    <!--//date-->
+                                                </span>    <!--//link_inner-->
+                                            </a>    <!--//board_slide_link-->
+                                        </div>    <!--//board_slide_item-->
+                                        <div class="board_slide_item">
+                                            <a href="" class="board_slide_link">
+                                                <span class="link_inner">
+                                                    <span class="title">공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀</span>    <!--//title-->
+                                                    <span class="desc">공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용</span>    <!--//desc-->
+                                                    <span class="date">2023-03-20</span>    <!--//date-->
+                                                </span>    <!--//link_inner-->
+                                            </a>    <!--//board_slide_link-->
+                                        </div>    <!--//board_slide_item-->
+                                        <div class="board_slide_item">
+                                            <a href="" class="board_slide_link">
+                                                <span class="link_inner">
+                                                    <span class="title">공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀</span>    <!--//title-->
+                                                    <span class="desc">공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용</span>    <!--//desc-->
+                                                    <span class="date">2023-03-20</span>    <!--//date-->
+                                                </span>    <!--//link_inner-->
+                                            </a>    <!--//board_slide_link-->
+                                        </div>    <!--//board_slide_item-->
+                                    </div>    <!--//board_slide_list-->
+                                    <div class="board_slide_more">
+                                        <a href="" title="더보기" class="more_link">공지사항 게시글 더보기</a>    <!--//more-->
+                                    </div>    <!--//board_slide_more-->
+                                </div>    <!--//board_slide_wrap-->
+                            </div>    <!--//board_inner-->
+                            <div class="visual_inner">
+                                <div class="visual_slide_wrap">
+                                    <div class="visual_slide_list">
+                                        <div class="visual_slide_item">
+                                            <a href="" class="visual_slide_link">
+                                                <span class="img_wrap">    <!--// i태그의 background-image 경로와 img 태그의 src 경로 동일하게 맞춰주시고, img 태그의 alt 대체텍스트 들어갈 수 있게 개발 부탁드립니다-->
+                                                    <i style="background-image:url(./images/main/visual_img01.jpg);"></i>
+                                                    <img src="./images/main/visual_img01.jpg" alt="SW 테스트/품질 전문인력 양성 교육, SW 테스트 전문가 양성교육(일반/고급과정), SW 테스트, 품질, 정보보호 실무교육" />
+                                                </span>    <!--//img_wrap-->
+                                            </a>    <!--//visual_slide_link-->
+                                        </div>    <!--//visual_slide_item-->
+                                        <div class="visual_slide_item">
+                                            <a href="" class="visual_slide_link">
+                                                <span class="img_wrap">    <!--// i태그의 background-image 경로와 img 태그의 src 경로 동일하게 맞춰주시고, img 태그의 alt 대체텍스트 들어갈 수 있게 개발 부탁드립니다-->
+                                                    <i style="background-image:url(https://via.placeholder.com/828x320);"></i>
+                                                    <img src="https://via.placeholder.com/828x320" alt="테스트 더미 이미지" />
+                                                </span>    <!--//img_wrap-->
+                                            </a>    <!--//visual_slide_link-->
+                                        </div>    <!--//visual_slide_item-->
+                                        <div class="visual_slide_item">
+                                            <a href="" class="visual_slide_link">
+                                                <span class="img_wrap">    <!--// i태그의 background-image 경로와 img 태그의 src 경로 동일하게 맞춰주시고, img 태그의 alt 대체텍스트 들어갈 수 있게 개발 부탁드립니다-->
+                                                    <i style="background-image:url(https://via.placeholder.com/828x320);"></i>
+                                                    <img src="https://via.placeholder.com/828x320" alt="테스트 더미 이미지" />
+                                                </span>    <!--//img_wrap-->
+                                            </a>    <!--//visual_slide_link-->
+                                        </div>    <!--//visual_slide_item-->
+                                    </div>    <!--//visual_slide_list-->
+                                    <div class="visual_slide_control">
+                                        <div class="count_box">
+                                            <span class="current"></span>
+                                            <span class="bar">
+                                                <i class="percent"></i>    <!--//percent-->
+                                            </span>    <!--//bar-->
+                                            <span class="total"></span>
+                                        </div>    <!--//count_box-->
+                                        <div class="btn_box">
+                                            <button type="button" title="이전슬라이드" class="prev">이전</button>    <!--//prev-->
+                                            <button type="button" class="auto"></button>    <!--//auto-->
+                                            <button type="button" title="다음슬라이드" class="next">다음</button>    <!--//next-->
+                                        </div>    <!--//btn_box-->
+                                    </div>    <!--//visual_slide_control-->
+                                </div>    <!--//visual_slide_wrap-->
+                            </div>    <!--//visual_inner-->
+                        </div>    <!--//total_inner bottom_type-->
+                    </div>    <!--//total_info_wrap-->
+                </section>    <!--//total_info-->
+            </div>    <!--//rowgroup1-->
+            <div id="rowgroup2" class="rowgroup rowgroup2">
+                <section class="learn">
+                    <h2 class="skip">교육진행현황 영역</h2>
+                    <div class="learn_wrap">
+                        <div class="deco_inner">
+                            <span class="scroll_deco">
+                                <em class="bar"></em>    <!--//bar-->
+                                <em class="text">SCROLL</em>    <!--//text-->
+                            </span>    <!--//scroll_deco-->
+                            <span class="deco_box">
+                                <i class="deco_top01"></i>
+                                <i class="deco_top02"></i>
+                            </span>    <!--//deco_box-->
+                            <i class="deco_bottom01"></i>
+                            <i class="deco_bottom02"></i>
+                        </div>    <!--//deco_inner-->
+                        <div class="learn_title_box">
+                            <span class="top_title">TTA 아카데미</span>    <!--//top_title-->
+                            <span class="bottom_title">교육진행현황</span>    <!--//bottom_title-->
+                        </div>    <!--//learn_title_box-->
+                        <div class="month_box">
+                            <div class="month_slide_wrap">
+                                <div class="month_list">
+                                    <div class="month_item" data-month="1">
+                                        <button type="button" class="month_tab_btn"><em>1월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item" data-month="2">
+                                        <button type="button" class="month_tab_btn"><em>2월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item" data-month="3">
+                                        <button type="button" class="month_tab_btn"><em>3월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item" data-month="4">
+                                        <button type="button" class="month_tab_btn"><em>4월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item active" data-month="5">    <!--//현재의 월에 맞는 아이탬에 active 클레스와 버튼에 title="선택됨" 이 기본으로 들어와야합니다-->
+                                        <button type="button" title="선택됨" class="month_tab_btn"><em>5월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item" data-month="6">
+                                        <button type="button" class="month_tab_btn"><em>6월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item" data-month="7">
+                                        <button type="button" class="month_tab_btn"><em>7월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item" data-month="8">
+                                        <button type="button" class="month_tab_btn"><em>8월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item" data-month="9">
+                                        <button type="button" class="month_tab_btn"><em>9월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item" data-month="10">
+                                        <button type="button" class="month_tab_btn"><em>10월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item" data-month="11">
+                                        <button type="button" class="month_tab_btn"><em>11월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                    <div class="month_item" data-month="12">
+                                        <button type="button" class="month_tab_btn"><em>12월</em></button>    <!--//month_tab_btn-->
+                                    </div>    <!--//month_item-->
+                                </div>    <!--//month_list-->
+                                <div class="mobile_month_list">    <!--//반응형에서만 사용-->
+                                    <div class="mobile_month_item" data-month="1">1월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="2">2월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="3">3월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="4">4월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="5">5월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="6">6월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="7">7월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="8">8월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="9">9월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="10">10월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="11">11월</div>    <!--//mobile_month_item-->
+                                    <div class="mobile_month_item" data-month="12">12월</div>    <!--//mobile_month_item-->
+                                </div>    <!--//mobile_month_list-->
+                                <div class="mobile_month_control">    <!--//반응형에서만 사용-->
+                                    <button type="button" class="mobile_prev">이전</button>    <!--//mobile_prev-->
+                                    <button type="button" class="mobile_next">다음</button>    <!--//mobile_next-->
+                                </div>    <!--//mobile_month_control-->
+                            </div>    <!--//month_slide_wrap-->
+                        </div>    <!--//month_box-->
+                        <div class="learn_box" data-month="5">
+                            <!--//data-learn 값에 현재 몇월인지 판단 후 숫자 들어올 수 있게 개발부탁드립니다-->
+                            <div class="learn_box_item">
+                                <div class="learn_tab_box">
+                                    <div class="learn_tab_list">
+                                        <div class="learn_tab_item type1 active">
+                                            <button type="button" title="선택됨" class="learn_tab_btn"><em>전체</em></button>    <!--//learn_tab_btn-->
+                                        </div>    <!--//learn_tab_item-->
+                                        <div class="learn_tab_item type2">
+                                            <button type="button" class="learn_tab_btn"><em>교육</em></button>    <!--//learn_tab_btn-->
+                                        </div>    <!--//learn_tab_item-->
+                                        <div class="learn_tab_item type3">
+                                            <button type="button" class="learn_tab_btn"><em>자격시험</em></button>    <!--//learn_tab_btn-->
+                                        </div>    <!--//learn_tab_item-->
+                                    </div>    <!--//learn_tab_list-->
+                                </div>    <!--//learn_tab_box-->
+                                <div class="learn_tab_slide_box">
+                                    <!--// 1 ~ 12.html (1월 ~ 12월) (마크업 = 전체, 교육, 자격시험 ajax 뿌려지는 곳)-->
+                                    <!--// 현재 ajax 뿌려지는 html 의 폴더경로는 /site/edu/dat/ 1 ~ 12.html 입니다 -->
+                                    <!--// 추후에 경로가 바뀔경우 하단의 스크립트의 ajax 문법의 폴더경로를 절대경로혁식으로 바꿔주시면 됩니다 -->
+                                </div>    <!--//learn_tab_slide_box-->
+                                <div class="learn_more_box">
+                                    <a href="" class="learn_more_link">공지사항 더보기</a>
+                                </div>    <!--//learn_more_box-->
+                            </div>    <!--//learn_box_item-->
+                        </div>    <!--//learn_box-->
+                    </div>    <!--//learn_wrap-->
+                </section>    <!--//learn-->
+            </div>    <!--//rowgroup2-->
+            <!--//rowgroup2 스크립트 부분 시작-->
+            <script>
+                $(function(){
+                    //초기 로딩시 현재가 몇월인지 판단 후 ajax 뿌리기 시작
+                    var $StartLearnBox = $('.learn .learn_wrap .learn_box'),
+                        StartLearnBoxData = $StartLearnBox.attr('data-month'),
+                        $StartLearnBoxItem = $StartLearnBox.find('.learn_box_item'),
+                        $StartLearnTabSlideBox = $StartLearnBoxItem.find('.learn_tab_slide_box');
+                    $.ajax({
+                        url : './data/'+StartLearnBoxData+'.html',  //폴더 경로 바뀔 시 (★개발필수★)
+                        success : function (data) {
+                            $StartLearnTabSlideBox.empty().append(data);
+                            var $FirstLearnTabSlideBox = $('.learn_tab_slide_box'),
+                                $FirstLearnTabSlideList = $FirstLearnTabSlideBox.find('.learn_tab_slide_list'),
+                                $FirstLearnTabSlideItem = $FirstLearnTabSlideList.find('.learn_tab_slide_item:nth-child(1)');
+                            setTimeout(function(){
+                                $FirstLearnTabSlideItem.addClass('slide_ani');
+                            }, 1)
+                            //뿌려진 ajax 를 슬라이드 선언
+                            var $EachLearnSlideWrap = $('.learn_tab_slide_list .learn_tab_slide_item .slide_wrap');
+                            $EachLearnSlideWrap.each(function(){
+                                var $this = $(this),
+                                    $EachSlideList = $this.find('.slide_list'),
+                                    $EachSlideControl = $this.find('.slide_control'),
+                                    $EachSlidePrev = $EachSlideControl.find('.prev'),
+                                    $EachSlideNext = $EachSlideControl.find('.next');
+                                $EachSlideList.slick({
+                                    //기본
+                                    autoplay : false,
+                                    dots : false,
+                                    draggable : true,
+                                    swipe : true,
+                                    swipeToSlide : true,
+                                    slidesToShow : 1,
+                                    slidesToScroll : 1,
+                                    rows : 2,
+                                    slidesPerRow : 3,
+                                    variableWidth : false,
+                                    infinite: true,
+                                    arrows : true,
+                                    prevArrow : $EachSlidePrev,
+                                    nextArrow : $EachSlideNext,
+                                    isRunOnLowIE : false,
+                                    pauseOnArrowClick : true,
+                                    pauseOnDirectionKeyPush : true,
+                                    pauseOnSwipe : true,
+                                    pauseOnDotsClick : true,
+                                    zIndex : 1,
+                                    responsive : [{
+                                        breakpoint : 1601,
+                                        settings : {
+
+                                        }
+                                    }]
+                                });
+                            });
+                        }
+                    });
+                    //초기 로딩시 현재가 몇월인지 판단 후 ajax 뿌리기 끝
+
+                    //1월 ~ 12월 모바일 슬라이드 선언 시작
+                    var $MobileMonthSlideList = $('.month_box .month_slide_wrap .mobile_month_list');
+                    $MobileMonthSlideList.slick({
+                        //기본
+                        autoplay : false,
+                        dots : false,
+                        draggable : false,
+                        swipe : false,
+                        swipeToSlide : false,
+                        slidesToShow : 1,
+                        slidesToScroll : 1,
+                        infinite: true,
+                        arrows : true,
+                        prevArrow : $('.month_box .month_slide_wrap .mobile_month_control .mobile_prev'),
+                        nextArrow : $('.month_box .month_slide_wrap .mobile_month_control .mobile_next'),
+                        isRunOnLowIE : false,
+                        pauseOnArrowClick : true,
+                        pauseOnDirectionKeyPush : true,
+                        pauseOnSwipe : true,
+                        pauseOnDotsClick : true,
+                        zIndex : 1,
+                        initialSlide : 4  //초기 스타트 하는 슬라이드 여부 결정 // Ex) 5월 = 4 , 12월 = 11 , 1월 = 0 (★개발필수★)
+                    });
+                    $MobileMonthSlideList.on('afterChange', function(event, slick, currentSlide) {
+                        var $this = $(this),
+                            $currentslide = $(slick.$slides[currentSlide]),
+                            $currentRow = $currentslide.find('.slick-rows'),
+                            currentDataMonthIndex = $currentRow.find('.mobile_month_item').attr('data-month'),
+                            $currentMonthList = $this.siblings('.month_list'),
+                            $currentMonthItem = $currentMonthList.find('.month_item[data-month="'+currentDataMonthIndex+'"]'),
+                            $currentMonthBtn = $currentMonthItem.find('.month_tab_btn');
+                        $currentMonthBtn.click();
+                    });
+                    //1월 ~ 12월 모바일 슬라이드 선언 끝
+
+                    //해당 월 버튼을 클릭 시 해당 월에 맞는 ajax 뿌리기 시작
+                    $('.month_box .month_slide_wrap .month_list .month_item .month_tab_btn').on('click', function(){
+                        var $this = $(this),
+                            $MyItem = $this.parent('.month_item'),
+                            MyIndex = $MyItem.attr('data-month'),
+                            IsActive = $MyItem.is('.active'),
+                            $MonthList = $MyItem.parent('.month_list'),
+                            $OtherItem = $MyItem.siblings('.month_item'),
+                            $OtherBtn = $OtherItem.find('.month_tab_btn'),
+                            $MonthSlideWrap = $MonthList.parent('.month_slide_wrap'),
+                            $MonthBox = $MonthSlideWrap.parent('.month_box'),
+                            $FirstLearnBox = $MonthBox.siblings('.learn_box'),
+                            $FirstLearnBoxItem = $FirstLearnBox.find('.learn_box_item'),
+                            $FirstLearnTabBox = $FirstLearnBoxItem.find('.learn_tab_box'),
+                            $FirstLearnTabList = $FirstLearnTabBox.find('.learn_tab_list'),
+                            $FirstLearnTabItem = $FirstLearnTabList.find('.learn_tab_item:nth-child(1)'),
+                            $FirstLearnTabBtn = $FirstLearnTabItem.find('.learn_tab_btn'),
+                            $OtherLearnTabItem = $FirstLearnTabItem.siblings('.learn_tab_item'),
+                            $OtherLearnTabBtn = $OtherLearnTabItem.find('.learn_tab_btn');
+                        $MobileMonthSlideList.slick('slickGoTo', MyIndex - 1);
+                        $OtherLearnTabItem.removeClass('active');
+                        $OtherLearnTabBtn.removeAttr('title');
+                        $FirstLearnTabItem.addClass('active');
+                        $FirstLearnTabBtn.attr('title', '선택됨');
+                        if(!IsActive){
+                            $OtherItem.removeClass('active');
+                            $OtherBtn.removeAttr('title');
+                            $MyItem.addClass('active');
+                            $this.attr('title', '선택됨');
+                            $StartLearnBox.attr('data-month', MyIndex);
+                            $.ajax({
+                                url : './data/'+MyIndex+'.html',  //폴더 경로 바뀔 시 (★개발필수★)
+                                success : function (data) {
+                                    $StartLearnTabSlideBox.empty().append(data);
+                                    var $FirstLearnTabSlideBox = $FirstLearnTabBox.siblings('.learn_tab_slide_box'),
+                                        $FirstLearnTabSlideList = $FirstLearnTabSlideBox.find('.learn_tab_slide_list'),
+                                        $FirstLearnTabSlideItem = $FirstLearnTabSlideList.find('.learn_tab_slide_item:nth-child(1)');
+                                    setTimeout(function(){
+                                        $FirstLearnTabSlideItem.addClass('slide_ani');
+                                    }, 1);
+                                    var $EachLearnSlideWrap = $('.learn_tab_slide_list .learn_tab_slide_item .slide_wrap');
+                                    $EachLearnSlideWrap.each(function(){
+                                        var $this = $(this),
+                                            $EachSlideList = $this.find('.slide_list'),
+                                            $EachSlideControl = $this.find('.slide_control'),
+                                            $EachSlidePrev = $EachSlideControl.find('.prev'),
+                                            $EachSlideNext = $EachSlideControl.find('.next');
+                                        $EachSlideList.slick({
+                                            //기본
+                                            autoplay : false,
+                                            dots : false,
+                                            draggable : true,
+                                            swipe : true,
+                                            swipeToSlide : true,
+                                            slidesToShow : 1,
+                                            slidesToScroll : 1,
+                                            rows : 2,
+                                            slidesPerRow : 3,
+                                            variableWidth : false,
+                                            infinite: true,
+                                            arrows : true,
+                                            prevArrow : $EachSlidePrev,
+                                            nextArrow : $EachSlideNext,
+                                            isRunOnLowIE : false,
+                                            pauseOnArrowClick : true,
+                                            pauseOnDirectionKeyPush : true,
+                                            pauseOnSwipe : true,
+                                            pauseOnDotsClick : true,
+                                            zIndex : 1,
+                                            responsive : [{
+                                                breakpoint : 1601,
+                                                settings : {
+
+                                                }
+                                            }]
+                                        });
+                                    });
+                                }
+                            });
+                        }
+                    });
+                    //해당 월 버튼을 클릭 시 해당 월에 맞는 ajax 뿌리기 끝
+
+                    //뿌려진 ajax 를 전체, 교육, 자격시험 별로 active 줬다 뺐다 시작
+                    $('.learn_box_item .learn_tab_box .learn_tab_list .learn_tab_item .learn_tab_btn').on('click', function(){
+                        var $this = $(this),
+                            $MyLearnTabItem = $this.parent('.learn_tab_item'),
+                            MyLearnTabIndex = $MyLearnTabItem.index(),
+                            IsActive = $MyLearnTabItem.is('.active'),
+                            $OtherLearnTabItem = $MyLearnTabItem.siblings('.learn_tab_item'),
+                            $OtherLearnTabBtn = $OtherLearnTabItem.find('.learn_tab_btn'),
+                            $LearnTabList = $MyLearnTabItem.parent('.learn_tab_list'),
+                            $LearnTabBox = $LearnTabList.parent('.learn_tab_box'),
+                            $LearnTabSlideBox = $LearnTabBox.siblings('.learn_tab_slide_box'),
+                            //여기부터 ajax로 들어온 값 찾기
+                            $LearnTabSlideList = $LearnTabSlideBox.find('.learn_tab_slide_list'),
+                            $MyLearnTabSlideItem = $LearnTabSlideList.find('.learn_tab_slide_item').eq(MyLearnTabIndex),
+                            $OtherLearnTabSlideItem = $MyLearnTabSlideItem.siblings('.learn_tab_slide_item'),
+                            $MySlideWrap = $MyLearnTabSlideItem.find('.slide_wrap'),
+                            $MySlide = $MySlideWrap.find('.slide_list');
+                        if(!IsActive){
+                            $OtherLearnTabItem.removeClass('active');
+                            $OtherLearnTabBtn.removeAttr('title');
+                            $MyLearnTabItem.addClass('active');
+                            $this.attr('title', '선택됨');
+                            $OtherLearnTabSlideItem.removeClass('active').removeClass('slide_ani');
+                            $MyLearnTabSlideItem.addClass('active');
+                            setTimeout(function(){
+                                $MyLearnTabSlideItem.addClass('slide_ani');
+                            }, 1);
+                            $MySlide.slick('setPosition');
+                        }
+                    });
+                    //뿌려진 ajax 를 전체, 교육, 자격시험 별로 active 줬다 뺐다 끝
+                });
+            </script>
+            <!--//rowgroup2 스크립트 부분 끝-->
+            <div id="rowgroup3" class="rowgroup rowgroup3">
+                <section class="intro">
+                    <h2 class="skip">교육자격소개 및 바로가기 영역</h2>
+                    <div class="intro_wrap">
+                        <div class="deco_inner">
+                            <div class="deco_bg01"></div>    <!--//deco_bg01-->
+                            <div class="deco_bg02">
+                                <i class="cloud01"></i>
+                                <i class="tool01"></i>
+                            </div>    <!--//deco_bg02-->
+                        </div>    <!--//deco_inner-->
+                        <div class="intro_colgroup type1">
+                            <div class="intro_title">
+                                <span class="top_title">TTA 아카데미</span>    <!--//top_title-->
+                                <span class="bottom_title">교육자격소개</span>    <!--//bottom_title-->
+                            </div>    <!--//intro_title-->
+                            <div class="intro_edu_slide_wrap">
+                                <div class="intro_edu_nav_list">
+                                    <!--//첫번재 아이템은 active 클레스 고정입니다-->
+                                    <div class="intro_edu_nav_item active" data-intro-nav="1">    <!--//하단의 intro_edu_slide_tab_item 과 개수 맞줘추세요-->
+                                        <button type="button" title="선택됨" class="nav_tab_btn"><em>표준교육</em></button>    <!--//nav-tab_btn-->
+                                    </div>    <!--//intro_edu_nav_item-->
+                                    <div class="intro_edu_nav_item" data-intro-nav="2">    <!--//하단의 intro_edu_slide_tab_item 과 개수 맞줘추세요-->
+                                        <button type="button" class="nav_tab_btn"><em>ICT 시험/기술 교육</em></button>    <!--//nav-tab_btn-->
+                                    </div>    <!--//intro_edu_nav_item-->
+                                    <div class="intro_edu_nav_item" data-intro-nav="3">    <!--//하단의 intro_edu_slide_tab_item 과 개수 맞줘추세요-->
+                                        <button type="button" class="nav_tab_btn"><em>SW 테스트/품질 교육</em></button>    <!--//nav-tab_btn-->
+                                    </div>    <!--//intro_edu_nav_item-->
+                                    <div class="intro_edu_nav_item" data-intro-nav="4">    <!--//하단의 intro_edu_slide_tab_item 과 개수 맞줘추세요-->
+                                        <button type="button" class="nav_tab_btn"><em>데이터 거래사 교육</em></button>    <!--//nav-tab_btn-->
+                                    </div>    <!--//intro_edu_nav_item-->
+                                    <div class="intro_edu_nav_item" data-intro-nav="5">    <!--//하단의 intro_edu_slide_tab_item 과 개수 맞줘추세요-->
+                                        <button type="button" class="nav_tab_btn"><em>IT 품질 전문인력 육성</em></button>    <!--//nav-tab_btn-->
+                                    </div>    <!--//intro_edu_nav_item-->
+                                    <div class="intro_edu_nav_item" data-intro-nav="6">    <!--//하단의 intro_edu_slide_tab_item 과 개수 맞줘추세요-->
+                                        <button type="button" class="nav_tab_btn"><em>EMP 전문가 양성 교육</em></button>    <!--//nav-tab_btn-->
+                                    </div>    <!--//intro_edu_nav_item-->
+                                </div>    <!--//intro_edu_slide_nav_list-->
+                                <div class="intro_edu_nav_control">
+                                    <button type="button" class="intro_edu_control_btn prev">이전</button>    <!--//intro_edu_control_btn-->
+                                    <button type="button" class="intro_edu_control_btn next">다음</button>    <!--//intro_edu_control_btn-->
+                                </div>    <!--//intro_edu_nav_control-->
+                                <div class="intro_edu_slide_tab_list">
+                                    <!--//첫번재 아이템은 active tab_ani 클레스 고정입니다-->
+                                    <div class="intro_edu_slide_tab_item active tab_ani" data-intro-tab_slide="1">    <!--//상단의 intro_edu_nav_item 과 개수 맞춰주세요-->
+                                        <div class="img_wrap">
+                                            <span class="img_wrap_title">표준교육</span>    <!--//img_wrap_title-->
+                                        </div>    <!--//img_wrap-->
+                                        <div class="edu_slide_list">
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">표준교육 링크01</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">표준교육 링크02</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">표준교육 링크03</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">표준교육 링크04</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">표준교육 링크05</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">표준교육 링크06</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">표준교육 링크07</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">표준교육 링크08</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">표준교육 링크09</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">표준교육 링크10</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                        </div>    <!--//edu_slide_list-->
+                                        <div class="edu_more">
+                                            <a href="" class="edu_more_link">자세히 보기</a>    <!--//edu_more_link-->
+                                        </div>    <!--//edu_more-->
+                                    </div>    <!--//intro_edu_slide_tab_item-->
+                                    <div class="intro_edu_slide_tab_item" data-intro-tab_slide="2">    <!--//상단의 intro_edu_nav_item 과 개수 맞춰주세요-->
+                                        <div class="img_wrap">
+                                            <span class="img_wrap_title">ICT 시험/기술 교육</span>    <!--//img_wrap_title-->
+                                        </div>    <!--//img_wrap-->
+                                        <div class="edu_slide_list">
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">ICT 시험/기술 교육 링크01</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">ICT 시험/기술 교육 링크02</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">ICT 시험/기술 교육 링크03</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">ICT 시험/기술 교육 링크04</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">ICT 시험/기술 교육 링크05</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">ICT 시험/기술 교육 링크06</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">ICT 시험/기술 교육 링크07</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">ICT 시험/기술 교육 링크08</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">ICT 시험/기술 교육 링크09</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">ICT 시험/기술 교육 링크10</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                        </div>    <!--//edu_slide_list-->
+                                        <div class="edu_more">
+                                            <a href="" class="edu_more_link">자세히 보기</a>    <!--//edu_more_link-->
+                                        </div>    <!--//edu_more-->
+                                    </div>    <!--//intro_edu_slide_tab_item-->
+                                    <div class="intro_edu_slide_tab_item" data-intro-tab_slide="3">    <!--//상단의 intro_edu_nav_item 과 개수 맞춰주세요-->
+                                        <div class="img_wrap">
+                                            <span class="img_wrap_title">SW 테스트/품질 교육</span>    <!--//img_wrap_title-->
+                                        </div>    <!--//img_wrap-->
+                                        <div class="edu_slide_list">
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">SW 테스트/품질 교육 링크01</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">SW 테스트/품질 교육 링크02</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">SW 테스트/품질 교육 링크03</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">SW 테스트/품질 교육 링크04</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">SW 테스트/품질 교육 링크05</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">SW 테스트/품질 교육 링크06</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">SW 테스트/품질 교육 링크07</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">SW 테스트/품질 교육 링크08</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">SW 테스트/품질 교육 링크09</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">SW 테스트/품질 교육 링크10</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                        </div>    <!--//edu_slide_list-->
+                                        <div class="edu_more">
+                                            <a href="" class="edu_more_link">자세히 보기</a>    <!--//edu_more_link-->
+                                        </div>    <!--//edu_more-->
+                                    </div>    <!--//intro_edu_slide_tab_item-->
+                                    <div class="intro_edu_slide_tab_item" data-intro-tab_slide="4">    <!--//상단의 intro_edu_nav_item 과 개수 맞춰주세요-->
+                                        <div class="img_wrap">
+                                            <span class="img_wrap_title">데이터 거래사 교육</span>    <!--//img_wrap_title-->
+                                        </div>    <!--//img_wrap-->
+                                        <div class="edu_slide_list">
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">데이터 거래사 교육 링크01</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">데이터 거래사 교육 링크02</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">데이터 거래사 교육 링크03</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">데이터 거래사 교육 링크04</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">데이터 거래사 교육 링크05</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">데이터 거래사 교육 링크06</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">데이터 거래사 교육 링크07</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">데이터 거래사 교육 링크08</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">데이터 거래사 교육 링크09</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">데이터 거래사 교육 링크10</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                        </div>    <!--//edu_slide_list-->
+                                        <div class="edu_more">
+                                            <a href="" class="edu_more_link">자세히 보기</a>    <!--//edu_more_link-->
+                                        </div>    <!--//edu_more-->
+                                    </div>    <!--//intro_edu_slide_tab_item-->
+                                    <div class="intro_edu_slide_tab_item" data-intro-tab_slide="5">    <!--//상단의 intro_edu_nav_item 과 개수 맞춰주세요-->
+                                        <div class="img_wrap">
+                                            <span class="img_wrap_title">IT 품질 전문인력 육성</span>    <!--//img_wrap_title-->
+                                        </div>    <!--//img_wrap-->
+                                        <div class="edu_slide_list">
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">IT 품질 전문인력 육성 링크01</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">IT 품질 전문인력 육성 링크02</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">IT 품질 전문인력 육성 링크03</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">IT 품질 전문인력 육성 링크04</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">IT 품질 전문인력 육성 링크05</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">IT 품질 전문인력 육성 링크06</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">IT 품질 전문인력 육성 링크07</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">IT 품질 전문인력 육성 링크08</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">IT 품질 전문인력 육성 링크09</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">IT 품질 전문인력 육성 링크10</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                        </div>    <!--//edu_slide_list-->
+                                        <div class="edu_more">
+                                            <a href="" class="edu_more_link">자세히 보기</a>    <!--//edu_more_link-->
+                                        </div>    <!--//edu_more-->
+                                    </div>    <!--//intro_edu_slide_tab_item-->
+                                    <div class="intro_edu_slide_tab_item" data-intro-tab_slide="6">    <!--//상단의 intro_edu_nav_item 과 개수 맞춰주세요-->
+                                        <div class="img_wrap">
+                                            <span class="img_wrap_title">EMP 전문가 양성 교육</span>    <!--//img_wrap_title-->
+                                        </div>    <!--//img_wrap-->
+                                        <div class="edu_slide_list">
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">EMP 전문가 양성 교육 링크01</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">EMP 전문가 양성 교육 링크02</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">EMP 전문가 양성 교육 링크03</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">EMP 전문가 양성 교육 링크04</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">EMP 전문가 양성 교육 링크05</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">EMP 전문가 양성 교육 링크06</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">EMP 전문가 양성 교육 링크07</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">EMP 전문가 양성 교육 링크08</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">EMP 전문가 양성 교육 링크09</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                            <div class="edu_slide_item">
+                                                <a href="" class="edu_slide_link">EMP 전문가 양성 교육 링크10</a>    <!--//edu_slide_link-->
+                                            </div>    <!--//edu_slide_item-->
+                                        </div>    <!--//edu_slide_list-->
+                                        <div class="edu_more">
+                                            <a href="" class="edu_more_link">자세히 보기</a>    <!--//edu_more_link-->
+                                        </div>    <!--//edu_more-->
+                                    </div>    <!--//intro_edu_slide_tab_item-->
+                                </div>    <!--//intro_edu_slide_tab_list-->
+                            </div>    <!--//intro_edu_slide_wrap-->
+                        </div>    <!--//intro_colgroup-->
+                        <div class="intro_colgroup type2">
+                            <div class="intro_title">
+                                <span class="top_title">TTA 아카데미</span>    <!--//top_title-->
+                                <span class="bottom_title">바로가기</span>    <!--//bottom_title-->
+                            </div>    <!--//intro_title-->
+                            <div class="intro_edu_quick_wrap">
+                                <div class="intro_edu_quick_list">
+                                    <li class="intro_edu_quick_item type01">
+                                        <a href="" class="intro_edu_quick_link">
+                                            <span class="link_inner">연간일정</span>    <!--//link_inner-->
+                                        </a>    <!--//intro_edu_quick_link-->
+                                    </li>    <!--//intro_edu_quick_item-->
+                                    <li class="intro_edu_quick_item type02">
+                                        <a href="" class="intro_edu_quick_link">
+                                            <span class="link_inner">자격증재발급</span>    <!--//link_inner-->
+                                        </a>    <!--//intro_edu_quick_link-->
+                                    </li>    <!--//intro_edu_quick_item-->
+                                    <li class="intro_edu_quick_item type03">
+                                        <a href="" class="intro_edu_quick_link">
+                                            <span class="link_inner">홍보 브로슈어</span>    <!--//link_inner-->
+                                        </a>    <!--//intro_edu_quick_link-->
+                                    </li>    <!--//intro_edu_quick_item-->
+                                    <li class="intro_edu_quick_item type04">
+                                        <a href="" class="intro_edu_quick_link">
+                                            <span class="link_inner">통장사본·<br>사업자등록증</span>    <!--//link_inner-->
+                                        </a>    <!--//intro_edu_quick_link-->
+                                    </li>    <!--//intro_edu_quick_item-->
+                                    <li class="intro_edu_quick_item type05">
+                                        <a href="" class="intro_edu_quick_link">
+                                            <span class="link_inner">문의전화</span>    <!--//link_inner-->
+                                        </a>    <!--//intro_edu_quick_link-->
+                                    </li>    <!--//intro_edu_quick_item-->
+                                    <li class="intro_edu_quick_item type06">
+                                        <a href="" class="intro_edu_quick_link">
+                                            <span class="link_inner">IT 품질 <br>전문인력 육성</span>    <!--//link_inner-->
+                                        </a>    <!--//intro_edu_quick_link-->
+                                    </li>    <!--//intro_edu_quick_item-->
+                                </div>    <!--//intro_edu_quick_list-->
+                            </div>    <!--//intro_edu_quick_wrap-->
+                        </div>    <!--//intro_colgroup-->
+                    </div>    <!--//intro_wrap-->
+                </section>    <!--//intro-->
+            </div>    <!--//rowgroup3-->
+        </main>
+    </div>    <!--//#container-->
+    <div id="footer">
+        <div class="footer_go">
+            <button type="button" title="맨위로 버튼">바로가기</button>
+        </div>    <!--//footer_go-->
+        <div class="footer_box clearfix">
+            <a href="./index.do" class="logo">
+                <img src="./images/common/logo_360.png" alt="TTA 한국정보통신기술협회 Telecommunications Technology Association" />
+                <span class="site_title">아카데미</span>
+            </a>    <!--//logo-->
+            <div class="nav_box">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="" class="nav_link">서비스 이용약관</a></li>    <!--//nav_item-->
+                    <li class="nav_item privacy"><a href="" class="nav_link">개인정보처리방침</a></li>    <!--//nav_item-->
+                    <li class="nav_item"><a href="" class="nav_link">이메일무단수집거부</a></li>    <!--//nav_item-->
+                    <li class="nav_item"><a href="" class="nav_link">찾아오시는 길</a></li>    <!--//nav_item-->
+                </ul>    <!--//nav_list-->
+            </div>    <!--//nav_box-->
+        </div>    <!--//footer_box-->
+        <div class="footer_bottom clearfix">
+            <div class="footer_info">
+                <div class="addressbox">
+                    <address>[13591] 경기도 성남시 분당구 분당로 47 (구. 서현동 267-2)</address>
+                </div>    <!--//addressbox-->
+                <ul class="info_list">
+                    <li class="info_item">사업자 등록번호: 102-82-07886</li>
+                    <li class="info_item">대표자: 최영해</li>
+                </ul>    <!--//info_list-->
+                <p class="copyright">COPYRIGHTⓒ TTA ALL RIGHTS RESERVED.</p>    <!--//copyright-->
+            </div>    <!--//footer_info-->
+            <div class="footer_link">
+                <ul class="link_list">
+                    <li class="link_item">
+                        <button type="button" title="목록열기" class="link_btn"><em>관련사이트</em></button>    <!--//link_btn-->
+                        <div class="link_layer">
+                            <ul>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">과학기술정보통신부</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">교육부</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">고용노동부</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">한국산업인력공단</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">한국직업능력개발원</a></li>
+                            </ul>
+                        </div>    <!--//link_layer-->
+                    </li>    <!--//link_item-->
+                    <li class="link_item">
+                        <button type="button" title="목록열기" class="link_btn"><em>기관사이트</em></button>    <!--//link_btn-->
+                        <div class="link_layer">
+                            <ul>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">한국정보통신기술협회</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">정보통신표준화위원회</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">정보통신시험인증연구소</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">소프트웨어시험인증연구소</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">ICT표준화사이버지원시스템</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">ICT표준화포럼</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">ICT국제표준화전문가</a></li>
+                                <li><a href="" target="_blank" title="새창" rel="noopener noreferrer">정보통신용어사전</a></li>
+                            </ul>
+                        </div>    <!--//link_layer-->
+                    </li>    <!--//link_item-->
+                </ul>    <!--//link_list-->
+            </div>    <!--//footer_link-->
+        </div>    <!--//footer_bottom-->
+    </div>    <!--//#footer-->
+</div>    <!--//wrapper-->
+</body>
+</html>
