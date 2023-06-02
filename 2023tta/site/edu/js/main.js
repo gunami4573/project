@@ -14,7 +14,7 @@
         //퀵메뉴 스크립트 시작
         $('.edu_quick_menu .quick_wrap').navScroll({
             mobileDropdown : false,
-            mobileBreakpoint : 1001,
+            mobileBreakpoint : 1601,
             scrollTime : 300,
             scrollSpy : true,
             activeParent : true,
@@ -83,7 +83,12 @@
             responsive : [{
                 breakpoint : 1601,
                 settings : {
-
+                    slidesToShow : 2
+                }
+            },{
+                breakpoint : 1241,
+                settings : {
+                    slidesToShow : 1
                 }
             }]
         });
