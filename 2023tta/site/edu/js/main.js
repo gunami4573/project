@@ -90,6 +90,16 @@
                 settings : {
                     slidesToShow : 1
                 }
+            },{
+                breakpoint : 1001,
+                settings : {
+                    slidesToShow : 2
+                }
+            },{
+                breakpoint : 705,
+                settings : {
+                    slidesToShow : 1
+                }
             }]
         });
         //비주얼 공지사항 슬라이드 끝
