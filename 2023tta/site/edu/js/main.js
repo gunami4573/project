@@ -244,7 +244,16 @@
                 infinite : true,
                 arrows : false,
                 zIndex : 1,
-                responsive: [{}]
+                responsive: [{
+                    breakpoint : 641,
+                    settings : {
+                        slidesToShow : 7,
+                        rows : 1,
+                        slidesPerRow : 1,
+                        vertical : true,
+                        verticalSwiping : true
+                    }
+                }]
             });
         });
 
