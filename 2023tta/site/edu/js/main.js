@@ -100,6 +100,14 @@
                 settings : {
                     slidesToShow : 1
                 }
+            },{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 3,
+                    variableWidth : false,
+                    vertical : true,
+                    verticalSwiping : true
+                }
             }]
         });
         //비주얼 공지사항 슬라이드 끝
