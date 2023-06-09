@@ -137,7 +137,7 @@
                 slidesToShow : 1,
                 slidesToScroll : 1,
                 variableWidth : false,
-                infinite: true,
+                infinite : true,
                 arrows : true,
                 prevArrow : $('.visual_slide_wrap .visual_slide_control .btn_box .prev'),
                 nextArrow : $('.visual_slide_wrap .visual_slide_control .btn_box .next'),
@@ -161,13 +161,7 @@
                 pauseOnSwipe : true,
                 pauseOnDotsClick : true,
                 zIndex : 1,
-                fade : true,
-                responsive : [{
-                    breakpoint : 1601,
-                    settings : {
-
-                    }
-                }]
+                fade : true
             });
             $VisualImgSlideList.on('beforeChange', function(event, slick, currentSlide) {
                 var $currentslide = $(slick.$slides[currentSlide]);
