@@ -105,6 +105,13 @@
 .header_box .it_direct_link:after{display:block;position:absolute;background-repeat:no-repeat;content:'';box-sizing:border-box;}
 .header_box .it_direct_link:before{top:-19px;left:-23px;width:61px;height:67px;background-image:url(../images/common/it_direct_link_icon.png);background-position:left top;}
 .header_box .it_direct_link:after{top:14px;right:17px;width:13px;height:11px;background-image:url(../images/common/it_direct_link_icon2.png);background-position:left top;}
+@media screen and (min-width:1001px){
+    @keyframes it-direct-after {
+        0%, 100%{transform:translateX(0px);}
+        50%{transform:translateX(6px);}
+    }
+    .header_box .it_direct_link:hover:after{animation-name:it-direct-after;animation-duration:500ms;animation-direction:alternate;animation-iteration-count:2;animation-fill-mode:both;}
+}
 @media screen and (max-width:1600px){
     .header_box{padding-right:3%;padding-left:3%;}
     .header_box .quick_link_box{margin-left:20px;}
