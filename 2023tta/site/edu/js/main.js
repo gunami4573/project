@@ -62,7 +62,7 @@
         var $VisualBoardSlideList = $('.board_slide_wrap .board_slide_list');
         $VisualBoardSlideList.slick({
             //기본
-            autoplay : false,
+            autoplay : true,
             dots : false,
             draggable : true,
             swipe : true,
