@@ -104,6 +104,31 @@
         });
         //링크복사 끝
 
+        //CMS 3차 메뉴 개수 파악 시작
+        var $CmsDepth3 = $('.cms_depth3');
+        $CmsDepth3.each(function(){
+            var $this = $(this),
+                $CmsDepth3List = $this.find('.cms_depth3_list'),
+                $CmsDepth3Item = $CmsDepth3List.find('.cms_depth3_item'),
+                CmsDepth3ItemLength = $CmsDepth3Item.length;
+            if(CmsDepth3ItemLength === 5){
+                $this.addClass('cms_divide5');
+            }
+            if(CmsDepth3ItemLength === 4){
+                $this.addClass('cms_divide4');
+            }
+            if(CmsDepth3ItemLength === 3){
+                $this.addClass('cms_divide3');
+            }
+            if(CmsDepth3ItemLength === 2){
+                $this.addClass('cms_divide2');
+            }
+            if(CmsDepth3ItemLength === 1){
+                $this.addClass('cms_divide1');
+            }
+        });
+        //CMS 3차 메뉴 개수 파악 끝
+
         //반응형 테이블 시작
         $('table.table.responsive').not($('.prettyprint').children()).each(function () {
             var RowSpanExist = $(this).find('td, th').is('[rowspan]'),
@@ -122,6 +147,37 @@
             };
         });
         //반응형 테이블 끝
+
+        //컨텐츠 탭메뉴 시작
+        var $EduTabBox = $('#contents .edu_tab_box');
+        $EduTabBox.each(function() {
+            var $this = $(this),
+                $EduTabList = $this.find('.edu_tab_list'),
+                $EduTabItem = $EduTabList.find('.edu_tab_item'),
+                $EduTabBtn = $EduTabItem.find('button.edu_tab_btn');
+
+            $EduTabBtn.on('click', function() {
+                var $MyBtn = $(this),
+                    $MyItem = $MyBtn.parent('.edu_tab_item'),
+                    $OtherItem = $MyItem.siblings('.edu_tab_item'),
+                    $OtherBtn = $OtherItem.find('button.edu_tab_btn'),
+                    MyItemIndex = $MyItem.index(),
+                    IsActive = $MyItem.is('.active'),
+                    $MyList = $MyItem.parent('.edu_tab_list'),
+                    $CtsList = $MyList.siblings('.edu_tab_cts_list'),
+                    $MyCtsItem = $CtsList.find('.edu_tab_cts_item').eq(MyItemIndex),
+                    $OtherCtsItem = $MyCtsItem.siblings('.edu_tab_cts_item');
+                if(!IsActive){
+                    $OtherItem.removeClass('active');
+                    $OtherBtn.removeAttr('title');
+                    $MyItem.addClass('active');
+                    $MyBtn.attr('title', '선택됨');
+                    $OtherCtsItem.removeClass('active');
+                    $MyCtsItem.addClass('active');
+                }
+            });
+        });
+        //컨텐츠 탭메뉴 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
