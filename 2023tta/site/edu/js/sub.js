@@ -148,37 +148,6 @@
         });
         //반응형 테이블 끝
 
-        //컨텐츠 탭메뉴 시작
-        var $EduTabBox = $('#contents .edu_tab_box');
-        $EduTabBox.each(function() {
-            var $this = $(this),
-                $EduTabList = $this.find('.edu_tab_list'),
-                $EduTabItem = $EduTabList.find('.edu_tab_item'),
-                $EduTabBtn = $EduTabItem.find('button.edu_tab_btn');
-
-            $EduTabBtn.on('click', function() {
-                var $MyBtn = $(this),
-                    $MyItem = $MyBtn.parent('.edu_tab_item'),
-                    $OtherItem = $MyItem.siblings('.edu_tab_item'),
-                    $OtherBtn = $OtherItem.find('button.edu_tab_btn'),
-                    MyItemIndex = $MyItem.index(),
-                    IsActive = $MyItem.is('.active'),
-                    $MyList = $MyItem.parent('.edu_tab_list'),
-                    $CtsList = $MyList.siblings('.edu_tab_cts_list'),
-                    $MyCtsItem = $CtsList.find('.edu_tab_cts_item').eq(MyItemIndex),
-                    $OtherCtsItem = $MyCtsItem.siblings('.edu_tab_cts_item');
-                if(!IsActive){
-                    $OtherItem.removeClass('active');
-                    $OtherBtn.removeAttr('title');
-                    $MyItem.addClass('active');
-                    $MyBtn.attr('title', '선택됨');
-                    $OtherCtsItem.removeClass('active');
-                    $MyCtsItem.addClass('active');
-                }
-            });
-        });
-        //컨텐츠 탭메뉴 끝
-
         $window.on('screen:tablet screen:phone', function (event) {
 
         });
