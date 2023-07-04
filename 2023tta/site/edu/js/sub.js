@@ -111,21 +111,7 @@
                 $CmsDepth3List = $this.find('.cms_depth3_list'),
                 $CmsDepth3Item = $CmsDepth3List.find('.cms_depth3_item'),
                 CmsDepth3ItemLength = $CmsDepth3Item.length;
-            if(CmsDepth3ItemLength === 5){
-                $this.addClass('cms_divide5');
-            }
-            if(CmsDepth3ItemLength === 4){
-                $this.addClass('cms_divide4');
-            }
-            if(CmsDepth3ItemLength === 3){
-                $this.addClass('cms_divide3');
-            }
-            if(CmsDepth3ItemLength === 2){
-                $this.addClass('cms_divide2');
-            }
-            if(CmsDepth3ItemLength === 1){
-                $this.addClass('cms_divide1');
-            }
+            $this.addClass('cms_divide'+CmsDepth3ItemLength+'');
         });
         //CMS 3차 메뉴 개수 파악 끝
 
