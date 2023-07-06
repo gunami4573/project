@@ -280,8 +280,18 @@
         });
         //교육자격소개 슬라이드 및 탭버튼 끝
 
-        $window.on('screen:tablet screen:phone', function (event) {
 
+        //
+        var $TiltVisualImgSlideList = $('.visual_slide_list'),  //비주얼 팝업영역
+            $TiltBoardSlideItem = $('.board_slide_item');  //공지사항 아이템
+        $window.on('screen:wide screen:web', function (event) {
+            $TiltVisualImgSlideList.tilt({
+                maxTilt:30, perspective:900, scale:1, speed:300, disableAxis:null, reset:true, glare:false, maxGlare:0, easing:'cubic-bezier(.19,1,.22,1)'
+            });
+            $TiltBoardSlideItem.tilt({
+                maxTilt:30, perspective:400, scale:1, speed:300, disableAxis:null, reset:true, glare:false, maxGlare:0, easing:'cubic-bezier(.19,1,.22,1)'
+            });
         });
+        //
     });
 })(jQuery);
