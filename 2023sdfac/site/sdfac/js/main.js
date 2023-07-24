@@ -45,6 +45,104 @@
         });
         //강좌검색 셀렉트 끝
 
+        //강좌 카라테고리 별 슬라이드 시작
+        //카테고리 슬라이드
+        var $TopSlideList = $('.edu_schedule .top_slide_wrap .top_slide_list');
+        $TopSlideList.slick({
+            //기본
+            autoplay : false,
+            dots : false,
+            draggable : false,
+            swipe : false,
+            swipeToSlide : false,
+            slidesToShow : 5,
+            slidesToScroll : 1,
+            variableWidth : true,
+            infinite: false,
+            arrows : false,
+            isRunOnLowIE : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            zIndex : 1,
+            responsive : [{}]
+        });
+        //강좌 슬라이드
+        var $BottomSlideWrapItem = $('.edu_schedule .bottom_slide_wrap .bottom_wrap_item');
+        $BottomSlideWrapItem.each(function(){
+            var $this = $(this),
+                StartActive = $this.is('.active'),
+                $BottomSlideList = $this.find('.bottom_slide_list'),
+                $BottomSlideControl = $this.find('.bottom_slide_control'),
+                $BottomSlidePrev = $BottomSlideControl.find('.prev'),
+                $BottomSlideNext = $BottomSlideControl.find('.next');
+            if(StartActive){
+                setTimeout(function(){
+                    $this.addClass('active_ani');
+                }, 1);
+            }
+            $BottomSlideList.slick({
+                //기본
+                autoplay : false,
+                speed : 800,
+                dots : false,
+                draggable : true,
+                swipe : true,
+                swipeToSlide : true,
+                slidesToShow : 1,
+                rows : 2,
+                slidesPerRow : 3,
+                slidesToScroll : 1,
+                variableWidth : false,
+                infinite: true,
+                arrows : true,
+                prevArrow : $BottomSlidePrev,
+                nextArrow : $BottomSlideNext,
+                isRunOnLowIE : false,
+                pauseOnArrowClick : true,
+                pauseOnDirectionKeyPush : true,
+                pauseOnSwipe : true,
+                pauseOnDotsClick : true,
+                zIndex : 1,
+                responsive : [{}]
+            });
+        });
+
+
+        //카테고리 버튼 클릭 active
+        $(document).on('click', '.edu_schedule .top_slide_wrap .top_slide_list .top_slide_item button.top_slide_btn', function(){
+            var $this = $(this),
+                $MyItem = $this.parent('.top_slide_item'),
+                IsActive = $MyItem.is('.active'),
+                $MyRows = $MyItem.parent('.slick-rows'),
+                $MySlideItem = $MyRows.parent('.slick-slide'),
+                MySlideIndex = $MySlideItem.attr('data-slick-index'),
+                $OtherSlideItem = $MySlideItem.siblings('.slick-slide'),
+                $OtherItem = $OtherSlideItem.find('.top_slide_item'),
+                $OtherBtn = $OtherItem.find('button.top_slide_btn'),
+                $TopSlideWrap = $this.parents('.top_slide_wrap'),
+                $BottomSlideWrap = $TopSlideWrap.siblings('.bottom_slide_wrap'),
+                $MyBottomSlideItem = $BottomSlideWrap.find('.bottom_wrap_item').eq(MySlideIndex),
+                $MyBottomSlideList = $MyBottomSlideItem.find('.bottom_slide_list'),
+                $OtherBottomSlideItem = $BottomSlideWrap.find('.bottom_wrap_item').not($MyBottomSlideItem);
+            if(!IsActive){
+                $OtherItem.removeClass('active');
+                $OtherBtn.removeAttr('title');
+                $OtherBottomSlideItem.removeClass('active active_ani');
+                $MyItem.addClass('active');
+                $this.attr('title', '선택됨');
+                $MyBottomSlideItem.addClass('active');
+                setTimeout(function(){
+                    $MyBottomSlideItem.addClass('active_ani');
+                }, 1);
+                $MyBottomSlideList.slick('setPosition');
+            }
+        });
+        //강좌 카라테고리 별 슬라이드 끝
+
+
+
         $window.on('screen:tablet screen:phone', function (event) {
 
         });
