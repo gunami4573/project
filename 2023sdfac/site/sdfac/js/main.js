@@ -12,6 +12,57 @@
 
         //여기서부터 코드 작성해주세요
 
+        //비주얼 슬라이드 시작
+        var $VisualSlideList = $('.edu_visual .visual_slide_wrap .visual_slide_list'),
+            $VisualPrev = $('.edu_visual .visual_slide_wrap .visual_slide_control .prev'),
+            $VisualNext = $('.edu_visual .visual_slide_wrap .visual_slide_control .next'),
+            $VisualAuto = $('.edu_visual .visual_slide_nav .auto'),
+            $VisualCurrent = $('.edu_visual .visual_slide_nav .num_box .current'),
+            $VisualTotal = $('.edu_visual .visual_slide_nav .num_box .total');
+        $VisualSlideList.on('init', function(){
+            $('.edu_visual .visual_slide_wrap').addClass('active');
+        });
+        $VisualSlideList.slick({
+            //기본
+            autoplay : true,
+            autoplaySpeed : 4000,
+            speed : 2000,
+            dots : false,
+            draggable : true,
+            swipe : true,
+            swipeToSlide : true,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            variableWidth : false,
+            infinite: true,
+            arrows : true,
+            prevArrow : $VisualPrev,
+            nextArrow : $VisualNext,
+            autoArrow : $VisualAuto,
+            pauseText : '정지',
+            playText : '재생',
+            total : $VisualTotal,
+            current : $VisualCurrent,
+            customState : function(state) {
+                if(state.current < 10) {
+                    state.current = '0' + state.current;
+                }
+                if(state.total < 10) {
+                    state.total = '0' + state.total;
+                }
+                return state;
+            },
+            fade : true,
+            isRunOnLowIE : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            zIndex : 1,
+            responsive : [{}]
+        });
+        //비주얼 슬라이드 끝
+
         //강좌검색 셀렉트 시작
         $('.search_box .input_select_area .select_area_inner button.select_btn').on('click', function(){
             var $this = $(this),
