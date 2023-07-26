@@ -26,7 +26,7 @@
             //기본
             autoplay : true,
             autoplaySpeed : 4000,
-            speed : 2000,
+            speed : 1500,
             dots : false,
             draggable : true,
             swipe : true,
