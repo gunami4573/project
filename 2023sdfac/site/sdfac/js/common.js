@@ -321,6 +321,14 @@ $(document).ready(function () {
 
         //여기서부터 코드 작성해주세요
 
+        //footer_go 시작
+        $('.footer_go button').on('click', function() {
+            $('html, body').animate({
+                scrollTop : $('body').offset().top
+            }, 300);
+        });
+        //footer_go 끝
+
         $window.on('screen:wide screen:web', function (event) {
             refreshLnbHeight();
             if ($lnbSpy.length) {

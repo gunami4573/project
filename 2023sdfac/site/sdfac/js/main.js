@@ -192,7 +192,29 @@
         });
         //강좌 카라테고리 별 슬라이드 끝
 
-
+        //바로가기 슬라이드 시작
+        var $QuickSlideList = $('.edu_quick .quick_slide_wrap .quick_slide_list');
+        $QuickSlideList.slick({
+            //기본
+            autoplay : false,
+            dots : false,
+            draggable : false,
+            swipe : false,
+            swipeToSlide : false,
+            slidesToShow : 5,
+            slidesToScroll : 1,
+            variableWidth : true,
+            infinite: false,
+            arrows : false,
+            isRunOnLowIE : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            zIndex : 1,
+            responsive : [{}]
+        });
+        //바로가기 슬라이드 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
