@@ -156,7 +156,12 @@
                 pauseOnSwipe : true,
                 pauseOnDotsClick : true,
                 zIndex : 1,
-                responsive : [{}]
+                responsive : [{
+                    breakpoint : 1301,
+                    settings : {
+                        rows : 1
+                    }
+                }]
             });
         });
 

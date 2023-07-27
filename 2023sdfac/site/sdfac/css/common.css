@@ -281,7 +281,7 @@
 #footer{display:block;position:relative;z-index:69;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
 #footer:before{display:block;position:absolute;z-index:1;top:-136px;left:calc(((100% - 1600px) / 2) - 62px);width:225px;height:197px;background-image:url(../images/common/apple_book_deco_wide.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
 #footer .footer_go{display:block;position:absolute;z-index:1;top:57px;right:27px;font-size:0;line-height:0;box-sizing:border-box;}
-#footer .footer_go button{display:block;position:relative;width:70px;padding:33px 0 17px;border:none;background-image:linear-gradient(to top, #0f63b8 0%, #00b7cd 100%);border-radius:100%;font-size:16px;color:#fff;line-height:20px;letter-spacing:-0.03em;font-weight:400;font-family:'Elice';text-align:center;box-sizing:border-box;}
+#footer .footer_go button{display:block;position:relative;width:70px;padding:33px 0 17px;border:none;background-image:linear-gradient(to top, #0f63b8 0%, #00b7cd 100%);border-radius:100%;font-size:16px;color:#fff;line-height:20px;letter-spacing:-0.03em;font-weight:400;font-family:'Elice';text-align:center;box-sizing:border-box;box-shadow:0px 21px 18px rgba(0, 0, 0, 0.25); }
 #footer .footer_go button:hover{text-decoration:none;}
 #footer .footer_go button:before{display:block;position:absolute;top:15px;left:calc(50% - 4px);width:8px;height:15px;background-image:url(../images/common/footer_go_icon_wide.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
 /* footer_inner */
@@ -316,8 +316,9 @@
 .footer_inner .footer_info_box .copyright .copy_text{display:inline-block;position:relative;font-size:15px;color:rgba(211, 211, 211, 0.7);line-height:22px;letter-spacing:-0.03em;font-weight:200;font-family:'CJK';vertical-align:top;box-sizing:border-box;}
 .footer_inner .footer_info_box .copyright .copy_text:last-child{margin-top:8px;}
 @media screen and (max-width:1600px){
+    #footer:before{top:-140px;left:-4%;}
     .footer_inner{min-height:0;padding:0 10% 70px 3%;}
-    .footer_inner .footer_logo_box{width:275px;padding-top:30px;}
+    .footer_inner .footer_logo_box{z-index:1;width:275px;padding-top:30px;}
     .footer_inner .footer_info_box{width:calc(100% - 275px);padding-top:30px;}
     .footer_inner .footer_info_box .nav_box .nav_list .nav_item{margin:0;padding:0 15px 0 15px;}
     .footer_inner .footer_info_box .nav_box .nav_list .nav_item:first-child{margin:0;padding:0 15px 0 0;}
@@ -329,6 +330,9 @@
 @media screen and (min-width:1001px) and (max-width:1600px){
     .footer_inner .footer_info_box .address_box .address_list .address_item address,
     .footer_inner .footer_info_box .address_box .address_list .address_item span{letter-spacing:-0.06em;}
+}
+@media screen and (min-width:1001px) and (max-width:1300px){
+    #footer:before{top:-140px;left:-7%;}
 }
 @media screen and (max-width:1000px){
     .footer_inner{padding:50px 3% 67px;background-color:transparent;border-radius:0;overflow:visible;}
