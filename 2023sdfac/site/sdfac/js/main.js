@@ -161,6 +161,13 @@
                     settings : {
                         rows : 1
                     }
+                },{
+                    breakpoint : 1001,
+                    settings : {
+                        slidesToShow : 1,
+                        rows : 1,
+                        slidesPerRow : 2
+                    }
                 }]
             });
         });
