@@ -117,7 +117,15 @@
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 2,
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true
+                }
+            }]
         });
         //강좌 슬라이드
         var $BottomSlideWrapItem = $('.edu_schedule .bottom_slide_wrap .bottom_wrap_item');
@@ -167,6 +175,13 @@
                         slidesToShow : 1,
                         rows : 1,
                         slidesPerRow : 2
+                    }
+                },{
+                    breakpoint : 641,
+                    settings : {
+                        slidesToShow : 1,
+                        rows : 1,
+                        slidesPerRow : 1
                     }
                 }]
             });
