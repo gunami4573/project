@@ -181,7 +181,8 @@
                     settings : {
                         slidesToShow : 1,
                         rows : 1,
-                        slidesPerRow : 1
+                        slidesPerRow : 1,
+                        adaptiveHeight : true
                     }
                 }]
             });
@@ -239,7 +240,15 @@
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 641,
+                settings : {
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true,
+                    slidesToShow : 2
+                }
+            }]
         });
         //바로가기 슬라이드 끝
 
