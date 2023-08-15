@@ -1,3 +1,17 @@
+/* 유튜브 api 시작 */
+function onPlayerReady(event) {
+}
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+    }
+}
+function YoutubePlay(YoutubeID) {
+    YoutubeID.playVideo();
+}
+function YoutubePause(YoutubeID) {
+    YoutubeID.pauseVideo();
+}
+/* 유튜브 api 끝 */
 (function ($) {
     'use strict';
     var $window = $(window),
@@ -14,7 +28,7 @@
         $('.waypoint').waypoint(function(direction) {
             $(this.element)[(direction === 'down') ? 'addClass' : 'removeClass']('active');
         }, {
-            offset : '90%'
+            offset : '85%'
         });
         //그룹 스크롤 효과 끝
 
@@ -97,6 +111,78 @@
         });
         //비주얼 이미지,텍스트 슬라이드 끝
 
+        //주요일정 탭 및 슬라이드 시작
+        var $DayDetailItemBox = $('.slogan_wrap .sgn_daily .day_detail_item_box');
+        $DayDetailItemBox.each(function(){
+            var $this = $(this),
+                $DayDetailSlideList = $this.find('.day_detail_slide_list');
+            $DayDetailSlideList.on('init', function(event, slick, currentSlide) {
+                var $Currentslide = $(slick.$slides[0]),
+                    $InitSlickTrack = $Currentslide.parent('.slick-track'),
+                    $InitSlickList = $InitSlickTrack.parent('.slick-list'),
+                    $InitDayDetailSlideList = $InitSlickList.parent('.day_detail_slide_list'),
+                    $InitDayDetailItemBoxActive = $InitDayDetailSlideList.parent('.day_detail_item_box.active');
+                setTimeout(function(){
+                    $InitDayDetailItemBoxActive.addClass('box_ani');
+                }, 1)
+            });
+            $DayDetailSlideList.slick({
+                //기본
+                autoplay : true,
+                dots : false,
+                draggable : true,
+                swipe : true,
+                swipeToSlide : true,
+                slidesToShow : 3,
+                slidesToScroll : 1,
+                infinite: true,
+                arrows : false,
+                isRunOnLowIE : false,
+                pauseOnArrowClick : true,
+                pauseOnDirectionKeyPush : true,
+                pauseOnSwipe : true,
+                pauseOnDotsClick : true,
+                zIndex : 1,
+                vertical : true, //세로모드 유무
+                verticalSwiping : true, //세로일때 터치 유무
+                responsive : [{}]
+            });
+            $DayDetailSlideList.on('wheel', function(e){
+                e.preventDefault();
+                if (e.originalEvent.deltaY < 0) {
+                    $(this).slick('slickPrev');
+                } else {
+                    $(this).slick('slickNext');
+                }
+            });
+        });
+        $('.slogan_wrap .sgn_daily .day_choice .day_choice_list .day_choice_item button.day_choice_btn').on('click', function(){
+            var $this = $(this),
+                $MyChoiceItem = $this.parent('.day_choice_item'),
+                MyItemIndex = $MyChoiceItem.index(),
+                IsActive = $MyChoiceItem.is('.active'),
+                $OtherChoiceItem = $MyChoiceItem.siblings('.day_choice_item'),
+                $OtherChoiceBtn = $OtherChoiceItem.find('button.day_choice_btn'),
+                $DayChoice = $this.parents('.day_choice'),
+                $DayDetail = $DayChoice.siblings('.day_detail'),
+                $MyDayDetailItemBox = $DayDetail.find('.day_detail_item_box').eq(MyItemIndex),
+                $MyDayDetailSlideList = $MyDayDetailItemBox.find('.day_detail_slide_list'),
+                $OtherDayDetailItemBox = $MyDayDetailItemBox.siblings('.day_detail_item_box');
+            if(!IsActive){
+                $OtherChoiceItem.removeClass('active');
+                $OtherChoiceBtn.removeAttr('title');
+                $OtherDayDetailItemBox.removeClass('active box_ani');
+                $MyChoiceItem.addClass('active');
+                $this.attr('title', '선택됨');
+                $MyDayDetailItemBox.addClass('active');
+                setTimeout(function(){
+                    $MyDayDetailItemBox.addClass('box_ani');
+                }, 1)
+                $MyDayDetailSlideList.slick('setPosition');
+            }
+        });
+        //주요일정 탭 및 슬라이드 끝
+
         //공약사항 슬라이드 시작
         var $pmsSlideList = $('.pms_slide_wrap .pms_slide_list'),
             $pmsPrev = $('.pms_slide_wrap .pms_slide_control .prev'),
@@ -139,6 +225,35 @@
             responsive : [{}]
         });
         //공약사항 슬라이드 끝
+
+        //뉴스 슬라이드 시작
+        var $NewsSlideList = $('.news_slide_wrap .news_slide_list'),
+            $NewsSlidePrev = $('.news_slide_wrap .news_slide_control .prev'),
+            $NewsSlideNext = $('.news_slide_wrap .news_slide_control .next');
+        $NewsSlideList.slick({
+            //기본
+            autoplay : false,
+            speed : 800,
+            dots : false,
+            draggable : true,
+            swipe : true,
+            swipeToSlide : true,
+            slidesToShow : 2,
+            slidesToScroll : 1,
+            variableWidth : false,
+            infinite: false,
+            arrows : true,
+            prevArrow : $NewsSlidePrev,
+            nextArrow : $NewsSlideNext,
+            isRunOnLowIE : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            zIndex : 1,
+            responsive : [{}]
+        });
+        //뉴스 슬라이드 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 

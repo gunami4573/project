@@ -1,107 +1,107 @@
 // 탭메뉴 공통적으로 사용
 function tabOn(tab,num,img) {
-	var $tab,$tab_btn;
-	var tabid=tab, n=num-1, btn_img=img;
+    var $tab,$tab_btn;
+    var tabid=tab, n=num-1, btn_img=img;
 
-	$tab = $(tabid+'> ul > li');
-	$tab_btn = $(tabid+'> ul > li > a');
+    $tab = $(tabid+'> ul > li');
+    $tab_btn = $(tabid+'> ul > li > a');
 
-	$tab_btn.siblings().hide();
-	$tab.eq(n).addClass('active');
-	$tab.eq(n).children('a').siblings().show();
+    $tab_btn.siblings().hide();
+    $tab.eq(n).addClass('active');
+    $tab.eq(n).children('a').siblings().show();
 
-	if(btn_img =='img'){
-		var btn = $tab.eq(n).children('a').find("img");
-		btn.attr("src",btn.attr("src").replace("_off","_on"));
-	}
+    if(btn_img =='img'){
+        var btn = $tab.eq(n).children('a').find("img");
+        btn.attr("src",btn.attr("src").replace("_off","_on"));
+    }
 
-	$tab_btn.on("click",function(event){
-		var realTarget = $(this).attr('href');
+    $tab_btn.on("click",function(event){
+        var realTarget = $(this).attr('href');
 
-		if(realTarget != "#"){
-			return
-		}
-		if(btn_img =='img'){
-			for(var i=0;i<$tab.size();i++){
-				var btn = $tab.eq(i).children('a').find("img");
-				btn.attr("src",btn.attr("src").replace("_on","_off"));
-			}
-			var active = $(this).parent().attr('class');
-			if(active != 'active'){
-				var btn_img_off = $(this).find('img')[0];
-				btn_img_off.src =  btn_img_off.src.replace('_off','_on');
-			}
-		}
-		$tab_btn.siblings().hide();
-		$tab_btn.parent().removeClass('active');
+        if(realTarget != "#"){
+            return
+        }
+        if(btn_img =='img'){
+            for(var i=0;i<$tab.size();i++){
+                var btn = $tab.eq(i).children('a').find("img");
+                btn.attr("src",btn.attr("src").replace("_on","_off"));
+            }
+            var active = $(this).parent().attr('class');
+            if(active != 'active'){
+                var btn_img_off = $(this).find('img')[0];
+                btn_img_off.src =  btn_img_off.src.replace('_off','_on');
+            }
+        }
+        $tab_btn.siblings().hide();
+        $tab_btn.parent().removeClass('active');
 
-		$(this).siblings().show();
-		$(this).parent().addClass('active');
+        $(this).siblings().show();
+        $(this).parent().addClass('active');
 
-		event.preventDefault();
-	});
+        event.preventDefault();
+    });
 }
 
 function tabOrg(tabid,a,img) {
-	var $tab, $tab_btn,$obj,$obj_view;
-	var tabid = tabid, num = a, btn_img = img;
+    var $tab, $tab_btn,$obj,$obj_view;
+    var tabid = tabid, num = a, btn_img = img;
 
-	$tab = $(tabid+' .tab_item  > li');
-	$tab_btn = $(tabid+' .tab_item > li > a');
-	$obj = $(tabid+' .tab_obj');
-	$obj_view = $(tabid+' .tab_obj.n'+num);
+    $tab = $(tabid+' .tab_item  > li');
+    $tab_btn = $(tabid+' .tab_item > li > a');
+    $obj = $(tabid+' .tab_obj');
+    $obj_view = $(tabid+' .tab_obj.n'+num);
 
-	$tab.eq(num-1).addClass('active');
-	$obj_view.show();
+    $tab.eq(num-1).addClass('active');
+    $obj_view.show();
 
-	if(btn_img =='img'){
-		var btn = $tab.eq(num-1).children('a').find("img");
-		btn.attr("src",btn.attr("src").replace("_off","_on"));
-	}
+    if(btn_img =='img'){
+        var btn = $tab.eq(num-1).children('a').find("img");
+        btn.attr("src",btn.attr("src").replace("_off","_on"));
+    }
 
-	$tab.bind("click",function(event){
-		if(btn_img =='img'){
-			for(var i=0;i<$tab.size();i++){
-				var btn = $tab.eq(i).children('a').find("img");
-				btn.attr("src",btn.attr("src").replace("_on","_off"));
-			}
-			var active = $(this).parent().attr('class');
-			if(active != 'active'){
-				var btn_img_off = $(this).find('img')[0];
-				btn_img_off.src =  btn_img_off.src.replace('_off','_on');
-			}
-		}
+    $tab.bind("click",function(event){
+        if(btn_img =='img'){
+            for(var i=0;i<$tab.size();i++){
+                var btn = $tab.eq(i).children('a').find("img");
+                btn.attr("src",btn.attr("src").replace("_on","_off"));
+            }
+            var active = $(this).parent().attr('class');
+            if(active != 'active'){
+                var btn_img_off = $(this).find('img')[0];
+                btn_img_off.src =  btn_img_off.src.replace('_off','_on');
+            }
+        }
 
-		var this_eq = $tab.index( $(this) );
-		$tab.removeClass('active');
-		$tab.eq(this_eq).addClass('active');
+        var this_eq = $tab.index( $(this) );
+        $tab.removeClass('active');
+        $tab.eq(this_eq).addClass('active');
 
-		$obj.hide();
-		$(tabid+' .tab_obj.n'+(this_eq+1)).show();
+        $obj.hide();
+        $(tabid+' .tab_obj.n'+(this_eq+1)).show();
 
-		event.preventDefault ();
-	});
+        event.preventDefault ();
+    });
 }
 
 $(document).ready(function(){
-	//이미지 롤오버 
-	$('.overimg').mouseover(function (){
-		var file = $(this).attr('src').split('/');
-		var filename = file[file.length-1];
-		var path = '';
-		for(i=0 ; i < file.length-1 ; i++){
-		 path = ( i == 0 )?path + file[i]:path + '/' + file[i];
-		}
-		$(this).attr('src',path+'/'+filename.replace('_off.','_on.'));	
-	}).mouseout(function(){
-		var file = $(this).attr('src').split('/');
-		var filename = file[file.length-1];
-		var path = '';
-		for(i=0 ; i < file.length-1 ; i++){
-		 path = ( i == 0 )?path + file[i]:path + '/' + file[i];
-		}
-		$(this).attr('src',path+'/'+filename.replace('_on.','_off.'));
-	});
+    //이미지 롤오버
+    $('.overimg').mouseover(function (){
+        var file = $(this).attr('src').split('/');
+        var filename = file[file.length-1];
+        var path = '';
+        for(i=0 ; i < file.length-1 ; i++){
+            path = ( i == 0 )?path + file[i]:path + '/' + file[i];
+        }
+        $(this).attr('src',path+'/'+filename.replace('_off.','_on.'));
+    }).mouseout(function(){
+        var file = $(this).attr('src').split('/');
+        var filename = file[file.length-1];
+        var path = '';
+        for(i=0 ; i < file.length-1 ; i++){
+            path = ( i == 0 )?path + file[i]:path + '/' + file[i];
+        }
+        $(this).attr('src',path+'/'+filename.replace('_on.','_off.'));
+    });
 });
 
 /**
@@ -116,7 +116,7 @@ $(document).ready(function(){
         $document = $(document),
         $html = $('html'),
         $head = $('head'),
-		$screen = $.screen,
+        $screen = $.screen,
         $inArray = $.inArray;
 
     //브라우저
@@ -126,42 +126,42 @@ $(document).ready(function(){
     if(_browser.indexOf('msie 7.0') > -1) {
         _browser = 'ie ie7';
 
-    //ie8일 때
+        //ie8일 때
     }else if(_browser.indexOf('msie 8.0') > -1) {
         _browser = 'ie ie8';
 
-    //ie9일 때
+        //ie9일 때
     }else if(_browser.indexOf('msie 9.0') > -1) {
         _browser = 'ie ie9';
 
-    //ie10일 때
+        //ie10일 때
     }else if(_browser.indexOf('msie 10.0') > -1) {
         _browser = 'ie ie10';
 
-    //ie11일 때
+        //ie11일 때
     }else if(_browser.indexOf('trident/7.0') > -1) {
         _browser = 'ie ie11';
 
-    //edge일 때
+        //edge일 때
     }else if(_browser.indexOf('edge') > -1) {
         _browser = 'edge MS';
 
-	}else if(_browser.indexOf('edg/') > -1) {
-		_browser = 'edge chromium_based';
+    }else if(_browser.indexOf('edg/') > -1) {
+        _browser = 'edge chromium_based';
 
-    //opera일 때
+        //opera일 때
     }else if(_browser.indexOf('opr') > -1) {
         _browser = 'opera';
 
-    //chrome일 때
+        //chrome일 때
     }else if(_browser.indexOf('chrome') > -1) {
         _browser = 'chrome';
 
-    //firefox일 때
+        //firefox일 때
     }else if(_browser.indexOf('firefox') > -1) {
         _browser = 'firefox';
 
-    //safari일 때
+        //safari일 때
     }else if(_browser.indexOf('safari') > -1) {
         _browser = 'safari';
     }else{
@@ -187,8 +187,8 @@ $(document).ready(function(){
             $header = $('#header'),
             $container = $('#container'),
             $footer = $('#footer');
-		
-		
+
+
         $window.on('screen:wide screen:web', function(event) {
             window.mode = 'pc';
         });
@@ -208,12 +208,12 @@ $(document).ready(function(){
             $lnbDepth2FirstChild = $lnbMenu.find('.depth2 > :first-child'),
             $lnbSpy = $lnbMenu.find('.spy:last'),
             lnbHeight;
-		if(!$lnb.find('.depth2').length){
-			$header.attr('data-depth', 'none');
-		}
+        if(!$lnb.find('.depth2').length){
+            $header.attr('data-depth', 'none');
+        }
         $lnbSpy.parents('.depth_item').addClass('actived');
-		$lnbSpy.parents('.depth_item').prev('.depth_item').addClass('actived_prev');
-		$lnbSpy.parents('.depth_item').next('.depth_item').addClass('actived_next');
+        $lnbSpy.parents('.depth_item').prev('.depth_item').addClass('actived_prev');
+        $lnbSpy.parents('.depth_item').next('.depth_item').addClass('actived_next');
 
         function refreshLnbHeight() {
             lnbHeight = $lnbMenu.css('transition-property', 'none').outerHeight() || '';
@@ -230,7 +230,7 @@ $(document).ready(function(){
             //클래스 토글
             $html.removeClass('lnb_show');
         });
-		$('.lnb_curtain button').on('click', function(event) {
+        $('.lnb_curtain button').on('click', function(event) {
             $html.removeClass('lnb_show');
         });
 
@@ -238,33 +238,33 @@ $(document).ready(function(){
             if(mode === 'pc') {
                 var $this = $(this),
                     $depth1Item = ($this.hasClass('depth1_item')) ? $this : $this.parents('.depth1_item');
-				if(!$header.is('[data-depth="none"]')){
-					if($lnbMenu.hasClass('pulldown')) {
-						var maxHeight = 0;
+                if(!$header.is('[data-depth="none"]')){
+                    if($lnbMenu.hasClass('pulldown')) {
+                        var maxHeight = 0;
 
-						$lnbDepth2FirstChild.each(function(index, element) {
-							var $element = $(element),
-								outerHeight = $element.outerHeight() || 0;
+                        $lnbDepth2FirstChild.each(function(index, element) {
+                            var $element = $(element),
+                                outerHeight = $element.outerHeight() || 0;
 
-							//기존 값 보다 얻은 값이 초과일 때
-							if(outerHeight > maxHeight) {
-								maxHeight = outerHeight;
-							}
-						});
+                            //기존 값 보다 얻은 값이 초과일 때
+                            if(outerHeight > maxHeight) {
+                                maxHeight = outerHeight;
+                            }
+                        });
 
-						$lnbMenu.height(lnbHeight + maxHeight);
-					}else if($lnbMenu.hasClass('eachdown')) {
-						$lnbMenu.height(lnbHeight + ($depth1Item.find('.depth_list').outerHeight() || ''));
-					}
-				}
+                        $lnbMenu.height(lnbHeight + maxHeight);
+                    }else if($lnbMenu.hasClass('eachdown')) {
+                        $lnbMenu.height(lnbHeight + ($depth1Item.find('.depth_list').outerHeight() || ''));
+                    }
+                }
                 $html.addClass('lnb_open');
                 $lnbDepthItem.removeClass('active active_prev active_next');
                 $this.addClass('active');
-				$this.prev('.depth_item').addClass('active_prev');
-				$this.next('.depth_item').addClass('active_next');
-				$this.parents('li').addClass('active');
-				$this.parents('li').prev('.depth_item').addClass('active_prev');
-				$this.parents('li').next('.depth_item').addClass('active_next');
+                $this.prev('.depth_item').addClass('active_prev');
+                $this.next('.depth_item').addClass('active_next');
+                $this.parents('li').addClass('active');
+                $this.parents('li').prev('.depth_item').addClass('active_prev');
+                $this.parents('li').next('.depth_item').addClass('active_next');
             }
             event.stopPropagation();
         }).on('click', function(event) {
@@ -272,7 +272,7 @@ $(document).ready(function(){
                 var $this = $(this),
                     $depthText = $this.children('.depth_text'),
                     eventTarget = event.target,
-					IsActive = $this.is('.active');
+                    IsActive = $this.is('.active');
 
                 if($depthText.find(eventTarget).length || $depthText[0] === eventTarget) {
                     if($this.hasClass('depth1_item')) {
@@ -284,17 +284,17 @@ $(document).ready(function(){
                     }
 
                     if($this.children('.depth').length) {
-						var $Depth = $this.children('.depth'),
-							DepthDisplay = $Depth.css('display'),
+                        var $Depth = $this.children('.depth'),
+                            DepthDisplay = $Depth.css('display'),
                             $item = $Depth.find('.depth_item:first'),
                             $childItem = $Depth.find('.depth2_item:first'),
                             $grandChildItem = $childItem.find('.depth3_item:first');
-						if(DepthDisplay!=='none'){//하위메뉴가 display:none이 아니면 실행
-							if(!IsActive){
-								$this.removeClass('active_prev active_next');
-								$this.addClass('active').siblings('.depth_item').removeClass('active active_prev active_next');
-								$this.prev('.depth_item').addClass('active_prev');
-								$this.next('.depth_item').addClass('active_next');
+                        if(DepthDisplay!=='none'){//하위메뉴가 display:none이 아니면 실행
+                            if(!IsActive){
+                                $this.removeClass('active_prev active_next');
+                                $this.addClass('active').siblings('.depth_item').removeClass('active active_prev active_next');
+                                $this.prev('.depth_item').addClass('active_prev');
+                                $this.next('.depth_item').addClass('active_next');
 
                                 // 한번에 열리기
                                 $item.removeClass('active_prev active_next');
@@ -312,9 +312,9 @@ $(document).ready(function(){
                                 $grandChildItem.prev('.depth_item').addClass('active_prev');
                                 $grandChildItem.next('.depth_item').addClass('active_next');
 
-							} else{
-								$this.removeClass('active');
-								$this.siblings('.depth_item').removeClass('active_prev active_next');
+                            } else{
+                                $this.removeClass('active');
+                                $this.siblings('.depth_item').removeClass('active_prev active_next');
 
                                 // 3차까지 한번에 열리기
                                 $item.removeClass('active');
@@ -325,9 +325,9 @@ $(document).ready(function(){
                                 // 3차까지 한번에 열리기
                                 $grandChildItem.removeClass('active');
                                 $grandChildItem.siblings('.depth_item').removeClass('active_prev active_next');
-							}
-							event.preventDefault();
-						}
+                            }
+                            event.preventDefault();
+                        }
                     }
                 }
             }
@@ -351,15 +351,15 @@ $(document).ready(function(){
             }
         });
 
-		$lnb.find('.depth1_item:last-child .depth:visible:last').find('> .depth_list > .depth_item:last-child .depth_text').on('focusout', function(event) {
-			if(mode === 'pc') {
+        $lnb.find('.depth1_item:last-child .depth:visible:last').find('> .depth_list > .depth_item:last-child .depth_text').on('focusout', function(event) {
+            if(mode === 'pc') {
                 $lnbMenu.height('');
                 $html.removeClass('lnb_open');
                 $lnbDepthItem.removeClass('active active_prev active_next');
             }
-		});
+        });
 
-		//여기서부터 코드 작성해주세요
+        //여기서부터 코드 작성해주세요
 
         $window.on('screen:wide screen:web', function(event) {
             refreshLnbHeight();
@@ -367,7 +367,7 @@ $(document).ready(function(){
             if($lnbSpy.length) {
                 $html.removeClass('lnb_open');
                 $lnbSpy.parents('.depth_item').removeClass('active');
-				$lnbDepthItem.removeClass('active_prev active_next');
+                $lnbDepthItem.removeClass('active_prev active_next');
             }
         });
 
@@ -377,8 +377,8 @@ $(document).ready(function(){
             if($lnbSpy.length) {
                 $html.addClass('lnb_open');
                 $lnbSpy.parents('.depth_item').addClass('active');
-				$lnbSpy.parents('.depth_item').prev('.depth_item').addClass('active_prev');
-				$lnbSpy.parents('.depth_item').next('.depth_item').addClass('active_next');
+                $lnbSpy.parents('.depth_item').prev('.depth_item').addClass('active_prev');
+                $lnbSpy.parents('.depth_item').next('.depth_item').addClass('active_next');
             }
 
         });
@@ -449,15 +449,15 @@ $(document).ready(function(){
             $upButton = $up.find('.up_button');
 
         $upButton.click(function (event) {
-			var LinkAnchor = $(this).attr('href');
-			event.preventDefault();
+            var LinkAnchor = $(this).attr('href');
+            event.preventDefault();
             $('html, body').animate({
                 scrollTop: $('body').offset().top
             }, 400, function(){
-				if(LinkAnchor){
-					location.href = LinkAnchor;
-				}
-			});
+                if(LinkAnchor){
+                    location.href = LinkAnchor;
+                }
+            });
         });
 
         $window.scroll(function(){
@@ -466,6 +466,37 @@ $(document).ready(function(){
                 $upButton.addClass('active');
             }else{
                 $upButton.removeClass('active');
+            }
+        });
+
+        //
+        var $public_popup = $('.public_popup_zone .public_popup_list');
+        $public_popup.slick({
+            //기본
+            autoplay : true,
+            dots : false,
+            slidesToShow : 1,
+            slidesToScroll: 1,
+            prevArrow : $public_popup.parent('.public_popup_zone').find('.public_popup_control .prev'),
+            nextArrow : $public_popup.parent('.public_popup_zone').find('.public_popup_control .next'),
+
+            //추가 기능
+            autoArrow : $public_popup.parent('.public_popup_zone').find('.public_popup_control .auto'),
+            pauseText : '정지',
+            playText : '재생',
+            total : $public_popup.parent('.public_popup_zone').find('.public_popup_control .total'),
+            current : $public_popup.parent('.public_popup_zone').find('.public_popup_control .current'),
+            customState : function(state) {
+                //현재 슬라이드 위치가 10보다 작을 때
+                if(state.current < 10) {
+                    state.current = '0' + state.current;
+                }
+                //슬라이드 갯수가 10보다 작을 때
+                if(state.total < 10) {
+                    state.total = '0' + state.total;
+                }
+
+                return state;
             }
         });
     });
@@ -506,7 +537,7 @@ $(document).ready(function(){
     $window.on('load', function(event) {
 
         $window.on('screen:resize', function(event) {
-            
+
         }).triggerHandler('screen:resize');
     });
 })(jQuery);

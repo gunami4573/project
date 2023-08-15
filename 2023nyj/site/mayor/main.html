@@ -26,6 +26,7 @@
     <script src="../../common/js/slick.extensions.min.js"></script>
     <script src="../public/js/common.js"></script>
     <script src="./js/jqeury.waypoints.min.js"></script>
+    <script src="../../common/js/youtube_player_api.js"></script>
     <script src="./js/main.js"></script>
     <title>남양주 열린시장실 메인</title>
 </head>
@@ -368,7 +369,7 @@ data-fullsize : yes / no
                             </div>
                         </div>
                     </div>
-
+                
                 </div>
             </div>
         </div>
@@ -380,7 +381,7 @@ data-fullsize : yes / no
                         <span class="site_name">열린시장실</span>
                     </a>
                 </h1>
-
+                
                 <div class="menu_show">
                     <button type="button" class="menu_button">메뉴열기</button>
                 </div>
@@ -712,7 +713,7 @@ data-fullsize : yes / no
                                 <div class="depth depth2">
                                     <ul class="depth_list depth2_list clearfix">
                                         <li class="depth_item depth2_item clearfix">
-                                            <a href=""class="depth_text depth2_text"><span>2차메뉴 2차메뉴 2차메뉴 2차메뉴 2차메뉴</span></a>
+                                            <a href="" class="depth_text depth2_text"><span>2차메뉴 2차메뉴 2차메뉴 2차메뉴 2차메뉴</span></a>
                                             <div class="depth depth3">
                                                 <ul class="depth_list depth3_list clearfix">
                                                     <li class="depth_item depth3_item">
@@ -755,7 +756,7 @@ data-fullsize : yes / no
                                                 </ul>
                                             </div>
                                         </li>
-
+                                        
                                         <li class="depth_item depth2_item clearfix">
                                             <a href="" class="depth_text depth2_text"><span>2차메뉴</span></a>
                                         </li>
@@ -1304,8 +1305,314 @@ data-fullsize : yes / no
                                     <span class="month_num waypoint">8</span>    <!--//month_num-->
                                 </div>    <!--//desc_inner-->
                             </div>    <!--//top_box-->
-                            <div class="bottom_box"></div>    <!--//bottom_box-->
+                            <div class="bottom_box">
+                                <!--//.day_choice_item 과 .day_detail_item_box 의 개수(일, 월, 화, 수, 목, 금, 토) 및 active 클레스 부여 매칭 개발-->
+                                <div class="day_choice">
+                                    <div class="day_choice_list">
+                                        <div class="day_choice_item">
+                                            <button type="button" class="day_choice_btn">
+                                                <em class="choice_text day_text">일</em>    <!--//day_text-->
+                                                <em class="choice_text day_num">13</em>    <!--//day_num-->
+                                            </button>    <!--//day_choice_btn-->
+                                        </div>    <!--//day_choice_item-->
+                                        <div class="day_choice_item active">    <!--//해당 날짜에 (active 클레스 부여, 버튼에 title="선택됨" 부여)-->
+                                            <button type="button" title="선택됨" class="day_choice_btn">
+                                                <em class="choice_text day_text">월</em>    <!--//day_text-->
+                                                <em class="choice_text day_num">14</em>    <!--//day_num-->
+                                            </button>    <!--//day_choice_btn-->
+                                        </div>    <!--//day_choice_item-->
+                                        <div class="day_choice_item">
+                                            <button type="button" class="day_choice_btn">
+                                                <em class="choice_text day_text">화</em>    <!--//day_text-->
+                                                <em class="choice_text day_num">15</em>    <!--//day_num-->
+                                            </button>    <!--//day_choice_btn-->
+                                        </div>    <!--//day_choice_item-->
+                                        <div class="day_choice_item">
+                                            <button type="button" class="day_choice_btn">
+                                                <em class="choice_text day_text">수</em>    <!--//day_text-->
+                                                <em class="choice_text day_num">16</em>    <!--//day_num-->
+                                            </button>    <!--//day_choice_btn-->
+                                        </div>    <!--//day_choice_item-->
+                                        <div class="day_choice_item">
+                                            <button type="button" class="day_choice_btn">
+                                                <em class="choice_text day_text">목</em>    <!--//day_text-->
+                                                <em class="choice_text day_num">17</em>    <!--//day_num-->
+                                            </button>    <!--//day_choice_btn-->
+                                        </div>    <!--//day_choice_item-->
+                                        <div class="day_choice_item">
+                                            <button type="button" class="day_choice_btn">
+                                                <em class="choice_text day_text">금</em>    <!--//day_text-->
+                                                <em class="choice_text day_num">18</em>    <!--//day_num-->
+                                            </button>    <!--//day_choice_btn-->
+                                        </div>    <!--//day_choice_item-->
+                                        <div class="day_choice_item">
+                                            <button type="button" class="day_choice_btn">
+                                                <em class="choice_text day_text">토</em>    <!--//day_text-->
+                                                <em class="choice_text day_num">19</em>    <!--//day_num-->
+                                            </button>    <!--//day_choice_btn-->
+                                        </div>    <!--//day_choice_item-->
+                                    </div>    <!--//day_choice_list-->
+                                </div>    <!--//day_choice-->
+                                <div class="day_detail">
+                                    <div class="day_detail_item_box">
+                                        <div class="day_detail_slide_list">
+                                            <div class="day_detail_slide_item">
+                                                <a href="" class="day_detail_slide_link">
+                                                    <span class="time_inner">
+                                                        <span class="time_text">00:00</span>
+                                                    </span>    <!--//time_inner-->
+                                                    <span class="desc_inner">
+                                                        <span class="desc_title">일요일 길어짐 일요일 길어짐 일요일 길어짐</span>
+                                                        <span class="desc_list">
+                                                            <span class="desc_item place">
+                                                                <em class="item_text cate">장소</em>    <!--//cate-->
+                                                                <em class="item_text info">장소명</em>    <!--//info-->
+                                                            </span>    <!--//place-->
+                                                            <span class="desc_item host">
+                                                                <em class="item_text cate">주관</em>    <!--//cate-->
+                                                                <em class="item_text info">주관부서</em>    <!--//info-->
+                                                            </span>    <!--//host-->
+                                                        </span>    <!--//-->
+                                                    </span>    <!--//desc_inner-->
+                                                </a>    <!--//day_detail_slide_link-->
+                                            </div>    <!--//day_detail_slide_item-->
+                                        </div>    <!--//day_detail_slide_list-->
+                                    </div>    <!--//day_detail_item_box-->
+                                    <div class="day_detail_item_box active">
+                                        <div class="day_detail_slide_list">
+                                            <div class="day_detail_slide_item">
+                                                <a href="" class="day_detail_slide_link">
+                                                    <span class="time_inner">
+                                                        <span class="time_text">10:00</span>
+                                                    </span>    <!--//time_inner-->
+                                                    <span class="desc_inner">
+                                                        <span class="desc_title">달빛 어린이 병원 방문</span>
+                                                        <span class="desc_list">
+                                                            <span class="desc_item place">
+                                                                <em class="item_text cate">장소</em>    <!--//cate-->
+                                                                <em class="item_text info">아이맘 어린이 병원</em>    <!--//info-->
+                                                            </span>    <!--//place-->
+                                                            <span class="desc_item host">
+                                                                <em class="item_text cate">주관</em>    <!--//cate-->
+                                                                <em class="item_text info">보건정책과</em>    <!--//info-->
+                                                            </span>    <!--//host-->
+                                                        </span>    <!--//-->
+                                                    </span>    <!--//desc_inner-->
+                                                </a>    <!--//day_detail_slide_link-->
+                                            </div>    <!--//day_detail_slide_item-->
+                                            <div class="day_detail_slide_item">
+                                                <a href="" class="day_detail_slide_link">
+                                                    <span class="time_inner">
+                                                        <span class="time_text">11:00</span>
+                                                    </span>    <!--//time_inner-->
+                                                    <span class="desc_inner">
+                                                        <span class="desc_title">다산 한강초등학교 1일 학교장</span>
+                                                        <span class="desc_list">
+                                                            <span class="desc_item place">
+                                                                <em class="item_text cate">장소</em>    <!--//cate-->
+                                                                <em class="item_text info">다산 한강초등학교</em>    <!--//info-->
+                                                            </span>    <!--//place-->
+                                                            <span class="desc_item host">
+                                                                <em class="item_text cate">주관</em>    <!--//cate-->
+                                                                <em class="item_text info">미래교육과</em>    <!--//info-->
+                                                            </span>    <!--//host-->
+                                                        </span>    <!--//-->
+                                                    </span>    <!--//desc_inner-->
+                                                </a>    <!--//day_detail_slide_link-->
+                                            </div>    <!--//day_detail_slide_item-->
+                                            <div class="day_detail_slide_item">
+                                                <a href="" class="day_detail_slide_link">
+                                                    <span class="time_inner">
+                                                        <span class="time_text">14:00</span>
+                                                    </span>    <!--//time_inner-->
+                                                    <span class="desc_inner">
+                                                        <span class="desc_title">텍스트 길어짐 텍스트 길어짐 텍스트 길어짐</span>
+                                                        <span class="desc_list">
+                                                            <span class="desc_item place">
+                                                                <em class="item_text cate">장소</em>    <!--//cate-->
+                                                                <em class="item_text info">장소명</em>    <!--//info-->
+                                                            </span>    <!--//place-->
+                                                            <span class="desc_item host">
+                                                                <em class="item_text cate">주관</em>    <!--//cate-->
+                                                                <em class="item_text info">주관부서</em>    <!--//info-->
+                                                            </span>    <!--//host-->
+                                                        </span>    <!--//-->
+                                                    </span>    <!--//desc_inner-->
+                                                </a>    <!--//day_detail_slide_link-->
+                                            </div>    <!--//day_detail_slide_item-->
+                                            <div class="day_detail_slide_item">
+                                                <a href="" class="day_detail_slide_link">
+                                                    <span class="time_inner">
+                                                        <span class="time_text">15:00</span>
+                                                    </span>    <!--//time_inner-->
+                                                    <span class="desc_inner">
+                                                        <span class="desc_title">텍스트 길어짐 텍스트 길어짐 텍스트 길어짐</span>
+                                                        <span class="desc_list">
+                                                            <span class="desc_item place">
+                                                                <em class="item_text cate">장소</em>    <!--//cate-->
+                                                                <em class="item_text info">장소명</em>    <!--//info-->
+                                                            </span>    <!--//place-->
+                                                            <span class="desc_item host">
+                                                                <em class="item_text cate">주관</em>    <!--//cate-->
+                                                                <em class="item_text info">주관부서</em>    <!--//info-->
+                                                            </span>    <!--//host-->
+                                                        </span>    <!--//-->
+                                                    </span>    <!--//desc_inner-->
+                                                </a>    <!--//day_detail_slide_link-->
+                                            </div>    <!--//day_detail_slide_item-->
+                                        </div>    <!--//day_detail_slide_list-->
+                                    </div>    <!--//day_detail_item_box-->
+                                    <div class="day_detail_item_box">
+                                        <div class="day_detail_slide_list">
+                                            <div class="day_detail_slide_item">
+                                                <a href="" class="day_detail_slide_link">
+                                                    <span class="time_inner">
+                                                        <span class="time_text">00:00</span>
+                                                    </span>    <!--//time_inner-->
+                                                    <span class="desc_inner">
+                                                        <span class="desc_title">화요일 길어짐 화요일 길어짐 화요일 길어짐</span>
+                                                        <span class="desc_list">
+                                                            <span class="desc_item place">
+                                                                <em class="item_text cate">장소</em>    <!--//cate-->
+                                                                <em class="item_text info">장소명</em>    <!--//info-->
+                                                            </span>    <!--//place-->
+                                                            <span class="desc_item host">
+                                                                <em class="item_text cate">주관</em>    <!--//cate-->
+                                                                <em class="item_text info">주관부서</em>    <!--//info-->
+                                                            </span>    <!--//host-->
+                                                        </span>    <!--//-->
+                                                    </span>    <!--//desc_inner-->
+                                                </a>    <!--//day_detail_slide_link-->
+                                            </div>    <!--//day_detail_slide_item-->
+                                        </div>    <!--//day_detail_slide_list-->
+                                    </div>    <!--//day_detail_item_box-->
+                                    <div class="day_detail_item_box">
+                                        <div class="day_detail_slide_list">
+                                            <div class="day_detail_slide_item">
+                                                <a href="" class="day_detail_slide_link">
+                                                    <span class="time_inner">
+                                                        <span class="time_text">00:00</span>
+                                                    </span>    <!--//time_inner-->
+                                                    <span class="desc_inner">
+                                                        <span class="desc_title">수요일 길어짐 수요일 길어짐 수요일 길어짐</span>
+                                                        <span class="desc_list">
+                                                            <span class="desc_item place">
+                                                                <em class="item_text cate">장소</em>    <!--//cate-->
+                                                                <em class="item_text info">장소명</em>    <!--//info-->
+                                                            </span>    <!--//place-->
+                                                            <span class="desc_item host">
+                                                                <em class="item_text cate">주관</em>    <!--//cate-->
+                                                                <em class="item_text info">주관부서</em>    <!--//info-->
+                                                            </span>    <!--//host-->
+                                                        </span>    <!--//-->
+                                                    </span>    <!--//desc_inner-->
+                                                </a>    <!--//day_detail_slide_link-->
+                                            </div>    <!--//day_detail_slide_item-->
+                                        </div>    <!--//day_detail_slide_list-->
+                                    </div>    <!--//day_detail_item_box-->
+                                    <div class="day_detail_item_box">
+                                        <div class="day_detail_slide_list">
+                                            <div class="day_detail_slide_item">
+                                                <a href="" class="day_detail_slide_link">
+                                                    <span class="time_inner">
+                                                        <span class="time_text">00:00</span>
+                                                    </span>    <!--//time_inner-->
+                                                    <span class="desc_inner">
+                                                        <span class="desc_title">목요일 길어짐 목요일 길어짐 목요일 길어짐</span>
+                                                        <span class="desc_list">
+                                                            <span class="desc_item place">
+                                                                <em class="item_text cate">장소</em>    <!--//cate-->
+                                                                <em class="item_text info">장소명</em>    <!--//info-->
+                                                            </span>    <!--//place-->
+                                                            <span class="desc_item host">
+                                                                <em class="item_text cate">주관</em>    <!--//cate-->
+                                                                <em class="item_text info">주관부서</em>    <!--//info-->
+                                                            </span>    <!--//host-->
+                                                        </span>    <!--//-->
+                                                    </span>    <!--//desc_inner-->
+                                                </a>    <!--//day_detail_slide_link-->
+                                            </div>    <!--//day_detail_slide_item-->
+                                        </div>    <!--//day_detail_slide_list-->
+                                    </div>    <!--//day_detail_item_box-->
+                                    <div class="day_detail_item_box">
+                                        <div class="day_detail_slide_list">
+                                            <div class="day_detail_slide_item">
+                                                <a href="" class="day_detail_slide_link">
+                                                    <span class="time_inner">
+                                                        <span class="time_text">00:00</span>
+                                                    </span>    <!--//time_inner-->
+                                                    <span class="desc_inner">
+                                                        <span class="desc_title">금요일 길어짐 금요일 길어짐 금요일 길어짐</span>
+                                                        <span class="desc_list">
+                                                            <span class="desc_item place">
+                                                                <em class="item_text cate">장소</em>    <!--//cate-->
+                                                                <em class="item_text info">장소명</em>    <!--//info-->
+                                                            </span>    <!--//place-->
+                                                            <span class="desc_item host">
+                                                                <em class="item_text cate">주관</em>    <!--//cate-->
+                                                                <em class="item_text info">주관부서</em>    <!--//info-->
+                                                            </span>    <!--//host-->
+                                                        </span>    <!--//-->
+                                                    </span>    <!--//desc_inner-->
+                                                </a>    <!--//day_detail_slide_link-->
+                                            </div>    <!--//day_detail_slide_item-->
+                                        </div>    <!--//day_detail_slide_list-->
+                                    </div>    <!--//day_detail_item_box-->
+                                    <div class="day_detail_item_box">
+                                        <div class="day_detail_slide_list">
+                                            <div class="day_detail_slide_item">
+                                                <a href="" class="day_detail_slide_link">
+                                                    <span class="time_inner">
+                                                        <span class="time_text">00:00</span>
+                                                    </span>    <!--//time_inner-->
+                                                    <span class="desc_inner">
+                                                        <span class="desc_title">토요일 길어짐 토요일 길어짐 토요일 길어짐</span>
+                                                        <span class="desc_list">
+                                                            <span class="desc_item place">
+                                                                <em class="item_text cate">장소</em>    <!--//cate-->
+                                                                <em class="item_text info">장소명</em>    <!--//info-->
+                                                            </span>    <!--//place-->
+                                                            <span class="desc_item host">
+                                                                <em class="item_text cate">주관</em>    <!--//cate-->
+                                                                <em class="item_text info">주관부서</em>    <!--//info-->
+                                                            </span>    <!--//host-->
+                                                        </span>    <!--//-->
+                                                    </span>    <!--//desc_inner-->
+                                                </a>    <!--//day_detail_slide_link-->
+                                            </div>    <!--//day_detail_slide_item-->
+                                        </div>    <!--//day_detail_slide_list-->
+                                    </div>    <!--//day_detail_item_box-->
+                                </div>    <!--//day_detail-->
+                                <div class="day_more">
+                                    <a href="" class="day_more_link">
+                                        <em class="more_text f_text">일정</em>    <!--//f_text-->
+                                        <em class="more_text l_text">더보기</em>    <!--//l_text-->
+                                    </a>    <!--//day_more_link-->
+                                </div>    <!--//day_more-->
+                            </div>    <!--//bottom_box-->
                         </div>    <!--//sgn_daily-->
+                        <div class="sgn_direct">
+                            <ul class="sgn_link_list">
+                                <li class="sgn_link_item">
+                                    <a href="" target="_blank" title="새창" rel="noopener noreferrer" class="sgn_link facebook">페이스북</a>    <!--//sgn_link-->
+                                </li>    <!--//sgn_link_item-->
+                                <li class="sgn_link_item">
+                                    <a href="" target="_blank" title="새창" rel="noopener noreferrer" class="sgn_link blog">블로그</a>    <!--//sgn_link-->
+                                </li>    <!--//sgn_link_item-->
+                                <li class="sgn_link_item">
+                                    <a href="" target="_blank" title="새창" rel="noopener noreferrer" class="sgn_link youtube">유튜브</a>    <!--//sgn_link-->
+                                </li>    <!--//sgn_link_item-->
+                                <li class="sgn_link_item">
+                                    <a href="" target="_blank" title="새창" rel="noopener noreferrer" class="sgn_link instagram">인스타그램</a>    <!--//sgn_link-->
+                                </li>    <!--//sgn_link_item-->
+                            </ul>    <!--//sgn_link_list-->
+                            <div class="scroll_deco">
+                                <span class="scroll_bar">
+                                    <i class="orange_bar"></i>    <!--//orange_bar-->
+                                </span>    <!--//scroll_bar-->
+                                <span class="scroll_text">SCROLL</span>    <!--//scroll_text-->
+                            </div>    <!--//scroll_deco-->
+                        </div>    <!--//sgn_direct-->
                     </div>    <!--//slogan_wrap-->
                 </section>    <!--//slogan-->
             </div>    <!--//rowgroup1-->
@@ -1456,10 +1763,372 @@ data-fullsize : yes / no
                         </div>    <!--//pms_slide_wrap-->
                     </div>    <!--//promise_wrap-->
                 </section>    <!--//promise-->
-            </div>    <!--//rowgroup1-->
-            <div class="rowgroup3 waypoint" style="min-height:450px;background-color:rgba(0, 255, 0, 0.3);"></div>    <!--//rowgroup1-->
-            <div class="rowgroup4 waypoint" style="min-height:738px;background-color:rgba(0, 255, 255, 0.3);"></div>    <!--//rowgroup1-->
-            <div class="rowgroup5 waypoint" style="min-height:680px;background-color:rgba(255, 0, 255, 0.3);"></div>    <!--//rowgroup1-->
+            </div>    <!--//rowgroup2-->
+            <div class="rowgroup3">
+                <section class="news">
+                    <div class="news_wrap waypoint">
+                        <h2 class="skip">남양주시 뉴스(언론보도) 영역</h2>
+                        <span class="news_mobile_title">언론보도</span>    <!--//news_mobile_title-->
+                        <span class="news_big_deco">NEWS</span>    <!--//news_big_deco-->
+                        <div class="news_slide_wrap">
+                            <div class="news_slide_list">
+                                <div class="news_slide_item">
+                                    <a href="" class="news_slide_link">
+                                        <span class="link_inner">
+                                            <span class="link_text link_date">05.25</span>    <!--//link_date-->
+                                            <span class="link_text link_title">
+                                                <em class="text">명덕사 우정방생스님, 남양주시 취약계층 위해 1천만 원 기부</em>    <!--//text-->
+                                            </span>    <!--//link_title-->
+                                            <span class="link_text link_desc">
+                                                남양주시 진건읍에 소재한 대한불교조계종 명덕사 주지 우정방생스님은 25일 가정의 달을 맞아 지역 내 어려운 이웃을 돕기 위해 후원금 1천만 원을 남양주시복지재단(대표이사 심우만)에 전달했다.
+                                            </span>    <!--//link_desc-->
+                                        </span>    <!--//link_inner-->
+                                    </a>    <!--//news_slide_link-->
+                                </div>    <!--//news_slide_item-->
+                                <div class="news_slide_item">
+                                    <a href="" class="news_slide_link">
+                                        <span class="link_inner">
+                                            <span class="link_text link_date">05.25</span>    <!--//link_date-->
+                                            <span class="link_text link_title">
+                                                <em class="text">남양주시 금곡양정행정복지센터, 청사 이전 기념식 개최</em>
+                                            </span>    <!--//link_title-->
+                                            <span class="link_text link_desc">
+                                                남양주시 진건읍에 소재한 대한불교조계종 명덕사 주지 우정방생스님은 25일 가정의 달을 맞아 지역 내 어려운 이웃을 돕기 위해 후원금 1천만 원을 남양주시복지재단(대표이사 심우만)에 전달했다.
+                                            </span>    <!--//link_desc-->
+                                        </span>    <!--//link_inner-->
+                                    </a>    <!--//news_slide_link-->
+                                </div>    <!--//news_slide_item-->
+                                <div class="news_slide_item">
+                                    <a href="" class="news_slide_link">
+                                        <span class="link_inner">
+                                            <span class="link_text link_date">MM.DD</span>    <!--//link_date-->
+                                            <span class="link_text link_title">
+                                                <em class="text">
+                                                    제목 두줄까지 떨어짐 가능
+                                                </em>    <!--//text-->
+                                            </span>    <!--//link_title-->
+                                            <span class="link_text link_desc">
+                                                내용 세줄까지 떨어짐 가능 <br />
+                                                내용 세줄까지 떨어짐 가능 <br />
+                                                내용 세줄까지 떨어짐 가능
+                                            </span>    <!--//link_desc-->
+                                        </span>    <!--//link_inner-->
+                                    </a>    <!--//news_slide_link-->
+                                </div>    <!--//news_slide_item-->
+                                <div class="news_slide_item">
+                                    <a href="" class="news_slide_link">
+                                        <span class="link_inner">
+                                            <span class="link_text link_date">MM.DD</span>    <!--//link_date-->
+                                            <span class="link_text link_title">
+                                                <em class="text">
+                                                    제목 두줄까지 떨어짐 가능
+                                                </em>    <!--//text-->
+                                            </span>    <!--//link_title-->
+                                            <span class="link_text link_desc">
+                                                내용 세줄까지 떨어짐 가능 <br />
+                                                내용 세줄까지 떨어짐 가능 <br />
+                                                내용 세줄까지 떨어짐 가능
+                                            </span>    <!--//link_desc-->
+                                        </span>    <!--//link_inner-->
+                                    </a>    <!--//news_slide_link-->
+                                </div>    <!--//news_slide_item-->
+                            </div>    <!--//news_slide_list-->
+                            <div class="news_slide_control">
+                                <button type="button" class="news_control_btn prev">이전</button>    <!--//prev-->
+                                <button type="button" class="news_control_btn next">다음</button>    <!--//next-->
+                            </div>    <!--//news_slide_control-->
+                        </div>    <!--//news_slide_wrap-->
+                        <div class="news_more waypoint">
+                            <a href="" class="news_more_link">더보기</a>    <!--//news_more_link-->
+                        </div>    <!--//news_more-->
+                    </div>    <!--//news_wrap-->
+                </section>    <!--//news-->
+            </div>    <!--//rowgroup3-->
+            <div class="rowgroup4">
+                <section class="media">
+                    <div class="media_wrap waypoint">
+                        <h2 class="skip">영상으로 본 시정활동 영역</h2>
+                        <div class="total_inner">
+                            <div class="total_title">
+                                <span class="title_text blue">영상으로 본</span>    <!--//blue-->
+                                <span class="title_text navy">시정활동</span>    <!--//navy-->
+                            </div>    <!--//total_title-->
+                            <div class="big_slide_wrap">
+                                <div class="youtube_slide_list">
+                                    <div class="youtube_slide_item" data-index="0" >    <!--//데이터값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
+                                        <div class="item_inner">
+                                            <div class="youtube_box">
+                                                <i class="youtube_thumbnail"></i>    <!--//youtube_thumbnail-->
+                                                <!--//아이디값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
+                                                <div id="nyjYoutube0" class="youtube_iframe"></div>    <!--//youtube_iframe-->
+                                            </div>    <!--//youtube_box-->
+                                            <div class="text_box">
+                                                <a href="https://www.youtube.com/watch?v=8o6a6EqgGJU&list=PLGcHzdx7uBdhW0GPKcAE5wAo7YQRdpoN2" target="_blank" title="새창" rel="noopener noreferrer" class="text_link">
+                                                    <span class="title">2024년 지중화 사업 신청 대상지 방문</span>    <!--//title-->
+                                                    <span class="desc">남양주시(시장 주광덕)는 28일 학생들의 등·하교 시 안전한 통학로 확보를 위해 관내 초?중등학교 등 9개소...</span>    <!--//desc-->
+                                                    <span class="time"><em class="skip">날짜</em>2023-08-07</span>    <!--//time-->
+                                                </a>    <!--//text_link-->
+                                            </div>    <!--//text_box-->
+                                        </div>    <!--//item_inner-->
+                                    </div>    <!--//youtube_slide_item-->
+                                    <div class="youtube_slide_item" data-index="1">    <!--//데이터값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
+                                        <div class="item_inner">
+                                            <div class="youtube_box">
+                                                <i class="youtube_thumbnail"></i>    <!--//youtube_thumbnail-->
+                                                <!--//아이디값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
+                                                <div id="nyjYoutube1" class="youtube_iframe"></div>    <!--//youtube_iframe-->
+                                            </div>    <!--//youtube_box-->
+                                            <div class="text_box">
+                                                <a href="https://www.youtube.com/watch?v=oBIcy8srO1U&list=PLGcHzdx7uBdhW0GPKcAE5wAo7YQRdpoN2" target="_blank" title="새창" rel="noopener noreferrer" class="text_link">
+                                                    <span class="title">청소년 아트 캠프 댄스</span>    <!--//title-->
+                                                    <span class="desc">남양주시(시장 주광덕)는 관내 56명의 초·중·고등학생들로 구성된 10개 댄스동아리를 대상으로 27일에서...</span>    <!--//desc-->
+                                                    <span class="time"><em class="skip">날짜</em>2023-08-07</span>    <!--//time-->
+                                                </a>    <!--//text_link-->
+                                            </div>    <!--//text_box-->
+                                        </div>    <!--//item_inner-->
+                                    </div>    <!--//youtube_slide_item-->
+                                    <div class="youtube_slide_item" data-index="2">    <!--//데이터값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
+                                        <div class="item_inner">
+                                            <div class="youtube_box">
+                                                <i class="youtube_thumbnail"></i>    <!--//youtube_thumbnail-->
+                                                <!--//아이디값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
+                                                <div id="nyjYoutube2" class="youtube_iframe"></div>    <!--//youtube_iframe-->
+                                            </div>    <!--//youtube_box-->
+                                            <div class="text_box">
+                                                <a href="https://www.youtube.com/watch?v=i7a8M_D5sVw&list=PLGcHzdx7uBdhW0GPKcAE5wAo7YQRdpoN2" target="_blank" title="새창" rel="noopener noreferrer" class="text_link">
+                                                    <span class="title">진심소통 1박2일 (수동면)</span>    <!--//title-->
+                                                    <span class="desc">주광덕 남양주시장은 지난 6일 수동면을 방문하여‘진심소통 1박 2일’ 프로젝트를 진행했다. 주 시장은 당선자...</span>    <!--//desc-->
+                                                    <span class="time"><em class="skip">날짜</em>2023-07-12</span>    <!--//time-->
+                                                </a>    <!--//text_link-->
+                                            </div>    <!--//text_box-->
+                                        </div>    <!--//item_inner-->
+                                    </div>    <!--//youtube_slide_item-->
+                                    <div class="youtube_slide_item" data-index="3">    <!--//데이터값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
+                                        <div class="item_inner">
+                                            <div class="youtube_box">
+                                                <i class="youtube_thumbnail"></i>    <!--//youtube_thumbnail-->
+                                                <!--//아이디값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
+                                                <div id="nyjYoutube3" class="youtube_iframe"></div>    <!--//youtube_iframe-->
+                                            </div>    <!--//youtube_box-->
+                                            <div class="text_box">
+                                                <a href="https://www.youtube.com/watch?v=BmLu5b-cNtc&list=PLGcHzdx7uBdhW0GPKcAE5wAo7YQRdpoN2" target="_blank" title="새창" rel="noopener noreferrer" class="text_link">
+                                                    <span class="title">남양주시 대표 상징물 개발 최종 보고회</span>    <!--//title-->
+                                                    <span class="desc">남양주시(시장 주광덕)는 지난 27일 시청 여유당에서 약 8개월간 진행된 새로운 대표 상징물(CI)의 개발을...</span>    <!--//desc-->
+                                                    <span class="time"><em class="skip">날짜</em>2023-06-30</span>    <!--//time-->
+                                                </a>    <!--//text_link-->
+                                            </div>    <!--//text_box-->
+                                        </div>    <!--//item_inner-->
+                                    </div>    <!--//youtube_slide_item-->
+                                </div>    <!--//youtube_slide_list-->
+                            </div>    <!--//big_slide_wrap-->
+                            <div class="small_slide_wrap waypoint">    <!--//.big_slide_wrap .youtube_slide_list 아이템을 복사하여 슬라이드 동작시키게 해놓았습니다-->
+                                <div class="youtube_slide_list"></div>    <!--//youtube_slide_list-->
+                            </div>    <!--//small_slide_wrap-->
+                            <div class="total_slide_control">
+                                <button type="button" class="total_slide_btn prev">이전</button>    <!--//prev-->
+                                <button type="button" class="total_slide_btn next">다음</button>    <!--//next-->
+                            </div>    <!--//total_slide_control-->
+                        </div>    <!--//total_inner-->
+                        <script>
+                            //초기 변수 선언 시작
+                            var $BigSlideWrap = $('.media .media_wrap .big_slide_wrap'),
+                                $BigSlideList = $BigSlideWrap.find('.youtube_slide_list'),
+                                $BigSlideItem = $BigSlideList.find('.youtube_slide_item'),
+                                BigSlideItemLength = $BigSlideItem.length,
+                                $SmallSlideWrap = $('.media .media_wrap .small_slide_wrap'),
+                                $SmallSlideList = $SmallSlideWrap.find('.youtube_slide_list'),
+                                $SmallSlideItemClone = $BigSlideItem.clone();
+                            var PlayArray = [];
+                            for(var i=0; i<BigSlideItemLength; i++){
+                                PlayArray.push($BigSlideItem.eq(i));
+                            }
+                            //초기 변수 선언 끝
+
+                            //큰 슬라이드(유튜브 각각 변수, 동영상 아이디값 추출, 썸네일 이미지 추출) 시작
+                            if(BigSlideItemLength > 3){
+                                $BigSlideList.slick({
+                                    //기본
+                                    autoplay : false,
+                                    speed : 800,
+                                    dots : false,
+                                    draggable : true,
+                                    swipe : true,
+                                    swipeToSlide : true,
+                                    slidesToShow : 1,
+                                    slidesToScroll : 1,
+                                    variableWidth : false,
+                                    infinite: true,
+                                    arrows : false,
+                                    isRunOnLowIE : false,
+                                    pauseOnArrowClick : true,
+                                    pauseOnDirectionKeyPush : true,
+                                    pauseOnSwipe : true,
+                                    pauseOnDotsClick : true,
+                                    zIndex : 0,
+                                    fade : true,
+                                    responsive : [{}],
+                                    asNavFor : $SmallSlideList
+                                });
+                            }
+                            if(BigSlideItemLength <= 3){
+                                $BigSlideList.slick({
+                                    //기본
+                                    autoplay : false,
+                                    speed : 800,
+                                    dots : false,
+                                    draggable : false,
+                                    swipe : false,
+                                    swipeToSlide : false,
+                                    slidesToShow : 1,
+                                    slidesToScroll : 1,
+                                    variableWidth : false,
+                                    infinite: true,
+                                    arrows : false,
+                                    isRunOnLowIE : false,
+                                    pauseOnArrowClick : true,
+                                    pauseOnDirectionKeyPush : true,
+                                    pauseOnSwipe : true,
+                                    pauseOnDotsClick : true,
+                                    zIndex : 0,
+                                    fade : true,
+                                    responsive : [{}],
+                                    asNavFor : $SmallSlideList
+                                });
+                            }
+                            var $BigSlickSlide = $BigSlideList.find('.slick-slide');
+                            function onYouTubeIframeAPIReady() {
+                                $BigSlickSlide.each(function(){
+                                    var $this = $(this),
+                                        $thisSlideItem = $this.find('.youtube_slide_item'),
+                                        thisIndex = $thisSlideItem.attr('data-index'),
+                                        $MyThumbnail = $thisSlideItem.find('.youtube_thumbnail'),
+                                        $MyLink = $thisSlideItem.find('.text_link'),
+                                        MySplitAmp = $MyLink.attr('href').split('&'),
+                                        MySplitEqual = MySplitAmp[0].split('='),
+                                        MyYoutubeValue = MySplitEqual[1], //유튜브 영상 아이디 값 추출
+                                        $MyTitle = $thisSlideItem.find('.text_link .desc').text();
+                                    $MyThumbnail.css('background-image','url(https://img.youtube.com/vi/'+MyYoutubeValue+'/maxresdefault.jpg)');
+                                    PlayArray[thisIndex] = new YT.Player('nyjYoutube'+thisIndex+'', {
+                                        width : '870',
+                                        height : '540',
+                                        title : $MyTitle,
+                                        videoId : MyYoutubeValue,
+                                        playerVars : {
+                                            'rel' : 0,  //추천영상 안보여주게 설정
+                                            'control' : 1,
+                                            'autoplay' : 0,
+                                            'playsinline' : 1    //iOS환경에서 전체화면으로 재생하지 않게
+                                        },
+                                        events : {
+                                            'onReady': onPlayerReady, //로딩할때 이벤트 실행
+                                            'onStateChange': onPlayerStateChange //플레이어 상태 변화시 이벤트실행
+                                        }
+                                    });
+                                });
+                            };
+                            //큰 슬라이드(유튜브 각각 변수, 동영상 아이디값 추출, 썸네일 이미지 추출) 끝
+
+                            //작은 슬라이드 시작
+                            if(BigSlideItemLength > 3){
+                                for(var i=1; i<BigSlideItemLength; i++){
+                                    $SmallSlideList.append($SmallSlideItemClone.eq(i));
+                                    $SmallSlideList.append($SmallSlideItemClone.eq(0));
+                                }
+                                $SmallSlideList.slick({
+                                    //기본
+                                    autoplay : false,
+                                    speed : 800,
+                                    dots : false,
+                                    draggable : true,
+                                    swipe : true,
+                                    swipeToSlide : true,
+                                    slidesToShow : 2,
+                                    slidesToScroll : 1,
+                                    variableWidth : false,
+                                    infinite: true,
+                                    arrows : true,
+                                    prevArrow : $('.media .media_wrap .total_slide_control .prev'),
+                                    nextArrow : $('.media .media_wrap .total_slide_control .next'),
+                                    isRunOnLowIE : false,
+                                    pauseOnArrowClick : true,
+                                    pauseOnDirectionKeyPush : true,
+                                    pauseOnSwipe : true,
+                                    pauseOnDotsClick : true,
+                                    zIndex : 1,
+                                    responsive : [{}],
+                                    asNavFor : $BigSlideList
+                                });
+                            }
+                            if(BigSlideItemLength <= 3){
+                                for(var i=1; i<BigSlideItemLength; i++){
+                                    $SmallSlideList.append($SmallSlideItemClone.eq(i));
+                                }
+                                $SmallSlideList.slick({
+                                    //기본
+                                    autoplay : false,
+                                    speed : 800,
+                                    dots : false,
+                                    draggable : false,
+                                    swipe : false,
+                                    swipeToSlide : false,
+                                    slidesToShow : 2,
+                                    slidesToScroll : 1,
+                                    variableWidth : false,
+                                    infinite: true,
+                                    arrows : true,
+                                    prevArrow : $('.media .media_wrap .total_slide_control .prev'),
+                                    nextArrow : $('.media .media_wrap .total_slide_control .next'),
+                                    isRunOnLowIE : false,
+                                    pauseOnArrowClick : true,
+                                    pauseOnDirectionKeyPush : true,
+                                    pauseOnSwipe : true,
+                                    pauseOnDotsClick : true,
+                                    zIndex : 1,
+                                    responsive : [{}],
+                                    asNavFor : $BigSlideList
+                                });
+                            }
+                            var $SmallSlickSlide = $SmallSlideList.find('.slick-slide');
+                            $SmallSlickSlide.each(function(){
+                                var $this = $(this),
+                                    $SmallthisSlideItem = $this.find('.youtube_slide_item'),
+                                    $SmallMyThumbnail = $SmallthisSlideItem.find('.youtube_thumbnail'),
+                                    $SmallMyLink = $SmallthisSlideItem.find('.text_link'),
+                                    SmallMySplitAmp = $SmallMyLink.attr('href').split('&'),
+                                    SmallMySplitEqual = SmallMySplitAmp[0].split('='),
+                                    SmallMyYoutubeValue = SmallMySplitEqual[1]; //유튜브 영상 아이디 값 추출
+                                $SmallMyThumbnail.css('background-image','url(https://img.youtube.com/vi/'+SmallMyYoutubeValue+'/maxresdefault.jpg)');
+                            });
+                            //작은 슬라이드 끝
+
+                            //큰 슬라이드 롤링 시작 시 유튜브 재생 멈춤 시작
+                            $BigSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+                                var $Crtslide = $(slick.$slides[currentSlide]),
+                                    $CrtRows = $Crtslide.find('.slick-rows'),
+                                    $CrtYoutubeSlideItem = $CrtRows.find('.youtube_slide_item'),
+                                    CrtYoutubeSlideDataIndex = $CrtYoutubeSlideItem.attr('data-index'),
+                                    $CrtYoutubeBox = $CrtYoutubeSlideItem.find('.youtube_box');
+                                $CrtYoutubeBox.removeClass('active');
+                                function stopVideo() {
+                                    PlayArray[CrtYoutubeSlideDataIndex].stopVideo();
+                                }
+                                stopVideo();
+                            });
+                            //큰 슬라이드 롤링 시작 시 유튜브 재생 멈춤 끝
+
+                            //유튜브 동영상 마우스 오버 효과 시작
+                            var $MouseYoutubeBox = $BigSlickSlide.find('.youtube_box');
+                            $MouseYoutubeBox.each(function(){
+                                $(this).on('mouseover', function(){
+                                    $(this).addClass('active');
+                                });
+                            });
+                            //유튜브 동영상 마우스 오버 효과 끝
+                        </script>
+                    </div>    <!--//media_wrap-->
+                </section>    <!--//media-->
+            </div>    <!--//rowgroup4-->
+            <div class="rowgroup5" style="min-height:680px;background-color:rgba(255, 0, 255, 0.3);"></div>    <!--//rowgroup5-->
         </main>
     </div>    <!--//#container-->
     <footer id="footer">
