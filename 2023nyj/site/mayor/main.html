@@ -392,7 +392,7 @@ data-fullsize : yes / no
                 <div class="lnb_topbox">
                     <div class="login">
                         <button type="button" class="login_button">로그인</button>
-                        <!--                    <button type="button" class="login_button logout">로그아웃</button>-->
+                        <!--<button type="button" class="login_button logout">로그아웃</button>-->
                     </div>
                     <div class="family_wrap">
                         <button type="button" class="family_btn" title="주요사이트 열기">
@@ -709,7 +709,10 @@ data-fullsize : yes / no
                     <div class="depth depth1">
                         <ul class="depth_list depth1_list clearfix">
                             <li class="depth_item depth1_item">
-                                <a href="" class="depth_text depth1_text"><span>주광덕입니다</span></a>
+                                <a href="" class="depth_text depth1_text">
+                                    <em class="depth1_sub_text">안녕하세요</em>    <!--//depth1_sub_text-->
+                                    <span>주광덕입니다</span>
+                                </a>
                                 <div class="depth depth2">
                                     <ul class="depth_list depth2_list clearfix">
                                         <li class="depth_item depth2_item clearfix">
@@ -908,7 +911,10 @@ data-fullsize : yes / no
                                 </div>
                             </li>
                             <li class="depth_item depth1_item">
-                                <a href="" class="depth_text depth1_text"><span>시민과 함께</span></a>
+                                <a href="" class="depth_text depth1_text">
+                                    <em class="depth1_sub_text">시민과 소통하는 남양주</em>    <!--//depth1_sub_text-->
+                                    <span>시민과 함께</span>
+                                </a>
                                 <div class="depth depth2">
                                     <ul class="depth_list depth2_list clearfix">
                                         <li class="depth_item depth2_item clearfix">
@@ -1044,7 +1050,10 @@ data-fullsize : yes / no
                                 </div>
                             </li>
                             <li class="depth_item depth1_item">
-                                <a href="" class="depth_text depth1_text"><span>약속과 실천</span></a>
+                                <a href="" class="depth_text depth1_text">
+                                    <em class="depth1_sub_text">슈퍼성장시대를 이끌 남양주</em>    <!--//depth1_sub_text-->
+                                    <span>약속과 실천</span>
+                                </a>
                                 <div class="depth depth2">
                                     <ul class="depth_list depth2_list clearfix">
                                         <li class="depth_item depth2_item clearfix">
@@ -1858,6 +1867,7 @@ data-fullsize : yes / no
                                     <div class="youtube_slide_item" data-index="0" >    <!--//데이터값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
                                         <div class="item_inner">
                                             <div class="youtube_box">
+                                                <button type="button" class="youtube_play_btn">유튜브 재생</button>    <!--//youtube_play_btn-->
                                                 <i class="youtube_thumbnail"></i>    <!--//youtube_thumbnail-->
                                                 <!--//아이디값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
                                                 <div id="nyjYoutube0" class="youtube_iframe"></div>    <!--//youtube_iframe-->
@@ -1874,6 +1884,7 @@ data-fullsize : yes / no
                                     <div class="youtube_slide_item" data-index="1">    <!--//데이터값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
                                         <div class="item_inner">
                                             <div class="youtube_box">
+                                                <button type="button" class="youtube_play_btn">유튜브 재생</button>    <!--//youtube_play_btn-->
                                                 <i class="youtube_thumbnail"></i>    <!--//youtube_thumbnail-->
                                                 <!--//아이디값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
                                                 <div id="nyjYoutube1" class="youtube_iframe"></div>    <!--//youtube_iframe-->
@@ -1890,6 +1901,7 @@ data-fullsize : yes / no
                                     <div class="youtube_slide_item" data-index="2">    <!--//데이터값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
                                         <div class="item_inner">
                                             <div class="youtube_box">
+                                                <button type="button" class="youtube_play_btn">유튜브 재생</button>    <!--//youtube_play_btn-->
                                                 <i class="youtube_thumbnail"></i>    <!--//youtube_thumbnail-->
                                                 <!--//아이디값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
                                                 <div id="nyjYoutube2" class="youtube_iframe"></div>    <!--//youtube_iframe-->
@@ -1906,6 +1918,7 @@ data-fullsize : yes / no
                                     <div class="youtube_slide_item" data-index="3">    <!--//데이터값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
                                         <div class="item_inner">
                                             <div class="youtube_box">
+                                                <button type="button" class="youtube_play_btn">유튜브 재생</button>    <!--//youtube_play_btn-->
                                                 <i class="youtube_thumbnail"></i>    <!--//youtube_thumbnail-->
                                                 <!--//아이디값 0, 1, 2, 3 ~~~~ 순으로 개발 필요-->
                                                 <div id="nyjYoutube3" class="youtube_iframe"></div>    <!--//youtube_iframe-->
@@ -1928,6 +1941,9 @@ data-fullsize : yes / no
                                 <button type="button" class="total_slide_btn prev">이전</button>    <!--//prev-->
                                 <button type="button" class="total_slide_btn next">다음</button>    <!--//next-->
                             </div>    <!--//total_slide_control-->
+                            <div class="total_more">
+                                <a href="" class="total_more_link">더보기</a>    <!--//total_more_link-->
+                            </div>    <!--//total_more-->
                         </div>    <!--//total_inner-->
                         <script>
                             //초기 변수 선언 시작
@@ -2003,6 +2019,7 @@ data-fullsize : yes / no
                                         thisIndex = $thisSlideItem.attr('data-index'),
                                         $MyThumbnail = $thisSlideItem.find('.youtube_thumbnail'),
                                         $MyLink = $thisSlideItem.find('.text_link'),
+                                        $MyPlayBtn = $thisSlideItem.find('button.youtube_play_btn'),
                                         MySplitAmp = $MyLink.attr('href').split('&'),
                                         MySplitEqual = MySplitAmp[0].split('='),
                                         MyYoutubeValue = MySplitEqual[1], //유튜브 영상 아이디 값 추출
@@ -2024,6 +2041,17 @@ data-fullsize : yes / no
                                             'onStateChange': onPlayerStateChange //플레이어 상태 변화시 이벤트실행
                                         }
                                     });
+                                    //유튜브 재생 버튼 시작
+                                    $MyPlayBtn.on('click', function(){
+                                        var $this = $(this),
+                                            $thisYoutubeBox = $this.parent('.youtube_box'),
+                                            IsActive = $thisYoutubeBox.is('.active');
+                                        if(!IsActive){
+                                            $thisYoutubeBox.addClass('active');
+                                            YoutubePlay(PlayArray[thisIndex]);
+                                        }
+                                    });
+                                    //유튜브 재생 버튼 끝
                                 });
                             };
                             //큰 슬라이드(유튜브 각각 변수, 동영상 아이디값 추출, 썸네일 이미지 추출) 끝
@@ -2101,7 +2129,7 @@ data-fullsize : yes / no
                             });
                             //작은 슬라이드 끝
 
-                            //큰 슬라이드 롤링 시작 시 유튜브 재생 멈춤 시작
+                            //큰 슬라이드 롤링시애 유튜브 일시정지 시작
                             $BigSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
                                 var $Crtslide = $(slick.$slides[currentSlide]),
                                     $CrtRows = $Crtslide.find('.slick-rows'),
@@ -2109,26 +2137,91 @@ data-fullsize : yes / no
                                     CrtYoutubeSlideDataIndex = $CrtYoutubeSlideItem.attr('data-index'),
                                     $CrtYoutubeBox = $CrtYoutubeSlideItem.find('.youtube_box');
                                 $CrtYoutubeBox.removeClass('active');
+                                /*
                                 function stopVideo() {
                                     PlayArray[CrtYoutubeSlideDataIndex].stopVideo();
                                 }
                                 stopVideo();
+                                */
+                                YoutubePause(PlayArray[CrtYoutubeSlideDataIndex]);
                             });
-                            //큰 슬라이드 롤링 시작 시 유튜브 재생 멈춤 끝
-
-                            //유튜브 동영상 마우스 오버 효과 시작
-                            var $MouseYoutubeBox = $BigSlickSlide.find('.youtube_box');
-                            $MouseYoutubeBox.each(function(){
-                                $(this).on('mouseover', function(){
-                                    $(this).addClass('active');
-                                });
-                            });
-                            //유튜브 동영상 마우스 오버 효과 끝
+                            //큰 슬라이드 롤링시애 유튜브 일시정지 끝
                         </script>
                     </div>    <!--//media_wrap-->
                 </section>    <!--//media-->
             </div>    <!--//rowgroup4-->
-            <div class="rowgroup5" style="min-height:680px;background-color:rgba(255, 0, 255, 0.3);"></div>    <!--//rowgroup5-->
+            <div class="rowgroup5">
+                <section class="photo">
+                    <div class="photo_wrap waypoint">
+                        <h2 class="skip">사진으로 본 시정활동 영역</h2>
+                        <div class="photo_slide_wrap waypoint">
+                            <span class="photo_title">
+                                <em class="photo_title_text reg">사진으로 본</em>    <!--//reg-->
+                                <em class="photo_title_text bol">시정활동</em>    <!--//bol-->
+                            </span>    <!--//title-->
+                            <div class="photo_slide_inner waypoint">
+                                <div class="photo_slide_list">
+                                    <div class="photo_slide_item">
+                                        <a href="" class="photo_slide_link">
+                                            <span class="img_wrap">
+                                                <i class="img_inner" style="background-image:url(./images/main/photo_slide_img01.png)"></i>    <!--//photo_inner-->
+                                                <img src="./images/main/photo_slide_img01.png" alt="이미지 대체텍스트 개발 필요" class="img_real" />    <!--//photo_real-->
+                                            </span>    <!--//img_wrap-->
+                                            <span class="text_wrap">
+                                                <span class="text title_text">사진게시판 타이틀1 개발</span>    <!--//title_text-->
+                                                <span class="text date_text">2023-08-16</span>    <!--//date_text-->
+                                            </span>    <!--//text_wrap-->
+                                        </a>    <!--//photo_slide_link-->
+                                    </div>    <!--//photo_slide_item-->
+                                    <div class="photo_slide_item">
+                                        <a href="" class="photo_slide_link">
+                                            <span class="img_wrap">
+                                                <i class="img_inner" style="background-image:url(./images/main/photo_slide_img02.png)"></i>    <!--//photo_inner-->
+                                                <img src="./images/main/photo_slide_img02.png" alt="이미지 대체텍스트 개발 필요" class="img_real" />    <!--//photo_real-->
+                                            </span>    <!--//img_wrap-->
+                                            <span class="text_wrap">
+                                                <span class="text title_text">사진게시판 타이틀2 개발</span>    <!--//title_text-->
+                                                <span class="text date_text">2023-08-15</span>    <!--//date_text-->
+                                            </span>    <!--//text_wrap-->
+                                        </a>    <!--//photo_slide_link-->
+                                    </div>    <!--//photo_slide_item-->
+                                    <div class="photo_slide_item">
+                                        <a href="" class="photo_slide_link">
+                                            <span class="img_wrap">
+                                                <i class="img_inner" style="background-image:url(./images/main/photo_slide_img03.png)"></i>    <!--//photo_inner-->
+                                                <img src="./images/main/photo_slide_img03.png" alt="이미지 대체텍스트 개발 필요" class="img_real" />    <!--//photo_real-->
+                                            </span>    <!--//img_wrap-->
+                                            <span class="text_wrap">
+                                                <span class="text title_text">사진게시판 타이틀3 개발</span>    <!--//title_text-->
+                                                <span class="text date_text">2023-08-14</span>    <!--//date_text-->
+                                            </span>    <!--//text_wrap-->
+                                        </a>    <!--//photo_slide_link-->
+                                    </div>    <!--//photo_slide_item-->
+                                    <div class="photo_slide_item">
+                                        <a href="" class="photo_slide_link">
+                                            <span class="img_wrap">
+                                                <i class="img_inner" style="background-image:url(http://via.placeholder.com/490x310)"></i>    <!--//photo_inner-->
+                                                <img src="http://via.placeholder.com/490x310" alt="이미지 대체텍스트 개발 필요" class="img_real" />    <!--//photo_real-->
+                                            </span>    <!--//img_wrap-->
+                                            <span class="text_wrap">
+                                                <span class="text title_text">사진게시판 테스트 타이틀 개발</span>    <!--//title_text-->
+                                                <span class="text date_text">2023-08-13</span>    <!--//date_text-->
+                                            </span>    <!--//text_wrap-->
+                                        </a>    <!--//photo_slide_link-->
+                                    </div>    <!--//photo_slide_item-->
+                                </div>    <!--//photo_slide_list-->
+                            </div>    <!--//photo_slide_inner-->
+                            <div class="photo_slide_control">
+                                <button type="button" class="photo_control_btn prev">이전</button>    <!--//prev-->
+                                <button type="button" class="photo_control_btn next">다음</button>    <!--//next-->
+                            </div>    <!--//photo_slide_control-->
+                            <div class="photo_more">
+                                <a href="" class="photo_more_link">더보기</a>    <!--//photo_more_link-->
+                            </div>    <!--//photo_more-->
+                        </div>    <!--//photo_slide_wrap-->
+                    </div>    <!--//photo_wrap-->
+                </section>    <!--//photo-->
+            </div>    <!--//rowgroup5-->
         </main>
     </div>    <!--//#container-->
     <footer id="footer">
@@ -2181,22 +2274,16 @@ data-fullsize : yes / no
                         <a href="">개인정보 처리방침</a>
                     </li>
                     <li class="link_item">
-                        <a href="">사이트맵</a>
-                    </li>
-                    <li class="link_item">
-                        <a href="">조직안내</a>
-                    </li>
-                    <li class="link_item">
                         <a href="">찾아오시는 길</a>
                     </li>
                 </ul>
                 <div class="footer_info">
                     <ul>
                         <li class="footer_item">
-                            (12140) 경기도 남양주시 진건읍 사릉로 234-46 남양주농업기술센터
+                            제1청사 (12232) 경기도 남양주시 경춘로 1037(금곡동)
                         </li>
                         <li class="footer_item">
-                            TEL : 031-590-2312
+                            제2청사 (12284) 경기도 남양주시 경춘로 522(다산동)
                         </li>
                         <li class="footer_item">
                             대표전화 : 031-590-2114

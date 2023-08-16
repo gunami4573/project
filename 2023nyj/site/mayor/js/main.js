@@ -225,7 +225,7 @@ function YoutubePause(YoutubeID) {
             responsive : [{}]
         });
         //공약사항 슬라이드 끝
-
+        
         //뉴스 슬라이드 시작
         var $NewsSlideList = $('.news_slide_wrap .news_slide_list'),
             $NewsSlidePrev = $('.news_slide_wrap .news_slide_control .prev'),
@@ -254,6 +254,35 @@ function YoutubePause(YoutubeID) {
             responsive : [{}]
         });
         //뉴스 슬라이드 끝
+
+        //시정활동 사진 슬라이드 시작
+        var $PhotoSlideList = $('.photo_slide_wrap .photo_slide_list'),
+            $PhotoSlidePrev = $('.photo_slide_wrap .photo_slide_control .prev'),
+            $PhotoSlideNext = $('.photo_slide_wrap .photo_slide_control .next');
+        $PhotoSlideList.slick({
+            //기본
+            autoplay : true,
+            speed : 800,
+            dots : false,
+            draggable : true,
+            swipe : true,
+            swipeToSlide : true,
+            slidesToShow : 3,
+            slidesToScroll : 1,
+            variableWidth : false,
+            infinite: true,
+            arrows : true,
+            prevArrow : $PhotoSlidePrev,
+            nextArrow : $PhotoSlideNext,
+            isRunOnLowIE : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            zIndex : 1,
+            responsive : [{}]
+        });
+        //시정활동 사진 슬라이드 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
