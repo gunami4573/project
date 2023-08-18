@@ -128,7 +128,7 @@ function YoutubePause(YoutubeID) {
             });
             $DayDetailSlideList.slick({
                 //기본
-                autoplay : true,
+                autoplay : false,
                 dots : false,
                 draggable : true,
                 swipe : true,
@@ -145,7 +145,12 @@ function YoutubePause(YoutubeID) {
                 zIndex : 1,
                 vertical : true, //세로모드 유무
                 verticalSwiping : true, //세로일때 터치 유무
-                responsive : [{}]
+                responsive : [{
+                    breakpoint : 1301,
+                    settings : {
+                        slidesToShow : 4
+                    }
+                }]
             });
             $DayDetailSlideList.on('wheel', function(e){
                 e.preventDefault();
@@ -184,11 +189,16 @@ function YoutubePause(YoutubeID) {
         //주요일정 탭 및 슬라이드 끝
 
         //공약사항 슬라이드 시작
-        var $pmsSlideList = $('.pms_slide_wrap .pms_slide_list'),
-            $pmsPrev = $('.pms_slide_wrap .pms_slide_control .prev'),
-            $pmsNext = $('.pms_slide_wrap .pms_slide_control .next'),
-            $pmsCurrent = $('.pms_slide_wrap .pms_slide_control .current'),
-            $pmsTotal = $('.pms_slide_wrap .pms_slide_control .total');
+        var $pmsSlideList = $('.promise_wrap .pms_slide_wrap .pms_slide_list'),
+            pmsSlideItemlength = $pmsSlideList.find('.pms_slide_item').length,
+            $pmsPrev = $('.promise_wrap .pms_slide_wrap .pms_slide_control .prev'),
+            $pmsNext = $('.promise_wrap .pms_slide_wrap .pms_slide_control .next'),
+            $pmsCurrent = $('.promise_wrap .pms_slide_control .current'),
+            $pmsTotal = $('.promise_wrap .pms_slide_control .total');
+        if(pmsSlideItemlength < 10) {
+            pmsSlideItemlength = '0' + pmsSlideItemlength;
+        }
+        $pmsTotal.text(pmsSlideItemlength);
         $pmsSlideList.slick({
             //기본
             autoplay : true,
@@ -196,8 +206,8 @@ function YoutubePause(YoutubeID) {
             speed : 700,
             dots : false,
             draggable : false,
-            swipe : true,
-            swipeToSlide : true,
+            swipe : false,
+            swipeToSlide : false,
             slidesToShow : 4,
             slidesToScroll : 1,
             variableWidth : true,
@@ -205,7 +215,6 @@ function YoutubePause(YoutubeID) {
             arrows : true,
             prevArrow : $pmsPrev,
             nextArrow : $pmsNext,
-            total : $pmsTotal,
             current : $pmsCurrent,
             customState : function(state) {
                 if(state.current < 10) {
@@ -225,7 +234,7 @@ function YoutubePause(YoutubeID) {
             responsive : [{}]
         });
         //공약사항 슬라이드 끝
-        
+
         //뉴스 슬라이드 시작
         var $NewsSlideList = $('.news_slide_wrap .news_slide_list'),
             $NewsSlidePrev = $('.news_slide_wrap .news_slide_control .prev'),
