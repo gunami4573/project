@@ -150,6 +150,16 @@ function YoutubePause(YoutubeID) {
                     settings : {
                         slidesToShow : 4
                     }
+                },{
+                    breakpoint : 1001,
+                    settings : {
+                        slidesToShow : 3
+                    }
+                },{
+                    breakpoint : 801,
+                    settings : {
+                        slidesToShow : 2
+                    }
                 }]
             });
             $DayDetailSlideList.on('wheel', function(e){
@@ -201,9 +211,9 @@ function YoutubePause(YoutubeID) {
         $pmsTotal.text(pmsSlideItemlength);
         $pmsSlideList.slick({
             //기본
-            autoplay : true,
+            autoplay : false,
             autoplaySpeed : 3500,
-            speed : 700,
+            speed : 900,
             dots : false,
             draggable : false,
             swipe : false,
@@ -231,7 +241,28 @@ function YoutubePause(YoutubeID) {
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 1301,
+                settings : {
+                    slidesToShow : 3
+                }
+            },{
+                breakpoint : 1001,
+                settings : {
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true,
+                    slidesToShow : 3
+                }
+            },{
+                breakpoint : 801,
+                settings : {
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true,
+                    slidesToShow : 2
+                }
+            }]
         });
         //공약사항 슬라이드 끝
 
@@ -260,7 +291,12 @@ function YoutubePause(YoutubeID) {
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 801,
+                settings : {
+                    slidesToShow : 1
+                }
+            }]
         });
         //뉴스 슬라이드 끝
 
@@ -270,7 +306,7 @@ function YoutubePause(YoutubeID) {
             $PhotoSlideNext = $('.photo_slide_wrap .photo_slide_control .next');
         $PhotoSlideList.slick({
             //기본
-            autoplay : true,
+            autoplay : false,
             speed : 800,
             dots : false,
             draggable : true,
