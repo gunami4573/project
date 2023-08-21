@@ -128,7 +128,7 @@ function YoutubePause(YoutubeID) {
             });
             $DayDetailSlideList.slick({
                 //기본
-                autoplay : false,
+                autoplay : true,
                 dots : false,
                 draggable : true,
                 swipe : true,
@@ -159,6 +159,11 @@ function YoutubePause(YoutubeID) {
                     breakpoint : 801,
                     settings : {
                         slidesToShow : 2
+                    }
+                },{
+                    breakpoint : 641,
+                    settings : {
+                        slidesToShow : 3
                     }
                 }]
             });
@@ -211,7 +216,7 @@ function YoutubePause(YoutubeID) {
         $pmsTotal.text(pmsSlideItemlength);
         $pmsSlideList.slick({
             //기본
-            autoplay : false,
+            autoplay : true,
             autoplaySpeed : 3500,
             speed : 900,
             dots : false,
@@ -261,6 +266,16 @@ function YoutubePause(YoutubeID) {
                     swipe : true,
                     swipeToSlide : true,
                     slidesToShow : 2
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true,
+                    slidesToShow : 1,
+                    variableWidth : false,
+                    fade : true
                 }
             }]
         });
@@ -325,7 +340,12 @@ function YoutubePause(YoutubeID) {
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 1001,
+                settings : {
+                    slidesToShow : 2
+                }
+            }]
         });
         //시정활동 사진 슬라이드 끝
 
