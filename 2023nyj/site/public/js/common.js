@@ -470,34 +470,38 @@ $(document).ready(function(){
         });
 
         //
-        var $public_popup = $('.public_popup_zone .public_popup_list');
-        $public_popup.slick({
-            //기본
-            autoplay : true,
-            dots : false,
-            slidesToShow : 1,
-            slidesToScroll: 1,
-            prevArrow : $public_popup.parent('.public_popup_zone').find('.public_popup_control .prev'),
-            nextArrow : $public_popup.parent('.public_popup_zone').find('.public_popup_control .next'),
+        var $public_popup = $('.public_popup_zone');
+        $public_popup.each(function(){
+            var $this = $(this),
+                $popup_slick = $this.find('.public_popup_list');
+            $popup_slick.slick({
+                //기본
+                autoplay : true,
+                dots : false,
+                slidesToShow : 1,
+                slidesToScroll: 1,
+                prevArrow : $popup_slick.parent('.public_popup_zone').find('.public_popup_control .prev'),
+                nextArrow : $popup_slick.parent('.public_popup_zone').find('.public_popup_control .next'),
 
-            //추가 기능
-            autoArrow : $public_popup.parent('.public_popup_zone').find('.public_popup_control .auto'),
-            pauseText : '정지',
-            playText : '재생',
-            total : $public_popup.parent('.public_popup_zone').find('.public_popup_control .total'),
-            current : $public_popup.parent('.public_popup_zone').find('.public_popup_control .current'),
-            customState : function(state) {
-                //현재 슬라이드 위치가 10보다 작을 때
-                if(state.current < 10) {
-                    state.current = '0' + state.current;
-                }
-                //슬라이드 갯수가 10보다 작을 때
-                if(state.total < 10) {
-                    state.total = '0' + state.total;
-                }
+                //추가 기능
+                autoArrow : $popup_slick.parent('.public_popup_zone').find('.public_popup_control .auto'),
+                pauseText : '정지',
+                playText : '재생',
+                total : $popup_slick.parent('.public_popup_zone').find('.public_popup_control .total'),
+                current : $popup_slick.parent('.public_popup_zone').find('.public_popup_control .current'),
+                customState : function(state) {
+                    //현재 슬라이드 위치가 10보다 작을 때
+                    if(state.current < 10) {
+                        state.current = '0' + state.current;
+                    }
+                    //슬라이드 갯수가 10보다 작을 때
+                    if(state.total < 10) {
+                        state.total = '0' + state.total;
+                    }
 
-                return state;
-            }
+                    return state;
+                }
+            });
         });
     });
 
