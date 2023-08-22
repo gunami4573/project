@@ -218,9 +218,9 @@ function YoutubePause(YoutubeID) {
         $pmsTotal.text(pmsSlideItemlength);
         $pmsSlideList.slick({
             //기본
-            autoplay : true,
+            autoplay : false,
             autoplaySpeed : 3500,
-            speed : 900,
+            speed : 700,
             dots : false,
             draggable : false,
             swipe : false,
