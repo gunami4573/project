@@ -167,13 +167,15 @@ function YoutubePause(YoutubeID) {
                     }
                 }]
             });
-            $DayDetailSlideList.on('wheel', function(e){
-                e.preventDefault();
-                if (e.originalEvent.deltaY < 0) {
-                    $(this).slick('slickPrev');
-                } else {
-                    $(this).slick('slickNext');
-                }
+            $window.on('screen:wide screen:web', function (event) {
+                $DayDetailSlideList.on('wheel', function(e){
+                    e.preventDefault();
+                    if (e.originalEvent.deltaY < 0) {
+                        $(this).slick('slickPrev');
+                    } else {
+                        $(this).slick('slickNext');
+                    }
+                });
             });
         });
         $('.slogan_wrap .sgn_daily .day_choice .day_choice_list .day_choice_item button.day_choice_btn').on('click', function(){
@@ -288,7 +290,7 @@ function YoutubePause(YoutubeID) {
         $NewsSlideList.slick({
             //기본
             autoplay : false,
-            speed : 800,
+            speed : 1200,
             dots : false,
             draggable : true,
             swipe : true,
@@ -321,8 +323,8 @@ function YoutubePause(YoutubeID) {
             $PhotoSlideNext = $('.photo_slide_wrap .photo_slide_control .next');
         $PhotoSlideList.slick({
             //기본
-            autoplay : false,
-            speed : 800,
+            autoplay : true,
+            speed : 1200,
             dots : false,
             draggable : true,
             swipe : true,
@@ -344,6 +346,17 @@ function YoutubePause(YoutubeID) {
                 breakpoint : 1001,
                 settings : {
                     slidesToShow : 2
+                }
+            },{
+                breakpoint : 1001,
+                settings : {
+                    slidesToShow : 2
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 1,
+                    fade : true
                 }
             }]
         });
