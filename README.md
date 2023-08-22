@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=333333&height=200&section=header&text=SI%20Total%20Project%202020~&fontSize=30&fontColor=ffffff)
 
 ### 2023sdfac (2023 남양주시청 전면개편)
-- https://gunami4573.github.io/project/2023nyj/site/mayor/main.html (열린시장실 메인 레이아웃)(작업중)
+- https://gunami4573.github.io/project/2023nyj/site/mayor/main.html (열린시장실 메인 레이아웃)
 
 ### 2023sdfac (2023 성동문화재단 강좌관리시스템 신규)
 - https://gunami4573.github.io/project/2023sdfac/site/sdfac/main.html (강좌관리시스템 메인 레이아웃)
