@@ -303,6 +303,18 @@ body:not(.visualtype[data-layout="wide"]) #header .header_top{position: relative
 /* header_box */
 /*#header .header_box{position: relative;z-index: 50;}*/
 
+#header .header_box:before{display: block;position: absolute;bottom: -1px;left: 0;width: 100%;height: 1px;background-color: #cccfd5;z-index: 1;}
+
+
+body[data-layouttype="visualtype"][data-layout="regular"] #header .header_box:before{display: none;}
+
+@media all and (min-width: 1001px) {
+    body[data-layouttype="visualtype"][data-layout="wide"] #header .header_box:before{display: none;}
+}
+@media all and (max-width: 1000px) {
+    body[data-layouttype="visualtype"][data-layout="wide"] #header .header_box:before{background-color: rgba(255, 255, 255, 0.2);}
+}
+
 #header .header_box .logo{display: inline-block;position: absolute;margin: 20px 0 22px;z-index: 31;}
 #header .header_box .logo a{vertical-align: top;font-size: 24px;line-height: 32px;letter-spacing: -0.05em;font-weight: 600;color: #3d4254;text-decoration: none;}
 
@@ -566,7 +578,22 @@ body:not(.visualtype[data-layout="wide"]) #header .header_top{position: relative
 #footer .footer_banner .banner_list .banner_item a{font-size: 15px;line-height: 30px;color: #656b74;}
 
 @media all and (max-width: 1000px) {
-    #footer .footer_banner{display: none;}
+    body#sub #footer .footer_banner{display: none;}
+    
+    #footer .footer_banner{padding: 20px 0;}
+    
+    #footer .footer_banner .slide_control{top: 2px;}
+    #footer .footer_banner .slide_control .banner_btn{width: 25px;height: 25px;background-size: 400%;background-position: 0;}
+    #footer .footer_banner .slide_control .banner_btn + .banner_btn{margin-left: 3px;}
+    
+    #footer .footer_banner .slide_control .banner_btn.auto{background-position-x: -23px;}
+    #footer .footer_banner .slide_control .banner_btn.auto.slick-play{background-position-x: -45px;}
+    #footer .footer_banner .slide_control .banner_btn.next{background-position-x: -69px;}
+    
+    #footer .footer_banner .banner_list{margin-left: 80px;padding-left: 35px;}
+    #footer .footer_banner .banner_list .banner_item{margin-right: 40px;}
+    #footer .footer_banner .banner_list .banner_item a{font-size: 13px;line-height: 25px;}
+    
 }
 
 /* footer_address */
