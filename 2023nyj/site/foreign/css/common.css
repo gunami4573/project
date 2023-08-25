@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+/* (주)한신정보기술 박남규 - 2023.08 */
+
+/* 외국어 별 언어 선언 시작 */
+html[lang="en"] body{word-break:keep-all;font-family:'Score','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+html[lang="zh-cn"] body{word-break:break-all;font-family:'Score',Helvetica,Arial,"华文细黑",STXihei,"宋体",SimSun,"Microsoft YaHei",'NotoKr','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+html[lang="ja"] body{word-break:break-all;font-family:'Score',Helvetica,Arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;}
+html[lang="mn"] body{word-break:break-all;font-family:'Score','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+article,aside,audio,blockquote,body,canvas,caption,dd,details,div,dl,dt,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,html,iframe,legend,li,main,menu,nav,ol,p,pre,section,summary,table,tbody,td,template,textarea,tfoot,th,thead,tr,ul,video{word-break:inherit;}
+/* 외국어 별 언어 선언 끝 */
+
+/* 외국어 공통 상단 깨기 시작 */
+body.visualtype[data-layout="wide"] #header .header_top,
+body.visualtype[data-layout="regular"] #header .header_top{display:none;}
+body.visualtype[data-layout="wide"] #header .header_box .logo .site_name,
+body.visualtype[data-layout="regular"] #header .header_box .logo .site_name{display:none;}
+body.visualtype[data-layout="wide"] #header .header_box .logo,
+body.visualtype[data-layout="regular"] #header .header_box .logo{margin:34px 0 0;}
+body.visualtype[data-layout="wide"] #header .header_box .logo a .logo_image,
+body.visualtype[data-layout="regular"] #header .header_box .logo a .logo_image{margin-right:0;}
+html:not(.lnb_open) body.visualtype[data-layout="wide"] #header:hover .header_box .logo a .logo_image,
+html:not(.lnb_open) body.visualtype[data-layout="regular"] #header:hover .header_box .logo a .logo_image{background-position:left top;}
+html:not(.lnb_open) body.visualtype[data-layout="wide"] #header .header_box .logo a .logo_image,
+html:not(.lnb_open) body.visualtype[data-layout="regular"] #header .header_box .logo a .logo_image{width:204px;height:39px;background-image:url(../images/common/logo.png);background-position:left top;}
+html.lnb_open body.visualtype[data-layout="wide"] #header .header_box .logo a .logo_image,
+html.lnb_open body.visualtype[data-layout="regular"] #header .header_box .logo a .logo_image{width:204px;height:39px;background-image:url(../images/common/logo.png);background-position:left top;}
+@media screen and (min-width:1001px) {
+    body.visualtype[data-layout="wide"] #header,
+    body.visualtype[data-layout="regular"] #header{height:115px;}
+    body.visualtype[data-layout="wide"] #header .wrap,
+    body.visualtype[data-layout="regular"] #header .wrap{width:1760px;}
+    body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list,
+    body.visualtype[data-layout="regular"] #header .menu.eachdown .depth1_list{padding-right:130px;}
+    body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list .depth1_item,
+    body.visualtype[data-layout="regular"] #header .menu.eachdown .depth1_list .depth1_item{margin-right:64px;vertical-align:top;}
+    body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list .depth1_item .depth1_text,
+    body.visualtype[data-layout="regular"] #header .menu.eachdown .depth1_list .depth1_item .depth1_text{height:115px;line-height:0;}
+    body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list .depth1_item .depth1_text:before,
+    body.visualtype[data-layout="regular"] #header .menu.eachdown .depth1_list .depth1_item .depth1_text:before{display:none;position:absolute;z-index:1;bottom:-1px;left:0;width:100%;height:3px;background-color:#1b224e;content:'';box-sizing:border-box;}
+    body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list .depth1_item.active .depth1_text:before,
+    body.visualtype[data-layout="regular"] #header .menu.eachdown .depth1_list .depth1_item.active .depth1_text:before{display:block;}
+    body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list .depth1_item .depth1_text span,
+    body.visualtype[data-layout="regular"] #header .menu.eachdown .depth1_list .depth1_item .depth1_text span{top:50%;transform:translateY(-50%);padding-bottom:0;line-height:24px;}
+    body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list .depth1_item .depth1_text span:before,
+    body.visualtype[data-layout="regular"] #header .menu.eachdown .depth1_list .depth1_item .depth1_text span:before{display:none;}
+    body.visualtype[data-layout="wide"] #header .header_login,
+    body.visualtype[data-layout="regular"] #header .header_login{top:39px;right:calc((100% - 1760px) / 2);}
+    
+    /* 외국어 언어 선택 시작 */
+    #header .header_login .lang_choice{display:inline-block;position:relative;width:90px;font-size:0;line-height:0;vertical-align:top;box-sizing:border-box;}
+    #header .header_login .lang_choice .lang_choice_open{display:inline-block;position:relative;z-index:1;width:100%;padding-left:44px;border:none;font-size:16px;color:#252831;line-height:40px;letter-spacing:0;font-weight:500;font-family:'Score';vertical-align:top;box-sizing:border-box;text-align:left;}
+    #header .header_login .lang_choice .lang_choice_open:before{display:block;position:absolute;top:11px;left:21px;width:18px;height:18px;background-image:url(../images/common/lang_choice_btn_icon.png);background-repeat:no-repeat;background-position:left top;content:'';box-sizing:border-box;}
+    body.main #header .header_login .lang_choice .lang_choice_open{color:#fff;}
+    body.main #header .header_login .lang_choice .lang_choice_open:before{background-position:-20px top;}
+    body.main #header:hover .header_login .lang_choice .lang_choice_open{color:#252831;}
+    body.main #header:hover .header_login .lang_choice .lang_choice_open:before{background-position:left top;}
+    #header .header_login .lang_choice .lang_layer{display:block;position:relative;z-index:0;top:-5px;left:-9px;width:calc(100% + 34px);background-color:#1b224e;border-radius:15px;font-size:0;line-height:0;box-sizing:border-box;box-shadow:0px 11px 18px rgba(0, 0, 0, 0.2);}
+    #header .header_login .lang_choice.active .lang_layer{display:block;}
+    #header .header_login .lang_choice .lang_layer .lang_choice_list{display:block;position:relative;width:100%;padding:6px 0;font-size:0;line-height:0;box-sizing:border-box;}
+    #header .header_login .lang_choice .lang_layer .lang_choice_list .lang_choice_item{display:block;position:relative;width:100%;padding-bottom:1px;font-size:0;line-height:0;box-sizing:border-box;}
+    #header .header_login .lang_choice .lang_layer .lang_choice_list .lang_choice_item:before{display:block;position:absolute;bottom:0;left:0;width:100%;height:1px;background-color:rgba(255, 255, 255, 0.2);content:'';box-sizing:border-box;}
+    #header .header_login .lang_choice .lang_layer .lang_choice_list .lang_choice_item:last-child:before{display:none;}
+    #header .header_login .lang_choice .lang_layer .lang_choice_list .lang_choice_item .lang_choice_link{display:block;position:relative;width:100%;font-size:14px;color:#fff;line-height:34px;letter-spacing:-0.02em;font-weight:400;font-family:'Score';text-align:center;box-sizing:border-box;}
+    #header .header_login .lang_choice .lang_layer .lang_choice_list .lang_choice_item.google_type .lang_choice_link{padding-top:4px;}
+    #header .header_login .lang_choice .lang_layer .lang_choice_list .lang_choice_item.google_type .lang_choice_link:before{display:inline-block;position:relative;width:25px;height:25px;margin-top:4px;margin-right:4px;border-radius:100%;background-color:#fff;background-image:url(../images/common/google_icon.png);background-repeat:no-repeat;background-position:center center;vertical-align:top;box-sizing:border-box;}
+    #header .header_login .lang_choice .lang_layer .lang_choice_list .lang_choice_item .lang_choice_link:hover,
+    #header .header_login .lang_choice .lang_layer .lang_choice_list .lang_choice_item .lang_choice_link:focus{text-decoration:none;}
+    /* 외국어 언어 선택 끝 */
+}
+@media screen and (max-width:1000px) {
+    #header .header_login{display:none;}
+}
+/* 외국어 공통 상단 깨기 끝 */
