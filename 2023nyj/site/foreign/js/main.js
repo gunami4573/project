@@ -57,7 +57,7 @@
             $Desc = $('.img_text_box .img_text_inner .desc');
         $Desc.attr('style', 'animation-delay:'+DescDelay+'s');
         //텍스트 에니메이션 플러그인 끝
-        
+
         //비주얼 슬라이드 시작
         var $VisualImgSlideList = $('.visual_wrap .img_slide_wrap .img_slide_list'),
             $VisualImgPrev = $('.visual_wrap .img_slide_wrap .control_box .prev'),
@@ -170,7 +170,13 @@
         var $cgSlideBoxItem = $('.cg_total .cg_slide_box .cg_slide_box_item');
         $cgSlideBoxItem.each(function(){
             var $this = $(this),
+                IsActive = $this.is('.active'),
                 $cgSlideList = $this.find('.cg_slide_list');
+            if(IsActive){
+                setTimeout(function(){
+                    $this.addClass('tab_ani');
+                }, 100)
+            }
             $cgSlideList.slick({
                 //기본
                 autoplay : false,
@@ -204,11 +210,13 @@
                 $MySlideList = $MySlideBoxItem.find('.cg_slide_list');
             if(!IsActive){
                 $OtherItem.removeClass('active');
-                $OtherSlideBoxItem.removeClass('active');
+                $OtherSlideBoxItem.removeClass('active tab_ani');
                 $OtherBtn.removeAttr('title');
-
                 $MyItem.addClass('active');
                 $MySlideBoxItem.addClass('active');
+                setTimeout(function(){
+                    $MySlideBoxItem.addClass('tab_ani');
+                }, 1)
                 $this.attr('title', 'category select');
                 $MySlideList.slick('setPosition');
             }
