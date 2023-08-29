@@ -245,16 +245,15 @@
         });
         //카테고리 탭, 슬라이드 끝
 
-        //
-        var $imsiSlideList = $('.imsi_slide_list')
-        $imsiSlideList.slick({
+        //투어리즘 슬라이드 시작
+        var $TourSlideList = $('.tour .tour_wrap .tour_slide_wrap .tour_slide_list')
+        $TourSlideList.slick({
             //기본
-            autoplay : true,
-            speed : 1500,
+            autoplay : false,
             dots : false,
-            draggable : false,
-            swipe : false,
-            swipeToSlide : false,
+            draggable : true,
+            swipe : true,
+            swipeToSlide : true,
             slidesToShow : 3,
             slidesToScroll : 1,
             variableWidth : true,
@@ -267,7 +266,7 @@
             zIndex : 0,
             responsive : [{}]
         });
-        //
+        //투어리즘 슬라이드 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
