@@ -175,7 +175,7 @@
             if(IsActive){
                 setTimeout(function(){
                     $this.addClass('tab_ani');
-                }, 100)
+                }, 1)
             }
             $cgSlideList.slick({
                 //기본
@@ -244,6 +244,30 @@
             }
         });
         //카테고리 탭, 슬라이드 끝
+
+        //
+        var $imsiSlideList = $('.imsi_slide_list')
+        $imsiSlideList.slick({
+            //기본
+            autoplay : true,
+            speed : 1500,
+            dots : false,
+            draggable : false,
+            swipe : false,
+            swipeToSlide : false,
+            slidesToShow : 3,
+            slidesToScroll : 1,
+            variableWidth : true,
+            infinite: true,
+            arrows : false,
+            isRunOnLowIE : true,
+            pauseOnHover : true,
+            pauseOnSwipe : true,
+            pauseOnArrowClick : true,
+            zIndex : 0,
+            responsive : [{}]
+        });
+        //
 
         $window.on('screen:tablet screen:phone', function (event) {
 
