@@ -246,10 +246,30 @@
         //카테고리 탭, 슬라이드 끝
 
         //투어리즘 슬라이드 시작
-        var $TourSlideList = $('.tour .tour_wrap .tour_slide_wrap .tour_slide_list')
+        var TourSlideItemLength = $('.tour .tour_wrap .tour_slide_wrap .tour_slide_list').find('.tour_slide_item').length,
+            $TourSlideTotal = $('.tour .tour_wrap .tour_slide_wrap .total');
+        if(TourSlideItemLength < 10) {
+            TourSlideItemLength = '0' + TourSlideItemLength;
+        }
+        $TourSlideTotal.text(TourSlideItemLength);
+
+        var $TourSlideList = $('.tour .tour_wrap .tour_slide_wrap .tour_slide_list'),
+            $TourSlideLastItem = $TourSlideList.find('.tour_slide_item:last-child'),
+            $TourSlidePrev = $('.tour .tour_wrap .tour_slide_wrap .prev'),
+            $TourSlideNext = $('.tour .tour_wrap .tour_slide_wrap .next'),
+            $TourSlideAuto = $('.tour .tour_wrap .tour_slide_wrap .auto'),
+            $TourSlideCurrent = $('.tour .tour_wrap .tour_slide_wrap .current'),
+            $TourSlideCountBox = $('.tour .tour_wrap .tour_slide_wrap .count_box');
+        $TourSlideList.prepend($TourSlideLastItem);
+
+        $TourSlideList.on('init', function(event, slick, currentSlide) {
+            $TourSlideCountBox.addClass('active');
+        });
         $TourSlideList.slick({
             //기본
-            autoplay : false,
+            autoplay : true,
+            autoplaySpeed : 2300,
+            speed : 1400,
             dots : false,
             draggable : true,
             swipe : true,
@@ -258,13 +278,45 @@
             slidesToScroll : 1,
             variableWidth : true,
             infinite: true,
-            arrows : false,
+            arrows : true,
+            prevArrow : $TourSlidePrev,
+            nextArrow : $TourSlideNext,
+            autoArrow : $TourSlideAuto,
+            pauseText : 'pause',
+            playText : 'play',
+            current : $TourSlideCurrent,
+            customState : function(state) {
+                if(state.current < 10) {
+                    state.current = '0' + state.current;
+                }
+                if(state.total < 10) {
+                    state.total = '0' + state.total;
+                }
+                return state;
+            },
             isRunOnLowIE : true,
             pauseOnHover : true,
             pauseOnSwipe : true,
             pauseOnArrowClick : true,
             zIndex : 0,
             responsive : [{}]
+        });
+        $TourSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            $TourSlideCountBox.removeClass('active');
+        });
+        $TourSlideList.on('afterChange', function(event, slick, currentSlide, nextSlide) {
+            $TourSlideCountBox.addClass('active');
+        });
+        $TourSlideAuto.on('click', function(){
+            var $this = $(this),
+                $Gage = $('.tour .tour_wrap .tour_slide_wrap .gage'),
+                IsPlay = $this.is('.slick-pause');
+            if(IsPlay){
+                $Gage.css('animation-play-state', 'running');
+            }
+            else{
+                $Gage.css('animation-play-state', 'paused');
+            }
         });
         //투어리즘 슬라이드 끝
 
