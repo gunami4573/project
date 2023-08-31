@@ -243,6 +243,27 @@
                 $MyTabList.attr('data-deco-type', MyTabItemType);
             }
         });
+
+        //카테고리 링크 더보기 마우스 커서 시작
+        var $cgMouseWrapper = $('#wrapper');
+        $cgMouseWrapper.append('<div class="cg_slide_mouse"></div>');
+        var $cgMouse = $('.cg_slide_mouse');
+        function MouseMove(e){
+            const MouseX = e.pageX,
+                MouseY = e.pageY;
+            $cgMouse.css({'top':MouseY, 'left':MouseX});
+        }
+        var $cgSlideOverImgWrap = $('.cg_slide_item .cg_slide_link .img_wrap');
+        $cgSlideOverImgWrap.on('mouseenter', function(e){
+            $cgMouseWrapper.addClass('cg_mouse');
+        });
+        $cgSlideOverImgWrap.on('mousemove', function(e){
+            MouseMove(e);
+        });
+        $cgSlideOverImgWrap.on('mouseleave', function(){
+            $cgMouseWrapper.removeClass('cg_mouse');
+        });
+        //카테고리 링크 더보기 마우스 커서 끝
         //카테고리 탭, 슬라이드 끝
 
         //투어리즘 슬라이드 시작
