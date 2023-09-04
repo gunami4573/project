@@ -308,9 +308,9 @@ body:not(.visualtype[data-layout="wide"]) #header .header_top{position: relative
 
 body[data-layouttype="visualtype"][data-layout="regular"] #header .header_box:before{display: none;}
 
-@media all and (min-width: 1001px) {
-    body[data-layouttype="visualtype"][data-layout="wide"] #header .header_box:before{display: none;}
-}
+/*@media all and (min-width: 1001px) {*/
+/*    body[data-layouttype="visualtype"][data-layout="wide"] #header .header_box:before{display: none;}*/
+/*}*/
 @media all and (max-width: 1000px) {
     body[data-layouttype="visualtype"][data-layout="wide"] #header .header_box:before{background-color: rgba(255, 255, 255, 0.2);}
 }
@@ -435,7 +435,7 @@ body[data-layouttype="visualtype"][data-layout="regular"] #header .header_box:be
     
     #header .menu.eachdown .depth1_item.active .depth3{visibility: visible;opacity: 1;}
     
-    #header .menu.eachdown .depth1_item.active .depth2:before{display: block;position: absolute;top: 0;left: calc(50% - 50vw);width: 100vw;height: 1px;background-color: #cccfd5;}
+    /*#header .menu.eachdown .depth1_item.active .depth2:before{display: block;position: absolute;top: 0;left: calc(50% - 50vw);width: 100vw;height: 1px;background-color: #cccfd5;}*/
     
     #header .menu.eachdown .depth2_list .depth2_item .depth2_text:hover{color: #1b224e;border-color: #1b224e;box-shadow: 4px 6px 15px 0 rgba(95, 109, 130, 0.15);text-decoration: none;}
     #header .menu.eachdown .depth2_list .depth2_item .depth2_text:before{display: none;position: absolute;top: calc(50% - 10px);right: 18px;width: 20px;height: 20px;background: url("../images/common/lnb_icon.png") no-repeat;}
@@ -655,6 +655,8 @@ html:not(.lnb_open) body.visualtype[data-layout="wide"] #header .header_box .log
 html:not(.lnb_open) body.visualtype[data-layout="wide"] #header .header_box .logo a .logo_image{background-image: url("../images/common/w_logo.png");}
 
 body.visualtype[data-layout="wide"] #header .lnb{background-color: unset;}
+/*.lnb_open body.visualtype[data-layout="wide"] #header .lnb{background-color: #fff;}*/
+*body.visualtype[data-layout="wide"] #header .lnb{z-index: -1;}
 
 html:not(.lnb_open) body.visualtype[data-layout="wide"] #header .lnb:before{display: none;}
 

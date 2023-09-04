@@ -28,6 +28,23 @@
                 $LangLayer.slideUp(350);
             }
         });
+        var $MobileLangChoice = $('#header .header_box .lang_choice'),
+            $MobileLangChoiceOpen = $MobileLangChoice.find('button.lang_choice_open'),
+            $MobileLangLayer = $MobileLangChoiceOpen.siblings('.lang_layer');
+        $MobileLangChoiceOpen.on('click', function(){
+            var $this = $(this),
+                IsActive = $MobileLangChoice.is('.active');
+            if(!IsActive){
+                $this.attr('title', 'language list close');
+                $MobileLangChoice.addClass('active');
+                $MobileLangLayer.slideDown(350);
+            }
+            else{
+                $this.attr('title', 'language list open');
+                $MobileLangChoice.removeClass('active');
+                $MobileLangLayer.slideUp(350);
+            }
+        });
         //언어선택 끝
 
         $window.on('screen:tablet screen:phone', function (event) {

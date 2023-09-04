@@ -179,7 +179,9 @@
             }
             $cgSlideList.slick({
                 //기본
-                autoplay : false,
+                autoplay : true,
+                autoplaySpeed : 2300,
+                speed : 1200,
                 dots : false,
                 draggable : false,
                 swipe : false,
@@ -190,11 +192,20 @@
                 infinite: false,
                 arrows : false,
                 isRunOnLowIE : true,
-                pauseOnHover : true,
-                pauseOnSwipe : true,
+                pauseOnHover : false,
+                pauseOnSwipe : false,
                 pauseOnArrowClick : true,
                 zIndex : 0,
-                responsive : [{}]
+                responsive : [{
+                    breakpoint : 801,
+                    settings : {
+                        draggable : true,
+                        swipe : true,
+                        swipeToSlide : true,
+                        slidesToShow : 2,
+                        infinite: true
+                    }
+                }]
             });
         });
         $('.cg_total .cg_tab_box .cg_tab_list .cg_tab_item button.cg_tab_btn').on('click', function(){
@@ -290,7 +301,7 @@
             //기본
             autoplay : true,
             autoplaySpeed : 2300,
-            speed : 1400,
+            speed : 1200,
             dots : false,
             draggable : true,
             swipe : true,
