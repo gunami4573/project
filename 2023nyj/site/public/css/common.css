@@ -92,7 +92,7 @@ input[type="submit"]{cursor:pointer;}
 
 /* mobile */
 @media all and (max-width:640px){
-    
+
 }
 
 /* (주)한신정보기술 김지경 - 2023.07 */
@@ -306,7 +306,7 @@ body:not(.visualtype[data-layout="wide"]) #header .header_top{position: relative
 #header .header_box:before{display: block;position: absolute;bottom: -1px;left: 0;width: 100%;height: 1px;background-color: #cccfd5;z-index: 1;}
 
 
-body[data-layouttype="visualtype"][data-layout="regular"] #header .header_box:before{display: none;}
+html:not(.lnb_open) body[data-layouttype="visualtype"][data-layout="regular"] #header .header_box:before{display: none;}
 
 /*@media all and (min-width: 1001px) {*/
 /*    body[data-layouttype="visualtype"][data-layout="wide"] #header .header_box:before{display: none;}*/
@@ -669,6 +669,9 @@ html:not(.lnb_open) body.visualtype[data-layout="wide"] #header .header_login .l
 
 /*body.visualtype[data-layout="wide"] .sub_visual{width: 100%;height: 1100px;background: url("../images/common/visual_img.png") no-repeat center;}*/
 
+body.visualtype[data-layout="wide"] #header .header_box:before{z-index: 31;}
+html:not(.lnb_open) body.visualtype[data-layout="wide"] #header .header_box:before{display: none;}
+
 @media all and (min-width: 1201px) {
     body.visualtype[data-layout="wide"] #header{height: 140px;}
 }
@@ -681,6 +684,7 @@ html:not(.lnb_open) body.visualtype[data-layout="wide"] #header .header_login .l
     /*body.visualtype[data-layout="wide"] #header{height: 138px;}*/
     .lnb_open body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list{position: relative;}
     .lnb_open body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list:before{display:block;position: absolute;top: 0;left: calc(50% - 50vw);width: 100vw;height: 100%;background-color: #fff;}
+    .lnb_open body.visualtype[data-layout="wide"] #header .lnb:before{display:block;position: absolute;top: 0;left: calc(50% - 50vw);width: 100vw;height: 100%;background-color: #fff;}
     
     html:not(.lnb_open) body.visualtype[data-layout="wide"] #header .lnb{background-color: transparent;transition-property: background-color;transition-duration: 250ms;transition-timing-function: linear;}
     
@@ -715,7 +719,7 @@ html:not(.lnb_open) body.visualtype[data-layout="wide"] #header .header_login .l
 @media all and (min-width: 1201px) {
     /*body.visualtype[data-layout="wide"] #header .lnb:before{top: 89px;}*/
     
-    body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list .depth1_item .depth1_text{line-height: 86px;}
+    body.visualtype[data-layout="wide"] #header .menu.eachdown .depth1_list .depth1_item .depth1_text{line-height: 80px;}
     
     body.visualtype[data-layout="wide"] #header .header_login {top: 70px;}
 }

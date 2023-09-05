@@ -24,7 +24,7 @@
 
         //슬라이드 이미지 스크롤 애니메이션 시작
         function foreign_ani() {
-            if($window.scrollTop() > 169) {
+            if($window.scrollTop() > 115) {
                 $('body').addClass('foreign_ani');
             }
             else{
@@ -147,7 +147,7 @@
         var $QuickSlideList = $('.visual_wrap .quick_slide_wrap .quick_slide_list');
         $QuickSlideList.slick({
             //기본
-            autoplay : false,
+            autoplay : true,
             dots : false,
             draggable : false,
             swipe : false,
@@ -162,7 +162,16 @@
             pauseOnSwipe : true,
             pauseOnArrowClick : true,
             zIndex : 0,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 641,
+                settings : {
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true,
+                    slidesToShow : 3,
+                    infinite : true
+                }
+            }]
         });
         //비주얼 퀵메뉴 슬라이드 끝
 
@@ -192,13 +201,14 @@
                 infinite: false,
                 arrows : false,
                 isRunOnLowIE : true,
-                pauseOnHover : false,
-                pauseOnSwipe : false,
+                pauseOnHover : true,
+                pauseOnSwipe : true,
                 pauseOnArrowClick : true,
                 zIndex : 0,
                 responsive : [{
                     breakpoint : 801,
                     settings : {
+                        speed : 1000,
                         draggable : true,
                         swipe : true,
                         swipeToSlide : true,
