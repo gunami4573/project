@@ -37,6 +37,25 @@
         foreign_ani();
         //슬라이드 이미지 스크롤 애니메이션 끝
 
+        //rowgroup 스크롤 애니메이션 시작
+        var $RowgroupAni = $('.rowgroup_ani');
+        $window.on('scroll', function(event) {
+            $RowgroupAni.each(function () {
+                var $this = $(this),
+                    WindowTop = $window.scrollTop(),
+                    WindowBottom = WindowTop + $window.height(),
+                    WindowMiddle = (WindowTop + WindowBottom) / 2,
+                    ThisOffSet = $this.offset(),
+                    ThisOffSetTop = ThisOffSet.top;
+                if (ThisOffSetTop < WindowMiddle + 400) {
+                    $this.addClass('row_ani');
+                } else {
+                    $this.removeClass('row_ani');
+                }
+            });
+        });
+        //rowgroup 스크롤 애니메이션 끝
+
         //텍스트 에니메이션 플러그인 시작
         Splitting({
             target:'[data-splitting]',
@@ -47,17 +66,19 @@
         $($splittingTxt).each(function () {
             splittingTextDelay($(this), $(this).data('speed'), $(this).data('speed-delay'));
         });
-
-        var $LastChar = $('.img_text_box .img_text_inner .title .word:last-child .char:last-child'),
-            LastCharDelay = $LastChar.attr('style'),
-            SemiColonLastCharDelay = LastCharDelay.split(';'),
-            ColonLastCharDelay = SemiColonLastCharDelay[1].split(':'),
-            SecLastCharDelay = ColonLastCharDelay[1].split('s'),
-            DescDelay = Number(SecLastCharDelay[0]) + 0.5,
-            $Desc = $('.img_text_box .img_text_inner .desc');
-        $Desc.attr('style', 'animation-delay:'+DescDelay+'s');
+        if(!$('html').is('.ie11')){
+            console.log('not ie11');
+            var $LastChar = $('.img_text_box .img_text_inner .title .word:last-child .char:last-child'),
+                LastCharDelay = $LastChar.attr('style'),
+                SemiColonLastCharDelay = LastCharDelay.split(';'),
+                ColonLastCharDelay = SemiColonLastCharDelay[1].split(':'),
+                SecLastCharDelay = ColonLastCharDelay[1].split('s'),
+                DescDelay = Number(SecLastCharDelay[0]) + 0.5,
+                $Desc = $('.img_text_box .img_text_inner .desc');
+            $Desc.attr('style', 'animation-delay:'+DescDelay+'s');
+        }
         //텍스트 에니메이션 플러그인 끝
-
+        
         //비주얼 슬라이드 시작
         var $VisualImgSlideList = $('.visual_wrap .img_slide_wrap .img_slide_list'),
             $VisualImgPrev = $('.visual_wrap .img_slide_wrap .control_box .prev'),
@@ -264,27 +285,6 @@
                 $MyTabList.attr('data-deco-type', MyTabItemType);
             }
         });
-
-        //카테고리 링크 더보기 마우스 커서 시작
-        var $cgMouseWrapper = $('#wrapper');
-        $cgMouseWrapper.append('<div class="cg_slide_mouse"></div>');
-        var $cgMouse = $('.cg_slide_mouse');
-        function MouseMove(e){
-            const MouseX = e.pageX,
-                MouseY = e.pageY;
-            $cgMouse.css({'top':MouseY, 'left':MouseX});
-        }
-        var $cgSlideOverImgWrap = $('.cg_slide_item .cg_slide_link .img_wrap');
-        $cgSlideOverImgWrap.on('mouseenter', function(e){
-            $cgMouseWrapper.addClass('cg_mouse');
-        });
-        $cgSlideOverImgWrap.on('mousemove', function(e){
-            MouseMove(e);
-        });
-        $cgSlideOverImgWrap.on('mouseleave', function(){
-            $cgMouseWrapper.removeClass('cg_mouse');
-        });
-        //카테고리 링크 더보기 마우스 커서 끝
         //카테고리 탭, 슬라이드 끝
 
         //투어리즘 슬라이드 시작
