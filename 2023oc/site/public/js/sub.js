@@ -66,24 +66,43 @@
 
         //여기서부터 코드 작성해주세요
 
-        //반응형 테이블 시작
-        $('table.table.responsive').not($('.prettyprint').children()).each(function () {
-            var RowSpanExist = $(this).find('td, th').is('[rowspan]'),
-                TheadExist = $(this).find('thead').length;
-            if ((RowSpanExist == false) && (TheadExist != 0)) {//rowspan이 없을 경우만 실행 (rowspan이 있으면 지원불가)
-                $(this).children('tbody').children('tr').find('th, td').each(function () {
-                    var ThisIndex = $(this).index(),
-                        TheadText = $(this).parents('tbody').siblings('thead').find('th').eq(ThisIndex).text();
-                    $(this).attr('data-content', TheadText);
-                });
-                $(this).children('tfoot').children('tr').find('th, td').each(function () {
-                    var ThisIndex = $(this).index(),
-                        TheadText = $(this).parents('tfoot').siblings('thead').find('th').eq(ThisIndex).text();
-                    $(this).attr('data-content', TheadText);
-                });
-            };
+        //서브비주얼 인기검색어 슬라이드 시작
+        var $PopSlideList = $('.popular .pop_slide_box .pop_slide_list'),
+            $PopPrev = $('.popular .pop_control .pop_btn .prev'),
+            $PopNext = $('.popular .pop_control .pop_btn .next');
+        $PopSlideList.slick({
+            //기본
+            autoplay : true,
+            dots : false,
+            draggable : true,
+            swipe : true,
+            swipeToSlide : true,
+            slidesToShow : 2,
+            slidesToScroll : 1,
+            variableWidth : true,
+            infinite: true,
+            arrows : true,
+            prevArrow : $PopPrev,
+            nextArrow : $PopNext,
+            isRunOnLowIE : true,
+            pauseOnHover : true,
+            pauseOnSwipe : true,
+            pauseOnArrowClick : true,
+            zIndex : 0,
+            responsive : [{}]
         });
-        //반응형 테이블 끝
+        //서브비주얼 인기검색어 슬라이드 끝
+
+        //사이드 메뉴 애니메이션 시작
+        var $aniSideDepth1List = $('.side .depth1 .depth1_list'),
+            $aniSideDepth1Item = $aniSideDepth1List.find('.depth1_item'),
+            aniSideDepth1ItemLength = $aniSideDepth1Item.length;
+        setTimeout(function(){
+            for(var i=0; i<aniSideDepth1ItemLength; i++){
+                $aniSideDepth1Item.eq(i).css({'transition-delay':''+(i*100)+'ms'});
+            }
+        }, 1);
+        //사이드 메뉴 애니메이션 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 

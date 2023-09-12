@@ -300,6 +300,10 @@ $(document).ready(function () {
 
         //여기서부터 코드 작성해주세요
 
+        setTimeout(function(){
+            $body.addClass('start_ani');
+        }, 1);
+
         /* 상단 언어 레이어 창 시작 */
         $('.etc_choice .etc_choice_list .etc_choice_item.language button.etc_choice_link').on('click', function(){
             var $this = $(this),
