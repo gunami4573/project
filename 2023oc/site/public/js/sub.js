@@ -104,6 +104,165 @@
         }, 1);
         //사이드 메뉴 애니메이션 끝
 
+        //sns 공유하기 리스트 시작
+        $('.sub_head .other_box .other_list .other_item.share button.other_btn').on('click', function(){
+            var $this = $(this),
+                $Share = $this.parent('.share'),
+                IsActive = $Share.is('.active');
+            if(!IsActive){
+                $this.attr('title', 'sns 공유리스트 닫기');
+                $Share.addClass('active');
+            }
+            else{
+                $this.attr('title', 'sns 공유리스트 열기');
+                $Share.removeClass('active');
+            }
+        });
+        //sns 공유하기 리스트 끝
+
+        //현재 URL 복사 시작
+        function UrlCopy(url){
+            var $temp = $('<input>');
+            $('body').append($temp);
+            $temp.val(url).select();
+            document.execCommand('copy');
+            $temp.remove();
+            alert('현재 URL이 복사되었습니다.');
+        }
+        $('.sub_head .other_box .other_list .other_item.copy button.other_btn').on('click', function(e){
+            e.preventDefault();
+            var link = location.href;
+            UrlCopy(link);
+        });
+        //현재 URL 복사 끝
+
+        //탭메뉴 시작
+        var $ocTab = $('.oc_tab');
+        $ocTab.each(function(){
+            function FloorCheck(num){
+                if(num >= 1 && num <= 5){
+                    $ocTab.attr('data-floor', 1);
+                }
+                if(num >= 6 && num <= 10){
+                    $ocTab.attr('data-floor', 2);
+                }
+                if(num >= 11 && num <= 15){
+                    $ocTab.attr('data-floor', 3);
+                }
+            }
+            function LengthCheck(leng){
+                $ocTab.attr('data-length', leng);
+            }
+            var $ocTab = $(this),
+                $ocTabInner = $ocTab.find('.oc_tab_inner'),
+                $ocTabList = $ocTabInner.find('.oc_tab_list'),
+                $ocTabItem = $ocTabList.find('.oc_tab_item'),
+                ocTabItemLength = $ocTabItem.length,
+                HasActiveArray = [];
+            for(var i=0; i<ocTabItemLength; i++){
+                HasActiveArray.push($ocTabItem.eq(i).hasClass('active'));
+            }
+            var HasActiveNum = HasActiveArray.indexOf(true)+1;
+            $ocTab.attr('data-has-active', HasActiveNum);
+            FloorCheck(HasActiveNum);
+            LengthCheck(ocTabItemLength);
+            var $StartActiveTabItem = $ocTabList.find('.active'),
+                StartActiveTabBtnText = $StartActiveTabItem.find('.oc_tab_btn').text(),
+                $StartMobileChoiceBtn = $ocTabList.siblings('button.m_oc_choice').find('span em');
+            $StartMobileChoiceBtn.text(StartActiveTabBtnText);
+            $ocTabItem.each(function(){
+                var $TabItem = $(this),
+                    $TabBtn = $TabItem.find('button.oc_tab_btn');
+                $TabBtn.on('click', function(){
+                    var $MyBtn = $(this),
+                        $MyItem = $MyBtn.parent('.oc_tab_item'),
+                        MyItemIndex = $MyItem.index()+1,
+                        IsActive = $MyItem.is('.active'),
+                        MyText = $MyBtn.find('span em').text(),
+                        $MyList = $MyItem.parent('.oc_tab_list'),
+                        $MyInner = $MyList.parent('.oc_tab_inner'),
+                        $OcCts = $MyInner.siblings('.oc_cts'),
+                        $MyOcCtsItem = $OcCts.find('.oc_cts_item').eq($MyItem.index()),
+                        $OtherOcCtsItem = $MyOcCtsItem.siblings('.oc_cts_item'),
+                        $OtherItem = $MyItem.siblings('.oc_tab_item'),
+                        $OtherBtn = $OtherItem.find('button.oc_tab_btn'),
+                        $MyOcMapBox = $MyOcCtsItem.find('.oc_map_box'),
+                        $OtherOcMapBox = $OtherItem.find('.oc_map_box');
+
+                    $StartMobileChoiceBtn.text(MyText);
+                    $ocTab.attr('data-has-active', MyItemIndex);
+                    FloorCheck(MyItemIndex);
+                    if(!IsActive){
+                        $OtherOcCtsItem.removeClass('active');
+                        $OtherItem.removeClass('active');
+                        $OtherBtn.removeAttr('title');
+                        $MyOcCtsItem.addClass('active');
+                        $MyItem.addClass('active');
+                        $MyBtn.attr('title', '선택됨');
+                        
+                        //탭안에 지도
+                        setTimeout(function(){
+                            $MyOcMapBox.each(function(){
+                                var $this = $(this),
+                                    $MyMapInner = $this.find('.map_inner'),
+                                    MyTimeStamp = $MyMapInner.attr('data-timestamp'),
+                                    MyMapKey = $MyMapInner.attr('data-key'),
+                                    $DaumRoughMap = $MyMapInner.find('.root_daum_roughmap');
+                                $DaumRoughMap.empty();
+                                new daum.roughmap.Lander({
+                                    "timestamp" : MyTimeStamp,
+                                    "key" : MyMapKey,
+                                    "mapWidth" : "",
+                                    "mapHeight" : ""
+                                }).render();
+                            });
+                            $OtherOcMapBox.each(function(){
+                                var $this = $(this),
+                                    $OtherMapInner = $this.find('.map_inner'),
+                                    $DaumRoughMap = $OtherMapInner.find('.root_daum_roughmap');
+                                $DaumRoughMap.empty();
+                            });
+                        }, 1);
+                    }
+                });
+            });
+        });
+        //모바일용 탭메뉴
+        $(document).on('click', '.oc_tab .oc_tab_inner button.m_oc_choice', function(){
+            var $this = $(this),
+                $thisText = $this.find('span em'),
+                $TabInner = $this.parent('.oc_tab_inner'),
+                IsActive = $TabInner.is('.active'),
+                $TabList = $TabInner.find('.oc_tab_list'),
+                $TabItem = $TabList.find('.oc_tab_item'),
+                $TabBtn = $TabItem.find('button.oc_tab_btn');
+            if(!IsActive){
+                $TabInner.addClass('active');
+                $this.attr('title' , '하위 리스트 닫기');
+                $TabList.slideDown(200);
+                $TabBtn.on('click', function(){
+                    $TabInner.removeClass('active');
+                    $this.attr('title' , '하위 리스트 열기');
+                    $TabList.slideUp(200);
+                });
+            }
+            else{
+                $TabInner.removeClass('active');
+                $this.attr('title' , '하위 리스트 열기');
+                $TabList.slideUp(200);
+            }
+        });
+
+        //탭메뉴에 지도 있을 때, 호환성 고려 불필요 속성값 제거
+        var $StartOcCtsItem = $('.oc_cts .oc_cts_item');
+        $StartOcCtsItem.each(function(){
+            var $this = $(this),
+                $Script = $(this).find('script');
+            $Script.removeAttr('charset');
+        });
+        //탭메뉴 끝
+
+
         $window.on('screen:tablet screen:phone', function (event) {
 
         });
