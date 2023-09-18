@@ -304,7 +304,7 @@ $(document).ready(function () {
             $body.addClass('start_ani');
         }, 1);
 
-        /* 상단 언어 레이어 창 시작 */
+        //상단 언어 레이어 창 시작
         $('.etc_choice .etc_choice_list .etc_choice_item.language button.etc_choice_link').on('click', function(){
             var $this = $(this),
                 $LangLayer = $this.siblings('.lang_layer'),
@@ -321,7 +321,39 @@ $(document).ready(function () {
                 $this.attr('title', '언어별 사이트 바로가기 리스트 열기');
             }
         });
-        /* 상단 언어 레이어 창 끝 */
+        //상단 언어 레이어 창 끝
+
+        //푸터 상단 바로가기 시작
+        $('.footer_go .go_btn').on('click', function() {
+            $('html, body').animate({
+                scrollTop : $body.offset().top
+            }, 400);
+        });
+        //푸터 상단 바로가기 끝
+
+        //푸터 레이어 열기 시작
+        var $FooterQuickItem = $('.footer_quick .quick_list .quick_item');
+        $FooterQuickItem.each(function(){
+            var $this = $(this),
+                $QuickOpenBtn = $this.find('button.quick_open_btn');
+            $QuickOpenBtn.on('click', function(){
+                var $MyBtn = $(this),
+                    $MyItem = $MyBtn.parent('.quick_item'),
+                    IsActive = $MyItem.is('.active'),
+                    $MyLayer = $MyBtn.siblings('.quick_layer');
+                if(!IsActive){
+                    $MyItem.addClass('active');
+                    $MyBtn.attr('title', '하위 리스트 닫기');
+                    $MyLayer.slideDown(200);
+                }
+                else{
+                    $MyItem.removeClass('active');
+                    $MyBtn.attr('title', '하위 리스트 열기');
+                    $MyLayer.slideUp(200);
+                }
+            });
+        });
+        //푸터 레이어 열기 끝
 
         $window.on('screen:wide screen:web', function (event) {
             refreshLnbHeight();
