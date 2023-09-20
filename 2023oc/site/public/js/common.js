@@ -323,6 +323,46 @@ $(document).ready(function () {
         });
         //상단 언어 레이어 창 끝
 
+        //모바일 상단 검색창 열기, 닫기 시작
+        $(document).on('click', '.header_box .search_show button.m_btn', function(){
+            var $this = $(this),
+                $HeaderBox = $this.parents('.header_box'),
+                IsSearchOpen = $HeaderBox.is('.search_open');
+            if(!IsSearchOpen){
+                $HeaderBox.addClass('search_open');
+            }
+        });
+        $(document).on('click', '.header_box .m_search button.m_search_close', function(){
+            var $this = $(this),
+                $HeaderBox = $this.parents('.header_box'),
+                IsSearchOpen = $HeaderBox.is('.search_open');
+            if(IsSearchOpen){
+                $HeaderBox.removeClass('search_open');
+            }
+        });
+        //모바일 상단 검색창 열기, 닫기 끝
+
+        //모바일 상단 언어 레이어 창 시작
+        $(document).on('click', '.lnb .lnb_topbox .m_site .etc_site .etc_site_list .language button.etc_site_link', function(){
+            var $this = $(this),
+                $LangLayer = $this.siblings('.lang_layer'),
+                $Language = $this.parent('.language'),
+                IsActive = $Language.is('.active');
+            if(!IsActive){
+                $Language.addClass('active');
+                $LangLayer.slideDown(200);
+                $this.attr('title', '언어별 사이트 바로가기 리스트 닫기');
+            }
+            else{
+                $Language.removeClass('active');
+                $LangLayer.slideUp(200);
+                $this.attr('title', '언어별 사이트 바로가기 리스트 열기');
+            }
+            console.log('test');
+        });
+        //모바일 상단 언어 레이어 창 끝
+
+
         //푸터 상단 바로가기 시작
         $('.footer_go .go_btn').on('click', function() {
             $('html, body').animate({
