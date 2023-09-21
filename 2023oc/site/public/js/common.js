@@ -290,7 +290,7 @@ $(document).ready(function () {
                 $lnbDepthItem.removeClass('active active_prev active_next');
             }
         });
-        $lnb.find('.depth1_item:last-child .depth:visible:last').find('> .depth_list > .depth_item:last-child .depth_text').on('focusout', function (event) {
+        $lnb.find('.depth1_item:last-child .depth:last-child:visible').find('> .depth_list > .depth_item:last-child .depth_text').on('focusout', function (event) {
             if (mode === 'pc') {
                 $lnbMenu.height('');
                 $html.removeClass('lnb_open');
