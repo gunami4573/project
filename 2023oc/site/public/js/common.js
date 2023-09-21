@@ -358,7 +358,6 @@ $(document).ready(function () {
                 $LangLayer.slideUp(200);
                 $this.attr('title', '언어별 사이트 바로가기 리스트 열기');
             }
-            console.log('test');
         });
         //모바일 상단 언어 레이어 창 끝
 
@@ -370,6 +369,29 @@ $(document).ready(function () {
             }, 400);
         });
         //푸터 상단 바로가기 끝
+
+        //모바일 전용 상단 바로가기 스크롤시 표출 시작
+        var $mobildeWrapper = $('#wrapper');
+        $mobildeWrapper.append('<div class="m_footer_go"><button type="button" class="go_btn">맨위로</button></div>');
+        var $mobileFooterGoBtn = $mobildeWrapper.find('.m_footer_go');
+        function mobileFooterGo() {
+            if($window.scrollTop() > 96) {
+                $mobileFooterGoBtn.addClass('active');
+            }
+            else{
+                $mobileFooterGoBtn.removeClass('active');
+            }
+        }
+        $window.scroll(function(){
+            mobileFooterGo();
+        });
+        mobileFooterGo();
+        $(document).on('click', '.m_footer_go button.go_btn', function(){
+            $('html, body').animate({
+                scrollTop : $body.offset().top
+            }, 400);
+        });
+        //모바일 전용 상단 바로가기 스크롤시 표출 끝
 
         //푸터 레이어 열기 시작
         var $FooterQuickItem = $('.footer_quick .quick_list .quick_item');
