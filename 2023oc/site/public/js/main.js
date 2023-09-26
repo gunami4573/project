@@ -25,9 +25,9 @@
                 //기본
                 autoplay : true,
                 dots : false,
-                draggable : false,
-                swipe : false,
-                swipeToSlide : false,
+                draggable : true,
+                swipe : true,
+                swipeToSlide : true,
                 slidesToShow : 1,
                 slidesToScroll : 1,
                 variableWidth : false,
