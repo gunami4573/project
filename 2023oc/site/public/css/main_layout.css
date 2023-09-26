@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+/* (주)한신정보기술 박남규 - 2023.09 */
+
+/* 공통 팝업 슬라이드 시작 */
+.oc_popup{display:block;position:relative;width:420px;font-size:0;line-height:0;box-sizing:border-box;}
+.oc_popup *, .oc_popup *:before, .oc_popup *:after{border:none;font-size:0;line-height:0;box-sizing:border-box;}
+.oc_popup .oc_popup_inner{display:block;position:relative;width:100%;border-radius:20px;overflow:hidden;}
+.oc_popup .oc_popup_inner .oc_popup_list{display:block;position:relative;width:100%;}
+.oc_popup .oc_popup_inner .oc_popup_list .slick-list{display:block;position:relative;height:auto;min-height:0;}
+.oc_popup .oc_popup_inner .oc_popup_list .slick-track{display:block;position:relative;height:auto;min-height:0;}
+.oc_popup .oc_popup_inner .oc_popup_list .slick-slide{display:block;position:relative;height:auto;min-height:0;}
+.oc_popup .oc_popup_inner .oc_popup_list .slick-rows{display:block;position:relative;height:auto;min-height:0;}
+.oc_popup .oc_popup_inner .oc_popup_list .oc_popup_item{display:block !important;position:relative;width:100% !important;}
+.oc_popup .oc_popup_inner .oc_popup_list .oc_popup_item .oc_popup_link{display:block;position:relative;width:100%;}
+.oc_popup .oc_popup_inner .oc_popup_list .oc_popup_item .oc_popup_link:focus:before{display:block;position:absolute;z-index:3;top:0;left:0;width:100%;height:100%;border:2px solid #000;border-radius:20px 20px 0 0;content:'';}
+.oc_popup .oc_popup_inner .oc_popup_list .oc_popup_item .oc_popup_link .link_inner{display:block;position:relative;width:100%;min-height:350px;}
+.oc_popup .oc_popup_inner .oc_popup_list .oc_popup_item .oc_popup_link .link_inner .img_wrap{display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-repeat:no-repeat;background-position:center center;background-size:cover;}
+.oc_popup .oc_popup_inner .oc_popup_list .oc_popup_item .oc_popup_link .link_inner img{display:block;position:absolute;top:0;left:0;width:0;height:0;}
+.oc_popup .oc_popup_inner .oc_popup_control{display:block;position:relative;width:100%;padding:19px 36px;background-color:#484848;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_title{display:inline-block;position:relative;width:100px;font-size:24px;color:#fff;line-height:32px;letter-spacing:-0.03em;font-weight:500;font-family:'SUITE';vertical-align:top;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box{display:inline-block;position:relative;width:calc(100% - 100px);vertical-align:top;text-align:right;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .popup_btn{display:inline-block;position:relative;width:22px;height:32px;vertical-align:top;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .popup_btn:before{display:block;position:absolute;background-image:url(../images/main/oc_popup_btn_icon.png);background-repeat:no-repeat;content:'';}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .popup_btn.prev:before{top:calc(50% - 6.5px);left:0;width:22px;height:13px;background-position:left top;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .popup_btn.next:before{top:calc(50% - 6.5px);left:0;width:22px;height:13px;background-position:left top;transform:rotateY(180deg);}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .popup_btn.auto{margin-left:16px;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .popup_btn.auto:before{background-image:none;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .popup_btn.auto.slick-play:before{top:calc(50% - 6px);left:calc(50% - 4px);border-width:6px 0 6px 9px;border-style:solid;border-color:transparent transparent transparent #fff;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .popup_btn.auto.slick-pause:before{top:calc(50% - 6px);left:calc(50% - 4px);width:8px;height:12px;border-width:0 2px;border-style:solid;border-color:#fff;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .popup_btn.more{margin-left:3px;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .popup_btn.more:before{top:calc(50% - 6px);right:0;width:14px;height:12px;background-position:-30px top;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .num_inner{display:inline-block;position:relative;width:70px;vertical-align:top;text-align:center;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .num_inner .popup_num{display:inline-block;position:relative;width:22px;font-size:16px;color:#fff;line-height:32px;letter-spacing:-0.03em;font-weight:600;font-family:'Pretendard';vertical-align:top;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .num_inner .popup_num.current{text-align:right;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .num_inner .popup_num.total{text-align:left;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .num_inner .popup_num.bar{width:6px;height:32px;margin:0 4px;font-size:0;line-height:0;}
+.oc_popup .oc_popup_inner .oc_popup_control .oc_popup_btn_box .num_inner .popup_num.bar:before{display:block;position:absolute;top:calc(50% - 1.5px);left:0;width:100%;height:3px;background-color:#fff;content:'';}
+/* 공통 팝업 슬라이드 끝 */
