@@ -160,6 +160,17 @@
                 settings : {
                     slidesToShow : 2
                 }
+            },{
+                breakpoint : 1001,
+                settings : {
+                    slidesToShow : 1
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 1,
+                    adaptiveHeight : true
+                }
             }]
         });
         //공지사항 슬라이드 끝
@@ -168,7 +179,7 @@
         var $noticeSlideList = $('.notice_slide_list');
         $noticeSlideList.slick({
             //기본
-            autoplay : false,
+            autoplay : true,
             dots : false,
             draggable : false,
             swipe : false,
@@ -183,7 +194,40 @@
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            fade : false
+            fade : false,
+            responsive : [{
+                breakpoint : 801,
+                settings : {
+                    slidesToShow : 5,
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true
+                }
+            },{
+                breakpoint : 695,
+                settings : {
+                    slidesToShow : 4,
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true
+                }
+            },{
+                breakpoint : 531,
+                settings : {
+                    slidesToShow : 3,
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true
+                }
+            },{
+                breakpoint : 391,
+                settings : {
+                    slidesToShow : 2,
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true
+                }
+            }]
         });
         //보건소 안내 슬라이드 끝
 
