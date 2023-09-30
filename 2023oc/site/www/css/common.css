@@ -93,12 +93,88 @@
     .lnb .lnb_topbox .m_site .etc_site .etc_site_list .etc_site_item.language{display:inline-block;}
     .lnb .menu{height:calc(100% - 217px);}
 }
+
+/* ★★★ 대표 전용 모바일 LNB 구성 변경 시작 ★★★ */
+@media screen and (max-width:1000px){
+    .header_box .wrap{position:static;padding-right:0;text-align:right;}
+    .header_box .logo{position:absolute;top:33px;left:3vw;}
+    .header_box .m_btn_list{position:static;}
+    .header_box .m_btn_list .m_btn_item.menu_show{display:block;position:fixed;z-index:71;bottom:0;left:0;width:100%;margin-left:0;padding:31px 3vw 8px;text-align:left;}
+    .header_box .m_btn_list .m_btn_item.menu_show:after{display:block;position:absolute;bottom:0;left:0;width:100%;height:calc(100% - 31px);background-color:#1a9ed3;border-radius:24px 24px 0 0;content:'';}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_button{position:absolute;z-index:1;bottom:auto;right:auto;top:0;left:calc(50% - 27px);width:54px;padding:61px 0 0;font-size:14px;color:#fff;line-height:16px;letter-spacing:-0.03em;font-weight:500;font-family:'SUITE';}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_button:before,
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_button:after{display:block;position:absolute;content:'';}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_button:before{top:0;left:0;width:100%;height:54px;background-color:#fff;background-image:none;border-radius:17px;box-shadow:0px -10px 35px rgba(0, 0, 0, 0.12);}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_button:after{top:16px;left:14px;width:25px;height:25px;background-image:url(../images/common/fixed_lnb_icons.png);background-repeat:no-repeat;background-position:-30px -30px;transform:rotate(0deg);transition-property:transform;transition-duration:1200ms;transition-timing-function:cubic-bezier(.52, .08, .04, 1.18);}
+    .lnb_show .header_box .m_btn_list .m_btn_item.menu_show .menu_button:after{transform:rotate(720deg);}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_home{display:inline-block;position:relative;z-index:1;width:90px;padding:12px 0 0;vertical-align:top;text-align:center;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_home .m_btn{display:inline-block;position:relative;width:auto;height:auto;padding:24px 0 0;font-size:14px;color:#fff;line-height:16px;letter-spacing:-0.03em;font-weight:500;font-family:'SUITE';vertical-align:top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_home .m_btn:hover{text-decoration:none;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_home .m_btn:before{display:block;position:absolute;top:0;left:calc(50% - 9px);width:18px;height:19px;background-image:url(../images/common/fixed_lnb_icons.png);background-repeat:no-repeat;background-position:left -30px;content:'';}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick{display:inline-block;position:absolute;top:31px;right:3vw;width:90px;padding:12px 0 0;vertical-align:top;text-align:center;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_btn{display:inline-block;position:relative;z-index:1;width:auto;height:auto;padding:24px 0 0;font-size:14px;color:#fff;line-height:16px;letter-spacing:-0.03em;font-weight:500;font-family:'SUITE';vertical-align:top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_btn:hover{text-decoration:none;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_btn:before{display:block;position:absolute;top:2px;left:calc(50% - 9px);width:18px;height:19px;background-image:url(../images/common/fixed_lnb_icons.png);background-repeat:no-repeat;background-position:-60px -30px;content:'';}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer{display:none;position:fixed;bottom:0;left:0;width:100%;height:calc(100vh - 82px);max-height:638px;padding:58px 0 0;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer:before{display:block;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.6);content:'';visibility:hidden;opacity:0;transition-property:visibility, opacity;transition-duration:1000ms;transition-timing-function:cubic-bezier(.52, .08, .04, 1.18);}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick.quick_ani .m_quick_layer:before{visibility:visible;opacity:1;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_close{display:inline-block;position:absolute;z-index:1;top:0;left:calc(50% - 29px);width:58px;height:58px;vertical-align:top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_close:before{display:block;position:absolute;top:calc(50% - 10px);left:calc(50% - 10px);width:20px;height:20px;background-image:url(../images/common/fixed_lnb_icons.png);background-repeat:no-repeat;background-position:-90px -30px;content:'';transform:rotate(0deg);transition-property:transform;transition-duration:1200ms;transition-timing-function:cubic-bezier(.52, .08, .04, 1.18);}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick.quick_ani .m_quick_layer .m_quick_close:before{transform:rotate(1080deg);}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner{display:block;position:relative;z-index:1;width:100%;height:100%;max-height:100%;overflow-y:auto;padding:0 3vw 122px;background-color:#fff;border-radius:30px 30px 0 0;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_top{display:block;position:relative;width:100%;padding:37px 163px 21px 23px;text-align:left;overflow:hidden;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_top:before,
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_top:after{display:block;position:absolute;content:'';}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_top:before{bottom:1px;right:22px;width:141px;height:97px;background-image:url(../images/common/m_quick_deco.png);background-repeat:no-repeat;background-position:left top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_top:after{bottom:0;left:0;width:100%;height:1px;background-color:#555556;}
+    @keyframes m-quick-top-before {
+        0%{transform:translateX(-5px);}
+        60%{transform:perspective(200px) translateX(20px) rotateY(180deg) translateY(15px) skewY(1deg);}
+        100%{transform:translateX(-5px);}
+    }
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_top:before{animation:m-quick-top-before 2500ms 0ms alternate cubic-bezier(.52, .08, .04, 1.18) infinite;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_top .m_quick_title{display:inline-block;position:relative;width:89px;height:26px;background-image:url(../images/common/m_quick_title.png);background-repeat:no-repeat;background-position:left top;vertical-align:top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_top .m_quick_desc{display:block;position:relative;margin-top:13px;font-size:15px;color:#797979;line-height:18px;letter-spacing:-0.03em;font-weight:500;font-family:'SUITE';}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list{display:block;position:relative;width:100%;padding-top:25px;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item{display:inline-block;position:relative;width:calc((100% - 10px) / 2);margin-top:10px;margin-right:10px;vertical-align:top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item:nth-child(2n){margin-right:0;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item .m_quick_link{display:block;position:relative;width:100%;height:65px;padding:0 17px;text-align:left;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item .m_quick_link:before{display:block;position:absolute;top:0;left:0;width:100%;height:100%;border:1px solid #d3d3d3;border-radius:10px;content:'';}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item .m_quick_link span{display:inline-block;position:relative;top:50%;transform:translateY(-50%);}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item .m_quick_link span em{display:inline-block;position:relative;padding-left:40px;font-size:16px;color:#515151;line-height:20px;letter-spacing:-0.03em;font-weight:500;font-family:'SUITE';vertical-align:top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item .m_quick_link span em:before{display:block;position:absolute;background-image:url(../images/common/fixed_lnb_icons.png);background-repeat:no-repeat;content:'';}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item.type1 .m_quick_link span em:before{top:calc(50% - 12px);left:2px;width:25px;height:24px;background-position:left top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item.type2 .m_quick_link span em:before{top:calc(50% - 13px);left:3px;width:29px;height:26px;background-position:-30px top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item.type3 .m_quick_link span em:before{top:calc(50% - 14px);left:2px;width:28px;height:28px;background-position:-60px top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item.type4 .m_quick_link span em:before{top:calc(50% - 13.5px);left:2px;width:30px;height:27px;background-position:-90px top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item.type5 .m_quick_link span em:before{top:calc(50% - 14px);left:2px;width:28px;height:28px;background-position:-120px top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item.type6 .m_quick_link span em:before{top:calc(50% - 15px);left:3px;width:23px;height:30px;background-position:-150px top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item.type7 .m_quick_link span em:before{top:calc(50% - 10.5px);left:2px;width:28px;height:21px;background-position:-180px top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item.type8 .m_quick_link span em:before{top:calc(50% - 10.5px);left:1px;width:30px;height:21px;background-position:-210px top;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item .m_quick_link span em br{display:none;}
+    .lnb{position:fixed;max-width:100%;transform:translateY(100%);transition:visibility 400ms cubic-bezier(.25, .46, .450, .94), opacity 400ms cubic-bezier(.25, .46, .450, .94), transform 600ms cubic-bezier(.25, .46, .450, .94);}
+    .lnb_show .lnb{transform:translateY(0%);}
+    .lnb .menu{max-height:calc(100% - 217px);overflow-y:auto;}
+}
+@media screen and (min-width:641px) and (max-width:1000px){
+    .lnb:before{width:calc(20% - 1px);}
+    .lnb_show.lnb_open .lnb .menu .depth1{padding-right:80%;}
+    .lnb .menu .depth2{left:20%;width:80%;}
+    .lnb .menu .depth2 .depth2_list{padding-bottom:91px;}
+}
+@media screen and (max-width:640px){
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item .m_quick_link span em{font-size:14px;line-height:16px;}
+    .header_box .m_btn_list .m_btn_item.menu_show .menu_quick .m_quick_layer .m_quick_inner .m_quick_list .m_quick_item .m_quick_link span em br{display:block;}
+}
+/* ★★★ 대표 전용 모바일 LNB 구성 변경 끝 ★★★ */
+
 /* ----- header 끝 ----- */
 
 /* ----- footer 시작 ----- */
 /* footer_box 시작 */
 .footer_box .logo .logo_link .logo_site_name{display:none;}
 @media screen and (max-width:1000px){
+    #footer{padding-bottom:100px;}
     .footer_box .logo{top:128px;}
 }
 @media screen and (max-width:640px){
