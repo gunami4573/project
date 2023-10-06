@@ -160,7 +160,14 @@
             pauseOnDotsClick : true,
             zIndex : 1,
             fade : false,
-            asNavFor : $BigSlideList
+            asNavFor : $BigSlideList,
+            responsive : [{
+                breakpoint : 801,
+                settings : {
+                    slidesToShow : 2,
+                    variableWidth : false
+                }
+            }]
         });
         //추천 사진 슬라이드 끝
 
