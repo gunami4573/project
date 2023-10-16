@@ -29,7 +29,7 @@
             $PopularSlideNext = $('.w_search_wrap .popular_slide_wrap .next');
         $PopularSlideList.slick({
             //기본
-            autoplay : true,
+            autoplay : false,
             dots : false,
             draggable : true,
             swipe : true,
@@ -91,6 +91,8 @@
         $vPopupSlideList.slick({
             //기본
             autoplay : true,
+            autoplaySpeed : 3000,
+            speed : 1000,
             dots : false,
             draggable : true,
             swipe : true,
@@ -182,6 +184,8 @@
         $fPopupSlideList.slick({
             //기본
             autoplay : true,
+            autoplaySpeed : 3000,
+            speed : 1000,
             dots : false,
             draggable : true,
             swipe : true,
@@ -206,6 +210,210 @@
             fade : false
         });
         //fast 팝업 슬라이드 끝
+
+        //옥천군 주요서비스 탭 및 슬라이드 시작
+        var $StartMajorSlideTabItem = $('.major_news_wrap .major_slide_tab_list .active');
+        setTimeout(function(){
+            $StartMajorSlideTabItem.addClass('tab_ani');
+        }, 1);
+        var $MajorSlideTabItem = $('.major_news_wrap .major_slide_tab_list .major_slide_tab_item');
+        $MajorSlideTabItem.each(function(){
+            var $this = $(this),
+                $MajorSlideList = $this.find('.major_slide_list'),
+                $MajorSlideControl = $this.find('.major_slide_control'),
+                $MajorSlidePrev = $MajorSlideControl.find('.prev'),
+                $MajorSlideNext = $MajorSlideControl.find('.next');
+            $MajorSlideList.slick({
+                //기본
+                autoplay : false,
+                speed : 800,
+                dots : false,
+                draggable : false,
+                swipe : false,
+                swipeToSlide : false,
+                slidesToShow : 1,
+                slidesToScroll : 1,
+                rows : 2, //여러줄
+                slidesPerRow : 3, //여러줄 일 때 한줄의 몇개 출력
+                variableWidth : false,
+                infinite : false,
+                arrows : true,
+                prevArrow : $MajorSlidePrev,
+                nextArrow : $MajorSlideNext,
+                pauseOnArrowClick : true,
+                pauseOnDirectionKeyPush : true,
+                pauseOnSwipe : true,
+                pauseOnDotsClick : true,
+                zIndex : 1,
+                fade : true,
+            });
+            $window.on('screen:wide screen:web', function (event) {
+                $MajorSlideList.on('wheel', function(e){
+                    e.preventDefault();
+                    if (e.originalEvent.deltaY < 0) {
+                        $(this).slick('slickPrev');
+                        setTimeout(function(){
+                            $MajorSlideControl.removeClass('down').addClass('up');
+                        }, 1);
+                        setTimeout(function(){
+                            $MajorSlideControl.removeClass('up');
+                        }, 800);
+                    } else {
+                        $(this).slick('slickNext');
+                        setTimeout(function(){
+                            $MajorSlideControl.removeClass('up').addClass('down');
+                        }, 1);
+                        setTimeout(function(){
+                            $MajorSlideControl.removeClass('down');
+                        }, 800);
+                    }
+                });
+            });
+        });
+        $('.major_news_wrap .major_tab_list .major_tab_item button.major_tab_btn').on('click', function(){
+            var $this = $(this),
+                $MyTabItem = $this.parent('.major_tab_item'),
+                IsActive = $MyTabItem.is('.active'),
+                MyTabItemIndex = $MyTabItem.index(),
+                $OtherTabItem = $MyTabItem.siblings('.major_tab_item'),
+                $OtherTabBtn = $OtherTabItem.find('button.major_tab_btn'),
+                $SlideTabList = $('.major_news_wrap .major_slide_tab_list'),
+                $MySlideTabItem = $SlideTabList.find('.major_slide_tab_item').eq(MyTabItemIndex),
+                $MySlideList = $MySlideTabItem.find('.major_slide_list'),
+                $MySlideControl = $MySlideTabItem.find('.major_slide_control'),
+                $OtherSlideTabItem = $MySlideTabItem.siblings('.major_slide_tab_item');
+            if(!IsActive){
+                $OtherTabItem.removeClass('active');
+                $OtherTabBtn.removeAttr('title');
+                $OtherSlideTabItem.removeClass('active tab_ani');
+                $MyTabItem.addClass('active');
+                $this.attr('title', '선택됨');
+                $MySlideTabItem.addClass('active');
+                setTimeout(function(){
+                    $MySlideTabItem.addClass('tab_ani');
+                }, 1);
+                setTimeout(function(){
+                    $MySlideList.slick('setPosition');
+                    $MySlideControl.removeClass('up down');
+                }, 1);
+            }
+        });
+        //옥천군 주요서비스 탭 및 슬라이드 끝
+
+        //홍보동영상 슬라이드 시작
+        var $MediaSlideList = $('.media_wrap .play_slide_list'),
+            $MediaSlidePrev = $('.media_wrap .play_slide_control .prev'),
+            $MediaSlideNext = $('.media_wrap .play_slide_control .next');
+        $MediaSlideList.slick({
+            //기본
+            autoplay : true,
+            autoplaySpeed : 3000,
+            speed : 1000,
+            dots : false,
+            draggable : true,
+            swipe : true,
+            swipeToSlide : true,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            variableWidth : false,
+            infinite : true,
+            arrows : true,
+            prevArrow : $MediaSlidePrev,
+            nextArrow : $MediaSlideNext,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            zIndex : 1,
+            fade : true
+        });
+        //홍보동영상 슬라이드 끝
+
+        //포토갤러리 탭 및 슬라이드 시작
+        var $StartPhotoCtsItem = $('.media_wrap .photo_cts_list .active');
+        setTimeout(function(){
+            $StartPhotoCtsItem.addClass('tab_ani');
+        }, 1);
+        var $PhotoCtsItem = $('.media_wrap .photo_cts_list .photo_cts_item');
+        $PhotoCtsItem.each(function(){
+            var $this = $(this),
+                $PhotoSlideList = $this.find('.photo_slide_list');
+            $PhotoSlideList.slick({
+                //기본
+                autoplay : true,
+                autoplaySpeed : 3000,
+                speed : 1000,
+                dots : false,
+                draggable : true,
+                swipe : true,
+                swipeToSlide : true,
+                slidesToShow : 3,
+                slidesToScroll : 1,
+                variableWidth : false,
+                infinite : true,
+                arrows : false,
+                pauseOnArrowClick : true,
+                pauseOnDirectionKeyPush : true,
+                pauseOnSwipe : true,
+                pauseOnDotsClick : true,
+                zIndex : 1,
+                fade : false
+            });
+        });
+        $('.media_wrap .photo_tab_list .photo_tab_item button.photo_tab_btn').on('click', function(){
+            var $this = $(this),
+                $MyPhotoTabItem = $this.parent('.photo_tab_item'),
+                IsActive = $MyPhotoTabItem.is('.active'),
+                $MyPhotoItemIndex = $MyPhotoTabItem.index(),
+                $OtherPhotoItem = $MyPhotoTabItem.siblings('.photo_tab_item'),
+                $OtherPhotoBtn = $OtherPhotoItem.find('button.photo_tab_btn'),
+                $PhotoCtsList = $('.media_wrap .photo_cts_list'),
+                $MyPhotoCtsItem = $PhotoCtsList.find('.photo_cts_item').eq($MyPhotoItemIndex),
+                $MyPhotoSlideList = $MyPhotoCtsItem.find('.photo_slide_list'),
+                $OtherPhotoCtsItem = $MyPhotoCtsItem.siblings('.photo_cts_item');
+            if(!IsActive){
+                $OtherPhotoItem.removeClass('active');
+                $OtherPhotoBtn.removeAttr('title');
+                $OtherPhotoCtsItem.removeClass('active tab_ani');
+                $MyPhotoTabItem.addClass('active');
+                $this.attr('title', '선택됨');
+                $MyPhotoCtsItem.addClass('active');
+                setTimeout(function(){
+                    $MyPhotoCtsItem.addClass('tab_ani');
+                }, 1);
+                $MyPhotoSlideList.slick('setPosition');
+            }
+        });
+        //포토갤러리 탭 및 슬라이드 끝
+
+        //SNS 슬라이드 시작
+        var $snsSlideList = $('.media_wrap .sns_slide_wrap .sns_slide_list');
+        $snsSlideList.slick({
+            //기본
+            autoplay : false,
+            autoplaySpeed : 3000,
+            speed : 1000,
+            dots : false,
+            draggable : false,
+            swipe : false,
+            swipeToSlide : false,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            rows : 1, //여러줄
+            slidesPerRow : 4, //여러줄 일 때 한줄의 몇개 출력
+            variableWidth : false,
+            infinite : false,
+            arrows : false,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            zIndex : 1,
+            fade : false
+        });
+
+
+        //SNS 슬라이드 끝
 
     });
 })(jQuery);
