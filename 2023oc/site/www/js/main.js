@@ -411,9 +411,110 @@
             zIndex : 1,
             fade : false
         });
-
-
         //SNS 슬라이드 끝
 
+        //옥천여행 슬라이드 시작
+        var $tourSlideList = $('.tour_wrap .tour_slide_wrap .tour_slide_list'),
+            $tourSlideControl = $('.tour_wrap .tour_slide_wrap .tour_slide_control'),
+            $tourSlidePrev = $tourSlideControl.find('.prev'),
+            $tourSlideNext = $tourSlideControl.find('.next');
+        $tourSlideList.on('init', function(event, slick, currentSlide, nextSlide) {
+            var $currentSlide = $(slick.$slides[0]),
+                MyIndex = $currentSlide.index(),
+                $siblingSlide = $currentSlide.siblings('.slick-slide');
+            $siblingSlide.eq(MyIndex - 1).addClass('prev_slide');
+            $siblingSlide.eq(MyIndex - 2).addClass('pprev_slide');
+            $siblingSlide.eq(MyIndex).addClass('next_slide');
+            $siblingSlide.eq(MyIndex + 1).addClass('nnext_slide');
+        });
+        $tourSlideList.slick({
+            //기본
+            autoplay : false,
+            autoplaySpeed : 3000,
+            speed : 800,
+            dots : false,
+            draggable : true,
+            swipe : true,
+            swipeToSlide : true,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            centerMode : true,
+            variableWidth : false,
+            infinite : true,
+            arrows : true,
+            prevArrow : $tourSlidePrev,
+            nextArrow : $tourSlideNext,
+            pauseOnArrowClick : true,
+            pauseOnDirectionKeyPush : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            vertical : true, //세로모드 유무
+            verticalSwiping : true, //세로일때 터치 유무
+            zIndex : 1,
+            fade : false
+        });
+        $window.on('screen:wide screen:web', function (event) {
+            $tourSlideList.on('wheel', function(e){
+                e.preventDefault();
+                if (e.originalEvent.deltaY < 0) {
+                    $(this).slick('slickPrev');
+                    setTimeout(function(){
+                        $tourSlideControl.removeClass('down').addClass('up');
+                    }, 1);
+                    setTimeout(function(){
+                        $tourSlideControl.removeClass('up');
+                    }, 800);
+                } else {
+                    $(this).slick('slickNext');
+                    setTimeout(function(){
+                        $tourSlideControl.removeClass('up').addClass('down');
+                    }, 1);
+                    setTimeout(function(){
+                        $tourSlideControl.removeClass('down');
+                    }, 800);
+                }
+            });
+        });
+        $tourSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            var $nextSlide = $(slick.$slides[nextSlide]),
+                nextSlideIndex = $nextSlide.index(),
+                $nextRows = $nextSlide.find('.slick-rows'),
+                $nextTourSlideItem = $nextRows.find('.tour_slide_item'),
+                nextDataText = $nextTourSlideItem.attr('data-text'),
+                $tourBackList = $('.tour_wrap .tour_back_wrap .tour_back_list'),
+                $MytourBackItem = $tourBackList.find('.tour_back_item[data-back="'+nextDataText+'"]'),
+                $OthertourBackItem = $tourBackList.find('.tour_back_item').not($MytourBackItem);
+            $OthertourBackItem.removeClass('active');
+            $MytourBackItem.addClass('active');
+
+            var $siblingsSlide = $nextSlide.siblings('.slick-slide');
+            $nextSlide.removeClass('prev_slide pprev_slide next_slide nnext_slide');
+            $siblingsSlide.removeClass('prev_slide pprev_slide next_slide nnext_slide');
+            $siblingsSlide.eq(nextSlideIndex - 1).addClass('prev_slide');
+            $siblingsSlide.eq(nextSlideIndex - 2).addClass('pprev_slide');
+            $siblingsSlide.eq(nextSlideIndex).addClass('next_slide');
+            $siblingsSlide.eq(nextSlideIndex + 1).addClass('nnext_slide');
+        });
+        //옥천여행 슬라이드 끝
+
+        //옥천여행 퀵 링크 마우스 오버 효과 시작
+        var $tourQuickList = $('.tour_wrap .tour_quick_wrap .tour_quick_list'),
+            $tourQuickLink = $tourQuickList.find('.tour_quick_link');
+        $tourQuickList.on('mouseover', function(){
+            var $this = $(this);
+            $this.attr('data-view', 'true');
+        });
+        $tourQuickList.on('mouseleave', function(){
+            var $this = $(this);
+            $this.attr('data-view', 'false');
+        });
+        $tourQuickLink.on('mouseover', function(){
+            var $this = $(this),
+                $touMyQuickItem = $this.parent('.tour_quick_item'),
+                touMyQuickIndex = $touMyQuickItem.index(),
+                $tourQuickList = $touMyQuickItem.parent('.tour_quick_list');
+            $tourQuickList.attr('data-type', touMyQuickIndex+1);
+        });
+        //옥천여행 퀵 링크 마우스 오버 효과 끝
     });
 })(jQuery);

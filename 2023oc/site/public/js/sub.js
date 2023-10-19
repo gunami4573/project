@@ -19,7 +19,8 @@
             var $this = $(this),
                 $depthText = $this.children('.depth_text'),
                 eventTarget = event.target,
-                IsActive = $this.is('.active');
+                IsActive = $this.is('.active'),
+                ThisIsLink = $this.is('.link');
 
             if ($depthText.find(eventTarget).length || $depthText[0] === eventTarget) {
                 if ($this.hasClass('depth1_item')) {
@@ -31,19 +32,21 @@
                 }
 
                 if ($this.children('.depth').length) {
-                    var $Depth = $this.children('.depth'),
-                        DepthDisplay = $Depth.css('display');
-                    if (DepthDisplay !== 'none') {//하위메뉴가 display:none이 아니면 실행
-                        if (!IsActive) {
-                            $this.removeClass('active_prev active_next');
-                            $this.addClass('active').siblings('.depth_item').removeClass('active active_prev active_next');
-                            $this.prev('.depth_item').addClass('active_prev');
-                            $this.next('.depth_item').addClass('active_next');
-                        } else {
-                            $this.removeClass('active');
-                            $this.siblings('.depth_item').removeClass('active_prev active_next');
+                    if (!ThisIsLink) {
+                        var $Depth = $this.children('.depth'),
+                            DepthDisplay = $Depth.css('display');
+                        if (DepthDisplay !== 'none') {//하위메뉴가 display:none이 아니면 실행
+                            if (!IsActive) {
+                                $this.removeClass('active_prev active_next');
+                                $this.addClass('active').siblings('.depth_item').removeClass('active active_prev active_next');
+                                $this.prev('.depth_item').addClass('active_prev');
+                                $this.next('.depth_item').addClass('active_next');
+                            } else {
+                                $this.removeClass('active');
+                                $this.siblings('.depth_item').removeClass('active_prev active_next');
+                            }
+                            event.preventDefault();
                         }
-                        event.preventDefault();
                     }
                 }
             }
@@ -199,7 +202,7 @@
                         $MyOcCtsItem.addClass('active');
                         $MyItem.addClass('active');
                         $MyBtn.attr('title', '선택됨');
-                        
+
                         //탭안에 지도
                         setTimeout(function(){
                             $MyOcMapBox.each(function(){
@@ -262,6 +265,29 @@
         });
         //탭메뉴 끝
 
+        //화이트 서브 시작
+        var $whiteDepth = $('.white_depth_box .white_depth');
+        $whiteDepth.each(function(){
+            var $this = $(this),
+                $whiteDepthBtn = $this.find('button.white_depth_btn');
+            $whiteDepthBtn.on('click', function(){
+                var $thisBtn = $(this),
+                    $thisWhiteDepth = $thisBtn.closest('.white_depth'),
+                    IsActive = $thisWhiteDepth.is('.active');
+                //$otherWhiteDepth = $thisWhiteDepth.siblings('.white_depth'),
+                //$otherBtn = $otherWhiteDepth.find('button.white_depth_btn');
+                if(!IsActive){
+                    $thisWhiteDepth.addClass('active');
+                    $thisBtn.attr('title', '메뉴 목록닫기');
+                    //$otherWhiteDepth.removeClass('active');
+                    //$otherBtn.attr('title', '메뉴 목록열기');
+                } else {
+                    $thisWhiteDepth.removeClass('active');
+                    $thisBtn.attr('title', '메뉴 목록열기');
+                }
+            });
+        });
+        //화이트 서브 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 

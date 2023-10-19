@@ -730,6 +730,9 @@ main{display:block;width:100%;box-sizing:border-box;}
 /* ----- 모바일 전용 상단 바로가기 끝 ----- */
 
 /* ----- 투명버전 상단 시작 ----- */
+@media screen and (min-width:1461px){
+    .oc_white .header_box .logo .logo_link .logo_site_name{font-size:30px;}
+}
 @media screen and (min-width:1001px){
     .oc_white #header{position:absolute;top:0;left:0;}
     .oc_white .header_gnb{background-color:transparent;}
@@ -745,7 +748,9 @@ main{display:block;width:100%;box-sizing:border-box;}
     .oc_white .header_gnb .etc_choice .etc_choice_list .etc_choice_item.login .etc_choice_link .link_text:before{background-color:#fff;}
     .oc_white .header_box .logo .logo_link .logo_text_img{background-image:url(../images/common/logo_white.png);}
     .lnb_open .oc_white .header_box .logo .logo_link .logo_text_img{background-image:url(../images/common/logo_basic.png);}
-    .oc_white .header_box .logo .logo_link .logo_site_name{color:transparent;font-weight:900;background-image:linear-gradient(to right, #0072c1 0%, #9d1674 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-stroke:1px #fff;}
+    .oc_white .header_box .logo .logo_link .logo_site_name{color:transparent;letter-spacing:-0.05em;font-weight:900;background-image:linear-gradient(to right, #0072c1 0%, #9d1674 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-stroke:1px #fff;}
+    .ie11 .oc_white .header_box .logo .logo_link .logo_site_name{color:#fff;background-image:none;}
+    .ie11.lnb_open .oc_white .header_box .logo .logo_link .logo_site_name{color:#871767;}
     .oc_white .lnb .menu{background-color:transparent;}
     .oc_white .lnb .menu:before{background-color:transparent;}
     .lnb_open .oc_white .lnb .menu:before{background-color:#e7e7e7;}
@@ -756,12 +761,24 @@ main{display:block;width:100%;box-sizing:border-box;}
     .lnb_open .oc_white .lnb .menu .depth1 .depth1_list .depth1_item.active .depth1_text span em{color:#1697d8;}
     .oc_white .lnb .menu .depth2 .depth2_list{background-color:transparent;}
     .oc_white .header_info .info_list .info_item.sitemap .info_link:before{background-position:-200px top;}
+    /* 투명버전 헤더 효과 */
+    .oc_white #header{transition-duration:3000ms;}
+    .oc_white .header_gnb{transform:translateY(-100%);transition-duration:3000ms;}
+    .start_ani.oc_white .header_gnb{transform:translateY(0%);}
+    .oc_white .header_box .logo,
+    .oc_white .lnb,
+    .oc_white .header_info{visibility:hidden;opacity:0;transform:translateY(-161px);transition-property:visibility, opacity, transform;transition-duration:3000ms;transition-timing-function:cubic-bezier(.52, .08, .04, 1.18);}
+    .start_ani.oc_white .header_box .logo,
+    .start_ani.oc_white .lnb,
+    .start_ani.oc_white .header_info{visibility:visible;opacity:1;transform:translateY(0px);}
+    /* 투명버전 헤더 효과 */
 }
 @media screen and (max-width:1000px){
-    .oc_white.main #header:before{display:block;position:absolute;top:75px;left:0;width:100%;height:1px;background-color:rgba(255, 255, 255, 0.2);content:'';}
-    .oc_white.main .header_box .logo .logo_link .logo_text_img{background-image:url(../images/common/logo_white.png);}
-    .oc_white.main .header_box .logo .logo_link .logo_site_name{color:transparent;font-weight:900;background-image:linear-gradient(to right, #0072c1 0%, #9d1674 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-stroke:1px #fff;}
-    .oc_white.main .header_box .m_btn_list .m_btn_item.menu_show .m_btn:before{background-position:-150px -30px;}
+    .oc_white #header:before{display:block;position:absolute;z-index:1;top:75px;left:0;width:100%;height:1px;background-color:rgba(255, 255, 255, 0.2);content:'';}
+    .oc_white .header_box .logo .logo_link .logo_text_img{background-image:url(../images/common/logo_white.png);}
+    .oc_white .header_box .logo .logo_link .logo_site_name{font-size:22px;color:transparent;font-weight:900;background-image:linear-gradient(to right, #0072c1 0%, #9d1674 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-stroke:0.7px #fff;}
+    .oc_white .header_box .m_btn_list{z-index:1;}
+    .oc_white .header_box .m_btn_list .m_btn_item.menu_show .m_btn:before{background-position:-150px -30px;}
     .oc_white.main #container{position:static;margin-top:-76px;}
 }
 /* ----- 투명버전 상단 끝 ----- */
