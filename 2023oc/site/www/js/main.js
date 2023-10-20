@@ -46,7 +46,22 @@
             pauseOnSwipe : true,
             pauseOnArrowClick : true,
             zIndex : 0,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 1461,
+                settings : {
+                    slidesToShow : 4
+                }
+            },{
+                breakpoint : 1291,
+                settings : {
+                    slidesToShow : 3
+                }
+            },{
+                breakpoint : 1051,
+                settings : {
+                    slidesToShow : 2
+                }
+            }]
         });
         //검색 하단 인기검색어 슬라이드 끝
 
@@ -56,8 +71,8 @@
         $QuickSlideList.slick({
             //기본
             autoplay : true,
-            autoplaySpeed : 2000,
-            speed : 1000,
+            autoplaySpeed : 3000,
+            speed : 800,
             dots : true,
             appendDots : $QuickSlideDotBox,
             dotsClass : 'slick-dots clearfix',
@@ -124,7 +139,7 @@
             $AlarmSlideNext = $('.alarm_wrap .alarm_slide_control .next');
         $AlarmSlideList.slick({
             //기본
-            autoplay : false,
+            autoplay : true,
             dots : false,
             draggable : true,
             swipe : true,
@@ -141,7 +156,13 @@
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            fade : false
+            fade : false,
+            responsive : [{
+                breakpoint : 1461,
+                settings : {
+                    slidesToShow : 7
+                }
+            }]
         });
         //자주찾는 알림 바로가기 슬라이드 끝
 
@@ -246,6 +267,12 @@
                 pauseOnDotsClick : true,
                 zIndex : 1,
                 fade : true,
+                responsive : [{
+                    breakpoint : 1461,
+                    settings : {
+                        slidesPerRow : 2
+                    }
+                }]
             });
             $window.on('screen:wide screen:web', function (event) {
                 $MajorSlideList.on('wheel', function(e){
@@ -426,12 +453,18 @@
             $siblingSlide.eq(MyIndex - 2).addClass('pprev_slide');
             $siblingSlide.eq(MyIndex).addClass('next_slide');
             $siblingSlide.eq(MyIndex + 1).addClass('nnext_slide');
+
+            var currentDataText = $currentSlide.find('.tour_slide_item').attr('data-text'),
+                $startTourBackItem = $('.tour_wrap .tour_back_wrap .tour_back_list .tour_back_item[data-back="'+currentDataText+'"]');
+            setTimeout(function(){
+                $startTourBackItem.addClass('active');
+            }, 1);
         });
         $tourSlideList.slick({
             //기본
-            autoplay : false,
+            autoplay : true,
             autoplaySpeed : 3000,
-            speed : 800,
+            speed : 1200,
             dots : false,
             draggable : true,
             swipe : true,
