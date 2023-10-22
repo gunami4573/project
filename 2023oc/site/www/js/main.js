@@ -384,7 +384,19 @@
                 pauseOnSwipe : true,
                 pauseOnDotsClick : true,
                 zIndex : 1,
-                fade : false
+                fade : false,
+                responsive : [{
+                    breakpoint : 1461,
+                    settings : {
+                        variableWidth : true
+                    }
+                },{
+                    breakpoint : 1231,
+                    settings : {
+                        slidesToShow : 2,
+                        variableWidth : true
+                    }
+                }]
             });
         });
         $('.media_wrap .photo_tab_list .photo_tab_item button.photo_tab_btn').on('click', function(){
