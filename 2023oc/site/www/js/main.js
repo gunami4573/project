@@ -162,6 +162,11 @@
                 settings : {
                     slidesToShow : 7
                 }
+            },{
+                breakpoint : 1001,
+                settings : {
+                    slidesToShow : 6
+                }
             }]
         });
         //자주찾는 알림 바로가기 슬라이드 끝
