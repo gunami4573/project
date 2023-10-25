@@ -278,9 +278,17 @@
                         slidesPerRow : 2
                     }
                 },{
-                    breakpoint : 1461,
+                    breakpoint : 1001,
                     settings : {
-                        slidesPerRow : 4
+                        draggable : true,
+                        swipe : true,
+                        swipeToSlide : true,
+                        slidesToShow: 5,
+                        rows : 1,
+                        slidesPerRow : 1,
+                        variableWidth : false,
+                        infinite : true,
+                        fade : false
                     }
                 }]
             });
