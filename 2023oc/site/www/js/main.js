@@ -277,6 +277,11 @@
                     settings : {
                         slidesPerRow : 2
                     }
+                },{
+                    breakpoint : 1461,
+                    settings : {
+                        slidesPerRow : 4
+                    }
                 }]
             });
             $window.on('screen:wide screen:web', function (event) {
