@@ -129,7 +129,7 @@
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            fade : false
+            fade : true
         });
         //비주얼 팝업 슬라이드 끝
 
@@ -165,7 +165,12 @@
             },{
                 breakpoint : 1001,
                 settings : {
-                    slidesToShow : 6
+                    slidesToShow : 5
+                }
+            },{
+                breakpoint : 801,
+                settings : {
+                    slidesToShow : 4
                 }
             }]
         });
