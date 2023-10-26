@@ -283,7 +283,20 @@
                         draggable : true,
                         swipe : true,
                         swipeToSlide : true,
-                        slidesToShow: 5,
+                        slidesToShow : 5,
+                        rows : 1,
+                        slidesPerRow : 1,
+                        variableWidth : false,
+                        infinite : true,
+                        fade : false
+                    }
+                },{
+                    breakpoint : 801,
+                    settings : {
+                        draggable : true,
+                        swipe : true,
+                        swipeToSlide : true,
+                        slidesToShow : 4,
                         rows : 1,
                         slidesPerRow : 1,
                         variableWidth : false,
@@ -412,6 +425,18 @@
                     breakpoint : 1231,
                     settings : {
                         slidesToShow : 2,
+                        variableWidth : true
+                    }
+                },{
+                    breakpoint : 1001,
+                    settings : {
+                        slidesToShow : 3,
+                        variableWidth : true
+                    }
+                },{
+                    breakpoint : 851,
+                    settings : {
+                        slidesToShow : 3,
                         variableWidth : true
                     }
                 }]
