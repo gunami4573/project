@@ -140,11 +140,15 @@
         $AlarmSlideList.slick({
             //기본
             autoplay : true,
+            autoplaySpeed : 3000,
+            speed : 1000,
             dots : false,
             draggable : true,
             swipe : true,
             swipeToSlide : true,
             slidesToShow : 8,
+            rows : 1,
+            slidesPerRow : 1,
             slidesToScroll : 1,
             variableWidth : false,
             infinite : true,
@@ -171,6 +175,13 @@
                 breakpoint : 801,
                 settings : {
                     slidesToShow : 4
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 1,
+                    rows : 2,
+                    slidesPerRow : 3
                 }
             }]
         });
