@@ -129,7 +129,13 @@
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            fade : true
+            fade : false,
+            responsive : [{
+                breakpoint : 801,
+                settings : {
+                    fade : true
+                }
+            }]
         });
         //비주얼 팝업 슬라이드 끝
 
@@ -249,7 +255,13 @@
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            fade : false
+            fade : false,
+            responsive : [{
+                breakpoint : 641,
+                settings : {
+                    fade : true
+                }
+            }]
         });
         //fast 팝업 슬라이드 끝
 
