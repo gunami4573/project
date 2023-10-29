@@ -139,7 +139,7 @@
             $AlarmSlideNext = $('.alarm_wrap .alarm_slide_control .next');
         $AlarmSlideList.slick({
             //기본
-            autoplay : true,
+            autoplay : false,
             autoplaySpeed : 3000,
             speed : 1000,
             dots : false,
