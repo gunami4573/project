@@ -331,6 +331,19 @@
                         infinite : true,
                         fade : false
                     }
+                },{
+                    breakpoint : 641,
+                    settings : {
+                        draggable : true,
+                        swipe : true,
+                        swipeToSlide : true,
+                        slidesToShow : 1,
+                        rows : 1,
+                        slidesPerRow : 6,
+                        variableWidth : false,
+                        infinite : false,
+                        fade : false
+                    }
                 }]
             });
             $window.on('screen:wide screen:web', function (event) {
@@ -519,7 +532,30 @@
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
-            fade : false
+            fade : false,
+            responsive : [{
+                breakpoint : 641,
+                settings : {
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true,
+                    slidesToShow : 2,
+                    variableWidth : true,
+                    slidesPerRow : 1,
+                    infinite : true
+                }
+            },{
+                breakpoint : 451,
+                settings : {
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true,
+                    slidesToShow : 1,
+                    variableWidth : true,
+                    slidesPerRow : 1,
+                    infinite : true
+                }
+            }]
         });
         //SNS 슬라이드 끝
 
@@ -602,7 +638,6 @@
                 $OthertourBackItem = $tourBackList.find('.tour_back_item').not($MytourBackItem);
             $OthertourBackItem.removeClass('active');
             $MytourBackItem.addClass('active');
-
             var $siblingsSlide = $nextSlide.siblings('.slick-slide');
             $nextSlide.removeClass('prev_slide pprev_slide next_slide nnext_slide');
             $siblingsSlide.removeClass('prev_slide pprev_slide next_slide nnext_slide');
