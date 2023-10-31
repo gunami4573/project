@@ -4,9 +4,10 @@
 ### 2023oc (2023 옥천군청 전면개편)
 - [부설사이트 공통 서브 레이아웃](https://gunami4573.github.io/project/2023oc/site/public/sub.html)
 - [대표사이트 서브 레이아웃](https://gunami4573.github.io/project/2023oc/site/www/sub.html)
-- [대표사이트 메인 레이아웃 - (작업중)](https://gunami4573.github.io/project/2023oc/site/www/main.html)
+- [대표사이트 메인 레이아웃](https://gunami4573.github.io/project/2023oc/site/www/main.html)
 - [보건소 메인 레이아웃](https://gunami4573.github.io/project/2023oc/site/health/main.html)
 - [홍보관 메인 레이아웃](https://gunami4573.github.io/project/2023oc/site/promote/main.html)
+- [문화관광 메인 레이아웃](https://gunami4573.github.io/project/2023oc/site/tour/main.html)
 
 ### 2023nyj (2023 남양주시청 전면개편)
 - [외국어(공통) 메인 레이아웃](https://gunami4573.github.io/project/2023nyj/site/eng/main.html)
