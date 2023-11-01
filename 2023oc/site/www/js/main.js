@@ -346,27 +346,28 @@
                     }
                 }]
             });
-            $window.on('screen:wide screen:web', function (event) {
-                $MajorSlideList.on('wheel', function(e){
+            $MajorSlideList.on('wheel', function(e){
+                var NowState = $.screen.settings.state[0];
+                if(NowState=='wide'||NowState=='web') {
                     e.preventDefault();
                     if (e.originalEvent.deltaY < 0) {
                         $(this).slick('slickPrev');
-                        setTimeout(function(){
+                        setTimeout(function () {
                             $MajorSlideControl.removeClass('down').addClass('up');
                         }, 1);
-                        setTimeout(function(){
+                        setTimeout(function () {
                             $MajorSlideControl.removeClass('up');
                         }, 800);
                     } else {
                         $(this).slick('slickNext');
-                        setTimeout(function(){
+                        setTimeout(function () {
                             $MajorSlideControl.removeClass('up').addClass('down');
                         }, 1);
-                        setTimeout(function(){
+                        setTimeout(function () {
                             $MajorSlideControl.removeClass('down');
                         }, 800);
                     }
-                });
+                }
             });
         });
         $('.major_news_wrap .major_tab_list .major_tab_item button.major_tab_btn').on('click', function(){
@@ -605,8 +606,9 @@
             zIndex : 1,
             fade : false
         });
-        $window.on('screen:wide screen:web', function (event) {
-            $tourSlideList.on('wheel', function(e){
+        $tourSlideList.on('wheel', function(e){
+            var NowState = $.screen.settings.state[0];
+            if(NowState == 'wide' || NowState == 'web'){
                 e.preventDefault();
                 if (e.originalEvent.deltaY < 0) {
                     $(this).slick('slickPrev');
@@ -625,7 +627,7 @@
                         $tourSlideControl.removeClass('down');
                     }, 800);
                 }
-            });
+            }
         });
         $tourSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
             var $nextSlide = $(slick.$slides[nextSlide]),
