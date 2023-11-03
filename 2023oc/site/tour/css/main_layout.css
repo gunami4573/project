@@ -5,9 +5,9 @@
 /* 문화관광 공통 시작  */
 html::-webkit-scrollbar{width:0px;}
 html{-ms-overflow-style:none;scrollbar-width:none;}
-body{overflow:visible;}
-#wrapper{overflow:visible;}
 @media screen and (min-width:1001px){
+    body{overflow:visible;}
+    #wrapper{overflow:visible;}
     .oc_white #header{position:fixed;top:0;left:0;transform:translateY(-100%);visibility:hidden;opacity:0;transition:transform 1600ms cubic-bezier(.4, 0, .2, 1), visibility 800ms cubic-bezier(.4, 0, .2, 1), opacity 800ms cubic-bezier(.4, 0, .2, 1);}
     .oc_white.start_ani #header{transform:translateY(0%);visibility:visible;opacity:1;}
     .oc_white #wrapper.tour_scroll #header{transform:translateY(-100%);visibility:hidden;opacity:0;}
@@ -17,22 +17,25 @@ body{overflow:visible;}
     .oc_white .header_info{transform:none;visibility:visible;opacity:1;}
 }
 main{position:relative;padding-top:100vh;transition-property:padding-top;transition-duration:800ms;transition-timing-function:cubic-bezier(.4, 0, .2, 1);}
+#wrapper.tour_scroll main{padding-top:0vh;}
 main .back_deco{display:block;position:fixed;z-index:1;top:0;left:0;width:100%;height:100vh;background-color:#000;content:'';overflow:hidden;visibility:visible;opacity:1;transition-property:height, visibility, opacity;transition-duration:1200ms;transition-timing-function:cubic-bezier(.4, 0, .2, 1);}
+#wrapper.tour_scroll main .back_deco{height:0vh;}
 main .back_deco .back_deco_item{display:none;position:absolute;top:0;left:0;width:100%;height:100%;background-repeat:no-repeat;background-position:center top;background-size:cover;transform-origin:50% 100%;transform:scale(1) translateY(0%);filter:blur(0px);visibility:hidden;opacity:0;transition:transform 1000ms cubic-bezier(.4, 0, .2, 1), filter 1000ms cubic-bezier(.4, 0, .2, 1), visibility 100ms cubic-bezier(.4, 0, .2, 1), opacity 100ms cubic-bezier(.4, 0, .2, 1);}
 main .back_deco .back_deco_item.active{display:block;}
 #wrapper.tour_scroll main .back_deco .back_deco_item.start_deco{visibility:visible;opacity:1;}
-@media screen and (min-width:1001px){
-    #wrapper.tour_scroll main{padding-top:0vh;}
-    #wrapper.tour_scroll main .back_deco{height:0vh;}
-    #wrapper.tour_scroll main .back_deco .back_deco_item{transform:scale(1.8) translateY(20%);filter:blur(20px);}
-}
+#wrapper.tour_scroll main .back_deco .back_deco_item{transform:scale(1.8) translateY(20%);filter:blur(20px);}
 .rowgroup{display:block;width:100%;box-sizing:border-box;}
+@media screen and (max-width:1000px){
+    main{padding-top:0vh;}
+    main .back_deco{display:none;}
+}
 /* 문화관광 공통 끝 */
 
 /* rowgroup1 시작 */
 .rowgroup1{position:fixed;z-index:2;bottom:calc(100% - 100vh);left:0;height:100vh;overflow:hidden;visibility:visible;opacity:1;transition-property:bottom, height, visibility, opacity;transition-duration:800ms;transition-timing-function:cubic-bezier(.4, 0, .2, 1);}
-@media screen and (min-width:1001px){
-    #wrapper.tour_scroll .rowgroup1{bottom:100%;height:0vh;}
+#wrapper.tour_scroll .rowgroup1{bottom:100%;height:0vh;}
+@media screen and (max-width:1000px){
+    .rowgroup1{position:static;height:100vh;}
 }
 .visual{display:block;position:relative;width:100%;height:100%;font-size:0;line-height:0;box-sizing:border-box;}
 .visual *, .visual *:before, .visual *:after{border:none;font-size:0;line-height:0;box-sizing:border-box;}
@@ -45,9 +48,7 @@ main .back_deco .back_deco_item.active{display:block;}
 .visual .visual_wrap .visual_slide_wrap .visual_slide_list .slick-rows{display:block;position:relative;height:100%;min-height:0;border:none;}
 .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item{display:block !important;position:relative;width:100% !important;height:100%;}
 .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .text_link_wrap{display:inline-block;position:relative;z-index:1;top:50%;transform:translateY(-50%);left:calc(50% - 620px);vertical-align:top;visibility:visible;opacity:1;transition-property:transform, visibility, opacity;transition-duration:1600ms;transition-timing-function:cubic-bezier(.4, 0, .2, 1);}
-@media screen and (min-width:1001px){
-    #wrapper.tour_scroll .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .text_link_wrap{transform:translateY(100%);visibility:hidden;opacity:0;}
-}
+#wrapper.tour_scroll .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .text_link_wrap{transform:translateY(100%);visibility:hidden;opacity:0;}
 .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .text_link_wrap .text_link{display:inline-block;position:relative;vertical-align:top;}
 .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .text_link_wrap .text_link:hover{text-decoration:none;}
 .visual .visual_wrap .visual_slide_wrap .visual_slide_list .visual_slide_item .text_link_wrap .text_link .img_text_title{display:inline-block;position:relative;width:666px;height:227px;background-repeat:no-repeat;background-position:left top;background-size:cover;vertical-align:top;transform-origin:50% 100%;transform:perspective(800px) translateX(-30%) skewX(-90deg) scaleY(0) rotateX(0deg);visibility:hidden;opacity:0;transition-property:transform, visibility, opacity;transition-duration:2000ms;transition-timing-function:cubic-bezier(.52, .08, .04, 1.18);}
@@ -96,7 +97,6 @@ main .back_deco .back_deco_item.active{display:block;}
 .visual .visual_wrap .visual_slide_wrap .visual_slide_control .btn_box .control_btn.prev .arrow:before{left:1px;border-width:3px 0 0 3px;border-color:#fff transparent transparent #fff;transform:rotate(-45deg);}
 .visual .visual_wrap .visual_slide_wrap .visual_slide_control .btn_box .control_btn.next .arrow:before{right:1px;border-width:3px 3px 0 0;border-color:#fff #fff transparent transparent;transform:rotate(45deg);}
 .visual .visual_wrap .visual_slide_wrap .visual_slide_control .btn_box .control_btn .arrow:after{top:41%;left:50%;transform:translateX(-50%);width:100%;height:3px;background-color:#fff;}
-
 .visual .visual_wrap .visual_slide_wrap .visual_scroll_box{display:inline-block;position:absolute;z-index:4;bottom:0%;left:0;width:calc(((100% - 1460px) / 2) + 150px);vertical-align:top;visibility:hidden;opacity:0;transition-property:visibility, opacity;transition-duration:1600ms;transition-timing-function:cubic-bezier(.4, 0, .2, 1);}
 .start_ani .visual_wrap .visual_slide_wrap .visual_scroll_box{visibility:visible;opacity:1;}
 #wrapper.tour_scroll .visual .visual_wrap .visual_slide_wrap .visual_scroll_box{visibility:hidden;opacity:0;}
@@ -237,12 +237,12 @@ main .back_deco .back_deco_item.active{display:block;}
 .service .service_wrap .service_slide_wrap .service_slide_list .service_slide_item.type08 .service_slide_link .link_inner .link_text:before{top:11px;left:calc(50% - 31px);width:63px;height:52px;background-position:-560px top;}
 .service .service_wrap .service_slide_wrap .service_slide_list .service_slide_item.type09 .service_slide_link .link_inner .link_text:before{top:0px;left:calc(50% - 30px);width:60px;height:64px;background-position:-640px top;}
 .service .service_wrap .service_slide_wrap .service_slide_list .service_slide_item.type10 .service_slide_link .link_inner .link_text:before{top:4px;left:calc(50% - 32px);width:64px;height:60px;background-position:-720px top;}
-
 @media screen and (max-width:1460px){
 
 }
 @media screen and (max-width:1000px){
-
+    .service .service_wrap .title_box{opacity:1;transform:translateY(0%);}
+    .service .service_wrap .service_slide_wrap{opacity:1;transform:translateY(0%);}
 }
 @media screen and (max-width:640px){
 

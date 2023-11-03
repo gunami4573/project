@@ -46,9 +46,11 @@
             console.log('변동값로우2탑:',Row2Top);
             console.log('스크롤상단:',TourScrollTop);
         }
-        moveScroll();
         $window.on('scroll', function(){
-            moveScroll();
+            var NowWindowState = $.screen.settings.state[0];
+            if( NowWindowState == 'wide' || NowWindowState == 'web' ) {
+                moveScroll();
+            }
         });
         //문화관광 전용 풀페이지 처럼 동작 끝
 
