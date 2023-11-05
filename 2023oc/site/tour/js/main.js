@@ -42,13 +42,27 @@
                     }
                 });
             }
+
+            //옥천 관광명소 스크롤 효과 시작
+            var $Rowgroup3 = $('.rowgroup3'),
+                Row3Top = $Rowgroup3.offset().top;
+            if(TourScrollTop >= Row3Top - 200){
+                $Rowgroup3.addClass('row3_ani');
+            }
+            if(TourScrollTop < Row3Top - 200){
+                $Rowgroup3.removeClass('row3_ani');
+            }
+            //옥천 관광명소 스크롤 효과 끝
+
+            /*
             console.log('초기값로우2탑:',StartRow2Top);
             console.log('변동값로우2탑:',Row2Top);
             console.log('스크롤상단:',TourScrollTop);
+            */
         }
         $window.on('scroll', function(){
             var NowWindowState = $.screen.settings.state[0];
-            if( NowWindowState == 'wide' || NowWindowState == 'web' ) {
+            if(NowWindowState == 'wide' || NowWindowState == 'web') {
                 moveScroll();
             }
         });
