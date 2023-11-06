@@ -38,6 +38,7 @@
                             $tourScrollWrapper.removeClass('tour_scroll');
                             Row2Top = StartRow2Top;
                             TourScrollTop = 0;
+                            htmlScrollTop();
                         }
                     }
                 });
@@ -46,10 +47,10 @@
             //옥천 관광명소 스크롤 효과 시작
             var $Rowgroup3 = $('.rowgroup3'),
                 Row3Top = $Rowgroup3.offset().top;
-            if(TourScrollTop >= Row3Top - 200){
+            if(TourScrollTop >= Row3Top - 350){
                 $Rowgroup3.addClass('row3_ani');
             }
-            if(TourScrollTop < Row3Top - 200){
+            if(TourScrollTop < Row3Top - 350){
                 $Rowgroup3.removeClass('row3_ani');
             }
             //옥천 관광명소 스크롤 효과 끝
@@ -143,9 +144,6 @@
                 $VisualSlideControl.addClass('active');
             }, 1);
         });
-        $VisualSlideList.on('afterChange', function(event, slick, currentSlide, nextSlide) {
-
-        });
         $VisualAuto.on('click', function(){
             var $this = $(this),
                 $Bar = $('.visual_wrap .visual_slide_wrap .visual_slide_control .pro_box .bar'),
@@ -200,6 +198,104 @@
             responsive : [{}]
         });
         //자주찾는 메뉴 슬라이드 끝
+
+        //옥천관광명소 슬라이드 및 탭 시작
+        var $MapSlideList = $('.map_wrap .map_slide .map_slide_inner .map_slide_list'),
+            $MapSlidePrev = $('.map_wrap .map_slide .map_slide_inner .map_slide_control .prev'),
+            $MapSlideNext = $('.map_wrap .map_slide .map_slide_inner .map_slide_control .next'),
+            $MapTextList = $('.map_wrap .map_text .map_text_inner .map_text_list'),
+            $MapAreaList = $('.map_wrap .map_area .map_area_inner .map_area_list'),
+            $MapDescList = $('.map_wrap .map_slide .map_desc_inner .map_desc_list');
+
+        $MapSlideList.on('init', function(event, slick, currentSlide) {
+            var $crtSlide = $(slick.$slides[0]),
+                $crtRows = $crtSlide.find('.slick-rows'),
+                $crtMapSlide = $crtRows.find('.map_slide_item'),
+                crtMapSlideData = $crtMapSlide.attr('data-map-slide');
+            setTimeout(function(){
+                $MapTextList.find('.map_text_item[data-map-text="'+crtMapSlideData+'"]').addClass('active').find('button.map_text_btn').attr('title', '선택됨');
+                $MapAreaList.find('.map_area_item[data-map-area="'+crtMapSlideData+'"]').addClass('active').find('button.map_area_btn').attr('title', '선택됨');
+                $MapDescList.find('.map_desc_item[data-map-desc="'+crtMapSlideData+'"]').addClass('active');
+            }, 1);
+        });
+        $MapSlideList.slick({
+            //기본
+            autoplay : true,
+            speed : 1200,
+            autoplaySpeed : 2400,
+            dots : false,
+            draggable : true,
+            swipe : true,
+            swipeToSlide : true,
+            fade : true,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            infinite: true,
+            arrows : true,
+            prevArrow : $MapSlidePrev,
+            nextArrow : $MapSlideNext,
+            isRunOnLowIE : true,
+            pauseOnHover : true,
+            pauseOnSwipe : true,
+            pauseOnArrowClick : true,
+            variableWidth : false,
+            zIndex : 0,
+            responsive : [{}]
+        });
+        $MapSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            var $nextSlide = $(slick.$slides[nextSlide]),
+                $nextRows = $nextSlide.find('.slick-rows'),
+                $nextMapSlide = $nextRows.find('.map_slide_item'),
+                nextMapSlideData = $nextMapSlide.attr('data-map-slide');
+            setTimeout(function(){
+                $MapTextList.find('.map_text_item[data-map-text="'+nextMapSlideData+'"]').addClass('active').siblings('.map_text_item').removeClass('active').find('button.map_text_btn').removeAttr('title');
+                $MapTextList.find('.map_text_item[data-map-text="'+nextMapSlideData+'"]').addClass('active').find('button.map_text_btn').attr('title', '선택됨');
+                $MapAreaList.find('.map_area_item[data-map-area="'+nextMapSlideData+'"]').addClass('active').siblings('.map_area_item').removeClass('active').find('button.map_area_btn').removeAttr('title');
+                $MapAreaList.find('.map_area_item[data-map-area="'+nextMapSlideData+'"]').addClass('active').find('button.map_area_btn').attr('title', '선택됨');
+                $MapDescList.find('.map_desc_item[data-map-desc="'+nextMapSlideData+'"]').addClass('active').siblings('.map_desc_item').removeClass('active');
+            }, 1);
+        });
+
+        var $MapTextBtn = $MapTextList.find('.map_text_item button.map_text_btn');
+        $MapTextBtn.on('click', function(){
+            var $this = $(this),
+                $MyTextItem = $this.parent('.map_text_item'),
+                MyDataMapText = $MyTextItem.attr('data-map-text'),
+                IsActive = $MyTextItem.is('.active'),
+                $OtherTextItem = $MapTextList.find('.map_text_item').not($MyTextItem),
+                $OtherTextBtn = $OtherTextItem.find('button.map_text_btn'),
+                GoMapSlideNum = $MapSlideList.find('.slick-slide').not('.slick-cloned').find('.map_slide_item[data-map-slide="'+MyDataMapText+'"]').parent('.slick-rows').parent('.slick-slide').attr('data-slick-index');
+            if(!IsActive){
+                setTimeout(function(){
+                    $OtherTextItem.removeClass('active');
+                    $OtherTextBtn.removeAttr('title');
+                    $MyTextItem.addClass('active');
+                    $this.attr('title', '선택됨');
+                    $MapSlideList.slick('slickPause').slick('slickGoTo', GoMapSlideNum);
+                }, 1);
+            }
+        });
+        var $MapAreaBtn = $MapAreaList.find('.map_area_item button.map_area_btn');
+        $MapAreaBtn.on('click', function(){
+            var $this = $(this),
+                $MyAreaItem = $this.parent('.map_area_item'),
+                MyDataMapArea = $MyAreaItem.attr('data-map-area'),
+                IsActive = $MyAreaItem.is('.active'),
+                $OtherAreaItem = $MapAreaList.find('.map_area_item').not($MyAreaItem),
+                $OtherAreaBtn = $OtherAreaItem.find('button.map_area_btn'),
+                GoMapSlideNum = $MapSlideList.find('.slick-slide').not('.slick-cloned').find('.map_slide_item[data-map-slide="'+MyDataMapArea+'"]').parent('.slick-rows').parent('.slick-slide').attr('data-slick-index');
+            if(!IsActive){
+                setTimeout(function(){
+                    $OtherAreaItem.removeClass('active');
+                    $OtherAreaBtn.removeAttr('title');
+                    $MyAreaItem.addClass('active');
+                    $this.attr('title', '선택됨');
+                    $MapSlideList.slick('slickPause').slick('slickGoTo', GoMapSlideNum);
+                }, 1);
+            }
+        });
+
+        //옥천관광명소 슬라이드 및 탭 끝
 
     });
 })(jQuery);
