@@ -15,7 +15,7 @@
         //문화관광 전용 풀페이지 처럼 동작 시작
         function htmlScrollTop(){
             $('html').animate({
-                scrollTop : 0
+                scrollTop : 1
             }, 800, 'linear');
         }
         var StartRow2Top = $('.rowgroup2').offset().top;
@@ -26,8 +26,11 @@
             var Row2Top = $('.rowgroup2').offset().top;
             if(TourScrollTop > StartRow2Top){
                 if(!IsTourScroll){
-                    $tourScrollWrapper.addClass('tour_scroll');
-                    htmlScrollTop();
+                    setTimeout(function(){
+                        $tourScrollWrapper.addClass('tour_scroll');
+                        TourScrollTop = 0;
+                        htmlScrollTop();
+                    }, 1);
                 }
             }
             if(IsTourScroll) {
@@ -35,31 +38,34 @@
                     if (e.originalEvent.deltaY < 0) {
                         $('html').stop();
                         if(TourScrollTop === Row2Top){
-                            $tourScrollWrapper.removeClass('tour_scroll');
-                            Row2Top = StartRow2Top;
-                            TourScrollTop = 0;
-                            htmlScrollTop();
+                            setTimeout(function(){
+                                $tourScrollWrapper.removeClass('tour_scroll');
+                                Row2Top = StartRow2Top;
+                                TourScrollTop = 0;
+                                htmlScrollTop();
+                            }, 1);
                         }
                     }
                 });
             }
-
-            //옥천 관광명소 스크롤 효과 시작
-            var $Rowgroup3 = $('.rowgroup3'),
-                Row3Top = $Rowgroup3.offset().top;
-            if(TourScrollTop >= Row3Top - 350){
-                $Rowgroup3.addClass('row3_ani');
-            }
-            if(TourScrollTop < Row3Top - 350){
-                $Rowgroup3.removeClass('row3_ani');
-            }
-            //옥천 관광명소 스크롤 효과 끝
 
             /*
             console.log('초기값로우2탑:',StartRow2Top);
             console.log('변동값로우2탑:',Row2Top);
             console.log('스크롤상단:',TourScrollTop);
             */
+
+            //옥천 관광명소 스크롤 효과 시작
+            var $Rowgroup3 = $('.rowgroup3'),
+                Row3Top = $Rowgroup3.offset().top;
+            if(TourScrollTop >= Row3Top - 250){
+                $Rowgroup3.addClass('row3_ani');
+            }
+            if(TourScrollTop < Row3Top - 250){
+                $Rowgroup3.removeClass('row3_ani');
+            }
+            //옥천 관광명소 스크롤 효과 끝
+
         }
         $window.on('scroll', function(){
             var NowWindowState = $.screen.settings.state[0];
@@ -220,9 +226,9 @@
         });
         $MapSlideList.slick({
             //기본
-            autoplay : true,
-            speed : 1200,
-            autoplaySpeed : 2400,
+            autoplay : false,
+            speed : 800,
+            autoplaySpeed : 3600,
             dots : false,
             draggable : true,
             swipe : true,
