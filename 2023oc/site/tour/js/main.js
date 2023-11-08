@@ -95,7 +95,7 @@
             $FestivalItem.each(function(){
                 var $this = $(this),
                     FestivalItemTop = $this.offset().top;
-                if($window.scrollTop() > FestivalItemTop + 150) {
+                if($window.scrollTop() > FestivalItemTop + 50) {
                     $this.addClass('f_item_ani');
                 }
                 else {
