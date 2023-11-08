@@ -66,12 +66,43 @@
             }
             //옥천 관광명소 스크롤 효과 끝
 
+            //옥천 축제 스크롤 효과 시작
+            var $Rowgroup4 = $('.rowgroup4'),
+                Row4Top = $Rowgroup4.offset().top;
+            if(TourScrollTop >= Row4Top - 600){
+                $Rowgroup4.addClass('row4_ani');
+            }
+            if(TourScrollTop < Row4Top - 600){
+                $Rowgroup4.removeClass('row4_ani');
+            }
+            var $FestivalConcert = $('.festival_wrap .concert_deco');
+            if($window.scrollTop() > Row4Top - 200) {
+                $FestivalConcert.addClass('concert_ani');
+            }
+            if($window.scrollTop() < Row4Top - 200) {
+                $FestivalConcert.removeClass('concert_ani');
+            }
+            //옥천 축제 스크롤 효과 끝
         }
+
         $window.on('scroll', function(){
             var NowWindowState = $.screen.settings.state[0];
             if(NowWindowState == 'wide' || NowWindowState == 'web') {
                 moveScroll();
             }
+            //옥천 축제 아이템 스크롤 효과 시작
+            var $FestivalItem = $('.festival_wrap .f_list .f_item');
+            $FestivalItem.each(function(){
+                var $this = $(this),
+                    FestivalItemTop = $this.offset().top;
+                if($window.scrollTop() > FestivalItemTop + 150) {
+                    $this.addClass('f_item_ani');
+                }
+                else {
+                    $this.removeClass('f_item_ani');
+                }
+            });
+            //옥천 축제 아이템 스크롤 효과 끝
         });
         //문화관광 전용 풀페이지 처럼 동작 끝
 
