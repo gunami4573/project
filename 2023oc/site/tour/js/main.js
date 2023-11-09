@@ -331,8 +331,31 @@
                 }, 1);
             }
         });
-
         //옥천관광명소 슬라이드 및 탭 끝
+
+        //옥천군 SNS 슬라이드 시작
+        var $MediaSnsSlideList = $('.media_wrap .sns_slide_wrap .sns_slide_list');
+        $MediaSnsSlideList.slick({
+            //기본
+            autoplay : true,
+            dots : false,
+            draggable : true,
+            swipe : true,
+            swipeToSlide : true,
+            fade : false,
+            slidesToShow : 2,
+            slidesToScroll : 1,
+            infinite: true,
+            arrows : false,
+            isRunOnLowIE : true,
+            pauseOnHover : true,
+            pauseOnSwipe : true,
+            pauseOnArrowClick : true,
+            variableWidth : false,
+            zIndex : 0,
+            responsive : [{}]
+        });
+        //옥천군 SNS 슬라이드 끝
 
     });
 })(jQuery);
