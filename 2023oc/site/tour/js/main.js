@@ -49,12 +49,6 @@
                 });
             }
 
-            /*
-            console.log('초기값로우2탑:',StartRow2Top);
-            console.log('변동값로우2탑:',Row2Top);
-            console.log('스크롤상단:',TourScrollTop);
-            */
-
             //옥천 관광명소 스크롤 효과 시작
             var $Rowgroup3 = $('.rowgroup3'),
                 Row3Top = $Rowgroup3.offset().top;
@@ -104,6 +98,14 @@
             });
             //옥천 축제 아이템 스크롤 효과 끝
         });
+
+        //푸터 상단 바로가기(커스텀) 시작
+        $('.footer_go .go_btn').on('click', function() {
+            $('html, body').stop();
+            $('#wrapper').removeClass('tour_scroll');
+        });
+        //푸터 상단 바로가기(커스텀) 끝
+
         //문화관광 전용 풀페이지 처럼 동작 끝
 
         //비주얼 슬라이드 시작
