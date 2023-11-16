@@ -377,7 +377,19 @@
             pauseOnArrowClick : true,
             variableWidth : false,
             zIndex : 0,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 801,
+                settings : {
+                    slidesToShow : 1,
+                    fade : true
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 2,
+                    fade : false
+                }
+            }]
         });
         //옥천군 SNS 슬라이드 끝
 
