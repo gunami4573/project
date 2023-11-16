@@ -216,7 +216,7 @@
         var $ServiceSlideList = $('.service_wrap .service_slide_wrap .service_slide_list');
         $ServiceSlideList.slick({
             //기본
-            autoplay : true,
+            autoplay : false,
             dots : false,
             draggable : false,
             swipe : false,
@@ -232,7 +232,31 @@
             pauseOnArrowClick : true,
             variableWidth : true,
             zIndex : 0,
-            responsive : [{}]
+            responsive : [{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 5,
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true
+                }
+            },{
+                breakpoint : 551,
+                settings : {
+                    slidesToShow : 4,
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true
+                }
+            },{
+                breakpoint : 441,
+                settings : {
+                    slidesToShow : 3,
+                    draggable : true,
+                    swipe : true,
+                    swipeToSlide : true
+                }
+            }]
         });
         //자주찾는 메뉴 슬라이드 끝
 
