@@ -104,8 +104,8 @@
         $VisualSlideList.slick({
             //기본
             autoplay : true,
-            autoplaySpeed : 5000,
-            speed : 2000,
+            autoplaySpeed : 4500,
+            speed : 2500,
             dots : false,
             draggable : true,
             swipe : true,
