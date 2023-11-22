@@ -63,10 +63,12 @@
         //퀵메뉴 시작
         function quickScroll() {
             if($window.scrollTop() > 161) {
+                $('html').addClass('youth_move');
                 $('.youth_quick').removeClass('active');
                 $('.youth_quick .youth_quick_inner button.youth_quick_btn').attr('title', '퀵메뉴 열기');
             }
             if($window.scrollTop() <= 161) {
+                $('html').removeClass('youth_move');
                 $('.youth_quick').addClass('active');
                 $('.youth_quick .youth_quick_inner button.youth_quick_btn').attr('title', '퀵메뉴 닫기');
             }
@@ -154,6 +156,61 @@
             }
         });
         //비주얼 영역 슬라이드 끝
+
+        //공지사항 탭메뉴 및 슬라이드 시작
+        var $BoardSlideItem = $('.board_wrap .board_slide .board_slide_item');
+        $BoardSlideItem.each(function(){
+            var $this = $(this),
+                $YouthSlideWrap = $this.find('.youth_slide_wrap'),
+                $YouthSlideList = $YouthSlideWrap.find('.youth_slide_list'),
+                $YouthSlideControl = $YouthSlideWrap.find('.youth_slide_control'),
+                $YouthSlidePrev = $YouthSlideControl.find('.prev'),
+                $YouthSlideNext = $YouthSlideControl.find('.next');
+            $YouthSlideList.slick({
+                //기본
+                autoplay : false,
+                dots : false,
+                draggable : true,
+                swipe : true,
+                swipeToSlide : true,
+                slidesToShow : 3,
+                slidesToScroll : 1,
+                variableWidth : false,
+                infinite : true,
+                arrows : true,
+                prevArrow : $YouthSlidePrev,
+                nextArrow : $YouthSlideNext,
+                pauseOnArrowClick : true,
+                pauseOnHover : true,
+                pauseOnSwipe : true,
+                pauseOnDotsClick : true,
+                zIndex : 1,
+                fade : false,
+                responsive : [{}]
+            });
+        });
+        $('.board_wrap .board_tab .board_tab_list .board_tab_item button.board_tab_btn').on('click', function(){
+            var $this = $(this),
+                $MyBoardItem = $this.parent('.board_tab_item'),
+                IsActive = $MyBoardItem.is('.active'),
+                MyBoardItemData = $MyBoardItem.attr('data-board'),
+                $OtherBoardItem = $MyBoardItem.siblings('.board_tab_item'),
+                $OtherBoardTabBtn = $OtherBoardItem.find('button.board_tab_btn'),
+                $BoardSlideList = $('.board_wrap .board_slide .board_slide_list'),
+                $MyBoardSlideItem = $BoardSlideList.find('.board_slide_item[data-board="'+MyBoardItemData+'"]'),
+                $MyYouthSlideList = $MyBoardSlideItem.find('.youth_slide_list'),
+                $OtherBoardSlideItem = $BoardSlideList.find('.board_slide_item').not($MyBoardSlideItem);
+            if(!IsActive){
+                $OtherBoardItem.removeClass('active');
+                $OtherBoardTabBtn.removeAttr('title');
+                $OtherBoardSlideItem.removeClass('active');
+                $MyBoardItem.addClass('active');
+                $this.attr('title', '선택됨');
+                $MyBoardSlideItem.addClass('active');
+                $MyYouthSlideList.slick('setPosition');
+            }
+        });
+        //공지사항 탭메뉴 및 슬라이드 끝
 
     });
 })(jQuery);
