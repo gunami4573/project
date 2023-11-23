@@ -212,5 +212,52 @@
         });
         //공지사항 탭메뉴 및 슬라이드 끝
 
+        //포토갤러리 슬라이드 시작
+        var $PhotoSlideList = $('.photo_wrap .photo_slide_wrap .photo_slide_list'),
+            $PhotoSlidePrev = $('.photo_wrap .photo_slide_wrap .photo_slide_control .prev'),
+            $PhotoSlideNext = $('.photo_wrap .photo_slide_wrap .photo_slide_control .next'),
+            $PhotoDecoList = $('.photo_wrap .photo_deco_list');
+        $PhotoSlideList.on('init', function(event, slick, currentSlide, nextSlide) {
+            var $crtSlide = $(slick.$slides[0]),
+                crtSlideData = $crtSlide.attr('data-slick-index');
+            $PhotoDecoList.find('.photo_deco_item').eq(crtSlideData).addClass('active');
+            setTimeout(function(){
+                $PhotoDecoList.find('.photo_deco_item').eq(crtSlideData).addClass('deco_ani');
+            }, 1);
+        });
+        $PhotoSlideList.slick({
+            //기본
+            autoplay : false,
+            speed : 1200,
+            dots : false,
+            draggable : true,
+            swipe : true,
+            swipeToSlide : true,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            variableWidth : true,
+            infinite : true,
+            arrows : true,
+            prevArrow : $PhotoSlidePrev,
+            nextArrow : $PhotoSlideNext,
+            pauseOnArrowClick : true,
+            pauseOnHover : true,
+            pauseOnSwipe : true,
+            pauseOnDotsClick : true,
+            zIndex : 1,
+            fade : false,
+            responsive : [{}]
+        });
+        $PhotoSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            var $nextSlide = $(slick.$slides[nextSlide]),
+                nextSlideData = $nextSlide.attr('data-slick-index');
+            var num = nextSlideData % 3;
+            $PhotoDecoList.find('.photo_deco_item').removeClass('active deco_ani');
+            $PhotoDecoList.find('.photo_deco_item').eq(num).addClass('active');
+            setTimeout(function(){
+                $PhotoDecoList.find('.photo_deco_item').eq(num).addClass('deco_ani');
+            }, 1);
+        });
+        //포토갤러리 슬라이드 끝
     });
 })(jQuery);
