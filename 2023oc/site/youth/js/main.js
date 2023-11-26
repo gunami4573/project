@@ -186,7 +186,24 @@
                 pauseOnDotsClick : true,
                 zIndex : 1,
                 fade : false,
-                responsive : [{}]
+                responsive : [{
+                    breakpoint : 1801,
+                    settings : {
+                        variableWidth : true
+                    }
+                },{
+                    breakpoint : 1601,
+                    settings : {
+                        slidesToShow : 2,
+                        variableWidth : true
+                    }
+                },{
+                    breakpoint : 1101,
+                    settings : {
+                        slidesToShow : 1,
+                        variableWidth : true
+                    }
+                }]
             });
         });
         $('.board_wrap .board_tab .board_tab_list .board_tab_item button.board_tab_btn').on('click', function(){
