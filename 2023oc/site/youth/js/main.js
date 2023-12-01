@@ -168,7 +168,7 @@
                 $YouthSlideNext = $YouthSlideControl.find('.next');
             $YouthSlideList.slick({
                 //기본
-                autoplay : false,
+                autoplay : true,
                 dots : false,
                 draggable : true,
                 swipe : true,
@@ -202,6 +202,36 @@
                     settings : {
                         slidesToShow : 1,
                         variableWidth : true
+                    }
+                },{
+                    breakpoint : 1001,
+                    settings : {
+                        slidesToShow : 2,
+                        variableWidth : true
+                    }
+                },{
+                    breakpoint : 861,
+                    settings : {
+                        slidesToShow : 1,
+                        variableWidth : true
+                    }
+                },{
+                    breakpoint : 641,
+                    settings : {
+                        slidesToShow : 2,
+                        variableWidth : true
+                    }
+                },{
+                    breakpoint : 591,
+                    settings : {
+                        slidesToShow : 1,
+                        variableWidth : true
+                    }
+                },{
+                    breakpoint : 481,
+                    settings : {
+                        slidesToShow : 1,
+                        variableWidth : false
                     }
                 }]
             });
