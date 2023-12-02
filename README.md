@@ -8,7 +8,7 @@
 - [보건소 메인 레이아웃](https://gunami4573.github.io/project/2023oc/site/health/main.html)
 - [홍보관 메인 레이아웃](https://gunami4573.github.io/project/2023oc/site/promote/main.html)
 - [문화관광 메인 레이아웃](https://gunami4573.github.io/project/2023oc/site/tour/main.html)
-- [청소년시설 메인 레이아웃 - 작업중](https://gunami4573.github.io/project/2023oc/site/youth/main.html)
+- [청소년시설 메인 레이아웃](https://gunami4573.github.io/project/2023oc/site/youth/main.html)
 
 ### 2023nyj (2023 남양주시청 전면개편)
 - [외국어(공통) 메인 레이아웃](https://gunami4573.github.io/project/2023nyj/site/eng/main.html)
