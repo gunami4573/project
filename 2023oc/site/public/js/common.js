@@ -290,6 +290,7 @@ $(document).ready(function () {
                 $lnbDepthItem.removeClass('active active_prev active_next');
             }
         });
+        /*
         $lnb.find('.depth1_item:last-child .depth:last-child:visible').find('> .depth_list > .depth_item:last-child .depth_text').on('focusout', function (event) {
             if (mode === 'pc') {
                 $lnbMenu.height('');
@@ -297,6 +298,40 @@ $(document).ready(function () {
                 $lnbDepthItem.removeClass('active active_prev active_next');
             }
         });
+        */
+
+        /* 2024.1.9. */
+        var $Depth1ItemLast = $lnb.find('.depth1_item:last-child'),
+            Depth1ItemIsSolo = $Depth1ItemLast.is('.solo');
+        if(Depth1ItemIsSolo){
+            $Depth1ItemLast.find('>.depth_text').on('focusout', function(event) {
+                if(mode === 'pc') {
+                    $lnbMenu.height('');
+                    $html.removeClass('lnb_open');
+                    $lnbDepthItem.removeClass('active active_prev active_next');
+                }
+            });
+        } else{
+            var $Depth2ItemLast = $Depth1ItemLast.find('.depth2_item:last-child'),
+                Depth2ItemIsSolo = $Depth2ItemLast.is('.solo');
+            if(Depth2ItemIsSolo){
+                $Depth2ItemLast.find('>.depth_text').on('focusout', function(event) {
+                    if(mode === 'pc') {
+                        $lnbMenu.height('');
+                        $html.removeClass('lnb_open');
+                        $lnbDepthItem.removeClass('active active_prev active_next');
+                    }
+                });
+            } else{
+                $lnb.find('.depth1_item:last-child .depth:visible:last').find('> .depth_list > .depth_item:last-child .depth_text').on('focusout', function(event) {
+                    if(mode === 'pc') {
+                        $lnbMenu.height('');
+                        $html.removeClass('lnb_open');
+                        $lnbDepthItem.removeClass('active active_prev active_next');
+                    }
+                });
+            }
+        }
 
         //여기서부터 코드 작성해주세요
 
