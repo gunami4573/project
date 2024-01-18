@@ -382,6 +382,21 @@ $(document).ready(function () {
         });
         //footer_bottom footer_link 끝
 
+        //2024. 1. 18. 레이아웃 수정 시작
+        function layoutFixed(){
+            var FixedWindowTop = $window.scrollTop();
+            if(FixedWindowTop > 0){
+                $('#wrapper').addClass('edu_fixed');
+            }
+            else{
+                $('#wrapper').removeClass('edu_fixed');
+            }
+        }
+        $window.on('scroll', function(){
+            layoutFixed();
+        });
+        layoutFixed();
+        //2024. 1. 18. 레이아웃 수정 끝
 
         $window.on('screen:wide screen:web', function (event) {
             refreshLnbHeight();

@@ -18,7 +18,7 @@
             scrollTime : 300,
             scrollSpy : true,
             activeParent : true,
-            navHeight : '0'
+            navHeight : '500'
         });
         $window.on('scroll', function(){
             var $NewWrapper = $('#wrapper'),
@@ -35,15 +35,17 @@
                 $html.removeClass('scroll_start');
             }
             if(NewWrapperData == 'edu_quick_menu_active0'){
-                $html.removeClass('rowgroup2_ani').removeClass('rowgroup3_ani').addClass('rowgroup1_ani');
+                //.removeClass('rowgroup2_ani').removeClass('rowgroup3_ani')
+                $html.addClass('rowgroup1_ani rowgroup2_ani');
             }
             if(NewWrapperData == 'edu_quick_menu_active1'){
-                $html.removeClass('rowgroup1_ani').removeClass('rowgroup3_ani').addClass('rowgroup2_ani');
+                //.removeClass('rowgroup1_ani').removeClass('rowgroup3_ani')
+                $html.addClass('rowgroup2_ani rowgroup3_ani');
             }
             if(NewWrapperData == 'edu_quick_menu_active2'){
-                $html.removeClass('rowgroup1_ani').removeClass('rowgroup2_ani').addClass('rowgroup3_ani');
+                //.removeClass('rowgroup1_ani').removeClass('rowgroup2_ani')
+                $html.addClass('rowgroup2_ani rowgroup3_ani');
             }
-
         });
         //퀵메뉴 스크립트 끝
 
