@@ -134,6 +134,42 @@
         });
         //반응형 테이블 끝
 
+        //2024. 1. 19. cms_depth2 의 depth2_nav 추가 시작
+        var $Depth2Nav = $('.cms_depth2 .depth2_nav');
+        $Depth2Nav.each(function(){
+            var $this = $(this),
+                $Depth2NavList = $this.find('.depth2_nav_list'),
+                $Depth2NavItem = $Depth2NavList.find('.depth2_nav_item'),
+                Depth2NavItemLength = $Depth2NavItem.length;
+            $('.cms_depth2').addClass('nav_divide'+Depth2NavItemLength+'');
+
+            $Depth2NavItem.each(function(){
+                var $thisItem = $(this),
+                    $thisLinkText = $thisItem.find('.depth2_nav_text');
+                if($thisItem.is('.has')){
+                    $thisLinkText.on('click', function(){
+                        var $thisLink = $(this),
+                            $MyParent = $thisLink.parent('.depth2_nav_item'),
+                            IsActive = $MyParent.is('.active'),
+                            $MyDepth3Nav = $MyParent.find('.depth3_nav'),
+                            $OtherParent = $MyParent.siblings('.depth2_nav_item'),
+                            $OtherDepth3Nav = $OtherParent.find('.depth3_nav');
+                        if(!IsActive){
+                            $OtherParent.removeClass('active');
+                            $OtherDepth3Nav.slideUp(200, 'linear');
+                            $MyParent.addClass('active');
+                            $MyDepth3Nav.slideDown(200, 'linear');
+                        }
+                        else{
+                            $MyParent.removeClass('active');
+                            $MyDepth3Nav.slideUp(200, 'linear');
+                        }
+                    });
+                }
+            });
+        });
+        //2024. 1. 19. cms_depth2 의 depth2_nav 추가 끝
+
         $window.on('screen:tablet screen:phone', function (event) {
 
         });

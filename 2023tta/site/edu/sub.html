@@ -797,42 +797,82 @@
             <i class="img_deco"></i>
         </div>    <!--//visual_img_box-->
         <div class="cms_depth2">
-            <a href="./index.do" class="home_link">홈으로</a>    <!--//cms_depth2_home-->
-            <!--//CMS 2차 메뉴명, 링크 개발처리-->
-            <!--//CMS 2차 메뉴가 새창이면 a.cms_depth2_text 태그에 target="_blank" title="새창" 개발처리-->
-            <!--//CMS 2차 메뉴가 선택되었으면, li.cms_depth2_item 태그에 active 클레스 추가 개발처리 , 선택된 a.cms_depth2_text 태그에는 title="선택됨" 개발처리-->
-            <ul class="cms_depth2_list">
-                <li class="cms_depth2_item">
-                    <a href="" class="cms_depth2_text"><span><em>2차메뉴명</em></span></a>
-                </li>    <!--//cms_depth2_item-->
-                <li class="cms_depth2_item">
-                    <a href="" class="cms_depth2_text"><span><em>2차메뉴명</em></span></a>
-                </li>    <!--//cms_depth2_item-->
-                <li class="cms_depth2_item">
-                    <a href="" class="cms_depth2_text"><span><em>2차메뉴명</em></span></a>
-                </li>    <!--//cms_depth2_item-->
-                <li class="cms_depth2_item">
-                    <a href="" class="cms_depth2_text"><span><em>2차메뉴명</em></span></a>
-                </li>    <!--//cms_depth2_item-->
-                <li class="cms_depth2_item active">
-                    <a href="" title="선택됨" class="cms_depth2_text"><span><em>2차메뉴명 선택됨</em></span></a>    <!--//cms_depth2_text-->
-                </li>    <!--//cms_depth2_item-->
-                <li class="cms_depth2_item">
-                    <a href="" target="_blank" title="새창" class="cms_depth2_text"><span><em>2차메뉴명 새창</em></span></a>    <!--//cms_depth2_text-->
-                </li>    <!--//cms_depth2_item-->
-                <li class="cms_depth2_item">
-                    <a href="" class="cms_depth2_text"><span><em>2차메뉴명</em></span></a>
-                </li>    <!--//cms_depth2_item-->
-                <li class="cms_depth2_item">
-                    <a href="" class="cms_depth2_text"><span><em>2차메뉴명</em></span></a>
-                </li>    <!--//cms_depth2_item-->
-                <li class="cms_depth2_item">
-                    <a href="" class="cms_depth2_text"><span><em>2차메뉴명</em></span></a>
-                </li>    <!--//cms_depth2_item-->
-                <li class="cms_depth2_item">
-                    <a href="" class="cms_depth2_text"><span><em>2차메뉴명</em></span></a>
-                </li>    <!--//cms_depth2_item-->
-            </ul>    <!--//cms_depth2_list-->
+            <div class="depth_nav_home">
+                <a href="./index.do" class="home_link">홈으로</a>    <!--//home_link-->
+            </div>    <!--//depth_nav_home-->
+            <!--//a 태그의 url은 테스트용 입니다-->
+            <!--//선택된 a태그 .depth2_nav_text에 active 클레스 부여해주시고 , title="선택됨" 달아주세요-->
+            <!--//
+                만약 a태그 .depth3_nav_text 가 선택되었다면 active 클레스 부여해주시고 , title="선택됨" 달아주는 것과 동시에,
+                선택된 a태그의 부모메뉴인 .depth2_nav_text 에도 active 클레스 부여해주세요.
+            -->
+            <div class="depth2_nav">
+                <ul class="depth2_nav_list">
+                    <li class="depth2_nav_item solo"><!--//2차메뉴 단일의 경우 solo-->
+                        <a href="https://www.naver.com" target="_blank" title="새창" class="depth2_nav_text">
+                            <span><em>2차메뉴 단일 메뉴 새창 인 경우</em></span>
+                        </a>    <!--//depth2_nav_text-->
+                    </li>    <!--//depth2_nav_item-->
+                    <li class="depth2_nav_item solo"><!--//2차메뉴 단일의 경우 solo-->
+                        <a href="https://www.naver.com" target="_blank" title="새창" class="depth2_nav_text">
+                            <span><em>2차메뉴 단일 메뉴 새창 인 경우</em></span>
+                        </a>    <!--//depth2_nav_text-->
+                    </li>    <!--//depth2_nav_item-->
+                    <li class="depth2_nav_item has"><!--//2차메뉴 밑에 하위메뉴 있을 경우 has-->
+                        <a href="http://192.168.0.237:8089/edu/index.do" class="depth2_nav_text" onclick="return false;">
+                            <span><em>2차메뉴 밑에 3차메뉴 존재</em></span>
+                        </a>    <!--//depth2_nav_text-->
+                        <div class="depth3_nav">
+                            <ul class="depth3_nav_list">
+                                <li class="depth3_nav_item">
+                                    <a href="http://192.168.0.237:8089/edu/index.do" class="depth3_nav_text">
+                                        <span><em>3차메뉴 단일</em></span>
+                                    </a>    <!--//depth3_nav_text-->
+                                </li>    <!--//depth3_nav_item-->
+                                <li class="depth3_nav_item">
+                                    <a href="http://192.168.0.237:8089/edu/index.do" title="선택됨" class="depth3_nav_text">
+                                        <span><em>3차메뉴 선택됨</em></span>
+                                    </a>    <!--//depth3_nav_text-->
+                                </li>    <!--//depth3_nav_item-->
+                                <li class="depth3_nav_item">
+                                    <a href="https://www.naver.com" target="_blank" title="새창" class="depth3_nav_text">
+                                        <span><em>3차메뉴 새창</em></span>
+                                    </a>    <!--//depth3_nav_text-->
+                                </li>    <!--//depth3_nav_item-->
+                            </ul>    <!--//depth3_nav_list-->
+                        </div>    <!--//depth3_nav-->
+                    </li>    <!--//depth2_nav_item-->
+                    <li class="depth2_nav_item solo"><!--//2차메뉴 단일의 경우 solo-->
+                        <a href="http://192.168.0.237:8089/edu/index.do" title="선택됨" class="depth2_nav_text active">
+                            <span><em>2차메뉴 단일 메뉴 선택된 경우</em></span>
+                        </a>    <!--//depth2_nav_text-->
+                    </li>    <!--//depth2_nav_item-->
+                    <li class="depth2_nav_item has"><!--//2차메뉴 밑에 하위메뉴 있을 경우 has-->
+                        <a href="http://192.168.0.237:8089/edu/index.do" class="depth2_nav_text" onclick="return false;">
+                            <span><em>2차메뉴 밑에 3차메뉴 존재</em></span>
+                        </a>    <!--//depth2_nav_text-->
+                        <div class="depth3_nav">
+                            <ul class="depth3_nav_list">
+                                <li class="depth3_nav_item">
+                                    <a href="http://192.168.0.237:8089/edu/index.do" class="depth3_nav_text">
+                                        <span><em>3차메뉴 단일</em></span>
+                                    </a>    <!--//depth3_nav_text-->
+                                </li>    <!--//depth3_nav_item-->
+                                <li class="depth3_nav_item">
+                                    <a href="http://192.168.0.237:8089/edu/index.do" title="선택됨" class="depth3_nav_text">
+                                        <span><em>3차메뉴 선택됨</em></span>
+                                    </a>    <!--//depth3_nav_text-->
+                                </li>    <!--//depth3_nav_item-->
+                                <li class="depth3_nav_item">
+                                    <a href="https://www.naver.com" target="_blank" title="새창" class="depth3_nav_text">
+                                        <span><em>3차메뉴 새창</em></span>
+                                    </a>    <!--//depth3_nav_text-->
+                                </li>    <!--//depth3_nav_item-->
+                            </ul>    <!--//depth3_nav_list-->
+                        </div>    <!--//depth3_nav-->
+                    </li>    <!--//depth2_nav_item-->
+                </ul>    <!--//depth2_nav_list-->
+            </div>    <!--//depth2_nav-->
         </div>    <!--//cms_depth2-->
         <div class="add_box">
             <div class="add_item share">
