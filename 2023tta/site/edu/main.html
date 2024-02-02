@@ -1177,6 +1177,7 @@
                     //1월 ~ 12월 모바일 슬라이드 선언 끝
 
                     //해당 월 버튼을 클릭 시 해당 월에 맞는 ajax 뿌리기 시작
+                    var NowCatagory = 0;
                     $('.month_box .month_slide_wrap .month_list .month_item .month_tab_btn').on('click', function(){
                         var $this = $(this),
                             $MyItem = $this.parent('.month_item'),
@@ -1184,22 +1185,14 @@
                             IsActive = $MyItem.is('.active'),
                             $MonthList = $MyItem.parent('.month_list'),
                             $OtherItem = $MyItem.siblings('.month_item'),
-                            $OtherBtn = $OtherItem.find('.month_tab_btn'),
+                            $OtherBtn = $OtherItem.find('.month_tab_btn');
                             $MonthSlideWrap = $MonthList.parent('.month_slide_wrap'),
                             $MonthBox = $MonthSlideWrap.parent('.month_box'),
                             $FirstLearnBox = $MonthBox.siblings('.learn_box'),
                             $FirstLearnBoxItem = $FirstLearnBox.find('.learn_box_item'),
-                            $FirstLearnTabBox = $FirstLearnBoxItem.find('.learn_tab_box'),
-                            $FirstLearnTabList = $FirstLearnTabBox.find('.learn_tab_list'),
-                            $FirstLearnTabItem = $FirstLearnTabList.find('.learn_tab_item:nth-child(1)'),
-                            $FirstLearnTabBtn = $FirstLearnTabItem.find('.learn_tab_btn'),
-                            $OtherLearnTabItem = $FirstLearnTabItem.siblings('.learn_tab_item'),
-                            $OtherLearnTabBtn = $OtherLearnTabItem.find('.learn_tab_btn');
+                            $FirstLearnTabBox = $FirstLearnBoxItem.find('.learn_tab_box');
                         $MobileMonthSlideList.slick('slickGoTo', MyIndex - 1);
-                        $OtherLearnTabItem.removeClass('active');
-                        $OtherLearnTabBtn.removeAttr('title');
-                        $FirstLearnTabItem.addClass('active');
-                        $FirstLearnTabBtn.attr('title', '선택됨');
+                        console.log(NowCatagory);
                         if(!IsActive){
                             $OtherItem.removeClass('active');
                             $OtherBtn.removeAttr('title');
@@ -1212,7 +1205,9 @@
                                     $StartLearnTabSlideBox.empty().append(data);
                                     var $FirstLearnTabSlideBox = $FirstLearnTabBox.siblings('.learn_tab_slide_box'),
                                         $FirstLearnTabSlideList = $FirstLearnTabSlideBox.find('.learn_tab_slide_list'),
-                                        $FirstLearnTabSlideItem = $FirstLearnTabSlideList.find('.learn_tab_slide_item:nth-child(1)');
+                                        $FirstLearnTabSlideItem = $FirstLearnTabSlideList.find('.learn_tab_slide_item').eq(NowCatagory);
+                                    $FirstLearnTabSlideList.find('.learn_tab_slide_item').removeClass('active slide_ani');
+                                    $FirstLearnTabSlideItem.addClass('active');
                                     setTimeout(function(){
                                         $FirstLearnTabSlideItem.addClass('slide_ani');
                                     }, 1);
@@ -1297,6 +1292,7 @@
                             }, 1);
                             $MySlide.slick('setPosition');
                         }
+                        NowCatagory = MyLearnTabIndex;
                     });
                     //뿌려진 ajax 를 전체, 교육, 자격시험 별로 active 줬다 뺐다 끝
                 });
