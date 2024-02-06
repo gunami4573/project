@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="default.css">
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="print.js"></script>
+    <title>printSample</title>
+    <style>
+        *{position:relative;margin:0;padding:0;border:none;font-size:0;line-height:0;word-break:keep-all;box-sizing:border-box;}
+        body{background-color:#c96a06;}
+        #container{display:block;width:100%;padding:50px 50px 30%;text-align:center;}
+        .print_box{display:inline-block;position:sticky;top:0;left:0;width:100%;padding:3%;background-color:#ea8d2c;border:4px solid #583808;border-radius:30px;vertical-align:top;box-shadow:0px 20px 40px #583808;filter:blur(0px);transition:box-shadow 300ms ease-in-out, background-color 300ms ease-in-out, filter 300ms cubic-bezier(0, 0, 0.43, 0.96);}
+        .print_box.blr{filter:blur(5px);background-color:#c96a06;}
+        .print_box.blr:nth-child(2n){box-shadow:-40px 40px 40px #c96a06;}
+        .print_box.blr:nth-child(2n-1){box-shadow:40px 40px 40px #c96a06;}
+        .print_box + .print_box{margin:50px 0 0;}
+        .print_box .print_desc{display:block;padding:0 15px 15px;border:2px dashed #000;border-radius:30px;font-size:18px;color:#000;line-height:24px;letter-spacing:0.1em;font-weight:bold;filter:blur(0px);transition:filter 500ms cubic-bezier(0, 0, 0.43, 0.96);}
+        .print_box .print_desc.blr{filter:blur(10px);}
+        .print_box .print_desc .title{display:inline-block;font-size:30px;color:inherit;line-height:50px;letter-spacing:inherit;vertical-align:top;}
+        .print_box .print_desc .text{display:block;font-size:inherit;color:#3c1d10;line-height:inherit;letter-spacing:inherit;}
+        .print_box .print_btn{display:inline-block;padding:10px;background-color:#583808;border-radius:15px;font-size:20px;color:#ea8d2c;line-height:30px;letter-spacing:0.1em;font-weight:bold;vertical-align:top;}
+        .print_box .print_desc + .print_btn{margin:15px 0 0;}
+        
+        .new_body{position:relative;height:100vh;background-color:#fff;padding:3vw;}
+        .new_body .print_box{position:static;padding:3vw;text-align:center;box-shadow:none;}
+        .new_body .print_box .print_desc{padding:1vw 3vw 3vw;font-size:1.7vw;line-height:1.1em;}
+        .new_body .print_box .print_desc .title{font-size:4vw;line-height:1.5em;}
+        .new_body .loading_print{display:inline-block;position:absolute;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);font-size:10vw;color:#000;line-height:1.1em;letter-spacing:-0.05em;font-weight:bold;vertical-align:top;white-space:nowrap;}
+        @keyframes loading-text {
+            0%{transform-origin:50% 50%;transform:skewX(10deg) translateX(-50%) translateY(-50%);opacity:0;text-shadow:-30px -30px 0px #de1144, 60px -60px 0px #000;letter-spacing:-0.05em;}
+            20%{transform:skewX(30deg) translateX(-80%) translateY(100%);letter-spacing:-0.01em;}
+            80%{transform:skewX(-30deg) translateX(-15%) translateY(0%);letter-spacing:-0.09em;}
+            100%{transform-origin:50% 50%;transform:skewX(-10deg) translateX(-50%) translateY(-50%);opacity:1;text-shadow:10px 10px 0px #03a6f1, 20px 20px 0px #0a4ba5;letter-spacing:-0.05em;}
+        }
+        .new_body .loading_print{animation-name:loading-text;animation-duration:2000ms;animation-delay:0ms;animation-direction:alternate;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.52,.08,.04,1.18);}
+        
+        @media print{
+            @page{size:21cm 27cm;margin:0mm;}
+            .new_body *{background-color:#fff !important;}
+            .new_body .print_box{height:100%;}
+            .new_body .print_box .print_desc{height:100%;font-size:16px;letter-spacing:-0.08em;}
+            .new_body .loading_print{display:none;}
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="print_box">
+        <div class="print_desc">
+            <h1 class="title">PRINT TITLE01</h1>    <!--//title-->
+            <p class="text">TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01</p>
+            <p class="text">TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01</p>
+            <p class="text">TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01</p>
+            <p class="text">TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01 TEXT01</p>
+        </div>    <!--//print_desc-->
+        <button type="button" class="print_btn">PRINT</button>    <!--//print_btn-->
+    </div>    <!--//print_box-->
+    <div class="print_box">
+        <div class="print_desc">
+            <h1 class="title">PRINT TITLE02</h1>    <!--//title-->
+            <p class="text">TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02</p>
+            <p class="text">TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02</p>
+            <p class="text">TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02</p>
+            <p class="text">TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02 TEXT02</p>
+        </div>    <!--//print_desc-->
+        <button type="button" class="print_btn">PRINT</button>    <!--//print_btn-->
+    </div>    <!--//print_box-->
+    <div class="print_box">
+        <div class="print_desc">
+            <h1 class="title">PRINT TITLE03</h1>    <!--//title-->
+            <p class="text">TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03</p>
+            <p class="text">TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03</p>
+            <p class="text">TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03</p>
+            <p class="text">TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03 TEXT03</p>
+        </div>    <!--//print_desc-->
+        <button type="button" class="print_btn">PRINT</button>    <!--//print_btn-->
+    </div>    <!--//print_box-->
+    <div class="print_box">
+        <div class="print_desc">
+            <h1 class="title">PRINT TITLE04</h1>    <!--//title-->
+            <p class="text">TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04</p>
+            <p class="text">TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04</p>
+            <p class="text">TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04</p>
+            <p class="text">TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04 TEXT04</p>
+        </div>    <!--//print_desc-->
+        <button type="button" class="print_btn">PRINT</button>    <!--//print_btn-->
+    </div>    <!--//print_box-->
+    <div class="print_box">
+        <div class="print_desc">
+            <h1 class="title">PRINT TITLE05</h1>    <!--//title-->
+            <p class="text">TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05</p>
+            <p class="text">TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05</p>
+            <p class="text">TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05</p>
+            <p class="text">TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05 TEXT05</p>
+        </div>    <!--//print_desc-->
+        <button type="button" class="print_btn">PRINT</button>    <!--//print_btn-->
+    </div>    <!--//print_box-->
+</div>    <!--//#container-->
+</body>
+</html>
