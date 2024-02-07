@@ -5,7 +5,8 @@
     var $window = $(window);
 
     $(function () {
-
+        
+        //단순 sticky 효과
         var $PrintBox = $('.print_box');
         $PrintBox.each(function () {
             var $this = $(this);
