@@ -7,6 +7,7 @@
     <script src="print.js"></script>
     <title>printSample</title>
     <style>
+        /* 초기 화면 */
         *{position:relative;margin:0;padding:0;border:none;font-size:0;line-height:0;word-break:keep-all;box-sizing:border-box;}
         body{background-color:#c96a06;}
         #container{display:block;width:100%;padding:50px 50px 30%;text-align:center;}
@@ -22,11 +23,7 @@
         .print_box .print_btn{display:inline-block;padding:10px;background-color:#583808;border-radius:15px;font-size:20px;color:#ea8d2c;line-height:30px;letter-spacing:0.1em;font-weight:bold;vertical-align:top;}
         .print_box .print_desc + .print_btn{margin:15px 0 0;}
         
-        .new_body{position:relative;height:100vh;background-color:#fff;padding:3vw;}
-        .new_body .print_box{position:static;padding:3vw;text-align:center;box-shadow:none;}
-        .new_body .print_box .print_desc{padding:1vw 3vw 3vw;font-size:1.7vw;line-height:1.1em;}
-        .new_body .print_box .print_desc .title{font-size:4vw;line-height:1.5em;}
-        .new_body .loading{display:inline-block;position:absolute;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);font-size:10vw;color:#000;line-height:1.1em;letter-spacing:-0.05em;font-weight:bold;vertical-align:top;white-space:nowrap;}
+        /* 새창 화면 */
         @keyframes loading-text {
             0%{transform-origin:0% 0%;transform:skewX(15deg) skewY(15deg) translateX(-50%) translateY(-50%);text-shadow:0px -30px 0px #ea8d2c, 0px -60px 0px #000;letter-spacing:0.05em;opacity:1;}
             100%{transform-origin:0% 0%;transform:skewX(-15deg) skewY(-15deg) translateX(-50%) translateY(-50%);text-shadow:0px -60px 0px #000, 0px -30px 0px #ea8d2c;letter-spacing:-0.05em;opacity:0;}
@@ -35,15 +32,21 @@
             0%{opacity:0;}
             100%{opacity:1;}
         }
+        .new_body{position:relative;height:100vh;background-color:#fff;padding:3vw;}
+        .new_body .print_box{position:static;padding:3vw;text-align:center;box-shadow:none;}
         .new_body .print_box{animation-name:print-box;animation-duration:1000ms;animation-delay:1000ms;animation-direction:alternate;animation-iteration-count:1;animation-timing-function:cubic-bezier(.25, .46, .450, .94);animation-fill-mode:both;}
+        .new_body .print_box .print_desc{padding:1vw 3vw 3vw;font-size:1.7vw;line-height:1.1em;}
+        .new_body .print_box .print_desc .title{font-size:4vw;line-height:1.5em;}
+        .new_body .loading{display:inline-block;position:absolute;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);font-size:10vw;color:#000;line-height:1.1em;letter-spacing:-0.05em;font-weight:bold;vertical-align:top;white-space:nowrap;}
         .new_body .loading{animation-name:loading-text;animation-duration:2000ms;animation-delay:0ms;animation-direction:alternate;animation-iteration-count:1;animation-timing-function:cubic-bezier(.25, .46, .450, .94);animation-fill-mode:both;}
-        
         .new_body .print_start_btn{display:block;position:absolute;z-index:5;top:0;left:0;width:100%;height:100%;border:none;font-size:0;line-height:0;box-sizing:border-box;visibility:hidden;opacity:0;transition-property:visibility, opacity;transition-duration:500ms;transition-timing-function:cubic-bezier(.25, .46, .450, .94);}
         .new_body .print_start_btn:before,
         .new_body .print_start_btn:after{display:block;position:absolute;width:50%;height:0%;background-color:#ea8d2c;content:'';box-sizing:border-box;transition-property:top, bottom, height;transition-duration:500ms;transition-timing-function:cubic-bezier(.52, .08, .04, 1.18);}
         .new_body .print_start_btn:before{top:0;left:0;}
         .new_body .print_start_btn:after{bottom:0;right:0;}
         .new_body .print_start_btn em{display:inline-block;position:relative;z-index:2;font-size:10vw;color:#fff;line-height:1.1em;letter-spacing:-0.05em;font-weight:600;vertical-align:top;transform:translateY(100%);transition-property:transform;transition-duration:1000ms;transition-timing-function:cubic-bezier(.52, .08, .04, 1.18);}
+        
+        /* 새창에서 프린트 실행하기 */
         .new_body.hover_use:hover .print_start_btn{visibility:visible;opacity:1;}
         .new_body.hover_use:hover .print_start_btn:before,
         .new_body.hover_use:hover .print_start_btn:after{height:100%;}
@@ -51,6 +54,7 @@
         .new_body.hover_use:hover .print_start_btn:after{bottom:auto;top:0;}
         .new_body.hover_use:hover .print_start_btn em{transform:translateY(0%);}
         
+        /* 새창에서 프린트 될 화면 */
         @media print{
             @page{size:21cm 27cm;margin:0mm;}
             .new_body *{background-color:#fff !important;}

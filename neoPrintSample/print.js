@@ -81,19 +81,19 @@
                                 '</div><!--// print_desc-->' +
                             '</div><!--// print_box-->' +
                             '<div class="loading">...loading...</div><!--//loading-->' +
-                            '<button type="button" title="Print Go!!!" onclick="window.print();window.close();" class="print_start_btn"><em>Print Start Click</em></button><!--//print_btn-->' +
+                            '<button type="button" title="!!!Print Go!!!" onclick="window.print();window.close();" class="print_start_btn"><em>Print Start Click</em></button><!--//print_btn-->' +
                             '<script>' +
                                 'var body = document.getElementById("body");' +
                                 'setTimeout(function(){' +
                                     'body.classList.add("hover_use");' +
-                                '}, 2500);' +
+                                '}, 2000);' +
                             '</script>' +
                         '</body><!--// new_body-->' +
                     '</html>'
                 );
+
+                // 새창 브라우저를 담을 배열에 새창 브라우저 변수 담기
                 printWindowArray.push(printWindow);
-                console.log(printWindowArray);
-                setTimeout(function(){}, 1);
             });
         });
 
