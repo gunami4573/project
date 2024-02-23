@@ -16,19 +16,21 @@
             bookListPT = $bookList.css('padding-top'),
             bookListPR = $bookList.css('padding-right');
 
-        //로딩 시 z-index , bottom , left 값 초기 함수 설정
-        function bookItemPosition(top, right) {
-            for( var i=0; i < bookListLT; i++ ) {
-                $bookItem.eq(i).css({
-                    'z-index' : bookListLT - i,
-                    'bottom' : 'calc(('+top+' / 3) * '+i+')',
-                    'left' : 'calc(('+right+' / 3) * '+i+')'
-                });
+        setTimeout(function(){
+            //로딩 시 z-index , bottom , left 값 초기 함수 설정
+            function bookItemPosition(top, right) {
+                for( var i=0; i < bookListLT; i++ ) {
+                    $bookItem.eq(i).css({
+                        'z-index' : bookListLT - i,
+                        'bottom' : 'calc(('+top+' / 3) * '+i+')',
+                        'left' : 'calc(('+right+' / 3) * '+i+')'
+                    });
+                }
             }
-        }
 
-        //로딩 시 z-index , bottom , left 값 초기 함수 실행
-        bookItemPosition(bookListPT, bookListPR);
+            //로딩 시 z-index , bottom , left 값 초기 함수 실행
+            bookItemPosition(bookListPT, bookListPR);
+        }, 1);
 
         //로딩 시 첫번째 아이템 tabindex 값 부여 및 엑티브 클레스 부여 함수 설정
         function bookItemFirstTabIndex() {
