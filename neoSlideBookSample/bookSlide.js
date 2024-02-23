@@ -5,16 +5,18 @@
 
     $(function () {
 
+        //요소 찾기
         var $bookList = $('.book_total .book_list'),
             $bookItem = $bookList.find('.book_item'),
             $bookPrev = $('.book_total button.prev'),
             $bookNext = $('.book_total button.next');
 
-        var bookListLT = $bookItem.length;
-        var bookListPT = $bookList.css('padding-top');
-        var bookListPR = $bookList.css('padding-right');
+        //로딩 시 갯수 , 패딩상단 , 패딩우측 값 찾기
+        var bookListLT = $bookItem.length,
+            bookListPT = $bookList.css('padding-top'),
+            bookListPR = $bookList.css('padding-right');
 
-        //로딩 시 z-index , bottom , left 값 초기 실행
+        //로딩 시 z-index , bottom , left 값 초기 함수 설정
         function bookItemPosition(top, right) {
             for( var i=0; i < bookListLT; i++ ) {
                 $bookItem.eq(i).css({
@@ -24,7 +26,20 @@
                 });
             }
         }
+
+        //로딩 시 z-index , bottom , left 값 초기 함수 실행
         bookItemPosition(bookListPT, bookListPR);
+
+        //로딩 시 첫번째 아이템 tabindex 값 부여 및 엑티브 클레스 부여 함수 설정
+        function bookItemFirstTabIndex() {
+            $('.book_list').find('.book_item').attr('tabindex', '-1').removeClass('book_active');
+            $('.book_list').find('.book_item').find('.book_item_link').attr('tabindex', '-1');
+            $('.book_list').find('.book_item:first-child').removeAttr('tabindex').addClass('book_active');
+            $('.book_list').find('.book_item:first-child').find('.book_item_link').removeAttr('tabindex');
+        }
+
+        //로딩 시 첫번째 아이템 tabindex 값 부여 및 엑티브 클레스 부여 함수 실행
+        bookItemFirstTabIndex();
 
         //다음 버튼 클릭 시 첫 아이템 마지막으로 보냄
         $bookNext.on('click', function(){
@@ -46,9 +61,11 @@
             setTimeout(function(){
                 $bookList.append($bookList.find('.book_item:first-child').css({'z-index': 1, 'bottom' : lastBottom, 'left' : lastLeft}));
                 $bookList.find('.book_item:last-child').removeClass('right_move');
+
+                bookItemFirstTabIndex();
             }, 500);
         });
-        
+
         //이전 버튼 클릭 시 마지막 아이템 처음으로 보냄
         $bookPrev.on('click', function(){
             $bookItem.each(function(){
@@ -69,8 +86,9 @@
             $bookList.find('.book_item:first-child').addClass('left_move');
             setTimeout(function(){
                 $bookList.find('.book_item:first-child').removeClass('left_move');
-            }, 500);
 
+                bookItemFirstTabIndex();
+            }, 500);
         });
 
         //윈도우 리사이즈 마다 , css에서 박스 padding-top , padding-right 값 추출하기
