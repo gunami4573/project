@@ -41,8 +41,8 @@
         //로딩 시 첫번째 아이템 tabindex 값 부여 및 엑티브 클레스 부여 함수 실행
         bookItemFirstTabIndex();
 
-        //다음 버튼 클릭 시 첫 아이템 마지막으로 보냄
-        $bookNext.on('click', function(){
+        //Next 동작 첫 아이템 마지막으로 보냄(버튼 클릭 및 반응형 터치에 사용)
+        function bookNext(){
             $bookList.find('.book_item:first-child').addClass('right_move');
             $bookItem.each(function(){
                 var $this = $(this),
@@ -64,10 +64,13 @@
 
                 bookItemFirstTabIndex();
             }, 500);
+        }
+        $bookNext.on('click', function(){
+            bookNext();
         });
 
-        //이전 버튼 클릭 시 마지막 아이템 처음으로 보냄
-        $bookPrev.on('click', function(){
+        //Prev 동작 첫 아이템 마지막으로 보냄(버튼 클릭 및 반응형 터치에 사용)
+        function bookPrev(){
             $bookItem.each(function(){
                 var $this = $(this),
                     thisIndex = $this.index(),
@@ -89,6 +92,23 @@
 
                 bookItemFirstTabIndex();
             }, 500);
+        }
+        $bookPrev.on('click', function(){
+            bookPrev();
+        });
+
+        //모바일에서 터치로 prev, next 동작
+        var touchStart;
+        $('.book_list').bind('touchstart', function (e){
+            touchStart = e.originalEvent.touches[0].clientX;
+        });
+        $('.book_list').bind('touchend', function (e){
+            var touchEnd = e.originalEvent.changedTouches[0].clientX;
+            if(touchStart > touchEnd + 5){
+                bookPrev();
+            }else if(touchStart < touchEnd - 5){
+                bookNext();
+            }
         });
 
         //윈도우 리사이즈 마다 , css에서 박스 padding-top , padding-right 값 추출하기
