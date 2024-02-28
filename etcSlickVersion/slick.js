@@ -50,7 +50,7 @@
                 autoplaySpeed : 3000,
                 centerMode : false,  //센터모드
                 centerPadding : '50px',  //센터모드일때 padding
-                cssEase : 'ease',
+                cssEase : 'ease',  //cubic-bezier 사용 가능
                 customPaging : function(slider, i) { //썸네일 커스텀
                     return $('<button type="button" />').text(i + 1);
                 },
@@ -59,7 +59,7 @@
                 draggable : true,    //마우스로 드레그
                 easing : 'linear',
                 edgeFriction : 0.35,
-                fade : false,    //페이드 효과
+                fade : false,    //페이드 효과 ( slidesToShow 1 일때만 사용 )
                 focusOnSelect : false,   //슬릭 두개 연동 할때 클릭하면 연동된 슬라이드 이동
                 focusOnChange : false, //슬릭 두개 연동 할때 클릭하면 연동된 슬라이드 체인지
                 infinite : true, //무한반복
@@ -83,7 +83,7 @@
                 touchMove : true,
                 touchThreshold : 5,
                 useCSS : true,
-                useTransform : true,
+                useTransform : true,  //기본적으로 .slick-track 이 transform 값으로 동작, false를 하게 되면 (top, left) 값으로 동작하게 됨
                 variableWidth : false, //width를 css로 제어
                 vertical : false, //세로모드 유무
                 verticalSwiping : false, //세로일때 터치 유무
