@@ -38,57 +38,57 @@
             var _ = this, dataSettings;
 
             _.defaults = {
-                accessibility: true,
-                adaptiveHeight: false, //높이값 자연스럽게
-                appendArrows: $(element),
-                appendDots: $(element),
-                arrows: true,   //컨트롤러 사용 유무
-                asNavFor: null, //슬릭 두개 연동
-                prevArrow: '<button class="slick-prev" aria-label="Previous" type="button">Previous</button>',
-                nextArrow: '<button class="slick-next" aria-label="Next" type="button">Next</button>',
-                autoplay: false,
-                autoplaySpeed: 3000,
-                centerMode: false,  //센터모드
-                centerPadding: '50px',  //센터모드일때 padding
-                cssEase: 'ease',
-                customPaging: function(slider, i) { //썸네일 커스텀
+                accessibility : true,
+                adaptiveHeight : false, //높이값 자연스럽게
+                appendArrows : $(element),
+                appendDots : $(element),
+                arrows : true,   //컨트롤러 사용 유무
+                asNavFor : null, //슬릭 두개 연동
+                prevArrow : '<button class="slick-prev" aria-label="Previous" type="button">Previous</button>',
+                nextArrow : '<button class="slick-next" aria-label="Next" type="button">Next</button>',
+                autoplay : false,
+                autoplaySpeed : 3000,
+                centerMode : false,  //센터모드
+                centerPadding : '50px',  //센터모드일때 padding
+                cssEase : 'ease',
+                customPaging : function(slider, i) { //썸네일 커스텀
                     return $('<button type="button" />').text(i + 1);
                 },
-                dots: false,    //썸네일 사용여부
-                dotsClass: 'slick-dots',    //썸네일 부모 클레스
-                draggable: true,    //마우스로 드레그
-                easing: 'linear',
-                edgeFriction: 0.35,
-                fade: false,    //페이드 효과
-                focusOnSelect: false,   //슬릭 두개 연동 할때 클릭하면 연동된 슬라이드 이동
-                focusOnChange: false, //슬릭 두개 연동 할때 클릭하면 연동된 슬라이드 체인지
-                infinite: true, //무한반복
-                initialSlide: 0, //초기 스타트 하는 슬라이드 여부 결정
-                lazyLoad: 'ondemand',
-                mobileFirst: false,
-                pauseOnHover: true, //마우스 오버 했을 때 자동 일시정지 유무
-                pauseOnFocus: true, //포커스 갔을때 일시정지 유무
-                pauseOnDotsHover: false, //썸네일 마우스 올렸을 때 일시정지 유무
-                respondTo: 'window',
-                responsive: null,
-                rows: 2, //여러줄
-                rtl: false,
-                slide: '',
-                slidesPerRow: 1, //여러줄일 때 한줄의 출력 개수
-                slidesToShow: 4, //화면에 출력할 개수
-                slidesToScroll: 1, //넘어갈 때 넘어갈 개수
-                speed: 500, //속도
-                swipe: true, //터치 유무
-                swipeToSlide: false, //터치로 밀었을 때 자연스럽게
-                touchMove: true,
-                touchThreshold: 5,
-                useCSS: true,
-                useTransform: true,
-                variableWidth: false, //width를 css로 제어
-                vertical: false, //세로모드 유무
-                verticalSwiping: false, //세로일때 터치 유무
-                waitForAnimate: true,
-                zIndex: 1000
+                dots : false,    //썸네일 사용여부
+                dotsClass : 'slick-dots',    //썸네일 부모 클레스
+                draggable : true,    //마우스로 드레그
+                easing : 'linear',
+                edgeFriction : 0.35,
+                fade : false,    //페이드 효과
+                focusOnSelect : false,   //슬릭 두개 연동 할때 클릭하면 연동된 슬라이드 이동
+                focusOnChange : false, //슬릭 두개 연동 할때 클릭하면 연동된 슬라이드 체인지
+                infinite : true, //무한반복
+                initialSlide : 0, //초기 스타트 하는 슬라이드 여부 결정
+                lazyLoad : 'ondemand',
+                mobileFirst : false,
+                pauseOnHover : true, //마우스 오버 했을 때 자동 일시정지 유무
+                pauseOnFocus : true, //포커스 갔을때 일시정지 유무
+                pauseOnDotsHover : false, //썸네일 마우스 올렸을 때 일시정지 유무
+                respondTo : 'window',
+                responsive : null,
+                rows : 2, //여러줄
+                rtl : false,
+                slide : '',
+                slidesPerRow : 1, //여러줄일 때 한줄의 출력 개수
+                slidesToShow : 4, //화면에 출력할 개수
+                slidesToScroll : 1, //넘어갈 때 넘어갈 개수
+                speed : 500, //속도
+                swipe : true, //터치 유무
+                swipeToSlide : false, //터치로 밀었을 때 자연스럽게
+                touchMove : true,
+                touchThreshold : 5,
+                useCSS : true,
+                useTransform : true,
+                variableWidth : false, //width를 css로 제어
+                vertical : false, //세로모드 유무
+                verticalSwiping : false, //세로일때 터치 유무
+                waitForAnimate : true,
+                zIndex : 1000
             };
 
             _.initials = {
