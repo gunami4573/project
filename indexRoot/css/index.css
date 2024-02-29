@@ -2,24 +2,24 @@
 
 *{margin:0;padding:0;border:none;font-size:0;line-height:0;box-sizing:border-box;vertical-align:top;}
 
-html, body{position:relative;overflow:hidden;text-align:center;}
-body{height:100dvh;}
+html{-ms-overflow-style:none;scrollbar-width:none;}
+html::-webkit-scrollbar{display:none;}
 
-.svg_box{display:inline-block;position:relative;top:50%;transform:translateY(-50%);width:65vw;height:60vh;vertical-align:top;}
-.svg_box .beluga_svg{display:block;width:100%;height:100%;}
-.svg_box .beluga_svg .path{display:block;width:100%;height:100%;}
+html, body{position:relative;overflow-x:hidden;text-align:center;}
 
-.svg_box .beluga_svg .path{
-    stroke-dashoffset:10000px;
-    stroke-dasharray:10000px;
-    -webkit-transition:stroke-dashoffset 10s cubic-bezier(.86, 0, .07, 1);
-    transition:stroke-dashoffset 10s cubic-bezier(.86, 0, .07, 1);
-}
-body.loading .svg_box .beluga_svg .path{stroke-dashoffset:0;}
+.load_box{display:block;position:fixed;top:0;left:0;width:100%;height:100vh;}
+.load_box .svg_box{display:inline-block;position:relative;width:100vw;height:100vh;vertical-align:top;transform-origin:50% 50%;transform:scale(0.8);visibility:visible;opacity:1;transition:transform 2s cubic-bezier(.52, .08, .04, 1.18), visibility 5s cubic-bezier(.86, 0, .07, 1), opacity 5s cubic-bezier(.86, 0, .07, 1);}
+body.loading .load_box .svg_box{transform:scale(0.4);visibility:hidden;opacity:0;}
+
+.load_box .svg_box .beluga_svg{display:block;width:100%;height:100%;}
+.load_box .svg_box .beluga_svg .path{display:block;width:100%;height:100%;}
+
+.load_box .svg_box .beluga_svg .path{stroke-dashoffset:10000px;stroke-dasharray:10000px;transition:stroke-dashoffset 5s cubic-bezier(.86, 0, .07, 1);}
+body.loading .load_box .svg_box .beluga_svg .path{stroke-dashoffset:0;}
 
 
-#wrapper{display:block;position:relative;width:100%;height:auto;padding:0 3%;visibility:hidden;text-align:left;}
-body.loading #wrapper{visibility:visible;}
+#wrapper{display:block;position:relative;z-index:2;width:100%;height:300vh;background-color:rgba(0, 0, 0, 1);padding:0 3%;text-align:left;visibility:hidden;opacity:0;transition:visibility 5s cubic-bezier(.86, 0, .07, 1), opacity 5s cubic-bezier(.86, 0, .07, 1);}
+body.loading #wrapper{visibility:visible;opacity:1;}
 
 #header{display:block;position:absolute;top:0;left:0;width:100%;}
 
