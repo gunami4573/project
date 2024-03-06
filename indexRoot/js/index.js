@@ -10,12 +10,21 @@
             $header = $('#header'),
             $footer = $('#footer');
 
-        setTimeout(function(){
-            $html.addClass('scroll_on');
-        }, 6000);
+        //
         setTimeout(function(){
             $body.addClass('loading');
         }, 1);
+        //
+
+        //
+        setTimeout(function(){
+            $html.addClass('scroll_on');
+        }, 6000);
+        //
+
+        //
+        var $campanySVG = $('.campany .campany_wrap .campany_box .campany_svg_box .campany_svg');
+        //
 
     });
 })(jQuery);
