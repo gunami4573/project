@@ -23,7 +23,9 @@
         //
 
         //
-        var $campanySVG = $('.campany .campany_wrap .campany_box .campany_svg_box .campany_svg');
+        var $campanySVG = $('.campany .campany_wrap .campany_box .campany_svg_box .campany_svg'),
+            $campanyG = $campanySVG.find('> g');
+        console.dir($campanyG);
         setTimeout(function () {
             $campanySVG.addClass('active');
         }, 4000);
