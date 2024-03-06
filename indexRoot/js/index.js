@@ -11,19 +11,22 @@
             $footer = $('#footer');
 
         //
-        setTimeout(function(){
+        setTimeout(function () {
             $body.addClass('loading');
         }, 1);
         //
 
         //
-        setTimeout(function(){
+        setTimeout(function () {
             $html.addClass('scroll_on');
-        }, 6000);
+        }, 10000);
         //
 
         //
         var $campanySVG = $('.campany .campany_wrap .campany_box .campany_svg_box .campany_svg');
+        setTimeout(function () {
+            $campanySVG.addClass('active');
+        }, 4000);
         //
 
     });
