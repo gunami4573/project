@@ -488,7 +488,7 @@ $(document).ready(function () {
                 $thisParent.addClass('active');
                 $.ajax({
                     cache: false,
-                    url : '/site/public/quickMenu/quick.html',
+                    url : 'https://belugacurtain.github.io/project/2024knue/site/public/quickMenu/quick.html',
                     success : function (data) {
                         $footer.before(data);
                         var $fixedLayer = $('.fixed_layer'),
@@ -524,7 +524,7 @@ $(document).ready(function () {
                 $thisParent.addClass('active');
                 $.ajax({
                     cache: false,
-                    url : '/site/public/userService/user.html',
+                    url : 'https://belugacurtain.github.io/project/2024knue/site/public/userService/user.html',
                     success : function (data) {
                         $footer.before(data);
                         var $fixedLayer = $('.fixed_layer'),
