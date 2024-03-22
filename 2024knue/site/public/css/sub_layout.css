@@ -16,7 +16,7 @@
 .sub_head:before{display:block;position:absolute;top:0;left:50%;transform:translateX(-50%);width:100vw;height:100%;content:'';}
 .sub_head .head_top{display:block;position:relative;width:100%;padding:0 0 72px;}
 .sub_head .head_top .head_title_box{display:block;position:relative;width:100%;min-height:188px;padding:40px 0 28px;text-align:center;}
-.sub_head .head_top .head_title_box .deco{display:block;position:absolute;top:11px;left:calc(50% - 225px);width:449px;height:202px;mask-image:url(../images/sub/sub_head_title_deco.png);-webkit-mask-image: url(../images/sub/sub_head_title_deco.png);transform-origin:50% 100%;}
+.sub_head .head_top .head_title_box .deco{display:block;position:absolute;top:11px;left:calc(50% - 225px);width:449px;height:202px;mask-image:url(../images/sub/sub_head_title_deco.png);-webkit-mask-image:url(../images/sub/sub_head_title_deco.png);mask-size:cover;-webkit-mask-size:cover;transform-origin:50% 100%;}
 .sub_head .head_top .head_title_box .deco:before,
 .sub_head .head_top .head_title_box .deco:after{display:block;position:absolute;z-index:0;top:0;left:0;width:100%;height:100%;content:'';transition:width 2000ms cubic-bezier(.22, .57, .12, .96), opacity 3500ms cubic-bezier(.22, .57, .12, .96);}
 .sub_head .head_top .head_title_box .deco:before{width:0%;background-image:linear-gradient(to right, #086dcd 50%, #2ea66e 100%);opacity:1;}
@@ -73,7 +73,7 @@
 .sub_head .head_top .path_box .path_inner .tab_wrap .inner_depth .inner_list .inner_item .inner_link span{display:block;position:relative;width:100%;padding:0 45px 0 30px;}
 .sub_head .head_top .path_box .path_inner .tab_wrap .inner_depth .inner_list .inner_item .inner_link[target="_blank"] span:before{display:block;position:absolute;top:0;right:26px;width:19px;height:19px;background-image:url(../images/sub/sub_head_head_top_icon.png);background-repeat:no-repeat;background-position:-150px -50px;content:'';}
 .sub_head .head_top .path_box .path_inner .tab_wrap .inner_depth .inner_list .inner_item .inner_link span em{display:inline-block;position:relative;font-size:17px;color:#fff;line-height:20px;letter-spacing:-0.03em;font-weight:700;font-family:'WantedSans';word-break:keep-all;vertical-align:top;}
-.sub_head .head_top .path_box .path_inner .etc_wrap{display:inline-block;position:relative;width:308px;vertical-align:top;text-align:right;}
+.sub_head .head_top .path_box .path_inner .etc_wrap{display:inline-block;position:relative;z-index:1;width:308px;vertical-align:top;text-align:right;}
 .sub_head .head_top .path_box .path_inner .etc_wrap .etc_list{display:inline-block;position:relative;padding:14px 0;vertical-align:top;}
 .sub_head .head_top .path_box .path_inner .etc_wrap .etc_list .etc_item{display:inline-block;position:relative;padding:9px 0;vertical-align:top;}
 .sub_head .head_top .path_box .path_inner .etc_wrap .etc_list .etc_item + .etc_item{margin-left:21px;}
@@ -99,7 +99,16 @@
 .sub_head .head_top .path_box .path_inner .etc_wrap .etc_list .etc_item .etc_btn.print:hover:before{background-position:-50px -150px;}
 .sub_head .head_bottom{display:block;position:relative;width:100%;padding-top:80px;}
 .sub_head .head_bottom .tab_box:last-child{margin-bottom:60px;}
+@media all and (max-width:1470px){
+    .sub_head .head_top .head_title_box{min-height:160px;padding:30px 0;}
+    .sub_head .head_top .head_title_box .current_title em{font-size:46px;line-height:50px;}
+    .sub_head .head_top .head_title_box .deco{top:0;left:calc(50% - 200px);width:400px;height:180px;}
+    .sub_head .head_top .path_box .path_inner .tab_wrap{width:calc(100% - 115px);}
+    .sub_head .head_top .path_box .path_inner .etc_wrap{width:73px;}
+}
 @media all and (max-width:1000px){
+    .sub_head .head_top .path_box .path_inner .tab_wrap .inner_depth{display:none;}
+    .sub_head .head_top .path_box .path_inner .tab_wrap .inner_depth.checker{display:block;width:100%;}
     .sub_head .head_bottom{padding-top:40px;}
     .sub_head .head_bottom .tab_box:last-child{margin-bottom:30px;}
 }
@@ -202,5 +211,8 @@
 /* --------------- footer 시작 --------------- */
 @media all and (min-width:1001px){
     #footer{margin-top:90px;}
+}
+@media all and (max-width:1000px){
+    #footer{margin-top:40px;}
 }
 /* --------------- footer 끝 --------------- */

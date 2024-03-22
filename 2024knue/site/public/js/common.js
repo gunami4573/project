@@ -381,12 +381,16 @@ $(document).ready(function () {
                 $this.attr('title', '닫기');
                 $SearchFormBox.addClass('active');
                 $('.lnb_curtain').addClass('search_on');
+                $('.header_box .last_link_list .last_link_item button.search').parent('.last_link_item').addClass('active');
+                $('.header_box .last_link_list .last_link_item button.search').attr('title', '닫기');
             }
             else{
                 $thisLinkItem.removeClass('active');
                 $this.attr('title', '열기');
                 $SearchFormBox.removeClass('active');
                 $('.lnb_curtain').removeClass('search_on');
+                $('.header_box .last_link_list .last_link_item button.search').parent('.last_link_item').removeClass('active');
+                $('.header_box .last_link_list .last_link_item button.search').attr('title', '열기');
             }
         });
         $LastLinkSearchBtn.on('focusout', function(){
@@ -396,6 +400,30 @@ $(document).ready(function () {
             $LastLinkSearchBtn.focus();
         });
         //와이드 search form 활성화 및 포커스 처리 끝
+
+        //모바일 search form 활성화 시작
+        $document.on('click', '.header_box .last_link_list .last_link_item button.search', function(){
+            var $this = $(this),
+                $thisLinkItem = $this.parent('.last_link_item'),
+                IsActive = $thisLinkItem.is('.active');
+            if(!IsActive){
+                $thisLinkItem.addClass('active');
+                $this.attr('title', '닫기');
+                $SearchFormBox.addClass('active');
+                $('.lnb_curtain').addClass('search_on');
+                $('.header_last .last_link_list .last_link_item button.search').parent('.last_link_item').addClass('active');
+                $('.header_last .last_link_list .last_link_item button.search').attr('title', '닫기');
+            }
+            else{
+                $thisLinkItem.removeClass('active');
+                $this.attr('title', '열기');
+                $SearchFormBox.removeClass('active');
+                $('.lnb_curtain').removeClass('search_on');
+                $('.header_last .last_link_list .last_link_item button.search').parent('.last_link_item').removeClass('active');
+                $('.header_last .last_link_list .last_link_item button.search').attr('title', '열기');
+            }
+        });
+        //모바일 search form 활성화 끝
 
         //푸터 관련링크 시작
         var $footerSelectItem = $('.footer_select .select_box .select_item');
@@ -488,7 +516,7 @@ $(document).ready(function () {
                 $thisParent.addClass('active');
                 $.ajax({
                     cache: false,
-                    url : 'https://belugacurtain.github.io/project/2024knue/site/public/quickMenu/quick.html',
+                    url : '/site/public/quickMenu/quick.html',
                     success : function (data) {
                         $footer.before(data);
                         var $fixedLayer = $('.fixed_layer'),
@@ -524,7 +552,7 @@ $(document).ready(function () {
                 $thisParent.addClass('active');
                 $.ajax({
                     cache: false,
-                    url : 'https://belugacurtain.github.io/project/2024knue/site/public/userService/user.html',
+                    url : '/site/public/userService/user.html',
                     success : function (data) {
                         $footer.before(data);
                         var $fixedLayer = $('.fixed_layer'),
