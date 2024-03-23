@@ -96,7 +96,7 @@
             });
         });
         //sub_head 메뉴 끝
-        
+
         //공유하기 리스트 시작
         var $ShareBtn = $('.etc_list .etc_item button.share');
         $ShareBtn.on('click', function(){
