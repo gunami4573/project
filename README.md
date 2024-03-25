@@ -1,6 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=333333&height=200&section=header&text=SI%20Total%20Project%202020~&fontSize=30&fontColor=ffffff)
 
-### 2024knue (2024 한국교원대학교 신규)(작업중)
+### 2024knue (2024 한국교원대학교 신규)
 - [부설사이트 공통 서브 레이아웃](https://belugacurtain.github.io/project/2024knue/site/public/sub.html)
 - [대표사이트 서브 레이아웃](https://belugacurtain.github.io/project/2024knue/site/www/sub.html)
 
