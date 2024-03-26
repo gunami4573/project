@@ -96,7 +96,7 @@
             });
         });
         //sub_head 메뉴 끝
-
+        
         //공유하기 리스트 시작
         var $ShareBtn = $('.etc_list .etc_item button.share');
         $ShareBtn.on('click', function(){
@@ -249,19 +249,26 @@
                     $mobileTabBtn.attr('title', '탭메뉴 리스트 열기');
                     $mobileTabBtnEm.text(thisBtnEm);
                     $MyTabList.slideUp('150', 'swing');
-
                     $OtherCtsItem.removeClass('active');
                     $OtherTabItem.removeClass('active');
                     $OtherTabBtn.removeAttr('title');
-
                     $MyTabBox.removeClass('active');
                     $MyCtsItem.addClass('active');
                     $MyTabItem.addClass('active');
                     $thisBtn.attr('title', '선택됨');
+                    $('.waypoint').waypoint(function(direction) {
+                        $(this.element)[(direction === 'down') ? 'addClass' : 'removeClass']('active');
+                    }, {offset : '100%'});
                 }
             });
         });
         //탭 컨텐츠 영역 사용 끝
+
+        //컨텐츠 스크롤 효과 시작
+        $('.waypoint').waypoint(function(direction) {
+            $(this.element)[(direction === 'down') ? 'addClass' : 'removeClass']('active');
+        }, {offset : '100%'});
+        //컨텐츠 스크롤 효과 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
