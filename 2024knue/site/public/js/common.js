@@ -520,8 +520,7 @@ $(document).ready(function () {
                     success : function (data) {
                         $footer.before(data);
                         var $fixedLayer = $('.fixed_layer'),
-                            $CloseBtn = $fixedLayer.find('button.close'),
-                            $quickMenuBox = $fixedLayer.find('.quick_menu_box');
+                            $CloseBtn = $fixedLayer.find('button.close');
                         $fixedLayer.fadeIn('500', 'swing', function(){
                             $CloseBtn.focus();
                             $fixedLayer.addClass('swing');
@@ -536,6 +535,18 @@ $(document).ready(function () {
                         });
                         $('.quick_bottom .quick_cts_list .quick_cts_item .quick_link:last-child').on('focusout', function(){
                             $CloseBtn.focus();
+                        });
+                        var $LoadingQuickCtsItem = $('.quick_cts_item');
+                        $LoadingQuickCtsItem.each(function(){
+                            var $this = $(this);
+                            if($this.is('.active')){
+                                if($this.find('a').length < 15){
+                                    $this.parent('.quick_cts_list').removeAttr('tabindex');
+                                }
+                                else{
+                                    $this.parent('.quick_cts_list').attr('tabindex', '0');
+                                }
+                            }
                         });
                     }
                 });
@@ -592,12 +603,32 @@ $(document).ready(function () {
                                 $otherServiceTabItem.removeClass('active');
                                 $otherServiceTabBtn.removeAttr('title');
                                 $thisuserServiceCtsItem.addClass('active');
+                                if($thisuserServiceCtsItem.is('.active')){
+                                    if($thisuserServiceCtsItem.find('a').length < 15){
+                                        $thisuserServiceCtsItem.parent('.service_cts_list').removeAttr('tabindex');
+                                    }
+                                    else{
+                                        $thisuserServiceCtsItem.parent('.service_cts_list').attr('tabindex', '0');
+                                    }
+                                }
                                 $thisServiceTabItem.addClass('active');
                                 $thisServiceTabBtn.attr('title', '선택됨');
                             }
                         });
                         $('.service_bottom .service_cts_list .service_cts_item .service_link:last-child').on('focusout', function(){
                             $CloseBtn.focus();
+                        });
+                        var $LoadingServiceCtsItem = $('.service_cts_item');
+                        $LoadingServiceCtsItem.each(function(){
+                            var $this = $(this);
+                            if($this.is('.active')){
+                                if($this.find('a').length < 15){
+                                    $this.parent('.service_cts_list').removeAttr('tabindex');
+                                }
+                                else{
+                                    $this.parent('.service_cts_list').attr('tabindex', '0');
+                                }
+                            }
                         });
                     }
                 });
