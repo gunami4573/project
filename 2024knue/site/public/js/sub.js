@@ -96,7 +96,7 @@
             });
         });
         //sub_head 메뉴 끝
-        
+
         //공유하기 리스트 시작
         var $ShareBtn = $('.etc_list .etc_item button.share');
         $ShareBtn.on('click', function(){
@@ -161,6 +161,18 @@
             }, 500);
         });
         //프린트하기 끝
+
+        //탭 공통 시작
+        var $PublicTabList = $('.tab_box .tab_list');
+        $PublicTabList.each(function(){
+            var $this = $(this),
+                $thisActive = $this.find('.active'),
+                $thisActiveTabLink = $thisActive.find('.tab_link'),
+                $thisActiveSpan = $thisActiveTabLink.find('span'),
+                thisActiveEmText = $thisActiveSpan.find('em').text();
+            $this.siblings('button.tab_btn').find('em').text(thisActiveEmText);
+        });
+        //탭 공통 끝
 
         //CMS 탭 type01 메뉴 시작
         var $Type01TabList = $('.tab_box.type01 .tab_list');
