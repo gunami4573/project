@@ -155,7 +155,9 @@
         //게시판 슬라이드 탭 끝
 
         //청람동정 슬라이드 시작
-        var $cheongSlide = $('.cheong .cheong_wrap .cheong_slide');
+        var $cheongSlide = $('.cheong .cheong_wrap .cheong_slide'),
+            $cheongPrev = $('.cheong .cheong_wrap .prev'),
+            $cheongNext = $('.cheong .cheong_wrap .next');
         $cheongSlide.slick({
             autoplay : false,
             dots : false,
@@ -167,6 +169,8 @@
             variableWidth : false,
             infinite : true,
             arrows : true,
+            prevArrow : $cheongPrev,
+            nextArrow : $cheongNext,
             pauseOnArrowClick : true,
             pauseOnDirectionKeyPush : true,
             pauseOnSwipe : true,
