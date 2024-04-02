@@ -504,7 +504,7 @@ $(document).ready(function () {
         $window.on('scroll', function(e){
             var nowScrollTop = $window.scrollTop();
             fixedScroll(nowScrollTop);
-            fixedHidden(footerTopStart, nowScrollTop);
+            fixedHidden($footer.offset().top, nowScrollTop);
         });
 
         //퀵메뉴 레이어 시작
