@@ -256,7 +256,9 @@
                     $mobileTabBtnEm = $mobileTabBtnSpan.find('em'),
                     $CtsBox = $MyTabBox.siblings('.cts_box'),
                     $MyCtsItem = $CtsBox.find('.cts_item').eq(MyTabIndex),
-                    $OtherCtsItem = $CtsBox.find('.cts_item').not($MyCtsItem);
+                    $OtherCtsItem = $CtsBox.find('.cts_item').not($MyCtsItem),
+                    $MyCtsItemMap = $MyCtsItem.find('.temp_map_box'),
+                    $OtherCtsItemMap = $OtherCtsItem.find('.temp_map_box');
                 if(!IsActive){
                     $mobileTabBtn.attr('title', '탭메뉴 리스트 열기');
                     $mobileTabBtnEm.text(thisBtnEm);
@@ -271,6 +273,30 @@
                     $('.waypoint').waypoint(function(direction) {
                         $(this.element)[(direction === 'down') ? 'addClass' : 'removeClass']('active');
                     }, {offset : '100%'});
+
+                    //탭안에 지도
+                    setTimeout(function(){
+                        $MyCtsItemMap.each(function(){
+                            var $this = $(this),
+                                $MyDrawMap = $this.find('.draw_map'),
+                                MyTimeStamp = $MyDrawMap.attr('data-timestamp'),
+                                MyMapKey = $MyDrawMap.attr('data-key'),
+                                $DaumRoughMap = $MyDrawMap.find('.root_daum_roughmap');
+                            $DaumRoughMap.empty();
+                            new daum.roughmap.Lander({
+                                "timestamp" : MyTimeStamp,
+                                "key" : MyMapKey,
+                                "mapWidth" : "",
+                                "mapHeight" : ""
+                            }).render();
+                        });
+                        $OtherCtsItemMap.each(function(){
+                            var $this = $(this),
+                                $OtherDrawMap = $this.find('.draw_map'),
+                                $DaumRoughMap = $OtherDrawMap.find('.root_daum_roughmap');
+                            $DaumRoughMap.empty();
+                        });
+                    }, 1);
                 }
             });
         });
