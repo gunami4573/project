@@ -294,7 +294,13 @@
                 pauseOnDirectionKeyPush : true,
                 pauseOnSwipe : true,
                 pauseOnDotsClick : true,
-                zIndex : 1
+                zIndex : 1,
+                responsive : [{
+                    breakpoint : 1236,
+                    settings : {
+                        slidesToShow : 2
+                    }
+                }]
             });
         });
         $('.sns_tab .sns_tab_item button.sns_tab_btn').on('click', function(){
