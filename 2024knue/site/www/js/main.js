@@ -47,8 +47,8 @@
         //Mobile 전용
         $MobilevisualSlideList.slick({
             autoplay : true,
-            autoplaySpeed : 3000,
-            speed : 1500,
+            autoplaySpeed : 3900,
+            speed : 1300,
             dots : false,
             draggable : true,
             swipe : true,
@@ -206,7 +206,18 @@
             pauseOnDirectionKeyPush : true,
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
-            zIndex : 1
+            zIndex : 1,
+            responsive : [{
+                breakpoint : 1471,
+                settings : {
+                    slidesToShow : 4
+                }
+            },{
+                breakpoint : 1236,
+                settings : {
+                    slidesToShow : 3
+                }
+            }]
         });
         //학사일정 슬라이드 끝
 
