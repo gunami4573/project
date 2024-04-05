@@ -161,7 +161,7 @@
             $cheongPrev = $('.cheong .cheong_wrap .prev'),
             $cheongNext = $('.cheong .cheong_wrap .next');
         $cheongSlide.slick({
-            autoplay : true,
+            autoplay : false,
             autoplaySpeed : 3900,
             speed : 1300,
             dots : false,
@@ -179,7 +179,13 @@
             pauseOnDirectionKeyPush : true,
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
-            zIndex : 1
+            zIndex : 1,
+            responsive : [{
+                breakpoint : 1001,
+                settings : {
+                    slidesToShow : 3
+                }
+            }]
         });
         //청람동정 슬라이드 끝
 
@@ -216,6 +222,11 @@
                 breakpoint : 1236,
                 settings : {
                     slidesToShow : 3
+                }
+            },{
+                breakpoint : 801,
+                settings : {
+                    slidesToShow : 2
                 }
             }]
         });
@@ -297,6 +308,16 @@
                 zIndex : 1,
                 responsive : [{
                     breakpoint : 1236,
+                    settings : {
+                        slidesToShow : 2
+                    }
+                },{
+                    breakpoint : 1001,
+                    settings : {
+                        slidesToShow : 3
+                    }
+                },{
+                    breakpoint : 801,
                     settings : {
                         slidesToShow : 2
                     }
