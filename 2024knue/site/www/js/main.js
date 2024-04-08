@@ -15,15 +15,32 @@
         //비주얼 슬라이드 시작
         var $visualSlideList = $('.visual .visual_wrap .visual_slide_wrap .visual_slide_list'),
             $MobilevisualSlideList = $('.visual .visual_wrap .visual_slide_wrap .m_visual_slide_list'),
+            $MobileVisualClone = $MobilevisualSlideList.clone(),
             $visualSlidePrev = $('.visual .visual_wrap .visual_slide_wrap .prev'),
             $visualSlideNext = $('.visual .visual_wrap .visual_slide_wrap .next'),
             $visualSlideCurrent = $('.visual .visual_wrap .visual_slide_wrap .current'),
             $visualSlideTotal = $('.visual .visual_wrap .visual_slide_wrap .total');
+        //Mobile 전용 비주얼 모아보기 팝업
+        $('button.m_visual_modal_btn').on('click', function(){
+            $('#wrapper').find('.visual_popup').remove();
+            $('#wrapper').prepend('<div class="visual_popup"><div class="popup_inner"><button type="button" class="popup_close">비주얼 팝업 닫기</button></div></div>');
+            $('.visual_popup .popup_inner').append($MobileVisualClone);
+            setTimeout(function(){
+                $('.visual_popup').addClass('active');
+            }, 1);
+        });
+        //Mobile 전용 비주얼 모아보기 닫기
+        $document.on('click', '.visual_popup .popup_inner button.popup_close', function() {
+            $('#wrapper').find('.visual_popup').removeClass('active');
+            setTimeout(function(){
+                $('#wrapper').find('.visual_popup').remove();
+            }, 800);
+        });
         //PC 전용
         $visualSlideList.slick({
             autoplay : true,
-            autoplaySpeed : 3900,
-            speed : 1300,
+            autoplaySpeed : 3000,
+            speed : 1000,
             dots : false,
             draggable : true,
             swipe : true,
@@ -47,8 +64,8 @@
         //Mobile 전용
         $MobilevisualSlideList.slick({
             autoplay : true,
-            autoplaySpeed : 3900,
-            speed : 1300,
+            autoplaySpeed : 3000,
+            speed : 1000,
             dots : false,
             draggable : true,
             swipe : true,
@@ -63,6 +80,7 @@
             pauseOnSwipe : true,
             pauseOnDotsClick : true,
             zIndex : 1,
+            fade : true,
             asNavFor : $visualSlideList
         });
         //비주얼 슬라이드 끝
@@ -107,10 +125,28 @@
             pauseOnDotsClick : true,
             zIndex : 1
         });
+
+        function stickyScroll(item, itemTop, scrollTop){
+            if(scrollTop + 120 > itemTop){
+                item.addClass('sticky');
+            }
+            else{
+                item.removeClass('sticky');
+            }
+        }
+        function stickyLoading(item, itemTop, scrollTop){
+            if(scrollTop + 120 > itemTop){
+                item.addClass('sticky');
+            }
+            else{
+                item.removeClass('sticky');
+            }
+        }
         var $boardCTSitem = $('.board_cts .board_cts_item');
         $boardCTSitem.each(function(){
             var $this = $(this),
                 $thisCTSslide = $this.find('.board_cts_slide');
+
             $thisCTSslide.slick({
                 autoplay : false,
                 dots : false,
@@ -127,6 +163,16 @@
                 pauseOnSwipe : true,
                 pauseOnDotsClick : true,
                 zIndex : 1
+            });
+
+            var $thisCTSslickSlide = $thisCTSslide.find('.slick-slide');
+            $thisCTSslickSlide.each(function(){
+                var $thisSlide = $(this);
+                $window.on('scroll', function(){
+                    var wdwScrollTop = $window.scrollTop();
+                    stickyScroll($thisSlide, $thisSlide.offset().top, wdwScrollTop);
+                });
+                stickyLoading($thisSlide, $thisSlide.offset().top, $window.scrollTop());
             });
         });
         $document.on('click', '.board_tab .board_tab_item button.board_tab_btn', function(){
@@ -151,6 +197,9 @@
                 $this.attr('title', '선택됨');
                 $thisCTSitem.addClass('active');
                 $thisCTSitem.find('.board_cts_slide').slick('setPosition');
+                setTimeout(function(){
+                    $thisCTSitem.find('.slick-slide').removeClass('sticky');
+                }, 1);
                 $boardTab.slick('slickGoTo', thisSlideIndex);
             }
         });
