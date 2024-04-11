@@ -125,7 +125,6 @@
             pauseOnDotsClick : true,
             zIndex : 1
         });
-
         function stickyScroll(item, itemTop, scrollTop){
             if(scrollTop + 120 > itemTop){
                 item.addClass('sticky');
@@ -146,7 +145,6 @@
         $boardCTSitem.each(function(){
             var $this = $(this),
                 $thisCTSslide = $this.find('.board_cts_slide');
-
             $thisCTSslide.slick({
                 autoplay : false,
                 dots : false,
@@ -164,7 +162,6 @@
                 pauseOnDotsClick : true,
                 zIndex : 1
             });
-
             var $thisCTSslickSlide = $thisCTSslide.find('.slick-slide');
             $thisCTSslickSlide.each(function(){
                 var $thisSlide = $(this);
@@ -210,9 +207,9 @@
             $cheongPrev = $('.cheong .cheong_wrap .prev'),
             $cheongNext = $('.cheong .cheong_wrap .next');
         $cheongSlide.slick({
-            autoplay : false,
-            autoplaySpeed : 3900,
-            speed : 1300,
+            autoplay : true,
+            autoplaySpeed : 3000,
+            speed : 1000,
             dots : false,
             draggable : true,
             swipe : true,
@@ -233,6 +230,11 @@
                 breakpoint : 1001,
                 settings : {
                     slidesToShow : 3
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 1
                 }
             }]
         });
@@ -276,6 +278,12 @@
                 breakpoint : 801,
                 settings : {
                     slidesToShow : 2
+                }
+            },{
+                breakpoint : 641,
+                settings : {
+                    slidesToShow : 2,
+                    variableWidth : true
                 }
             }]
         });
@@ -369,6 +377,12 @@
                     breakpoint : 801,
                     settings : {
                         slidesToShow : 2
+                    }
+                },{
+                    breakpoint : 641,
+                    settings : {
+                        slidesToShow : 2,
+                        variableWidth : true
                     }
                 }]
             });
