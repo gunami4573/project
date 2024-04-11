@@ -2,7 +2,7 @@
 
 ### 2024knue (2024 한국교원대학교 신규)
 - [부설사이트 공통 서브 레이아웃](https://belugacurtain.github.io/project/2024knue/site/public/sub.html)
-- [대표사이트 메인 레이아웃(작업중)](https://belugacurtain.github.io/project/2024knue/site/www/main.html)
+- [대표사이트 메인 레이아웃](https://belugacurtain.github.io/project/2024knue/site/www/main.html)
 - [대표사이트 서브 레이아웃](https://belugacurtain.github.io/project/2024knue/site/www/sub.html)
 
 ### 2023oc (2023 옥천군청 전면개편)
