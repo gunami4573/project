@@ -111,12 +111,17 @@
         }
         $newsLeftSlideList.on('init', function(event, slick, currentSlide) {
             $newsSlideControl.addClass('news_ani');
+            $newsLeftSlideList.find('.slick-slide').addClass('mobile_default');
+            $(slick.$slides[0]).removeClass('mobile_default');
         });
         $newsLeftSlideList.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
             $newsSlideControl.removeClass('news_ani');
+            $newsLeftSlideList.find('.slick-slide').addClass('mobile_default');
+            var $nextSlide = $(slick.$slides[nextSlide]);
+            $nextSlide.removeClass('mobile_default');
         });
         $newsLeftSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             autoplaySpeed : 3400,
             speed : 1200,
             dots : false,
@@ -142,7 +147,16 @@
             pauseOnDotsClick : true,
             zIndex : 1,
             fade : true,
-            asNavFor : $newsRightSlideList
+            asNavFor : $newsRightSlideList,
+            responsive : [{
+                breakpoint : 641,
+                settings : {
+                    variableWidth : true,
+                    fade : false,
+                    centerMode : true,  //센터모드
+                    centerPadding : '0px',  //센터모드일때 padding
+                }
+            }]
         });
         $newsLeftSlideList.on('afterChange', function(event, slick, currentSlide, nextSlide) {
             $newsSlideControl.addClass('news_ani');
@@ -159,7 +173,7 @@
             }
         });
         $newsRightSlideList.slick({
-            autoplay : false,
+            autoplay : true,
             autoplaySpeed : 3400,
             speed : 1200,
             dots : false,
@@ -193,7 +207,7 @@
             $vrBackSlideList.append($vrSlideItemClone[i]);
         }
         $vrSlideList.slick({
-            autoplay : true,
+            autoplay : false,
             autoplaySpeed : 4000,
             speed : 500,
             dots : false,
@@ -217,7 +231,7 @@
             asNavFor : $vrBackSlideList
         });
         $vrBackSlideList.slick({
-            autoplay : true,
+            autoplay : false,
             autoplaySpeed : 4000,
             speed : 1000,
             dots : false,
