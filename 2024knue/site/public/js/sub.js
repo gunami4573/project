@@ -271,7 +271,7 @@
                     $MyTabItem.addClass('active');
                     $thisBtn.attr('title', '선택됨');
                     $('.waypoint').waypoint(function(direction) {
-                        $(this.element)[(direction === 'down') ? 'addClass' : 'removeClass']('active');
+                        $(this.element)[(direction === 'down') ? 'addClass' : 'removeClass']('way_active');
                     }, {offset : '100%'});
 
                     //탭안에 지도
@@ -304,7 +304,7 @@
 
         //컨텐츠 스크롤 효과 시작
         $('.waypoint').waypoint(function(direction) {
-            $(this.element)[(direction === 'down') ? 'addClass' : 'removeClass']('active');
+            $(this.element)[(direction === 'down') ? 'addClass' : 'removeClass']('way_active');
         }, {offset : '100%'});
         //컨텐츠 스크롤 효과 끝
 
