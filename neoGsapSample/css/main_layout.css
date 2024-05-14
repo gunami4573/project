@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/* 메인페이지 공통 시작 */
+body{background-color:#000;}
+#container,
+#container main{display:block;position:static;width:100%;box-sizing:border-box;}
+
+/* 메인페이지 공통 끝 */
+
+/* rowgroup 공통 시작 */
+.rowgroup{display:block;position:relative;z-index:1;width:100%;font-size:0;line-height:0;box-sizing:border-box;}
+.rowgroup:before,
+.rowgroup:after{border:none;font-size:0;line-height:0;box-sizing:border-box;}
+.rowgroup *,
+.rowgroup *:before,
+.rowgroup *:after{border:none;font-size:0;line-height:0;box-sizing:border-box;transition-property:all !important;transition-duration:500ms !important;transition-timing-function:cubic-bezier(.22, .57, .12, .96) !important;}
+/* rowgroup 공통 끝 */
+
+/* rowgroup1 시작 */
+.section1{display:block;position:relative;z-index:1;width:100%;}
+.section1 .section1_wrap{display:block;position:relative;width:100%;padding:0 calc((100% - 1600px) / 2);}
+.section1 .section1_wrap .wrap_inner{display:block;position:relative;width:100%;}
+.section1 .section1_wrap .wrap_inner .inner{display:inline-block;position:relative;width:50%;vertical-align:top;}
+.section1 .section1_wrap .wrap_inner .inner.left{z-index:1;top:0px;min-height:400px;background-color:#000;}
+.section1 .section1_wrap .wrap_inner .inner.left:before{display:inline-block;position:absolute;top:0;left:0;padding:0 3%;font-size:18px;color:#fff;line-height:50px;vertical-align:top;content:'나 rowgroup1 left';}
+.section1 .section1_wrap .wrap_inner .inner.right{min-height:800px;background-color:#000;clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}
+.section1 .section1_wrap .wrap_inner .inner.right:before{display:inline-block;position:absolute;bottom:0;right:0;padding:0 3%;font-size:18px;color:#fff;line-height:50px;vertical-align:top;content:'나 rowgroup1 right';}
+@media all and (max-width:1600px){
+    .section1 .section1_wrap{padding:0 3%;}
+    .section1 .section1_wrap .wrap_inner .inner.left{min-height:calc(40vw - 50px);}
+    .section1 .section1_wrap .wrap_inner .inner.right{min-height:40vw;}
+}
+@media all and (max-width:1000px){
+    .section1 .section1_wrap .wrap_inner .inner.left,
+    .section1 .section1_wrap .wrap_inner .inner.right{min-height:30vw;}
+}
+
+/* rowgroup1 끝 */
+
+/* rowgroup2 시작 */
+.section2{display:block;position:relative;width:100%;border-top:2px solid purple;}
+.section2:before{display:block;position:absolute;top:0;left:0;width:100%;padding:0 3%;font-size:18px;color:#fff;line-height:50px;border-bottom:1px solid #fff;content:'50px';text-align:right;}
+.section2 .section2_wrap{display:block;position:relative;width:100%;padding:0 calc((100% - 1600px) / 2);}
+.section2 .section2_wrap .wrap_inner{display:block;position:relative;width:100%;}
+.section2 .section2_wrap .wrap_inner .inner{display:inline-block;position:relative;width:50%;vertical-align:top;}
+.section2 .section2_wrap .wrap_inner .inner.left{z-index:1;min-height:500px;background-color:#000;opacity:0;transform:translate(0px, 0px);}
+.section2 .section2_wrap .wrap_inner .inner.left:before{display:inline-block;position:absolute;top:0;right:0;font-size:18px;color:#fff;line-height:50px;vertical-align:top;content:'우측 끝 지점';}
+@media all and (max-width:1600px){
+    .section2 .section2_wrap{padding:0 3%;}
+    .section2 .section2_wrap .wrap_inner .inner.left{min-height:40vw;}
+}
+@media all and (max-width:1000px){
+    .section2 .section2_wrap .wrap_inner .inner.left{opacity:1;}
+}
+/* rowgroup2 끝 */
+
+/* rowgroup3 시작 */
+.section3{display:block;position:relative;width:100%;border-top:2px solid purple;}
+.section3 .section3_wrap{display:block;position:relative;width:100%;padding:0 calc((100% - 1600px) / 2);}
+.section3 .section3_wrap .wrap_inner{display:block;position:relative;width:100%;}
+.section3 .section3_wrap .wrap_inner .inner{display:inline-block;position:relative;width:50%;vertical-align:top;}
+.section3 .section3_wrap .wrap_inner .inner.left{min-height:500px;background-color:#000;transform:translateX(100%) translateY(-100%);}
+.section3 .section3_wrap .wrap_inner .inner.left:before{display:inline-block;position:absolute;top:0;left:0;font-size:18px;color:#fff;line-height:50px;vertical-align:top;content:'좌측 끝 지점';}
+@media all and (max-width:1600px){
+    .section3 .section3_wrap{padding:0 3%;}
+    .section3 .section3_wrap .wrap_inner .inner.left{min-height:40vw;}
+}
+/* rowgroup3 끝 */
+
+/* rowgroup4 시작 */
+.rowgroup4{z-index:0;position:absolute;top:0;left:0;width:100%;height:100%;}
+.section4{display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:purple;transform-origin:50% 50%;transform:scale(1);}
+/* rowgroup4 끝 */
