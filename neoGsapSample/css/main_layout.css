@@ -38,7 +38,7 @@ body{background-color:#000;}
 /* rowgroup1 끝 */
 
 /* rowgroup2 시작 */
-.section2{display:block;position:relative;width:100%;border-top:2px solid purple;}
+.section2{display:block;position:relative;width:100%;border-top:1px solid purple;}
 .section2:before{display:block;position:absolute;top:0;left:0;width:100%;padding:0 3%;font-size:18px;color:#fff;line-height:50px;border-bottom:1px solid #fff;content:'50px';text-align:right;}
 .section2 .section2_wrap{display:block;position:relative;width:100%;padding:0 calc((100% - 1600px) / 2);}
 .section2 .section2_wrap .wrap_inner{display:block;position:relative;width:100%;}
@@ -50,12 +50,13 @@ body{background-color:#000;}
     .section2 .section2_wrap .wrap_inner .inner.left{min-height:40vw;}
 }
 @media all and (max-width:1000px){
+    .section2{border-top:1px solid orange;}
     .section2 .section2_wrap .wrap_inner .inner.left{opacity:1;}
 }
 /* rowgroup2 끝 */
 
 /* rowgroup3 시작 */
-.section3{display:block;position:relative;width:100%;border-top:2px solid purple;}
+.section3{display:block;position:relative;width:100%;border-top:1px solid purple;}
 .section3 .section3_wrap{display:block;position:relative;width:100%;padding:0 calc((100% - 1600px) / 2);}
 .section3 .section3_wrap .wrap_inner{display:block;position:relative;width:100%;}
 .section3 .section3_wrap .wrap_inner .inner{display:inline-block;position:relative;width:50%;vertical-align:top;}
@@ -65,9 +66,16 @@ body{background-color:#000;}
     .section3 .section3_wrap{padding:0 3%;}
     .section3 .section3_wrap .wrap_inner .inner.left{min-height:40vw;}
 }
+@media all and (max-width:1000px){
+    .section3{border-top:1px solid orange;}
+    .section3 .section3_wrap .wrap_inner .inner.left{transform:translateX(0%) translateY(0%);}
+}
 /* rowgroup3 끝 */
 
 /* rowgroup4 시작 */
 .rowgroup4{z-index:0;position:absolute;top:0;left:0;width:100%;height:100%;}
 .section4{display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:purple;transform-origin:50% 50%;transform:scale(1);}
+@media all and (max-width:1000px){
+    .section4{background-color:orange;}
+}
 /* rowgroup4 끝 */
