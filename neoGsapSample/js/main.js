@@ -36,7 +36,8 @@
                             end : '100%',
                             scrub : 1.05
                         },
-                        top : 'calc(800px + 50px)'
+                        top : 'calc(800px + 50px)',
+                        ease : 'back.out(1.7)'
                     });
                     gsap.to($SectionInnerList05, {
                         scrollTrigger : {
@@ -60,7 +61,8 @@
                             end : '100%',
                             scrub : 1.05
                         },
-                        top : 'calc(40vw + 50px)'
+                        top : 'calc(40vw + 50px)',
+                        ease : 'back.out(1.7)'
                     });
                     gsap.to($SectionInnerList05, {
                         scrollTrigger : {
@@ -84,34 +86,38 @@
                             scrub : 1.05,
                             onUpdate: function(self) {
                                 var clip = self.progress;
-                                $SectionInnerRight01.css({'clip-path':'polygon(calc('+clip*100+'%) 0%, 100% 0%, 100% 100%, calc('+clip*100+'%) 100%)'});
+                                $SectionInnerRight01.css({'clip-path':'polygon(calc('+clip*300+'%) 0%, 100% 0%, 100% 100%, calc('+clip*300+'%) 100%)'});
                             }
-                        },
+                        }
                     });
                     gsap.to($SectionInnerLeft02, {
                         scrollTrigger : {
                             trigger : $Rowgroup1,
                             start : '0%',
                             end : '100%',
-                            scrub : 1.05,
-                            onUpdate: function(self) {
-                                var opa = self.progress;
-                                $SectionInnerLeft02.css('opacity', 1 * opa);
-                            }
+                            scrub : 1.05
                         },
                         x : '100%'
                     });
-                    gsap.to($SectionInnerLeft03, {
+                    gsap.from($SectionInnerLeft02, {
                         scrollTrigger : {
                             trigger : $Rowgroup1,
                             start : '0%',
                             end : '100%',
-                            scrub : 1.05,
-                            onUpdate: function(self) {
-                                var trans = self.progress;
-                                $SectionInnerLeft03.css({'transform':'translate( calc(100% - '+trans * 100+'%),calc(-100% + '+trans * 100+'%) )'});
-                            }
-                        }
+                            scrub : 1.05
+                        },
+                        opacity : '1'
+                    });
+                    gsap.from($SectionInnerLeft03, {
+                        scrollTrigger : {
+                            trigger : $Rowgroup1,
+                            start : '0%',
+                            end : '100%',
+                            scrub : 1.05
+                        },
+                        x : '100%',
+                        y : '-100%',
+                        ease : 'back.out(1.7)'
                     });
 
                     gsap.to($Section04, {
@@ -122,7 +128,8 @@
                             scrub : 1.05
                         },
                         scale : '0',
-                        rotate : '-360deg'
+                        rotate : '-720deg',
+                        ease : 'slow(0.7,0.7,false)'
                     });
 
                 },
