@@ -106,7 +106,7 @@
                             end : '100%',
                             scrub : 1.05
                         },
-                        opacity : '1'
+                        opacity : '0'
                     });
                     gsap.from($SectionInnerLeft03, {
                         scrollTrigger : {
