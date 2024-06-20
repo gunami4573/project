@@ -42,7 +42,7 @@
 - [서브 레이아웃](https://belugacurtain.github.io/project/2022midongsan/site/midongsan/sub.html)
 - [미동산수목원 템플릿](https://belugacurtain.github.io/project/2022midongsan/site/midongsan/template.html)
 
-### 2022ocsports (2022 동대문구청장실 신규)
+### 2022ddm (2022 동대문구청장실 신규)
 - [메인 레이아웃](https://belugacurtain.github.io/project/2022ddm/site/chief_2022/main.html)
 
 ### 2022ocsports (2022 제61회 옥천군 충북도민체육대회 신규)
