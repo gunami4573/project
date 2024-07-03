@@ -310,7 +310,10 @@ function publicPrint(){
                 $thisTabInnerType02 = $thisTabBox.find('.tab_inner.type02');
             $thisTabInnerType01.each(function(){
                 var $thisInner = $(this),
-                    $thisTabOpenBtn = $thisInner.find('button.tab_open_btn');
+                    $thisTabOpenBtn = $thisInner.find('button.tab_open_btn'),
+                    $thisTabLink = $thisInner.find('.tab_list .tab_item button.tab_link'),
+                    $startTabActiveText = $thisInner.find('.tab_list .tab_item.active .tab_link span em').text();
+                $thisTabOpenBtn.find('span em').text($startTabActiveText);
                 $thisTabOpenBtn.on('click', function(){
                     var $this = $(this),
                         $TabInner = $this.parent('.tab_inner'),
@@ -334,7 +337,6 @@ function publicPrint(){
                         $TabList.slideUp(250);
                     }
                 });
-                var $thisTabLink = $thisInner.find('.tab_list .tab_item button.tab_link');
                 $thisTabLink.on('click', function(){
                     var $thisTabBtn = $(this),
                         $thisTabBtnText = $thisTabBtn.find('span em').text(),
@@ -363,7 +365,10 @@ function publicPrint(){
             });
             $thisTabInnerType02.each(function(){
                 var $thisInner = $(this),
-                    $thisTabLink = $thisInner.find('.tab_list .tab_item button.tab_link');
+                    $thisTabOpenBtn = $thisInner.find('button.tab_open_btn'),
+                    $thisTabLink = $thisInner.find('.tab_list .tab_item button.tab_link'),
+                    $startTabActiveText = $thisInner.find('.tab_list .tab_item.active .tab_link span em').text();
+                $thisTabOpenBtn.find('span em').text($startTabActiveText);
                 $thisTabLink.on('click', function(){
                     var $thisTabBtn = $(this),
                         $thisTabBtnText = $thisTabBtn.find('span em').text(),
