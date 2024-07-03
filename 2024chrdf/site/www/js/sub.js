@@ -28,12 +28,12 @@ function publicPrint(){
     printWindow.document.write(
         '<!DOCTYPE html>' +
         '<html>' +
-            '<head>' +
-                headHtml +
-            '</head>' +
-            '<body id="body" class="print_body">' +
-                PrintContentsHtml +
-            '</body>' +
+        '<head>' +
+        headHtml +
+        '</head>' +
+        '<body id="body" class="print_body">' +
+        PrintContentsHtml +
+        '</body>' +
         '</html>'
     );
     printWindow.focus();
@@ -301,6 +301,97 @@ function publicPrint(){
             UrlCopy(link);
         });
         //현재 URL 복사 끝
+
+        //공통 탭메뉴 시작
+        var $tabBox = $('.tab_box');
+        $tabBox.each(function(){
+            var $thisTabBox = $(this),
+                $thisTabInnerType01 = $thisTabBox.find('.tab_inner.type01'),
+                $thisTabInnerType02 = $thisTabBox.find('.tab_inner.type02');
+            $thisTabInnerType01.each(function(){
+                var $thisInner = $(this),
+                    $thisTabOpenBtn = $thisInner.find('button.tab_open_btn');
+                $thisTabOpenBtn.on('click', function(){
+                    var $this = $(this),
+                        $TabInner = $this.parent('.tab_inner'),
+                        IsActive = $TabInner.is('.active'),
+                        $TabList = $TabInner.find('.tab_list'),
+                        $TabItem = $TabList.find('.tab_item'),
+                        $TabLink = $TabItem.find('button.tab_link');
+                    if(!IsActive){
+                        $TabInner.addClass('active');
+                        $this.attr('title' , '메뉴 레이어 닫기');
+                        $TabList.slideDown(250);
+                        $TabLink.on('click', function(){
+                            $TabInner.removeClass('active');
+                            $this.attr('title' , '메뉴 레이어 열기');
+                            $TabList.slideUp(200);
+                        });
+                    }
+                    else{
+                        $TabInner.removeClass('active');
+                        $this.attr('title' , '메뉴 레이어 열기');
+                        $TabList.slideUp(250);
+                    }
+                });
+                var $thisTabLink = $thisInner.find('.tab_list .tab_item button.tab_link');
+                $thisTabLink.on('click', function(){
+                    var $thisTabBtn = $(this),
+                        $thisTabBtnText = $thisTabBtn.find('span em').text(),
+                        $thisTabItem = $thisTabBtn.parent('.tab_item'),
+                        itemIndex = $thisTabItem.index(),
+                        IsActive = $thisTabItem.is('.active'),
+                        $thisTabList = $thisTabItem.parent('.tab_list'),
+                        $thisTabInner = $thisTabList.parent('.tab_inner'),
+                        $thisTabOpenText = $thisTabInner.find('button.tab_open_btn span em'),
+                        $thisCtsInner = $thisTabInner.siblings('.cts_inner'),
+                        $thisCtsList = $thisCtsInner.find('.cts_list'),
+                        $thisCtsItem = $thisCtsList.find('.cts_item').eq(itemIndex),
+                        $otherCtsItem = $thisCtsItem.siblings('.cts_item'),
+                        $otherTabItem = $thisTabItem.siblings('.tab_item'),
+                        $otherTabBtn = $otherTabItem.find('button.tab_link');
+                    if(!IsActive){
+                        $otherCtsItem.removeClass('active');
+                        $otherTabItem.removeClass('active');
+                        $otherTabBtn.removeAttr('title');
+                        $thisCtsItem.addClass('active');
+                        $thisTabItem.addClass('active');
+                        $thisTabBtn.attr('title', '선택됨');
+                        $thisTabOpenText.text($thisTabBtnText);
+                    }
+                });
+            });
+            $thisTabInnerType02.each(function(){
+                var $thisInner = $(this),
+                    $thisTabLink = $thisInner.find('.tab_list .tab_item button.tab_link');
+                $thisTabLink.on('click', function(){
+                    var $thisTabBtn = $(this),
+                        $thisTabBtnText = $thisTabBtn.find('span em').text(),
+                        $thisTabItem = $thisTabBtn.parent('.tab_item'),
+                        itemIndex = $thisTabItem.index(),
+                        IsActive = $thisTabItem.is('.active'),
+                        $thisTabList = $thisTabItem.parent('.tab_list'),
+                        $thisTabInner = $thisTabList.parent('.tab_inner'),
+                        $thisTabOpenText = $thisTabInner.find('button.tab_open_btn span em'),
+                        $thisCtsInner = $thisTabInner.siblings('.cts_inner'),
+                        $thisCtsList = $thisCtsInner.find('.cts_list'),
+                        $thisCtsItem = $thisCtsList.find('.cts_item').eq(itemIndex),
+                        $otherCtsItem = $thisCtsItem.siblings('.cts_item'),
+                        $otherTabItem = $thisTabItem.siblings('.tab_item'),
+                        $otherTabBtn = $otherTabItem.find('button.tab_link');
+                    if(!IsActive){
+                        $otherCtsItem.removeClass('active');
+                        $otherTabItem.removeClass('active');
+                        $otherTabBtn.removeAttr('title');
+                        $thisCtsItem.addClass('active');
+                        $thisTabItem.addClass('active');
+                        $thisTabBtn.attr('title', '선택됨');
+                        $thisTabOpenText.text($thisTabBtnText);
+                    }
+                });
+            });
+        });
+        //공통 탭메뉴 끝
 
         $window.on('screen:tablet screen:phone', function (event) {
 
