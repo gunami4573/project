@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=333333&height=200&section=header&text=SI%20Total%20Project%202020~&fontSize=30&fontColor=ffffff)
 
 ### 2024chrdf (2024 충북인재평생교육진흥원 신규)
-- [대표사이트 서브 레이아웃(작업중)](https://belugacurtain.github.io/project/2024chrdf/site/www/sub.html)
+- [대표사이트 서브 레이아웃](https://belugacurtain.github.io/project/2024chrdf/site/www/sub.html)
 
 ### 2024knue (2024 한국교원대학교 신규)
 - [부설사이트 공통 서브 레이아웃](https://belugacurtain.github.io/project/2024knue/site/public/sub.html)
