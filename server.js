@@ -6,6 +6,11 @@ var http = require("http"),
 // 서버 생성
 http.createServer(function(req, res) {
 
+    if (path.normalize(decodeURI(req.url)) !== decodeURI(req.url)) {
+        res.statusCode = 403;
+        res.end();
+        return;
+    }
     "use strict";
 
     // 요청된 URI 정보
