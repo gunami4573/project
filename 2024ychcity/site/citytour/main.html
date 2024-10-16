@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="google-site-verification" content="" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="title" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta property="og:site_name" content="">
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="/common/images/common_layout/og_img.png" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <link rel="stylesheet" type="text/css" href="../../common/css/font.css?v=202409" />
+    <link rel="stylesheet" type="text/css" href="../../site/citytour/css/main.css?v=202409" />
+    <script src="../../common/js/jquery-1.12.4.HS-20200709.min.js?v=202409"></script>
+    <script src="../../common/js/jquery-ui.min.js?v=202409"></script>
+    <script src="../../common/js/NeoVirtualKeyboard.min.js?v=202409"></script>
+    <script src="../../common/js/jquery.easing.1.3.js?v=202409"></script>
+    <script src="../../common/js/jquery.screen.min.js?v=202409"></script>
+    <script src="../../common/js/jquery.menu.min.js?v=202409"></script>
+    <script src="../../common/js/slick.min.custom.1.8.0.13.js?v=202409"></script><!--//메인은 1.8 , 서브는 1.6-->
+    <script src="../../common/js/slick.extensions.min.js?v=202409"></script>
+    <script src="../../common/js/common_layout.js?v=202409"></script>
+    <script src="../../common/js/jqueryCmm.js?v=202409"></script>
+    <script src="../../site/citytour/js/common.js?v=202409"></script>
+    <script src="../../site/citytour/js/gsap.min.js?v=202409"></script>
+    <script src="../../site/citytour/js/ScrollTrigger.min.js?v=202409"></script>
+    <script src="../../site/citytour/js/main.js?v=202409"></script>
+    <title>연천시티투어 - 메인레이아웃</title>
+</head>
+<body id="main" class="main ${siteInfo.siteId}">
+<!--// ${siteInfo.siteId} = 사이트아이디 들어올 수 있게 개발 필요 -->
+<div class="accessibility">
+    <a href="#container">본문 바로가기</a>
+</div>    <!--//accessibility-->
+<div id="wrapper">
+    <header id="header">
+        <!--//
+            ★ 마크업 기존 연천군과 다르게 구성되어있습니다, 꼭 마크업 확인 부탁드립니다. ★
+            ★ 연천시티투어에서 필요없는 부분 다 제거 하였습니다. ★
+        -->
+        <div class="header_box">
+            <div class="lnb_wrap">
+                <div class="wrap">
+                    <h1 class="logo">
+                        <a href="./index.do" class="logo_anchor">
+                            <span class="logo_image">
+                                <img src="../../site/citytour/images/common/city_logo_w.png" alt="연천시티투어 로고 이미지" />
+                            </span>    <!--//logo_image-->
+                            <span class="logo_name">CITY TOUR 이젠 연천</span>
+                        </a>    <!--//logo_anchor-->
+                    </h1>    <!--//logo-->
+                    <div class="lnb">
+                        <nav class="menu eachdown">
+                            <div class="lnb_topbox">
+                                <div class="wrap">
+                                    <div class="gnb clearfix">
+                                        <ul class="clearfix">
+                                            <li class="list"><a href="/www/index.do" target="_blank" title="새창" class="tit">연천군청 바로가기</a></li>    <!--//list-->
+                                            <li class="list"><a href="/tour/index.do" target="_blank" title="새창" class="tit">연천문화관광 바로가기</a></li>    <!--//list-->
+                                        </ul>    <!--//clearfix-->
+                                    </div>    <!--//gnb clearfix-->
+                                    <div class="menu_show">
+                                        <button type="button" class="close_button">메뉴 닫기</button>    <!--//close_button-->
+                                    </div>    <!--//menu_show-->
+                                </div>    <!--//wrap-->
+                            </div>    <!--//lnb_topbox-->
+                            <h2 class="skip">메뉴</h2>
+                            <div class="depth depth1">
+                                <!--// 메뉴 개발방식은 연천기존과 동일합니다 -->
+                                <!--// 선택된 메뉴의 .depth_text 에 .spy 클레스 부여 -->
+                                <!--// 선택된 메뉴가 하위메뉴를 가지고 있다면, 하위메뉴들 중에 첫번째 .depth_text 에 .spy 클레스 부여 -->
+                                <!--// 같은 페이지에서 .spy 클레스는 절대로 중복되서 부여 되어서는 안됩니다 -->
+                                <ul class="depth_list depth1_list">
+                                    <li class="depth_item depth1_item">
+                                        <a href="" class="depth_text depth1_text"><span>CMS 1차메뉴 하위</span></a>    <!--//depth1_text-->
+                                        <div class="depth depth2">
+                                            <ul class="depth_list depth2_list">
+                                                <li class="depth_item depth2_item">
+                                                    <a href="" class="depth_text depth2_text"><span>CMS 2차메뉴 하위</span></a>    <!--//depth2_text-->
+                                                    <div class="depth depth3">
+                                                        <ul class="depth_list depth3_list">
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text spy">CMS 3차메뉴 spy</a>    <!--//depth3_text-->
+                                                            </li>    <!--//depth3_item-->
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" class="depth_text depth3_text">CMS 3차메뉴 단일</a>    <!--//depth3_text-->
+                                                            </li>    <!--//depth3_item-->
+                                                            <li class="depth_item depth3_item">
+                                                                <a href="" target="_blank" title="새창" class="depth_text depth3_text">CMS 3차메뉴 새창</a>    <!--//depth3_text-->
+                                                            </li>    <!--//depth3_item-->
+                                                        </ul>    <!--//depth3_list-->
+                                                    </div>    <!--//depth3-->
+                                                </li>    <!--//depth2_item-->
+                                                <li class="depth_item depth2_item">
+                                                    <a href="" class="depth_text depth2_text"><span>CMS 2차메뉴 단일</span></a>    <!--//depth2_text-->
+                                                </li>    <!--//depth2_item-->
+                                                <li class="depth_item depth2_item">
+                                                    <a href="" target="_blank" title="새창" class="depth_text depth2_text"><span>CMS 2차메뉴 새창</span></a>    <!--//depth2_text-->
+                                                </li>    <!--//depth2_item-->
+                                            </ul>    <!--//depth2_list-->
+                                        </div>    <!--//depth2-->
+                                    </li>    <!--//depth1_item-->
+                                    <li class="depth_item depth1_item">
+                                        <a href="" target="_blank" title="새창" class="depth_text depth1_text"><span>CMS 1차메뉴 새창</span></a>    <!--//depth1_text-->
+                                    </li>    <!--//depth1_item-->
+                                    <li class="depth_item depth1_item">
+                                        <a href="" class="depth_text depth1_text"><span>CMS 1차메뉴 단일</span></a>    <!--//depth1_text-->
+                                    </li>    <!--//depth1_item-->
+                                </ul>    <!--//depth1_list-->
+                            </div>    <!--//depth1-->
+                        </nav>    <!--//menu eachdown-->
+                    </div>    <!--//lnb-->
+                    <div class="sitemap_quick">
+                        <!--//사이트맵 링크 개발-->
+                        <a href="" class="sitemap_link">전체메뉴 보기</a>    <!--//sitemap_link-->
+                    </div>    <!--//sitemap_quick-->
+                    <div class="menu_show">
+                        <button type="button" class="menu_button">메뉴 열기</button>    <!--//menu_button-->
+                    </div>    <!--//menu_show-->
+                </div>    <!--//wrap-->
+                <div class="lnb_curtain">
+                    <button type="button">메뉴 닫기</button>
+                </div>    <!--//lnb_curtain-->
+            </div>    <!--//lnb_wrap-->
+        </div>    <!--//header_box-->
+    </header>    <!--//#header-->
+    <div id="container">
+        <main>
+            <div class="rowgroup rowgroup1">
+                <section class="visual">
+                    <h2 class="skip">비주얼 영역</h2>    <!--//skip-->
+                    <div class="visual_wrap">
+                        <div class="slide_total">
+                            <div class="img_slide">
+                                <div class="img_slide_list">
+                                    <div class="img_slide_item type01">
+                                        <span class="img_wrap">
+                                            <i style="background-image:url(../../site/citytour/images/main/visual_img01.png);" class="view_img"></i>    <!--//view_img-->
+                                            <img src="../../site/citytour/images/main/visual_img01.png" alt="연강갤러리" class="hidden_img" />    <!--//hidden_img-->
+                                        </span>    <!--//img_wrap-->
+                                    </div>    <!--//img_slide_item-->
+                                    <div class="img_slide_item type02">
+                                        <span class="img_wrap">
+                                            <i style="background-image:url(../../site/citytour/images/main/visual_img02.png);" class="view_img"></i>    <!--//view_img-->
+                                            <img src="../../site/citytour/images/main/visual_img02.png" alt="호로고루" class="hidden_img" />    <!--//hidden_img-->
+                                        </span>    <!--//img_wrap-->
+                                    </div>    <!--//img_slide_item-->
+                                    <div class="img_slide_item type03">
+                                        <span class="img_wrap">
+                                            <i style="background-image:url(../../site/citytour/images/main/visual_img03.png);" class="view_img"></i>    <!--//view_img-->
+                                            <img src="../../site/citytour/images/main/visual_img03.png" alt="재인폭포" class="hidden_img" />    <!--//hidden_img-->
+                                        </span>    <!--//img_wrap-->
+                                    </div>    <!--//img_slide_item-->
+                                </div>    <!--//img_slide_list-->
+                            </div>    <!--//img_slide-->
+                            <div class="text_slide">
+                                <div class="text_slide_list">
+                                    <div class="text_slide_item type01">
+                                        <span class="text num01">
+                                            새로운 모험의 시작,
+                                        </span>    <!--//text num01-->
+                                    </div>    <!--//text_slide_item type01-->
+                                    <div class="text_slide_item type02">
+                                        <span class="text num01">유네스코 2관왕 달성,</span>    <!--//text num01-->
+                                        <span class="text num02">경기 북부 <br />대표 생태 관광도시</span>    <!--//text num02-->
+                                    </div>    <!--//text_slide_item type02-->
+                                    <div class="text_slide_item type03">
+                                        <span class="text num01">문화 관광 해설사와 함께하는 <br />태공의 아름다움이 공존하는</span>    <!--//text num01-->
+                                        <span class="text num02">연천의 구석구석을 즐겨보시길 바랍니다.</span>    <!--//text num02-->
+                                    </div>    <!--//text_slide_item type03-->
+                                </div>    <!--//text_slide_list-->
+                            </div>    <!--//text_slide-->
+                            <div class="slide_control">
+                                <div class="control_inner">
+                                    <div class="title_box">
+                                        <span class="current"></span>    <!--//current-->
+                                        <span class="control_title">연천 명소 코스</span>    <!--//control_title-->
+                                    </div>    <!--//title_box-->
+                                    <span class="progress">
+                                        <i class="bar"></i>    <!--//bar-->
+                                    </span>    <!--//progress-->
+                                    <span class="space_title"></span>    <!--//space_title-->
+                                    <div class="btn_box">
+                                        <button type="button" class="control_btn prev">이전 슬라이드 보기</button>    <!--//control_btn prev-->
+                                        <button type="button" class="control_btn next">다음 슬라이드 보기</button>    <!--//control_btn next-->
+                                    </div>    <!--//btn_box-->
+                                </div>    <!--//control_inner-->
+                            </div>    <!--//slide_control-->
+                        </div>    <!--//slide_total-->
+                        <div class="live_btn_box">
+                            <a href="" rel="noopener noreferrer" class="live_btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355 89">
+                                    <!--//
+                                        svg 스크립트 참고
+                                        마우스오버 전 : M 0 89 H 355 C 316 84 328 56 260 20 Q 180 -20 95 20 C 27 56 39 84 0 89
+                                        마우스오버 후 : M 0 89 H 355 C 316 89 262 89 220 89 Q 180 89 140 89 C 97 89 39 89 0 89
+                                    -->
+                                    <path d="M 0 89 H 355 C 316 84 328 56 260 20 Q 180 -20 95 20 C 27 56 39 84 0 89" fill="#fff"/>
+                                </svg>
+                                <span class="btn_text">실시간 예약하기</span>    <!--//btn_text-->
+                                <span class="live_deco">
+                                    <i class="cloud"></i>    <!--//cloud-->
+                                    <i class="carrier"></i>    <!--//carrier-->
+                                    <i class="ticket"></i>    <!--//ticket-->
+                                </span>    <!--//live_deco-->
+                            </a>    <!--//live_btn-->
+                        </div>    <!--//live_btn_box-->
+                    </div>    <!--//visual_wrap-->
+                </section>    <!--//visual-->
+            </div>    <!--//rowgroup1-->
+            <div class="rowgroup rowgroup2">
+                <section class="course">
+                    <h2 class="skip">코스안내 영역</h2>    <!--//skip-->
+                    <div class="course_wrap">
+                        <div class="course_total">
+                            <i class="course_total_deco"></i>    <!--//course_total_deco-->
+                            <div class="course_tree">
+                                <i class="tree"></i>    <!--//tree-->
+                                <i class="tree"></i>    <!--//tree-->
+                                <i class="tree"></i>    <!--//tree-->
+                            </div>    <!--//course_tree-->
+                            <div class="course_inner">
+                                <span class="category">city tour course</span>    <!--//category-->
+                                <div class="course_title">
+                                    <span class="big_title">
+                                        <span class="big_text">
+                                            <em>시티투어코스</em>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 125 80">
+                                                <path d="M 114.273 18.509 L 118.52 13.457 Q 121.515 8.27 116.86 4.503 Q 111.68 1.296 107 6 L 83 32.984 Q 77.945 36.795 74.224 34.074 Q 68.725 29.301 72.167 25.323 L 79.992 16.135 Q 82.988 11.258 77.274 7.286 Q 72.745 4.325 68.069 8.742 L 18.563 67.14 C 14.689 72.903 8.265 72.903 0.07 72.802" stroke="#000" stroke-width="8" fill="none"/>
+                                            </svg>
+                                        </span>    <!--//big_text-->
+                                        <span class="right_text">
+                                            <em>안내</em>
+                                        </span>    <!--//right_text-->
+                                    </span>    <!--//big_title-->
+                                    <span class="small_desc">
+                                        연천군의 주요 관광명소들을 <br />시티투어로 즐겨보세요!
+                                    </span>    <!--//small_desc-->
+                                </div>    <!--//course_title-->
+                                
+                                <div class="course_choice">
+                                    <div class="choice_slide_box">
+                                        <div class="choice_slide_list">
+                                            <div class="choice_slide_item active" data-course="1">
+                                                <button type="button" title="선택됨" class="choice_btn">
+                                                    <span class="btn_text">
+                                                        DMZ안보관광 코스
+                                                    </span>    <!--//btn_text-->
+                                                </button>    <!--//choice_btn-->
+                                            </div>    <!--//choice_slide_item-->
+                                            <div class="choice_slide_item" data-course="2">
+                                                <button type="button" class="choice_btn">
+                                                    <span class="btn_text">
+                                                        역사·문화 체험코스
+                                                    </span>    <!--//btn_text-->
+                                                </button>    <!--//choice_btn-->
+                                            </div>    <!--//choice_slide_item-->
+                                            <div class="choice_slide_item" data-course="3">
+                                                <button type="button" class="choice_btn">
+                                                    <span class="btn_text">
+                                                        연천 명소 코스
+                                                    </span>    <!--//btn_text-->
+                                                </button>    <!--//choice_btn-->
+                                            </div>    <!--//choice_slide_item-->
+                                        </div>    <!--//choice_slide_list-->
+                                        <div class="choice_slide_control">
+                                            <button type="button" class="control_btn prev">이전 슬라이드 보기</button>    <!--//control_btn prev-->
+                                            <button type="button" class="control_btn next">다음 슬라이드 보기</button>    <!--//control_btn next-->
+                                        </div>    <!--//choice_slide_control-->
+                                    </div>    <!--//choice_slide_box-->
+                                </div>    <!--//course_choice-->
+                                
+                                <div class="course_map">
+                                    <div class="map_slide_box">
+                                        <div class="map_slide_box_item active active_ani" data-course="1">
+                                            <div class="map_slide_nav">
+                                                <span class="nav_text top"><span class="skip">출발지</span>연천역</span>    <!--//nav_text top-->
+                                                <div class="dot_nav"></div>    <!--//dot_nav-->
+                                                <span class="nav_text bottom"><span class="skip">도착지</span>연천역</span>    <!--//nav_text bottom-->
+                                            </div>    <!--//map_slide_nav-->
+                                            <div class="map_slide_list">
+                                                <div class="map_slide_item" data-text="1">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img1-1.png);" class="view_img">미라클타운</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img1-1.png" alt="미라클타운 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                                <div class="map_slide_item" data-text="2">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img1-2.png);" class="view_img">태풍전망대</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img1-2.png" alt="태풍전망대 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                                <div class="map_slide_item" data-text="3">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img1-3.png);" class="view_img">연강갤러리</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img1-3.png" alt="연강갤러리 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                            </div>    <!--//map_slide_list-->
+                                        </div>    <!--//map_slide_box_item-->
+                                        <div class="map_slide_box_item" data-course="2">
+                                            <div class="map_slide_nav">
+                                                <span class="nav_text top"><span class="skip">출발지</span>연천역</span>    <!--//nav_text top-->
+                                                <div class="dot_nav"></div>    <!--//dot_nav-->
+                                                <span class="nav_text bottom"><span class="skip">도착지</span>연천역</span>    <!--//nav_text bottom-->
+                                            </div>    <!--//map_slide_nav-->
+                                            <div class="map_slide_list">
+                                                <div class="map_slide_item" data-text="1">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img2-1.png);" class="view_img">숭의전</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img2-1.png" alt="숭의전 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                                <div class="map_slide_item" data-text="2">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img2-2.png);" class="view_img">백학광장</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img2-2.png" alt="백학광장 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                                <div class="map_slide_item" data-text="3">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img2-3.png);" class="view_img">호로고루</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img2-3.png" alt="호로고루 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                                <div class="map_slide_item" data-text="4">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img2-4.png);" class="view_img">경순왕릉</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img2-4.png" alt="경순왕릉 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                            </div>    <!--//map_slide_list-->
+                                        </div>    <!--//map_slide_box_item-->
+                                        <div class="map_slide_box_item" data-course="3">
+                                            <div class="map_slide_nav">
+                                                <span class="nav_text top"><span class="skip">출발지</span>연천역</span>    <!--//nav_text top-->
+                                                <div class="dot_nav"></div>    <!--//dot_nav-->
+                                                <span class="nav_text bottom"><span class="skip">도착지</span>연천역</span>    <!--//nav_text bottom-->
+                                            </div>    <!--//map_slide_nav-->
+                                            <div class="map_slide_list">
+                                                <div class="map_slide_item" data-text="1">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img3-1.png);" class="view_img">재인폭포</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img3-1.png" alt="재인폭포 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                                <div class="map_slide_item" data-text="2">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img3-2.png);" class="view_img">전곡시장</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img3-2.png" alt="전곡시장 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                                <div class="map_slide_item" data-text="3">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img3-3.png);" class="view_img">전곡선사박물관</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img3-3.png" alt="전곡선사박물관 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                                <div class="map_slide_item" data-text="4">
+                                                    <span class="img_wrap">
+                                                        <i style="background-image:url(../../site/citytour/images/main/course_img3-4.png);" class="view_img">전곡리유적</i>    <!--//view_img-->
+                                                        <img src="../../site/citytour/images/main/course_img3-4.png" alt="전곡리유적 이미지" class="hidden_img" />    <!--//hidden_img-->
+                                                    </span>    <!--//img_wrap-->
+                                                </div>    <!--//map_slide_item-->
+                                            </div>    <!--//map_slide_list-->
+                                        </div>    <!--//map_slide_box_item-->
+                                    </div>    <!--//map_slide_box-->
+                                </div>    <!--//course_map-->
+                                
+                                <div class="map_img">
+                                    <div class="real_map">
+                                        연천군지도이미지 - 신서면, 중면, 왕징면, 군남면, 연천읍, 장남면, 백학면, 미산면, 전곡읍, 청산면
+                                        <i class="gra"></i>    <!--//gra-->
+                                        <i class="shadow"></i>    <!--//shadow-->
+                                    </div>    <!--//real_map-->
+                                    <div class="map_line active active_ani" data-course="1">
+                                        <div class="map_line_inner">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 101">
+                                                <path d="M 167 92 C 171.429 84.082 162.107 67.497 145.765 50.912 C 112.838 17.38 78.458 0.432 50.736 2.732 C 4.743 4.04 1.799 23.423 2.464 33.463 C 3.337 42.86 24.517 39.498 42.902 37.954 C 63.712 35.381 79.934 45.946 91.256 54.249 C 112.199 68.957 117.954 73.769 139.182 94.148 C 151.142 103.23 163.984 96.409 167.001 92.003" stroke="#d6dcde" stroke-width="4" fill="none"/>
+                                            </svg>
+                                            <ul class="line_list">
+                                                <li><i class="flag"></i><em>연천역(출발, 도착)</em></li>
+                                                <li><i class="flag">1</i><em>미라클타운</em></li>
+                                                <li><i class="flag">2</i><em>태풍전망대</em></li>
+                                                <li><i class="flag">3</i><em>연강갤러리</em></li>
+                                            </ul>    <!--//line_list-->
+                                        </div>    <!--//map_line_inner-->
+                                    </div>    <!--//map_line-->
+                                    <div class="map_line" data-course="2">
+                                        <div class="map_line_inner">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 367 224">
+                                                <path d="M 364.087 16.975 C 341.731 79.396 300.273 123.047 264.861 125.53 C 231.44 126.852 236.822 117.977 206.659 118.482 C 152.571 119.932 128.74 135.205 113.714 142.476 C 97.534 150.736 82.915 156.179 72.028 167.377 C 61.141 178.42 59.897 187.596 59.275 195.683 C 53.986 216.681 37.76 223.077 30.818 221.94 C 20.691 219.694 -17.712 209.527 16.153 174.561 C 31.506 160.331 62.284 144.092 83.054 132.386 C 118.118 113.077 165.814 89.329 193.354 92.522 C 230.075 96.114 284.956 89.529 299.469 71.245 C 308.773 60.193 326.587 31.594 333.373 9.539 C 340.356 -4.705 366.052 3.738 364.087 16.975" stroke="#d6dcde" stroke-width="4" fill="none"/>
+                                            </svg>
+                                            <ul class="line_list">
+                                                <li><i class="flag"></i><em>연천역(출발, 도착)</em></li>
+                                                <li><i class="flag">1</i><em>숭의전</em></li>
+                                                <li><i class="flag">2</i><em>백학광장</em></li>
+                                                <li><i class="flag">3</i><em>호로고루</em></li>
+                                                <li><i class="flag">4</i><em>경순왕릉</em></li>
+                                            </ul>    <!--//line_list-->
+                                        </div>    <!--//map_line_inner-->
+                                    </div>    <!--//map_line-->
+                                    <div class="map_line" data-course="3">
+                                        <div class="map_line_inner">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161 154">
+                                                <path d="M 75.337 3.5 C 99.161 -2.305 145.961 19.1 154.306 27.444 C 172.204 43.044 126.732 46.65 120.445 48.486 C 99.481 55.039 49.131 80.252 49.267 99.321 C 48.273 131.739 38.726 149.24 27.788 151.229 C 14.32 153.302 -11.129 137.396 11.935 87.293 C 24.516 62.098 36.603 44.431 58.299 10.958 C 61.952 6.113 67.335 5.418 75.337 3.5" stroke="#d6dcde" stroke-width="4" fill="none"/>
+                                            </svg>
+                                            <ul class="line_list">
+                                                <li><i class="flag"></i><em>연천역(출발, 도착)</em></li>
+                                                <li><i class="flag">1</i><em>재인폭포</em></li>
+                                                <li><i class="flag">2</i><em>전곡시장</em></li>
+                                                <li><i class="flag">3</i><em>전곡선사박물관</em></li>
+                                                <li><i class="flag">4</i><em>전곡리유적</em></li>
+                                            </ul>    <!--//line_list-->
+                                        </div>    <!--//map_line_inner-->
+                                    </div>    <!--//map_line-->
+                                </div>    <!--//map_img-->
+                            
+                            </div>    <!--//course_inner-->
+                            <div class="course_more">
+                                <i class="more_bg"></i>    <!--//more_bg-->
+                                <a href="" class="more_link">
+                                    코스 안내 <br />
+                                    바로 가기
+                                </a>    <!--//more_link-->
+                            </div>    <!--//course_more-->
+                        </div>    <!--//course_total-->
+                    </div>    <!--//course_wrap-->
+                </section>    <!--//course-->
+            </div>    <!--//rowgroup2-->
+            <div class="rowgroup rowgroup3">
+                <section class="popular">
+                    <h2 class="skip">자주찾는 메뉴 영역 및 공지사항</h2>    <!--//skip-->
+                    <div class="popular_wrap">
+                        <div class="popular_total">
+                            <i class="popular_bg"></i>    <!--//popular_bg-->
+                            <div class="popular_tree">
+                                <span class="tree_top">
+                                    <i class="tree"></i>    <!--//tree-->
+                                    <i class="tree"></i>    <!--//tree-->
+                                    <i class="tree"></i>    <!--//tree-->
+                                </span>    <!--//tree_top-->
+                                <span class="tree_bottom">
+                                    <i class="tree"></i>    <!--//tree-->
+                                    <i class="tree"></i>    <!--//tree-->
+                                </span>    <!--//tree_bottom-->
+                            </div>    <!--//popular_tree-->
+                            <div class="popular_inner">
+                                <span class="category">information</span>    <!--//category-->
+                                <div class="top_inner">
+                                    <div class="popular_title">
+                                        <span class="big_title">
+                                            <span class="big_text">
+                                                <em>자주 찾는</em>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 125 80">
+                                                    <path d="M 114.273 18.509 L 118.52 13.457 Q 121.515 8.27 116.86 4.503 Q 111.68 1.296 107 6 L 83 32.984 Q 77.945 36.795 74.224 34.074 Q 68.725 29.301 72.167 25.323 L 79.992 16.135 Q 82.988 11.258 77.274 7.286 Q 72.745 4.325 68.069 8.742 L 18.563 67.14 C 14.689 72.903 8.265 72.903 0.07 72.802" stroke="#fff" stroke-width="8" fill="none"/>
+                                                </svg>
+                                            </span>    <!--//big_text-->
+                                            <span class="right_text">
+                                                <em>메뉴</em>
+                                            </span>    <!--//right_text-->
+                                        </span>    <!--//big_title-->
+                                        <span class="small_desc">
+                                            빠른 메뉴 서비스를 이용해보세요!
+                                        </span>    <!--//small_desc-->
+                                    </div>    <!--//popular_title-->
+                                    
+                                    <div class="quick_slide_box">
+                                        <div class="quick_slide_list">
+                                            <div class="quick_slide_item type01">
+                                                <a href="" class="quick_slide_link">
+                                                    <i class="deco"></i>    <!--//deco-->
+                                                    <span class="text">시티투어 안내</span>    <!--//text-->
+                                                </a>    <!--//quick_slide_link-->
+                                            </div>    <!--//quick_slide_item-->
+                                            <div class="quick_slide_item type02">
+                                                <a href="" class="quick_slide_link">
+                                                    <i class="deco"></i>    <!--//deco-->
+                                                    <span class="text">이용요금 안내</span>    <!--//text-->
+                                                </a>    <!--//quick_slide_link-->
+                                            </div>    <!--//quick_slide_item-->
+                                            <div class="quick_slide_item type03">
+                                                <a href="" class="quick_slide_link">
+                                                    <i class="deco"></i>    <!--//deco-->
+                                                    <span class="text">운행 안내</span>    <!--//text-->
+                                                </a>    <!--//quick_slide_link-->
+                                            </div>    <!--//quick_slide_item-->
+                                            <div class="quick_slide_item type04">
+                                                <a href="" class="quick_slide_link">
+                                                    <i class="deco"></i>    <!--//deco-->
+                                                    <span class="text">예약 조회</span>    <!--//text-->
+                                                </a>    <!--//quick_slide_link-->
+                                            </div>    <!--//quick_slide_item-->
+                                            <div class="quick_slide_item type05">
+                                                <a href="" class="quick_slide_link">
+                                                    <i class="deco"></i>    <!--//deco-->
+                                                    <span class="text">연천관광포털</span>    <!--//text-->
+                                                </a>    <!--//quick_slide_link-->
+                                            </div>    <!--//quick_slide_item-->
+                                        </div>    <!--//quick_slide_list-->
+                                        <div class="quick_slide_control">
+                                            <button type="button" class="control_btn prev">이전 슬라이드 보기</button>    <!--//control_btn prev-->
+                                            <button type="button" class="control_btn next">다음 슬라이드 보기</button>    <!--//control_btn next-->
+                                        </div>    <!--//quick_slide_control-->
+                                    </div>    <!--//quick_slide_box-->
+                                </div>    <!--//top_inner-->
+                                <div class="bottom_inner">
+                                    <div class="board">
+                                        <span class="board_title">공지사항</span>    <!--//board_title-->
+                                        <div class="board_list">    <!--// 게시글 최신 것 4개까지만 표출 개발필요 -->
+                                            <div class="board_item">
+                                                <a href="" class="board_link">
+                                                    <span class="title"><em>연천군 시티투어 버스 "수요일 DMZ 안보관광 코스" 정상 운영 안내</em></span>    <!--//title-->
+                                                    <span class="date">2024.08.12</span>    <!--//date-->
+                                                </a>    <!--//board_link-->
+                                            </div>    <!--//board_item-->
+                                            <div class="board_item">
+                                                <a href="" class="board_link">
+                                                    <span class="title"><em>2024년 9월~10월 시티투어 버스 운영 노선 및 시간 안내</em></span>    <!--//title-->
+                                                    <span class="date">2024.08.05</span>    <!--//date-->
+                                                </a>    <!--//board_link-->
+                                            </div>    <!--//board_item-->
+                                            <div class="board_item">
+                                                <a href="" class="board_link">
+                                                    <span class="title"><em>연천군 시티투어 버스 "수요일 DMZ 안보관광 코스" 임시 변경 안내</em></span>    <!--//title-->
+                                                    <span class="date">2024.08.05</span>    <!--//date-->
+                                                </a>    <!--//board_link-->
+                                            </div>    <!--//board_item-->
+                                            <div class="board_item">
+                                                <a href="" class="board_link">
+                                                    <span class="title"><em>연천군 시티투어 버스 "수요일 DMZ 안보관광 코스" 정상 운영 안내</em></span>    <!--//title-->
+                                                    <span class="date">2024.06.12</span>    <!--//date-->
+                                                </a>    <!--//board_link-->
+                                            </div>    <!--//board_item-->
+                                        </div>    <!--//board_list-->
+                                        <div class="board_more">
+                                            <a href="" class="more_link">
+                                                <em>m</em>
+                                                <em>o</em>
+                                                <em>r</em>
+                                                <em>e</em>
+                                            </a>    <!--//more_link-->
+                                        </div>    <!--//board_more-->
+                                    </div>    <!--//board-->
+                                    <div class="info">
+                                        <div class="info_ticket">
+                                            <i class="ticket_shadow"></i>    <!--//ticket_shadow-->
+                                            <div class="left_ticket">
+                                                <div class="ticket_inner">
+                                                    <span class="info_title">연천역 관광안내소 문의 안내</span>    <!--//info_title-->
+                                                    <span class="info_call">031) 834 - 1230</span>    <!--//info_call-->
+                                                    <span class="info_sub_text">
+                                                        <em>운영시간 :</em>
+                                                        <em>오전 9시 ~ 오후 6시 <br />(매일운영, 명절 당일 휴무)</em>
+                                                    </span>    <!--//info_sub_text-->
+                                                    <ul class="info_text_list">
+                                                        <li class="info_text_item">
+                                                            휴게(점심)시간은 12시 ~ 13시까지이며 근무시간 <br />외에는 업무처리가 불가하오니 양해바랍니다.
+                                                        </li>    <!--//info_text_item-->
+                                                        <li class="info_text_item">
+                                                            안내소 내/외부 시설에서 취식은 불가하며, 해설사 <br />및 근로자의 안내를 따라주시고, 유의사항을 <br />준수하여 주시기 바랍니다.
+                                                        </li>    <!--//info_text_item-->
+                                                    </ul>    <!--//info_text_list-->
+                                                </div>    <!--//ticket_inner-->
+                                            </div>    <!--//left_ticket-->
+                                            <div class="right_ticket">
+                                                <div class="ticket_inner">
+                                                    <span class="text">Yeoncheon City Tour</span>    <!--//text-->
+                                                </div>    <!--//ticket_inner-->
+                                            </div>    <!--//right_ticket-->
+                                        </div>    <!--//info_ticket-->
+                                    </div>    <!--//info-->
+                                </div>    <!--//bottom_inner-->
+                            </div>    <!--//popular_inner-->
+                        </div>    <!--//popular_total-->
+                    </div>    <!--//popular_wrap-->
+                </section>    <!--//popular-->
+            </div>    <!--//rowgroup3-->
+        </main>
+    </div>    <!--//container-->
+    <footer id="footer">
+        <div class="wrap">
+            <div class="footer_top">
+                <button type="button" title="처음으로 이동" class="top_btn"><span>맨위로</span></button>
+            </div>    <!--//footer_top-->
+            <div class="footer_mid">
+                <div class="footer_logo">
+                    <a href="./index.do" class="logo_anchor">
+                        <span class="logo_image">
+                            <img src="../../site/citytour/images/common/footer_logo_w.png" alt="이젠 연천" />
+                        </span>
+                        <span class="logo_name">이젠 연천</span>
+                    </a>
+                </div>    <!--//footer_logo-->
+                <div class="footer_info">
+                    <div class="info_list">
+                        <address class="info_item add">[11017] 경기도 연천군 연천읍 연천로 220</address>
+                        <div class="info_item tel">대표전화 : (031) 839 - 2114</div>
+                    </div>    <!--//info_list-->
+                    <p class="copyright">COPYRIGHT ⓒ 2024 YEONCHEON-GUN.<br />ALL RIGHTS RESERVED.</p>
+                </div>    <!--//footer_info-->
+            </div>    <!--//footer_mid-->
+            <div class="footer_nav">
+                <ul class="nav_list">
+                    <li class="nav_item">
+                        <a href="/www/contents.do?key=3578" title="새창" target="_blank" rel="noopener noreferrer" class="nav_link">개인정보처리방침</a>
+                    </li>    <!--//nav_item-->
+                    <li class="nav_item">
+                        <a href="/www/contents.do?key=3580" title="새창" target="_blank" rel="noopener noreferrer" class="nav_link">영상정보처리기기</a>
+                    </li>    <!--//nav_item-->
+                    <li class="nav_item">
+                        <a href="/www/contents.do?key=3581" title="새창" target="_blank" rel="noopener noreferrer" class="nav_link">운영방침저작권정책</a>
+                    </li>    <!--//nav_item-->
+                    <li class="nav_item">
+                        <a href="/www/contents.do?key=3582" title="새창" target="_blank" rel="noopener noreferrer" class="nav_link">이메일무단수집거부</a>
+                    </li>    <!--//nav_item-->
+                    <li class="nav_item">
+                        <a href="/www/sub.do?key=3585" title="새창" target="_blank" rel="noopener noreferrer" class="nav_link">홈페이지 개선의견</a>
+                    </li>    <!--//nav_item-->
+                </ul>    <!--//nav_list-->
+            </div>    <!--//footer_nav-->
+        </div>    <!--//wrap-->
+    </footer>    <!--//#footer-->
+</div>    <!--//wrapper-->
+</body>
+</html>
