@@ -1,7 +1,10 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=333333&height=200&section=header&text=SI%20Total%20Project%202020~&fontSize=30&fontColor=ffffff)
 
+### 2024boeuncyber (2024 정이품보은군민 신규)
+- [대표사이트 메인 레이아웃](https://belugacurtain.github.io/project/2024boeuncyber/site/cyber/main.html)
+
 ### 2024ychcity (2024 연천군시티투어 신규)
-- [연천군시티투어 메인 레이아웃](https://belugacurtain.github.io/project/2024ychcity/site/citytour/main.html)
+- [대표사이트 메인 레이아웃](https://belugacurtain.github.io/project/2024ychcity/site/citytour/main.html)
 
 ### 2024chrdf (2024 충북인재평생교육진흥원 신규)
 - [대표사이트 서브 레이아웃](https://belugacurtain.github.io/project/2024chrdf/site/www/sub.html)
