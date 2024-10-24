@@ -81,4 +81,37 @@ function getParameterByName(name) {
 
     });
 
+    $document.on('ready', function (event) {
+        //wrapper, wrap 사이즈에 따라 값 맞출 것
+        $screen({
+            state: [{
+                name: 'wide',
+                horizontal: {
+                    from: 9999,
+                    to: 1531
+                }
+            }, {
+                name: 'web',
+                horizontal: {
+                    from: 1530,
+                    to: 1001
+                }
+            }, {
+                name: 'tablet',
+                horizontal: {
+                    from: 1000,
+                    to: 641
+                }
+            }, {
+                name: 'phone',
+                horizontal: {
+                    from: 640,
+                    to: 0
+                }
+            }]
+        });
+    });
+    console.log($screen);
+
+
 })(jQuery);
