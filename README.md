@@ -6,8 +6,8 @@
 ### 2024ychcity (2024 연천군시티투어 신규)
 - [대표사이트 메인 레이아웃](https://belugacurtain.github.io/project/2024ychcity/site/citytour/main.html)
 
-### 2024chrdf (2024 충북인재평생교육진흥원 신규)
-- [대표사이트 서브 레이아웃](https://belugacurtain.github.io/project/2024chrdf/site/www/sub.html)
+### 2024cbitle (2024 충북인재평생교육진흥원 신규)
+- [대표사이트 서브 레이아웃](https://belugacurtain.github.io/project/2024cbitle/site/www/sub.html)
 
 ### 2024knue (2024 한국교원대학교 신규)
 - [부설사이트 공통 서브 레이아웃](https://belugacurtain.github.io/project/2024knue/site/public/sub.html)
