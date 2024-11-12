@@ -225,10 +225,10 @@
                 $bookSlideNext = $this.find('.slide_wrap .slide_control .control_inner .next'),
                 $bookSlideCurrent = $this.find('.slide_wrap .slide_control .control_inner .count .current'),
                 $bookSlideTotal = $this.find('.slide_wrap .slide_control .control_inner .count .total');
-            for(var i=1; i < $bookSlideItem.length+1; i++){
+            for(var i=0; i < $bookSlideItem.length; i++){
                 $('.map_marker_item[data-tour="'+bookSlideItemTourIndex+'"]').append('' +
-                    '<button type="button" data-marker="'+bookSlideItemTourIndex+'-'+i+'" class="marker_btn">' +
-                        '<em class="btn_title">'+$bookSlideList.find('.slide_item[data-marker="'+bookSlideItemTourIndex+'-'+i+'"]').find('.title').text()+' 보기</em>' +
+                    '<button type="button" data-marker="'+$bookSlideItem.eq(i).attr('data-marker')+'" class="marker_btn">' +
+                        '<em class="btn_title">'+$bookSlideList.find('.slide_item[data-marker="'+$bookSlideItem.eq(i).attr('data-marker')+'"]').find('.title').text()+' 보기</em>' +
                     '</button>    <!--//marker_btn-->' +
                 '');
             }
