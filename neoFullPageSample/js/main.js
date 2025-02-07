@@ -43,36 +43,36 @@
                 createFullpage();
             }
         });
-        $window.on('screen:web screen:tablet screen:phone', function (event) {
+        $window.on('screen:web screen:tablet screen:phone' , function (event) {
             if (fullPageCreated == true) {
                 fullPageCreated = false;
                 $.fn.fullpage.destroy('all');
-                $html.attr('data-fpenabled', false);
+                $html.attr('data-fpenabled' , false);
             }
         });
-        $window.on('screen:maxheight', function () {
+        $window.on('screen:maxheight' , function () {
             window.Hmode = 'MaxHeight';
-            $wrapper.attr('data-hsize', 'maxheight');
+            $wrapper.attr('data-hsize' , 'maxheight');
             var NowStatehorizontal = $.screen.settings.state[0];
             if (NowStatehorizontal == 'wide') {
                 createFullpage();
             }
         });
-        $window.on('screen:minheight', function () {
+        $window.on('screen:minheight' , function () {
             window.Hmode = 'MinHeight';
-            $wrapper.attr('data-hsize', 'minheight');
+            $wrapper.attr('data-hsize' , 'minheight');
             if (fullPageCreated == true) {
                 fullPageCreated = false;
                 $.fn.fullpage.destroy('all');
-                $html.attr('data-fpenabled', false);
+                $html.attr('data-fpenabled' , false);
             }
         });
         setTimeout(function () {
             var StartStatehorizontal = $.screen.settings.state[1];
             if (StartStatehorizontal === 'minheight') {
-                $wrapper.attr('data-hsize', 'minheight');
+                $wrapper.attr('data-hsize' , 'minheight');
             } else if (StartStatehorizontal === 'maxheight') {
-                $wrapper.attr('data-hsize', 'maxheight');
+                $wrapper.attr('data-hsize' , 'maxheight');
             }
         }, 1);
         // full page setting - E

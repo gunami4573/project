@@ -530,7 +530,6 @@
             //활성화 상태가 있거나 비활성화 상태가 있을 때
             if (activeState.length || setState.deactiveState.length) {
                 _callScreenEvent(activeState);
-
                 result = true;
             }
         }

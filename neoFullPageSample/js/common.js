@@ -242,29 +242,29 @@
     $document.on('ready', function (event) {
         //wrapper, wrap 사이즈에 따라 값 맞출 것
         $screen({
-            state: [{
-                name: 'wide',
+            state : [{
+                name : 'wide',
                 horizontal: {
-                    from: 9999,
-                    to: 1601
+                    from : 9999,
+                    to : 1601
                 }
             }, {
-                name: 'web',
+                name : 'web',
                 horizontal: {
                     from: 1600,
                     to: 1001
                 }
             }, {
-                name: 'tablet',
+                name : 'tablet',
                 horizontal: {
-                    from: 1000,
-                    to: 641
+                    from : 1000,
+                    to : 641
                 }
             }, {
-                name: 'phone',
+                name : 'phone',
                 horizontal: {
-                    from: 640,
-                    to: 0
+                    from : 640,
+                    to : 0
                 }
             }, {
                 name : 'maxheight',
