@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* (주)한신정보기술 박남규 - 2025.02 */
+
+/* ---------- side 시작 ---------- */
+.side{display:block;position:relative;float:left;width:296px;min-height:100px;border-top:1px solid #f00;background-color:#eee;box-sizing:border-box;}
+@media all and (min-width:1001px){
+    body[data-sub-type="wide"] .side{display:none;}
+}
+@media all and (min-width:1001px) and (max-width:1280px){
+    body[data-sub-type="basic"] .side{width:230px;}
+}
+@media all and (max-width:1000px){
+    .side{display:none;}
+}
+/* ---------- side 종료 ---------- */
+
+/* ---------- colgroup 시작 ---------- */
+.colgroup{display:block;position:relative;float:right;width:calc(100% - 296px);padding:0 0 76px 80px;box-sizing:border-box;}
+.colgroup:before{display:block;position:absolute;top:0;left:0;width:1px;height:100%;background-color:#c6c6c6;content:'';box-sizing:border-box;}
+@media all and (min-width:1001px){
+    body[data-sub-type="wide"] .colgroup{float:none;width:100%;padding:0 0 76px 0;}
+    body[data-sub-type="wide"] .colgroup:before{display:none;}
+}
+@media all and (min-width:1001px) and (max-width:1280px){
+    body[data-sub-type="basic"] .colgroup{width:calc(100% - 230px);padding:0 0 76px 40px;}
+}
+@media all and (max-width:1000px){
+    .colgroup{float:none;width:100%;padding:0 0 76px 0;}
+    .colgroup:before{display:none;}
+}
+
+.colgroup article{display:block;position:relative;width:100%;box-sizing:border-box;}
+.sub_head{display:block;position:relative;width:100%;min-height:280px;background-color:#eee;box-sizing:border-box;}
+#contents{display:block;position:relative;width:100%;min-height:1000px;box-sizing:border-box;}
+
+/* ---------- colgroup 종료 ---------- */
